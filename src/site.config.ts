@@ -1,0 +1,10 @@
+export const SITE_TITLE = "civic-proof: a research site";
+export const SITE_SHORT = "civic-proof";
+export const SITE_SUBTITLE = "by mashbean";
+export const SITE_TAGLINE = "From state-issued credentials to citizens' self-proof.";
+export const SITE_DESCRIPTION = "An academic research site collecting the civic-proof series — twenty-five articles on digital identity, normative theory, engineering bearings, and cross-jurisdictional governance. By mashbean.";
+export const SITE_LANG = "en";
+export const SITE_TIMEZONE = "Asia/Taipei";
+export const MAIN_SITE_URL = "https://mashbean.net";
+export const DEFAULT_AUTHOR = "mashbean";
+export const DEFAULT_OG_IMAGE = "og/home.png";

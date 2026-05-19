@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import ArgmapLayout from "../../layouts/ArgmapLayout.astro";
+import Argmap from "../../components/argmap/Argmap.astro";
+
+export async function getStaticPaths() {
+  const argmaps = await getCollection("argmaps");
+  return argmaps.map((argmap) => ({
+    params: { slug: argmap.id },
+    props: { argmap },
+  }));
+}
+
+const { argmap } = Astro.props;
+
+// 對應原文路徑（依 slug 反查 reports collection）
+const reports = await getCollection("reports");
+const matchedReport = reports.find((r) => r.id === argmap.data.slug);
+const reportHref = matchedReport ? `/reports/${matchedReport.id}/` : undefined;
+
+const argdownSourcePath = path.join(process.cwd(), "src/content/argdowns", `${argmap.id}.argdown`);
+const argdownPublicDir = path.join(process.cwd(), "public/argdown", argmap.id);
+const argdown = {
+  source: existsSync(argdownSourcePath) ? readFileSync(argdownSourcePath, "utf8") : undefined,
+  htmlHref: existsSync(path.join(argdownPublicDir, "index.html")) ? `/argdown/${argmap.id}/` : undefined,
+  svgHref: existsSync(path.join(argdownPublicDir, "map.svg")) ? `/argdown/${argmap.id}/map.svg` : undefined,
+  sourceHref: existsSync(path.join(argdownPublicDir, "argument.argdown")) ? `/argdown/${argmap.id}/argument.argdown` : undefined,
+};
+---
+
+<ArgmapLayout
+  title={argmap.data.title}
+  description={`Argument map for "${argmap.data.title}": core thesis, supporting arguments, causal chain, border cases, procedural conditions, and conclusion.`}
+>
+  <Argmap argmap={argmap} reportHref={reportHref} argdown={argdown} />
+</ArgmapLayout>

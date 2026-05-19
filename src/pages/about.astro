@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../site.config";
+---
+
+<BaseLayout title="About">
+  <article class="about">
+    <p class="about__kicker">Colophon</p>
+    <h1 class="about__title">About</h1>
+
+    <div class="about__body report-prose">
+      <p>
+        <strong>civic-proof</strong> is a research site collecting the civic-proof series —
+        twenty-five articles on digital identity, normative political theory, engineering
+        design principles, and cross-jurisdictional governance. The series was written by
+        <a href={MAIN_SITE_URL}>mashbean</a> between March and May 2026.
+      </p>
+
+      <h2>The Research Question</h2>
+
+      <p>
+        The series takes up a single animating question: can democratic societies design
+        digital identity systems that preserve accountability without requiring citizens to
+        identify themselves by name in advance? The answer developed across twenty-five
+        articles is affirmative — provided that the normative floor, the engineering
+        architecture, and the governance structures are designed conjunctively rather than
+        traded off against one another.
+      </p>
+
+      <h2>Series Structure</h2>
+
+      <p>
+        The articles are organised across five thematic clusters: conceptual foundations
+        (what civic proof is and is not), comparative empirics (how existing national systems
+        perform against the normative matrix), normative stress tests (age verification,
+        pseudonymity, AI delegation), institutional and infrastructural design (wallet
+        regulation, trust roots, procurement), and a concluding policy agenda. Four earlier
+        retrofit articles (R1–R4) are also included as empirical anchors.
+      </p>
+
+      <h2>Translation and Register</h2>
+
+      <p>
+        The articles were originally written in Traditional Chinese and translated into
+        formal academic English for this site. Translations follow a consistent terminology
+        glossary and Chicago-style footnote conventions. The primary Chinese edition is
+        available at <a href={MAIN_SITE_URL}>mashbean.net</a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .about {
+    width: 80%;
+    max-width: 680px;
+    margin: 0 auto var(--space-10);
+    position: relative;
+    z-index: 2;
+  }
+  .about__kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-4);
+  }
+  .about__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-6);
+    text-wrap: balance;
+  }
+  .about__body {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-ink);
+  }
+  .about__body h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-3);
+  }
+  .about__body p { margin: 0 0 var(--space-5); text-wrap: pretty; }
+  .about__body a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .about__body a:hover { text-decoration-thickness: 2px; }
+  @media (max-width: 768px) {
+    .about { width: 90%; }
+    .about__body { font-size: 1rem; }
+  }
+</style>
