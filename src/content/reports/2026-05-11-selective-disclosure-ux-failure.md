@@ -1,88 +1,90 @@
 ---
-title: "選擇性揭露的 UX 認知極限：可審計工程原語的人因瓶頸"
-description: "civic-proof 系列第 18 篇 (F3)。承接 article 17 (F2) §4–§7 四件密碼學工程原語與 article 16 (F1) §5.4 三項工程修正，把 UX 認知層作為 F2 四原語的「實際可履行性」補強。SD 之 holder informed consent 在四道認知瓶頸下無法履行：(i) Miller 7±2 與 Cowan 2001 working memory 4±1 + Sweller cognitive load theory 顯示 selective disclosure 多選項決策每超過 3 個 attribute group 即顯著退化；(ii) consent fatigue 與 dark patterns 在 wallet 場景同型重演 GDPR cookie banner 八年失敗（11.8% 合規率）；(iii) capacity 變動使「曾經 informed consent」失效，於 CDR ≥ 2 場景以 mechanism-based likelihood medium-high 退化為 substituted；(iv) supporter 介入邊界模糊使「協助理解」滑入「代為決定」。四件 UX 工程原語為 UX1 progressive_disclosure_ui、UX2 dark_patterns_firewall、UX3 capacity_aware_consent、UX4 supporter_ui_three_layer；以 V_ux ≜ C7 ∧ C8 ∧ C9 ∧ C10 合取承擔，V_receipt' ≜ V_receipt ∧ V_ux 為升級後可驗條件。SA3 補強包含失智 → wallet 三段中介鏈、CDR 三條替代路徑（self-assessment / supporter-triggered / issuer-side hint）的法律—工程—隱私 tradeoff、中介證據強度評估表 15 列、mechanism-based likelihood medium-high；SA4 supporter UI 三層分離以 signatures_disjoint = true 與 VerificationMethodDisjoint = true 兩道密碼學硬約束承載 CRPD §29「supporter 必要、不可替代」原則。working thesis 與 strengthened thesis 嚴格區分；後者含 UX-agility by design、threshold signatures 加 court-supervised downgrade、agent 與 supporter 密碼學區分加上 AgentDelegationProof 制度化三大緩解 critical path。CF1–CF5 反事實壓力測試在五 CF 全部觸發極端情境下，第一段 baseline 完整保留、第二段時程外推 ≥ 10 年、第三段條件性失效。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 兩條常駐型不可委任邊界以擴充定理 T2' 明示——不存在任何 UX 原語子集合使 P_degrade ≤ θ₂。"
+title: "The Cognitive Limits of Selective Disclosure UX: Human-Factors Bottlenecks in Auditable Engineering Primitives"
+description: "The eighteenth article in the civic-proof series (F3). Building on the four cryptographic engineering primitives in Article 17 (F2) §4–§7 and the three engineering corrections in Article 16 (F1) §5.4, this article takes the UX cognitive layer as the 'practical enforceability' supplement to the four F2 primitives. Holder informed consent under selective disclosure fails across four cognitive bottlenecks: (i) Miller 7±2 and Cowan 2001 working memory 4±1 together with Sweller's cognitive load theory demonstrate that selective disclosure multi-option decisions degrade significantly beyond three attribute groups; (ii) consent fatigue and dark patterns structurally replay the eight-year failure of GDPR cookie banners in wallet contexts (11.8% compliance rate); (iii) fluctuating capacity renders 'previously informed consent' invalid, degrading with mechanism-based likelihood medium-high to substituted decision-making in CDR ≥ 2 scenarios; (iv) ambiguous supporter-intervention boundaries allow 'assistance for understanding' to slide into 'decision substitution.' The four UX engineering primitives are UX1 progressive_disclosure_ui, UX2 dark_patterns_firewall, UX3 capacity_aware_consent, and UX4 supporter_ui_three_layer, borne conjunctively as V_ux ≜ C7 ∧ C8 ∧ C9 ∧ C10, with V_receipt' ≜ V_receipt ∧ V_ux as the upgraded validity condition. SA3 reinforcement includes the dementia → wallet three-stage mediation chain, the three alternative CDR paths (self-assessment / supporter-triggered / issuer-side hint) with their legal–engineering–privacy trade-offs, an evidence-strength assessment table of 15 rows, and mechanism-based likelihood medium-high. SA4 supporter UI three-layer separation bears the CRPD §29 'supporter necessary, irreplaceable' principle through two cryptographic hard constraints: signatures_disjoint = true and VerificationMethodDisjoint = true. Working thesis and strengthened thesis are strictly distinguished; the latter contains three major mitigation critical paths: UX-agility by design, threshold signatures plus court-supervised downgrade, and cryptographic distinction of agent and supporter plus institutionalisation of AgentDelegationProof. The CF1–CF5 counterfactual stress tests show that under the extreme scenario of all five CFs triggering: the first-tier baseline is fully preserved, the second-tier timeline is extrapolated by ≥ 10 years, and the third tier fails conditionally. F1's two permanent non-delegable boundaries RT-ℬ ✗ and AA-ℬ ✗ are made explicit by extended theorem T2'—no UX primitive subset reduces P_degrade to ≤ θ₂."
 pubDate: 2026-05-11
 tags: ["civic-proof", "selective-disclosure", "ux-cognitive-load", "informed-consent", "dark-patterns", "wallet-ux", "openid4vp", "presentation-exchange", "sd-jwt-vc", "EUDI-Wallet", "EU-AI-Act-Article-5", "EDPB-Guidelines-03-2022", "GDPR-cookie-banner", "CRPD-Article-12", "CRPD-Article-29", "supported-decision-making", "capacity-aware-ux", "supporter-ui", "comprehension-attestation", "chooser-signature", "Cowan-working-memory", "Miller-magical-number", "Sweller-cognitive-load", "Tversky-Kahneman", "progressive-disclosure", "Clinical-Dementia-Rating", "Israel-supported-decision", "Peru-DL-1384-apoyos", "TW-yiding-jianhu", "BankID-fullmakt", "POTENTIAL-UC6", "threshold-signatures", "LLM-agent-governance", "AgentDelegationProof"]
-category: "數位身分與民主理論"
+category: "Digital Identity and Democratic Theory"
 aiModel: "Claude Opus 4.7"
-aiPrompt: "civic-proof series 第 18 篇 F3，承接 article 17 (F2) §4–§7 四件密碼學工程原語與 article 16 (F1) §5.4 三項工程修正、§7.3.1 AgentDelegationProof、article 15 (A15) §6.2 wallet 三重預設退化路徑。selective disclosure 的選項認知負荷如何量化？OpenID4VP DCQL 與 DIF PE v2.1 多 attribute / 多 verifier 場景的決策複雜度（Miller 7±2、Cowan 2001 working memory 4±1、Sweller cognitive load theory、Tversky-Kahneman heuristics）對 CRPD §29 informed consent 要求的工程意涵為何？verifier policy 的 dark patterns 風險如何防護？GDPR cookie banner 與 consent fatigue 在 wallet 場景同型重演的具體機制鏈為何？EU AI Act §5(1)(b) 對 manipulative techniques 之禁止如何延伸到 wallet UX？capacity 變動下的 informed consent 如何工程化？失智、急性醫療、年齡增長三場景之 capacity-aware UX downgrade、定期重評估、supporter 觸發機制？Clinical Dementia Rating（CDR）分級與 wallet UX 階段化的對應為何？supported decision-making 的 UI 三層分離（協助理解層 vs 操作介面層 vs 決定承擔層）如何實作？supporter 在 wallet UX 中的觸控介入邊界（co-presence vs co-signing vs proxy execution）如何透過 chooser_signature 與 comprehension_attestation 分離強制？"
+aiPrompt: "civic-proof series Article 18 F3, building on Article 17 (F2) §4–§7 four cryptographic engineering primitives and Article 16 (F1) §5.4 three engineering corrections, §7.3.1 AgentDelegationProof, Article 15 (A15) §6.2 wallet triple presupposition degradation path. How can the option cognitive load of selective disclosure be quantified? What are the engineering implications for CRPD §29 informed consent requirements of decision complexity (Miller 7±2, Cowan 2001 working memory 4±1, Sweller cognitive load theory, Tversky-Kahneman heuristics) in OpenID4VP DCQL and DIF PE v2.1 multi-attribute / multi-verifier scenarios? How should verifier policy dark-pattern risks be guarded against? What is the specific mechanism chain by which GDPR cookie banners and consent fatigue structurally replay in wallet contexts? How does EU AI Act §5(1)(b)'s prohibition on manipulative techniques extend to wallet UX? How is informed consent under fluctuating capacity engineered? What are the capacity-aware UX downgrade, periodic reassessment, and supporter-trigger mechanisms for dementia, acute medical, and age-related scenarios? What is the correspondence between Clinical Dementia Rating (CDR) staging and wallet UX phased downgrade? How is the UI three-layer separation (assistance-for-understanding layer vs operation interface layer vs decision-bearing layer) of supported decision-making implemented? How are the touch-intervention boundaries of supporters in wallet UX (co-presence vs co-signing vs proxy execution) enforced through separation of chooser_signature and comprehension_attestation?"
 aiPipelineStage: "final"
 aiPipelineId: "research-publishing-pipeline/2026-05-11-selective-disclosure-ux-failure"
 aiGeneratedDate: 2026-05-11
 humanReviewed: false
-lang: "zh-TW"
+lang: "en"
 ---
 
-# 一、導論——從世界事件接地的四項認知-規範摩擦
+## § 1. Introduction: Four Cognitive-Normative Frictions Grounded in World Events
 
-2024 年 7 月 12 日，*Regulation (EU) 2024/1689*（以下稱 EU AI Act）正式於 *Official Journal of the European Union* L 1689/2024 公告，並於同年 8 月 1 日生效；其 Art 5(1)(b) 明文禁止「使用超越人之意識的潛意識技術，或具目的性之操縱或欺騙技術，以致實質扭曲一個人或一群人之行為，從而顯著減損其作出知情決定之能力」<sup>1</sup>。十八個月之後，*European Data Protection Board* 於 2023 年 2 月 14 日通過 *Guidelines 03/2022 on deceptive design patterns in social media platform interfaces* 的 2.0 版，將六大類「Overloading / Skipping / Stirring / Hindering / Fickle / Left in the dark」之 UI 設計與 GDPR Art 5(1)(a)「透明性」原則之違反作正面對位<sup>2</sup>。同一個月，*Nouwens, Liccardi, Veale, Karger, Kagal* 在 *CHI 2020* 發表的「Dark Patterns after the GDPR」公布——在英國前 10,000 個網站之中，僅 11.8% 之 cookie banner 符合 GDPR 的最低同意門檻；32.5% 完全沒有「拒絕」按鈕<sup>3</sup>。把時間軸再推一年，*POTENTIAL Use Case 6* 之 *mid-term technical report* 於 2025 年 9 月公布——122 名 65 歲以上參與 EUDI Wallet 醫療授權試驗的受測者中，47 人把 wallet PIN 直接交給家屬代為操作；同時依 *World Health Organization* 2024 年 *Dementia Fact Sheet*，全球失智盛行人口已達 5,500–5,700 萬，預估 2030 年達 7,800 萬<sup>4,5</sup>。
+On 12 July 2024, *Regulation (EU) 2024/1689* (hereinafter the EU AI Act) was officially published in the *Official Journal of the European Union* L 1689/2024 and entered into force on 1 August of the same year. Its Art 5(1)(b) explicitly prohibits "the use of subliminal techniques beyond a person's consciousness, or purposefully manipulative or deceptive techniques, with the effect of materially distorting the behaviour of a person or a group of persons, thereby causing them significant harm or preventing them from making an informed decision."[^1] Eighteen months later, the *European Data Protection Board* adopted on 14 February 2023 version 2.0 of its *Guidelines 03/2022 on deceptive design patterns in social media platform interfaces*, directly mapping six major categories—"Overloading / Skipping / Stirring / Hindering / Fickle / Left in the dark"—of UI design onto violations of the transparency principle under GDPR Art 5(1)(a).[^2] In the same month, *Nouwens, Liccardi, Veale, Karger, and Kagal* published at *CHI 2020* their study "Dark Patterns after the GDPR," reporting that among the UK's top 10,000 websites, only 11.8% of cookie banners met the minimum GDPR consent threshold, and 32.5% offered no "reject" button whatsoever.[^3] Moving the timeline forward by one year, the *POTENTIAL Use Case 6* mid-term technical report was released in September 2025: among 122 participants aged 65 and above who took part in an EUDI Wallet medical-authorisation trial, 47 had handed their wallet PIN to a family member to operate on their behalf; at the same time, according to the *World Health Organization*'s 2024 *Dementia Fact Sheet*, the global prevalence of dementia had reached 55–57 million, with a projected increase to 78 million by 2030.[^4][^5]
 
-四件事件並非孤立。它們同時陳述了一個結構問題——數位身分系統正以前所未見的速度把「informed consent」工程化為以毫秒級點擊回應為單位的決策行為；而失智、急性醫療、年齡增長三條認知變動路徑使「曾經 informed」與「現在 informed」之間在事實上斷裂。當 *Regulation (EU) 2024/1183*（修訂 eIDAS 2.0）要求各成員國於 2026 年 11 月 21 日前部署 EUDI Wallet<sup>6</sup>、*Implementing Regulation (EU) 2024/2979* 補上技術細則<sup>7</sup>，「無 wallet 即無數位身分」在 6 個 OECD 法域內已是一年內可被觀察的政策事實；同時失智盛行率在 75 歲以上達到 17–25%、85 歲以上達到 30–40%<sup>5</sup>。把這兩件事疊起來，可估算的中高齡 + wallet 強制使用人口在 2026–2030 年於 OECD 範圍內超過 4,000 萬。
+These four events are not isolated. Together they articulate a structural problem: digital identity systems are engineering "informed consent" into decisional acts measured in millisecond-scale clicks at an unprecedented pace, while three pathways of cognitive change—dementia, acute medical conditions, and age-related decline—create a factual rupture between "having been informed" and "being currently informed." When *Regulation (EU) 2024/1183* (amending eIDAS 2.0) requires Member States to deploy the EUDI Wallet by 21 November 2026,[^6] and *Implementing Regulation (EU) 2024/2979* supplies the technical specifications,[^7] "no wallet, no digital identity" has already become an observable policy fact within six OECD jurisdictions within the year. Simultaneously, dementia prevalence reaches 17–25% among persons aged 75 and above, and 30–40% among those aged 85 and above.[^5] Overlaying these two facts, the estimated middle-aged-and-older population subject to mandatory wallet use in the OECD area is projected to exceed 40 million between 2026 and 2030.
 
-本文承接系列前兩篇的工程結論——A15「civic-proof inclusion rights」§6.2 已建立 wallet 三重預設（個人擁有 + 個人識別 + 個人私鑰）的退化路徑<sup>8</sup>；F1「civic AI agent delegation limits」§5.4 為 chooser_signature、audit-by-design、revocation_endpoint 三項工程修正提供密碼學承載<sup>9</sup>；F2「civic receipts provenance」§4–§7 建立 civic-action-receipt 的 14 個欄位群與 V_receipt 函數，並就 30 年保存窗口、法庭可採性、跨境互認分別給出條件性結論<sup>10</sup>。三篇文章在密碼學、保存責任、可採性、跨境互認四層完成了 selective disclosure 的工程承載；但都把「holder 在做出 chooser_signature 之前已具備 informed consent」這個關鍵前提交給後續處理。F2 §11 把這一前提以 `Informed(holder, r)` 記為待開發 6.4「threshold UX」議題。
+The present article builds on the engineering conclusions of the two preceding articles in the series. Article A15, "Civic-Proof Inclusion Rights," §6.2 has already established the degradation paths of the wallet triple presupposition (individual ownership + individual identification + individual private key).[^8] Article F1, "Civic AI Agent Delegation Limits," §5.4 has provided cryptographic bearings for three engineering corrections—chooser_signature, audit-by-design, and revocation_endpoint.[^9] Article F2, "Civic-Action Receipts and the Evidentiary Chain," §4–§7 has established the 14 field-groups of the civic-action receipt and the V_receipt function, and has given conditional conclusions regarding the 30-year preservation window, court admissibility, and cross-border mutual recognition.[^10] These three articles have completed the engineering bearing of selective disclosure at the cryptographic, preservation, admissibility, and cross-border recognition layers—but each has left the critical presupposition that "the holder, prior to producing a chooser_signature, has already given informed consent" for subsequent treatment. Article F2 §11 marks this presupposition as the undeveloped 6.4 "threshold UX" issue, recording it as `Informed(holder, r)`.
 
-本文的研究問題就是 F2 §11 留下的這個 anchor——當密碼學層完成、法律層完成、保存層完成，selective disclosure 之 informed consent 在 UX 層是否仍能成立？以下要回答的具體子問題有四：第一，OpenID4VP DCQL 與 DIF Presentation Exchange v2.1 多 attribute、多 verifier 場景下的決策複雜度，其認知科學的承載上界為何？第二，verifier policy 在 wallet 場景重演 GDPR cookie banner 八年失敗的具體機制鏈為何？工程上需要哪些強制性的設計約束？第三，CDR 變動（從 0、0.5、1、2、3 五階分級）下，「曾經 informed → 現在不 informed」的退化路徑如何透過 UX 工程逐步降階？第四，supporter（不必然為家屬）在 wallet UX 中的「協助理解」與「代為決定」之間，工程上如何強制分離？
+The research question of the present article is precisely this anchor left by F2 §11: once the cryptographic layer, legal layer, and preservation layer are complete, can the informed consent of selective disclosure still be established at the UX layer? The four specific sub-questions to be answered below are as follows. First, what is the cognitive-scientific upper bound of decision complexity in OpenID4VP DCQL and DIF Presentation Exchange v2.1 multi-attribute, multi-verifier scenarios? Second, what is the specific mechanism chain by which verifier policy replays in wallet contexts the eight-year failure of GDPR cookie banners? What mandatory design constraints are required at the engineering level? Third, how does the degradation path from "having been informed → no longer being informed" unfold across CDR stages (0, 0.5, 1, 2, 3) through phased UX downgrade? Fourth, how is the engineering separation between "assistance for understanding" and "decision substitution" enforced in the supporter's role within wallet UX?
 
-本文採論文式結構，與系列前兩篇對齊。第二章建立概念基礎與 forward-link；第三章給出 F3 四件 UX 工程原語的形式骨架（V_ux 函數、四條定理 T_UX1–T_UX4、線性閉包與反饋環路）；第四至第七章分別展開 SA1（認知負荷）、SA2（dark patterns）、SA3（capacity-aware UX 三條替代路徑與中介證據強度評估表）、SA4（supporter UI 三層分離）；第八章為跨法域 process tracing；第九章為反事實壓力測試，含 likelihood × impact 矩陣與三大緩解 critical path；第十章接合系列前作 forward-link 並預告 F4；第十一章列出誠實邊界與三十三條 open questions；第十二章為條件性學術結論。
+The present article adopts a thesis-style structure, aligned with the two preceding articles in the series. Section 2 establishes the conceptual foundations and forward-links. Section 3 presents the formal skeleton of the four F3 UX engineering primitives (the V_ux function, four theorems T_UX1–T_UX4, the linear closure, and feedback loops). Sections 4 through 7 develop SA1 (cognitive load), SA2 (dark patterns), SA3 (capacity-aware UX: three alternative paths and the evidence-strength assessment table), and SA4 (supporter UI three-layer separation), respectively. Section 8 presents cross-jurisdictional process tracing. Section 9 provides counterfactual stress tests, including a likelihood × impact matrix and three major mitigation critical paths. Section 10 connects forward-links to previous articles in the series and previews F4. Section 11 sets out the honesty boundaries and thirty-three open questions. Section 12 presents the conditional academic conclusions.
 
-# 二、概念基礎與 forward-link
 
-本章建立四組必要概念，並承接系列先前已建立的 anchor。為控制章節結構與閱讀動能，本章只設五個子節，將條號對齊、版本修訂等項目併入第十一章誠實邊界。
+## § 2. Conceptual Foundations and Forward-Links
 
-## 2.1 F2 四原語在 critical path 的位置
+This section establishes four necessary conceptual clusters and takes up the anchors already established in the preceding articles of the series. In the interest of controlling section structure and reading momentum, five sub-sections are set out here; matters of clause numbering, version revision, and related items are incorporated into Section 11 (Honesty Boundaries).
 
-F2 已建立四件密碼學工程原語——SA1 cryptosuite 三族（SD-JWT-VC baseline + BBS+ 條件性高階 + ZK-SNARK 範疇受限）、SA2 long-term preservation 30 年下限與三種雙軌設計（設計 A 為加密 backup 加 supporter 持解密鑰但無簽章權、設計 B 為 threshold signatures with supporters in quorum 違反 CRPD §28、設計 C 為 threshold signatures with subject mandatory + supporters as recovery only 屬邊緣可採）、SA3 法庭可採性走 FRE 901(b)(9) 之 holder-controlled 路徑、SA4 跨境互認的 5/10/15 年三段時程估計<sup>10</sup>。四原語在 V_receipt 函數內以六道合取條件 C1–C6 整合，命題 T1–T4 為其形式定理。但 F2 §3.4 明示，V_receipt 之合理性建立在一個未被形式化的前提之上——`Informed(holder, r)`。
+### § 2.1 The Position of F2's Four Primitives in the Critical Path
 
-F3 將 `Informed(holder, r)` 展開為四個合取子句，每子句對應一件 UX 工程原語，並把整體記為 V_ux。對應如下——`CognitiveBounded(r)` 由 UX1（progressive disclosure UI）承擔；`¬DarkPattern(verifier_policy)` 由 UX2（dark patterns firewall）承擔；`CapacityAligned(holder, r)` 由 UX3（capacity-aware consent）承擔；`RoleSeparated(supporter, r)` 由 UX4（supporter UI 三層分離）承擔。V_receipt 在 F3 升級為 V_receipt' ≜ V_receipt ∧ V_ux，並使 critical path 在「presentation 時點」延伸出 holder-side 履行鏈。
+Article F2 has established four cryptographic engineering primitives: SA1 (cryptosuite three families: SD-JWT-VC baseline + BBS+ conditional advanced + ZK-SNARK limited-domain), SA2 (long-term preservation: 30-year minimum and three dual-track designs—Design A: encrypted backup with supporter holding decryption key but no signing authority; Design B: threshold signatures with supporters in quorum, violating CRPD §28; Design C: threshold signatures with mandatory subject participation plus supporters as recovery only, a borderline-admissible option), SA3 (court admissibility following the FRE 901(b)(9) holder-controlled path), and SA4 (cross-border mutual recognition with three-phase timeline estimates of 5/10/15 years).[^10] The four primitives are integrated within the V_receipt function through six conjunctive conditions C1–C6, with formal theorems T1–T4 as their bearings. However, F2 §3.4 explicitly states that the coherence of V_receipt rests on a presupposition that has not been formalised—`Informed(holder, r)`.
 
-## 2.2 三組關鍵概念的精細區分
+Article F3 unfolds `Informed(holder, r)` into four conjunctive sub-clauses, each corresponding to one UX engineering primitive, recorded collectively as V_ux. The correspondence is as follows: `CognitiveBounded(r)` is borne by UX1 (progressive disclosure UI); `¬DarkPattern(verifier_policy)` is borne by UX2 (dark patterns firewall); `CapacityAligned(holder, r)` is borne by UX3 (capacity-aware consent); `RoleSeparated(supporter, r)` is borne by UX4 (supporter UI three-layer separation). In F3, V_receipt is upgraded to V_receipt' ≜ V_receipt ∧ V_ux, extending the critical path at the "presentation moment" into a holder-side performance chain.
 
-本系列在 F3 之前多次使用「informed consent」「dark patterns」「capacity」三組概念，但其範疇邊界須在進入形式骨架之前明示。
+### § 2.2 Precise Distinctions Among Three Key Conceptual Clusters
 
-第一組區分——`informed consent` 在規範層出自 GDPR Recital 32（freely given, specific, informed, unambiguous）與 CRPD General Comment No. 1 §29（understanding the nature, purpose and likely consequences）。前者是資料保護法上的同意有效性要件，後者是「平等行使法律能力」之 supported decision-making 要件。兩者在 wallet 場景並非同一物——GDPR 同意若 supported decision-making 失敗仍可能在法律上有效（資料保護法不要求 holder 具備 supported decision-making 能力），CRPD 之 supported decision-making 若資料保護同意失敗則同時失敗。
+The series has employed three conceptual clusters—"informed consent," "dark patterns," and "capacity"—multiple times prior to F3, but their scope boundaries must be made explicit before entering the formal skeleton.
 
-第二組區分——`dark patterns` 出自 Brignull (2010) 的 11 類分類<sup>11</sup>、Mathur et al. (2019) 的七類精煉<sup>12</sup>、EDPB Guidelines 03/2022 的六大類別<sup>2</sup>、EU AI Act §5(1)(b) 的「subliminal or manipulative techniques」<sup>1</sup>四源並集。dark patterns 範疇廣於 GDPR Art 5(1)(a) 透明度違反——其包含心理操控、認知偏誤利用、選項對稱性破壞，不全部涉及資料保護。F3 將 dark patterns 偵測函數 D(verifier_policy) 之 forbidden_patterns 清單以此四源並集為來源。
+The first cluster: `informed consent` derives at the normative level from GDPR Recital 32 (freely given, specific, informed, unambiguous) and CRPD General Comment No. 1 §29 (understanding the nature, purpose, and likely consequences). The former is a validity condition for consent under data protection law; the latter is the supported decision-making condition for "equal exercise of legal capacity." The two are not identical in wallet contexts: GDPR consent may remain legally valid even if supported decision-making fails (data protection law does not require the holder to possess supported decision-making capacity), whereas if CRPD-level supported decision-making fails, data protection consent fails simultaneously.
 
-第三組區分——`capacity` 在臨床上以 Clinical Dementia Rating（CDR）五階分級（0、0.5、1、2、3）承載<sup>13</sup>，對應 WHO ICD-11 6D80（mild）/ 6D81（moderate）/ 6D82（severe）三級分級<sup>14</sup>。但 CRPD GC1 §15 明示「mental capacity」概念本身具歧視風險、§29 反對任何 functional capacity test 作為法律能力判定之依據<sup>15</sup>。本文採嚴格立場——CDR 為「目標分級語言」（用於 UX 工程上的階段化降階），非醫療判定，wallet 端不主張對 capacity 之醫學判定權。三條替代路徑（self-assessment / supporter triggered / issuer hint）各自如何處理此規範性張力，第六章詳述。
+The second cluster: `dark patterns` draws from four sources in combination—Brignull's (2010) eleven-category classification,[^11] Mathur et al.'s (2019) seven-category refinement,[^12] EDPB Guidelines 03/2022's six major categories,[^2] and EU AI Act §5(1)(b)'s "subliminal or manipulative techniques."[^1] The dark-patterns domain is broader than a violation of GDPR Art 5(1)(a) transparency: it encompasses psychological manipulation, exploitation of cognitive biases, and asymmetric option design, not all of which involve data protection. In F3, the `forbidden_patterns` list of the dark-patterns detection function D(verifier_policy) derives from this four-source union.
 
-## 2.3 supporter ≠ guardian ≠ 家屬
+The third cluster: `capacity` is borne clinically by the five-stage Clinical Dementia Rating (CDR) scale (0, 0.5, 1, 2, 3),[^13] corresponding to the WHO ICD-11 three-tier classification 6D80 (mild) / 6D81 (moderate) / 6D82 (severe).[^14] However, CRPD GC1 §15 explicitly states that the concept of "mental capacity" itself carries a risk of discrimination, and §29 opposes any functional capacity test as a basis for determining legal capacity.[^15] The present article adopts a strict stance: CDR serves as "target staging language" (for phased downgrade in UX engineering), not as a medical determination—the wallet does not claim authority to make medical determinations of capacity. How each of the three alternative paths (self-assessment / supporter-triggered / issuer-side hint) handles this normative tension is addressed in Section 6.
 
-CRPD §29 supporter 是「當事人預先指定之第三方支援者」<sup>15</sup>。在規範文本中明白列舉「family member, friend, support worker, advocate, peer or any other person the person with disabilities trusts」——即家屬僅是 supporter 五類可能來源之一，並非預設。supporter 範疇與 guardian 範疇有三項根本差別——啟動條件（supporter 不需法院監護宣告；guardian 需）、角色性質（supporter 為協助理解，不替代決定；guardian 為代為決定）、可替代性（supporter 不可替代；guardian 在傳統法律框架下可以替代）。
+### § 2.3 Supporter ≠ Guardian ≠ Family Member
 
-台灣意定監護新制（民法 §1110、§1113-2 至 §1113-10，2019 年 6 月 21 日施行）<sup>16</sup>建立了本人與受任人事前約定「於本人受監護宣告時，受任人允為擔任監護人」之契約機制，但其法律承載仍為 guardian 角色（黃詩淳 2020 對此有詳述<sup>17</sup>）。三項銜接 gap——啟動條件以「監護宣告」為要件、角色仍是 substituted、範疇對象為單一指定的監護人——使台灣場域 CRPD §29 supporter 之私法承載不完整。本文每次出現 supporter 處皆依以下三項邊界宣告處理：**(B1)** supporter 由 holder 預先指定；**(B2)** supporter 可為家屬、社工、長照員、信託代表、自選同儕，不限於家屬；**(B3)** 台灣場域受意定監護新制限制，supporter 法律承載不完整。
+The CRPD §29 supporter is "a third-party support person pre-designated by the individual."[^15] The normative text explicitly lists "family member, friend, support worker, advocate, peer or any other person the person with disabilities trusts"—that is, family members are only one of five possible supporter categories, not the default. The supporter category differs from the guardian category in three fundamental respects: the triggering condition (a supporter does not require a court guardianship declaration; a guardian does); the nature of the role (a supporter assists with understanding and does not substitute for the decision; a guardian substitutes for the decision); and substitutability (a supporter cannot be substituted; a guardian, within traditional legal frameworks, can be).
 
-## 2.4 progressive disclosure 不等於 wizard UI
+Taiwan's intended guardianship (*yì dìng jiānhù*) system (Civil Code §1110, §1113-2 through §1113-10, entered into force 21 June 2019)[^16] establishes a contractual mechanism by which a person and a designated agent agree in advance that the agent will serve as guardian when the person is declared to be under guardianship—but its legal bearing remains that of the guardian role (as analysed in detail by Huang Shichun 2020).[^17] Three interface gaps: the triggering condition requires a "guardianship declaration"; the role remains substituted; the scope is limited to a single designated guardian. These three gaps render the private-law bearing of CRPD §29 supporters in the Taiwan jurisdiction incomplete. Every instance of "supporter" in the present article is governed by the following three boundary declarations: **(B1)** the supporter is pre-designated by the holder; **(B2)** the supporter may be a family member, social worker, care staff member, trust representative, or self-selected peer—not limited to family; **(B3)** in the Taiwan jurisdiction, the legal bearing of supporters is incomplete due to constraints of the intended guardianship system.
 
-`progressive disclosure` 是認知科學概念——逐次呈現有限資訊以降低認知負荷；其工程實作至少有三種變體——wizard UI（步驟分頁，每步 ≤ 3 group，central executive 序列載入）、accordion UI（折疊展開，折疊狀態下 extraneous load 低）、paginated UI（分頁瀏覽，每頁固定 group 數）。三種變體在 wallet 場景的 ecological validity 並無對照研究，本文於相關章節分別處理；不採「wizard UI 即 progressive disclosure」之化約。
+### § 2.4 Progressive Disclosure Is Not the Same as Wizard UI
 
-## 2.5 與 F1 RT-ℬ ✗ / AA-ℬ ✗ 邊界的關係
+`Progressive disclosure` is a cognitive-science concept—the stepwise presentation of limited information to reduce cognitive load. Its engineering implementations include at least three variants: wizard UI (step-by-step paging, ≤ 3 groups per step, sequential central executive loading); accordion UI (collapsible sections, low extraneous load in collapsed state); and paginated UI (fixed number of groups per page). No comparative studies of the ecological validity of these three variants in wallet contexts exist. The present article treats each separately in the relevant section and does not adopt the reductive equation "wizard UI = progressive disclosure."
 
-F1（系列 article 16）§5.3 之 W4 反論與 §7 已建立兩條常駐型不可委任邊界——RT-ℬ ✗（責任承擔需 first-personal mens rea）與 AA-ℬ ✗（contestation bearer 需 Pettit active-stance）<sup>9</sup>。F3 之四件 UX 工程原語完全在 Z₂ 範圍內運作，對此兩條邊界不主張任何 UX 工程可達性。第三章將以擴充定理 T2' 明示——對 RT-ℬ ✗ 與 AA-ℬ ✗ 兩 cell，不存在任何 UX 原語子集合使退化機率 P_degrade 落於門檻 θ₂ 以下。第九章 §9.5 將處理 CF5（LLM-agent 補位）對此兩條邊界的「工程實作層延伸誠實邊界」。
+### § 2.5 Relationship to F1's RT-ℬ ✗ / AA-ℬ ✗ Boundaries
 
-# 三、形式骨架——四件 UX 工程原語、V_ux 函數、四條定理、critical path
+Article F1 (series Article 16) §5.3 Counter-argument W4 and §7 have established two permanent non-delegable boundaries: RT-ℬ ✗ (responsibility-bearing requires first-personal mens rea) and AA-ℬ ✗ (the contestation bearer requires Pettit's active-stance).[^9] The four F3 UX engineering primitives operate entirely within the Z₂ zone and advance no reachability claim for either boundary through UX engineering. Section 3 will make this explicit through extended theorem T2': for the RT-ℬ ✗ and AA-ℬ ✗ cells, no UX primitive subset σ_ux reduces the degradation probability P_degrade below threshold θ₂. Section 9 §9.5 will address the "engineering implementation layer extended honesty boundary" that CF5 (LLM-agent substitution) poses for these two boundaries.
 
-## 3.1 四件 UX 工程原語的形式 schema
 
-四件 UX 工程原語每件至少六個欄位，採與 F2 §3.1 一致之兩層計數規約（欄位群 / leaf field）。
+## § 3. Formal Skeleton: Four UX Engineering Primitives, the V_ux Function, Four Theorems, and the Critical Path
 
-### UX1 progressive_disclosure_ui
+### § 3.1 Formal Schema of the Four UX Engineering Primitives
+
+Each of the four UX engineering primitives contains at least six fields, adopting the two-tier counting convention (field-groups / leaf fields) consistent with F2 §3.1.
+
+#### UX1 progressive_disclosure_ui
 
 ```
 progressive_disclosure_ui {
   attribute_count               : Integer
-  cognitive_load_threshold      : Integer  = 3          // 上界，Cowan 4±1 下界錨
+  cognitive_load_threshold      : Integer  = 3          // upper bound, anchored at Cowan 4±1 lower bound
   display_layers                : Integer  ≥ 2
   issuer_supplied_defaults      : Map<Attr, Bool>
   per_item_override             : Bool     = true
   disclosure_session_id         : UUID
-  attribute_groups              : List<AttrGroup>       // 對應 DIF PE v2.1 input_descriptors
+  attribute_groups              : List<AttrGroup>       // corresponds to DIF PE v2.1 input_descriptors
   comprehension_checkpoint      : Hash | null
-  ref_securing_mechanism        : URI                   // 對應 W3C VCDM v2.0 §4.12
-  ref_pe_submission_requirement : URI                   // 對應 DIF PE v2.1 submission_requirements
+  ref_securing_mechanism        : URI                   // corresponds to W3C VCDM v2.0 §4.12
+  ref_pe_submission_requirement : URI                   // corresponds to DIF PE v2.1 submission_requirements
 }
 ```
 
-### UX2 dark_patterns_firewall
+#### UX2 dark_patterns_firewall
 
 ```
 dark_patterns_firewall {
@@ -98,7 +100,7 @@ dark_patterns_firewall {
 }
 ```
 
-### UX3 capacity_aware_consent
+#### UX3 capacity_aware_consent
 
 ```
 capacity_aware_consent {
@@ -108,12 +110,12 @@ capacity_aware_consent {
   reassessment_period_days    : Integer  ≤ 180          // CRPD §29 regular review
   ui_downgrade_level          : Enum {none, simplified, supporter-required, blocked}
   downgrade_trigger_rule      : Predicate
-  comprehension_attestation   : Signature                // 與 chooser_signature 分離
+  comprehension_attestation   : Signature                // separated from chooser_signature
   ref_crpd_gc1_section        : URI = "GC1 §29"
 }
 ```
 
-### UX4 supporter_ui_three_layer
+#### UX4 supporter_ui_three_layer
 
 ```
 supporter_ui_three_layer {
@@ -121,20 +123,20 @@ supporter_ui_three_layer {
   layer_2_operation_interface  : LayerSpec
   layer_3_decision_bearing     : LayerSpec
   supporter_signature_l1       : Signature | null
-  subject_signature_l3         : Signature                // 必須
+  subject_signature_l3         : Signature                // required
   l2_signature                 : Signature
   signatures_disjoint          : Bool = true              // supporter_signature_l1 ≠ subject_signature_l3
   supporter_role_scope         : Enum {family, social-worker, care-staff, trust-representative, peer, other}
-  ref_did_verificationmethod   : URI                      // 對應 W3C DID v1.0 §5
+  ref_did_verificationmethod   : URI                      // corresponds to W3C DID v1.0 §5
   ref_crpd_supporter_principle : URI = "GC1 §29"
 }
 ```
 
-四件原語對應的密碼學承載——UX1 對應 W3C VCDM v2.0 §4.12 securing mechanisms<sup>18</sup>與 DIF PE v2.1 submission_requirements<sup>19</sup>；UX2 對應 OpenID4VP draft-23/draft-24 之 `presentation_definition` 與 `transaction_data` extension<sup>20</sup>；UX3 對應 EUDI Wallet ARF 2025-12 iteration §6.6.3.9 user binding<sup>21</sup>；UX4 對應 W3C DID Core v1.0 §5 verificationMethod 與 §8 controller-subject 分離<sup>22</sup>。
+The cryptographic bearings for the four primitives are as follows: UX1 corresponds to W3C VCDM v2.0 §4.12 securing mechanisms[^18] and DIF PE v2.1 submission_requirements;[^19] UX2 corresponds to OpenID4VP draft-23/draft-24's `presentation_definition` and `transaction_data` extension;[^20] UX3 corresponds to EUDI Wallet ARF 2025-12 iteration §6.6.3.9 user binding;[^21] UX4 corresponds to W3C DID Core v1.0 §5 verificationMethod and §8 controller-subject separation.[^22]
 
-## 3.2 V_ux 函數
+### § 3.2 The V_ux Function
 
-延續 F2 V_receipt 風格，將四件原語對應到四道合取子句 C7–C10：
+Following the style of F2's V_receipt function, the four primitives are mapped onto four conjunctive sub-clauses C7–C10:
 
 ```
 V_ux(r) ≜
@@ -170,11 +172,11 @@ V_receipt'(r) ≜ V_receipt(r) ∧ V_ux(r)
               ≡ (C1 ∧ C2 ∧ C3 ∧ C4 ∧ C5 ∧ C6) ∧ (C7 ∧ C8 ∧ C9 ∧ C10)
 ```
 
-D 為 dark patterns 偵測函數（C8 內部已展開為 forbidden_patterns 集合差），ExtractPatterns 為 verifier policy 之 pattern 提取函數；KeyDistinct 與 VerificationMethodDisjoint 為密碼學層硬約束輔助函數。θ_inform = 0.5 與 θ_2 = 0.7 為分析性建議數，下界錨於 Cowan 4±1 與 F1 §3.2 既有 P_degrade 定義，待 pilot study 校準。
+D is the dark-patterns detection function (C8 is internally expanded into the forbidden_patterns set-difference); ExtractPatterns is the pattern-extraction function for verifier policy; KeyDistinct and VerificationMethodDisjoint are auxiliary cryptographic hard-constraint functions. θ_inform = 0.5 and θ_2 = 0.7 are analytic suggestion thresholds, anchored at the lower bound of Cowan's 4±1 and the existing P_degrade definition from F1 §3.2, pending calibration by pilot study.
 
-## 3.3 critical path 線性閉包與反饋環路
+### § 3.3 The Linear Closure and Feedback Loops of the Critical Path
 
-F2 critical path 在密碼學層為 SA1 → SA2 → SA3 → SA4（每段為下游必要前提）。F3 在 UX 履行層之 critical path 為——
+The F2 critical path at the cryptographic layer runs SA1 → SA2 → SA3 → SA4 (each segment is a necessary precondition for the downstream one). The F3 critical path at the UX performance layer is:
 
 ```
 UX1 ─[D7]─▶ UX2 ─[D8]─▶ UX3 ─[D9]─▶ UX4
@@ -183,42 +185,42 @@ UX1 ─[D7]─▶ UX2 ─[D8]─▶ UX3 ─[D9]─▶ UX4
  bound)      firewall)
 ```
 
-依賴 D7（UX1 → UX2）的形式條件——`∀ r : C8(r) 有意義 ⇒ C7(r) = true`；若 `attribute_count > cognitive_load_threshold`，holder 進入「機械點擊接受」狀態，verifier 的 dark pattern 不需被主動偵測，因 holder 已不在決策狀態。依賴 D8（UX2 → UX3）的形式條件——`∀ r : C9(r) 有意義 ⇒ C8(r) = true`；若 verifier policy 含 dark patterns，capacity_aware downgrade 之有效性即被吃掉。依賴 D9（UX3 → UX4）的形式條件——`∀ r : C10(r) 有意義 ⇒ C9(r) = true`；若 capacity_state 誤判，supporter 介入路徑根本不會被觸發。
+The formal condition for dependency D7 (UX1 → UX2): `∀ r : C8(r) is meaningful ⇒ C7(r) = true`; if `attribute_count > cognitive_load_threshold`, the holder enters a "mechanical click-to-accept" state, and verifier dark patterns need not be actively detected, because the holder is no longer in a decisional state. The formal condition for D8 (UX2 → UX3): `∀ r : C9(r) is meaningful ⇒ C8(r) = true`; if the verifier policy contains dark patterns, the efficacy of capacity-aware downgrade is consumed. The formal condition for D9 (UX3 → UX4): `∀ r : C10(r) is meaningful ⇒ C9(r) = true`; if capacity_state is mis-assessed, the supporter-intervention path will not be triggered at all.
 
-線性閉包之外，存在兩條反饋環路。**SA3 → SA4**——capacity_state ∈ {moderate, severe} 自動觸發 supporter UI widget 載入。**SA4 → SA1**——supporter 介入時 progressive disclosure UI 重組為「supporter-assisted simplified」mode，attribute_count 上界從 ≤ 3 降至 ≤ 2、display_layers 從 2 增至 3。兩條反饋環路意味著 F3 critical path 已非有向無環圖（DAG），構成含有限循環的系統圖；但循環在 protocol 與 schema 層仍可被靜態驗證——signatures_disjoint = true 與 capacity_state 之單調退化兩個不變式共同消除無限循環。
+Beyond the linear closure, two feedback loops exist. **SA3 → SA4**: capacity_state ∈ {moderate, severe} automatically triggers loading of the supporter UI widget. **SA4 → SA1**: when a supporter intervenes, the progressive disclosure UI is reorganised into "supporter-assisted simplified" mode, lowering the attribute_count upper bound from ≤ 3 to ≤ 2 and raising display_layers from 2 to 3. The two feedback loops mean that the F3 critical path is no longer a directed acyclic graph (DAG); it constitutes a system graph with finite cycles. However, the cycles remain statically verifiable at the protocol and schema layers—the two invariants of signatures_disjoint = true and the monotonic degradation of capacity_state jointly eliminate infinite loops.
 
-## 3.4 四條形式定理
+### § 3.4 Four Formal Theorems
 
-**T_UX1（認知負荷退化定理）**：
+**T_UX1 (Cognitive Load Degradation Theorem)**:
 
 ```
 ∀ presentation p :
   attribute_count(p) > 3 ⇒ P(informed_consent(p) = true) < θ_inform
 ```
 
-其中 θ_inform ≈ 0.5 為「informed consent 有效機率」之保守下界，attribute_count 計入 DIF PE v2.1 `input_descriptors` 條目數加上 OpenID4VP `presentation_definition` 之 distinct attribute group 數。證據基礎為 Cowan (2001) working memory 4±1 chunks 之下界<sup>23</sup>、Sweller cognitive load theory 之 extraneous load 在 UI 層放大效應<sup>24</sup>、Bohme & Köpsell (2010) consent dialogue 習慣化點擊實證<sup>25</sup>。θ_inform = 0.5 為「分析性建議數」，wallet 場景之 pilot study 尚未校準。
+where θ_inform ≈ 0.5 is the conservative lower bound for "probability of valid informed consent," and attribute_count counts both the number of DIF PE v2.1 `input_descriptors` entries and the number of distinct attribute groups in the OpenID4VP `presentation_definition`. The evidential basis consists of Cowan (2001) working memory 4±1 chunks lower bound,[^23] Sweller's cognitive load theory amplification of extraneous load at the UI layer,[^24] and Bohme & Köpsell's (2010) empirical evidence of habituation clicking in consent dialogues.[^25] θ_inform = 0.5 is an "analytic suggestion value"; no pilot study in wallet-specific ecological conditions has yet been conducted.
 
-**T_UX2（dark patterns 反向使用定理）**：
+**T_UX2 (Dark Patterns Reverse-Application Theorem)**:
 
 ```
 ∀ r : D(r.verifier_policy_hash) = 1 ⇒ V_ux(r) = false
                                     ⇒ V_receipt'(r) = false
-                                    ⇒ CRPD §29 反向使用風險(r) = high
+                                    ⇒ CRPD §29 reverse-application risk(r) = high
 ```
 
-證據基礎為 EDPB Guidelines 03/2022 §4 對 GDPR Art 5(1)(a) 透明度違反之認定<sup>2</sup>；EU AI Act Art 5(1)(b)「materially distorting the behaviour」之直接禁止<sup>1</sup>；Solove (2013) privacy self-management consent dilemma 對「同意」之結構性質疑<sup>26</sup>。本定理把 F2 §11 既有的「CRPD §29 反向使用議題」轉為 V_receipt' 之硬條件。
+The evidential basis consists of EDPB Guidelines 03/2022 §4's attribution of GDPR Art 5(1)(a) transparency violations;[^2] EU AI Act Art 5(1)(b)'s direct prohibition on "materially distorting the behaviour";[^1] and Solove's (2013) structural critique of the "consent" mechanism in privacy self-management.[^26] This theorem formalises the "CRPD §29 reverse-application risk" already flagged in F2 §11 as a hard condition of V_receipt'.
 
-**T_UX3（capacity–supported decision 退化機率定理）**：
+**T_UX3 (Capacity–Supported-Decision Degradation Probability Theorem)**:
 
 ```
 ∀ holder h, receipt r :
   ( capacity_state(h) ∈ {moderate, severe, terminal} ∧ ui_downgrade_level(r) = none )
-    ⇒ P(supported → substituted 退化) ≥ θ_2
+    ⇒ P(supported → substituted degradation) ≥ θ_2
 ```
 
-其中 θ_2 ≈ 0.7 採 F1 §3.2 既有定義之退化機率上界。本定理採 mechanism-based likelihood 表述——在無 UX 工程修正下，依據 A15 §6.2 三重預設、Cowan 認知上界、Estonia / 日本 / 北歐既有實證之退化模式，CDR ≥ 2 場景 wallet 操作退化為家屬代簽之觸發機率為 medium-high（保守估計 ≥ 50%，須 pilot study 校準）。明示「機率」非「確定性」。
+where θ_2 ≈ 0.7 adopts the existing degradation probability upper bound defined in F1 §3.2. This theorem employs mechanism-based likelihood: in the absence of UX engineering corrections, based on the triple presupposition in A15 §6.2, Cowan's cognitive upper bound, and the degradation patterns observed in existing Estonia / Japan / Nordic empirical data, the trigger probability of wallet operation degrading to family-member proxy signing in CDR ≥ 2 scenarios is medium-high (conservative estimate ≥ 50%, requiring pilot study calibration). "Probability" is explicitly distinguished from "certainty."
 
-**T_UX4（supporter 不可替代密碼學硬約束定理）**：
+**T_UX4 (Supporter Irreplaceability Cryptographic Hard Constraint Theorem)**:
 
 ```
 ∀ r :
@@ -227,582 +229,591 @@ UX1 ─[D7]─▶ UX2 ─[D8]─▶ UX3 ─[D9]─▶ UX4
   ⇒ ¬CryptographicallyCollapsible( supporter, subject, r )
 ```
 
-CRPD §29「supporter 必要、不可替代」原則之密碼學層硬約束。一旦 schema enforce signatures_disjoint = true 且 VerificationMethodDisjoint = true，無論 supporter 如何被操作介入，supporter_signature_l1 與 subject_signature_l3 在密碼學層恆不可互替。注意——本定理只在 schema enforce 層成立；wallet 實作允許 supporter 用 subject 之 PIN 解鎖並產出 subject_signature_l3 之路徑，仍是已知 gap（O_UX1）。
+This is the cryptographic hard constraint for the CRPD §29 principle that "the supporter is necessary and irreplaceable." Once the schema enforces signatures_disjoint = true and VerificationMethodDisjoint = true, regardless of how the supporter intervenes operationally, supporter_signature_l1 and subject_signature_l3 remain permanently non-interchangeable at the cryptographic layer. Note: this theorem holds only at the schema enforcement layer. A known gap remains (O_UX1): wallet implementations that allow a supporter to unlock the subject's PIN and produce subject_signature_l3 through that path.
 
-## 3.5 T2'：RT-ℬ ✗ / AA-ℬ ✗ 邊界明示
+### § 3.5 T2': Explicit Statement of RT-ℬ ✗ / AA-ℬ ✗ Boundaries
 
-F2 定理 T2 已建立——對 RT-ℬ ✗ 與 AA-ℬ ✗ 兩 cell，不存在 σ ⊆ {SA1, SA2, SA3, SA4} 使 P_degrade ≤ θ₂。F3 將 T2 擴充為 T2'：
+F2 theorem T2 has already established that for the RT-ℬ ✗ and AA-ℬ ✗ cells, no σ ⊆ {SA1, SA2, SA3, SA4} reduces P_degrade ≤ θ₂. F3 extends T2 to T2':
 
 ```
-T2'（F3 擴充版 Z₃-intrinsic 不可達引理）：
+T2' (F3 Extended Z₃-Intrinsic Unreachability Lemma):
   ∀ cell ∈ {RT-ℬ ✗, AA-ℬ ✗} :
     ¬∃ σ_ux ⊆ {UX1, UX2, UX3, UX4} : P_degrade(cell, σ_ux) ≤ θ_2
 ```
 
-理由——RT-ℬ ✗ 之根本問題是「責任承擔需 first-personal mens rea」。UX1 progressive_disclosure_ui 可降低認知負荷，但無法產生 mens rea 之第一人稱性；即使 attribute_count = 1（最簡情境）、capacity_state = full（完全認知狀態）、supporter 不介入（無分擔），AI agent 在 RT-ℬ 邊界執行之決策仍不能由 holder 產生 mens rea。AA-ℬ ✗ 之根本問題是「contestation bearer 需 Pettit active-stance」<sup>27</sup>。UX2 dark_patterns_firewall 可保護 holder 不被誤導，但無法產生 contestation 之 active-stance——這是存在論失能，UX 工程無從觸及。任何宣稱「UX 工程原語可解決 AI 代理根本責任問題」之論述都違反 T2'。
+The reasoning: the fundamental problem of RT-ℬ ✗ is that "responsibility-bearing requires first-personal mens rea." UX1 progressive_disclosure_ui can reduce cognitive load but cannot generate the first-personal character of mens rea; even with attribute_count = 1 (simplest scenario), capacity_state = full (full cognitive state), and no supporter intervention (no division of burden), an AI agent's decision executed at the RT-ℬ boundary still cannot generate mens rea on the part of the holder. The fundamental problem of AA-ℬ ✗ is that "the contestation bearer requires Pettit's active-stance."[^27] UX2 dark_patterns_firewall can protect the holder from being misled, but cannot generate the active-stance of contestation—this is an ontological incapacity that UX engineering cannot reach. Any claim that "UX engineering primitives can resolve the fundamental responsibility problem of AI agents" violates T2'.
 
-# 四、SA1——認知負荷上界與 progressive disclosure UI
 
-## 4.1 從 Miller 7±2 到 Cowan 4±1 的當代修訂
 
-*Miller (1956)* 「The Magical Number Seven, Plus or Minus Two」於 *Psychological Review* 63(2): 81–97 之原始主張是——immediate memory 之 chunk 容量約為 7±2 個 unrelated items<sup>28</sup>。然而 Miller 本人在原文已強調三項限制：chunk 之大小可變動、recall 任務在零干擾條件下測量、chunk 之形成依賴先驗知識。*Cowan (2001)* 在 *Behavioral and Brain Sciences* 24(1): 87–114 之 target article 系統性回顧後三十年實驗，提出三項修訂——其一，7±2 混淆了 short-term memory（STM, 被動儲存如 digit span）與 working memory（WM, 主動操弄如 operation span）兩個構念；其二，WM 之容量上界為 4±1，且在控制 chunking、rehearsal、long-term memory 介入後相當穩定；其三，focus of attention（注意焦點）是 WM 容量之關鍵調節變數<sup>23</sup>。*Cowan (2010)* 之 *Current Directions in Psychological Science* 19(1): 51–57 進一步補充——在 dual-task 條件下 WM 容量降至 3±1；在 time pressure 條件下進一步壓至 2–3<sup>29</sup>。
+## § 4. SA1: Cognitive Load Upper Bounds and Progressive Disclosure UI
 
-*Baddeley (1992, 2003)* working memory 模型在此提供細部機制——wallet 多 attribute 決策同時占用 visuospatial sketchpad（attribute label 圖像解析、verifier logo 識別、按鈕位置追蹤）與 central executive（必要性評估、後果推理、揭露 trade-off）<sup>30,31</sup>。兩個組件共享有限資源，attribute label 越多、視覺複雜度越高，central executive 可用於 informed consent reasoning 之資源就越少。
+### § 4.1 From Miller's 7±2 to the Contemporary Revision of Cowan's 4±1
 
-任何 wallet 場景的認知上界推估都必須以 Cowan 4±1 為基線、Miller 7±2 為背景。本文於相關章節嚴守此區分。
+*Miller (1956)* "The Magical Number Seven, Plus or Minus Two" (*Psychological Review* 63(2): 81–97) advanced the original claim that the chunk capacity of immediate memory is approximately 7±2 unrelated items.[^28] However, Miller himself already emphasised three limitations in the original text: chunk size is variable, recall tasks are measured under zero-interference conditions, and chunk formation depends on prior knowledge. *Cowan (2001)* in *Behavioral and Brain Sciences* 24(1): 87–114 systematically reviewed three decades of subsequent experiments and proposed three revisions: first, 7±2 conflates short-term memory (STM, passive storage such as digit span) with working memory (WM, active manipulation such as operation span); second, the upper bound of WM capacity is 4±1, and is quite stable when chunking, rehearsal, and long-term memory intervention are controlled; third, the focus of attention is the key moderating variable for WM capacity.[^23] *Cowan (2010)* in *Current Directions in Psychological Science* 19(1): 51–57 further notes that WM capacity drops to 3±1 under dual-task conditions and is further compressed to 2–3 under time pressure.[^29]
 
-## 4.2 「≤ 3 attribute group」為分析性建議數
+*Baddeley (1992, 2003)*'s working memory model provides the detailed mechanism: wallet multi-attribute decisions simultaneously occupy the visuospatial sketchpad (parsing attribute label graphics, recognising verifier logos, tracking button positions) and the central executive (necessity assessment, consequence reasoning, disclosure trade-offs).[^30][^31] The two components share limited resources; the more attribute labels and the higher the visual complexity, the fewer resources the central executive has available for informed consent reasoning.
 
-由 Cowan 4±1 推到 wallet 場景之 ≤ 3，本文採三項保守係數——其一，wallet 即時決策的 time pressure 高於實驗室任務（公共場合決策時間 ≤ 3 秒）；其二，公共場合（捷運閘門、藥局櫃台、銀行櫃檯）的 attentional noise 顯著；其三，決策後果 stakes 高且不可逆（揭露的屬性無法收回）。三項保守係數使「working memory 上界 4」進一步壓到「可履行的 attribute group 上界 3」。
+Any estimate of the cognitive upper bound for wallet scenarios must treat Cowan's 4±1 as the baseline and Miller's 7±2 as background. This article strictly observes this distinction throughout all relevant sections.
 
-關鍵誠實邊界——「≤ 3」為**分析性建議數（analytical recommendation）**，並非實驗測得；wallet 場景之 ecologically valid pilot study 尚未存在。POTENTIAL UC6 mid-term technical report 2025-09 之公開版本顯示「2 → 5 group 場景的正確識別率從 ≥ 80% 降至 ≤ 50%」<sup>32</sup>，雖未直接驗證「3」這個切點，但顯示超過 3–4 group 後正確率顯著退化之趨勢與 Cowan 4±1 + 三保守係數推估方向一致。final 數值之精確化須待 EUDI POTENTIAL 與 EWC、DC4EU、NOBID 各 LSP 之 final report（預計 2026 Q3 之後）發布。同時須明示，主流認知科學研究多在 WEIRD 樣本（Western, Educated, Industrialized, Rich, Democratic）中進行，台灣與非 WEIRD 法域之適用性未充分驗證。
+### § 4.2 "≤ 3 Attribute Groups" as an Analytical Recommendation
 
-## 4.3 Sweller cognitive load theory 對 wallet 的 extraneous load 切點
+In deriving the ≤ 3 wallet-scenario figure from Cowan's 4±1, this article applies three conservative correction factors: first, the time pressure of real-time wallet decisions is higher than that of laboratory tasks (decision time in public settings ≤ 3 seconds); second, attentional noise in public settings (metro gates, pharmacy counters, bank tellers) is significantly elevated; third, the stakes of decision consequences are high and irreversible (disclosed attributes cannot be recalled). The conjunction of three conservative factors compresses the "WM upper bound of 4" further to a "practically enforceable attribute group upper bound of 3."
 
-*Sweller (1988)* 把任務認知負荷分為 intrinsic load（任務本質的複雜度）、extraneous load（介面引入之非任務必要負荷）、germane load（對 schema 建構有貢獻之學習負荷）三類<sup>24</sup>。*Sweller & Chandler (1994)* 進一步論證，在 element interactivity 高之任務中 extraneous load 之削減特別關鍵<sup>33</sup>。對 wallet 場景之對應——wallet 多 attribute 決策的 intrinsic load 相對固定（「我願不願意揭露我的姓名 / 出生日期 / 居住國家給這個 verifier」是 fixed），extraneous load 是工程可控變數（介面如何呈現屬性、分組、必要 vs 選用標示、verifier 身分顯示、按鈕對稱性），germane load 在 wallet 場景幾乎不存在（wallet 不是學習介面）。progressive disclosure 之本質即 extraneous load 之工程削減——一次只呈現一個 attribute group，避免 split attention（注意力分裂）與 redundancy effect（冗餘資訊干擾）。
+**Critical honesty boundary**: "≤ 3" is an **analytical recommendation**, not an experimentally measured figure; a wallet-scenario ecologically valid pilot study does not yet exist. The public version of the POTENTIAL UC6 mid-term technical report (2025-09) shows "the correct identification rate for 2–5 group scenarios drops from ≥ 80% to ≤ 50%,"[^32] which, while not directly validating the specific threshold of "3," shows a trend of significant accuracy degradation beyond 3–4 groups that is consistent with the direction of the Cowan 4±1 plus three conservative factor estimate. The precise final value requires calibration pending the EUDI POTENTIAL and EWC, DC4EU, and NOBID LSP final reports (anticipated post-2026 Q3). It must also be noted that mainstream cognitive science research is predominantly conducted on WEIRD samples (Western, Educated, Industrialized, Rich, Democratic); applicability to Taiwan and non-WEIRD jurisdictions has not been sufficiently validated.
 
-但須誠實邊界——cognitive load theory 之三類 load 區分主要在教學情境驗證；wallet 場景之 ecological validity gap 仍存在。本文僅取 intrinsic / extraneous load 區分部分，germane load 不適用 wallet。
+### § 4.3 Sweller's Cognitive Load Theory and the Extraneous Load Threshold for Wallets
 
-## 4.4 default 選項的不對稱影響——nudge 與 status quo bias
+*Sweller (1988)* classified the cognitive load of tasks into three categories: intrinsic load (complexity inherent to the task itself), extraneous load (non-task-necessary load introduced by the interface), and germane load (learning load that contributes to schema construction).[^24] *Sweller & Chandler (1994)* further argued that reducing extraneous load is especially critical in tasks with high element interactivity.[^33] The correspondence to wallet scenarios: in wallet multi-attribute decisions, intrinsic load is relatively fixed ("am I willing to disclose my name / date of birth / country of residence to this verifier" is fixed); extraneous load is an engineering-controllable variable (how the interface presents attributes, grouping, required vs. optional labelling, verifier identity display, button symmetry); germane load is virtually absent in wallet scenarios (a wallet is not a learning interface). The essence of progressive disclosure is engineering reduction of extraneous load—presenting only one attribute group at a time avoids split attention and the redundancy effect.
 
-*Thaler & Sunstein (2008)* 之 nudge 框架顯示，同樣的選擇集合在 default 為 opt-in vs opt-out 之下會導致選擇率差異一個數量級<sup>34</sup>。*Tversky & Kahneman (1974)* 之 heuristics & biases 框架預測，在 anchoring 效應下 default 充當 anchor，在 status quo bias 下使用者傾向不改變現狀<sup>35</sup>。*Acquisti, Brandimarte, Loewenstein (2015)* 在 *Science* 之綜述進一步顯示——privacy decision-making 對 framing、anchoring、default 之敏感度顯著高於其他領域，使用者對「揭露 vs 不揭露」之 trade-off 不僅承擔認知成本，還承擔 uncertainty aversion（後果不確定）<sup>36</sup>。
+**Honesty boundary**: the three-category distinction of intrinsic / extraneous load in cognitive load theory has been primarily validated in educational contexts; the ecological validity gap in wallet scenarios persists. This article adopts only the intrinsic/extraneous load distinction; germane load does not apply to wallets.
 
-對 wallet 之工程意涵——issuer-supplied default 是必要但不可單獨足夠；default 必須是 privacy-conservative（揭露最少屬性，反向揭露為 override）；per-item override 必須能逆向操作，不限於提交動作。CRPD §29「自主」不等於「無預設」——而是 holder 在 cognitive load 可履行範圍內仍能行使選擇權。issuer 提供 privacy-conservative default + per-item override，使 nudge 成為保護機制，避開剝削設計。
+### § 4.4 The Asymmetric Effect of Default Options—Nudge and Status Quo Bias
 
-## 4.5 三個 UX 失敗的 case-tracing
+*Thaler & Sunstein (2008)*'s nudge framework demonstrates that the same choice set under opt-in vs. opt-out defaults produces adoption rate differences of an order of magnitude.[^34] *Tversky & Kahneman (1974)*'s heuristics and biases framework predicts that under anchoring effects, the default serves as an anchor, and under status quo bias, users tend not to change the current state.[^35] *Acquisti, Brandimarte & Loewenstein (2015)* in *Science* further showed that privacy decision-making is significantly more sensitive to framing, anchoring, and defaults than other domains, and that users incur not only cognitive costs in weighing the "disclose vs. not disclose" trade-off but also bear uncertainty aversion (uncertainty about consequences).[^36]
 
-### 4.5.1 GDPR cookie banner（2018–2024）
+Engineering implications for wallets: issuer-supplied defaults are necessary but not sufficient alone; defaults must be privacy-conservative (fewest attributes disclosed, with reverse disclosure as override); per-item override must be reversible and not limited to the submission action. CRPD §29 "autonomy" does not equal "no default"—rather, it means holders can still exercise choice within a cognitively enforceable range. Issuer-provided privacy-conservative defaults plus per-item overrides make nudge a protective mechanism that avoids exploitative design.
 
-GDPR 自 2018 年 5 月 25 日生效後，歐洲網站普遍部署 cookie banner。*Utz et al. (2019)* 對 1,000 個歐盟網站之 consent banner 進行 field experiment——按鈕位置（accept 按鈕在右側預設）使接受率提高 22 個百分點；移除「reject」按鈕（強迫進入二層選單）使接受率提高 13 個百分點<sup>37</sup>。*Nouwens et al. (2020)* 對 IAB Europe TCF 框架下 680 個 banner 之量化分析——明顯違規（無 reject 按鈕、預先勾選非必要 cookie）佔比 ≥ 56%；UK Top 10,000 網站中僅 11.8% 達 GDPR 最低門檻<sup>3</sup>。*Matte, Bielova & Santos (2020)* 對 1,426 個歐盟網站之 IAB Europe TCF 量測——54% 違反至少一項 GDPR 要求；10% 在使用者未表態前即記錄「同意」<sup>38</sup>。
+### § 4.5 Case-Tracing Three UX Failures
 
-對 wallet 之警示——cookie banner 與 wallet OpenID4VP consent 在範疇、UX 介面、監管框架上不同；本文採「同型重演」（structural homomorphism）措辭，避免「直接適用」之強斷言。同型重演的具體機制鏈於第五章詳述。
+#### § 4.5.1 GDPR Cookie Banners (2018–2024)
 
-### 4.5.2 iOS App Tracking Transparency（2021 起）
+After GDPR came into force on 25 May 2018, European websites broadly deployed cookie banners. *Utz et al. (2019)* conducted a field experiment on consent banners from 1,000 EU websites—button position (accept button on the right by default) increased acceptance rates by 22 percentage points; removing the "reject" button (forcing a second-layer menu) increased acceptance rates by 13 percentage points.[^37] *Nouwens et al. (2020)* conducted a quantitative analysis of 680 banners under the IAB Europe TCF framework—obvious violations (no reject button, pre-ticked non-essential cookies) accounted for ≥ 56%; only 11.8% of UK Top 10,000 websites met the minimum GDPR threshold.[^3] *Matte, Bielova & Santos (2020)* measured 1,426 EU websites under IAB Europe TCF—54% violated at least one GDPR requirement; 10% recorded "consent" before users had expressed any preference.[^38]
 
-Apple 在 iOS 14.5（2021-04）引入 ATT，強制 app 在第一次追蹤前彈出 system-level 對話框，文字標準化、按鈕對稱（「Ask App Not to Track」與「Allow」並列）。Flurry Analytics 縱貫追蹤（2021–2024）與 Apple 官方數據顯示——全球 opt-in rate ≤ 25–30%；美國 ≤ 15–20%；中國 ≤ 12%<sup>39</sup>。
+**Warning for wallets**: cookie banners and wallet OpenID4VP consent differ in scope, UX interface, and regulatory framework; this article uses the phrase "structural homomorphism replay" (*tong-xing chong-yan*), avoiding the strong claim of "direct application." The specific mechanism chain of the structural homomorphism is detailed in Section 5.
 
-對 wallet 之啟示——強制對稱按鈕加上標準化文字顯著改善決策品質。但 ATT 的「once-and-for-all」模式不適合 wallet——wallet 之 verifier 場景多元、stakes 差異大，每次 presentation 都需要新決策。
+#### § 4.5.2 iOS App Tracking Transparency (from 2021)
 
-### 4.5.3 EUDI POTENTIAL Use Case 6 mid-term 報告（2025-09）
+Apple introduced ATT in iOS 14.5 (April 2021), requiring apps to show a system-level dialogue before tracking for the first time, with standardised text and symmetrical buttons ("Ask App Not to Track" and "Allow" side by side). Flurry Analytics longitudinal tracking (2021–2024) and Apple official data show: global opt-in rate ≤ 25–30%; United States ≤ 15–20%; China ≤ 12%.[^39]
 
-POTENTIAL 是 EUDI Wallet 四個 Large-Scale Pilot 之一，Use Case 6 涵蓋 mandate / power-of-attorney UX。2025-09 mid-term technical report 公開的回饋——當 verifier 要求 ≥ 5 個 attribute group 時受測者正確識別必要屬性的比率從 ≥ 80%（2 個 group）降至 ≤ 50%（5 個 group）；decision time 在 5 個 group 場景下顯著延長且正確決策率與 decision time 呈倒 U 型；「Accept all」捷徑按鈕在多數 pilot wallet UI 中出現、使用率 ≥ 60%<sup>32</sup>。同報告 §4.3 明確標示「dementia onset / progression」為強制階段最大未解 UX gap。
+**Lesson for wallets**: mandatory symmetrical buttons combined with standardised text significantly improve decision quality. However, ATT's "once-and-for-all" model does not suit wallets—wallet verifier scenarios are diverse and stake levels vary greatly, requiring a fresh decision for each presentation.
 
-## 4.6 wallet 多 attribute 場景的時間動態
+#### § 4.5.3 EUDI POTENTIAL Use Case 6 Mid-Term Report (2025-09)
 
-wallet 場景的時間動態與實驗室任務有三項根本差異——
+POTENTIAL is one of EUDI Wallet's four Large-Scale Pilots; Use Case 6 covers mandate / power-of-attorney UX. Feedback from the public portion of the 2025-09 mid-term technical report: when verifiers requested ≥ 5 attribute groups, subjects' correct identification rate for required attributes dropped from ≥ 80% (2 groups) to ≤ 50% (5 groups); decision time significantly increased for 5-group scenarios and correct decision rate showed an inverted-U relationship with decision time; an "Accept all" shortcut button appeared in most pilot wallet UIs with a usage rate of ≥ 60%.[^32] Section §4.3 of the same report explicitly identifies "dementia onset / progression" as the largest unresolved UX gap in the mandatory phase.
 
-**第一**，wallet 即時決策的 *time pressure* 高於實驗室任務。捷運閘門場景的決策時間 ≤ 3 秒；藥局櫃台的 selective disclosure 決策時間 ≤ 10 秒；公共場合銀行驗證的決策時間 ≤ 30 秒。實驗室認知測驗的 typical decision time 為 5–15 分鐘，差異為兩個數量級。
+### § 4.6 Time Dynamics in Wallet Multi-Attribute Scenarios
 
-**第二**，wallet 操作的 *dual-task* 結構穩定存在。即使 holder 在私人空間操作，也同時承擔背景感知（自己是否在正確的 app 中、verifier identity 是否符合預期）與決策評估（這個 verifier 要求的 5 個屬性哪些必要、哪些是 nice-to-have）。Cowan (2010) 在 dual-task 條件下記錄 WM 容量降至 3±1<sup>29</sup>，於 wallet 場景已是常態，並非例外。
+The time dynamics of wallet scenarios differ from laboratory tasks in three fundamental ways:
 
-**第三**，wallet 決策的後果 *stakes 高且不可逆*。揭露的屬性無法收回——即使法律層提供 revocation_endpoint（F1 §5.4 修正 3），verifier 在 revocation 通知到達前已可能完成 raw data 之 mirror、forward、後續處理。這個 stakes 不對稱使 holder 在認知資源不足時傾向 *decision avoidance*（迴避決策、傾向預設）；Acquisti, Brandimarte, Loewenstein (2015) 在 *Science* 之綜述顯示——privacy decision-making 的不一致性與 uncertainty aversion 並未隨 stakes 提高而消失，反而因為 stakes 高的後果評估更困難而出現 decision avoidance<sup>36</sup>。
+**First**, the *time pressure* of real-time wallet decisions is higher than laboratory tasks. Metro gate scenario decision time ≤ 3 seconds; pharmacy counter selective disclosure decision time ≤ 10 seconds; public-setting bank verification decision time ≤ 30 seconds. Typical decision time in laboratory cognitive tests is 5–15 minutes—a difference of two orders of magnitude.
 
-對 SA1 上界推估的綜合意涵——working memory 4±1 在 wallet 場景之有效容量在三項保守係數合取下進一步壓到 2–3 個 chunks；以「≤ 3 attribute group」為上界仍是相對寬鬆的工程估算。但 ecological validity 之 wallet-specific pilot study 仍是 gap，須在 EUDI POTENTIAL final report 與後續 LSP 縱貫研究中校準。
+**Second**, the *dual-task* structure of wallet operations is stably present. Even when a holder operates in a private space, they simultaneously bear background awareness (am I in the correct app, does the verifier identity match expectations) and decision evaluation (of the 5 attributes this verifier requests, which are necessary and which nice-to-have). Cowan (2010) recorded WM capacity dropping to 3±1 under dual-task conditions[^29]—in wallet scenarios this is the norm, not the exception.
 
-## 4.7 progressive disclosure 三種變體在 wallet 場景之差異
+**Third**, the *stakes* of wallet decisions are high and irreversible. Disclosed attributes cannot be recalled—even if the legal layer provides a revocation_endpoint (F1 §5.4 Fix 3), the verifier may have already mirrored, forwarded, or further processed the raw data before the revocation notice arrives. This asymmetry of stakes leads holders to favour *decision avoidance* (avoiding decisions, defaulting to preset options) when cognitive resources are insufficient; Acquisti, Brandimarte & Loewenstein (2015) in *Science* shows that the inconsistency and uncertainty aversion of privacy decision-making does not diminish as stakes increase, but rather produces decision avoidance because the evaluation of high-stakes consequences becomes more difficult.[^36]
 
-Wizard UI（步驟分頁，每步 ≤ 3 group，central executive 序列載入）適合首次配置與高 stakes 決策，但步數過多時易發生 abandonment 且缺乏全局視野。Accordion UI（折疊展開，折疊狀態下 extraneous load 低；展開後同時占用 visuospatial sketchpad）適合中等 stakes、屬性彼此相對獨立之場景，但一次展開過多 panel 退回多選項或折疊狀態下可能遺漏重要屬性。Paginated UI（分頁瀏覽，每頁固定 group 數；central executive 須跨頁整合）適合大量 attribute（≥ 10 group）批次審查，但 recency effect 與 primacy effect 失衡且跨頁比較困難。
+**Combined implications for SA1 upper bound estimation**: the effective capacity of working memory 4±1 in wallet scenarios, given the conjunction of three conservative factors, is further compressed to 2–3 chunks; treating "≤ 3 attribute groups" as the upper bound is still a relatively generous engineering estimate. However, the wallet-specific pilot study needed for ecological validity remains a gap and must be calibrated in EUDI POTENTIAL final reports and subsequent LSP longitudinal research.
 
-對 wallet 一般場景（≤ 5 個 verifier request attribute group）建議「wizard + 在最終步驟提供 accordion review」——前者控制 extraneous load、後者保留全局視野；最終 commit 前的 review 必須顯示完整 what will be disclosed 清單，且按鈕標籤採「review and disclose」，避免「accept」之單向被動語氣（語言上強調 holder 自主性）。但須誠實邊界——三種變體在 wallet 場景無對照研究；不可預設某一實作優於其他。
+### § 4.7 Three Variants of Progressive Disclosure in Wallet Contexts
 
-# 五、SA2——Dark Patterns 在 wallet 場景同型重演 GDPR cookie banner 八年失敗
+**Wizard UI** (step-by-step pages, ≤ 3 groups per step, central executive sequentially loaded) is suited to first-time configuration and high-stakes decisions, but with excessive steps risks abandonment and lacks a global overview. **Accordion UI** (collapsible expansion: low extraneous load in collapsed state; simultaneously occupying the visuospatial sketchpad when expanded) is suited to medium-stakes scenarios with relatively independent attributes, but expanding too many panels at once reverts to multi-option overload, and important attributes may be overlooked in the collapsed state. **Paginated UI** (fixed number of groups per page; central executive must integrate across pages) is suited to large-attribute (≥ 10 groups) batch review, but suffers from imbalanced recency and primacy effects and difficult cross-page comparison.
 
-## 5.1 dark patterns 的學術 taxonomy
+For general wallet scenarios (≤ 5 verifier request attribute groups), the recommendation is "wizard + accordion review at the final step"—the former controls extraneous load while the latter preserves a global overview; the review before the final commit must display the complete "what will be disclosed" list, and the button label should use "Review and Disclose" rather than the passive "Accept" (emphasising holder autonomy linguistically). **Honesty boundary**: no controlled studies exist for the three variants in wallet scenarios; no variant should be assumed superior to the others.
 
-*Brignull (2010)* 之 deceptive.design 分類網站建立 11 類 dark patterns（bait and switch / disguised ads / forced continuity / friend spam / hidden costs / misdirection / price comparison prevention / privacy zuckering / roach motel / sneak into basket / trick questions），是其後學術盤點之基礎<sup>11</sup>。*Mathur et al. (2019)* 對 11,000 個購物網站之爬取顯示——dark patterns 普及率 11.1%（1,818 case）；183 個 dark-pattern instances 來自 22 家 CMP / popup engine / countdown timer SaaS 供應商，後者所提供 instances 佔 dark patterns 總數 31%。Mathur 提出七類精煉——sneaking / urgency / misdirection / social proof / scarcity / obstruction / forced action<sup>12</sup>。*Gray et al. (2018)* 提出五策略——nagging / obstruction / sneaking / interface interference / forced action<sup>40</sup>。*Mathur, Kshirsagar & Mayer (2021)* 提出五項 normative attribute——asymmetrically modifies decision space / restricts choice / covertly manipulates / exploits cognitive biases / deceives by omission or commission<sup>41</sup>。
 
-## 5.2 GDPR cookie banner 八年失敗的工業統計
+## § 5. SA2: Dark Patterns Structurally Replaying the Eight-Year GDPR Cookie Banner Failure in Wallet Contexts
 
-| 量測來源 | 樣本 | 關鍵指標 | 數據 |
+### § 5.1 The Academic Taxonomy of Dark Patterns
+
+*Brignull (2010)*'s deceptive.design classification website established 11 categories of dark patterns (bait and switch / disguised ads / forced continuity / friend spam / hidden costs / misdirection / price comparison prevention / privacy zuckering / roach motel / sneak into basket / trick questions), forming the basis for subsequent academic surveys.[^11] *Mathur et al. (2019)* found dark patterns at a prevalence rate of 11.1% (1,818 cases) across 11,000 shopping websites; 183 dark-pattern instances came from 22 CMP / popup engine / countdown timer SaaS vendors, whose instances accounted for 31% of total dark patterns. Mathur proposed a seven-category refinement: sneaking / urgency / misdirection / social proof / scarcity / obstruction / forced action.[^12] *Gray et al. (2018)* proposed five strategies: nagging / obstruction / sneaking / interface interference / forced action.[^40] *Mathur, Kshirsagar & Mayer (2021)* proposed five normative attributes: asymmetrically modifies decision space / restricts choice / covertly manipulates / exploits cognitive biases / deceives by omission or commission.[^41]
+
+### § 5.2 Industrial Statistics of the Eight-Year GDPR Cookie Banner Failure
+
+| Measurement Source | Sample | Key Indicator | Data |
 |---|---|---|---|
-| Nouwens et al. (2020) | UK Top 10k | GDPR 最低門檻達成率 | 11.8% |
-| Matte et al. (2020) | 1,426 EU sites | 至少一項 GDPR 違規 | 54% |
-| Matte et al. (2020) | 同上 | 未表態即記錄同意 | 10% |
-| Sanchez-Rola et al. (2019) | 2,000 sites | reject 後仍 tracking | 49% |
-| Sanchez-Rola et al. (2019) | 同上 | accept 一鍵 vs reject 多層 | 92% asymmetric |
-| Utz et al. (2019) | 6 A/B 實驗 | nudge 對 consent rate 影響 | +22.2 pp |
-| Habib et al. (2020) | 150 sites opt-out | 平均 click 數 | 5.6 |
-| noyb (2024) | EU 31 國 800 sites | Art 7 違規率 | 67% |
-| CNIL SAN-2022-021/022 | Google + Microsoft | reject 不對稱罰款 | €210M 合計 |
-| FTC v. Epic Games (2022) | Fortnite | dark patterns 賠償 | $245M |
+| Nouwens et al. (2020) | UK Top 10k | GDPR minimum threshold achievement rate | 11.8% |
+| Matte et al. (2020) | 1,426 EU sites | At least one GDPR violation | 54% |
+| Matte et al. (2020) | Same | Consent recorded before user expressed position | 10% |
+| Sanchez-Rola et al. (2019) | 2,000 sites | Tracking persists after reject | 49% |
+| Sanchez-Rola et al. (2019) | Same | One-click accept vs. multi-layer reject | 92% asymmetric |
+| Utz et al. (2019) | 6 A/B experiments | Nudge effect on consent rate | +22.2 pp |
+| Habib et al. (2020) | 150 sites opt-out | Average click count | 5.6 |
+| noyb (2024) | 800 sites across 31 EU countries | Art 7 violation rate | 67% |
+| CNIL SAN-2022-021/022 | Google + Microsoft | Reject asymmetry fines | EUR 210M total |
+| FTC v. Epic Games (2022) | Fortnite | Dark patterns damages | USD 245M |
 
-八年（GDPR 2016 通過、2018 生效）後，工業界 cookie banner 合規率仍徘徊在 11.8–46% 之間（依嚴格度而定），且 reject 後 tracking 仍達 49%<sup>3,38,42,37,43,44</sup>。法規不缺，缺的是 UI / protocol 層的工程強制。
+Eight years after GDPR (passed in 2016, entered into force in 2018), industrial cookie banner compliance rates remain around 11.8--46% (depending on stringency), and tracking persists after reject at 49%.[^3][^38][^42][^37][^43][^44] Regulations are not lacking; what is lacking is engineering enforcement at the UI / protocol layer.
 
-## 5.3 wallet 場景同型重演的四個機制
+### § 5.3 Four Mechanisms of Structural Replay in Wallet Contexts
 
-同型重演（structural homomorphism）的具體機制鏈如下，須與「直接適用」嚴格分離。
+The specific mechanism chain of structural homomorphism must be strictly separated from "direct applicability."
 
-**(a) OpenID4VP scope 變更——presentation_definition 擴張的攻擊面**：OpenID4VP 之 `presentation_definition` 由 verifier 在 authorization request 中宣告 input descriptor 集合<sup>20</sup>；verifier 可在每次 presentation 中變更 input descriptor。對應 GDPR cookie banner 之「third-party vendor list」每月變動使用者無從追蹤之機制；wallet 之 input descriptor 同樣可在每次 request 變動，若 holder 為老客戶 UI 通常 default 為「同意上次設定 + 新增的 attribute」，產生 scope creep（從 age verification 一路擴展至 full profile 拉取）。
+**(a) OpenID4VP scope change -- the attack surface of presentation_definition expansion**: OpenID4VP's `presentation_definition` is declared by verifiers in the authorisation request as a set of input descriptors;[^20] verifiers may change input descriptors with each presentation. This corresponds to the cookie banner mechanism whereby "third-party vendor lists" change monthly without user tracking. Wallet input descriptors can similarly change with each request; if the holder is a returning user, the UI typically defaults to "agree to previous settings plus newly added attributes," producing scope creep (from age verification to full profile extraction).
 
-**(b) verifier policy chain transitive consent**：OpenID4VP 並未禁止 verifier A 將收到的 VP 轉發 verifier B 或 processor C。EUDI Wallet ARF 2025-12 iteration §6.6.3 雖規範「unambiguous, granular, prior to data transfer」consent 三要素，但僅限第一層；transitive 第二、三層 consent 路徑未強制<sup>21</sup>。對應 cookie banner 之 IAB TCF 以 vendor list ID 註冊第三方資料控制者但 Matte 等 (2020) 證明 54% 不合規之機制<sup>38</sup>。
+**(b) Verifier policy chain transitive consent**: OpenID4VP does not prohibit verifier A from forwarding a received VP to verifier B or processor C. While EUDI Wallet ARF 2025-12 iteration §6.6.3 specifies three elements of "unambiguous, granular, prior to data transfer" consent, this applies only to the first layer; transitive second and third-layer consent paths are not mandated.[^21] This corresponds to the mechanism by which the IAB TCF's registration of third-party data controllers by vendor list ID was shown by Matte et al. (2020) to be non-compliant in 54% of cases.[^38]
 
-**(c) re-consent fatigue**：*Bohme & Köpsell (2010)* 80,000+ 真實使用者實驗證明——consent dialogue 重複曝光使 acceptance rate 顯著升高，效應與 dialog 內容無關<sup>25</sup>。*Luguri & Strahilevitz (2021)* 行為實驗顯示 aggressive dark patterns 將 acceptance rate 由 11% 推升至 41.9%<sup>45</sup>。對應 wallet 同一 verifier（交通公司、便利商店、政府服務）每日多次 presentation request 之常態，wallet 將快速進入「default accept」模式，違反 GDPR Recital 32 與 CRPD GC1 §29。
+**(c) Re-consent fatigue**: *Bohme & Köpsell (2010)* demonstrated in an experiment with 80,000+ real users that repeated exposure to consent dialogues significantly increases the acceptance rate, an effect independent of the dialogue's content.[^25] *Luguri & Strahilevitz (2021)* found in a behavioural experiment that aggressive dark patterns pushed acceptance rates from 11% to 41.9%.[^45] This corresponds to the situation of the same verifier (transport company, convenience store, government service) making multiple daily presentation requests in wallet contexts: wallets will rapidly enter a "default accept" mode, violating GDPR Recital 32 and CRPD GC1 §29.
 
-**(d) terminology obscurity**：「selective disclosure」「zero-knowledge proof」「presentation request」「verifiable presentation」「BBS+ signature suite」對非技術使用者之可理解性近於零。Utz et al. (2019) 量測 41% 受試者不理解「legitimate interest」<sup>37</sup>；wallet 場景之術語密度更高。在 EU AI Act §5(1)(b)「materially distort behaviour」測試下，wallet 預設使用此類術語構成 prima facie 風險——尚未到「違反」結論，屬「未經 AI Office implementing guidance 確認的條件性適用」。
+**(d) Terminology obscurity**: "Selective disclosure," "zero-knowledge proof," "presentation request," "verifiable presentation," and "BBS+ signature suite" are virtually incomprehensible to non-technical users. Utz et al. (2019) measured that 41% of respondents did not understand "legitimate interest."[^37] The terminology density in wallet contexts is even higher. Under the EU AI Act §5(1)(b) "materially distort behaviour" test, wallet default use of such terminology constitutes a prima facie risk -- not yet a "violation" conclusion; this is a conditional application pending confirmation by AI Office implementing guidance.
 
-## 5.4 七項 normative requirement（D1–D7）對位 EDPB 03/2022
+### § 5.4 Seven Normative Requirements (D1--D7) Aligned with EDPB 03/2022
 
-對位 EDPB Guidelines 03/2022 之六大類別，本文主張以下七項 normative requirement 寫入 OpenID4VP 1.0 與 EUDI Wallet ARF 後續 iteration——
+Aligned with the six major categories of EDPB Guidelines 03/2022, the present article proposes the following seven normative requirements to be incorporated into OpenID4VP 1.0 and subsequent EUDI Wallet ARF iterations:
 
-| # | 防線項目 | 量化條件 | 對位 EDPB 類別 | 證據基礎 |
+| # | Defence Item | Quantitative Condition | EDPB Category | Evidence Basis |
 |---|---|---|---|---|
-| D1 | scope 變更強制延遲 | ≥ 10 秒，期間 accept 按鈕 disabled | Overloading | Bohme & Köpsell 2010; Utz 2019 |
-| D2 | 對稱選項佈局 | accept / reject 同尺寸 ±5%、同字體、同色 contrast、同 z-order | Hindering | Nouwens 2020; Utz 2019 |
-| D3 | 必要訊息揭露 | attribute / verifier identity / 用途 / 保留期 / 第三方轉發鏈 | Left in the dark | EDPB 03/2022; EUDI ARF |
-| D4 | 高 stakes 二步確認 | 對 salary / address / political affiliation 等 sensitive attribute 強制二步 | Stirring | Mathur 2021; Luguri 2021 |
-| D5 | 撤回路徑對稱性 | 撤回路徑 click 數 ≤ 同意路徑 click 數 | Obstruction | Sanchez-Rola 2019; Habib 2020 |
-| D6 | 禁止預勾與 nudge | 不得 pre-tick、不得僅一鍵 accept 而 reject 需多層 | Overloading + Hindering | GDPR Recital 32; CNIL 2022 |
-| D7 | terminology plain-language | 對 selective disclosure / ZK 提供 plain-language 等價說明（A2 reading level） | Left in the dark | EU AI Act §5(1)(b) |
+| D1 | Mandatory scope-change delay | >= 10 seconds, accept button disabled during period | Overloading | Bohme & Kopsell 2010; Utz 2019 |
+| D2 | Symmetric option layout | Accept / reject same size +/-5%, same font, same colour contrast, same z-order | Hindering | Nouwens 2020; Utz 2019 |
+| D3 | Required information disclosure | Attribute / verifier identity / purpose / retention period / third-party forwarding chain | Left in the dark | EDPB 03/2022; EUDI ARF |
+| D4 | Two-step confirmation for high-stakes | Mandatory two-step for sensitive attributes such as salary / address / political affiliation | Stirring | Mathur 2021; Luguri 2021 |
+| D5 | Revocation path symmetry | Revocation path click count <= consent path click count | Obstruction | Sanchez-Rola 2019; Habib 2020 |
+| D6 | Prohibition on pre-checking and nudge | Pre-ticking prohibited; one-click accept with multi-layer reject prohibited | Overloading + Hindering | GDPR Recital 32; CNIL 2022 |
+| D7 | Terminology plain language | Plain-language equivalents for selective disclosure / ZK (Grade A2 reading level) | Left in the dark | EU AI Act SS5(1)(b) |
 
-D1 之 10 秒上界為推估值——基於 Bohme & Köpsell 80k 受試者實驗，consent dialogue 顯示時間每增加 50%，holder「全部接受」傾向上升 10–15 個百分點。具體 10 秒切點待 conformance test 驗證。
+The 10-second upper bound for D1 is an estimated value: based on the Bohme & Kopsell experiment with 80,000 subjects, every 50% increase in consent dialogue display time was associated with a 10--15 percentage point increase in the "accept all" tendency. The specific 10-second cut-point awaits verification by conformance tests.
 
-## 5.5 五案件 case-tracing
+### § 5.5 Case-Tracing of Five Cases
 
-**FTC v. Epic Games（2022, 美國）**：Fortnite UI 之 dark patterns——預設「one-click purchase」、cancel 按鈕小且位於非預期位置、誤觸退款流程繁複。Stipulated Order for Permanent Injunction, FTC File No. 192 3203（Fortnite），$245M consumer refund + $275M COPPA penalty，合計 $520M。2022-12-19。<sup>43</sup>
+**FTC v. Epic Games (2022, United States)**: Fortnite UI dark patterns -- default "one-click purchase," cancel button small and in unexpected location, refund process excessively complex. Stipulated Order for Permanent Injunction, FTC File No. 192 3203 (Fortnite): USD 245M consumer refund + USD 275M COPPA penalty, total USD 520M, 19 December 2022.[^43]
 
-**FTC v. Amazon Prime（2023, 美國）**：Prime 取消需通過六個 unrelated screen，內含 dismiss button 小、文案誤導、social proof（"are you sure? you'll lose…"）。Complaint filed 2023-06-21, Case No. 2:23-cv-00932 (W.D. Wash.)。「subscription dark pattern」與 wallet「verifier policy chain 之 transitive consent」結構同型——consent 取得容易、撤回困難。對應防線 D5。<sup>46</sup>
+**FTC v. Amazon Prime (2023, United States)**: Prime cancellation requires navigating six unrelated screens, including a small dismiss button, misleading text, and social proof ("are you sure? you'll lose..."). Complaint filed 21 June 2023, Case No. 2:23-cv-00932 (W.D. Wash.). The "subscription dark pattern" is structurally homomorphic to "transitive consent in verifier policy chains" in wallets -- consent is easy to obtain, withdrawal is difficult. Corresponds to defence D5.[^46]
 
-**CNIL v. Google Ireland & Google LLC（2022, 法國）**：google.fr / youtube.com cookie banner——「同意」一鍵、「拒絕」需 5 click。罰款 €150M。Decision SAN-2022-021。同日 Microsoft Ireland 之 Bing cookie banner 罰款 €60M（SAN-2022-022）。<sup>44</sup>「同意 verifier 全部 input descriptor」一鍵 vs「逐項 toggle」多 click 之結構直接違反 D2 + D6。
+**CNIL v. Google Ireland & Google LLC (2022, France)**: google.fr / youtube.com cookie banner -- one-click "agree," five clicks to "refuse." Fine EUR 150M. Decision SAN-2022-021. On the same day, Microsoft Ireland's Bing cookie banner was fined EUR 60M (SAN-2022-022).[^44] One-click acceptance of all verifier input descriptors versus multi-click individual toggle directly violates D2 + D6.
 
-**Apple App Tracking Transparency（2021 起）**：iOS 14.5+ 將「Allow Tracking」與「Ask App Not to Track」設為對稱兩選項；對使用者 effort 兩者等同。opt-in rate 維持在 15–28%（產業哀號），證明對稱設計具大幅度量化效應<sup>39</sup>。D2 + D6 之 ground-truth proof——對稱性是「可行的工程約束」，不是「理論上的應然」。
+**Apple App Tracking Transparency (from 2021)**: iOS 14.5+ presents "Allow Tracking" and "Ask App Not to Track" as two symmetric options with equal user effort. The opt-in rate has remained at 15--28% (amid considerable industry complaint), proving that symmetric design has a large quantitative effect.[^39] This constitutes ground-truth proof of D2 + D6: symmetry is a "feasible engineering constraint," not a theoretical imperative.
 
-**EU Commission v. Meta（DSA Art 25, 2024 起）**：正式調查 Meta 是否違反 DSA Art 25——addictive design / dark patterns，特別針對未成年使用者保護<sup>47</sup>。wallet 之高 stakes（身分 attribute、權力憑證）與青少年保護同屬「vulnerable user × manipulative UI」軸線，需 D4 + D7 之更高門檻。
+**EU Commission v. Meta (DSA Art 25, from 2024)**: Formal investigation into whether Meta violates DSA Art 25 -- addictive design / dark patterns, with particular focus on protection of minor users.[^47] The high stakes of wallets (identity attributes, authority credentials) and minor protection both fall on the "vulnerable user x manipulative UI" axis, requiring the higher thresholds of D4 + D7.
 
-## 5.6 CRPD §29 反向使用風險
+### § 5.6 CRPD SS29 Reverse-Application Risk
 
-T_UX2 已明示——D(r.verifier_policy_hash) = 1 時 V_ux(r) = false ⇒ V_receipt'(r) = false。在 30 年保存窗口內，audit trail 在無 UX 修正下反過來成為「holder 同意此 dark pattern 之證據」（F2 §11 既有警示）。F3 把此風險形式化為 V_receipt' 之硬條件，避免 audit trail 在無 UX 修正下被反向工具化。CRPD Committee 對歐盟成員國（已批准 CRPD）的 Concluding Observations 可預期在 2028–2030 年度報告週期出現對 EUDI Wallet UX 之 Art 12 違反指控。
+T_UX2 has already made explicit that when D(r.verifier_policy_hash) = 1, V_ux(r) = false => V_receipt'(r) = false. Within the 30-year preservation window, the audit trail without UX corrections conversely becomes "evidence that the holder consented to this dark pattern" (an existing warning from F2 §11). F3 formalises this risk as a hard condition of V_receipt', preventing the audit trail from being instrumentalised in reverse in the absence of UX corrections. The CRPD Committee's Concluding Observations on EU Member States (which have ratified CRPD) may be expected to include, in the 2028--2030 reporting cycle, allegations of Art 12 violations concerning EUDI Wallet UX.
 
-# 六、SA3——Capacity-Aware UX 三條替代路徑與中介證據強度評估表
 
-## 6.1 從絕對句式到 mechanism-based likelihood
+## § 6. SA3: Capacity-Aware UX -- Three Alternative Paths and the Evidence-Strength Assessment Table
 
-原始草稿之「CDR ≥ 2 後的 wallet 操作 100% 退化為 substituted」具備兩處工程上不嚴謹處——「100%」是人為估算，違反 F2 SA5 既有的 likelihood-by-mechanism 框架；「退化為 substituted」需要 mechanism 補完。本文採嚴格立場——保留「退化為 substituted 之風險顯著存在」之判斷，但把「機率」與「確定性」分離。具體 likelihood 取 medium-high（保守估計 ≥ 50%，須 pilot study 校準）；條件變項與校準路徑於 §6.4 詳述。
+### § 6.1 From Absolute Formulations to Mechanism-Based Likelihood
 
-## 6.2 中介鏈一——失智長者「為什麼」必須用 wallet
+The original draft's formulation "100% degradation of wallet operation to substituted decision-making after CDR >= 2" contains two engineering imprecisions: "100%" is an artificially estimated figure, violating the likelihood-by-mechanism framework established in F2 SA5; "degradation to substituted" requires mechanism completion. The present article adopts a strict stance: it retains the judgement that "the risk of degradation to substituted exists significantly," but separates "probability" from "certainty." The specific likelihood is rated medium-high (conservative estimate >= 50%, requiring pilot study calibration); the conditional variables and calibration path are detailed in SS 6.4.
 
-「失智 → wallet 使用」非自然連結。本文以三段中介鏈推導其為「在既成政策事實下不可避免」。
+### § 6.2 Mediation Chain One: Why Persons with Dementia "Must" Use a Wallet
 
-**鏈一·一：EUDI Wallet 2026-2027 強制階段對成員國公民的全覆蓋**。*Regulation (EU) 2024/1183* Art 5a 規定成員國於 entry into force 後 24 個月內部署 EUDI Wallet（2026-11-21 屆滿）<sup>6</sup>；*Implementing Regulation (EU) 2024/2979*（2024-11-28 OJ）對 wallet 規格之細則含 selective disclosure profile 與 user binding<sup>7</sup>。法規對中高齡群體無年齡豁免；POTENTIAL Use Case 6 mid-term report §4.3 明確標示「dementia onset / progression」為強制階段最大未解 UX gap<sup>32</sup>。
+"Dementia -> wallet use" is not a natural connection. The present article derives it as "unavoidable under established policy facts" through a three-stage mediation chain.
 
-**鏈一·二：既有金融、政府、醫療數位化已把中高齡失能群體捲入線上身份操作**。NHS Login 註冊用戶超過 6,000 萬、65+ 用戶比例 24%（約 1,440 萬）<sup>48</sup>；日本マイナンバーカード 75+ 保有率 72.4%、2024-12 強制マイナ保険證過渡使「無 wallet 即無健保」成為新事實<sup>49</sup>；北歐 BankID 70+ 覆蓋率 92%，丹麥 *Finanstilsynet* 2023 報告標示「pårørende-assisteret brug」（家屬協助使用）為失能成人線上身份操作之事實常態<sup>50</sup>；台灣失智症協會訪談 71% caregiver 協助過健保 IC 卡相關操作<sup>51</sup>；美國 *Alzheimer's Association* 2025 統計顯示 41% caregiver 協助過 online banking 或 government portal 操作；67% caregiver 為家屬（spouse / child），平均 caregiving 5.6 年<sup>52</sup>。
+**Chain 1.1: EUDI Wallet 2026--2027 Mandatory Phase Covering All Member State Citizens**. *Regulation (EU) 2024/1183* Art 5a requires Member States to deploy the EUDI Wallet within 24 months of entry into force (deadline 21 November 2026);[^6] *Implementing Regulation (EU) 2024/2979* (OJ 28 November 2024) specifies the wallet specifications including selective disclosure profile and user binding.[^7] The regulation contains no age exemption for older age groups; POTENTIAL Use Case 6 mid-term report SS4.3 explicitly identifies "dementia onset / progression" as the largest unresolved UX gap in the mandatory-deployment phase.[^32]
 
-**鏈一·三：失智長者「無 wallet 即失去福利」的具體案例**。荷蘭 *Open Universiteit Heerlen / Alzheimer Nederland* 2023 訪談研究——62% 失智者無法獨立完成 DigiD 二因驗證，84% caregiver 持有失智者密碼<sup>53</sup>；印度 *Internet Freedom Foundation* 2024 報告——Aadhaar biometric 對失智長者指紋退化率 35%，caregiver 代行率 60–70%<sup>54</sup>；巴西 São Paulo 州法院 2023–2024 多起 LGPD 判例認可家屬代行但承認制度缺口<sup>55</sup>；台灣衛福部長期照顧政策白皮書標示「家屬代申代辦」為實況但未提供 CRPD §29 supporter 認證程序<sup>56</sup>。
+**Chain 1.2: Existing Financial, Government, and Healthcare Digitalisation Has Already Drawn Older Disabled Populations into Online Identity Operations**. NHS Login registered users exceed 60 million, with a 24% proportion of users aged 65+ (approximately 14.4 million);[^48] Japan's My Number Card holders aged 75+ have a 72.4% possession rate, and the forced My Number health insurance card transition of December 2024 has made "no wallet, no health insurance" a new policy fact;[^49] Nordic BankID coverage for those aged 70+ is 92%, and Denmark's *Finanstilsynet* 2023 report identifies "paeroerendeassistreret brug" (family-assisted use) as the factual norm for disabled adults' online identity operations;[^50] Taiwan's Alzheimer's Association interviews found that 71% of caregivers had assisted with health insurance IC card operations;[^51] the U.S. *Alzheimer's Association* 2025 statistics show that 41% of caregivers have assisted with online banking or government portal operations, and 67% of caregivers are family members (spouse/child), with an average caregiving duration of 5.6 years.[^52]
 
-## 6.3 中介鏈二——CDR 與 wallet UX 階段化的三條替代路徑
+**Chain 1.3: Specific Cases of Persons with Dementia "Losing Benefits Without a Wallet"**. The *Open Universiteit Heerlen / Alzheimer Nederland* 2023 interview study found that 62% of persons with dementia could not independently complete DigiD two-factor authentication, and 84% of caregivers hold the person with dementia's password;[^53] the *Internet Freedom Foundation* 2024 India report found a 35% fingerprint degradation rate in Aadhaar biometrics for older persons with dementia, with caregiver proxy rates of 60--70%;[^54] multiple LGPD cases in the Sao Paulo State Court of Brazil in 2023--2024 acknowledged family-member proxy operations but recognised institutional gaps;[^55] Taiwan's Ministry of Health and Welfare Long-Term Care Policy White Paper identifies "family-member proxy application and handling" as the actual situation but provides no CRPD SS29 supporter certification procedure.[^56]
 
-2026 年無任何 OECD 法域實作「醫療端 → wallet 自動通知」之工程介接；EUDI Wallet ARF §9.1.4 明示對 minors 與 capacity-limited adults 處理為「out of scope of v1.5.0」<sup>21</sup>。capacity-aware downgrade 必須採三條替代路徑之一或組合，三條路徑各自的法律 / 工程 / 隱私 tradeoff 如下。
+### § 6.3 Mediation Chain Two: Three Alternative Paths for CDR and Phased Wallet UX Downgrade
 
-**路徑 (i) wallet 內建 functional self-assessment**。機制——以「重複任務失敗率 / 停留時間異常延長 / 點擊錯誤次數」為行為 proxy；Apple Health Cognitive、Google Health Connect 已有 API 雛形<sup>57,58</sup>，*Cambridge Cognition* CANTAB Mobile（FDA 510(k) cleared）為臨床對位<sup>59</sup>。**法律 tradeoff**——cognitive 行為資料屬 GDPR Art 9(1) special category data，蒐集須依 Art 9(2) 例外（如 explicit consent 或 vital interests）；在 wallet 內 ambient 蒐集是否屬「holder 同意」尚有解釋空間，Mozilla 報告指出多數 cognitive assessment app 缺乏明確法律依據<sup>60</sup>。**工程 tradeoff**——行為 proxy 之 false positive 率高（疲勞、藥物、視力老化均可造成類似 pattern）；CANTAB Mobile 等臨床工具之 mobile-only 偵測準確率對 CDR 0.5–1 早期階段低於 70%。**隱私 tradeoff**——cognitive proxy 一旦蒐集即構成「holder 心智狀態 profile」，後續同步、備份、跨設備遷移均有外洩風險。
+As of 2026, no OECD jurisdiction has implemented an engineering interface of "medical end -> automatic wallet notification." EUDI Wallet ARF SS9.1.4 explicitly states that handling of minors and capacity-limited adults is "out of scope of v1.5.0."[^21] Capacity-aware downgrade must adopt one or a combination of the three alternative paths below; the legal / engineering / privacy trade-offs for each path are as follows.
 
-**路徑 (ii) supporter triggered downgrade**。機制——holder 在 capacity 完整階段預先指定 supporter（CRPD §29 第三方支援者，可以是家屬、社工、長照員、信託機構代表、自選同儕——三項邊界宣告 B1/B2/B3 在每次出現時明示）；supporter 被授予「觸發 wallet UX 降階」之權能（與 chooser_signature 私鑰嚴格分離，F1 §5.4）；當 supporter 觀察到 holder 出現 capacity 退化跡象，由 supporter 端按鈕觸發 wallet 進入降階模式（介面簡化、attribute 數量上限縮至 2、強制延遲延長至 30 秒）。**法律 tradeoff**——CRPD §29 supporter 不必經法院監護宣告，與台灣民法 §1113-2 意定監護新制以監護宣告為啟動條件之設計不一致；OECD 多數法域 supporter 認證程序未法律化。**工程 tradeoff**——supporter 觸發本身是否需要醫療證明？若是則回到醫療端介接問題；若否則 supporter 之 unilateral 觸發可能被反向使用為「強制 holder 降階以剝奪 SD 能力」之機制。必採三層 safeguard——holder 在 capacity 內可隨時 revoke supporter 觸發、第三方稽核、supporter 多重指定。
+**Path (i): Wallet Built-in Functional Self-Assessment**. Mechanism: "repeated task failure rate / abnormally extended dwell time / number of erroneous clicks" as behavioural proxies; Apple Health Cognitive and Google Health Connect already have API prototypes,[^57][^58] with *Cambridge Cognition* CANTAB Mobile (FDA 510(k) cleared) as the clinical counterpart.[^59] **Legal trade-off**: cognitive behavioural data constitutes GDPR Art 9(1) special category data, and collection requires an Art 9(2) exception (such as explicit consent or vital interests); whether ambient collection within a wallet constitutes "holder consent" remains interpretively open, and Mozilla's report notes that most cognitive assessment apps lack clear legal basis.[^60] **Engineering trade-off**: the false positive rate of behavioural proxies is high (fatigue, medication, visual aging can all produce similar patterns); CANTAB Mobile and similar clinical tools have detection accuracy below 70% for CDR 0.5--1 early stages in mobile-only settings. **Privacy trade-off**: once cognitive proxies are collected, they constitute a "holder mental-state profile"; subsequent synchronisation, backup, and cross-device migration all carry disclosure risk.
 
-**路徑 (iii) issuer-side capacity hint**。機制——issuer（健保署、長照中心、Memory Clinic）在發出 credential 時於 payload 嵌入 `capacityProfile` field（F1 §5.4 補充原語 E4）；wallet 在 selective disclosure presentation 階段讀取 capacityProfile 並據此調整 UX。**規範 tradeoff（最高風險爭點）**：CRPD §29 強烈反對 functional capacity test 作為決定能力的判準，GC1 §15 明示「mental capacity」概念本身具歧視風險。issuer 把臨床 capacity 判定嵌入 credential 即把 functional test 結果工程化、可重複使用、跨場域擴散——在規範層極可能違反 CRPD §29 (a)「will and preferences」優先原則。本文採「限定 opt-in（持有人主動同意）+ 替代優先（路徑 i+ii 為主軸）」之保守立場；CRPD 委員會接受度未知。
+**Path (ii): Supporter-Triggered Downgrade**. Mechanism: the holder, while capacity is intact, pre-designates a supporter (a CRPD SS29 third-party support person who may be a family member, social worker, care staff, trust institution representative, or self-selected peer -- three boundary declarations B1/B2/B3 made explicit at each occurrence); the supporter is granted the authority to "trigger wallet UX downgrade" (strictly separated from the chooser_signature private key, per F1 SS5.4); when the supporter observes signs of capacity decline in the holder, the supporter triggers downgrade mode in the wallet via a button on the supporter's end (simplified interface, attribute count ceiling reduced to 2, mandatory delay extended to 30 seconds). **Legal trade-off**: CRPD SS29 supporter does not require a court guardianship declaration, which is inconsistent with the design of Taiwan's Civil Code SS1113-2 intended guardianship system, which requires a guardianship declaration as a triggering condition; most OECD jurisdictions have not legalised supporter certification procedures. **Engineering trade-off**: does the supporter trigger itself require medical proof? If yes, the medical interface problem recurs; if no, the supporter's unilateral trigger may be reverse-instrumentalised as a mechanism for "forcibly downgrading the holder to deprive SD capacity." Three-layer safeguards must be adopted: the holder, while capacity is intact, can revoke the supporter trigger at any time; third-party auditing; and multiple supporter designation.
 
-**三條路徑的選擇判準**：路徑 (i) 作為「wallet 自動建議」之 first signal 但禁止自動觸發 downgrade；路徑 (ii) 作為主要 downgrade 觸發機制配三層 safeguard；路徑 (iii) 在 CRPD §29 functional test 禁令爭點解決前列為「條件性可採」，限定 holder 主動 opt-in，禁止作為預設機制。
+**Path (iii): Issuer-Side Capacity Hint**. Mechanism: the issuer (National Health Insurance Administration, long-term care centre, Memory Clinic) embeds a `capacityProfile` field in the credential payload at issuance (F1 SS5.4 supplementary primitive E4); the wallet reads the capacityProfile during the selective disclosure presentation phase and adjusts the UX accordingly. **Normative trade-off (highest risk contention point)**: CRPD SS29 strongly opposes functional capacity tests as criteria for determining capacity, and GC1 SS15 explicitly states that the concept of "mental capacity" itself carries a risk of discrimination. Embedding a clinical capacity determination in a credential by the issuer engineering-ises the functional test result, making it reusable and diffusable across domains -- at the normative level this is very likely to violate the CRPD SS29(a) principle of "will and preferences" primacy. The present article adopts the conservative position of "restricted opt-in (holder's active consent) + alternative priority (paths (i) + (ii) as the main axis)"; the acceptability to the CRPD Committee is unknown.
 
-## 6.4 中介鏈三——退化路徑的 mechanism-based likelihood
+**Selection Criteria for the Three Paths**: Path (i) serves as a "first signal for wallet automated suggestion" but is prohibited from automatically triggering downgrade; path (ii) serves as the primary downgrade trigger mechanism with three-layer safeguards; path (iii) is listed as "conditionally admissible" pending resolution of the CRPD SS29 functional test prohibition dispute, limited to holder opt-in, and prohibited as a default mechanism.
 
-採五段機制鏈表述——
+### § 6.4 Mediation Chain Three: Mechanism-Based Likelihood of the Degradation Path
 
-(a) wallet UX 無 capacity-aware downgrade ⇒
-(b) CDR ≥ 2 holder 因 Cowan working memory 4±1 進一步退至 2–3 chunks 加上 Sweller cognitive load theory 之 extraneous load 過載，無法獨立完成 selective disclosure 之 informed consent ⇒
-(c) 在既有金融、政府、醫療數位化強制下，家屬或照護者代為操作 wallet 成為事實常態 ⇒
-(d) 密碼學層 F1 §5.4 chooser_signature 由代行者實際持鑰簽署（A15 §6.2 三重預設失效） ⇒
-(e) 即使法律層宣稱 supported decision-making，工程事實已是 substituted（CRPD §28 禁令在技術層被繞過）。
+A five-stage mechanism chain:
 
-| 機制鏈段 | 觸發機率 | 主要證據 |
+(a) Wallet UX without capacity-aware downgrade =>
+(b) CDR >= 2 holders, with Cowan working memory 4+/-1 further compressed to 2--3 chunks under Sweller's extraneous load overload, cannot independently complete informed consent for selective disclosure =>
+(c) Under the mandate of existing financial, government, and healthcare digitalisation, family members or caregivers operating the wallet on the holder's behalf becomes the factual norm =>
+(d) At the cryptographic layer, F1 SS5.4 chooser_signature is actually signed by the proxy holder of the key (A15 SS6.2 triple presupposition fails) =>
+(e) Even if the legal layer declares supported decision-making, the engineering fact is already substituted (the CRPD SS28 prohibition is technically bypassed).
+
+| Mechanism Chain Segment | Trigger Probability | Primary Evidence |
 |---|---|---|
-| (a) → (b) | high | Cowan 2001; Sweller 1988; CDR 1993; ICD-11 6D81 |
-| (b) → (c) | high | Alzheimer's Assoc 2025 41%; 台灣失智症協會 2024 71%; 荷蘭 Open Universiteit 2023 84% |
-| (c) → (d) | medium-high | A15 §6.2 三重預設; 無 OECD 法域有 chooser_signature 分離之強制法規 |
-| (d) → (e) | medium-high | F1 §5.4 鑑識上 chooser_signature 與 comprehension_attestation 合一即退化 |
-| **整體 (a) → (e)** | **medium-high** | 保守估計 ≥ 50%，須 pilot study 校準 |
+| (a) -> (b) | high | Cowan 2001; Sweller 1988; CDR 1993; ICD-11 6D81 |
+| (b) -> (c) | high | Alzheimer's Assoc 2025 41%; Taiwan Alzheimer's Association 2024 71%; Open Universiteit 2023 84% |
+| (c) -> (d) | medium-high | A15 SS6.2 triple presupposition; no OECD jurisdiction has mandatory legislation on chooser_signature separation |
+| (d) -> (e) | medium-high | F1 SS5.4: forensically, chooser_signature and comprehension_attestation combined = degradation |
+| **Overall (a) -> (e)** | **medium-high** | Conservative estimate >= 50%, requiring pilot study calibration |
 
-**為何取 medium-high 而未取 high**：high 對應「每段觸發機率均 ≥ 80%、整體鏈條觸發 ≥ 70%」。(c) → (d) 段在嚴格 biometric + PIN + hardware key 三因驗證下，代行者實際持鑰之比例可被工程降低；supporter triggered downgrade 路徑若被法律承載化，可把 (c) → (d) 之代行轉為 (c) → supporter-assisted (d)，後者非 substituted；pilot study 缺乏使「機率」不可定量至 high 等級。
+**Why medium-high rather than high**: high corresponds to "trigger probability >= 80% for each segment, overall chain trigger >= 70%." The (c) -> (d) segment under strict biometric + PIN + hardware key three-factor authentication can have the proportion of proxies actually holding keys reduced through engineering; if the supporter-triggered downgrade path is legally recognised, it can convert the (c) -> (d) proxy into (c) -> supporter-assisted (d), the latter not being substituted; the absence of a pilot study means probabilities cannot be quantified to the high level.
 
-## 6.5 中介證據強度評估表（15 列完整）
+### § 6.5 Evidence-Strength Assessment Table (15 Rows, Complete)
 
-本表為 SA3 補強之核心輸出。critic 在 P0 紅線層級檢驗此表完整性。
+This table is the core output of SA3 reinforcement. Critics examine completeness of this table at the P0 red-line level.
 
-| # | 中介鏈段 | 證據等級 | 覆蓋率 | 來源核心 | 待補 |
+| # | Mediation Chain Segment | Evidence Grade | Coverage | Core Source | Pending |
 |---|---|---|---|---|---|
-| 1 | 1.1 EUDI 2026-2027 強制階段 | A | OECD（EU 27 + EEA） | Reg (EU) 2024/1183; Impl Reg (EU) 2024/2979; POTENTIAL UC6 | 非 EU OECD 法域對位 |
-| 2 | 1.2.1 英國 NHS Login 失智使用 | B | 單一法域（UK） | NHS Digital 2024 Q4; WHO ICD-11 | NHS Digital 對失智子群直接統計 |
-| 3 | 1.2.2 日本マイナ 75+ 失智 | B | 單一法域（JP） | 内閣府デジタル庁 2024-12; 厚労省 | 厚労省 失智 + マイナ 交叉統計 |
-| 4 | 1.2.3 北歐 BankID 失能成人 | B | 區域（北歐） | Finanstilsynet 2023 | CRPD §29 supporter 對位之國家立法 |
-| 5 | 1.2.4 台灣健保 IC 卡失智 | B | 單一法域（TW） | 失智症協會 2024; 衛福部白皮書 | 衛福部直接統計 + 健保署資料 |
-| 6 | 1.2.5 美國 caregiver 數位代行 | A/B | 單一法域（US） | Alzheimer's Assoc 2025; VA Login.gov | Login.gov 失智子群直接統計 |
-| 7 | 1.3.1 荷蘭 DigiD 失智排除 | B | 單一法域（NL） | Open Universiteit / Alzheimer Nederland | 跨歐盟對位 |
-| 8 | 1.3.2 印度 Aadhaar 失能排除 | B | 單一法域（IN） | IFF 2024 | 學術同儕審查實證 |
-| 9 | 1.3.3 台灣健保家屬代申 | B | 單一法域（TW） | 衛福部; 失智症協會 | 健保署逐年代申統計 |
-| 10 | 1.3.4 巴西 LGPD 失智排除判例 | B | 單一法域（BR） | TJSP 2023-2024 | STF / STJ 統一見解 |
-| 11 | 2.1 wallet 內建 functional self-assessment | A（理論）+ C（實作） | 全球（理論） / 單一平台（實作） | Sweller; Cowan; Apple Health; Cambridge CANTAB | 失智早期偵測準確率實證 + GDPR Art 9 法律依據 |
-| 12 | 2.2 supporter triggered downgrade | A（規範）+ B（實作 gap） | OECD（規範）/ 無（實作） | CRPD GC1 §29; 台灣民法 1113-2 | OECD 法域 supporter 認證 SOP |
-| 13 | 2.3 issuer-side capacity hint | A（理論）+ 無（實作） | 無（OECD） | F1 §5.4 補充原語 E4; CRPD GC1 §28 | CRPD §29 functional test 禁令對 issuer-side hint 之合法性 |
-| 14 | 3 mechanism-based likelihood medium-high | A（mechanism）+ B（pilot 缺） | OECD（mechanism） | A15 §6.2; Cowan; WHO; Alzheimer's Assoc | 縱貫 pilot study 校準 |
-| 15 | 4 supporter 與家屬範疇區分 | A（規範）+ B（落地 gap） | OECD（規範） | CRPD GC1 §29; 台灣民法 1113-2 | OECD 各國 supporter 認證程序 |
+| 1 | 1.1 EUDI 2026--2027 mandatory phase | A | OECD (EU 27 + EEA) | Reg (EU) 2024/1183; Impl Reg (EU) 2024/2979; POTENTIAL UC6 | Non-EU OECD jurisdiction alignment |
+| 2 | 1.2.1 UK NHS Login dementia use | B | Single jurisdiction (UK) | NHS Digital 2024 Q4; WHO ICD-11 | NHS Digital direct statistics for dementia sub-group |
+| 3 | 1.2.2 Japan My Number 75+ dementia | B | Single jurisdiction (JP) | Cabinet Office Digital Agency 2024-12; MHLW | MHLW dementia + My Number cross-tabulation statistics |
+| 4 | 1.2.3 Nordic BankID disabled adults | B | Region (Nordic) | Finanstilsynet 2023 | National legislation aligning CRPD SS29 supporter |
+| 5 | 1.2.4 Taiwan NHI IC card dementia | B | Single jurisdiction (TW) | Taiwan Alzheimer's Association 2024; MOHW White Paper | MOHW direct statistics + NHI Administration data |
+| 6 | 1.2.5 US caregiver digital proxy | A/B | Single jurisdiction (US) | Alzheimer's Assoc 2025; VA Login.gov | Login.gov direct statistics for dementia sub-group |
+| 7 | 1.3.1 Netherlands DigiD dementia exclusion | B | Single jurisdiction (NL) | Open Universiteit / Alzheimer Nederland | EU-wide alignment |
+| 8 | 1.3.2 India Aadhaar disability exclusion | B | Single jurisdiction (IN) | IFF 2024 | Peer-reviewed empirical evidence |
+| 9 | 1.3.3 Taiwan NHI family proxy application | B | Single jurisdiction (TW) | MOHW; Alzheimer's Association | NHI Administration annual proxy application statistics |
+| 10 | 1.3.4 Brazil LGPD dementia exclusion precedent | B | Single jurisdiction (BR) | TJSP 2023--2024 | STF / STJ unified position |
+| 11 | 2.1 Wallet built-in functional self-assessment | A (theoretical) + C (implementation) | Global (theoretical) / Single platform (implementation) | Sweller; Cowan; Apple Health; Cambridge CANTAB | Early-stage dementia detection accuracy + GDPR Art 9 legal basis |
+| 12 | 2.2 Supporter-triggered downgrade | A (normative) + B (implementation gap) | OECD (normative) / None (implementation) | CRPD GC1 SS29; Taiwan Civil Code 1113-2 | OECD jurisdiction supporter certification SOP |
+| 13 | 2.3 Issuer-side capacity hint | A (theoretical) + None (implementation) | None (OECD) | F1 SS5.4 supplementary primitive E4; CRPD GC1 SS28 | CRPD SS29 functional test prohibition re: legality of issuer-side hint |
+| 14 | 3 Mechanism-based likelihood medium-high | A (mechanism) + B (pilot gap) | OECD (mechanism) | A15 SS6.2; Cowan; WHO; Alzheimer's Assoc | Longitudinal pilot study calibration |
+| 15 | 4 Supporter vs. family member scope distinction | A (normative) + B (implementation gap) | OECD (normative) | CRPD GC1 SS29; Taiwan Civil Code 1113-2 | OECD national supporter certification procedures |
 
-15 列覆蓋三段中介鏈（10 列）+ 三條替代路徑（3 列）+ likelihood（1 列）+ 範疇區分（1 列）。
+The 15 rows cover three mediation chains (10 rows) + three alternative paths (3 rows) + likelihood (1 row) + scope distinction (1 row).
 
-## 6.6 supporter 與家屬的範疇區分
+### § 6.6 Scope Distinctions Between Supporter and Family Member
 
-四種常見的範疇滑誤——其一，把「家屬」當作「supporter」之預設代名，排除「無家屬可指定」或「家屬不適任」之 holder（如失智長者之家屬有財產利害衝突時）；其二，把「家屬代行」當作 CRPD §29 supporter 行為，事實上是 substituted decision-making 違反 CRPD §28；其三，UX 預設偏差，wallet UI 預設「supporter = 配偶 / 子女」，對社工、長照員、信託代表、自選同儕之 supporter 角色排除；其四，把台灣 §1113-2 意定監護等同 CRPD §29 supporter，前者以監護宣告為啟動條件、後者不必經宣告。
+Four common scope confusions: first, treating "family member" as the default synonym for "supporter," excluding holders who have no family member to designate or whose family member is unsuitable (e.g., when a person with dementia's family member has a property-related conflict of interest); second, treating "family-member proxy operation" as CRPD SS29 supporter behaviour, when it is in fact substituted decision-making in violation of CRPD SS28; third, UX default bias, where wallet UI defaults to "supporter = spouse / child" and excludes the supporter role of social workers, care staff, trust representatives, or self-selected peers; and fourth, equating Taiwan's SS1113-2 intended guardianship with CRPD SS29 supporters, when the former requires a guardianship declaration as triggering condition while the latter does not require a declaration.
 
-台灣意定監護新制與 CRPD §29 supporter 之三項銜接 gap——啟動條件不同（意定監護以監護宣告為啟動條件，CRPD §29 supporter 在無監護宣告時即可運作）、角色性質不同（監護人在監護宣告後行使 substituted 性質之代行，CRPD §29 supporter 始終是 supported 性質之協助）、範疇對象不同（意定監護受任人為「監護人」角色單一指定，CRPD §29 supporter 可為多人、可為非家屬之第三方）。
+Three interface gaps between Taiwan's intended guardianship system and CRPD SS29 supporters: different triggering conditions (intended guardianship is triggered by guardianship declaration; CRPD SS29 supporters can operate without a guardianship declaration); different role nature (after a guardianship declaration, the guardian exercises substituted decision-making authority; CRPD SS29 supporters at all times provide supported rather than substituted assistance); and different scope of subject (the designated agent in intended guardianship is a single "guardian" role; CRPD SS29 supporters may be multiple persons, and may be non-family third parties).
 
-# 七、SA4——Supporter UI 三層分離與 CRPD §29 工程對應
 
-## 7.1 CRPD §29 三項禁則的工程化拆解
+## § 7. SA4: Supporter UI Three-Layer Separation and the Engineering Correspondence to CRPD SS29
 
-CRPD §29 對 supporter 的規範性主張可拆解為四項可審計條件——supporter 必要（wallet UX 須提供 supporter widget 入口）、supporter 不可替代（`chooser_signature` 之 verificationMethod 必須 controller = subject DID）、unconflicting interest（supporter 註冊時須宣告 + wallet 須提示 conflict-of-interest 檢核）、不剝奪 safeguards（三層各自獨立 + 可審計 + revocation_endpoint）<sup>15</sup>。F2 §5.3 設計 B（threshold signatures with supporters in quorum）違反 CRPD §28；F3 SA4 重申此判定。
+### § 7.1 Engineering Decomposition of CRPD SS29's Three Prohibitions
 
-## 7.2 三類獨立 cryptographic object 承載
+The normative claims of CRPD SS29 regarding supporters can be decomposed into four auditable conditions: supporter necessity (wallet UX must provide a supporter widget entry point); supporter irreplaceability (`chooser_signature`'s verificationMethod must have controller = subject DID); unconflicting interest (supporters must declare at registration + wallet must prompt conflict-of-interest checks); and non-deprivation of safeguards (three layers each independent + auditable + revocation_endpoint).[^15] F2 SS5.3 Design B (threshold signatures with supporters in quorum) violates CRPD SS28; F3 SA4 reaffirms this determination.
 
-**(a) Comprehension Attestation（CA）**：VC type `ComprehensionAttestationCredential`；issuer 為 supporter DID；credentialSubject 為 subject DID + 被理解的 disclosure scope reference；proof 採 `assertionMethod` purpose，由 supporter 私鑰簽。語義是「我（supporter）見證 subject 於時間 T 對 disclosure scope S 已表達理解」。非語義——CA 不等於 subject 同意 disclosure，僅是「理解」之見證。
+### § 7.2 Three Independent Cryptographic Objects as Bearings
 
-**(b) Operation Assist Trace（OAT）**（非 cryptographic object 但須留 UX log）：純 UX 行為日誌（讀屏啟動時間、放大次數、聲音 readback 次數、supporter 觸控介入次數）；儲存於 wallet 本地，可選擇性匯出供 audit，不上鏈、不入 VC。語義是「supporter 提供了哪些物理協助」；OAT 與簽章無關，不影響 disclosure 之法律效力。
+**(a) Comprehension Attestation (CA)**: VC type `ComprehensionAttestationCredential`; issuer is the supporter DID; credentialSubject is the subject DID + a reference to the disclosure scope that was understood; proof uses `assertionMethod` purpose, signed by the supporter private key. Semantics: "I (the supporter) witness that the subject expressed understanding of disclosure scope S at time T." Non-semantics: CA does not equal subject consent to disclosure; it is only a witness to "understanding."
 
-**(c) Chooser Signature（CS）**（F1 §5.4 修正 1 已建立）：VP-level proof，purpose `authentication`；由 **subject 私鑰**簽；任何情境下 supporter 私鑰均不可旁路。在 threshold signatures 設計（F2 SA2 設計 C）下，CS 由 subject + supporter 共同生成，但 supporter 份額單獨無效——subject 份額為必要條件。
+**(b) Operation Assist Trace (OAT)** (not a cryptographic object but requires UX log): pure UX behavioural log (screen reader activation time, zoom count, audio readback count, supporter touch-intervention count); stored locally in the wallet, optionally exportable for audit, not recorded on chain, not entered into VC. Semantics: "what physical assistance the supporter provided." OAT has nothing to do with signatures and does not affect the legal validity of disclosure.
 
-## 7.3 UI 層三類獨立 widget 與觸控分離
+**(c) Chooser Signature (CS)** (already established in F1 SS5.4 Correction 1): VP-level proof, purpose `authentication`; signed by the **subject private key**; the supporter private key cannot bypass this in any scenario. In threshold signature design (F2 SA2 Design C), CS is jointly generated by subject + supporter, but the supporter share alone is invalid -- the subject share is a necessary condition.
 
-**Widget 1 — Comprehension Widget**——視覺位置為 disclosure prompt 之前的獨立 modal（不是 inline 元素）；互動為 supporter 點擊「我見證 [subject 姓名] 已理解此次 disclosure 之 [N] 項屬性」+ supporter 在 wallet 內以 biometric 或 PIN 解鎖 supporter DID 私鑰；觸控隔離須在 subject 不在場的觸控動作下完成。失敗處理——若 supporter 拒絕見證，wallet 提示 subject「supporter 認為你尚未理解」並提供三選項，分別為繼續諮詢、仍然執行（標註 CA 缺席）、取消。
+### § 7.3 Three Independent Widgets and Touch Separation at the UI Layer
 
-**Widget 2：Operation Assist Widget**——視覺位置為 disclosure prompt 內的「協助工具」面板（inline）；互動為 supporter 使用讀屏、放大、語音 readback、手抖點擊輔助；wallet 記錄 OAT。觸控不隔離（可與 subject 共用同一裝置之觸控）。**硬性禁令**——此 widget 不提供任何「代為簽署」按鈕；任何 cryptographic 動作均須跳轉至 Widget 3。
+**Widget 1 -- Comprehension Widget**: visual position is an independent modal before the disclosure prompt (not an inline element); interaction is the supporter clicking "I witness that [subject name] has understood the [N] attributes of this disclosure" + the supporter unlocking their DID private key within the wallet via biometric or PIN; touch isolation must be completed under touch actions without the subject present. Failure handling: if the supporter declines to witness, the wallet prompts the subject "the supporter believes you have not yet understood" and provides three options: continue consulting; proceed anyway (marked as CA absent); or cancel.
 
-**Widget 3：Decision Widget**——視覺位置為 disclosure prompt 的最終確認 modal；互動須由 subject 自己以 biometric 或 PIN 解鎖 subject DID 私鑰並簽 CS；觸控隔離須在 supporter 不在觸控範圍內完成（physical separation）。失敗處理——若 subject 無法獨立完成 Widget 3，wallet 切換到 F2 SA2 設計 C 的 threshold signatures recovery path，由 subject 預先指定的多名 supporters 共同 + subject 部分份額啟動 recovery；此為邊緣場景，預設情況下不應觸發。Widget 3 觸控分離之 hardware 偵測技術不成熟，UX fallback 為 90 秒延遲 + 二次確認。
+**Widget 2: Operation Assist Widget**: visual position is an "assistive tools" panel (inline) within the disclosure prompt; interaction is the supporter using screen reader, zoom, voice readback, tremor-assistance click; wallet records OAT. Touch not isolated (may share the device's touch interface with the subject). **Hard prohibition**: this widget provides no "sign on behalf" button; any cryptographic action must jump to Widget 3.
 
-## 7.4 既有 UI 模型對比
+**Widget 3: Decision Widget**: visual position is the final confirmation modal of the disclosure prompt; interaction requires the subject themselves to unlock the subject DID private key via biometric or PIN and sign CS; touch isolation must be completed with the supporter out of the touch area (physical separation). Failure handling: if the subject cannot independently complete Widget 3, the wallet switches to F2 SA2 Design C's threshold signatures recovery path, jointly activated by the subject's multiple pre-designated supporters plus the subject's partial share; this is an edge case and should not trigger under default circumstances. Hardware detection technology for Widget 3 touch separation is immature; UX fallback is a 90-second delay + second confirmation.
 
-| UI 模型 | 角色 | 三層分離狀態 | F3 SA4 採用評估 |
+### § 7.4 Comparison with Existing UI Models
+
+| UI Model | Role | Three-Layer Separation Status | F3 SA4 Adoption Assessment |
 |---|---|---|---|
-| iOS Family Sharing | parent → minor child | 無；單一 organizer 模型 | 不採用（未成年場景）<sup>61</sup> |
-| Android Family Link | parent → minor child | 無；單一 organizer 模型 | 不採用（未成年場景）<sup>62</sup> |
-| MS Family Safety / Apple Screen Time（成年） | organizer ↔ adult member | 無；過度偏 subject 自主 | 部分採用：subject 自主之邊界 |
-| Hyperledger Aries Mediator | mediator routing | 無；技術中介，非 supporter | 結構參照：operation layer 之「不簽章中介」<sup>63</sup> |
-| 北歐 BankID fullmakt | 家屬代行金融 | 無；單一 BankID 代簽（substituted） | **反面範本**，須避免<sup>50</sup> |
-| Israel §67B–67F | supporter 三類權限 | **有**（法律層 + 註冊登記） | **採用**：法律規範參照<sup>64</sup> |
-| Peru DL 1384 apoyos | apoyo 多類權限 | **有**（法律層） | **採用**：規範參照 + 警告 caregiver 混淆<sup>65</sup> |
+| iOS Family Sharing | parent -> minor child | None; single organiser model | Not adopted (minor scenario)[^61] |
+| Android Family Link | parent -> minor child | None; single organiser model | Not adopted (minor scenario)[^62] |
+| MS Family Safety / Apple Screen Time (adult) | organiser <-> adult member | None; overly biased toward subject autonomy | Partial adoption: boundary of subject autonomy |
+| Hyperledger Aries Mediator | mediator routing | None; technical intermediary, not supporter | Structural reference: "non-signing intermediary" at operation layer[^63] |
+| Nordic BankID fullmakt | family proxy financial | None; single BankID proxy (substituted) | **Counter-example to avoid**[^50] |
+| Israel SS67B-67F | supporter three-category permissions | **Yes** (legal layer + registry) | **Adopted**: legal normative reference[^64] |
+| Peru DL 1384 apoyos | apoyo multi-category permissions | **Yes** (legal layer) | **Adopted**: normative reference + warning about caregiver confusion[^65] |
 
-Israel §67B–67F（2017–2018 第一年實施 200 份 supported decision-making 協議，0% supporter 代簽法律文件<sup>66</sup>）與 Peru DL 1384（Lima 第一年 350 份 apoyo 協議，apoyo 權限分布 comprehension 65% + expression 28% + execution-of-non-legal-acts 7%<sup>67</sup>）為唯二在法律層完整實現 supporter 三類權限切分的法域。Cohen (2018) 對 Israel §67B–67F 為單一學者詮釋，須意定監護學術社群擴大檢驗。
+Israel SS67B--67F (approximately 200 supported decision-making agreements approved in the first implementation year 2017--2018, 0% involving supporter signing of legal documents[^66]) and Peru DL 1384 (approximately 350 apoyo agreements in Lima's first year, apoyo permission distribution: comprehension 65% + expression 28% + execution-of-non-legal-acts 7%[^67]) are the only two jurisdictions that have fully implemented a three-category permission separation for supporters at the legal layer. Cohen (2018) is a single scholar's interpretation of Israel SS67B--67F, requiring broader examination by the intended guardianship academic community.
 
-## 7.5 supporter 範疇邊界（SA3 補強 4 對齊）
+### § 7.5 Supporter Scope Boundaries (Aligned with SA3 Reinforcement 4)
 
-supporter 可以是——家屬、社工、長照員、信託機構代表、自選同儕、社區照顧據點之專業人員、律師。supporter 不必然——有監護權、有財產代理權、有醫療代理權、為家屬。台灣現行法律框架下無 supporter 獨立角色——wallet UX 三層分離若要實作，須於 wallet 條款層建立 supporter 私法契約承載並標明此 gap。schema 層義務——`ComprehensionAttestationCredential` 之 credentialSubject 須含 `supporterRole` 欄位，列舉上述可能類型；wallet UX 註冊時須要求 supporter 明示其角色類型加上任何 conflict-of-interest 揭露（如「我同時是 subject 之 caregiver」「我是 subject 遺囑受益人」）。Peru 實證（Bregaglio Lazarte 2019）警告——很多家屬同時擔任 cuidador 與 apoyo 造成 conflict of interest，「apoyo 與 cuidador 角色混淆」是實務層最大挑戰<sup>65</sup>。
+Supporters may be: family members, social workers, care staff, trust institution representatives, self-selected peers, community care centre professionals, lawyers. Supporters need not necessarily have: guardianship authority, property agency authority, medical agency authority, or family membership. Under Taiwan's current legal framework, the supporter has no independent legal role -- implementing the wallet UX three-layer separation would require establishing a private-law contractual bearing for supporters at the wallet terms layer and marking this gap. Schema-layer obligations: the `ComprehensionAttestationCredential`'s credentialSubject must include a `supporterRole` field listing the above possible types; wallet UX registration must require the supporter to declare their role type along with any conflict-of-interest disclosure (e.g., "I am simultaneously the subject's caregiver" or "I am a beneficiary of the subject's will"). Peru empirical evidence (Bregaglio Lazarte 2019) warns that many family members simultaneously serve as cuidador and apoyo, creating conflicts of interest; "apoyo and cuidador role confusion" is the greatest practical challenge at the implementation level.[^65]
 
-## 7.6 線下代簽攻擊面（已知 gap）
+### § 7.6 The Offline Proxy-Signing Attack Surface (Known Gap)
 
-即使 wallet UX 設計三層分離，supporter 仍可在線下取得 subject 的 biometric 或 PIN 後代為操作 Widget 3——cryptographic 層無法區分「subject 自己」與「supporter 持 subject 私鑰」。本文承認此攻擊面存在；SA4 並非主張「三層分離可在所有威脅模型下阻擋 supporter 代簽」，而是「在合作場景下不滑入 substituted」之雙層主張（規範性 + 工程性）。惡意場景由 audit-by-design 與 revocation_endpoint（F1 §5.4 修正 2-3）覆蓋。三層分離可顯著降低「無心代簽」（supporter 與 subject 雙方都未意識到正在進行 substituted）的觸發機率——POTENTIAL UC6 phase 2 之 47/122 PIN 委付即屬此類，可由三層分離直接降低。具體下降幅度須 pilot study 校準。
+Even with a three-layer wallet UX design, a supporter can still obtain the subject's biometric or PIN offline and operate Widget 3 on their behalf -- the cryptographic layer cannot distinguish "the subject themselves" from "the supporter holding the subject's private key." The present article acknowledges this attack surface. SA4 does not claim that "three-layer separation can block supporter proxy signing in all threat models"; rather, it advances a dual claim (normative + engineering) that "in cooperative scenarios, it does not slide into substituted." Malicious scenarios are covered by audit-by-design and revocation_endpoint (F1 SS5.4 Corrections 2--3). Three-layer separation can significantly reduce the trigger probability of "unintentional proxy signing" (where both supporter and subject are unaware that substituted decision-making is occurring) -- the 47/122 PIN-delegation cases in POTENTIAL UC6 phase 2 fall precisely in this category and can be directly reduced by three-layer separation. The specific magnitude of reduction requires pilot study calibration.
 
-# 八、Process Tracing——五個跨法域案例
 
-## 8.1 Israel Capacity and Guardianship Law Amendment No. 18 §67B–67F（5776-2016）
+## § 8. Process Tracing: Five Cross-Jurisdictional Cases
 
-以色列 2016 修正案 §67B 定義「support person」法律地位、明確區分於 guardian（apotropos）；§67C 列舉 supporter 三類權限（協助理解、協助表達、協助執行）；§67E 要求支援關係登記於 Administrator General 名冊以便審計<sup>64</sup>。Cohen (2018) 評析認為以色列方案是 OECD 第一個把「supporter 與 guardian 在法律上完整分離」並建立可審計機制的法域<sup>66</sup>。2017–2018 第一年實施核可的 supported decision-making 協議約 200 份，其中 91% 為「協助理解 + 協助表達」型、9% 為「協助執行非法律行為」型、**0% 涉及 supporter 代為簽署法律文件**——這在實證上印證 §67C 的權限切分是可實施的。Cohen 為單一學者詮釋；以色列 CRPD Concluding Observations 對該法仍有保留。
+### § 8.1 Israel Capacity and Guardianship Law Amendment No. 18 SS67B-67F (5776-2016)
 
-## 8.2 Peru Decreto Legislativo 1384（2018）
+Israel's 2016 Amendment SS67B defines the legal status of "support person" and explicitly distinguishes it from guardian (apotropos); SS67C enumerates three categories of supporter authority (assisting with understanding, assisting with expression, assisting with execution); SS67E requires registration of the support relationship in the Administrator General's registry for audit purposes.[^64] Cohen (2018) analyses this arrangement as the first OECD jurisdiction to "completely separate supporter from guardian in law" and establish an auditable mechanism.[^66] Approximately 200 supported decision-making agreements were approved in the first year of implementation (2017--2018), of which 91% were of the "assisting with understanding + assisting with expression" type, 9% were of the "assisting with execution of non-legal acts" type, and **0% involved the supporter signing legal documents on behalf of the subject** -- this empirically confirms that the permission separation of SS67C is implementable. Cohen is a single scholar's interpretation; Israel's CRPD Concluding Observations still contain reservations regarding this law.
 
-Peru 是第一個全面廢除 interdicción（剝奪法律能力的監護制度）的拉美法域，以 apoyos y salvaguardias（支援與保障）取代<sup>65</sup>。Bregaglio Lazarte (2019) 評析顯示 DL 1384 的關鍵設計——apoyo 可由當事人「事前指定」或「事中啟動」，apoyo 之權限範圍由當事人界定，且 apoyo 不可代為簽署。Lima 第一年（2018–2019）註冊 apoyo 協議約 350 份，其中 78% 由當事人主動指定、22% 為司法指定；apoyo 權限分布 comprehension 65% + expression 28% + execution-of-non-legal-acts 7%。Bregaglio Lazarte 觀察「apoyo 與 cuidador 角色混淆」是實務層最大挑戰——很多家屬同時擔任 cuidador 與 apoyo，造成 conflict of interest。Peru apoyos 雙軌 5 年後（2018–2023）實證未充分研究——「廢除 interdicción 是否轉為新 substituted」未完全駁回。
+### § 8.2 Peru Decreto Legislativo 1384 (2018)
 
-## 8.3 台灣意定監護新制（民法 §1113-2 至 §1113-10, 2019）
+Peru is the first Latin American jurisdiction to comprehensively abolish interdiccion (the guardianship system that strips legal capacity), replacing it with apoyos y salvaguardias (supports and safeguards).[^65] Bregaglio Lazarte (2019) analyses the key design of DL 1384: an apoyo can be "pre-designated" or "activated midway" by the individual; the scope of the apoyo's authority is defined by the individual; and the apoyo may not sign on behalf. Approximately 350 apoyo agreements were registered in Lima in the first year (2018--2019), of which 78% were designated by the individual on their own initiative and 22% were designated by the judiciary. Apoyo permission distribution: comprehension 65% + expression 28% + execution-of-non-legal-acts 7%. Bregaglio Lazarte observes that "apoyo and cuidador role confusion" is the greatest practical challenge -- many family members simultaneously serve as cuidador and apoyo, creating conflicts of interest. The empirical evidence of five years of dual-track Peru apoyos (2018--2023) has not been sufficiently researched -- "whether abolishing interdiccion has transformed into new substituted" has not been fully refuted.
 
-台灣立法院 2019-06-19 公布意定監護新制、2019-12-19 施行<sup>16</sup>。§1113-2「稱意定監護者，謂本人與受任人約定，於本人受監護宣告時，受任人允為擔任監護人之契約」；§1113-4 須法院監護宣告為要件。意定監護「以監護宣告為啟動條件」與 CRPD §29 supporter「在本人意願下持續支援、不必經宣告」的範疇差異是 A15 §6.2 與意定監護銜接 gap 的法律根源。司法院統計年報——2019 年 173 件 / 2020 年 412 件 / 2021 年 568 件 / 2022 年 731 件 / 2023 年 891 件<sup>68</sup>，與 2023 年台灣失智人口估計 35 萬人相比覆蓋率 < 0.3%。黃詩淳 (2020) 對意定監護新制的兩項限制詮釋——其一，意定監護的啟動仍以「監護宣告」為條件，即仍要求 capacity assessment，與 CRPD §29「support should not hinge on mental capacity assessments」的精神不完全相符；其二，意定監護的受任人法律地位仍是「監護人」（即可代為決定），並未建立 supporter（不可代為決定）的獨立角色<sup>17</sup>。黃詩淳 (2020) 為單一學者詮釋，須意定監護學術社群擴大檢驗。
+### § 8.3 Taiwan's Intended Guardianship System (Civil Code SS1113-2 through SS1113-10, 2019)
 
-## 8.4 北歐 BankID fullmakt（反面範本）
+Taiwan's Legislative Yuan promulgated the intended guardianship system on 19 June 2019, with entry into force on 19 December 2019.[^16] SS1113-2: "Intended guardianship refers to a contract between a person and a designated agent, whereby the designated agent agrees to serve as guardian when the person is declared to be under guardianship." SS1113-4 requires a court guardianship declaration as a condition. The scope difference between intended guardianship "with guardianship declaration as triggering condition" and CRPD SS29 supporters "providing continuous support at the individual's discretion, without requiring a declaration" is the legal root of the interface gap between A15 SS6.2 and intended guardianship. Judicial Yuan statistical yearbook: 173 cases in 2019 / 412 in 2020 / 568 in 2021 / 731 in 2022 / 891 in 2023.[^68] Compared to an estimated Taiwan dementia population of 350,000 in 2023, the coverage rate is < 0.3%. Huang Shichun (2020) identifies two limitations in interpreting the intended guardianship system: first, intended guardianship is still triggered by "guardianship declaration," which still requires a capacity assessment, not fully consistent with the spirit of CRPD SS29 ("support should not hinge on mental capacity assessments"); second, the legal status of the intended guardianship agent remains "guardian" (i.e., they may make substituted decisions), and no independent role of supporter (who may not make substituted decisions) has been established.[^17] Huang Shichun (2020) is a single scholar's interpretation, requiring broader examination by the intended guardianship academic community.
 
-瑞典 BankID 與挪威 BankID 在金融服務場景，子女可代失能父母執行「fullmakt」（委任書）下的特定金融操作；其法律機制是單一一次性 power of attorney——子女實質上持有自己的 BankID 並代為操作<sup>50</sup>。此為 SA4 要避免的反面範本——它把 supporter 與 substituted 混為一物且無 cryptographic 區分。F3 SA4 推翻 BankID 既有實務的政治與商業成本未評估，須誠實邊界明示。
+### § 8.4 Nordic BankID fullmakt (Counter-Example)
 
-## 8.5 EUDI Wallet POTENTIAL Use Case 6 phase 2（2025-09）
+In Sweden's BankID and Norway's BankID for financial service scenarios, children may perform specific financial operations under a "fullmakt" (power of attorney) on behalf of incapacitated parents. The legal mechanism is a single one-off power of attorney -- the child effectively holds their own BankID and operates on behalf.[^50] This is the counter-example that SA4 must avoid: it conflates supporter with substituted, with no cryptographic distinction. The political and commercial cost of F3 SA4 overturning existing BankID practice has not been assessed and requires explicit acknowledgment as an honesty boundary.
 
-POTENTIAL UC6 phase 2 報告——荷蘭與西班牙共 122 名 65+ 受測者使用 EUDI wallet 進行 medical mandate（同意醫療資料分享給特定機構）。回報：47/122 名受測者把 wallet PIN 交給家屬代為操作；12/122 名受測者在 supporter 在場下仍無法理解 selective disclosure 介面；0/122 名 wallet 提供「supporter co-presence widget」、全部為單一 PIN 模型<sup>32</sup>。此為 2025–2026 年 EUDI 場景下最直接的實證，顯示既有 wallet 設計缺少 supporter UI 層導致 substituted 退化路徑被觸發。下一階段（phase 3, 2026–2027）若不加入 SA4 三層分離結構，CRPD §28 違反風險將進入立法層審查。POTENTIAL UC6 phase 2 之 47/122 PIN 委付率可外推至台灣為跨文化外推風險——歐洲 pilot 之觸發機率台灣須另行 pilot。
+### § 8.5 EUDI Wallet POTENTIAL Use Case 6 Phase 2 (2025-09)
 
-# 九、反事實壓力測試
+The POTENTIAL UC6 phase 2 report: 122 participants aged 65+ in the Netherlands and Spain used EUDI wallets to perform medical mandates (consent to sharing medical data with specific institutions). Findings: 47/122 participants handed their wallet PIN to family members to operate; 12/122 participants still could not understand the selective disclosure interface with a supporter present; 0/122 wallets provided a "supporter co-presence widget" -- all used a single PIN model.[^32] This is the most direct empirical evidence available for EUDI contexts in 2025--2026, demonstrating that existing wallet designs lacking a supporter UI layer trigger the substituted degradation path. In the next phase (phase 3, 2026--2027), if the SA4 three-layer separation structure is not incorporated, the CRPD SS28 violation risk will enter the legislative review layer. The 47/122 PIN delegation rate in POTENTIAL UC6 phase 2 involves cross-cultural extrapolation risk when projected to Taiwan -- the trigger probability in European pilots requires separate piloting in Taiwan.
 
-本章對 F3 四件 UX 工程原語進行五個反事實情境的壓力測試，方法論繼承 F2 §9 的 likelihood-by-mechanism 框架，likelihood 採 low（< 30%）/ medium（30–50%）/ medium-high（50–70%）/ high（≥ 70%）四級，不採災難主義絕對句式。working thesis（無緩解版）與 strengthened thesis（含三大緩解 critical path 版）嚴格區分；strengthened thesis 之「保留核心」措辭明示為「第一段 baseline 保留、第二段時程外推、第三段條件性失效」三段差異。
 
-## 9.1 CF1——認知科學新研究推翻 Cowan 4±1（2027–2028, likelihood medium, impact medium）
+## § 9. Counterfactual Stress Tests
 
-2027–2028 年新一代認知科學研究基於 cross-cultural、mobile context、time-pressure 三項 ecologically valid 條件，顯示 working memory capacity 在 wallet 場景比 1990–2000 年代實驗室條件低，估計值落入 2±1 區間（相對於 Cowan 2001 的 4±1 為下修）。三條機制鏈——跨文化軸（Adams-Nguyen-Cowan 2018 已建立修訂方向<sup>69</sup>）、mobile context 軸（Wilmer-Sherman-Chein 2017 已揭示 smartphone use 與 attention capacity 負相關<sup>70</sup>）、time-pressure 軸（wallet UX 30 秒至 2 分鐘決策時程）。
+This section subjects the four F3 UX engineering primitives to stress tests across five counterfactual scenarios, inheriting methodologically from the likelihood-by-mechanism framework of F2 SS9. Likelihood is rated as low (< 30%) / medium (30--50%) / medium-high (50--70%) / high (>= 70%), eschewing catastrophist absolute formulations. The working thesis (without-mitigation version) and the strengthened thesis (with-three-major-mitigation-critical-path version) are strictly distinguished. The "preserved core" formulation for the strengthened thesis is explicitly stated as a three-tier difference: "first tier: baseline fully preserved; second tier: timeline extrapolated; third tier: conditional failure."
 
-**失敗鏈**：SA1 baseline 從「≤ 3 attribute group」下修至「≤ 1–2」，UX 流暢度大幅下降，holder 平均 presentation 時間從 ≤ 60 秒上升至 ≥ 120 秒；SA2 dark patterns 防線壓力上升 30–50%（consent dialogue 顯示時間每增加 50%，holder「全部接受」傾向上升 10–15 個百分點）；SA3 capacity-aware UX 階段化重新設計（CDR 0 與 CDR ≥ 1 的 UX 階段差異變小）；SA4 supporter 介入頻率上升放大「協助理解滑入代為決定」邊界違反風險。
+### § 9.1 CF1: Cognitive Science New Research Overturns Cowan 4+/-1 (2027--2028, likelihood medium, impact medium)
 
-**緩解**：UX-agility by design——progressive disclosure UI 支援動態調整 attribute group 上界；wallet 配置檔允許 issuer 或 verifier 在 cryptosuite metadata 中宣告 target cognitive load level；issuer-supplied defaults 在低上界場景發揮更大作用；dual-track UX（guided mode + expert mode）。剩餘風險——UX-agility 工程實作複雜度增加 30–50%，跨 wallet 廠商互通測試壓力增加；issuer-supplied defaults 在 GDPR Art 25 privacy by design 與 holder autonomy 之間的張力未解。
+In 2027--2028, new-generation cognitive science research based on cross-cultural, mobile context, and time-pressure ecologically valid conditions demonstrates that working memory capacity in wallet contexts is lower than that measured in 1990s--2000s laboratory conditions, with estimates falling in the 2+/-1 range (a downward revision from Cowan 2001's 4+/-1). Three mechanism chains: the cross-cultural axis (Adams-Nguyen-Cowan 2018 has already established the direction of revision[^69]); the mobile context axis (Wilmer-Sherman-Chein 2017 has already revealed a negative correlation between smartphone use and attention capacity[^70]); and the time-pressure axis (wallet UX decision timeframes of 30 seconds to 2 minutes).
 
-## 9.2 CF2——EUDI 強制階段重演 GDPR cookie banner 失敗（likelihood medium-high, impact high）
+**Failure chain**: SA1 baseline is revised downward from "<= 3 attribute groups" to "<= 1--2," UX fluency decreases substantially, and average holder presentation time increases from <= 60 seconds to >= 120 seconds; SA2 dark pattern defence pressure increases by 30--50% (every 50% increase in consent dialogue display time is associated with a 10--15 percentage point increase in "accept all" tendency); SA3 capacity-aware UX staging is redesigned (the UX stage difference between CDR 0 and CDR >= 1 narrows); SA4 increased supporter intervention frequency amplifies the boundary-violation risk of "assistance for understanding sliding into decision substitution."
 
-2026–2027 年 EUDI Wallet 強制階段啟動後，verifier policy consent UX 在 6–18 個月內重演 GDPR cookie banner 失敗模式。預期 wallet 場景「全部接受」率達 75–85%、dark patterns 普及率達 Mathur 2019 shopping site 同等水平（≥ 11%）。觸發機制鏈——enforcement 機制缺口（DPA 對 wallet 場景執法權限與技術能力均不到位）、verifier 動機（透過 dark patterns 取得超出最小化原則的 attribute）、wallet provider 競爭壓力（UX 順滑化與 dark patterns 工程上難以區分）。
+**Mitigation**: UX-agility by design -- progressive disclosure UI supports dynamic adjustment of the attribute group upper bound; wallet configuration files allow issuers or verifiers to declare target cognitive load levels in cryptosuite metadata; issuer-supplied defaults play a greater protective role in low-upper-bound scenarios; dual-track UX (guided mode + expert mode). Residual risk: UX-agility engineering complexity increases by 30--50%; cross-wallet-vendor interoperability testing pressure increases; the tension between issuer-supplied defaults under GDPR Art 25 privacy by design and holder autonomy remains unresolved.
 
-**失敗鏈**：SA2 dark patterns 防線崩潰（scope 變更強制延遲被「重置流程」繞過、選項對稱性被視覺對比繞過、必要訊息揭露被「詳細資訊」摺疊到第二層繞過）；SA1 cognitive load 上界失去意義（consent fatigue 下使用者不再閱讀屬性說明）；SA3 capacity-aware UX 自動降階被使用者體驗為「煩擾」而被關閉；SA4 supporter UI 三層分離塌縮為單層「supporter 代為點擊」。對 F2 SA2 CRPD §29 反向使用風險——CRPD Committee 對歐盟成員國的 Concluding Observations 可預期在 2028–2030 年度報告週期出現對 EUDI Wallet UX 之 Art 12 違反指控。
+### § 9.2 CF2: EUDI Mandatory Phase Replays GDPR Cookie Banner Failure (likelihood medium-high, impact high)
 
-**緩解**：EU AI Act §5(1)(b) 延伸到 wallet 場景（需 EDPB 與 European AI Office 聯合發布 guidance，明示 wallet 場景的 dark patterns 為 §5(1)(b) 禁止範圍）；DSA Art 25 對 wallet 介面設計的延伸（需 European Commission 在 DSA Art 25 implementing guidelines 中納入 wallet）；EDPB enforcement-grade guidance（wallet 場景 specific guidelines，含量化標準）；conformance suite 加入 dark patterns 檢測<sup>71</sup>。剩餘風險——GDPR 2018 生效後到 EDPB Guidelines 03/2022、再到實際 enforcement 統計顯示 cookie banner「全部接受」率下降仍未完成（2024 年率仍 ≥ 75%）；EUDI Wallet 強制階段若 2026–2027 啟動、dark patterns enforcement 完整到位可能要 2032–2034。EU AI Act §5(1)(b) wallet 適用為條件性——「若 wallet UX 落入 AI Act AI system 範圍」，待 AI Office implementing guidance（2026 Q4 預定）。
+After the EUDI Wallet mandatory phase launches in 2026--2027, verifier policy consent UX replays the GDPR cookie banner failure pattern within 6--18 months. Expected wallet scenario "accept all" rates reach 75--85%; dark pattern prevalence reaches the same level as Mathur 2019 shopping sites (>= 11%). Triggering mechanism chain: enforcement mechanism gap (DPAs lack both jurisdiction and technical capacity for enforcement in wallet scenarios); verifier motivation (obtaining attributes beyond the data minimisation principle through dark patterns); wallet provider competitive pressure (UX smoothing is engineeringly indistinguishable from dark patterns).
 
-**CRPD §29 反向使用問題**：CF2 觸發後 F3 對 CRPD §29 的對接從「履行性補強」翻轉為「形式合規空轉」；audit trail 在 30 年窗口內反過來成為「holder 同意此 dark pattern 之證據」（T_UX2 已形式化）。
+**Failure chain**: SA2 dark pattern defence collapses (scope-change mandatory delay bypassed by "reset procedure"; option symmetry bypassed by visual contrast; required information disclosure folded into a second-tier "details" layer); SA1 cognitive load upper bound becomes meaningless (under consent fatigue, users no longer read attribute descriptions); SA3 capacity-aware UX automatic downgrade is experienced by users as "nuisance" and disabled; SA4 supporter UI three-layer separation collapses to a single-layer "supporter clicks on behalf." Regarding the F2 SA2 CRPD SS29 reverse-application risk: CRPD Committee Concluding Observations on EU Member States may be expected to include allegations of Art 12 violations concerning EUDI Wallet UX in the 2028--2030 reporting cycle.
 
-## 9.3 CF3——SA3 三條替代路徑全部失效（2028–2030, likelihood medium, impact high）
+**Mitigation**: EU AI Act SS5(1)(b) extension to wallet scenarios (requires EDPB and European AI Office to jointly issue guidance explicitly classifying dark patterns in wallet scenarios as within the SS5(1)(b) prohibited scope); DSA Art 25 extension to wallet interface design (requires European Commission to include wallets in DSA Art 25 implementing guidelines); EDPB enforcement-grade guidance (wallet-specific guidelines, including quantitative standards); conformance suite incorporating dark pattern detection.[^71] Residual risk: from GDPR entering into force in 2018 to EDPB Guidelines 03/2022 and then to actual enforcement statistics showing decline in cookie banner "accept all" rates has not yet completed (rates still >= 75% in 2024); if the EUDI Wallet mandatory phase launches in 2026--2027, complete dark pattern enforcement may take until 2032--2034. EU AI Act SS5(1)(b) wallet applicability is conditional -- "if wallet UX falls within the AI Act AI system scope" -- pending AI Office implementing guidance (planned 2026 Q4).
 
-三條路徑同時遇到實作障礙——functional self-assessment 違反 GDPR Art 9（wallet 內 ambient 監測難以滿足 Art 9(2)(a) 明示同意要件）；supporter triggered 被 CRPD Committee 質疑為 substituted（supporter 在「觸發降階」這個動作上實質決定了「holder 當下無法處理 baseline UX」，可能被同樣以 functional capacity test 為由判定為違反<sup>72</sup>）；issuer-side hint 被判定為 functional capacity test 違反 CRPD §29（issuer 在 credential 中嵌入 capacityProfile hint 等於 issuer 替 holder 做了 functional capacity 判定）。
+**CRPD SS29 reverse-application problem**: if CF2 triggers, F3's engagement with CRPD SS29 flips from "enforceability reinforcement" to "formal compliance empty shell"; the audit trail within the 30-year window conversely becomes "evidence that the holder consented to this dark pattern" (T_UX2 has been formalised).
 
-**失敗鏈**：SA3 三路徑都不可用；A15 §6.2 三重預設失效；家屬代行 chooser_signature 常態化；CRPD Art 12 義務違反——wallet UX 在規模化 substituted regime 下，CRPD Committee 預期對歐盟成員國、澳洲、紐西蘭、韓國發出 Concluding Observations + individual communication procedure（OP-CRPD Art 1-5）。
+### § 9.3 CF3: All Three SA3 Alternative Paths Fail (2028--2030, likelihood medium, impact high)
 
-**緩解**：threshold signatures 作為 fallback（F2 §9 CF2 緩解設計 1 已建議——BLS / Shamir 對失智場景的 t-of-n 共簽，把 capacity-aware downgrade 的觸發從 functional test 轉移到法律地位 anchor）；court-supervised downgrade（對失智宣告後場景由法院命令為 anchor 觸發 wallet downgrade）；GDPR Art 9(2)(g) 公共利益例外暫時援用（對 functional self-assessment 路徑）。剩餘風險——threshold signatures fallback 依賴失智宣告 / 監護登記率，但全球失智盛行率對應的監護登記覆蓋率不足 5%（台灣 2024 司法院統計）；GDPR Art 9(2)(g) 例外的接受度未知，CRPD 委員會對「公共利益正當化 functional assessment」的歷史態度傾向質疑。
+All three paths encounter implementation obstacles simultaneously: functional self-assessment violates GDPR Art 9 (ambient monitoring within wallets is difficult to satisfy Art 9(2)(a) explicit consent requirements); supporter-triggered is challenged by the CRPD Committee as substituted (the supporter's act of "triggering downgrade" effectively decides "the holder cannot currently handle the baseline UX," which may be judged on the same functional capacity test grounds as a violation[^72]); issuer-side hint is determined to violate CRPD SS29 as a functional capacity test (the issuer embedding a capacityProfile hint in a credential is equivalent to the issuer making a functional capacity determination on behalf of the holder).
 
-## 9.4 CF4——supporter UI 三層分離無 hardware 載體（2026–2030, likelihood medium-high, impact medium-high）
+**Failure chain**: all three SA3 paths unavailable; A15 SS6.2 triple presupposition fails; family-member proxy chooser_signature becomes normalised; CRPD Art 12 obligation violated -- under a scaled substituted regime in wallet UX, the CRPD Committee may be expected to issue Concluding Observations + individual communication procedures (OP-CRPD Art 1--5) to EU Member States, Australia, New Zealand, and South Korea.
 
-iOS Family Sharing 與 Android Family Link 至 2030 仍未原生支援「supporter 角色 ≠ 家庭成員」；middle-aged supporter（社工、長照員、信託機構代表）多數無自己的 wallet；threshold signatures 在主流 wallet 實作不普及。
+**Mitigation**: threshold signatures as fallback (F2 SS9 CF2 mitigation Design 1 already proposed -- BLS / Shamir co-signing for dementia scenarios in t-of-n, shifting the capacity-aware downgrade trigger from functional test to legal-status anchor); court-supervised downgrade (for post-dementia declaration scenarios, court order as anchor triggers wallet downgrade); GDPR Art 9(2)(g) public interest exception temporarily invoked (for functional self-assessment path). Residual risk: the threshold signatures fallback depends on dementia declaration / guardianship registration rates, but global dementia prevalence corresponds to guardianship registration coverage below 5% (Taiwan Judicial Yuan 2024 statistics); GDPR Art 9(2)(g) exception acceptability unknown; the CRPD Committee's historical attitude toward "justifying functional assessment on public interest grounds" tends toward scepticism.
 
-**失敗鏈**：SA4 三層分離理論成立但工程不可達——iOS / Android 對「指定第三方 supporter」無原生支援；supporter 多數無自己的 wallet；實務上 supporter 退化為「家屬成員」（透過 Apple Family Sharing 或 Google Family Link 接入），與 subject 共用裝置。物理 holder ≠ 簽章 holder 風險——共用裝置下 supporter 物理上持有 subject 私鑰、chooser_signature 可由 supporter 代簽。
+### § 9.4 CF4: Supporter UI Three-Layer Separation Lacks Hardware Carrier (2026--2030, likelihood medium-high, impact medium-high)
 
-**台灣特殊衝擊**：台灣健保 IC 卡長期由家屬代申代用實務（衛福部統計 2024 顯示 65 歲以上失智族群 IC 卡操作 ≥ 70% 由家屬代行）；EUDI Wallet 模式進入台灣 DIW 後若 supporter UI 三層分離無 hardware 載體，健保卡現行家屬代行實務會直接搬到 wallet——失能長者的 wallet 由家屬持有與操作；SA4 在台灣場景下從第一日即不成立。
+iOS Family Sharing and Android Family Link, through 2030, still do not natively support "supporter role =/= family member"; most middle-aged supporters (social workers, care staff, trust institution representatives) do not have their own wallets; threshold signatures are not prevalent in mainstream wallet implementations.
 
-**緩解**：wallet provider supporter sub-account（W3C DID coexistentSubjects 延伸提案）；政府 / NGO supporter wallet 配發（健保署、長照中心、衛福部、失智症協會、心智障礙者家長協會）；公共服務 supporter 認證程式（類似律師、公證人）；threshold signatures 主流 wallet 推動（BLS / FROST<sup>73,74</sup>）。剩餘風險——supporter 動員規模化的政治意願與預算未知；CRPD §29 supporter 配發在歐盟、日本、韓國有部分公部門預算支持但規模對失智盛行率覆蓋率不足 10%；台灣意定監護新制覆蓋率不足 5%。
+**Failure chain**: SA4 three-layer separation is theoretically sound but engineering-unreachable -- iOS / Android has no native support for "designating third-party supporters"; most supporters have no wallet of their own; in practice supporters degrade to "family members" (connected through Apple Family Sharing or Google Family Link), sharing a device with the subject. Physical holder =/= signing holder risk: on shared devices, supporters physically hold the subject's private key; chooser_signature can be proxy-signed by supporters.
 
-## 9.5 CF5——LLM-agent 補位（2027–2030, likelihood high, impact medium-high）
+**Taiwan-specific impact**: Taiwan's long-established NHI IC card family-proxy-application-and-use practice (MOHW 2024 statistics show that >= 70% of wallet operations for dementia patients aged 65+ are carried out by family members); if EUDI Wallet modes enter Taiwan's digital identity wallet and supporter UI three-layer separation lacks a hardware carrier, the current family-proxy practice for NHI cards will transfer directly to the wallet -- incapacitated older persons' wallets will be held and operated by family members; SA4 is inoperative in the Taiwan scenario from day one.
 
-2027–2030 年 LLM-agent in wallet（F1 已揭示場景）成為 F3 四件 UX 原語的功能性替代或補位——comprehension 協助（LLM-agent 解釋 attribute 含義、verifier 信任度、資料最小化原則）、attribute disclosure 簡化（推薦 disclosure profile）、法律術語即時翻譯、決策建議。此情境兼具緩解面（解決 SA4 supporter 動員規模化問題、SA1 cognitive load 問題）與威脅面（LLM-agent 滑入 supporter「不可替代」邊界）。
+**Mitigation**: wallet provider supporter sub-account (W3C DID coexistentSubjects extension proposal); government / NGO supporter wallet distribution (National Health Insurance Administration, long-term care centres, MOHW, Taiwan Alzheimer's Association, Intellectual Disability Parents' Association); public-service supporter certification programmes (analogous to lawyers, notaries); mainstreaming threshold signatures in wallets (BLS / FROST[^73][^74]). Residual risk: political will and budget for scaling up supporter mobilisation are unknown; CRPD SS29 supporter distribution has partial public-sector budget support in the EU, Japan, and South Korea but coverage relative to dementia prevalence is below 10%; Taiwan's intended guardianship system coverage is below 5%.
 
-**失敗鏈**：LLM-agent 解釋偏差（受訓練資料、prompt 設計、wallet provider 商業利益影響——對 wallet provider 偏好的 verifier 過度推薦、對特定 attribute 揭露的便利化傾向<sup>75</sup>）；prompt injection 攻擊（verifier 在 OpenID4VP request metadata 中嵌入 prompt injection<sup>76</sup>）；agent-mediated consent 取代 informed consent（holder 所同意者實為 agent 簡化過的版本，已偏離原始 verifier policy）。
+### § 9.5 CF5: LLM-Agent Substitution (2027--2030, likelihood high, impact medium-high)
 
-**緩解**：F1 §7.3.1 AgentDelegationProof（agent 在每次 wallet 操作時附加 delegation 證明，明示「此操作 holder 已授權給 agent 何種範圍」）；presentationOrigin 標籤（每個 OpenID4VP presentation 在 audit log 中明示「holder 直接決定 / agent 建議後 holder 確認 / supporter 共簽 / 法院命令 anchor」四類來源之一）；comprehension_attestation 與 chooser_signature 分離（comprehension_attestation 必須由 human supporter 私鑰簽不可由 LLM-agent 簽，chooser_signature 必須由 holder 私鑰簽）；agent 與 supporter 角色密碼學區分（在 wallet 規格層強制區分 agent_signature / supporter_signature / holder_signature 三類，分別承載 LLM 行為見證、CRPD §29 supported decision 法律效力、informed consent 法律效力）。
+In 2027--2030, LLM-agent in wallet (a scenario already identified in F1) becomes a functional substitute or supplement for the four F3 UX primitives: comprehension assistance (LLM-agent explains attribute meanings, verifier trustworthiness, data minimisation principles), attribute disclosure simplification (recommending disclosure profiles), real-time translation of legal terminology, and decision suggestions. This scenario has both a mitigation dimension (addressing SA4 supporter mobilisation scaling and SA1 cognitive load problems) and a threat dimension (LLM-agent sliding into the "irreplaceable" boundary of supporters).
 
-### 9.5.1 CF5 對 F1 RT-ℬ ✗ / AA-ℬ ✗ 邊界的衝擊（單獨段, 280–300 字）
+**Failure chain**: LLM-agent explanation bias (influenced by training data, prompt design, and wallet provider commercial interests -- over-recommending preferred verifiers, tendency toward convenience of particular attribute disclosures[^75]); prompt injection attacks (verifier embeds prompt injection in OpenID4VP request metadata[^76]); agent-mediated consent replacing informed consent (what the holder "consents" to is actually the agent-simplified version, already departing from the original verifier policy).
 
-F1（系列 article 16）§5.3 W4 反論與 §7.3 已建立關鍵邊界——常駐型不可委任邊界 RT-ℬ ✗ 禁止 LLM-agent 取代 holder 持續承擔 civic role；常駐型可代行邊界 AA-ℬ ✗ 禁止 LLM-agent 取代 holder 在「行政行為承擔層」的決定。CF5 對此邊界構成工程式越界風險——LLM-agent 在 wallet UX 內提供 comprehension 協助、attribute filtering 建議、決策建議三項服務時，雖名義上每次仍由 holder 一鍵確認，但 holder 的「確認」實質為「對 agent 簡化版本的同意」；agent 因此實質決定了「何種選項被 holder 看到」「何種建議被 holder 接受」。這個越界屬工程結構的常駐越界，非單次違反——agent 每次 wallet 操作都在「協助理解」與「代為決定」之間滑動，邊界存於使用者主觀層，非密碼學層。緩解上 F1 §7.3.1 AgentDelegationProof 加上 presentationOrigin 標籤加上 comprehension_attestation 與 chooser_signature 分離三件設計共同維持密碼學邊界；但使用者主觀層的邊界維持需 F3 UX 工程加上 F1 RT-ℬ ✗ 規範教育加上 EU AI Act §5(1)(b) manipulative techniques enforcement 三方協作。即使三方到位，agent 與 supporter 的角色滑移在實務上仍會發生——這是 F3 對 F1 RT-ℬ ✗ / AA-ℬ ✗ 邊界結論的「工程實作層延伸誠實邊界」，**非「繞過 F1 結論」**。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 仍是常駐型不可委任結論；CF5 處理的是 Z₂ 邊界內部的工程實作脆弱性。
+**Mitigation**: F1 SS7.3.1 AgentDelegationProof (agent attaches a delegation proof to each wallet operation, explicitly stating "for this operation the holder has authorised the agent within what scope"); presentationOrigin label (each OpenID4VP presentation in the audit log explicitly identifies one of four origins: "holder directly decided / agent suggested and holder confirmed / supporter co-signed / court-order anchor"); comprehension_attestation and chooser_signature separation (comprehension_attestation must be signed by a human supporter private key, not by an LLM-agent; chooser_signature must be signed by the holder private key); cryptographic distinction of agent and supporter roles (at the wallet specification layer, mandatory distinction of three types: agent_signature / supporter_signature / holder_signature, bearing respectively LLM behaviour witness, CRPD SS29 supported decision legal effect, and informed consent legal effect).
 
-## 9.6 likelihood × impact 矩陣
+#### § 9.5.1 CF5's Impact on F1's RT-ℬ X / AA-ℬ X Boundaries (Separate Paragraph)
 
-| CF | 情境 | Likelihood | Impact | 矩陣位置 | 主衝擊原語 | 連鎖衝擊原語 |
+Article F1 (series Article 16) SS5.3 Counter-argument W4 and SS7.3 have established critical boundaries: the permanent non-delegable boundary RT-ℬ X prohibits LLM-agents from substituting the holder in continuously bearing civic roles; the permanent non-delegable boundary AA-ℬ X prohibits LLM-agents from substituting the holder's decisions in the "administrative action bearing layer." CF5 poses an engineering boundary-crossing risk to these limits: when LLM-agents within wallet UX provide three services -- comprehension assistance, attribute filtering suggestions, and decision suggestions -- while nominally the holder still confirms each time with a single click, the holder's "confirmation" is in substance "consent to the agent-simplified version." The agent thus effectively determines "what options the holder sees" and "what suggestions the holder accepts." This boundary crossing is a permanent structural crossing at the engineering level, not a one-time violation -- with each wallet operation, the agent slides between "assisting with understanding" and "deciding on behalf," a boundary that exists at the user subjective layer, not the cryptographic layer. For mitigation, three elements from F1 SS7.3.1 AgentDelegationProof plus presentationOrigin labels plus the separation of comprehension_attestation and chooser_signature jointly maintain the cryptographic boundary. However, maintaining the boundary at the user subjective layer requires the three-way collaboration of F3 UX engineering, F1 RT-ℬ X normative education, and EU AI Act SS5(1)(b) manipulative techniques enforcement. Even with all three in place, role slippage between agent and supporter will continue to occur in practice -- this is the "engineering implementation layer extended honesty boundary" of F3's relationship to F1's RT-ℬ X / AA-ℬ X boundary conclusions, **not a "bypass of F1 conclusions."** F1's RT-ℬ X and AA-ℬ X remain permanent non-delegable conclusions; the present article makes no changes to them.
+
+### § 9.6 Likelihood x Impact Matrix
+
+| CF | Scenario | Likelihood | Impact | Matrix Position | Primary Primitive Impacted | Chain Impacted |
 |----|------|------------|--------|---------|------------|--------------|
-| CF1 | 認知科學推翻 Cowan 4±1 | medium (30–50%) | medium | (M × M) | SA1 | SA2, SA3, SA4 |
-| CF2 | EUDI 強制階段 cookie banner 重演 | medium-high (55–70%) | high | (M-H × H) | SA2 | SA1, SA3, SA4 |
-| CF3 | capacity-aware 三路徑全失效 | medium (30–50%) | high | (M × H) | SA3 | SA4, F2 SA2 |
-| CF4 | supporter UI 無 hardware 載體 | medium-high (55–70%) | medium-high | (M-H × M-H) | SA4 | SA3, F1 chooser_signature |
-| CF5 | LLM-agent 補位 | high (≥ 70%) | medium-high | (H × M-H) | F1 RT-ℬ ✗ / AA-ℬ ✗ | SA1, SA2, SA3, SA4 |
+| CF1 | Cognitive science overturns Cowan 4+/-1 | medium (30--50%) | medium | (M x M) | SA1 | SA2, SA3, SA4 |
+| CF2 | EUDI mandatory phase cookie banner replay | medium-high (55--70%) | high | (M-H x H) | SA2 | SA1, SA3, SA4 |
+| CF3 | Capacity-aware three paths all fail | medium (30--50%) | high | (M x H) | SA3 | SA4, F2 SA2 |
+| CF4 | Supporter UI lacks hardware carrier | medium-high (55--70%) | medium-high | (M-H x M-H) | SA4 | SA3, F1 chooser_signature |
+| CF5 | LLM-agent substitution | high (>= 70%) | medium-high | (H x M-H) | F1 RT-ℬ X / AA-ℬ X | SA1, SA2, SA3, SA4 |
 
-矩陣解讀——最高優先級風險是 CF2（M-H × H）與 CF3（M × H），兩者都會觸發 F3 thesis 整體修訂或 CRPD §29 違反風險；高機率中等風險是 CF5（H × M-H），雖然 impact 僅 M-H 但機率最高、對 F1 邊界結論衝擊獨特；中機率中等風險是 CF1（M × M）與 CF4（M-H × M-H），兩者都是「工程可達性」型衝擊。五個 CF 中無 (H × H)、無 (L × L)；最壞合取情境（五 CF 全部觸發）first-order 獨立假設下 < 5%；考慮 CF1–CF3 條件依賴與 CF4–CF5 標準分裂相互強化，實際 5–10%。
+Matrix interpretation: the highest-priority risks are CF2 (M-H x H) and CF3 (M x H), both of which would trigger wholesale revision of the F3 thesis or CRPD SS29 violation risk. The high-probability medium-impact risk is CF5 (H x M-H); although impact is only M-H, its probability is highest and its impact on F1 boundary conclusions is unique. Medium-probability medium-impact risks are CF1 (M x M) and CF4 (M-H x M-H), both of which are "engineering reachability" type impacts. Among the five CFs, none is (H x H) and none is (L x L). Under the worst-case conjunction (all five CFs triggering), with first-order independence assumption: < 5%; considering the conditional dependence of CF1--CF3 and the mutual reinforcement of CF4--CF5 paradigm splitting: 5--10%.
 
-## 9.7 三大緩解 critical path
+### § 9.7 Three Major Mitigation Critical Paths
 
-判準——對多個 CF 同時提供緩解、在現有工程社群已有部分基礎、標準化路徑明確、對接 F2 §9 critical path，避免另起爐灶。
+Criteria: providing mitigation for multiple CFs simultaneously; having partial foundations already in place in the existing engineering community; a clear standardisation path; connecting to F2 SS9 critical paths; avoiding reinventing the wheel.
 
-**緩解 1（critical path 首位）：UX-agility by design**（W3C VC v2.0 securingMechanism + EUDI ARF profile 抽象層 + issuer-supplied defaults）。同時對 CF1 與 CF2 提供緩解。估期——2026–2028 完成 W3C / IETF / EUDI ARF 規範整合；2028–2030 完成 wallet 與 verifier 工程實作；2030–2032 完成 dark patterns 自動化 conformance 檢測整合。對接 F2 §9 critical path 第一位（crypto-agility by design）的設計哲學。
+**Mitigation 1 (first position in critical path): UX-agility by design** (W3C VC v2.0 securingMechanism + EUDI ARF profile abstraction layer + issuer-supplied defaults). Provides mitigation for both CF1 and CF2. Timeline: 2026--2028 complete W3C / IETF / EUDI ARF specification integration; 2028--2030 complete wallet and verifier engineering implementation; 2030--2032 complete integration with dark pattern automated conformance testing. Connects to the design philosophy of F2 SS9 critical path first position (crypto-agility by design).
 
-**緩解 2（critical path 第二位）：threshold signatures + court-supervised downgrade**（BLS / Shamir + 法院命令 anchor）。同時對 CF3 與 CF4 提供緩解。設計關鍵——保留 holder-controlled 為 baseline（CDR 0），threshold signing 僅在法院 anchor 觸發後啟動，迴避 functional capacity test 違反 CRPD §29。估期——2026–2028 完成 BLS threshold 在 W3C VC v2.0、IETF JOSE/COSE 規範整合；2028–2030 在 EUDI ARF 與各國 wallet 實作；2030–2032 完成 supporter wallet 公部門配發配套。對接 F2 §9 critical path 第二位（第三方 trusted preservation service）的「分散信任」設計哲學。
+**Mitigation 2 (second position in critical path): threshold signatures + court-supervised downgrade** (BLS / Shamir + court-order anchor). Provides mitigation for both CF3 and CF4. Design key: preserving holder-controlled as the baseline (CDR 0); threshold signing activates only after court-anchor triggering, circumventing functional capacity test violation of CRPD SS29. Timeline: 2026--2028 complete BLS threshold integration in W3C VC v2.0 and IETF JOSE/COSE specifications; 2028--2030 implement in EUDI ARF and various national wallets; 2030--2032 complete public-sector supporter wallet distribution package. Connects to the "distributed trust" design philosophy of F2 SS9 critical path second position (third-party trusted preservation service).
 
-**緩解 3（critical path 第三位）：agent 與 supporter 密碼學區分 + AgentDelegationProof 制度化**（W3C VC + EU AI Act §5(1)(b) + DSA Art 25 三軌）。對 CF5 提供緩解、對 CF2 提供間接緩解。設計關鍵——agent_signature / supporter_signature / holder_signature 三類在 credential schema 層強制區分；同時 EU AI Act 與 DSA 在 manipulative techniques 與 dark patterns 對 wallet 場景的延伸 enforcement。估期——2027–2029 完成 W3C VC + EUDI ARF 規範整合 agent_signature 結構；2028–2030 完成 EDPB + European AI Office 對 wallet 場景的聯合 guidance；2029–2032 完成 enforcement-grade 實作。對接 F2 §9 critical path 第三位（G_recognition^A 軟法層多軌備援）的「不依賴單一軌道」設計哲學。
+**Mitigation 3 (third position in critical path): cryptographic distinction of agent and supporter + institutionalisation of AgentDelegationProof** (W3C VC + EU AI Act SS5(1)(b) + DSA Art 25 three-track). Provides mitigation for CF5 and indirect mitigation for CF2. Design key: mandatory distinction of three types at the credential schema layer -- agent_signature / supporter_signature / holder_signature; simultaneously, EU AI Act and DSA enforcement of manipulative techniques and dark patterns extended to wallet scenarios. Timeline: 2027--2029 complete integration of agent_signature structure into W3C VC + EUDI ARF specifications; 2028--2030 complete EDPB + European AI Office joint guidance for wallet scenarios; 2029--2032 complete enforcement-grade implementation. Connects to the "not depending on a single track" design philosophy of F2 SS9 critical path third position (G_recognition^A soft-law multi-track backup).
 
-三大緩解設計的合取構成 F3 thesis 的「strengthened version」——把 working thesis 從「四件 UX 原語合取」升級為「四件 UX 原語合取 + 三大緩解 critical path」。沒有三大緩解的 working thesis 在 CF2 或 CF5 任一單獨觸發下會在實證上失效；有三大緩解的 strengthened thesis 在五 CF 全部觸發下保留核心功能（第一段 baseline 完整、第二段 CRPD §29 履行性補強規模化時程外推 ≥ 10 年、第三段 LLM-agent 邊界維持條件性失效）。
+The conjunction of the three major mitigation designs constitutes the "strengthened version" of the F3 thesis -- upgrading the working thesis from "conjunction of four UX primitives" to "conjunction of four UX primitives + three major mitigation critical paths." The working thesis without the three mitigations fails empirically if either CF2 or CF5 triggers independently. The strengthened thesis with the three mitigations, under the extreme scenario of all five CFs triggering, preserves the core functions (first tier: baseline fully preserved; second tier: CRPD SS29 enforceability reinforcement scaling timeline extrapolated by >= 10 years; third tier: LLM-agent boundary maintenance conditionally fails).
 
-## 9.8 F2 §9 與 F3 §9 機制鏈交叉表（RW-4 要求）
+### § 9.8 Cross-Reference Table of F2 SS9 and F3 SS9 Mechanism Chains
 
-| F2 §9 CF | F3 §9 對應 CF | 機制鏈交叉點 | 影響傳導方向 |
+| F2 SS9 CF | F3 SS9 Corresponding CF | Mechanism Chain Intersection | Direction of Impact Propagation |
 |---|---|---|---|
-| F2 CF1（BBS+ 延後到 2029） | F3 CF1（認知科學 4±1 推翻） | 「baseline 規格延後」的密碼學與 UX 兩切面 | F2 CF1 把高階 unlinkability 延後、F3 CF1 把 UX 上界下修；合取使「baseline + 高階」雙軌策略在兩層被條件化 |
-| F2 CF2（失智長者 receipts 失效） | F3 CF3（capacity-aware 三路徑失效） | 失智族群退化的密碼學承載與 UX 履行性 | 同一現象不同切面；F3 CF3 觸發會加速 F2 CF2 觸發 |
-| F2 CF3（法庭拒絕 holder-controlled） | F3 CF2（間接通過 dark patterns） | 法庭採證的 UX consent 基礎 | F3 CF2 為 F2 CF3 提供「consent 不 informed」反論彈藥 |
-| F2 CF4（BRICS 拒絕 OECD） | F3 CF4（hardware 載體層） | 跨境 / 跨架構碎裂 | 兩者皆指向 F3/F2 thesis 在「全球互通」假設下的脆弱性 |
-| F2 CF5（PQC 威脅 BBS+） | F3 CF5（LLM-agent 補位） | 「外部技術趨勢對 thesis 的工程衝擊」 | 兩者皆要求 thesis 採「agility by design」策略，對象不同（crypto-agility vs UX-agility + agent governance） |
+| F2 CF1 (BBS+ delayed to 2029) | F3 CF1 (cognitive science 4+/-1 overturned) | "Baseline specification delay" at cryptographic and UX dimensions | F2 CF1 delays advanced unlinkability; F3 CF1 lowers UX upper bound; their conjunction conditionalises the "baseline + advanced" dual-track strategy at both layers |
+| F2 CF2 (dementia older persons receipts fail) | F3 CF3 (capacity-aware three paths fail) | Cryptographic bearing and UX enforceability of dementia group degradation | Same phenomenon from different dimensions; F3 CF3 triggering accelerates F2 CF2 triggering |
+| F2 CF3 (court rejects holder-controlled) | F3 CF2 (indirectly via dark patterns) | UX consent basis for court evidence | F3 CF2 provides "consent uninformed" counter-argument ammunition for F2 CF3 |
+| F2 CF4 (BRICS rejects OECD) | F3 CF4 (hardware carrier layer) | Cross-border / cross-architecture fragmentation | Both point to the fragility of F3/F2 thesis under the "global interoperability" assumption |
+| F2 CF5 (PQC threatens BBS+) | F3 CF5 (LLM-agent substitution) | "External technology trends and their engineering impact on the thesis" | Both require the thesis to adopt an "agility by design" strategy; the objects differ (crypto-agility vs. UX-agility + agent governance) |
 
-F3 §9 對 F2 §9 之兩處補強——其一，F2 CF2 退化在 F3 視角下並非「receipts 自動失效」，其機制為 capacity-aware UX 三條替代路徑各自的法律 / 工程 / 隱私衝突使 UX 階段化在 CDR ≥ 1 場景無工程實現；其二，F2 §9 五 CF 中無「LLM-agent 治理」面向，F3 CF5 補上此面向並指明 LLM-agent 對 F1 RT-ℬ ✗ / AA-ℬ ✗ 邊界結論的工程式越界風險（§9.5.1）。
+F3 SS9 provides two supplements to F2 SS9: first, the F2 CF2 degradation from the F3 perspective is not "receipts automatically failing"; its mechanism is that each of the three alternative paths of capacity-aware UX encounters legal / engineering / privacy conflicts in CDR >= 1 scenarios, making UX staging engineering-unreachable. Second, F2 SS9's five CFs contain no "LLM-agent governance" dimension; F3 CF5 adds this dimension and identifies the engineering boundary-crossing risk that LLM-agents pose to F1's RT-ℬ X / AA-ℬ X boundary conclusions (SS9.5.1).
 
-# 十、接合 A15 / F1 / F2 forward-link 與 F4 預告
 
-## 10.1 接合 A15 §6.2 wallet 三重預設
 
-A15 §6.2 把 wallet 三重預設（個人擁有 + 個人識別 + 個人私鑰）的退化路徑寫死在系列基底<sup>8</sup>。F3 四件 UX 工程原語分別鬆綁三重預設的某一面向——UX3 capacity_aware_consent 路徑 (iii) issuer-side hint 鬆綁「個人識別」；UX4 supporter_ui_three_layer 鬆綁「個人私鑰」（supporter_signature_l1 與 subject_signature_l3 分離即 capability 多控制者）；UX1 progressive_disclosure_ui 與 UX2 dark_patterns_firewall 對「個人擁有」之鬆綁較弱，主要在介面層減輕 holder 之單獨負擔。
+## § 10. Integration with A15 / F1 / F2 Forward-Links and Preview of F4
 
-## 10.2 接合 F1 §5.4 三項工程修正
+### § 10.1 Integration with A15 §6.2: Wallet Triple Default
 
-F1 §5.4 已將 audit-by-design、chooser_signature、revocation_endpoint 確立為三項工程修正<sup>9</sup>。F3 UX 工程原語之對應如下——audit-by-design 由 UX2 audit_log_endpoint + UX3 reassessment_period_days 在「audit 內容」層擴充（除 F1 決策時序 audit 外，加入 dark patterns 偵測 log 與 capacity 重評估 log）；chooser_signature 由 UX3 comprehension_attestation + UX4 subject_signature_l3 把「chooser」拆為 comprehension 層與 decision-bearing 層；revocation_endpoint 由 UX3 reassessment_period_days 把「撤銷」之觸發條件擴充至「capacity 重評估後之 ui_downgrade」。
+A15 §6.2 hard-codes the degradation pathways of the wallet triple default (personally owned + personally identified + personal private key) into the series foundation.[^8] The four F3 UX engineering primitives each loosen one dimension of the triple default: UX3 capacity_aware_consent pathway (iii) issuer-side hint loosens "personally identified"; UX4 supporter_ui_three_layer loosens "personal private key" (the separation of supporter_signature_l1 and subject_signature_l3 constitutes capability with multiple controllers); UX1 progressive_disclosure_ui and UX2 dark_patterns_firewall produce weaker loosening of "personally owned," primarily alleviating the holder's sole burden at the interface layer.
 
-## 10.3 接合 F2 §4–§7 四原語
+### § 10.2 Integration with F1 §5.4: Three Engineering Fixes
 
-F2 §3.4 V_receipt 之 C1–C6 與 F3 V_ux 之 C7–C10 之合取即 V_receipt'。F2 critical path 與 F3 critical path 之交會點在 presentation 時點。F2 §6 待開發 6.4「threshold UX」即 F3 SA0 之主要錨點；本文已給出 V_ux 之形式定義與四件 UX 工程原語 schema，後續 F4 應就每件原語給出具體 verifier-side / wallet-side 之 conformance 測試規格。F2 §11 既有的「CRPD §29 反向使用議題」在 F3 由 T_UX2 形式化為 V_receipt' 之硬條件，避免 audit trail 在 30 年保存窗口內被反向工具化。F2 §5.3 設計 B 違反 CRPD §28 不採用須在 F3 SA4 重申——任何允許 supporter 進入簽章 quorum 之設計均違反 CRPD §28。
+F1 §5.4 established audit-by-design, chooser_signature, and revocation_endpoint as three engineering fixes.[^9] The correspondence of F3 UX engineering primitives is as follows: audit-by-design is extended at the "audit content" layer by UX2 audit_log_endpoint and UX3 reassessment_period_days (adding dark pattern detection logs and capacity reassessment logs beyond F1's decision-sequence audit); chooser_signature is decomposed by UX3 comprehension_attestation and UX4 subject_signature_l3 into a comprehension layer and a decision-bearing layer; revocation_endpoint has its triggering conditions extended by UX3 reassessment_period_days to include "ui_downgrade following capacity reassessment."
 
-## 10.4 預告 F4
+### § 10.3 Integration with F2 §4–§7: The Four Primitives
 
-F4 應在以下方向延伸——其一，F3 四件 UX 原語的 conformance test 標準化路徑（EUDI Phase 2 2026 Q3 → W3C VC v2.x extension）；其二，supporter sub-account 的 W3C DID coexistentSubjects 延伸提案；其三，CDR 3 + end-of-life 場景的 wallet 操作邊界（本文限定 SA3 範疇止於 CDR 2，CDR 3 屬「事實上的 substituted」議題）；其四，多元 capacity 路徑（急性醫療、智能障礙、精神疾病、年齡增長）；其五，agent-mediated consent 之 audit trail（A16 §5.4 DeliberationRecord 延伸）；其六，未成年人 wallet 對 minors capacity 的 UX 處理。
+V_receipt §3.4 C1–C6 conjoined with V_ux C7–C10 yields V_receipt'. The intersection of the F2 critical path and the F3 critical path is at the presentation moment. F2 §6's undeveloped §6.4 "threshold UX" is the primary anchor for F3 SA0; this article has already supplied the formal definition of V_ux and the four UX engineering primitive schemas. A subsequent F4 should provide concrete verifier-side/wallet-side conformance testing specifications for each primitive. F2 §11's existing "CRPD §29 reverse-use issue" is formalised in F3 by T_UX2 as a hard condition of V_receipt', preventing the audit trail from being reverse-engineered within the 30-year preservation window. F2 §5.3 Design B violating CRPD §28 must be reaffirmed in F3 SA4—any design that allows a supporter to enter the signature quorum violates CRPD §28.
 
-**同期接合 A2**：本文寫作同期之 article 19（A2，2026-05-12）正面承擔系列規範下界 PRF ≜ ⟨plurality, validity, contestation, agonism⟩；F3 V_ux 與 T_UX1-T_UX4 對應 PRF validity + agonism + contestation 三分量（plurality 為部分承擔），完整對位見 A2 §3.3 32 cell 承擔矩陣。
+### § 10.4 Preview of F4
 
-# 十一、誠實邊界與 open questions
+F4 should extend in the following directions: first, the conformance testing standardisation path for F3's four UX primitives (EUDI Phase 2 2026 Q3 → W3C VC v2.x extension); second, the W3C DID coexistentSubjects extension proposal for supporter sub-accounts; third, the wallet operation boundary for CDR 3 + end-of-life scenarios (this article confines SA3 scope to CDR 2; CDR 3 belongs to the "de facto substituted" issue); fourth, multiple capacity pathways (acute medical, intellectual disability, mental illness, ageing); fifth, the audit trail for agent-mediated consent (A16 §5.4 DeliberationRecord extension); sixth, UX handling of underage wallet holders' minors capacity.
 
-## 11.1 誠實邊界明示
+**Concurrent integration with A2**: Article 19 (A2, 2026-05-12) written concurrently with this article formally bears the series normative floor PRF ≜ ⟨plurality, validity, contestation, agonism⟩; F3 V_ux and T_UX1–T_UX4 correspond to three PRF components—validity, agonism, and contestation (plurality is partially borne); for the complete correspondence, see the 32-cell bearing matrix in A2 §3.3.
 
-本文之主要誠實邊界——
+## § 11. Honesty Boundaries and Open Questions
 
-第一，**θ_inform = 0.5 與 attribute_count ≤ 3 為分析性建議數**，wallet 場景 pilot 尚未校準。Cowan 4±1 之 working memory 上界屬 generic 推估，缺乏 wallet-specific 校準；wallet 場景之 ecologically valid 研究仍是 gap。
+### § 11.1 Explicit Honesty Boundaries
 
-第二，**BBS Cryptosuite 在 2026-05 仍處 CRD 階段，尚未進入 Rec**——W3C Data Integrity BBS Cryptosuites v1.0 CRD（2026-04-07）<sup>77</sup>；SD-JWT-VC 至 draft-16（2026-04-24）<sup>78</sup>；W3C VCDM v2.0 為 Rec（2025-05-15）<sup>18</sup>；EUDI ARF 採「2025-12 iteration」非 v1.5<sup>21</sup>。
+The principal honesty boundaries of this article:
 
-第三，**GDPR cookie banner 與 wallet OpenID4VP consent 為「同型重演」**（structural homomorphism）非「直接適用」——兩者範疇、UX 介面、監管框架不同。
+**First**, **θ_inform = 0.5 and attribute_count ≤ 3 are analytical recommendations**, not calibrated by wallet-scenario pilots. Cowan's 4±1 WM upper bound is a generic estimate; wallet-specific calibration is lacking; ecologically valid wallet-scenario research remains a gap.
 
-第四，**EU AI Act §5(1)(b) wallet 適用為條件性**——「若 wallet UX 落入 AI Act AI system 範圍」，待 AI Office implementing guidance（2026 Q4 預定）。DSA Art 25 主要規範 online platform，wallet 是 endpoint 應用，適用邊界須查。
+**Second**, **BBS Cryptosuite remains at CRD stage as of May 2026, not yet at Rec**—W3C Data Integrity BBS Cryptosuites v1.0 CRD (2026-04-07)[^77]; SD-JWT-VC at draft-16 (2026-04-24)[^78]; W3C VCDM v2.0 at Rec (2025-05-15)[^18]; EUDI ARF uses "2025-12 iteration" not v1.5.[^21]
 
-第五，**SA3 三條替代路徑各自有未解 tradeoff**——wallet-self-assessment 之 GDPR Art 9 合規不確定；supporter triggered 之意定監護法律承載 gap；issuer-side hint 與 CRPD §29 functional test 禁令之根本緊張。三條路徑無單一可獨立完成 capacity-aware downgrade。
+**Third**, **the GDPR cookie banner and wallet OpenID4VP consent constitute "structural homomorphism replay"**—not "direct application"; the two differ in scope, UX interface, and regulatory framework.
 
-第六，**台灣意定監護新制法律承載 gap**——「自我決定的 substituted」採黃詩淳 (2020) 詮釋為單一學者立場，須意定監護學術社群擴大檢驗。三項銜接 gap（啟動條件、角色性質、範疇對象）使台灣場域 supporter 法律承載不完整。
+**Fourth**, **EU AI Act §5(1)(b) applicability to wallets is conditional**—"if wallet UX falls within the scope of AI Act AI systems," pending AI Office implementing guidance (planned 2026 Q4). DSA Art 25 primarily governs online platforms; wallets are endpoint applications, and the applicability boundary requires examination.
 
-第七，**線下代簽攻擊面為已知 gap**——cryptographic 層無法區分「subject 自己」與「supporter 持 subject 私鑰」；密碼學三層分離不解決所有代簽問題，惡意場景由 audit-by-design + revocation_endpoint 覆蓋。
+**Fifth**, **SA3's three alternative pathways each have unresolved trade-offs**—wallet self-assessment's compliance with GDPR Art 9 is uncertain; supporter-triggered's legal bearing gap in intended guardianship law; the fundamental tension between issuer-side hints and CRPD §29's functional test prohibition. No single pathway can independently complete capacity-aware downgrade.
 
-第八，**Cohen 2018 對 Israel §67B–67F 為單一學者詮釋**；Peru DL 1384 apoyos 雙軌 5 年後實證未充分研究。
+**Sixth**, **Taiwan's intended guardianship system has legal bearing gaps**—"self-determined substituted decision" as interpreted by Huang Shih-chun (2020) represents a single scholar's position, requiring broader examination by the intended guardianship academic community. Three connection gaps (triggering conditions, role nature, scope of subjects) make the legal bearing of Taiwan-context supporters incomplete.
 
-第九，**WEIRD 樣本偏見**——主流認知科學研究多在 WEIRD 樣本中進行；cross-cultural 應用須誠實邊界。
+**Seventh**, **the offline counter-signing attack surface is a known gap**—the cryptographic layer cannot distinguish between "the subject themselves" and "a supporter holding the subject's private key"; cryptographic three-layer separation does not resolve all counter-signing problems; malicious scenarios are covered by audit-by-design and revocation_endpoint.
 
-第十，**「medium-high (≥ 50%) likelihood」無 pilot study 校準**——五段機制鏈 (a)→(e) 是 mechanism-based 推論非實證；明示「機率」非「確定性」。
+**Eighth**, **Cohen 2018 on Israel §67B–67F is a single scholar's interpretation**; the five-year post-implementation empirical record of Peru DL 1384 apoyos dual-track has not been sufficiently studied.
 
-## 11.2 Open Questions（O1–O33）
+**Ninth**, **WEIRD sample bias**—mainstream cognitive science research is predominantly conducted on WEIRD samples; cross-cultural application requires explicit honesty boundaries.
 
-| # | 議題 | 待開發位置 |
+**Tenth**, **"medium-high (≥ 50%) likelihood" is not calibrated by pilot study**—the five-step mechanism chain (a)→(e) is mechanism-based reasoning, not empirical; "probability" is explicitly asserted, not "certainty."
+
+### § 11.2 Open Questions (O1–O33)
+
+| # | Issue | Location for Development |
 |---|---|---|
-| O1 | V_ux 與 V_receipt 的「實際可履行性」可形式化（modal logic / temporal logic 框架） | SA0 |
-| O2 | D 函數在 verifier policy 上的具體演算法（NLP-based / heuristic-based / rule-based） | SA0 |
-| O3 | attribute_count 與 cognitive load 對應的 wallet-specific 量化模型 | SA0 |
-| O4 | supporter「不可替代」的密碼學 enforce 在 hardware level 的標準化路徑（W3C TPM 提案） | SA0 |
-| O5 | wallet 場景的 ecologically valid cognitive load study（pilot study 設計建議） | SA1 |
-| O6 | cross-cultural 認知科學研究在 wallet UX 的應用（WEIRD bias 修正） | SA1 |
-| O7 | progressive disclosure UI 三種實作（wizard / accordion / paginated）在 wallet 場景的對照研究 | SA1 |
-| O8 | 個體差異（年齡 / 教育 / 數位素養 / 語言）對 attribute group 上界的影響 | SA1 |
-| O9 | wallet 場景的 dark patterns 偵測 conformance suite | SA2 |
-| O10 | terminology obscurity 量化研究——「selective disclosure」「ZK proof」「verifier policy」對非技術使用者的可理解性 | SA2 |
-| O11 | 跨法域 dark patterns 定義差異（EU vs US FTC vs 台灣公平交易委員會 vs 印度 DPDP） | SA2 |
-| O12 | EU AI Act §5(1)(b) 與 wallet 範疇——AI Office implementing guidance（2026 Q4 預定） | SA2 |
-| O13 | pilot study 設計——CDR ≥ 2 場景的 wallet UX 退化率實測 | SA3 |
-| O14 | 醫療端介接 mechanism（誰判定 CDR + 通知 wallet 的法律 / 工程路徑） | SA3 |
-| O15 | functional self-assessment 與 GDPR Art 9 special category data 的 Art 9(2)(g) 公共利益例外實作 | SA3 |
-| O16 | issuer-side capacity hint 與 CRPD §29 functional test 禁令的 CRPD 委員會 General Comment（未來版本）詮釋 | SA3 |
-| O17 | 未成年人 wallet 對 minors capacity 的 UX 處理（EUDI ARF 對 minors 不完整） | SA3 |
-| O18 | 急性醫療 / 短期 capacity 變動（術後 / 藥物影響）的 UX 階段化 | SA3 |
-| O19 | 台灣意定監護新制與 CRPD §29 supporter 的法律修補路徑 | SA3 |
-| O20 | supporter sub-account 的 W3C DID coexistentSubjects 延伸提案（F4 sub-arg-1 核心？） | SA4 |
-| O21 | supporter 認證程式（類似律師 / 公證人）的 G_state^A 立法 | SA4 |
-| O22 | supporter 培訓與 wallet 配發的公共服務設計 | SA4 |
-| O23 | 跨文化 supporter 角色（華人家庭文化 vs CRPD §29 個體選擇）的 UX 設計研究 | SA4 |
-| O24 | 北歐 BankID fullmakt 制度的 CRPD 合規路徑 | SA4 |
-| O25 | iOS / Android 平台層擴展 supporter 角色 UI 的政治與商業可行性 | SA4 |
-| O26 | LLM-agent comprehension assistance 與 supporter 「不可替代」的密碼學區分 | SA5 |
-| O27 | agent-mediated consent 是否構成 F1 RT-ℬ ✗ / AA-ℬ ✗ 工程式越界（F4 議題核心？） | SA5 |
-| O28 | LLM-agent supporter 補位的 audit trail（A16 §5.4 DeliberationRecord 延伸） | SA5 |
-| O29 | LLM-agent 與 human supporter 角色滑移的偵測機制 | SA5 |
-| O30 | prompt injection 對 wallet UX 影響的 conformance test | SA5 |
-| O31 | F3 四件 UX 原語的 conformance test 標準化路徑（EUDI Phase 2 2026 Q3 → W3C VC v2.x extension） | 系統 |
-| O32 | F3 與 F2 critical path 的合取依賴——F2 SA1 cryptosuite + F3 SA1 cognitive load 在「BBS+ unlinkability UX 成本」上的張力 | 系統 |
-| O33 | F3 與 A15 §6.2 三重預設的更新——是否需擴展為「四重預設」（加 UX 預設） | 系統 |
+| O1 | The "practical enforceability" of V_ux and V_receipt can be formalised (modal logic / temporal logic framework) | SA0 |
+| O2 | Concrete algorithm for the D function over verifier policy (NLP-based / heuristic-based / rule-based) | SA0 |
+| O3 | Wallet-specific quantitative model for attribute_count and cognitive load correspondence | SA0 |
+| O4 | Standardisation path for cryptographic enforcement of supporter "non-substitutability" at hardware level (W3C TPM proposal) | SA0 |
+| O5 | Ecologically valid cognitive load study for wallet scenarios (pilot study design recommendations) | SA1 |
+| O6 | Application of cross-cultural cognitive science research to wallet UX (WEIRD bias correction) | SA1 |
+| O7 | Controlled study of three progressive disclosure implementations (wizard / accordion / paginated) in wallet scenarios | SA1 |
+| O8 | Effect of individual differences (age / education / digital literacy / language) on attribute group upper bounds | SA1 |
+| O9 | Dark pattern detection conformance suite for wallet scenarios | SA2 |
+| O10 | Quantitative study of terminology obscurity—comprehensibility of "selective disclosure," "ZK proof," "verifier policy" for non-technical users | SA2 |
+| O11 | Cross-jurisdictional differences in dark pattern definitions (EU vs. US FTC vs. Taiwan Fair Trade Commission vs. India DPDP) | SA2 |
+| O12 | EU AI Act §5(1)(b) and wallet scope—AI Office implementing guidance (planned 2026 Q4) | SA2 |
+| O13 | Pilot study design—empirical measurement of wallet UX degradation rates in CDR ≥ 2 scenarios | SA3 |
+| O14 | Medical-end interface mechanism (legal/engineering pathway for determining CDR + notifying wallet) | SA3 |
+| O15 | Implementation of functional self-assessment and GDPR Art 9 special category data Art 9(2)(g) public interest exception | SA3 |
+| O16 | Interpretation by future CRPD Committee General Comments of issuer-side capacity hints and the functional test prohibition under CRPD §29 | SA3 |
+| O17 | UX handling of minors capacity for underage wallet holders (EUDI ARF incomplete on minors) | SA3 |
+| O18 | UX staging for acute medical / short-term capacity changes (post-operative / medication effects) | SA3 |
+| O19 | Legal remediation pathway for Taiwan's intended guardianship system and CRPD §29 supporters | SA3 |
+| O20 | W3C DID coexistentSubjects extension proposal for supporter sub-accounts (core of F4 sub-arg-1?) | SA4 |
+| O21 | G_state^A legislation for supporter certification programmes (analogous to lawyers / notaries) | SA4 |
+| O22 | Public service design for supporter training and wallet distribution | SA4 |
+| O23 | Cross-cultural UX design research on supporter roles (Chinese family culture vs. CRPD §29 individual choice) | SA4 |
+| O24 | CRPD compliance pathway for Nordic BankID fullmakt system | SA4 |
+| O25 | Political and commercial viability of extending supporter-role UI at iOS/Android platform layer | SA4 |
+| O26 | Cryptographic distinction between LLM-agent comprehension assistance and supporter "non-substitutability" | SA5 |
+| O27 | Whether agent-mediated consent constitutes engineering boundary-crossing of F1 RT-ℬ ✗ / AA-ℬ ✗ (core F4 issue?) | SA5 |
+| O28 | Audit trail for LLM-agent supporter substitution (A16 §5.4 DeliberationRecord extension) | SA5 |
+| O29 | Detection mechanism for role slippage between LLM-agent and human supporter | SA5 |
+| O30 | Conformance test for the effect of prompt injection on wallet UX | SA5 |
+| O31 | Conformance testing standardisation path for F3's four UX primitives (EUDI Phase 2 2026 Q3 → W3C VC v2.x extension) | System |
+| O32 | Conjunctive dependency of F3 and F2 critical paths—tension between F2 SA1 cryptosuite and F3 SA1 cognitive load on "BBS+ unlinkability UX cost" | System |
+| O33 | Update of F3 and A15 §6.2 triple default—whether extension to "quadruple default" (adding UX default) is needed | System |
 
-# 十二、條件性學術結論
+## § 12. Conditional Academic Conclusions
 
-## 12.1 三條條件性結論
+### § 12.1 Three Conditional Conclusions
 
-**結論一**：F2 四件密碼學工程原語在「密碼學選擇 / 長期保存 / 法庭可採性 / 跨境互認」四層的成立是條件性的——其「實際可履行性」前提 `Informed(holder, r)` 在 UX 層無工程修正下，於四道認知-規範瓶頸下無法履行。瓶頸具體為——其一，Miller / Cowan 認知上界 + cognitive load theory 在 multi-attribute selective disclosure 場景下使 informed consent 在 attribute_count > 3 時 P(informed_consent = true) < θ_inform；其二，verifier policy 之 dark patterns 在 wallet 場景同型重演 GDPR cookie banner 八年失敗（11.8% 合規率）；其三，capacity 變動使「曾經 informed consent」失效並以 mechanism-based likelihood medium-high 退化為 substituted；其四，supporter 介入邊界模糊使「協助理解」滑入「代為決定」。為承擔此前提，V_receipt 於 F3 升級為 V_receipt' ≜ V_receipt ∧ V_ux，後者由四件 UX 工程原語以合取承擔。
+**Conclusion One**: The conditionality of F2's four cryptographic engineering primitives at the "cryptographic selection / long-term preservation / court admissibility / cross-border mutual recognition" four layers holds—the prerequisite `Informed(holder, r)` for their "practical enforceability" cannot be fulfilled at the UX layer without engineering fixes, given four cognitive-normative bottlenecks. The bottlenecks specifically are: first, the Miller/Cowan cognitive upper bound plus cognitive load theory makes P(informed_consent = true) < θ_inform when attribute_count > 3 in multi-attribute selective disclosure scenarios; second, verifier policy dark patterns in wallet scenarios structurally homomorphically replay the GDPR cookie banner eight-year failure (11.8% compliance rate); third, capacity changes render "previously informed consent" invalid and with mechanism-based likelihood medium-high degrade to substituted; fourth, the blurred boundary of supporter intervention makes "assisting with understanding" slide into "deciding on behalf." To bear this prerequisite, V_receipt is upgraded in F3 to V_receipt' ≜ V_receipt ∧ V_ux, the latter conjunctively borne by the four UX engineering primitives.
 
-**結論二**：F3 strengthened thesis（含四件 UX 工程原語 + 三大緩解 critical path）在五個 CF 全部觸發的極端情境下——第一段 baseline（progressive disclosure + supporter UI 框架）完整保留、第二段（CRPD §29 履行性補強規模化）時程外推 ≥ 10 年、第三段（LLM-agent 邊界維持）條件性失效。working thesis（無緩解版）在 CF2 或 CF5 任一單獨觸發下實證失效。本文採 strengthened thesis 為正式立場；working thesis 僅作為論證起點與壓力測試對照組。
+**Conclusion Two**: F3's strengthened thesis (comprising four UX engineering primitives plus three major mitigation critical paths) under the extreme scenario of all five CFs triggering—the first tier (progressive disclosure + supporter UI framework baseline) is fully preserved; the second tier (CRPD §29 enforceability reinforcement scaling) extrapolates timeline ≥ 10 years; the third tier (LLM-agent boundary maintenance) conditionally fails. The working thesis (without mitigations) fails empirically if either CF2 or CF5 triggers independently. This article adopts the strengthened thesis as its formal position; the working thesis serves only as a starting point for argument and a stress-test comparison group.
 
-**結論三**：F3 四件 UX 工程原語完全在 Z₂ 範圍內運作，對 F1 之 RT-ℬ ✗ 與 AA-ℬ ✗ 兩 cell（定理 T2'）不構成可達緩解。CF5 對 F1 兩條邊界之衝擊為「工程實作層延伸誠實邊界」，非繞過 F1 結論。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 仍是常駐型不可委任結論，本文不更動。
+**Conclusion Three**: F3's four UX engineering primitives operate entirely within Z₂ and do not constitute a reachable mitigation for F1's RT-ℬ ✗ and AA-ℬ ✗ cells (theorem T2'). CF5's impact on F1's two boundaries is an "engineering implementation layer extended honesty boundary," not a bypass of F1's conclusions. F1's RT-ℬ ✗ and AA-ℬ ✗ remain permanent non-delegable conclusions; this article makes no changes to them.
 
-## 12.2 working thesis 與 strengthened thesis 嚴格區分
+### § 12.2 Strict Distinction Between Working Thesis and Strengthened Thesis
 
-工作論題（working thesis）為——「F2 四原語在 UX 層大規模退化；落地需四件 UX 工程原語以合取補強」。此論題未包含緩解 critical path，於 CF2（dark patterns 重演）或 CF5（LLM-agent 補位）任一單獨觸發下實證失效；working thesis 僅作為論證起點與壓力測試之對照組使用。
+The **working thesis** is: "F2's four primitives face large-scale degradation at the UX layer; deployment requires conjunctive reinforcement by four UX engineering primitives." This thesis does not include mitigation critical paths and fails empirically if either CF2 (dark patterns replay) or CF5 (LLM-agent substitution) triggers independently; the working thesis is used only as a starting point for argument and a comparison group for stress testing.
 
-強化論題（strengthened thesis）為——「F2 四原語在 UX 層大規模退化；落地需四件 UX 工程原語以合取補強，並以三大緩解 critical path（UX-agility by design / threshold signatures + court-supervised downgrade / agent 與 supporter 密碼學區分 + AgentDelegationProof 制度化）作為長期承載」。本文以 strengthened thesis 為正式立場。在五個 CF 全部觸發的極端情境下，strengthened thesis 之三段差異為——第一段（baseline progressive disclosure + supporter UI 框架）完整保留、第二段（CRPD §29 履行性補強規模化）時程外推 ≥ 10 年、第三段（LLM-agent 邊界維持）條件性失效。「保留核心」一詞不可被誤讀為「四件全部不受影響」——CF3 + CF4 同時觸發下 T_UX3–T_UX4 為條件性失效。
+The **strengthened thesis** is: "F2's four primitives face large-scale degradation at the UX layer; deployment requires conjunctive reinforcement by four UX engineering primitives, borne long-term by three major mitigation critical paths (UX-agility by design / threshold signatures + court-supervised downgrade / cryptographic distinction of agent and supporter + institutionalisation of AgentDelegationProof)." This article adopts the strengthened thesis as its formal position. Under the extreme scenario of all five CFs triggering, the three-tier distinction of the strengthened thesis is: the first tier (baseline progressive disclosure + supporter UI framework) is fully preserved; the second tier (CRPD §29 enforceability reinforcement scaling) extrapolates timeline ≥ 10 years; the third tier (LLM-agent boundary maintenance) conditionally fails. The phrase "core preserved" must not be misread as "all four primitives unaffected"—under simultaneous triggering of CF3 and CF4, T_UX3–T_UX4 conditionally fail.
 
-## 12.3 對三組目標讀者的分立建議
+### § 12.3 Differentiated Recommendations for Three Target Audiences
 
-對 **UX 工程社群**——SA1 之 ≤ 3 attribute group 為分析性建議數，並非實驗測得，請優先支持 EUDI POTENTIAL UC6 與 EWC、DC4EU、NOBID 各 LSP 之 pilot study 以校準此數值；progressive disclosure 三種變體（wizard / accordion / paginated）在 wallet 場景需對照研究；conformance suite 加入 dark patterns 自動化檢測為高優先項。
+For the **UX engineering community**: SA1's ≤ 3 attribute groups is an analytical recommendation, not experimentally measured; please prioritise supporting EUDI POTENTIAL UC6 and EWC, DC4EU, and NOBID LSP pilot studies to calibrate this figure; controlled studies of the three progressive disclosure variants (wizard / accordion / paginated) in wallet scenarios are needed; adding dark pattern automated detection to conformance suites is a high-priority item.
 
-對 **CRPD 政策研究者**——CRPD §29 supporter 與 substituted 之區分在 wallet UX 工程上以「signatures_disjoint = true」與「VerificationMethodDisjoint = true」雙重硬約束承載；issuer-side capacity hint 與 CRPD §29 functional test 禁令之根本緊張為 CRPD 委員會未來 General Comment 之關鍵議題；意定監護新制（台灣 §1113-2、日本成年後見、UK MCA 2005 + 2019 amendment、Peru DL 1384、Israel §67B–67F）與 CRPD §29 supporter 之銜接 gap 須跨法域比較研究。
+For the **CRPD policy research community**: the distinction between CRPD §29 supporters and substituted in wallet UX engineering is borne by the dual hard constraints of "signatures_disjoint = true" and "VerificationMethodDisjoint = true"; the fundamental tension between issuer-side capacity hints and the CRPD §29 functional test prohibition is a key issue for future CRPD Committee General Comments; connection gaps between intended guardianship systems (Taiwan §1113-2, Japan adult guardianship, UK MCA 2005 + 2019 amendment, Peru DL 1384, Israel §67B–67F) and CRPD §29 supporters require cross-jurisdictional comparative research.
 
-對 **失能政策學者**——SA3 補強表（中介證據強度評估表 15 列）為跨法域證據盤點之起點；建議在 OECD 範圍內進行縱貫 pilot（CDR 0–3 各階段 wallet 操作之家屬代行率、cognitive proxy ROC、supporter triggered downgrade 之 false positive / false negative）；CDR 3 + end-of-life 場景之 wallet 操作邊界須與 CRPD §28 substituted 禁令對接。
+For **disability policy scholars**: SA3's supplementary table (evidence strength assessment table: 15 rows) is a starting point for cross-jurisdictional evidence inventory; a longitudinal OECD-wide pilot is recommended (family surrogate rates, cognitive proxy ROC, false positive/negative of supporter-triggered downgrade across CDR 0–3 wallet operations); the wallet operation boundary for CDR 3 + end-of-life scenarios must interface with CRPD §28's substituted prohibition.
 
-對 **EUDI Phase 2 與 CRPD Committee**——EUDI Phase 2 conformance suite 應於 2026 Q3 之前納入 dark patterns 自動化檢測與 supporter UI 三層分離 conformance 測試；CRPD Committee 對 wallet 場景之 supported decision-making 應發布 General Comment 補充——明示 supporter 範疇邊界（不限於家屬）、supporter triggered downgrade 之 safeguards 要求、issuer-side capacity hint 之 functional test 違反邊界。
+For **EUDI Phase 2 and the CRPD Committee**: the EUDI Phase 2 conformance suite should incorporate dark pattern automated detection and supporter UI three-layer separation conformance testing before 2026 Q3; the CRPD Committee should issue supplementary General Comments on supported decision-making in wallet scenarios—explicitly stating supporter scope boundaries (not limited to family members), safeguard requirements for supporter-triggered downgrade, and the functional test violation boundary for issuer-side capacity hints.
 
-# 參考資料
+## References
 
-1. Regulation (EU) 2024/1689 of the European Parliament and of the Council laying down harmonised rules on artificial intelligence (Artificial Intelligence Act), Art 5(1)(b). OJ L, 2024/1689, 12 July 2024. 來源等級 A。
-2. European Data Protection Board. Guidelines 03/2022 on Deceptive design patterns in social media platform interfaces: How to recognise and avoid them. Adopted 14 March 2022; version 2.0 adopted 14 February 2023. 來源等級 A。
-3. Nouwens, M., Liccardi, I., Veale, M., Karger, D., & Kagal, L. (2020). Dark Patterns after the GDPR: Scraping Consent Pop-ups and Demonstrating their Influence. Proceedings of CHI 2020, Paper 194. DOI: 10.1145/3313831.3376321. 來源等級 A。
-4. POTENTIAL Consortium. Use Case 6: Mandate Scenario — Mid-term Technical Report, 2025-09. EU Digital Identity Wallet Large Scale Pilot. 來源等級 B。
-5. World Health Organization. Dementia Fact Sheet, updated March 2024. WHO Geneva. 來源等級 A。
-6. Regulation (EU) 2024/1183 of the European Parliament and of the Council amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework. OJ L, 30 April 2024. 來源等級 A。
-7. Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 on technical specifications for the European Digital Identity Wallet. OJ L, 28 November 2024. 來源等級 A。
-8. civic-proof 系列 article 15 (A15). Civic-proof inclusion rights, §6.2 wallet 三重預設退化路徑. 2026. 來源等級 A（系列內部）。
-9. civic-proof 系列 article 16 (F1). Civic AI agent delegation limits, §5.3 W4 反論 + §5.4 三項工程修正 + §7.3.1 AgentDelegationProof. 2026. 來源等級 A（系列內部）。
-10. civic-proof 系列 article 17 (F2). Civic receipts provenance, §3–§7 + §9 CF1–CF5 + §11 open questions. 2026. 來源等級 A（系列內部）。
-11. Brignull, H. (2010 onwards). Dark Patterns / Deceptive Design Patterns 分類. deceptive.design. 來源等級 C。
-12. Mathur, A., Acar, G., Friedman, M. J., Lucherini, E., Mayer, J., Chetty, M., & Narayanan, A. (2019). Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites. Proceedings of CSCW 2019, Article 81. DOI: 10.1145/3359183. 來源等級 A。
-13. Morris, J. C. (1993). The Clinical Dementia Rating (CDR): Current version and scoring rules. Neurology, 43(11), 2412-2414. 來源等級 A。
-14. World Health Organization. ICD-11 for Mortality and Morbidity Statistics, Block 6D80–6D86 Dementia, 2022 update. 來源等級 A。
-15. UN Committee on the Rights of Persons with Disabilities. General Comment No. 1 on Article 12: Equal Recognition before the Law. CRPD/C/GC/1, 19 May 2014, §15–17, §26–29. 來源等級 A。
-16. 中華民國立法院. 民法第 1110 + 1113-2 至 1113-10 條（意定監護新制）. 2019 年 6 月 19 日公布、6 月 21 日施行. 來源等級 A。
-17. 黃詩淳 (2020). 我國意定監護制度之介紹與評析. 月旦法學雜誌 第 295 期, 頁 105–120. 來源等級 B。
-18. W3C. Verifiable Credentials Data Model v2.0 Recommendation, 2025-05-15. §4.12 securing mechanisms + §5.7 ZKP + §6.3 + §7.1 verification algorithm. 來源等級 A。
-19. DIF. Presentation Exchange v2.1 specification, 2024. §5 input_descriptors + §6 submission_requirements + §7 format. 來源等級 B。
-20. OpenID Foundation. OpenID for Verifiable Presentations draft-23 / draft-24, 2024–2026. §5.1 client_metadata + §7 presentation_definition (DCQL) + §9 transaction_data. 來源等級 B。
-21. EU Cooperation Group. EUDI Wallet Architecture and Reference Framework, 2025-12 iteration. §6.6.3.8 device binding + §6.6.3.9 user binding + §6.6 selective disclosure profile. 來源等級 A。
-22. W3C. Decentralized Identifiers (DIDs) v1.0 Recommendation, 2022-07-19. §5 DID document structure + §8 security considerations. 來源等級 A。
-23. Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. Behavioral and Brain Sciences, 24(1), 87-114. DOI: 10.1017/S0140525X01003922. 來源等級 A。
-24. Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), 257-285. 來源等級 A。
-25. Bohme, R., & Köpsell, S. (2010). Trained to Accept? A Field Experiment on Consent Dialogs. Proceedings of CHI 2010, 2403-2406. 來源等級 A。
-26. Solove, D. J. (2013). Introduction: Privacy Self-Management and the Consent Dilemma. Harvard Law Review, 126, 1880-1903. 來源等級 A。
-27. Pettit, P. (1997). Republicanism: A Theory of Freedom and Government. Oxford University Press; 援引自 F1 §5.3. 來源等級 A。
-28. Miller, G. A. (1956). The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. Psychological Review, 63(2), 81-97. 來源等級 A。
-29. Cowan, N. (2010). The Magical Mystery Four: How is Working Memory Capacity Limited, and Why? Current Directions in Psychological Science, 19(1), 51-57. 來源等級 A。
-30. Baddeley, A. D. (1992). Working memory. Science, 255(5044), 556-559. 來源等級 A。
-31. Baddeley, A. D. (2003). Working memory: Looking back and looking forward. Nature Reviews Neuroscience, 4(10), 829-839. 來源等級 A。
-32. POTENTIAL Consortium. Use Case 6: Payment Mandate — Mid-term Technical Report, 2025-09, pp. 42-48. EU Digital Identity Wallet Large Scale Pilot. 來源等級 B。
-33. Sweller, J., & Chandler, P. (1994). Why Some Material Is Difficult to Learn. Cognition and Instruction, 12(3), 185-233. 來源等級 A。
-34. Thaler, R. H., & Sunstein, C. R. (2008). Nudge: Improving Decisions About Health, Wealth, and Happiness. Yale University Press. 來源等級 A。
-35. Tversky, A., & Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases. Science, 185(4157), 1124-1131. 來源等級 A。
-36. Acquisti, A., Brandimarte, L., & Loewenstein, G. (2015). Privacy and human behavior in the age of information. Science, 347(6221), 509-514. DOI: 10.1126/science.aaa1465. 來源等級 A。
-37. Utz, C., Degeling, M., Fahl, S., Schaub, F., & Holz, T. (2019). (Un)informed Consent: Studying GDPR Consent Notices in the Field. Proceedings of CCS 2019, 973-990. DOI: 10.1145/3319535.3354212. 來源等級 A。
-38. Matte, C., Bielova, N., & Santos, C. (2020). Do Cookie Banners Respect My Choice? Measuring Legal Compliance of Banners from IAB Europe's Transparency and Consent Framework. 2020 IEEE Symposium on Security and Privacy, 791-809. 來源等級 B。
-39. Apple Inc. App Tracking Transparency framework, iOS 14.5+, 2021–2024. Flurry Analytics 縱貫追蹤. 來源等級 C。
-40. Gray, C. M., Kou, Y., Battles, B., Hoggatt, J., & Toombs, A. L. (2018). The Dark (Patterns) Side of UX Design. Proceedings of CHI 2018, Paper 534. 來源等級 A。
-41. Mathur, A., Kshirsagar, M., & Mayer, J. (2021). What Makes a Dark Pattern... Dark? Design Attributes, Normative Considerations, and Measurement Methods. Proceedings of CHI 2021, Paper 360. 來源等級 A。
-42. Sanchez-Rola, I., et al. (2019). Can I Opt Out Yet? GDPR and the Global Illusion of Cookie Control. ASIA CCS 2019, 340-351. 來源等級 A。
-43. FTC v. Epic Games, Inc. (2022). Stipulated Order for Permanent Injunction, FTC File No. 192 3203, 19 December 2022. 來源等級 A。
-44. CNIL. Decision SAN-2022-021 (Google Ireland & Google LLC, €150M) + SAN-2022-022 (Microsoft Ireland, €60M), 6 January 2022. 來源等級 A。
-45. Luguri, J., & Strahilevitz, L. J. (2021). Shining a Light on Dark Patterns. Journal of Legal Analysis, 13(1), 43-109. 來源等級 B。
-46. FTC v. Amazon.com, Inc. (2023). Complaint filed 21 June 2023, Case No. 2:23-cv-00932 (W.D. Wash.). 來源等級 A。
-47. European Commission. Formal proceedings against Meta (Facebook/Instagram) under DSA Art 25, opened 30 April 2024. DSA Article 66 investigation. 來源等級 A。
-48. NHS Digital. NHS Login Quarterly Statistics, Q4 2024. NHS England. 來源等級 B。
-49. 日本內閣府デジタル庁. マイナンバーカードの普及状況及び健康保険証としての利用状況月報, 2024 年 12 月. 來源等級 B。
-50. Finansiel Stabilitet / Finanstilsynet (Denmark). BankID and Mobile Identity Services Annual Report, 2023. 來源等級 B。
-51. 台灣失智症協會. 失智症防治與服務政策建言書 2024. 來源等級 B。
-52. Alzheimer's Association. 2025 Alzheimer's Disease Facts and Figures. Alzheimer's & Dementia, 21(4), 2025. 來源等級 A。
-53. Open Universiteit Heerlen / Alzheimer Nederland. DigiD-gebruik door mensen met dementie: knelpunten en oplossingen. Onderzoeksrapport, Heerlen, 2023. 來源等級 B。
-54. Internet Freedom Foundation (India). Aadhaar and Disability: Exclusion Patterns and the Right to Identity. IFF Policy Brief, August 2024, New Delhi. 來源等級 B。
-55. Tribunal de Justiça do Estado de São Paulo (Brazil). Decisões sobre LGPD e exclusão de pessoas com demência de serviços públicos online, 2023–2024. 來源等級 B。
-56. 中華民國衛生福利部. 長期照顧政策白皮書（修正版）, 2024 年 7 月. 來源等級 A（政府文件）。
-57. Apple Inc. Health Cognitive Assessment Documentation, iOS 17+, 2024–2025. developer.apple.com/health/cognitive. 來源等級 C。
-58. Google LLC. Health Connect Cognitive Data Types, 2024. developer.android.com/health/connect/data-types. 來源等級 C。
-59. Cambridge Cognition. CANTAB Mobile — FDA cleared cognitive assessment, 2024. 來源等級 C。
-60. Mozilla Foundation. Privacy Not Included: Health Apps 2025. foundation.mozilla.org. 來源等級 C。
-61. Apple Inc. Family Sharing: Set up Family Sharing on iPhone, iOS 17 文件. 來源等級 B。
-62. Google LLC. Family Link: Manage your child's Google Account 文件. 來源等級 B。
-63. Hyperledger Aries RFC 0211 Mediator Coordination Protocol; Trust over IP Foundation DIDComm Messaging v2 §Routing. 來源等級 B。
-64. State of Israel. Capacity and Guardianship Law Amendment No. 18 (5776-2016), §67B-67F. 來源等級 A。
-65. Bregaglio Lazarte, R. (2019). Una mirada al nuevo régimen de capacidad jurídica de las personas con discapacidad establecido por el Decreto Legislativo 1384. Revista Latinoamericana en Discapacidad, Sociedad y Derechos Humanos, 3(1), 26-50. 來源等級 A。
-66. Cohen, A. (2018). Supported Decision-Making: Israel's Path to Reform. Israel Law Review, 51(3), 451-478. 來源等級 A。
-67. Peru. Decreto Legislativo No. 1384, El Peruano, 4 September 2018. 來源等級 A。
-68. 中華民國司法院統計年報. 意定監護登記件數, 2019–2024. 來源等級 A（政府統計）。
-69. Adams, E. J., Nguyen, A. T., & Cowan, N. (2018). Theories of working memory: Differences in definition, degree of modularity, role of attention, and purpose. Language, Speech, and Hearing Services in Schools, 49(3), 340-355. 來源等級 B。
-70. Wilmer, H. H., Sherman, L. E., & Chein, J. M. (2017). Smartphones and Cognition: A Review of Research Exploring the Links between Mobile Technology Habits and Cognitive Functioning. Frontiers in Psychology, 8, 605. 來源等級 B。
-71. Sphereon / Mattr / IDnow EUDI Wallet conformance suite 2026 Q1–Q3 progress reports. 來源等級 C。
-72. CRPD Committee. Concluding observations on the combined second and third periodic reports of Australia. CRPD/C/AUS/CO/2-3, 2019, paras. 23-25; Concluding observations on the Republic of Korea. CRPD/C/KOR/CO/2-3, 2022, paras. 18-20. 來源等級 A。
-73. Boneh, D., Drijvers, M., & Neven, G. (2018). Compact Multi-Signatures for Smaller Blockchains. ASIACRYPT 2018, LNCS 11273. 來源等級 A。
-74. Komlo, C., & Goldberg, I. (2020). FROST: Flexible Round-Optimized Schnorr Threshold Signatures. SAC 2020. 來源等級 A。
-75. Perez, E., et al. (2023). Discovering Language Model Behaviors with Model-Written Evaluations. arXiv:2212.09251. 來源等級 B。
-76. Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., & Fritz, M. (2023). Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection. Proceedings of AISec 2023. 來源等級 B。
-77. W3C. Data Integrity BBS Cryptosuites v1.0, Candidate Recommendation Draft, 2026-04-07. §3.4 bbs-2023 + §4 unlinkability. 來源等級 A。
-78. IETF. draft-ietf-oauth-sd-jwt-vc-16, OAuth WG, 24 April 2026. §2.2.2.2 cnf claim + §2.4 KB-JWT. 來源等級 A。
-79. Sweller, J., Ayres, P., & Kalyuga, S. (2011). Cognitive Load Theory. Springer Explorations in the Learning Sciences. 來源等級 A。
-80. Nielsen Norman Group. Progressive Disclosure Pattern Library entries, 1995–2024. Including wizard / accordion / paginated 三變體. 來源等級 B。
-81. UK Mental Capacity Act 2005, §1–§4 + Mental Capacity (Amendment) Act 2019. 來源等級 A。
-82. CRPD Committee. Concluding Observations on the initial report of the United Kingdom of Great Britain and Northern Ireland. CRPD/C/GBR/CO/1, 3 October 2017, §30-31. 來源等級 A。
-83. Regulation (EU) 2016/679 (GDPR). Art 5(1)(a) + Art 6 + Art 7 + Art 9 + Recital 32. OJ L 119, 4 May 2016. 來源等級 A。
-84. Regulation (EU) 2022/2065 (Digital Services Act), Art 25. OJ L 277, 27 October 2022. 來源等級 A。
-85. Council of Europe Framework Convention on Artificial Intelligence (CETS 225), Art 4. Adopted 5 September 2024. 來源等級 A。
-86. noyb (2024). GDPR Today: The state of cookie banners 6 years after GDPR. 25 May 2024. 來源等級 B。
-87. CNIL. Bilan d'activité 2023. April 2024. 來源等級 B。
-88. Habib, H., Pearman, S., Wang, J., Zou, Y., Acquisti, A., Cranor, L. F., Sadeh, N., & Schaub, F. (2020). "It's a Scavenger Hunt": Usability of Websites' Opt-Out and Data Deletion Choices. Proceedings of CHI 2020. 來源等級 A。
-89. Gennaro, R., & Goldfeder, S. (2018). Fast Multiparty Threshold ECDSA with Fast Trustless Setup. ACM CCS 2018. 來源等級 A。
-90. U.S. Department of Veterans Affairs. Login.gov and VA Health Connect: Accessibility and Adoption Report, 2024. 來源等級 B。
+[^1]: Regulation (EU) 2024/1689 of the European Parliament and of the Council laying down harmonised rules on artificial intelligence (Artificial Intelligence Act), Art 5(1)(b). OJ L, 2024/1689, 12 July 2024. Source grade A.
+[^2]: European Data Protection Board. Guidelines 03/2022 on Deceptive design patterns in social media platform interfaces: How to recognise and avoid them. Adopted 14 March 2022; version 2.0 adopted 14 February 2023. Source grade A.
+[^3]: Nouwens, M., Liccardi, I., Veale, M., Karger, D., & Kagal, L. (2020). Dark Patterns after the GDPR: Scraping Consent Pop-ups and Demonstrating their Influence. *Proceedings of CHI 2020*, Paper 194. DOI: 10.1145/3313831.3376321. Source grade A.
+[^4]: POTENTIAL Consortium. Use Case 6: Mandate Scenario — Mid-term Technical Report, 2025-09. EU Digital Identity Wallet Large Scale Pilot. Source grade B.
+[^5]: World Health Organization. Dementia Fact Sheet, updated March 2024. WHO Geneva. Source grade A.
+[^6]: Regulation (EU) 2024/1183 of the European Parliament and of the Council amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework. OJ L, 30 April 2024. Source grade A.
+[^7]: Commission Implementing Regulation (EU) 2024/2979 of 28 November 2024 on technical specifications for the European Digital Identity Wallet. OJ L, 28 November 2024. Source grade A.
+[^8]: Civic-proof series Article 15 (A15). Civic-proof inclusion rights, §6.2 wallet triple default degradation pathways. 2026. Source grade A (series internal).
+[^9]: Civic-proof series Article 16 (F1). Civic AI agent delegation limits, §5.3 Counter-argument W4 + §5.4 three engineering fixes + §7.3.1 AgentDelegationProof. 2026. Source grade A (series internal).
+[^10]: Civic-proof series Article 17 (F2). Civic receipts provenance, §3–§7 + §9 CF1–CF5 + §11 open questions. 2026. Source grade A (series internal).
+[^11]: Brignull, H. (2010 onwards). Dark Patterns / Deceptive Design Patterns taxonomy. deceptive.design. Source grade C.
+[^12]: Mathur, A., Acar, G., Friedman, M. J., Lucherini, E., Mayer, J., Chetty, M., & Narayanan, A. (2019). Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites. *Proceedings of CSCW 2019*, Article 81. DOI: 10.1145/3359183. Source grade A.
+[^13]: Morris, J. C. (1993). The Clinical Dementia Rating (CDR): Current version and scoring rules. *Neurology*, 43(11), 2412–2414. Source grade A.
+[^14]: World Health Organization. ICD-11 for Mortality and Morbidity Statistics, Block 6D80–6D86 Dementia, 2022 update. Source grade A.
+[^15]: UN Committee on the Rights of Persons with Disabilities. General Comment No. 1 on Article 12: Equal Recognition before the Law. CRPD/C/GC/1, 19 May 2014, §15–17, §26–29. Source grade A.
+[^16]: Legislative Yuan, Republic of China. Civil Code §1110 + §1113-2 to §1113-10 (intended guardianship system). Promulgated 19 June 2019, effective 21 June 2019. Source grade A.
+[^17]: Huang, Shih-chun (2020). Introduction and critical assessment of Taiwan's intended guardianship system. *Yuedan Law Review*, No. 295, pp. 105–120. Source grade B.
+[^18]: W3C. Verifiable Credentials Data Model v2.0 Recommendation, 2025-05-15. §4.12 securing mechanisms + §5.7 ZKP + §6.3 + §7.1 verification algorithm. Source grade A.
+[^19]: DIF. Presentation Exchange v2.1 specification, 2024. §5 input_descriptors + §6 submission_requirements + §7 format. Source grade B.
+[^20]: OpenID Foundation. OpenID for Verifiable Presentations draft-23 / draft-24, 2024–2026. §5.1 client_metadata + §7 presentation_definition (DCQL) + §9 transaction_data. Source grade B.
+[^21]: EU Cooperation Group. EUDI Wallet Architecture and Reference Framework, 2025-12 iteration. §6.6.3.8 device binding + §6.6.3.9 user binding + §6.6 selective disclosure profile. Source grade A.
+[^22]: W3C. Decentralized Identifiers (DIDs) v1.0 Recommendation, 2022-07-19. §5 DID document structure + §8 security considerations. Source grade A.
+[^23]: Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87–114. DOI: 10.1017/S0140525X01003922. Source grade A.
+[^24]: Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. *Cognitive Science*, 12(2), 257–285. Source grade A.
+[^25]: Bohme, R., & Köpsell, S. (2010). Trained to Accept? A Field Experiment on Consent Dialogs. *Proceedings of CHI 2010*, 2403–2406. Source grade A.
+[^26]: Solove, D. J. (2013). Introduction: Privacy Self-Management and the Consent Dilemma. *Harvard Law Review*, 126, 1880–1903. Source grade A.
+[^27]: Pettit, P. (1997). *Republicanism: A Theory of Freedom and Government*. Oxford University Press; cited from F1 §5.3. Source grade A.
+[^28]: Miller, G. A. (1956). The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information. *Psychological Review*, 63(2), 81–97. Source grade A.
+[^29]: Cowan, N. (2010). The Magical Mystery Four: How is Working Memory Capacity Limited, and Why? *Current Directions in Psychological Science*, 19(1), 51–57. Source grade A.
+[^30]: Baddeley, A. D. (1992). Working memory. *Science*, 255(5044), 556–559. Source grade A.
+[^31]: Baddeley, A. D. (2003). Working memory: Looking back and looking forward. *Nature Reviews Neuroscience*, 4(10), 829–839. Source grade A.
+[^32]: POTENTIAL Consortium. Use Case 6: Payment Mandate — Mid-term Technical Report, 2025-09, pp. 42–48. EU Digital Identity Wallet Large Scale Pilot. Source grade B.
+[^33]: Sweller, J., & Chandler, P. (1994). Why Some Material Is Difficult to Learn. *Cognition and Instruction*, 12(3), 185–233. Source grade A.
+[^34]: Thaler, R. H., & Sunstein, C. R. (2008). *Nudge: Improving Decisions About Health, Wealth, and Happiness*. Yale University Press. Source grade A.
+[^35]: Tversky, A., & Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases. *Science*, 185(4157), 1124–1131. Source grade A.
+[^36]: Acquisti, A., Brandimarte, L., & Loewenstein, G. (2015). Privacy and human behavior in the age of information. *Science*, 347(6221), 509–514. DOI: 10.1126/science.aaa1465. Source grade A.
+[^37]: Utz, C., Degeling, M., Fahl, S., Schaub, F., & Holz, T. (2019). (Un)informed Consent: Studying GDPR Consent Notices in the Field. *Proceedings of CCS 2019*, 973–990. DOI: 10.1145/3319535.3354212. Source grade A.
+[^38]: Matte, C., Bielova, N., & Santos, C. (2020). Do Cookie Banners Respect My Choice? Measuring Legal Compliance of Banners from IAB Europe's Transparency and Consent Framework. *2020 IEEE Symposium on Security and Privacy*, 791–809. Source grade B.
+[^39]: Apple Inc. App Tracking Transparency framework, iOS 14.5+, 2021–2024. Flurry Analytics longitudinal tracking. Source grade C.
+[^40]: Gray, C. M., Kou, Y., Battles, B., Hoggatt, J., & Toombs, A. L. (2018). The Dark (Patterns) Side of UX Design. *Proceedings of CHI 2018*, Paper 534. Source grade A.
+[^41]: Mathur, A., Kshirsagar, M., & Mayer, J. (2021). What Makes a Dark Pattern... Dark? Design Attributes, Normative Considerations, and Measurement Methods. *Proceedings of CHI 2021*, Paper 360. Source grade A.
+[^42]: Sanchez-Rola, I., et al. (2019). Can I Opt Out Yet? GDPR and the Global Illusion of Cookie Control. *ASIA CCS 2019*, 340–351. Source grade A.
+[^43]: FTC v. Epic Games, Inc. (2022). Stipulated Order for Permanent Injunction, FTC File No. 192 3203, 19 December 2022. Source grade A.
+[^44]: CNIL. Decision SAN-2022-021 (Google Ireland & Google LLC, €150M) + SAN-2022-022 (Microsoft Ireland, €60M), 6 January 2022. Source grade A.
+[^45]: Luguri, J., & Strahilevitz, L. J. (2021). Shining a Light on Dark Patterns. *Journal of Legal Analysis*, 13(1), 43–109. Source grade B.
+[^46]: FTC v. Amazon.com, Inc. (2023). Complaint filed 21 June 2023, Case No. 2:23-cv-00932 (W.D. Wash.). Source grade A.
+[^47]: European Commission. Formal proceedings against Meta (Facebook/Instagram) under DSA Art 25, opened 30 April 2024. DSA Article 66 investigation. Source grade A.
+[^48]: NHS Digital. NHS Login Quarterly Statistics, Q4 2024. NHS England. Source grade B.
+[^49]: Digital Agency, Cabinet Office, Japan. Monthly report on My Number Card adoption and use as health insurance card, December 2024. Source grade B.
+[^50]: Finansiel Stabilitet / Finanstilsynet (Denmark). BankID and Mobile Identity Services Annual Report, 2023. Source grade B.
+[^51]: Taiwan Alzheimer's Disease Association. Dementia Prevention and Service Policy Position Paper 2024. Source grade B.
+[^52]: Alzheimer's Association. 2025 Alzheimer's Disease Facts and Figures. *Alzheimer's & Dementia*, 21(4), 2025. Source grade A.
+[^53]: Open Universiteit Heerlen / Alzheimer Nederland. DigiD-gebruik door mensen met dementie: knelpunten en oplossingen. Onderzoeksrapport, Heerlen, 2023. Source grade B.
+[^54]: Internet Freedom Foundation (India). Aadhaar and Disability: Exclusion Patterns and the Right to Identity. IFF Policy Brief, August 2024, New Delhi. Source grade B.
+[^55]: Tribunal de Justiça do Estado de São Paulo (Brazil). Decisions on LGPD and exclusion of persons with dementia from online public services, 2023–2024. Source grade B.
+[^56]: Ministry of Health and Welfare, Republic of China. Long-Term Care Policy White Paper (revised edition), July 2024. Source grade A (government document).
+[^57]: Apple Inc. Health Cognitive Assessment Documentation, iOS 17+, 2024–2025. developer.apple.com/health/cognitive. Source grade C.
+[^58]: Google LLC. Health Connect Cognitive Data Types, 2024. developer.android.com/health/connect/data-types. Source grade C.
+[^59]: Cambridge Cognition. CANTAB Mobile — FDA cleared cognitive assessment, 2024. Source grade C.
+[^60]: Mozilla Foundation. Privacy Not Included: Health Apps 2025. foundation.mozilla.org. Source grade C.
+[^61]: Apple Inc. Family Sharing: Set up Family Sharing on iPhone, iOS 17 documentation. Source grade B.
+[^62]: Google LLC. Family Link: Manage your child's Google Account documentation. Source grade B.
+[^63]: Hyperledger Aries RFC 0211 Mediator Coordination Protocol; Trust over IP Foundation DIDComm Messaging v2 §Routing. Source grade B.
+[^64]: State of Israel. Capacity and Guardianship Law Amendment No. 18 (5776-2016), §67B–67F. Source grade A.
+[^65]: Bregaglio Lazarte, R. (2019). Una mirada al nuevo régimen de capacidad jurídica de las personas con discapacidad establecido por el Decreto Legislativo 1384. *Revista Latinoamericana en Discapacidad, Sociedad y Derechos Humanos*, 3(1), 26–50. Source grade A.
+[^66]: Cohen, A. (2018). Supported Decision-Making: Israel's Path to Reform. *Israel Law Review*, 51(3), 451–478. Source grade A.
+[^67]: Peru. Decreto Legislativo No. 1384, El Peruano, 4 September 2018. Source grade A.
+[^68]: Judicial Yuan, Republic of China. Statistical Yearbook on Intended Guardianship Registrations, 2019–2024. Source grade A (government statistics).
+[^69]: Adams, E. J., Nguyen, A. T., & Cowan, N. (2018). Theories of working memory: Differences in definition, degree of modularity, role of attention, and purpose. *Language, Speech, and Hearing Services in Schools*, 49(3), 340–355. Source grade B.
+[^70]: Wilmer, H. H., Sherman, L. E., & Chein, J. M. (2017). Smartphones and Cognition: A Review of Research Exploring the Links between Mobile Technology Habits and Cognitive Functioning. *Frontiers in Psychology*, 8, 605. Source grade B.
+[^71]: Sphereon / Mattr / IDnow EUDI Wallet conformance suite 2026 Q1–Q3 progress reports. Source grade C.
+[^72]: CRPD Committee. Concluding observations on the combined second and third periodic reports of Australia. CRPD/C/AUS/CO/2-3, 2019, paras. 23–25; Concluding observations on the Republic of Korea. CRPD/C/KOR/CO/2-3, 2022, paras. 18–20. Source grade A.
+[^73]: Boneh, D., Drijvers, M., & Neven, G. (2018). Compact Multi-Signatures for Smaller Blockchains. *ASIACRYPT 2018*, LNCS 11273. Source grade A.
+[^74]: Komlo, C., & Goldberg, I. (2020). FROST: Flexible Round-Optimized Schnorr Threshold Signatures. *SAC 2020*. Source grade A.
+[^75]: Perez, E., et al. (2023). Discovering Language Model Behaviors with Model-Written Evaluations. arXiv:2212.09251. Source grade B.
+[^76]: Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., & Fritz, M. (2023). Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection. *Proceedings of AISec 2023*. Source grade B.
+[^77]: W3C. Data Integrity BBS Cryptosuites v1.0, Candidate Recommendation Draft, 2026-04-07. §3.4 bbs-2023 + §4 unlinkability. Source grade A.
+[^78]: IETF. draft-ietf-oauth-sd-jwt-vc-16, OAuth WG, 24 April 2026. §2.2.2.2 cnf claim + §2.4 KB-JWT. Source grade A.
+[^79]: Sweller, J., Ayres, P., & Kalyuga, S. (2011). *Cognitive Load Theory*. Springer Explorations in the Learning Sciences. Source grade A.
+[^80]: Nielsen Norman Group. Progressive Disclosure Pattern Library entries, 1995–2024. Including wizard / accordion / paginated three variants. Source grade B.
+[^81]: UK Mental Capacity Act 2005, §1–§4 + Mental Capacity (Amendment) Act 2019. Source grade A.
+[^82]: CRPD Committee. Concluding Observations on the initial report of the United Kingdom of Great Britain and Northern Ireland. CRPD/C/GBR/CO/1, 3 October 2017, §30–31. Source grade A.
+[^83]: Regulation (EU) 2016/679 (GDPR). Art 5(1)(a) + Art 6 + Art 7 + Art 9 + Recital 32. OJ L 119, 4 May 2016. Source grade A.
+[^84]: Regulation (EU) 2022/2065 (Digital Services Act), Art 25. OJ L 277, 27 October 2022. Source grade A.
+[^85]: Council of Europe Framework Convention on Artificial Intelligence (CETS 225), Art 4. Adopted 5 September 2024. Source grade A.
+[^86]: noyb (2024). GDPR Today: The state of cookie banners 6 years after GDPR. 25 May 2024. Source grade B.
+[^87]: CNIL. Bilan d'activité 2023. April 2024. Source grade B.
+[^88]: Habib, H., Pearman, S., Wang, J., Zou, Y., Acquisti, A., Cranor, L. F., Sadeh, N., & Schaub, F. (2020). "It's a Scavenger Hunt": Usability of Websites' Opt-Out and Data Deletion Choices. *Proceedings of CHI 2020*. Source grade A.
+[^89]: Gennaro, R., & Goldfeder, S. (2018). Fast Multiparty Threshold ECDSA with Fast Trustless Setup. *ACM CCS 2018*. Source grade A.
+[^90]: U.S. Department of Veterans Affairs. Login.gov and VA Health Connect: Accessibility and Adoption Report, 2024. Source grade B.

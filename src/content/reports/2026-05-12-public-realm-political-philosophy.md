@@ -1,266 +1,269 @@
 ---
-title: "公共領域的政治哲學基礎：civic-proof 系列規範下界的 Arendt / Habermas / Pettit / Mouffe 四家合取"
-description: "civic-proof 系列第 19 篇 (A2)，亦為系列最後一篇。承擔前 18 篇隱用之政治哲學基礎之正面論述。本文以 Arendt plurality、Habermas Öffentlichkeit、Pettit contestation、Mouffe agonism 四家為錨，定義公共領域規範下界 PRF ≜ ⟨plurality, validity, contestation, agonism⟩；以 LegitimacyDegrade 函數承擔 PRF_violated(d) ⇒ LegitimacyDegrade(d) ≥ θ_dem ≈ 0.5 之條件性蘊涵；以 8×4 = 32 cell 矩陣（A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3 八篇 × 四分量）形式化系列承擔關係，F1 為四分量全核心承擔者。四條形式定理 T_PRF1–T_PRF4 承擔「在 PRF 合取下界框架內各自必要、難以由其他分量完全補位」之合取下界結構；定理 T_PRF5 把 F1 RT-ℬ ✗ 與 AA-ℬ ✗ 之 Z₃-intrinsic 邊界擴展為「既有工程設計層之不可達引理」（明示為工程層而非規範層的形式定理）。LegitimacyDegrade 函數中 θ_dem ≈ 0.5 為**分析性建議數**，未經實證校準；本文標明為待 ≥ 5 案例迴歸校準之嚴格立場。反論壓力測試含 Coeckelbergh relational personhood、Floridi infosphere monism、後人類主義（Braidotti / Hayles）、數位民主樂觀派（Benkler）、元反論（為何選四家）五類，於 likelihood × impact 矩陣下「削弱但不推翻」PRF 之四分量合取下界。華人本土化承載分四線：朱雲漢「群」、Wang Hui「公」、儒家「諫議」、儒家「諍友」之結構同構性檢驗；歷史承載條件差距於誠實邊界明示。對台灣讀者特殊段含 TW DIW 進入 LLM-agent 階段之具體衝擊與 F3 supporter UI 三層分離之工程承擔對位。誠實邊界含七項條件性蘊涵；open questions 含 27 條，依後續承擔路徑分四類（F4+ 後續、學術社群擴大檢驗、政策實作經驗研究、技術—哲學交界）。系列收束於本篇；PRF 框架之延伸應用、其他政治哲學進路之補強、後人類主義之 PRF 重做、跨國民主合法性之 θ_dem 校準等議題留作開放空間。"
+title: "The Political-Philosophical Foundations of the Public Realm: A Normative Floor for Civic Proof"
+description: "The nineteenth and final article of the civic-proof series (A2). This article provides an affirmative account of the political-philosophical foundations implicitly relied upon across the preceding eighteen articles. Taking Arendt's plurality, Habermas's Öffentlichkeit, Pettit's contestation, and Mouffe's agonism as its four anchors, the article defines the Public Realm Floor (PRF) (a composite term proposed by the present author, synthesising Arendt's notion of the public realm with the normative 'floor' metaphor from political philosophy) as PRF ≜ ⟨plurality, validity, contestation, agonism⟩, and articulates the conditional implication PRF_violated(d) ⇒ LegitimacyDegrade(d) ≥ θ_dem ≈ 0.5 via a LegitimacyDegrade function. An 8×4 = 32-cell matrix (eight articles: A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3, crossed against four PRF components) formalises the bearer relations of the series; F1 emerges as the sole article bearing all four components at the core level. Four formal theorems T_PRF1–T_PRF4 establish the conjunctive floor structure in which each component is necessary within the PRF framework and cannot be fully substituted by the remaining three; theorem T_PRF5 extends the Z₃-intrinsic boundaries of F1's RT-ℬ ✗ and AA-ℬ ✗ into an engineering unreachability lemma for the existing engineering design layer (stated explicitly as a formal theorem at the engineering rather than the normative layer). The θ_dem ≈ 0.5 threshold in the LegitimacyDegrade function is an analytic suggestion only, not an empirically calibrated value; this article records it as a strict position awaiting calibration via regression across at least five cases. Counter-argument stress tests address five categories—Coeckelbergh's relational personhood, Floridi's infosphere monism, posthumanism (Braidotti / Hayles), digital-democracy optimism (Benkler), and the meta-objection (why these four thinkers)—and show, under a likelihood × impact matrix, that each weakens but does not overturn PRF's four-component conjunctive floor. The indigenisation of the framework to Chinese intellectual traditions proceeds along four lines: structural homology tests between Zhu Yunhan's 'qun' (群), Wang Hui's 'gong' (公), the Confucian 'jianyi' (諫議) tradition, and the Confucian 'zheng-you' (諍友) tradition and the four anchor thinkers; disparities in historical bearer conditions are stated at the honesty boundary. A special section for Taiwanese readers addresses the concrete impact of TW DIW's entry into the LLM-agent phase on PRF, and its engineering correspondence with F3's supporter UI three-layer separation. The honesty boundary comprises seven conditional implications; open questions comprise 27 items classified under four successor pathways (F4+ follow-on work, expanded academic-community examination, policy implementation empirical research, and technology–philosophy intersection). The series concludes with this article; the extension of the PRF framework to further applications, reinforcement from other political-philosophical approaches, posthumanist re-elaboration of PRF, and cross-national calibration of θ_dem for democratic legitimacy are all left as open space."
 pubDate: 2026-05-12
 tags: ["civic-proof", "public-realm", "political-philosophy", "normative-floor", "Arendt-plurality", "Habermas-Oeffentlichkeit", "Habermas-Geltungsansprueche", "Pettit-contestation", "Pettit-non-domination", "Mouffe-agonism", "legitimate-adversary", "civic-proof-series", "PRF-normative-floor", "LegitimacyDegrade", "8x4-bearer-matrix", "32-cell-matrix", "F1-three-path-conjunction", "F2-receipts-provenance", "F3-supporter-ui", "A1-anonymous-political-speech", "A3-civic-proof-concept", "A8-FTLA-governance", "A14-cross-jurisdiction-redress", "A15-inclusion-rights", "Z3-intrinsic-bearer-floor", "first-personal-mens-rea", "active-stance-bearer", "natality-mortality-uniqueness", "kommunikatives-Handeln", "Faktizitaet-und-Geltung", "Sluice-model", "Strukturwandel-der-Oeffentlichkeit", "editorial-democracy", "Eyeball-Test", "republican-freedom", "antagonism-vs-agonism", "Schmitt-acknowledgment", "Coeckelbergh-relational-personhood", "Floridi-infosphere-monism", "posthumanism", "Braidotti", "Hayles", "Benkler-networked-public-sphere", "Fraser-counterpublics", "Honig-Calhoun-Lovett-Norval", "Wang-Hui-China-public-concept", "TW-DIW", "EUDI-Wallet", "eIDAS-2.0", "EU-AI-Act-Article-5", "EU-AI-Act-Recital-29", "Stanford-Internet-Observatory-2024", "Hannah-Arendt-Center", "V-Dem-Democracy-Report-2024", "SCHUFA-C-634-21", "SEC-v-Jarkesy", "CRPD-Article-29", "Rawls-Sen-Nussbaum-Honneth-open-boundary", "TW-Sunflower-318", "Hong-Kong-2019-2020", "TW-2024-deepfake", "US-2024-platform-manipulation", "open-questions-27"]
-category: "數位身分與民主理論"
+category: "Digital Identity and Democratic Theory"
 aiModel: "Claude Opus 4.7"
-aiPrompt: "civic-proof series 第 19 篇 (A2)，亦為系列最後一篇。承接系列 article 1 (A1) 雙錨點、article 2 (A3) 概念地景、article 8 (A8) FTLA 四層治理、article 14 (A14) 跨法域救濟空白、article 15 (A15) precursor right + wallet 三重預設、article 16 (F1) §4 三進路合取覆蓋與 5×3 矩陣、article 17 (F2) V_receipt + CF1-CF5 壓力測試、article 18 (F3) V_ux + supporter UI 三層分離。Arendt plurality + Habermas Öffentlichkeit + Pettit contestation + Mouffe agonism 四家於 civic-proof 系列場景下之合取下界 PRF 為何？四家是否各自必要、不可化約、不可由其他三家補位？8×4 = 32 cell 承擔矩陣下系列前 18 篇之 8 篇核心承擔者與 PRF 四分量之對應關係為何？F1 為四分量全核心承擔者之系列意義為何？LegitimacyDegrade 函數之 sigmoid 形式與 θ_dem 校準依據？Coeckelbergh relational personhood、Floridi infosphere monism、後人類主義、數位民主樂觀派、元反論五類反論於三段壓力測試下『削弱但不推翻』PRF 之具體 mechanism？華人「群」「公」「諫議」「諍友」四傳統與四家錨點之結構同構性與歷史承載條件差距為何？台灣公共領域承載者（街頭、議會、線上、公投、社運）與 PRF 四分量之對應實證為何？TW DIW 進入 LLM-agent 階段對 PRF 之具體衝擊以 F3 supporter UI 三層分離為例如何承擔？"
+aiPrompt: "civic-proof series article 19 (A2), also the final article of the series. Building on series article 1 (A1) dual anchors, article 2 (A3) conceptual landscape, article 8 (A8) FTLA four-tier governance, article 14 (A14) cross-jurisdictional redress gaps, article 15 (A15) precursor right + wallet three presuppositions, article 16 (F1) §4 three-path conjunctive coverage and 5×3 matrix, article 17 (F2) V_receipt + CF1-CF5 stress tests, article 18 (F3) V_ux + supporter UI three-layer separation. What is the conjunctive floor PRF constituted by Arendt plurality + Habermas Öffentlichkeit + Pettit contestation + Mouffe agonism in the civic-proof series scenario? Are the four components each individually necessary, irreducible, and incapable of being substituted by the other three? What is the correspondence between the eight core bearer articles among the preceding eighteen and the four PRF components in the 8×4 = 32-cell bearer matrix? What is the series significance of F1 as the sole full bearer of all four components? What is the sigmoid form of the LegitimacyDegrade function and the basis for θ_dem calibration? What are the concrete mechanisms by which the five counter-argument categories—Coeckelbergh's relational personhood, Floridi's infosphere monism, posthumanism, digital-democracy optimism, and the meta-objection—'weaken but do not overturn' PRF under a three-step stress test? What are the structural homologies and historical bearer-condition disparities between the Chinese 'qun', 'gong', 'jianyi', and 'zheng-you' traditions and the four anchor thinkers? What is the empirical correspondence between Taiwan's public realm bearers (street, legislature, online, referendum, social movement) and the four PRF components? How does TW DIW's entry into the LLM-agent phase concretely impact PRF, exemplified through F3's supporter UI three-layer separation?"
 aiPipelineStage: "final"
 aiPipelineId: "research-publishing-pipeline/2026-05-12-public-realm-political-philosophy"
 aiGeneratedDate: 2026-05-12
 humanReviewed: false
-lang: "zh-TW"
+lang: "en"
 series: "civic-proof"
 seriesOrder: 19
 slug: "2026-05-12-public-realm-political-philosophy"
 ---
 
-## 一、導論
+## § 1. Introduction
 
-2024 年 7 月 12 日，歐盟官方公報刊出 *Regulation (EU) 2024/1689* 即所謂 AI Act；其中第 5 條第 1 項 (b) 款把「使用潛意識（subliminal）、操弄（manipulative）或欺騙（deceptive）技術，足以實質扭曲自然人或群體之行為而導致重大傷害」列為禁止行為，並於 Recital 29 把 democratic processes 之扭曲明列為適用射程<sup>1</sup>。同年 12 月，Stanford Internet Observatory 公布 2024 美國總統大選之 platform manipulation 最終報告，記錄了演算法協作、假帳號網絡與生成式內容對選民資訊環境的系統性侵蝕<sup>2</sup>。同期，台灣國家通訊傳播委員會（NCC）公報與台灣事實查核中心、IORG、Doublethink Lab 等公民組織之監察文件，記錄了 2024 年 1 月台灣總統與立委選舉前後針對賴清德、蔡英文等政治人物之 deepfake 影音流通案例<sup>3</sup>。在制度進程的另一條軸線上，*Regulation (EU) 2024/1183* 即 eIDAS 2.0，於 2024 年 4 月正式生效並設定 2026 至 2027 年間 EUDI Wallet 之強制部署階段<sup>4</sup>，台灣的 TW DIW（台灣數位皮夾）規格也於 2025 至 2026 年陸續釋出並把信任清單上鏈<sup>5</sup>。同一時段，紐約 Bard College 之 Hannah Arendt Center 於 2024 至 2025 連續舉辦以 *digital public realm* 為題之公開講座與年度集刊<sup>6</sup>，把公共領域之政治哲學討論重新放回媒體論述。
+On 12 July 2024, the *Official Journal of the European Union* published *Regulation (EU) 2024/1689*—the so-called AI Act—whose Article 5(1)(b) prohibits the use of subliminal, manipulative, or deceptive techniques capable of materially distorting the behaviour of natural persons or groups in ways likely to cause significant harm, while Recital 29 explicitly identifies the distortion of democratic processes as falling within the Regulation's scope of application.<sup>1</sup> In December of the same year, the Stanford Internet Observatory released its final report on platform manipulation during the 2024 United States presidential election, documenting the systemic erosion of the voter information environment through algorithmic coordination, networks of inauthentic accounts, and generative content.<sup>2</sup> During the same period, bulletins from Taiwan's National Communications Commission (NCC) and monitoring documents from civic organisations including the Taiwan FactCheck Center, IORG, and Doublethink Lab recorded cases of deepfake audiovisual content depicting political figures such as Lai Ching-te and Tsai Ing-wen circulating before and after Taiwan's presidential and legislative elections of January 2024.<sup>3</sup> On a separate institutional axis, *Regulation (EU) 2024/1183*—eIDAS 2.0—entered into force in April 2024, establishing a mandatory deployment phase for EUDI Wallets between 2026 and 2027;<sup>4</sup> specifications for Taiwan's TW DIW (Taiwan Digital Identity Wallet) were released progressively between 2025 and 2026, and the trust list was recorded on a public blockchain.<sup>5</sup> Over the same period, the Hannah Arendt Center at Bard College in New York organised a consecutive series of public lectures and an annual collected volume under the heading of the *digital public realm* in 2024–2025, reinserting the political-philosophical discussion of the public realm into media discourse.<sup>6</sup>
 
-這五件事在表層各自處理「禁止哪種 AI 操弄」「選舉資訊環境如何被侵蝕」「深偽影音如何流通」「數位身分基礎設施如何強制部署」「公共領域概念如何重新被援引」之具體議題，但在規範層共指一個尚未被正面承擔的問題：當數位基礎設施重塑公共領域之進入條件，民主合法性之規範下界究竟落在何處？哪些條件可以由密碼學原語、UX 設計、平台治理之工程承載；哪些條件不能；不能承載者應如何形式化以便外部檢驗？
+These five developments each address, at the surface level, distinct concrete questions: which forms of AI manipulation are prohibited, how electoral information environments are eroded, how deepfake audiovisual content circulates, how digital identity infrastructure is mandatorily deployed, and how the concept of the public realm is being retrieved. At the normative level, however, they jointly point to a question that has not yet been affirmatively borne: when digital infrastructure reshapes the conditions of entry into the public realm, where precisely does the normative floor of democratic legitimacy lie? Which conditions can be borne by engineering carriers such as cryptographic primitives, UX design, and platform governance; which conditions cannot; and how should those that cannot be borne by engineering be formalised for external examination?
 
-civic-proof 系列前 18 篇於不同層面隱用四家政治哲學為規範性錨點，但未正面承擔四家合取為系列下界。系列第 1 篇（A1）論證可問責性不以實名為前提<sup>7</sup>，其雙錨點（procedural due process + republican contestability）已隱用 Arendt plurality 與 Mouffe agonism；第 2 篇（A3）給出公民證明之概念定位與 Nissenbaum contextual integrity 之多元性前提<sup>8</sup>，隱用 Habermas validity；第 8 篇（A8）建立 FTLA 四層治理框架<sup>9</sup>；第 14 篇（A14）盤點跨法域救濟空白<sup>10</sup>；第 15 篇（A15）以 precursor right 三層保障結構承擔 civic-proof inclusion rights，並警示 wallet 三重預設（個人擁有 / 個人識別 / 個人私鑰）之退化路徑<sup>11</sup>。系列轉入工程承載文段後，第 16 篇（F1）首次在 §4 正面承擔 Arendt + Habermas + Pettit 三進路合取覆蓋為「結構不可委任區」之規範錨<sup>12</sup>；第 17 篇（F2）以 V_receipt C1-C6 與定理 T1-T4 承擔 receipts 之 audit trail 證據鏈結構<sup>13</sup>；第 18 篇（F3）以 V_ux C7-C10 與 supporter UI 三層分離承擔選擇性揭露的 UX 認知工程<sup>14</sup>。三篇工程文之規範下界皆隱用四家中的三至四家，但未把整體系列的規範下界形式化為一個橫貫前 18 篇的統一函數。
+The preceding eighteen articles of the civic-proof series have implicitly relied upon the four political-philosophical anchor thinkers as their normative anchors across different layers of analysis, without affirmatively bearing their conjunctive status as the floor of the series. The first article (A1) argues that accountability does not require real-name identification as an antecedent condition;<sup>7</sup> its dual anchors—procedural due process and republican contestability—already implicitly employ Arendt's plurality and Mouffe's agonism. The second article (A3) provides a conceptual positioning of civic proof and a plurality premise derived from Nissenbaum's contextual integrity,<sup>8</sup> implicitly relying on Habermas's validity. The eighth article (A8) establishes the FTLA four-tier governance framework.<sup>9</sup> The fourteenth article (A14) surveys the cross-jurisdictional redress gap.<sup>10</sup> The fifteenth article (A15) bears civic proof inclusion rights through a three-tier precursor right protection structure and flags the degradation path of the wallet's three presuppositions (individual ownership / individual identification / individual private key).<sup>11</sup> When the series moved into engineering-bearing articles, the sixteenth article (F1) was the first to affirmatively bear, in its §4, the conjunctive coverage of three approaches—Arendt, Habermas, and Pettit—as the normative anchor for the "structurally non-delegable zone";<sup>12</sup> the seventeenth article (F2) bears the audit trail evidential-chain structure of civic-action receipts through V_receipt C1–C6 and theorems T1–T4;<sup>13</sup> and the eighteenth article (F3) bears the cognitive engineering of selective disclosure UX through V_ux C7–C10 and the supporter UI three-layer separation.<sup>14</sup> All three engineering articles rely implicitly upon three to four of the four anchor thinkers as their normative floor, without formalising the overall series floor into a unified function spanning the preceding eighteen articles.
 
-本篇是 civic-proof 系列的第 19 篇，亦為系列最後一篇。本文之任務在於把前 18 篇之隱用提到正面論述，給出四家在 civic-proof 系列場景的合取覆蓋條件與形式骨架，使前 18 篇規範主張可被外部檢驗；任務範圍不含替代政治哲學原著。本文採學術文體；引用編號 `<sup>N</sup>` 對應 § 13 參考資料區之 ≥ 80 條來源；保留 Arendt 原著之英文與拉丁文技術詞（plurality、natality、mortality、vita activa、who/what disclosure）、Habermas 原著之德文技術詞（Öffentlichkeit、kommunikatives Handeln、Geltungsansprüche、Strukturwandel、Wahrheit、Richtigkeit、Wahrhaftigkeit、Faktizität und Geltung）、Pettit 原著之拉丁與英文技術詞（non-domination、contestability、editorial democracy、bearer position）、Mouffe 原著之英文技術詞（agonism、antagonism、legitimate adversary、post-political）以保持原意。
+The present article is the nineteenth article of the civic-proof series and is also its final article. Its task is to bring the implicit reliances of the preceding eighteen articles into affirmative account, providing the conjunctive coverage conditions and formal skeleton of the four anchor thinkers within the civic-proof series scenario so that the normative claims of the preceding eighteen articles become externally examinable. The scope of its task does not include replacing the original political-philosophical texts. The article adopts an academic register; citation numbers `<sup>N</sup>` correspond to ≥ 80 sources in the reference section at § 13. Technical terms from Arendt's original writings in English and Latin (plurality, natality, mortality, *vita activa*, *who/what* disclosure), from Habermas's original writings in German (*Öffentlichkeit*, *kommunikatives Handeln*, *Geltungsansprüche*, *Strukturwandel*, *Wahrheit*, *Richtigkeit*, *Wahrhaftigkeit*, *Faktizität und Geltung*), from Pettit's original writings in Latin and English (non-domination, contestability, editorial democracy, bearer position), and from Mouffe's original writings in English (agonism, antagonism, legitimate adversary, post-political) are preserved to maintain their original meaning.
 
-本文章節組織如下：第二章給出概念基礎與系列 forward-link 摘要、規範性與描述性分離原則、合取與綜合方法論之區分；第三章給出形式骨架，含 PRF 函數定義、LegitimacyDegrade 函數、32 cell 承擔矩陣完整呈現與四條定理 T_PRF1-T_PRF4；第四至第七章逐一展開 SA1 Arendt plurality、SA2 Habermas Öffentlichkeit、SA3 Pettit contestation、SA4 Mouffe agonistic 四個分量；第八章是核心整合章，展開「各自必要」論證、合取與綜合方法論、32 cell 矩陣完整解讀與 F1 為四分量全核心承擔之系列意義；第九章是反論壓力測試，含 Coeckelbergh / Floridi / 後人類主義 / 數位民主樂觀派 / 元反論五類反論之 likelihood × impact 矩陣與對台灣讀者特殊段；第十章接合系列 8 篇 forward-links 之規範主張回應；第十一章是誠實邊界與 27 條 open questions；第十二章是條件性學術結論。
-
----
-
-## 二、概念基礎與 forward-link
-
-### 2.1 系列前 18 篇 forward-link 摘要
-
-civic-proof 系列以「公民證明可被合法承擔」為主題，自 article 1 起逐步建立規範條件與工程承載之分層架構。本文承擔下界文之職能，須對前 18 篇之 8 個核心承擔者建立摘要對位。
-
-A1（可問責不以實名為前提）以 Bovens 2007 accountability 二元結構（answerability + enforceability）為錨，援引 Talley v. California（1960）、NAACP v. Alabama（1958）、McIntyre v. Ohio Elections Commission（1995）三案，承擔「匿名政治言論之核心保護」與「事後性可問責」之相容<sup>7,15</sup>。A3（公民證明概念定位）以 Nissenbaum 2010 contextual integrity 為錨，建立公民證明五層抽象表並把規範條件層獨立於工程實作層<sup>8,16</sup>。A8（DNS vs identity trust roots）以 FTLA 四層治理框架（G_industry / G_state / G_recognition / G_oversight）承擔跨境信任根之多 stakeholder 結構<sup>9</sup>。A14（跨法域救濟空白）盤點 verifier 拒絕、issuer 撤銷錯誤、廠商失效、跨境隱私洩漏四類缺口，並援引衝突法之 over-determined 結構<sup>10</sup>。A15（civic-proof inclusion rights）以 Marshall 1950 公民身分三層、ICCPR Art 16 法律人格權承擔 precursor right 三層保障結構，並把 wallet 三重預設之退化路徑形式化<sup>11,17</sup>。F1（civic AI agent delegation limits）以 Tomasev 2026 委任五件（AT/RT/AA/BS/TC）× civic proof 三件式（𝒩/ℱ/ℬ）建立 5×3 必要條件矩陣，把 RT-ℬ 與 AA-ℬ 兩 cell 標記為 Z₃-intrinsic 不可達<sup>12,18</sup>。F2（civic receipts provenance）以 holder-side audit trail 結構承擔 ex post 挑戰之證據鏈<sup>13</sup>。F3（selective disclosure UX failure）以 supporter UI 三層分離（協助理解、操作介面、決定承擔）承擔 CRPD §29 之工程對應<sup>14,19</sup>。
-
-8 篇之共同結構：每篇皆建立規範條件、工程承載、邊界承擔三層，但對「四家政治哲學為何為下界」之正面論述付諸闕如。F1 §4 首次給出三家合取覆蓋之方法論，把 Mouffe agonism 列為輔助；本文承擔把四家合取提升為系列規範下界之正面論證。
-
-### 2.2 規範性與描述性的分離原則
-
-本文嚴格分離規範性主張（normative claim）與描述性主張（descriptive claim）。規範性主張採條件性語式「若違反 PRF 任一分量，則 LegitimacyDegrade(d) ≥ θ_dem」，不採實證描述「數位民主必然符合 PRF」。此分離承擔三項蘊涵。
-
-第一項蘊涵是 PRF 不是經驗事實之歸納。四家錨點原著之 personhood 預設、Öffentlichkeit 之 normative structure、contestability 之 active stance bearer、agonism 之 legitimate adversary，皆為規範條件之形式化，非對「實際公共領域如何運作」之經驗描述。
-
-第二項蘊涵是 PRF 之違反不必然蘊涵實際發生之退化。LegitimacyDegrade 函數給出之 [0, 1] 區間值是「合法性退化機率」，不是「已退化之經驗測量」。θ_dem ≈ 0.5 為分析性建議數，意指「任一分量出現可觀察之違反訊號即觸發退化警示」之嚴格立場；此閾值之精確值待跨國民主合法性實證研究（如 V-Dem 年度報告之 liberal democracy index 退化案例分布）反向校準<sup>20</sup>。
-
-第三項蘊涵是 PRF 在非民主政體之描述力較弱。Pettit 1997 republicanism 預設民主前提；對中國、俄羅斯、伊朗等非民主政體，PRF 之適用為「描述性偏離」（不採「規範性失敗」之語式）。此點於 § 11 誠實邊界明示。
-
-### 2.3 合取與綜合的方法論區分
-
-本文採合取（conjunction）方法論，拒絕綜合（synthesis / syncretism）方法論。合取方法論主張：在 PRF 合取下界框架內，四家各自具有必要性、彼此難以完全互替、難以由其他三家完全補位；綜合方法論主張四家可融合為新版「複合民主理論」。兩者在工程上有具體差異：合取下界允許四家在原著立場上保留張力（如 Habermas 與 Mouffe 對 consensus 之分歧），綜合上界則要求把張力消解為新理論。本文用語上避免「絕對不可化約」之強規範句式，採「框架內必要性 + 難以完全補位」之精確化表述。
-
-合取方法論之嚴格表述見定義 3.2。F1 §4 已建立三進路合取覆蓋之方法論前例<sup>12</sup>；本文擴展至四進路合取，並把方法論之嚴格立場提升為系列規範下界之承擔。Honig 1993、Calhoun 1992、Lovett 2010、Norval 2007 四家對 Arendt、Habermas、Pettit、Mouffe 之當代詮釋，皆在「保留原著張力」之立場下展開<sup>21,22,23,24</sup>。本文之合取方法論延續此承擔。
-
-### 2.4 政治哲學原著閱讀紀律
-
-本文採原著閱讀紀律：四家錨點原著（Arendt 1958 *The Human Condition*；Habermas 1962 *Strukturwandel der Öffentlichkeit*、1981 *Theorie des kommunikativen Handelns*、1992 *Faktizität und Geltung*；Pettit 1997 *Republicanism*、2012 *On the People's Terms*；Mouffe 2000 *The Democratic Paradox*、2013 *Agonistics*）皆直接引原文章節與頁碼，二手詮釋作為輔助（不取代原著之地位）。Arendt 原著之 §1 Prologue、§24 *who/what* 揭露、§28 公共領域之共同世界、§44 vita activa 條件，皆給出存在論意義之 plurality 定義<sup>25</sup>。Habermas 1981 TKH Bd. I §III.3 之三類有效性聲稱（Wahrheit、Richtigkeit、Wahrhaftigkeit），保留德文原文以避免中譯之歧義<sup>26</sup>。Pettit 2012 Ch.5-Ch.6 對 authorial democracy 與 editorial democracy 之雙軌劃分<sup>27</sup>。Mouffe 2000 Ch.4 對 deliberative consensus 之批判與 agonism 之三條件，皆採英文原書頁碼<sup>28</sup>。
-
-華人本土化承載分四線：朱雲漢 2012《高思在雲》對台灣公共領域多元承載者之分析<sup>29</sup>，林宗弘 2020《島嶼浮塵》對台灣社運與政黨「正當對手」關係之記錄<sup>30</sup>，范雲 2024 對婦運與台灣公民社會二十年觀察<sup>31</sup>，Wang Hui 2003 *China's New Order* 對中國「公」概念轉化之研究<sup>32</sup>。四家本土化研究於對應 PRF 分量處援引。
-
-### 2.5 PRF 與 F1 既有邊界的關係
-
-F1 §3.1 已建立 5×3 必要條件矩陣與 Z₁/Z₂/Z₃ 三區帶劃界判準；其中 RT-ℬ 與 AA-ℬ 兩 cell 標記為 Z₃-intrinsic 不可達，因責任承擔需 first-personal mens rea、contestation bearer 需 Pettit active-stance，AI agent 在兩 cell 結構不可滿足<sup>12,33</sup>。F2 定理 T2 與 F3 定理 T2' 分別把此邊界擴充至 receipts 與 UX 工程原語層<sup>13,14</sup>。
-
-本文 PRF 框架延續此承擔，把 RT-ℬ ✗ 與 AA-ℬ ✗ 之邊界擴充至所有工程設計層（見定理 T_PRF5）。F1 之 ℬ 分量原本以三家合取為底（Arendt + Habermas + Pettit）；本文把 Mouffe 從輔助提升為獨立第四分量，理由詳於 § 8.1。F1 RT-ℬ ✗ 對應 PRF plurality 與 validity 雙分量違反，AA-ℬ ✗ 對應 PRF contestation 與 agonism 雙分量違反；兩者皆為 PRF 違反之強情形。
+The structure of this article is as follows. Section 2 provides conceptual foundations and a summary of forward-links to the series, the principle of separating normative from descriptive claims, and the methodological distinction between conjunction and synthesis. Section 3 provides the formal skeleton, including the PRF function definition, the LegitimacyDegrade function, the complete 32-cell bearer matrix, and four theorems T_PRF1–T_PRF4. Sections 4 through 7 develop in turn the four components SA1 (Arendt's plurality), SA2 (Habermas's *Öffentlichkeit*), SA3 (Pettit's contestation), and SA4 (Mouffe's agonism). Section 8 is the core integration section, developing the argument for individual necessity, the methodology of conjunction versus synthesis, a complete reading of the 32-cell matrix, and the series significance of F1 as the bearer of all four components. Section 9 is the counter-argument stress test, comprising a likelihood × impact matrix for five categories of objection—Coeckelbergh, Floridi, posthumanism, digital-democracy optimism, and the meta-objection—together with a special passage for Taiwanese readers. Section 10 articulates the normative-claim responses to the eight series forward-links. Section 11 presents the honesty boundary and 27 open questions. Section 12 offers a conditional academic conclusion.
 
 ---
+## § 2. Conceptual Foundations and Forward-Links
 
-## 三、形式骨架
+### § 2.1 Summary of Forward-Links to the Preceding Eighteen Articles
 
-### 3.1 PRF 函數定義
+The civic-proof series takes "civic proof as legitimately bearable" as its central theme and progressively establishes, from the first article onward, a layered architecture of normative conditions and engineering bearers. As this article discharges the function of a floor article, it must construct summary correspondences for the eight core bearer articles among the preceding eighteen.
 
-定義 3.1（Public Realm Floor, PRF）：
+A1 (*Accountability Without Real-Name Identification*) anchors itself in Bovens's (2007) dual structure of accountability (answerability + enforceability) and cites three cases—*Talley v. California* (1960), *NAACP v. Alabama* (1958), and *McIntyre v. Ohio Elections Commission* (1995)—to bear the compatibility of "core protection of anonymous political speech" with "ex post accountability."<sup>7,15</sup> A3 (*Civic Proof: Concept and Conceptual Positioning*) anchors itself in Nissenbaum's (2010) contextual integrity, constructs a five-layer abstraction table for civic proof, and separates the normative conditions layer from the engineering implementation layer.<sup>8,16</sup> A8 (*DNS Trust Roots vs Identity Trust Roots*) bears the multi-stakeholder structure of cross-border trust roots through the FTLA four-tier governance framework (G_industry / G_state / G_recognition / G_oversight).<sup>9</sup> A14 (*The Cross-Jurisdictional Redress Gap*) surveys four categories of gap—verifier rejection, issuer erroneous revocation, vendor failure, and cross-border privacy breach—and cites the over-determined structure of conflict of laws.<sup>10</sup> A15 (*Civic Proof Inclusion Rights*) bears a three-tier precursor right protection structure through Marshall's (1950) three layers of citizenship and the legal personality right of ICCPR Art. 16, and formalises the degradation path of the wallet's three presuppositions.<sup>11,17</sup> F1 (*The Institutional Limits of AI Agent Delegation in Civic Action*) constructs a 5×3 necessary-condition matrix from Tomasev's (2026) five-element delegation structure (AT/RT/AA/BS/TC) crossed against the civic proof three-element conjunction (𝒩/ℱ/ℬ), marking the RT-ℬ and AA-ℬ cells as Z₃-intrinsically unreachable.<sup>12,18</sup> F2 (*Civic-Action Receipts and the Evidentiary Chain*) bears the evidential chain for ex post challenges through a holder-side audit trail structure.<sup>13</sup> F3 (*The Cognitive Limits of Selective Disclosure UX*) bears the engineering correspondence for CRPD §29 through the supporter UI three-layer separation (assistance-for-understanding layer, operation interface layer, decision-bearing layer).<sup>14,19</sup>
+
+The shared structure of the eight articles: each establishes three layers—normative conditions, engineering bearers, and boundary bearings—yet each leaves the affirmative account of "why the four anchor thinkers constitute the floor" unwritten. F1 §4 was the first to provide a methodology of conjunctive coverage by three thinkers, listing Mouffe's agonism as auxiliary. The present article bears the task of elevating the conjunction of all four thinkers into an affirmative argument for the series normative floor.
+
+### § 2.2 The Principle of Separating Normative from Descriptive Claims
+
+This article strictly separates normative claims from descriptive claims. Normative claims adopt the conditional form: "if any single component of PRF is violated, then LegitimacyDegrade(d) ≥ θ_dem." Descriptive claims of the form "digital democracy necessarily conforms to PRF" are not adopted. This separation bears three implications.
+
+The first implication is that PRF is not an inductive generalisation from empirical fact. The presuppositions of personhood in the four anchor thinkers' original writings, the normative structure of *Öffentlichkeit*, the active-stance bearer position of contestability, and the legitimate adversary of agonism are all formalisations of normative conditions, not empirical descriptions of "how the actual public realm operates."
+
+The second implication is that a violation of PRF does not necessarily imply that degradation has actually occurred. The value in the [0, 1] interval produced by the LegitimacyDegrade function is a "probability of legitimacy degradation," not an "empirical measurement of completed degradation." The value θ_dem ≈ 0.5 is an analytic suggestion, conveying the strict position that "any observable violation signal in a single component triggers a PRF degradation warning." The precise value of this threshold awaits reverse calibration by cross-national empirical research on democratic legitimacy—for example, the distribution of cases of liberal democracy index degradation in V-Dem annual reports.<sup>20</sup>
+
+The third implication is that PRF has weaker descriptive power in non-democratic polities. Pettit's (1997) republicanism presupposes democratic preconditions; for non-democratic polities such as China, Russia, and Iran, the application of PRF constitutes a "descriptive deviation" (the formulation "normative failure" is not adopted). This point is stated explicitly at the honesty boundary in § 11.
+
+### § 2.3 The Methodological Distinction between Conjunction and Synthesis
+
+This article adopts the methodology of conjunction (*Konjunktion*) and rejects the methodology of synthesis (*Synthese* / syncretism). The conjunctive methodology holds that within the PRF conjunctive floor framework, each of the four thinkers has individual necessity, is difficult to substitute entirely for the others, and is difficult to have its position fully filled by the other three. The synthetic methodology holds that the four thinkers can be fused into a new version of "composite democratic theory." The two methodologies have concrete engineering-level differences: the conjunctive floor permits the four thinkers to retain tensions from their original positions (for example, the disagreement between Habermas and Mouffe over consensus), whereas the synthetic ceiling would require those tensions to be dissolved into a new theory. This article's language avoids the strong normative formulation "absolutely irreducible" and instead adopts the precise expression "necessity within the framework + difficult to fully substitute."
+
+The strict formulation of the conjunctive methodology is given in Definition 3.2. F1 §4 already established the methodological precedent of conjunctive coverage by three approaches;<sup>12</sup> the present article extends this to a four-approach conjunction and elevates the strict position of the methodology to the bearing of the series normative floor. The contemporary interpretations of Arendt, Habermas, Pettit, and Mouffe by Honig (1993), Calhoun (1992), Lovett (2010), and Norval (2007) are all developed under the stance of "retaining the tensions of the original writings."<sup>21,22,23,24</sup> The conjunctive methodology of the present article continues this bearing.
+
+### § 2.4 Discipline of Reading the Original Political-Philosophical Texts
+
+This article adopts a discipline of direct engagement with original texts. The four anchor thinkers' key texts—Arendt (1958) *The Human Condition*; Habermas (1962) *Strukturwandel der Öffentlichkeit*, (1981) *Theorie des kommunikativen Handelns*, (1992) *Faktizität und Geltung*; Pettit (1997) *Republicanism*, (2012) *On the People's Terms*; Mouffe (2000) *The Democratic Paradox*, (2013) *Agonistics*—are all cited directly from the original text with chapter and page numbers; secondary interpretations serve as auxiliary sources (not as substitutes for the original texts). Arendt's §1 Prologue, §24 (*who/what* disclosure), §28 (the world held in common), and §44 (*vita activa* conditions together) provide the ontological definition of plurality.<sup>25</sup> Habermas's (1981) *TKH* vol. I, §III.3, with its three categories of validity claims (*Wahrheit*, *Richtigkeit*, *Wahrhaftigkeit*), preserves the German original to avoid ambiguity in translation.<sup>26</sup> Pettit's (2012) Ch. 5–Ch. 6 provides the dual division between authorial democracy and editorial democracy.<sup>27</sup> Mouffe's (2000) Ch. 4, with its critique of deliberative consensus and the three conditions of agonism, is cited using page numbers from the English original.<sup>28</sup>
+
+The indigenisation of the framework to Chinese intellectual traditions proceeds along four lines: Zhu Yunhan's (2012) *High Thoughts in the Clouds* (*Gāo Sī Zài Yún*) on Taiwan's plural public-realm bearers;<sup>29</sup> Lin Zong-hong's (2020) *Island Dust* (*Dǎo Yǔ Fú Chén*) on the "legitimate adversary" relationship between Taiwan's social movements and political parties;<sup>30</sup> Fan Yun's (2024) twenty-year observation on the women's movement and Taiwanese civil society;<sup>31</sup> and Wang Hui's (2003) *China's New Order* on the transformation of the Chinese concept of *gong* (公).<sup>32</sup> These four indigenising studies are cited at the relevant PRF component passages.
+
+### § 2.5 The Relationship between PRF and the Existing Boundaries of F1
+
+F1 §3.1 already established the 5×3 necessary-condition matrix with its three-zone demarcation criteria (Z₁/Z₂/Z₃); the RT-ℬ and AA-ℬ cells were marked as Z₃-intrinsically unreachable because responsibility-bearing requires first-personal *mens rea* and the contestation bearer position requires Pettit's active stance, and AI agents are structurally incapable of satisfying either cell.<sup>12,33</sup> Theorem T2 in F2 and theorem T2' in F3 extended this boundary respectively into the engineering-primitive layers of civic-action receipts and UX.<sup>13,14</sup>
+
+The PRF framework of the present article continues this bearing, extending the RT-ℬ ✗ and AA-ℬ ✗ boundaries to all engineering design layers (see Theorem T_PRF5). F1's ℬ component was originally grounded in a conjunction of three thinkers (Arendt + Habermas + Pettit); the present article elevates Mouffe from auxiliary to an independent fourth component, for reasons detailed in § 8.1. F1's RT-ℬ ✗ corresponds to a dual violation of the PRF plurality and validity components; F1's AA-ℬ ✗ corresponds to a dual violation of the PRF contestation and agonism components. Both constitute strong cases of PRF violation.
+
+---
+## § 3. Formal Skeleton
+
+### § 3.1 PRF Function Definition
+
+Definition 3.1 (Public Realm Floor (PRF) (a composite term proposed by the present author, synthesising Arendt's notion of the public realm with the normative 'floor' metaphor from political philosophy)):
 
 ```
 PRF ≜ ⟨plurality, validity, contestation, agonism⟩
 
-其中
-  plurality    ≜ Arendt (1958) §1+§24+§44 存在論意義下之多個 who 共在
-  validity     ≜ Habermas (1962 §II.6+§III.13 ∧ 1981 §III.3 ∧ 1992 Kap.VII-VIII)
-                 之 Öffentlichkeit 結構 ∧ Geltungsansprüche 三聲稱 ∧ Sluice 模型
-  contestation ≜ Pettit (1997 Ch.6 ∧ 2012 Ch.5-6) 之 active-stance bearer position
-                 ∧ editorial democracy 四項制度條件
-  agonism      ≜ Mouffe (2000 Ch.4 ∧ 2013 Ch.1) 之 legitimate adversary 三條件
-                 （相互承認 ∧ 共享規則 ∧ 爭議框架）
+where
+  plurality    ≜ the co-presence of multiple who under ontological conditions
+                 per Arendt (1958) §1 + §24 + §44
+  validity     ≜ Habermas (1962 §II.6+§III.13 ∧ 1981 §III.3 ∧ 1992 Kap.VII–VIII)
+                 Öffentlichkeit structure ∧ three Geltungsansprüche
+                 ∧ Sluice model
+  contestation ≜ Pettit (1997 Ch.6 ∧ 2012 Ch.5–6) active-stance bearer position
+                 ∧ four institutional conditions of editorial democracy
+  agonism      ≜ Mouffe (2000 Ch.4 ∧ 2013 Ch.1) three conditions of
+                 legitimate adversary
+                 (mutual recognition ∧ shared rules ∧ agonistic frame)
 ```
 
-定義 3.2（合取下界與綜合上界之區分）——以下三式構成 PRF 之定義—展開—收束結構：
+Definition 3.2 (Distinction between conjunctive floor and synthetic ceiling) — the following three expressions constitute the definition–expansion–closure structure of PRF:
 
 ```
-PRF 為合取下界（conjunctive normative floor）：
+PRF as conjunctive normative floor:
   PRF_violated(d) ⇔ ∃ i ∈ {plurality, validity, contestation, agonism}
                     : violation(d, PRF_i)
 
-PRF 非綜合上界（synthetic ceiling）：
+PRF is not a synthetic ceiling:
   ¬ (PRF ⇔ syncretic-fusion(plurality, validity, contestation, agonism))
-  ¬ (PRF_satisfied(d) ⇒ d 達到民主合法性最高水準)
+  ¬ (PRF_satisfied(d) ⇒ d attains the highest level of democratic legitimacy)
 ```
 
-合取下界之兩項蘊涵：第一，四家任一分量被違反即 PRF 整體於本框架下被視為違反；在本文的 PRF 合取設定下，不採以另一分量補強被違反分量的 trade-off 讀法。其他規範性進路（Rawls justice / Sen capability / Nussbaum dignity / Honneth recognition）能否提供部分補強，列為 ceiling 或 boundary 條件（見定義 3.3）。第二，滿足 PRF 為必要條件（充分性不在主張範圍），意指「未跨越下界」，未主張「達到上界」。
+Two implications of the conjunctive floor: first, if any one of the four components is violated, PRF as a whole is treated as violated within this framework. Under the PRF conjunctive setting of this article, the trade-off reading—strengthening one component to compensate for a violated component—is not adopted. Whether other normative approaches (Rawls's justice / Sen's capability / Nussbaum's dignity / Honneth's recognition) can provide partial supplementation is listed as a ceiling or boundary condition (see Definition 3.3). Second, satisfying PRF is a necessary condition (sufficiency is not within the scope of the claim), meaning "not having fallen below the floor"—the claim does not extend to "having reached the ceiling."
 
-定義 3.3（複合下界之非唯一性）：
+Definition 3.3 (Non-uniqueness of the composite floor):
 
 ```
 Composite floor (not unique standard):
   PRF ⊆ NormativeFloors
-  其中 NormativeFloors ⊇ {Rawls justice, Sen capability,
-                          Nussbaum dignity, Honneth recognition, ...}
+  where NormativeFloors ⊇ {Rawls justice, Sen capability,
+                           Nussbaum dignity, Honneth recognition, ...}
 ```
 
-PRF 為民主合法性之複合下界，不主張為唯一下界。Rawls 1971 *A Theory of Justice* 之 justice as fairness<sup>34</sup>、Sen 2009 *The Idea of Justice* 之 capability approach<sup>35</sup>、Nussbaum 2011 *Creating Capabilities* 之 dignity-based capabilities<sup>36</sup>、Honneth 2014 *Freedom's Right* 之 recognition theory<sup>37</sup>，皆為其他規範性進路；本文採開放邊界立場，未在合取中加入四家以外進路，但承認其他進路可作為 PRF 之 ceiling 或 boundary 條件。
+PRF is a composite floor of democratic legitimacy and does not claim to be the unique floor. Rawls's (1971) *A Theory of Justice* and justice as fairness,<sup>34</sup> Sen's (2009) *The Idea of Justice* and the capability approach,<sup>35</sup> Nussbaum's (2011) *Creating Capabilities* and dignity-based capabilities,<sup>36</sup> and Honneth's (2014) *Freedom's Right* and recognition theory<sup>37</sup> are all other normative approaches. This article adopts an open-boundary stance: no approaches beyond the four thinkers are included in the conjunction, but other approaches are acknowledged as possible ceiling or boundary conditions of PRF.
 
-### 3.2 LegitimacyDegrade 函數
+### § 3.2 The LegitimacyDegrade Function
 
-定義 3.4（LegitimacyDegrade 函數）：
+Definition 3.4 (LegitimacyDegrade function):
 
 ```
 LegitimacyDegrade(d) ≜ σ( β₁·violation_intensity(d, plurality)
-                        + β₂·violation_intensity(d, validity)
-                        + β₃·violation_intensity(d, contestation)
-                        + β₄·violation_intensity(d, agonism) )
+                         + β₂·violation_intensity(d, validity)
+                         + β₃·violation_intensity(d, contestation)
+                         + β₄·violation_intensity(d, agonism) )
 
-其中
-  σ                        ≜ logistic sigmoid（與 F1 §3.2 P_degrade 同形）
-  violation_intensity(d,i) ∈ [0, 1]  「設計 d 在分量 i 上之承擔退化強度」
-  β₁ = β₂ = β₃ = β₄ ≈ 1.0  四家等權重（先驗設定，待實證校準）
+where
+  σ                        ≜ logistic sigmoid (same form as P_degrade in F1 §3.2)
+  violation_intensity(d,i) ∈ [0, 1]  "bearer degradation intensity of design d
+                                       on component i"
+  β₁ = β₂ = β₃ = β₄ ≈ 1.0  equal weighting across the four thinkers
+                              (prior setting, pending empirical calibration)
 ```
 
-定理 T_PRF0（PRF 違反蘊涵 LegitimacyDegrade ≥ θ_dem；θ_dem 為分析性建議數，未經實證校準）：
+Theorem T_PRF0 (PRF violation implies LegitimacyDegrade ≥ θ_dem; θ_dem is an analytic suggestion, not empirically calibrated):
 
 ```
 PRF_violated(d) ⇒ LegitimacyDegrade(d) ≥ θ_dem ≈ 0.5
 ```
 
-θ_dem 校準說明：σ(β·1.0) ≈ 0.731（單一分量完全違反）、σ(β·0.5) ≈ 0.622（單一分量中度違反）、σ(0) = 0.5（基線）。設 θ_dem = 0.5 採嚴格立場，意指「任一分量出現可觀察之違反訊號即觸發 PRF 退化警示」。寬鬆立場（θ_dem = 0.6）容許「微度退化」之 grey zone；本文採嚴格立場為下界，並標明寬鬆立場為 § 9.1 反論 W_PRF4 之回應空間。θ_dem 之精確校準待 V-Dem 2024 liberal democracy index 退化案例分布<sup>20</sup>、Bertelsmann Transformation Index<sup>38</sup>、Freedom House 年度報告<sup>39</sup> 反向校準；本文標為分析性建議數，於 § 11 高風險主張清單明示。
+Note on θ_dem calibration: σ(β·1.0) ≈ 0.731 (complete violation of a single component); σ(β·0.5) ≈ 0.622 (moderate violation of a single component); σ(0) = 0.5 (baseline). Setting θ_dem = 0.5 adopts a strict stance, meaning "any observable violation signal in any single component triggers a PRF degradation warning." A lenient stance (θ_dem = 0.6) permits a grey zone of "minor degradation." This article adopts the strict stance as its floor and marks the lenient stance as response space for counter-argument W_PRF4 in § 9.1. The precise calibration of θ_dem awaits reverse calibration from the distribution of liberal democracy index degradation cases in V-Dem 2024,<sup>20</sup> the Bertelsmann Transformation Index,<sup>38</sup> and Freedom House annual reports.<sup>39</sup> This article marks θ_dem as an analytic suggestion, stated explicitly in the high-risk claim list at § 11.
 
-### 3.3 32 cell 承擔矩陣
+### § 3.3 The 32-Cell Bearer Matrix
 
-把系列前 18 篇之 8 篇核心承擔者（A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3）與 PRF 四分量交叉，得到 8×4 = 32 cell 之承擔矩陣。每 cell 採三類標記：● 核心承擔（該篇主規範主張直接落於該分量）、○ 部分承擔（該篇規範主張對該分量有間接支撐）、— 不對應（該篇規範主張與該分量無顯著關聯）。
+Crossing the eight core bearer articles among the preceding eighteen (A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3) against the four PRF components produces a bearer matrix of 8×4 = 32 cells. Each cell adopts one of three markers: ● core bearing (the article's primary normative claim falls directly within that component), ○ partial bearing (the article's normative claim provides indirect support for that component), and — no correspondence (the article's normative claim has no significant relation to that component).
 
-| 篇章 | plurality | validity | contestation | agonism | 篇章規範主軸 |
+| Article | plurality | validity | contestation | agonism | Primary normative axis |
 | --- | --- | --- | --- | --- | --- |
-| **A1** 可問責不以實名為前提 | ● | ○ | ○ | ● | accountability 二元結構與匿名政治言論之保護 |
-| **A3** 公民證明概念定位 | ● | ● | ○ | — | Nissenbaum CI 多元性前提與五層抽象表 |
-| **A8** DNS vs identity trust roots（FTLA） | ○ | ● | ● | ● | FTLA 四層治理框架與 HM 合取主張 |
-| **A14** 跨法域救濟空白 | — | ○ | ● | ● | 跨法域救濟四類缺口與衝突法結構 |
-| **A15** civic-proof inclusion rights | ● | ● | ● | ○ | precursor right 三層保障與 wallet 三重預設 |
-| **F1** civic AI agent delegation limits | ● | ● | ● | ● | 委任五件 × civic proof 三件式 5×3 矩陣（PRF 系列核心承擔） |
-| **F2** civic receipts provenance | ○ | ● | ● | ○ | V_receipt C1-C6 與定理 T2 Z₃-intrinsic 不可達；CF1-CF5 壓力測試之 agonistic 工程化 |
-| **F3** selective disclosure UX failure | ○ | ● | ○ | ● | V_ux C7-C10 與 supporter UI 三層分離 |
-| **● 核心承擔計數** | 4 | 5 | 4 | 5 | （32 cell 中 ● 共 18、○ 共 11、— 共 3） |
+| **A1** Accountability Without Real-Name Identification | ● | ○ | ○ | ● | Dual structure of accountability and protection of anonymous political speech |
+| **A3** Civic Proof: Concept and Positioning | ● | ● | ○ | — | Nissenbaum CI plurality premise and five-layer abstraction table |
+| **A8** DNS vs Identity Trust Roots (FTLA) | ○ | ● | ● | ● | FTLA four-tier governance framework and HM conjunctive claim |
+| **A14** Cross-Jurisdictional Redress Gap | — | ○ | ● | ● | Four categories of cross-jurisdictional redress gap and conflict-of-laws structure |
+| **A15** Civic Proof Inclusion Rights | ● | ● | ● | ○ | Three-tier precursor right protection and wallet three presuppositions |
+| **F1** Institutional Limits of AI Agent Delegation | ● | ● | ● | ● | Delegation 5×3 matrix (core series PRF bearer) |
+| **F2** Civic-Action Receipts and Evidentiary Chain | ○ | ● | ● | ○ | V_receipt C1–C6 and Theorem T2 Z₃-intrinsic unreachability; agonistic engineering of CF1–CF5 stress tests |
+| **F3** Cognitive Limits of Selective Disclosure UX | ○ | ● | ○ | ● | V_ux C7–C10 and supporter UI three-layer separation |
+| **● Core bearing count** | 4 | 5 | 4 | 5 | (● total: 18; ○ total: 11; — total: 3 across 32 cells) |
 
-每 cell 之承擔判定論證如下。
+The bearer determination reasoning for each cell is as follows.
 
-**A1 × plurality（●）**：A1 §2 援引 NAACP v. Alabama（1958）與 McIntyre v. Ohio（1995），把「匿名政治言論之核心保護」與 plurality 直接連結；multiple *who* 在公共領域之共在不應被前置之自然人身分綁定所削弱。Arendt §28 之「the world we have in common」直接承擔此分量。
+**A1 × plurality (●)**: A1 §2 cites *NAACP v. Alabama* (1958) and *McIntyre v. Ohio* (1995), directly linking "core protection of anonymous political speech" to plurality. The co-presence of multiple *who* in the public realm ought not to be diminished by antecedent natural-person identity binding. Arendt §28 "the world we have in common" directly bears this component.
 
-**A1 × agonism（●）**：A1 雙錨點包含 procedural due process 與 republican contestability；後者之 contestation 主體性結構直接對應 Mouffe agonism 之 legitimate adversary 預設，匿名性允許正當對手以非身分綁定方式行使政治表達權，避免敵對化退化為 antagonism。
+**A1 × agonism (●)**: The dual anchors of A1 include procedural due process and republican contestability. The latter's subject-position structure of contestation directly corresponds to Mouffe's agonism presupposition of legitimate adversary; anonymity allows legitimate adversaries to exercise political expression rights without identity binding, forestalling the degradation of agonism into antagonism.
 
-**A1 × validity（○）**：A1 之 Bovens 2007 accountability 結構（answerability + enforceability）對 validity 分量之 Wahrhaftigkeit 有間接支撐，answerability 要求「於被質疑時提供解釋」即 Habermas Geltungsansprüche 之操作化<sup>40</sup>。
+**A1 × validity (○)**: The Bovens (2007) accountability structure in A1 (answerability + enforceability) provides indirect support for the validity component's *Wahrhaftigkeit*; the requirement that one "provide explanations when challenged" operationalises Habermas's *Geltungsansprüche*.<sup>40</sup>
 
-**A1 × contestation（○）**：A1 §2 援引 Pettit 1997 / 2012 contestability，但 contestation 之 active-stance bearer 位置在 A1 僅作為 power-holder 與 power-subject 不對稱處理之輔助。
+**A1 × contestation (○)**: A1 §2 cites Pettit (1997 / 2012) on contestability, but the active-stance bearer position of contestation is employed in A1 only as auxiliary to the asymmetric treatment of power-holders and power-subjects.
 
-**A3 × plurality（●）**：A3 §3.1 Nissenbaum CI 多元性前提「no privacy 'in general'」直接對應 plurality，多個 context 不可互推之多元性是 plurality 在資訊規範層之承載<sup>16</sup>。
+**A3 × plurality (●)**: Nissenbaum's CI plurality premise in A3 §3.1—"no privacy 'in general'"—directly corresponds to plurality. The non-transferability of multiple contexts constitutes the bearer of plurality at the informational normative layer.<sup>16</sup>
 
-**A3 × validity（●）**：A3 §6 civic proof 之最小必要條件中「對外宣稱具有成員資格、對內可被問責、對外不被識別」三條件，承擔 Habermas Richtigkeit 聲稱，成員資格主張須在 Öffentlichkeit 中可被檢驗。
+**A3 × validity (●)**: The three minimum necessary conditions of civic proof in A3 §6—"publicly claiming membership, internally accountable, not externally identifiable"—bear Habermas's *Richtigkeit* claim; membership claims must be examinable within *Öffentlichkeit*.
 
-**A3 × contestation（○）** 與 **A3 × agonism（—）**：A3 規範主張集中於隱私哲學基礎與概念地景區辨，未進入對手政治結構之討論。
+**A3 × contestation (○)** and **A3 × agonism (—)**: A3's normative claims focus on the foundations in privacy philosophy and conceptual landscape differentiation and do not enter into the discussion of adversarial political structure.
 
-**A8 × validity（●）**：A8 FTLA 四層治理框架之 G_state 層直接承擔 Habermas *Faktizität und Geltung* Kap. VII Sluice 模型之 institutional 承載，民主立法之 legitimacy 來自「非正式意見形成」與「formal decision-making」兩層 Sluice 之溝通管道<sup>41</sup>。
+**A8 × validity (●)**: The G_state tier of the FTLA four-tier governance framework in A8 directly bears the institutional carrier of the Sluice model in Habermas's *Faktizität und Geltung*, Kap. VII; the legitimacy of democratic legislation derives from the communicative channel between "informal opinion formation" and "formal decision-making" in the two-tier Sluice.<sup>41</sup>
 
-**A8 × contestation（●）**：A8 之 G_recognition 與 G_oversight 層直接承擔 Pettit editorial democracy 四項制度條件，跨境互認與爭議解決機制即 contestation 之制度化。
+**A8 × contestation (●)**: A8's G_recognition and G_oversight tiers directly bear the four institutional conditions of Pettit's editorial democracy; cross-border mutual recognition and dispute resolution mechanisms are the institutionalisation of contestation.
 
-**A8 × agonism（●）**：A8 HM 合取主張對「身分領域國家化是必然」之拒絕，預設多個正當行動者（國家、業界、標準組織、公民社會）之 legitimate adversary 結構；G_industry 與 G_state 之張力即 agonism 之具體場域。
+**A8 × agonism (●)**: A8's HM conjunctive claim, which rejects the view that "nationalisation of the identity sphere is inevitable," presupposes the legitimate adversary structure of multiple legitimate actors (state, industry, standards organisations, civil society). The tension between G_industry and G_state is the concrete site of agonism.
 
-**A8 × plurality（○）**：A8 之 plurality 承擔主要在治理層之多 stakeholder 結構，非 Arendt 存在論意義；故標 ○。
+**A8 × plurality (○)**: A8's plurality bearing lies primarily in the multi-stakeholder structure of the governance tier, not in the ontological meaning of Arendt; hence marked ○.
 
-**A14 × contestation（●）**：A14 §3 跨法域救濟空白四類缺口直接對應 Pettit contestation 之 institutional 條件，當救濟管道失能，contestation bearer 之 active-stance 無從行使。
+**A14 × contestation (●)**: A14 §3's four categories of cross-jurisdictional redress gap directly correspond to Pettit's contestation institutional conditions; when redress channels are dysfunctional, contestation bearers have no means to exercise an active stance.
 
-**A14 × agonism（●）**：A14 §4 之 over-determined 衝突法結構承擔 Mouffe agonism 之「正當對手間之爭議框架」，跨法域當事人作為 legitimate adversary 需要可運作之爭議解決機制。
+**A14 × agonism (●)**: A14 §4's over-determined conflict-of-laws structure bears Mouffe's agonism "agonistic frame among legitimate adversaries"; cross-jurisdictional parties as legitimate adversaries require an operational dispute-resolution mechanism.
 
-**A14 × validity（○）** 與 **A14 × plurality（—）**：A14 規範主張集中於救濟程序，未進入 plurality 之存在論承擔；validity 之間接支撐在於程序之 procedural validity。
+**A14 × validity (○)** and **A14 × plurality (—)**: A14's normative claims focus on redress procedures and do not enter into the ontological bearing of plurality; indirect support for validity lies in the procedural validity of procedures.
 
-**A15 × plurality（●）**：A15 §3 對無證件者、無國籍者、流亡者之經驗排除盤點，直接對應 plurality，multiple *who* 之共在不應被基礎設施之 enrollment 條件所排除。
+**A15 × plurality (●)**: A15 §3's survey of the experiential exclusion of undocumented persons, stateless persons, and exiles directly corresponds to plurality. The co-presence of multiple *who* ought not to be excluded by the enrollment conditions of infrastructure.
 
-**A15 × validity（●）**：A15 §4 precursor right 之 Marshall 三層橫貫與 ICCPR Art 16 法律人格權承載，對應 Habermas *Faktizität und Geltung* Kap. VIII 之 zivilgesellschaftliche Öffentlichkeit；civic 參與之 institutional 承載要求人格權保障<sup>17,41</sup>。
+**A15 × validity (●)**: The Marshall three-tier civic citizenship and ICCPR Art. 16 legal personality right bearing in A15 §4's precursor right structure corresponds to Habermas's *Faktizität und Geltung*, Kap. VIII, *zivilgesellschaftliche Öffentlichkeit*; the institutional bearer of civic participation requires the guarantee of legal personality.<sup>17,41</sup>
 
-**A15 × contestation（●）**：A15 §6.2 wallet 三重預設（個人擁有、個人識別、個人私鑰）之退化分析，直接對應 Pettit contestation；三重預設若同時成立，supported 退化為 substituted，contestation bearer 位置喪失。
+**A15 × contestation (●)**: A15 §6.2's analysis of the degradation of the wallet's three presuppositions (individual ownership, individual identification, individual private key) directly corresponds to Pettit's contestation. If all three presuppositions hold simultaneously, supported decision-making degrades into substituted decision-making and the contestation bearer position is lost.
 
-**A15 × agonism（○）**：A15 對 supporter / guardian / community 多元 stakeholder 之區分有間接支撐，但 Mouffe agonism 之 legitimate adversary 在 A15 未被獨立承擔。
+**A15 × agonism (○)**: A15's differentiation of multiple stakeholders—supporter / guardian / community—provides indirect support, but Mouffe's agonism and legitimate adversary are not independently borne in A15.
 
-**F1 × plurality（●）**：F1 §4.1 Arendt plurality + natality + unique disclosure 進路為「結構不可委任區」之核心承擔；F1 對 AI agent 之「無 natality」「無 mortality stake」「plurality 是存在論層級」三理由為 plurality 分量之直接運用。
+**F1 × plurality (●)**: F1 §4.1's approach through Arendt's plurality + natality + unique disclosure constitutes the core bearing for the "structurally non-delegable zone." F1's three reasons why AI agents fail the plurality component—"no natality," "no mortality stake," "plurality is at the ontological level"—are direct applications of the plurality component.<sup>12</sup>
 
-**F1 × validity（●）**：F1 §4.2 Habermas kommunikatives Handeln + Geltungsansprüche 進路為「責任承擔」之核心承擔；F1 對 AI agent「無自身意圖可表達」之主張即 Wahrhaftigkeit 聲稱承擔者位置之失能。
+**F1 × validity (●)**: F1 §4.2's approach through Habermas's *kommunikatives Handeln* + *Geltungsansprüche* constitutes the core bearing for "responsibility-bearing." F1's claim that AI agents have "no intention of their own to express" is precisely the disablement of the *Wahrhaftigkeit* claim bearer position.
 
-**F1 × contestation（●）**：F1 §4.3 Pettit contestability 進路為「contestation bearer」之核心承擔；F1 §3.2 P_degrade-TC「當 calibration 由 agent 自報而無外部 contestation 渠道，ℬ 退化為儀式」為 contestation 分量之具體操作。
+**F1 × contestation (●)**: F1 §4.3's approach through Pettit's contestability constitutes the core bearing for "contestation bearer." F1 §3.2 P_degrade-TC—"when calibration is self-reported by the agent with no external contestation channel, ℬ degrades into ritual"—is the concrete operationalisation of the contestation component.
 
-**F1 × agonism（●）**：F1 §4.2 (iii) 雖把 Mouffe 列為輔助，但 F1 對 AI agent「欠缺相互承認之主體位置」之主張即 Mouffe agonism 之 legitimate adversary 三條件之直接運用；四分量在 F1 完整承擔，F1 為 PRF 系列首見之四分量全核心承擔者。
+**F1 × agonism (●)**: Although F1 §4.2(iii) lists Mouffe as auxiliary, F1's claim that AI agents "lack a subject position for mutual recognition" is a direct application of the three conditions of Mouffe's agonism and legitimate adversary. All four components are fully borne in F1; F1 is the first instance in the series of a full core-bearer of all four components.
 
-**F2 × validity（●）**：F2 V_receipt C1-C6 直接承擔 audit trail 之內容真理性與 holder consent 之真誠性，對應 Habermas Wahrheit 與 Wahrhaftigkeit 兩聲稱。
+**F2 × validity (●)**: V_receipt C1–C6 in F2 directly bears the substantive truth of the audit trail and the sincerity of holder consent, corresponding to Habermas's *Wahrheit* and *Wahrhaftigkeit* claims.
 
-**F2 × contestation（●）**：F2 §6 法庭可採性走 FRE 901(b)(9) holder-controlled 路徑，直接承擔 Pettit editorial democracy 之「可挑戰性」，receipts 作為 ex post 挑戰之證據鏈。
+**F2 × contestation (●)**: F2 §6's court admissibility route through FRE 901(b)(9) holder-controlled receipts directly bears the "contestability" of Pettit's editorial democracy; civic-action receipts serve as the evidential chain for ex post challenges.
 
-**F2 × plurality（○）**：F2 對 plurality 之間接支撐在於 receipts 之 holder-side 承載（每個 holder 作為獨立的 *who*），但非主軸。
+**F2 × plurality (○)**: F2's indirect support for plurality lies in the holder-side bearer of receipts (each holder as an independent *who*), but this is not the primary axis.
 
-**F2 × agonism（○，升格說明）**：本文採擴張詮釋，把 F2 之 agonism 承擔從原先「不對應」升為「部分承擔」。F2 §9 提出之 CF1-CF5 五個 counterfactual 壓力測試（V_receipt 某條件失能下之 likelihood-by-mechanism 推演），方法論本身即為 agonistic 框架之工程化：以「正當對手」之反論在矩陣形式下被聽見為設計準則，把「審計鏈不被單一 issuer 壟斷」之多元主體結構納入 receipts 設計。此承擔尚未達 ● 核心承擔強度（F2 主軸仍在密碼學證據鏈），但已超出「無顯著關聯」之 — 範疇；故標 ○。
+**F2 × agonism (○, elevation note)**: This article adopts an expansive interpretation, elevating F2's agonism bearing from the original "no correspondence" to "partial bearing." The five CF1–CF5 counterfactual stress tests proposed in F2 §9 (likelihood-by-mechanism inferences when certain V_receipt conditions fail) are themselves methodologically an engineering operationalisation of the agonistic frame: using "legitimate adversary" counter-arguments heard within a matrix form as a design criterion, incorporating the multi-subject structure of "the audit chain not monopolised by a single issuer" into the receipts design. This bearing has not yet reached the ● core-bearing intensity (the primary axis of F2 remains the cryptographic evidential chain), but it exceeds the — "no significant relation" category; hence marked ○.
 
-**F3 × validity（●）**：F3 V_ux C7-C10 直接承擔 holder 之 informed consent，對應 Habermas Wahrhaftigkeit 聲稱之 UX 履行性。
+**F3 × validity (●)**: V_ux C7–C10 in F3 directly bears the holder's informed consent, corresponding to the UX performativity of Habermas's *Wahrhaftigkeit* claim.
 
-**F3 × agonism（●）**：F3 §7 supporter UI 三層分離（協助理解、操作介面、決定承擔），對應 Mouffe agonism 之 legitimate adversary 結構；supporter 作為 supported decision-making 中之正當對手地位（不可替代但必要），三層分離防止退化為 antagonism 或 consensual 兩端。
+**F3 × agonism (●)**: F3 §7's supporter UI three-layer separation (assistance-for-understanding layer, operation interface layer, decision-bearing layer) corresponds to the legitimate adversary structure of Mouffe's agonism. The supporter holds a legitimate adversary position within supported decision-making (not replaceable but necessary); the three-layer separation prevents degradation toward either the antagonism or the post-political consensual end.
 
-**F3 × plurality（○）** 與 **F3 × contestation（○）**：F3 對兩分量之間接支撐在於 capacity-aware UX 與 supporter UI 三層分離支持 holder 之 contestation 行使，但 active-stance bearer 在 F3 未被獨立承擔。
+**F3 × plurality (○)** and **F3 × contestation (○)**: F3's indirect support for the two components lies in capacity-aware UX and the supporter UI three-layer separation supporting holders in exercising contestation, but the active-stance bearer is not independently borne in F3.
 
-矩陣統計：32 cell 中 ● 共 18（56%）、○ 共 11（34%）、— 共 3（10%）。四分量之 ● cell 數量為 plurality 4、validity 5、contestation 4、agonism 5；agonism 與 validity 同列最高，反映 F2 §9 CF1-CF5 壓力測試方法論之 agonistic 工程化承擔（見 F2 × agonism 升格說明），以及 F3 supporter UI 三層分離之 legitimate adversary 結構承擔。— cell 集中於 A3-agonism、A14-plurality 兩處（F2-agonism 經升格後不再列入 —），顯示工程文承擔已部分補強 Mouffe agonism 在系列中之分布。
+Matrix statistics: across 32 cells, ● totals 18 (56%), ○ totals 11 (34%), and — totals 3 (10%). The ● cell counts across the four components are: plurality 4, validity 5, contestation 4, agonism 5. Agonism and validity share the highest count, reflecting the agonistic engineering operationalisation bearing of the CF1–CF5 stress test methodology in F2 §9 (see the F2 × agonism elevation note) and the legitimate adversary structural bearing of the F3 supporter UI three-layer separation. The — cells are concentrated at A3–agonism and A14–plurality (F2–agonism is no longer listed as — following elevation), indicating that the engineering articles have partially reinforced the distribution of Mouffe's agonism across the series.
 
-### 3.4 四條形式定理 T_PRF1-T_PRF4
+### § 3.4 The Four Formal Theorems T_PRF1–T_PRF4
 
-四家「各自必要」之形式化由四條定理承擔。
+The individual necessity of the four thinkers is formalised by four theorems.
 
-定理 T_PRF1（plurality 必要性）：
+Theorem T_PRF1 (Necessity of plurality):
 
 ```
 ¬ ∃ design d : (d satisfies validity ∧ contestation ∧ agonism)
               ∧ (d violates plurality)
-              → d constitutes legitimate public realm
+              → d constitutes a legitimate public realm
 ```
 
-證明草案：若 d 違反 plurality（例如以 single bearer 取代多元主體），則即使 validity、contestation、agonism 三家皆滿足，d 之合法性對象退化為「無共在主體之程序」。Arendt §28 明示「共同世界」之構成本身需要 multiple *who*；無 plurality 即無 public realm<sup>25</sup>。F1 §4.1 對 AI agent 之「無 natality」論證為此定理之具體應用。
+Proof sketch: if d violates plurality (for example, replacing plural subjects with a single bearer), then even if all three of validity, contestation, and agonism are satisfied, the object of d's legitimacy degrades into "a procedure with no co-present subjects." Arendt §28 states explicitly that the constitution of "the world we have in common" itself requires multiple *who*; without plurality there is no public realm.<sup>25</sup> F1 §4.1's argument for AI agents on "no natality" is a concrete application of this theorem.
 
-定理 T_PRF2（validity 必要性）：
+Theorem T_PRF2 (Necessity of validity):
 
 ```
 ¬ ∃ design d : (d satisfies plurality ∧ contestation ∧ agonism)
               ∧ (d violates validity)
-              → d constitutes legitimate public realm
+              → d constitutes a legitimate public realm
 ```
 
-證明草案：若 d 違反 validity（Öffentlichkeit 結構崩解或 Geltungsansprüche 三聲稱承擔者位置失能），則即使 plurality、contestation、agonism 三家皆滿足，d 之合法性對象退化為「策略性互動」（言說行動已喪失承擔）。Habermas 1981 §III.3 明示，民主合法性源於 kommunikatives Handeln（strategisches Handeln 不承擔此地位）<sup>26</sup>。F1 §4.2 對 AI agent「無 Wahrhaftigkeit 承擔」論證為此定理之具體應用。
+Proof sketch: if d violates validity (the *Öffentlichkeit* structure collapses or the bearer positions for the three *Geltungsansprüche* are disabled), then even if all three of plurality, contestation, and agonism are satisfied, the object of d's legitimacy degrades into "strategic interaction" (speech acts have already lost their bearer). Habermas (1981) §III.3 states explicitly that democratic legitimacy derives from *kommunikatives Handeln* (*strategisches Handeln* does not bear this status).<sup>26</sup> F1 §4.2's argument for AI agents on "no *Wahrhaftigkeit* bearing" is a concrete application of this theorem.
 
-定理 T_PRF3（contestation 必要性）：
+Theorem T_PRF3 (Necessity of contestation):
 
 ```
 ¬ ∃ design d : (d satisfies plurality ∧ validity ∧ agonism)
               ∧ (d violates contestation)
-              → d constitutes legitimate public realm
+              → d constitutes a legitimate public realm
 ```
 
-證明草案：若 d 違反 contestation（active-stance bearer 位置失能或 editorial democracy 四條件不滿足），則即使 plurality、validity、agonism 三家皆滿足，d 之合法性對象退化為「無挑戰管道之共識」。Pettit 1997 Ch.6 明示，non-domination 之 freedom 須以 contestability 之 institutional 承擔為條件<sup>42</sup>；無 contestation 即使 plurality 完整，仍退化為 hegemonic consensus。F1 §3.2 P_degrade-TC 為此定理之具體應用。
+Proof sketch: if d violates contestation (the active-stance bearer position is disabled or the four conditions of editorial democracy are not satisfied), then even if all three of plurality, validity, and agonism are satisfied, the object of d's legitimacy degrades into "consensus with no channel for challenge." Pettit (1997) Ch. 6 states explicitly that freedom as non-domination requires the institutional bearing of contestability as a condition;<sup>42</sup> even with complete plurality, the absence of contestation degrades into hegemonic consensus. F1 §3.2 P_degrade-TC is a concrete application of this theorem.
 
-定理 T_PRF4（agonism 必要性）：
+Theorem T_PRF4 (Necessity of agonism):
 
 ```
 ¬ ∃ design d : (d satisfies plurality ∧ validity ∧ contestation)
               ∧ (d violates agonism)
-              → d constitutes legitimate public realm
+              → d constitutes a legitimate public realm
 ```
 
-證明草案：若 d 違反 agonism（legitimate adversary 三條件失能），則 d 之合法性對象退化為兩種失能之一。其一退化為 antagonism：對手地位無共享規則，contestation 退化為內戰。其二退化為 post-political consensual：對手地位被吸收為共識，contestation 退化為儀式。Mouffe 2000 Ch.4 明示，民主合法性需要 agonistic pluralism<sup>28</sup>。F3 §7 supporter UI 三層分離為此定理之具體應用。
+Proof sketch: if d violates agonism (the three conditions of legitimate adversary are disabled), the object of d's legitimacy degrades into one of two dysfunctions. The first degradation is into antagonism: adversaries share no rules, and contestation degrades into civil war. The second degradation is into post-political consensuality: adversary positions are absorbed into consensus, and contestation degrades into ritual. Mouffe (2000) Ch. 4 states explicitly that democratic legitimacy requires agonistic pluralism.<sup>28</sup> F3 §7's supporter UI three-layer separation is a concrete application of this theorem.
 
-推論 C_PRF（四家合取下界）：
+Corollary C_PRF (Four-thinker conjunctive floor):
 
 ```
 PRF_satisfied(d) ⇔ (d satisfies plurality)
@@ -269,602 +272,596 @@ PRF_satisfied(d) ⇔ (d satisfies plurality)
                   ∧ (d satisfies agonism)
 ```
 
-定理 T_PRF5（既有工程設計層之 PRF 下界不可達引理）：
+Theorem T_PRF5 (Engineering unreachability lemma for the existing engineering design layer):
 
 ```
 ∀ engineering design d :
   ¬ (∃ d : PRF_violated(d) ∧ LegitimacyDegrade(d) < θ_dem)
 ```
 
-T_PRF5 之蘊涵：任何工程設計（含 wallet schema、密碼學原語、UX 工程、治理框架、法律承載）不可繞道 PRF 下界。F1 RT-ℬ ✗（first-personal mens rea 失能）即 plurality 與 validity 雙分量違反；F1 AA-ℬ ✗（contestation bearer 失能）即 contestation 與 agonism 雙分量違反。F3 定理 T2' 之 UX 層不可達邊界與 T_PRF5 同源，UX 工程原語不變更存在論結構，故不能繞道 PRF 下界。
+Implications of T_PRF5: no engineering design—including wallet schema, cryptographic primitives, UX engineering, governance frameworks, or legal bearers—can bypass the PRF floor. F1's RT-ℬ ✗ (first-personal *mens rea* disabled) constitutes a dual violation of the PRF plurality and validity components; F1's AA-ℬ ✗ (contestation bearer disabled) constitutes a dual violation of the PRF contestation and agonism components. Theorem T2' in F3's UX unreachability boundary shares the same source as T_PRF5; UX engineering primitives do not alter ontological structure and therefore cannot bypass the PRF floor.
+
+---
+## § 4. SA1: Arendt's Plurality
+
+### § 4.1 The Three-Layer Ontological Structure
+
+The concept of plurality in Arendt's (1958) *The Human Condition* operates at the ontological level—it does not belong to the domain of political theory. The original §1 Prologue states explicitly: "the fact that men, not Man, live on the earth and inhabit the world"—meaning that humanity consists of plural and concrete "human beings" co-present on earth; the single, abstract "Man" does not figure within Arendt's position.<sup>25, p.7</sup> Arendt further articulates this plurality across three layers of existential conditions: natality (the condition of birth), mortality (the condition of death), and uniqueness (the distinctiveness of each *who*).
+
+The first layer, natality: §1 Prologue and §44 "The Life of the Mind in Action" (pp. 313–320) establish natality as a fundamental condition of human existence, namely "each man begins something new by entering the world." Natality is understood in the ontological sense as the source of "the capacity for action" (not as a description of biological fact); every new act presupposes the actor as a subject capable of "beginning."<sup>25, p.177</sup> Honig's (1993) contemporary interpretation of Arendt further links natality to the "openness of political action."<sup>21</sup>
+
+The second layer, mortality: §44 lists mortality as the existential condition paired in opposition to natality, meaning that human finitude renders the bearing of action an irrevocable stake-taking. The "re-instantiation" of AI agents destroys this existential basis of stake-taking: if an actor can be indefinitely copied or reset, stake degrades into a variable of computation (the bearing of existence is already lost). F1 §4.1 already established this argument.<sup>12</sup>
+
+The third layer, uniqueness: §24 "The Disclosure of the Agent in Speech and Action" (pp. 175–181) establishes the distinction between "action disclosing *who* (not *what*)." The *who* is the distinctive identity of "who I am," which can only be disclosed to others through "action"; the *what* is a description at the level of attributes.<sup>25, p.179</sup> D'Entrèves's (1994) reading of Arendt further links the *who*/*what* distinction to the irreducibility of political subjecthood.<sup>43</sup> Benhabib's (1996) *The Reluctant Modernism of Hannah Arendt* brings this distinction into dialogue with contemporary pluralism.<sup>44</sup>
+
+### § 4.2 Contrast with Liberal Pluralism
+
+Arendt's plurality cannot be equated with liberal pluralism. Liberal pluralism—as in Berlin's (1958) *Two Concepts of Liberty* or Rawls's (1993) *Political Liberalism*—operates at the level of political theory, bearing the normative claim of "coexistence of plural values."<sup>45,46</sup> Arendt's plurality operates at the ontological level, bearing the existential condition of "the co-presence of multiple *who* under the conditions of natality and mortality."
+
+The two differ in three respects. First, liberal pluralism presupposes the individual as a "subject of choice," while Arendt's plurality presupposes the individual as a "subject of disclosure." Second, the multiplicity of liberal pluralism consists in "the juxtaposition of values," while the multiplicity of Arendt's plurality consists in "the co-presence of *who*." Third, the toleration of liberal pluralism is "tolerance of differing values," while the plurality of Arendt's plurality is "acknowledgement of *who* disclosure." Every occurrence of plurality in this article should be understood within the ontological boundaries of Arendt's sense, to avoid a slide into liberal pluralism.
+
+### § 4.3 Correspondence with the Chinese "*Qun*" (群) Tradition
+
+The correspondence between the Chinese *qun* (群) tradition and Arendt's plurality is an authorial analogy that requires verification by the academic community. Zhu Yunhan's (2012) analysis of Taiwan's plural public-realm bearers in *High Thoughts in the Clouds* links the concept of *qun* to the plural bearing of Taiwan's civil society: five major bearers comprising the street, the legislature, online spaces, referenda, and social movements.<sup>29</sup> Lin Zong-hong's (2020) *Island Dust* further incorporates the "legitimate adversary" relationship between Taiwan's social movements and political parties into the analysis, bearing the plurality dimension of the *qun* concept.<sup>30</sup> Wang Hui's (2003) research on the transformation of the Chinese concept of *gong* (公) in *China's New Order* provides a comparative case for the plurality dimension of the Chinese public realm.<sup>32</sup>
+
+The structural homology between the *qun* tradition and Arendt's plurality lies in this: *qun* emphasises the existential condition of "plural human beings co-present," resonating with Arendt's §1 Prologue position of "men, not Man." Yet the historical bearer conditions of *qun* (the hierarchical structure of Confucian self-cultivation, family governance, state governance, and world pacification) differ from the horizontal plurality of Arendt's ontology. This article adopts the conservative stance of "structural homology but different historical bearer conditions," stated explicitly at the honesty boundary in § 11.
+
+### § 4.4 Correspondence to Series Scenarios
+
+A1 §2 cites *Talley v. California*, *NAACP v. Alabama*, and *McIntyre v. Ohio Elections Commission* to establish a direct link between "core protection of anonymous political speech" and plurality.<sup>15</sup> Anonymity within this bearer structure refers to the right to public-realm action of multiple *who*, and exceeds the category of "a technical choice to conceal identity." If civic proof necessarily binds to the natural-person identity, the plurality dimension is reduced antecedently to a "single channel of identity authentication."
+
+A15 §3's survey of the experiential exclusion of undocumented persons, stateless persons, and exiles positions the bearing of plurality at the examination of enrollment conditions; if the mandatory phase of wallet deployment causes those without wallets to withdraw from the public realm, plurality is disabled. A15 §6.2's degradation analysis of the wallet's three presuppositions provides the concrete mechanism of this case.<sup>11</sup>
+
+F1 §4.1 employs the three-layer existential conditions of Arendt's plurality (natality + mortality + uniqueness) as the core reason for AI agents' "structural non-delegability": AI agents lack natality (no existential condition of "being capable of beginning"), lack a mortality stake (no irrevocable stake-taking), and lack uniqueness disclosure (no disclosure of "who I am"); the plurality component is therefore structurally incapable of being borne in AI agent scenarios.<sup>12</sup>
+
+### § 4.5 Three Cases
+
+**Case 1: The 2014 Sunflower Movement (318).** The 24-day occupation of Taiwan's Legislative Yuan from 18 March to 10 April 2014 bore plural bearers under "plurality inside and outside the chamber": citizen representatives inside the chamber, street crowds outside, the informational bearing of the g0v open-source community, the discursive spaces of PTT and Facebook, and the parallel coverage of mainstream and independent media.<sup>29,30</sup> Each bearer has irreducible bearing in the plurality dimension; no single bearer alone could bear the totality of the movement.
+
+**Case 2: The 2019–2020 Hong Kong Anti-Extradition Movement.** The movement bore plurality through the "leaderless" (*mo dai toi*, lit. "no main stage") structure—multiple bearers (student unions, social movement groups, religious communities, overseas networks, and anonymous citizens) co-present. The same period also demonstrated the boundary slippage between plurality and agonism: when the "legitimate adversary" structure collapsed, the movement's bearer degraded into antagonism. Lin Zong-hong (2020) and Fan Yun (2024) provide a record of Taiwan's civil society bearing of this movement.<sup>30,31</sup>
+
+**Case 3: Deepfake cases in the 2024 Taiwan presidential and legislative elections.** Deepfake audiovisual content depicting political figures such as Lai Ching-te and Tsai Ing-wen circulated before and after the elections; NCC bulletins and monitoring records by civic organisations including the Taiwan FactCheck Center, IORG, and Doublethink Lab document the cases.<sup>3</sup> The impact of deepfakes on plurality lies in this: if the disclosure of *who* is replaced by AI-generated *what* forgeries, the ontological foundations of plurality are eroded. Simultaneously, this constitutes an attack on the bearer position for Habermas's *Wahrhaftigkeit* claim in the validity dimension.
+
+---
+## § 5. SA2: Habermas's *Öffentlichkeit*
+
+### § 5.1 The Three-Layer Normative Structure
+
+Habermas's concept of *Öffentlichkeit* spans three anchor texts: (1962) *Strukturwandel der Öffentlichkeit*,<sup>47</sup> (1981) *Theorie des kommunikativen Handelns*,<sup>26</sup> and (1992) *Faktizität und Geltung*.<sup>41</sup> The three texts establish a three-layer normative structure of *Öffentlichkeit*.
+
+The first layer, the ideal speech situation: (1981) *TKH* vol. I, §III.3, defines *kommunikatives Handeln* as "action oriented toward reaching mutual understanding" and presupposes four counterfactual conditions of the ideal speech situation: all relevant parties may participate, there is no power distortion, there is no time constraint, and there is no internal or external coercion.<sup>26</sup> The ideal speech situation is a counterfactual idealisation, not an empirical claim; its function is to provide a normative reference point for "reasoned consensus." Bohman's (1996) *Public Deliberation*, in its contemporary interpretation of the ideal speech situation, further operationalises these conditions as four normative conditions of "procedural deliberation."<sup>48</sup>
+
+The second layer, the three *Geltungsansprüche*: *TKH* §III.3 decomposes any speech act of *kommunikatives Handeln* into three categories of validity claims—*Wahrheit* (truth-claim: a true/false assertion about the external world), *Richtigkeit* (rightness-claim: a right/wrong assertion about the normative world), and *Wahrhaftigkeit* (sincerity-claim: an expression of genuine intentions about the inner world).<sup>26, pp.410–427</sup> This article preserves the German original to avoid ambiguity in translation. The disablement of the bearer positions for the three claims in digital scenarios constitutes the core mechanism of violations of the validity component.
+
+The third layer, reciprocal recognition: *Faktizität und Geltung*, Kap. VII and Kap. VIII, establishes the Sluice model; the legitimacy of democratic legislation derives from the communicative channel between "informal opinion formation" and "formal decision-making" in the two-tier Sluice.<sup>41, Kap.VII</sup> The Sluice model positions the informal opinion formation of *zivilgesellschaftliche Öffentlichkeit* (civil-society public realm) as upstream of institutional decision-making; the communication between the two layers is the concrete mechanism of reciprocal recognition.
+
+### § 5.2 Contrast with Empirical Public Opinion
+
+Habermas's *Öffentlichkeit* cannot be equated with empirical public opinion. Empirical public opinion consists of opinion polls, media monitoring, social-media topic volumes, and similar empirical measurements. *Öffentlichkeit* is a normative structure comprising three elements: rational-critical debate, *ohne Ansehen der Person* (without regard to the status of persons), and *Privatleute zum Publikum* (private persons assembled into a public).<sup>47, §II.6</sup>
+
+The two differ in three respects. First, the input to empirical public opinion is "aggregation of opinions," while the input to *Öffentlichkeit* is "rational-critical debate of speech acts." Second, the output of empirical public opinion is "measurement of majority preferences," while the output of *Öffentlichkeit* is "reasoned consensus under speech acts." Third, empirical public opinion under algorithmic media can be distorted by platform manipulation (as in Case 3 in § 5.5), while the normative structure of *Öffentlichkeit* remains a normative reference point even under algorithmic media.
+
+### § 5.3 Fraser's Counterpublics Correction
+
+Fraser's (1990) *Rethinking the Public Sphere* critiques the presupposition of singularity in Habermas's (1962) *Öffentlichkeit*; the co-presence of multiple subaltern counterpublics challenges the normative homogeneity of *Öffentlichkeit*.<sup>49</sup> Warner's (2002) *Publics and Counterpublics* further systematises the plural constitution of counterpublics into a contemporary theory of publics.<sup>50</sup>
+
+This article adopts the stance of "expansion while retaining the floor." The co-presence of multiple counterpublics is consistent with the PRF plurality component, and each counterpublic must still individually satisfy the normative structure of the PRF validity component (rational-critical debate + *ohne Ansehen der Person* + *Privatleute zum Publikum*). Habermas's (1992) *Faktizität und Geltung*, Kap. VIII, with its Sluice model for *zivilgesellschaftliche Öffentlichkeit*, has partially responded to Fraser's critique: the informal opinion-formation layer accommodates multiple counterpublics, while the formal decision-making layer maintains a single institutional bearer.<sup>41</sup> Calhoun's (1992) collection *Habermas and the Public Sphere* already includes Fraser's (1990) critique; this article adopts Calhoun (1992) as the entry-point reference for the Fraser approach.<sup>22</sup>
+
+Asen's (2017) research on the marketisation degradation of *Öffentlichkeit* under neoliberalism reinforces the contemporary bearing of Fraser's critique: when the public realm enters the marketisation of neoliberalism, rational-critical debate degrades into "the expression of consumer preferences."<sup>51</sup> This article states explicitly at the honesty boundary in § 11 that Habermas's historical analysis of the 18th-century bourgeois public realm has a Eurocentric tendency.
+
+### § 5.4 Correspondence with the Chinese "*Gong*" (公) Tradition
+
+The correspondence between the Chinese *gong* (公) tradition and Habermas's *Öffentlichkeit* is an authorial analogy that requires verification by the academic community. Wang Hui's (2003) historical study of the transformation of the Chinese concept of *gong* in *China's New Order* links *gong* to the normative structure of the Chinese public realm, from the Song dynasty literati-officialdom's "all-under-heaven as common" (*tianxia wei gong*) to modern civil society's "public reason."<sup>32</sup> Zhu Yunhan (2012) links the *gong* concept to the institutional bearer of Taiwan's public realm: five major institutional bearers comprising the Council of Grand Justices' constitutional interpretations, legislative operations, the referendum system, local assemblies, and media oversight.<sup>29</sup>
+
+The structural homology between the *gong* tradition and Habermas's *Öffentlichkeit* lies in this: both presuppose the institutional bearing of a normative structure. However, the historical bearer conditions of the *gong* tradition (the imperial examination system, literati-officialdom, and public deliberation) differ from those of Habermas's 18th-century bourgeois public realm (coffee houses, salons, and print media). This article adopts the conservative stance of "structural homology but different historical bearer conditions," stated explicitly at the honesty boundary in § 11.
+
+### § 5.5 Three Cases
+
+**Case 1: Eight years of failure in GDPR cookie banners.** Since GDPR entered into force in 2018, the consent mechanism of cookie banners has borne the institutional performance of Habermas's *Wahrhaftigkeit* claim for "sincere expression of one's own intentions." In practice, however, cookie banners have been pervasively designed using dark patterns into a ritual of "clicking agree."<sup>52</sup> The validity dimension degrades in this case; the *Wahrhaftigkeit* bearer position for consent is disabled. F3 §3 and §4 already provided the UX-layer analysis of this case.<sup>14</sup>
+
+**Case 2: Taiwan's 2018–2021 referendum cases.** Multiple referendum cases in Taiwan between 2018 and 2021 (the East Asian Olympics name rectification referendum, the death penalty abolition referendum, the energy transition referendum, local referenda, and the 18-year-old constitutional amendment for civic rights, among others) bear the institutional performance of Taiwan's *Öffentlichkeit* dimension.<sup>29</sup> The public discourse before and after each referendum and the civic organisation bearers (the Referendum Alliance, the Taiwan Youth Association, the Labour Rights Association, the Environmental Protection Union, the Citizens of the Earth Foundation) constitute the concrete bearer structure of *Öffentlichkeit*.<sup>30,31</sup>
+
+**Case 3: Platform manipulation in the 2024 U.S. presidential election.** The Stanford Internet Observatory's December 2024 final report documents the systemic erosion of the voter information environment through algorithmic coordination, networks of inauthentic accounts, and generative content.<sup>2</sup> Vaidhyanathan's (2018) *Antisocial Media*, Tufekci's (2017) *Twitter and Tear Gas*, and Gillespie's (2018) *Custodians of the Internet* provide structural analyses of platform manipulation.<sup>53,54,55</sup> The impact of this case on the validity dimension lies in: the bearer positions for the three *Geltungsansprüche* in platform-mediated environments are eroded by algorithmically coordinated manipulation.
+
+---
+## § 6. SA3: Pettit's Contestation
+
+### § 6.1 The Three-Layer First-Personal Requirements
+
+Pettit's concept of contestation spans two anchor texts: (1997) *Republicanism*<sup>42</sup> and (2012) *On the People's Terms*.<sup>27</sup> Pettit (2012) Ch. 3 through Ch. 6 establishes three layers of first-personal requirements.
+
+The first layer, Equally Accepted Terms: Pettit (2012) Ch. 3 sets "citizens must be able to accept the terms of public policy under conditions of equality" as the first condition of democratic legitimacy.<sup>27, Ch.3</sup> This first-personal requirement cannot be substituted by a representative. Any acceptance by a representative must be conditional upon "citizens being able to accept in the first person."
+
+The second layer, Equally Accessible Influence: Pettit's (2012) Ch. 5 Eyeball Test sets "citizens are able to look power-holders in the eye without flinching" as the second condition of democratic legitimacy.<sup>27, Ch.5, pp.81–105</sup> This first-personal requirement presupposes that citizens have "accessible channels of influence," including challenge, complaint, voting, and protest.
+
+The third layer, Active Stance: Pettit (1997) Ch. 6 and (2012) Ch. 6 define the core of contestation as "active stance"—the contestation subject must "actively" adopt a stance of dissent, not "passively" accept a consultation of opinions.<sup>42, Ch.6</sup> The significance of this distinction for AI agent scenarios lies in this: AI may serve as an input function for opinion consultation, but cannot serve as an active-stance bearer.
+
+### § 6.2 The Three-Layer Examination of Bearer Position
+
+F1 §4.3 already established the three-layer examination of bearer position: the first layer (execution), the second layer (endorsement), and the third layer (bearer).<sup>12</sup> The division into three layers corresponds to the formal/substantive representation distinction in Pitkin's (1967) *The Concept of Representation*.<sup>56</sup>
+
+First layer — execution: delegable. AI agents may bear execution-layer tasks such as wallet operation, form filling, and document parsing.
+
+Second layer — endorsement: conditionally delegable. AI agents may bear endorsement-layer tasks such as "suggesting," "summarising," and "preliminary assessment," but a human must bear final responsibility.
+
+Third layer — bearer: not delegable. The contestation bearer position must be borne first-personally by a human, comprising three conditions: responsibility-bearing (*mens rea*), stance-bearing (active stance), and consequence-bearing (mortality stake). The F1 RT-ℬ ✗ and AA-ℬ ✗ boundaries are precisely the unreachability of this third layer.<sup>12,33</sup>
+
+### § 6.3 Freedom as Non-Domination
+
+Pettit (1997) Ch. 2, "Liberty as Non-Domination," defines republican freedom as non-domination—"not being subject to arbitrary interference by any person or institution."<sup>42, Ch.2</sup> This definition contrasts with Berlin's (1958) negative freedom (freedom from interference): non-domination is stronger than negative freedom, because even in the absence of actual interference, the mere existence of "the possibility of being arbitrarily interfered with" still constitutes a condition of domination.<sup>45</sup>
+
+Lovett's (2010) *A General Theory of Domination and Justice* further formalises the three conditions of non-domination as "the absence of arbitrary power": the actual exercise of power, the dispositional capacity of power, and the arbitrary character of power.<sup>57</sup> The absence of any one of the three conditions reduces the level of domination.
+
+The implication of freedom as non-domination for digital scenarios lies in this: when infrastructure such as wallet schema, verifier algorithms, and issuer revocation mechanisms can "arbitrarily" alter the behavioural conditions of holders, this constitutes a condition of domination even if no actual interference has occurred. F1 §3.2 P_degrade-TC—"when calibration is self-reported by the agent with no external contestation channel"—is a concrete case of this domination mechanism.
+
+### § 6.4 Correspondence with the Chinese "*Jianyi*" (諫議) Tradition
+
+The correspondence between the Chinese *jianyi* (諫議, direct remonstrance) tradition and Pettit's republican contestation is an authorial analogy. The three-layer structure of the Chinese historical "remonstrance" (*jiànzhèng*) tradition—direct remonstrance (*zhí jiàn*), indirect admonition (*fěng jiàn*), and death remonstrance (*sǐ jiàn*)—bears the historical mechanism of first-personal active stance.<sup>32</sup> The three-layer structure of Taiwan's Council of Grand Justices petitioning system—petition by citizens, petition by judges, and petition by agencies—bears the contemporary institutional correspondence of contestation in Taiwan.<sup>29</sup>
+
+The structural homology between the *jianyi* tradition and Pettit's contestation lies in this: both presuppose the bearing of first-personal active stance. However, the historical bearer conditions of *jianyi* (the ruler–minister relationship, literati-officialdom ethics, and the unity of family and state) differ substantially from the historical bearer conditions of Pettit's republican democracy (citizenship, equal political rights, and institutional checks and balances). This article adopts the conservative stance of "structural homology but different historical bearer conditions," stated explicitly at the honesty boundary in § 11.
+
+### § 6.5 Three Cases
+
+**Case 1: Taiwan's Council of Grand Justices petitioning system.** Articles 78 to 80 of the Taiwan Constitution establish the Council of Grand Justices constitutional interpretation system. Since the Constitutional Litigation Act entered into force in 2022, the three-layer structure of petitions by citizens, judges, and agencies bears the contemporary institutional correspondence of contestation in Taiwan.<sup>29</sup> Cases including Interpretation No. 803 (Indigenous hunting rights), Interpretation No. 791 (decriminalisation of adultery), and Interpretation No. 748 (same-sex marriage) bear the concrete practice of the bearer position.
+
+**Case 2: CJEU *Schufa Holding* C-634/21 (2023).** The Court of Justice of the European Union's December 2023 ruling on Schufa Holding GmbH expanded the interpretation of the right not to be subject to automated decision-making under GDPR Article 22; contestation rights for any automated decision-making must have an institutional bearer.<sup>58</sup> This case bears the EU legal correspondence of Pettit's editorial democracy's four institutional conditions (transparency, predictability, contestability, and correctability).
+
+**Case 3: *SEC v. Jarkesy*, 144 S. Ct. 2117 (2024).** The U.S. Supreme Court's June 2024 ruling on SEC administrative proceedings held that "the right to a jury trial must be afforded in fraud cases within administrative proceedings."<sup>59</sup> This case bears the legal bearing of the bearer position in administrative proceedings: when the penalty imposed by an administrative proceeding already affects "private rights," the first-personal contestation of the bearer cannot be substituted by administrative decision-making.
+
+---
+## § 7. SA4: Mouffe's Agonism
+
+### § 7.1 The Distinction between Agonism and Antagonism
+
+Mouffe's agonistic concept spans two anchor texts: (2000) *The Democratic Paradox*<sup>28</sup> and (2013) *Agonistics*.<sup>60</sup> Mouffe draws a strict distinction between agonism and antagonism: agonism presupposes a legitimate adversary, while antagonism presupposes an enemy.
+
+The three conditions of the legitimate adversary in agonism are mutual recognition, shared rules, and an agonistic frame.<sup>28, Ch.4</sup> The shared presupposition of these three conditions is that the adversary's right to political expression is recognised as legitimate, even where the adversary's position is opposed to one's own. The enemy structure of antagonism is otherwise: the adversary's right to political expression is not recognised, and interaction degrades into a logic of annihilation.
+
+Mouffe incorporates the concept of adversarial politics from Schmitt's (1932) *The Concept of the Political* while rejecting Schmitt's friend/enemy logic of annihilation.<sup>61</sup> As Schmitt was a Nazi jurist, the citation must be stated explicitly at the honesty boundary in § 11: Mouffe absorbs Schmitt's insight that "politics essentially contains an adversarial dimension," but transforms the enemy structure into the legitimate adversary structure.
+
+### § 7.2 The Conjunction of Habermas and Mouffe
+
+Mouffe's (2000) Ch. 4 critique of Habermas's deliberative consensus states explicitly: "the political cannot be reduced to rational consensus."<sup>28, pp.102–105</sup> Mouffe argues that reducing democratic legitimacy to consensus dissolves the agonistic dimension of democracy and degrades into post-political consensuality: adversary positions are absorbed into consensus, and contestation degrades into ritual.
+
+This article adopts the stance of conjuncting Habermas and Mouffe (not treating them as mutually exclusive), relying on the methodology already established in F1 §4.2.<sup>12</sup> The conjunctive structure of the two thinkers lies in this: Habermas's *Öffentlichkeit* and three *Geltungsansprüche* bear the normative structure of speech acts; Mouffe's three conditions of legitimate adversary bear the normative structure of adversarial politics. The two are conjoined at the point that "political speech requires subjects with human personality," while the tension between "consensus vs antagonism" is retained. Norval's (2007) *Aversive Democracy*, in its dialogue between Mouffe and Cavell, further systematises this conjunction.<sup>24</sup>
+
+### § 7.3 Correspondence with the Chinese "*Zheng-You*" (諍友) Tradition
+
+The correspondence between the Chinese *zheng-you* (諍友, remonstrating friend) tradition and Mouffe's agonism is an authorial analogy requiring verification by the academic community. The concept of *zheng-you* originates in the Confucian *Analects* (季氏): "of beneficial friendships there are three kinds: friendship with the upright, friendship with the sincere, and friendship with the well-informed." Friends must be able to offer candid remonstrance, bearing the structure of "mutually recognised legitimate adversary." The Chinese historical inheritance of *zheng-you* (candid remonstrance among literati-officialdom including Han Yu, Fan Zhongyan, Wang Anshi, and Gu Yanwu—including Fan Zhongyan's public-realm bearing in "Yueyang Tower Inscription" of "grieving before the world grieves, rejoicing after the world rejoices") constitutes the historical correspondence of agonism.<sup>32</sup> Wang Hui's (2003) research on the historical transformation of the Chinese concept of *gong* also notes that the Neo-Confucian normative position of "the gentleman harmonises but does not conform" (*jūnzǐ hé ér bù tóng*) has a structural homology with the semantic bearing of Mouffe's three conditions of legitimate adversary (mutual recognition, shared rules, and agonistic frame).<sup>32</sup>
+
+The structural homology between the *zheng-you* tradition and Mouffe's agonism lies in this: both presuppose mutual recognition among legitimate adversaries; the adversary's right to political expression, even when opposed to one's own position, is recognised as legitimate; and neither degrades into hostile annihilation. However, the historical bearer conditions of *zheng-you* (Confucian ethics, literati-officialdom relationships, private friendship, and the hierarchical presuppositions of ruler–minister dialogue) differ substantially from Mouffe's institutional agonism (multi-party politics, public debate, media oversight, and civic-organisation confrontation). The former bears an ethical structure in the private and semi-public realm; the latter bears the public-realm structure of the multi-party institutional system. This article adopts the conservative stance of "structural homology but different historical bearer conditions," stated explicitly at the honesty boundary in § 11. The bearing of agonism in the PRF component for the Chinese public realm cannot directly substitute the institutional structure of a multi-party system by invoking the *zheng-you* tradition.
+
+### § 7.4 Three Cases
+
+**Case 1: Inter-party relations in the Legislative Yuan following Taiwan's 2024 elections.** Following Taiwan's January 2024 elections, the Legislative Yuan entered a structure in which no single party commands a majority: the multi-party operation of the Democratic Progressive Party, the Kuomintang, and the Taiwan People's Party constitutes the concrete practice of agonism.<sup>30</sup> Each party's policy debate, legislative procedure, and coalition dynamics (e.g. "blue-white cooperation" versus "green-camp minor coalition") constitute the institutional performance of legitimate adversary. At the same time, there is structural pressure from polarisation mechanisms distorting into antagonism: echo-chamber algorithms, the culture of social-media dunking, and the contraction of cross-echo-chamber dialogue spaces constitute concrete empirical challenges.
+
+**Case 2: Boundary slippage in the 2019–2020 Hong Kong Anti-Extradition Movement.** In the early phase of the movement, plurality and agonism were both borne, with the co-presence of plural bearers and the legitimate adversary structure coexisting. In the middle phase, the boundary between agonism and antagonism slipped, with interactions between police and protesters degrading into enmity. In the later phase, the antagonism structure solidified, and after the National Security Law entered into force, the legitimate adversary structure was annihilated.<sup>30</sup> This article adopts the "normative distinction" stance (empirical distinction is not within the scope of this article's bearing): the boundary between agonism and antagonism is easily elided in actual politics, but in normative terms the two are strictly different.
+
+**Case 3: Polarised politics in the 2024 U.S. presidential election.** The 2024 U.S. election bears the impact of agonism degrading into antagonism under a polarisation mechanism; the legitimate adversary structure is eroded by the demonisation of the Other. Benkler's (2018) *Network Propaganda* already documented the polarisation mechanism of the 2016 U.S. election.<sup>62</sup> The Stanford Internet Observatory's 2024 report further documents platform manipulation and polarisation in the 2024 election.<sup>2</sup> This case bears the contemporary fragility of agonism.
+
+---
+## § 8. The PRF Conjunctive Floor Argument (Core Integration)
+
+### § 8.1 The Argument for Individual Necessity of the Four Thinkers
+
+The core proposition of this article is that the conjunction of PRF's four thinkers constitutes the normative floor of the civic-proof series; within the PRF conjunctive floor framework, each of the four thinkers has individual necessity and is difficult to be fully substituted by the other three (though not in the absolute sense of irreducibility). This proposition is borne by the four formal theorems T_PRF1 through T_PRF4 (see § 3.4). This section develops the concrete arguments for individual necessity.
+
+**Individual necessity of plurality**: if d satisfies the three thinkers—validity, contestation, agonism—but violates plurality (for example, replacing plural subjects with a single bearer), then d degrades into "a procedure with no co-present subjects." The concrete mechanism unfolds across three layers: the three *Geltungsansprüche* of validity can still be borne by a single bearer, but "the speech acts of different *who*" disappear; the active stance of contestation can still be borne by a single bearer, but "the challenges of different *who*" disappear; the legitimate adversary of agonism can still be borne by a single bearer, but "the adversarial politics of different *who*" disappear. The three bearers degrade into "talking to oneself" under the single-bearer structure; the public realm fails to constitute itself. F1 §4.1's argument for AI agents on "no natality" is the concrete application of this mechanism.
+
+**Individual necessity of validity**: if d satisfies plurality, contestation, and agonism but violates validity, then d degrades into "strategic interaction" (*strategisches Handeln*); the bearing of speech acts (*kommunikatives Handeln*) is lost. The concrete mechanism unfolds across three layers: the co-presence of plural *who* remains, but there is no rational-critical debate; the active stance of contestation remains, but there is no bearing of the three *Geltungsansprüche*; the legitimate adversary structure remains, but there is no normative structure of reciprocal recognition. The three bearers degrade into "power struggle" under the strategic-interaction structure; democratic legitimacy fails to constitute itself.
+
+**Individual necessity of contestation**: if d satisfies plurality, validity, and agonism but violates contestation, then d degrades into "consensus with no channel for challenge." The concrete mechanism lies in this: the co-presence of plural *who* and speech acts can reach "reasoned consensus," but if there is no institutional bearer of contestation, consensus degrades into hegemonic consensus; the legitimate adversary structure remains, but there is no first-personal bearing of an active-stance bearer. F1 §3.2 P_degrade-TC is the concrete application of this mechanism.
+
+**Individual necessity of agonism**: if d satisfies plurality, validity, and contestation but violates agonism, then d degrades into one of two dysfunctions. The first degradation is into antagonism: adversaries share no rules, and contestation degrades into civil war. The second degradation is into post-political consensuality: adversary positions are absorbed into consensus, and contestation degrades into ritual. F3 §7's supporter UI three-layer separation is the concrete application of this mechanism; the supporter, as a legitimate adversary, benefits from the three-layer separation to prevent degradation toward either extreme.
+
+The four theorems jointly imply Corollary C_PRF: PRF_satisfied(d) is the conjunction of all four thinkers; the absence of any single one implies PRF_violated(d).
+
+### § 8.2 The Methodology of Conjunction versus Synthesis
+
+This article adopts the methodology of conjunction; the methodology of synthesis is not within the scope of this article's bearing. The two methodologies differ in two respects.
+
+The conjunctive methodology: the four thinkers retain their respective original-text positions and tensions within PRF; fusion into a new theory is not claimed. For example, the tension between Habermas's consensus position and Mouffe's agonism position is retained; the two thinkers are conjoined at the point that "public political speech requires subjects with human personality." The advantage of the conjunctive methodology is that it preserves the independent space of interpretation for each of the four original texts and avoids the conceptual confusion of syncretic pseudo-synthesis.
+
+The synthetic methodology: fusing the four thinkers into a new version of "composite democratic theory," dissolving the tensions of the four original texts. The risk of the synthetic methodology lies in this: syncretic pseudo-synthesis easily forces "concepts at different levels" (for example, Arendt's ontological plurality and Mouffe's political-theory agonism) into a merger, losing the conceptual precision of the original texts.
+
+This article strictly adopts the conjunctive methodology and marks the conjunctive structure at every occurrence of "the four thinkers," to avoid sliding into synthesis. F1 §4.4's three-approach conjunction table already established this methodological precedent;<sup>12</sup> this article extends it to a four-approach conjunction and elevates it to the bearing of the series normative floor.
+
+### § 8.3 Complete Reading of the 32-Cell Bearer Matrix
+
+The reading of the 32 cells of the matrix in § 3.3 is as follows.
+
+**Horizontal reading (the four-component bearing of each article)**: A1, A3, and A14 each bear 2 ● cells (core bearing); A8 and A15 each bear 3 ● cells; F1 has 4 ● cells (full core-bearer of all four components); F2 has 2 ● cells plus 2 ○ cells (including the upgraded ○ for agonism); F3 has 2 ● cells plus 2 ○ cells. F1's full core-bearing of all four components is the first such instance in the series, reflecting that F1's 5×3 matrix (Tomasev's five elements × civic proof three-element conjunction) already implicitly employs the conjunction of all four thinkers: AT-ℬ and RT-ℬ correspond to plurality; ℱ corresponds to validity; AA-ℬ corresponds to contestation; TC-ℬ corresponds to agonism (including the legitimate adversary structure of supporter UI).
+
+**Vertical reading (the bearing intensity of each component)**: plurality has 4● + 3○ + 1— = A1/A3/A15/F1 as core, A8/F2/F3 as partial, A14 as non-corresponding; validity has 5● + 3○ + 0— = A3/A8/A15/F1/F2/F3 as core, A1/A14 as partial; contestation has 4● + 3○ + 1— = A8/A14/A15/F1/F2 as core, A1/A3/F3 as partial, no non-corresponding cells; agonism has 5● + 1○ + 2— = A1/A8/A14/F1/F3 as core, F2 elevated to partial, A3/A15 non-corresponding (A15's existing ○ bearing is retained; non-correspondence in the agonism column concentrates at A3, while A14 has been corrected). After the F2–agonism elevation, agonism and validity jointly share the highest bearing count across components (5 ● cells).
+
+**Independent argument for the F2–agonism elevation**: As noted in the critical observation in § 5.2, F2 §9's five counterfactual stress tests (CF1: issuer collusion, CF2: verifier collusion, CF3: holder memory loss, CF4: platform failure, CF5: cross-border jurisdictional conflict) use likelihood-by-mechanism inference to assess the robustness of V_receipt design; the methodology itself constitutes an engineering operationalisation of the agonistic frame. CF1–CF5 presuppose that "legitimate adversary" counter-arguments (the issuer may be dishonest; the verifier may be unfair; the platform may cease operation) are heard within the matrix form, internalising Mouffe's three conditions of legitimate adversary (mutual recognition, shared rules, agonistic frame) into the robustness criterion of cryptographic design. This bearing intensity has not yet reached ● core-bearing (the primary axis of F2 remains the cryptographic evidential chain and the contestation dimension of ex post challenges), but it exceeds the — "no significant relation" category; hence elevated from the original — to ○. This elevation does not alter the ● core-bearing determinations of the § 3.3 matrix; it only reinforces the distributed bearing of the agonism dimension across series engineering articles.
+
+**Analysis of non-corresponding (—) cells**: after the elevation, only two concentrations of — cells remain: A3–agonism and A14–plurality. This distribution reflects that engineering articles (F2, F3) under expansive interpretation have partially reinforced the agonism-dimension bearing. This article's PRF framework elevating Mouffe from auxiliary to independent component is precisely the series-level systematisation of this reinforcement. A14's non-correspondence for plurality lies in this: A14's normative claims focus on redress procedures and do not enter into the ontological bearing of plurality. A3's non-correspondence for agonism lies in this: A3's normative claims focus on the foundations of privacy philosophy and conceptual landscape differentiation and do not enter into the discussion of adversarial political structure.
+
+**Dynamic updating of the matrix**: if the interpretation of other series articles is updated or new series articles are added, the matrix must be remade. The 32-cell bearer determinations of this article depend on the current interpretation of the normative claims of the preceding eighteen articles; if interpretations change, cell attributes (●/○/—) must be re-determined. This risk is stated explicitly in the high-risk claim list at § 11.
+
+### § 8.4 The Series Significance of F1 as the Bearer of All Four Components
+
+F1 (article 16) is the first article in the series to fully bear all four components at the core level. Three items of series significance follow from this determination.
+
+First, F1's 5×3 matrix (Tomasev's five elements × civic proof three-element conjunction) is the first "necessary-condition matrix for delegation scenarios" in the series; this article's 8×4 PRF matrix is its methodological extension, expanded from "necessary conditions for delegation scenarios" to "the series normative floor bearer relations." The two matrices are methodologically isomorphic (see § 2.5).
+
+Second, F1 §4's conjunctive coverage by three approaches (Arendt + Habermas + Pettit) was the first article in the series to "affirmatively bear the conjunctive floor." F1 §4.2(iii) already introduced Mouffe as auxiliary; the argument for agonism's individual necessity in this article's § 8.1 elevates Mouffe from auxiliary to independent component. The determination that F1 is the bearer of all four PRF components depends on an expansive interpretation of F1 §4's three-approach conjunction, elevating F1 §4.2(iii)'s "Mouffe supplement does not weaken the conclusion" to the bearing of the agonism component.
+
+Third, the Z₃-intrinsic boundaries of F1's RT-ℬ ✗ and AA-ℬ ✗ are the first "structurally unsatisfiable" cells in the series. The two cells correspond to simultaneous violations of two PRF components: RT-ℬ ✗ corresponds to a dual violation of plurality and validity (first-personal *mens rea* disabled); AA-ℬ ✗ corresponds to a dual violation of contestation and agonism (active-stance bearer and legitimate adversary disabled). This determination is formalised in Theorem T_PRF5 of this article.
+
+The series significance of F1 as the bearer of all four components can be summarised thus: F1 has the highest bearer density among the series normative floor articles. The PRF framework of this article takes F1's existing bearing as its anchor and extends it to the bearer relations of all eighteen preceding articles.
 
 ---
 
-## 四、SA1：Arendt plurality
 
-### 4.1 三層存在論結構
+## § 9. Counter-Argument Stress Tests
 
-Arendt 1958 *The Human Condition* 之 plurality 概念為存在論層級（不在政治理論層級之範疇）。原著 §1 Prologue 明示：「the fact that men, not Man, live on the earth and inhabit the world」（人類採複數具體之「諸人」共在地球上之意義；單一抽象之「人」不在 Arendt 立場之內）<sup>25, p.7</sup>。Arendt 把此 plurality 進一步分為三層存在條件：natality（出生條件）、mortality（死亡條件）、uniqueness（每個 *who* 之獨特性）。
+### § 9.1 Coeckelbergh's Relational Personhood (medium-high impact)
 
-第一層 natality：原著 §1 Prologue 與 §44「The Life of the Mind in Action」（p. 313-320）建立 natality 為人類存在之基本條件，即「每個人作為新開始進入世界」（each man begins something new）。natality 採存在論意義下「行動之能力」之來源（非生物學事實之描述）；任何新行動皆預設行動者作為「能起頭」之主體<sup>25, p.177</sup>。Honig 1993 對 Arendt 之當代詮釋進一步把 natality 與「政治行動之開放性」連結<sup>21</sup>。
+**Counter-argument**: Coeckelbergh's 2020 *AI Ethics* Ch. 4–6 and 2024 "Why AI Undermines Democracy" argue that the expansion of relational personhood allows the boundary of "personhood subjects" to include AI agents.[^63][^64] If AI acquires personhood through relational practice, PRF plurality's multiple *who* co-presence can accommodate AI; PRF validity's *Wahrhaftigkeit* claim bearers can include AI; and PRF's anthropocentric presupposition is wholly replaced.
 
-第二層 mortality：原著 §44 把 mortality 列為與 natality 對位之存在條件，意指人之有限性使行動承擔不可撤回之 stake-taking。AI agent 之「重新生成」（re-instantiation）摧毀此 stake-taking 存在基礎；若行動者可被無限複製或重置，則 stake 退化為演算之變項（存在之承擔已喪失）。F1 §4.1 已建立此論證<sup>12</sup>。
+**Response**: This article adopts the "one step down, not two" position of F1 §4.1.[^12] Even if law recognises a form of relational personhood, the ontological argument for plurality in § 4.1 (natality + mortality + uniqueness) does not depend on legal recognition. Law may recognise a certain status, but it cannot change the ontological structure of that subject.
 
-第三層 uniqueness：原著 §24「The Disclosure of the Agent in Speech and Action」（p. 175-181）建立「行動揭露 *who*（不揭露 *what*）」之區分。*who* 是「我是誰」之獨特身份，只能在「行動」中向他人揭露；*what* 是屬性層之描述<sup>25, p.179</sup>。d'Entrèves 1994 對 Arendt 之解讀進一步把 *who/what* 區分連結到政治主體性之不可化約<sup>43</sup>。Benhabib 1996 *The Reluctant Modernism of Hannah Arendt* 把此區分與當代多元主義對話<sup>44</sup>。
+The Arendtian ontological definition of the plurality component is anchored in "multiple *who* co-present under conditions of natality + mortality"; even if an AI agent's relational personhood is legally recognised, it still lacks natality (each individual as a new beginning) and a mortality stake, so the plurality component still cannot be borne by AI. The validity component's Habermasian *Wahrhaftigkeit* requires speakers to "sincerely express their own intentions"; the problem of intentional attribution to AI agents remains philosophically unresolved, so the validity component still cannot be borne by AI. Coeckelbergh's 2024 internal tension lies in this: the book explicitly states that AI constitutes a threat to democracy (e.g. deepfakes, micro-targeting, opinion manipulation) and calls for a human democratic subject's capacity to counter these; this position is consistent with PRF's "public realm entry conditions centring on the human democratic subject."
 
-### 4.2 對比 liberal pluralism
+The contestation and agonism components under the Coeckelbergh stress test take "one step down, not two": it is possible to expand AI agents' operational scope (e.g. AI agents as auxiliary bearers of contestation), but they still cannot replace the position of the human active-stance bearer. Likelihood is assessed as medium (Coeckelbergh 2020 + 2024 has formed structural bearing in Chinese-language academic circles and parts of continental European AI ethics); impact is assessed as medium-high (the strongest blow is to the plurality component, but F1 §4.1 already provides a response).
 
-Arendt plurality 不可等同於 liberal pluralism。Liberal pluralism（如 Berlin 1958 *Two Concepts of Liberty*、Rawls 1993 *Political Liberalism*）為政治理論層級，承擔「多元價值觀之並存」之規範主張<sup>45,46</sup>。Arendt plurality 為存在論層級，承擔「multiple *who* 在 natality + mortality 條件下之共在」之存在條件。
+### § 9.2 Floridi's Infosphere Monism (medium impact)
 
-兩者之差異有三項。第一，liberal pluralism 預設個體為「選擇主體」（subject of choice），Arendt plurality 預設個體為「揭露主體」（subject of disclosure）。第二，liberal pluralism 之多元性是「價值觀之並列」，Arendt plurality 之多元性是「*who* 之共在」。第三，liberal pluralism 之 toleration 是「對不同價值觀之容忍」，Arendt plurality 之 plurality 是「對 *who* 揭露之承認」。本文每次出現 plurality 處須標明 Arendt 存在論意義下之範疇邊界，避免滑入 liberal pluralism。
+**Counter-argument**: Floridi's 2014 *The Fourth Revolution* argues infosphere monism—humans and AI are both *inforgs* within informational ontology.[^65] If PRF's plurality component adopts informational ontology, the co-presence of multiple *who* can accommodate all inforgs (including AI agents), and the four-component conjunction of PRF is replaced by a single infosphere monism ontology.
 
-### 4.3 華人「群」傳統的對應
+**Response**: The ontological bearing of the PRF plurality component is Arendt's phenomenological ontology (natality + mortality + worldliness), not informational ontology. Floridi's infosphere monism ontological shift can be independently debated on philosophical grounds, but PRF explicitly adopts Arendt's ontological position; § 11 states at the honesty boundary that this ontology choice is not logically necessary.
 
-華人「群」傳統與 Arendt plurality 之對應為作者類比，須學術社群驗證。朱雲漢 2012《高思在雲》對台灣公共領域多元承載者之分析，把「群」概念連結到台灣公民社會之多元承擔：街頭、議會、線上、公投、社運五大承載者<sup>29</sup>。林宗弘 2020《島嶼浮塵》進一步把台灣社運與政黨之「正當對手」關係納入分析，承擔「群」概念之 plurality 維度<sup>30</sup>。Wang Hui 2003 對中國「公」概念轉化之研究，提供華人公共領域 plurality 維度之對照案例<sup>32</sup>。
+**Category distinction (descriptive vs. normative)**: Floridi's infosphere monism primarily addresses "descriptive ontology" (the informational nature of humans and AI), while PRF's "normative floor" belongs to a different category. Infosphere monism does not provide equivalent alternative bearing for the validity, contestation, and agonism components; informational ontology does not generate the concrete bearing of the three normative subjects—"legitimacy-claim bearer," "active dissenter," and "legitimate adversary." The PRF framework under the Floridi stress test is "weakened but not overturned": the plurality component's ontological choice bears philosophical pressure, while the remaining three components are unaffected. Likelihood is assessed as medium; impact is assessed as medium.
 
-「群」傳統與 Arendt plurality 之結構同構性在於：「群」強調「諸人共在」之存在條件，與 Arendt §1 Prologue 之「men, not Man」立場呼應；但「群」之歷史承載條件（儒家修身齊家治國平天下之 hierarchical structure）與 Arendt 存在論之 horizontal plurality 仍有差距。本文採「結構同構但歷史承載條件不同」之保守立場，於 § 11 誠實邊界明示。
+### § 9.3 Posthumanism—Braidotti / Hayles (medium-low impact)
 
-### 4.4 系列場景對應
+**Counter-argument**: Braidotti's 2013 *The Posthuman* and Hayles's 1999 *How We Became Posthuman* argue for expanding the boundaries of personhood to encompass non-human animals, AI, nature, and cyborgs.[^66][^67] If the personhood boundary is expanded, PRF plurality's co-presence of multiple *who* must be redefined; all four anchor authors of PRF presuppose "human subjects," and posthumanist expansion requires the PRF framework to be remade at the ontological layer. Braidotti's 2019 *Posthuman Knowledge* further extends posthumanism to a critique of Eurocentrism.[^68]
 
-A1 § 2 援引 Talley v. California、NAACP v. Alabama、McIntyre v. Ohio Elections Commission 三案，建立「匿名政治言論之核心保護」與 plurality 之直接連結<sup>15</sup>。匿名性於此承擔結構下指 multiple *who* 之公共領域行動權，超出「身分隱匿之技術選擇」之範疇；若公民證明必然綁定自然人身分，則 plurality 維度被前置化約為「身分認證之單一通道」。
+**Response**: PRF adopts a "subjectivity-conditions" position: the personhood presupposition of the four anchor authors is "subjects possessing five conditions—natality + mortality + first-personal disclosure + active stance + legitimate adversary"; a "human exceptionalism" position is not within PRF's scope of bearing. If posthumanist expanded subjects (e.g. certain conscious animals, certain strong AI, certain cyborgs) can pass the five-conditions test, the scope of PRF's subjecthood bearing may expand; but the specific conditions for passing the test still depend on the four-component bearing.
 
-A15 § 3 對無證件者、無國籍者、流亡者之經驗排除盤點，把 plurality 之承擔置於 enrollment 條件之檢驗；若 wallet 強制階段使無 wallet 者退出公共領域，plurality 失能。A15 §6.2 wallet 三重預設之退化分析給出此 case 之具體 mechanism<sup>11</sup>。
+Haraway's 1985 "A Cyborg Manifesto" and Wolfe's 2010 *What Is Posthumanism?* provide the genealogy of posthumanism.[^69][^70] This article states at the § 11 honesty boundary: the remade PRF under expanded personhood boundaries is an open question; this article adopts the personhood presupposition of the four anchor authors as the floor anchor and leaves space for future expansion. Likelihood is assessed as medium; impact is assessed as medium-low.
 
-F1 §4.1 把 Arendt plurality 之三層存在條件（natality + mortality + uniqueness）作為 AI agent 「結構不可委任」之核心理由：AI agent 無 natality（無「能起頭」之存在條件）、無 mortality stake（無不可撤回之 stake-taking）、無 uniqueness disclosure（無「我是誰」之揭露），故 plurality 分量於 AI agent 場景結構不可承擔<sup>12</sup>。
+### § 9.4 Digital-Democracy Optimism—Benkler (low impact)
 
-### 4.5 三個案例
+**Counter-argument**: Benkler's 2006 *The Wealth of Networks* argues that the networked public sphere replaces the traditional public realm through decentralised production.[^71] Sunstein's early *Republic.com* (2001) also argued that digital media offers new democratic possibilities.[^72] If the digital public sphere can independently bear legitimacy, the four-component conjunctive floor of PRF is replaced by "new affordances bearing new legitimacy."
 
-案例一：2014 年 318 太陽花運動。台灣立法院於 2014 年 3 月 18 日至 4 月 10 日為期 24 天之佔領，以「議場內外 plurality」承擔多元承載者：議場內之公民代表、議場外之街頭群眾、g0v 開源社群之資訊承載、PTT 與 Facebook 之論述場域、傳統媒體與獨立媒體之並存報導<sup>29, 30</sup>。各承載者於 plurality 維度有不可化約之承擔；任一承載者單獨無法承擔運動之整體性。
+**Response**: This article adopts the position that "new affordances reshape entry conditions; the old ontological foundation is unchanged." Benkler's affordance analysis of the networked public sphere (peer production, cooperative news ecosystems) is compatible with the PRF framework; the networked public sphere still must satisfy the bearing of PRF's four components, or it degrades into one of four failures: algorithmically produced consensus (violating agonism); opinion without active-stance bearers (violating contestation); strategic interaction replacing communicative action (violating validity); single bearer dominance (violating plurality).
 
-案例二：2019-2020 香港反送中運動。運動以「無大台」（無中心領導）結構承擔 plurality，多個承載者（學生會、社運團體、宗教社群、海外連結、匿名公民）共在；同期亦顯示 plurality 與 agonism 之邊界滑移，當「正當對手」結構崩解，運動承擔退化為 antagonism。林宗弘 2020 與范雲 2024 提供台灣公民社會對此運動之承擔記錄<sup>30,31</sup>。
+Benkler's 2018 *Network Propaganda* has partially revised the 2006 optimistic forecast, acknowledging the impact of platform manipulation and polarisation on the networked public sphere.[^62] Sunstein's 2017 *#Republic* revised edition acknowledges the empirical confirmation of filter bubbles and echo chambers, weakening the early optimism.[^72] Tufekci's 2017 *Twitter and Tear Gas* provides a balanced analysis of the advantages and disadvantages of networked protest.[^54] This article does not degrade under the digital-democracy optimist stress test; new affordances belong to the category of "entry conditions," not the bearing of "legitimacy foundations." Likelihood is assessed as low; impact is assessed as low.
 
-案例三：2024 台灣總統與立委選舉 deepfake 案例。賴清德、蔡英文等政治人物之 deepfake 影音於選舉前後流通，NCC 公報與台灣事實查核中心、IORG、Doublethink Lab 等公民組織監察記錄案例<sup>3</sup>。deepfake 對 plurality 之衝擊在於：若 *who* 揭露被 AI 生成之 *what* 偽造取代，plurality 之存在論基礎被侵蝕；同時對 validity 維度之 Wahrhaftigkeit 聲稱承擔者位置構成攻擊。
+### § 9.5 Meta-Objection: Why These Four Thinkers (high likelihood / low-medium impact)
 
----
+**Counter-argument**: Why Arendt / Habermas / Pettit / Mouffe, and not Rawls / Sen / Nussbaum / Honneth / later Habermasian Diskursethik, etc.? If Rawlsian justice, Sen's capability, Nussbaum's dignity, or Honneth's recognition were added to the conjunction or substituted for one of the four, would PRF be weakened or strengthened?
 
-## 五、SA2：Habermas Öffentlichkeit
+**Response**: This article adopts an open-floor position: PRF is a composite floor, not an absolutely unique one; other approaches (Rawlsian justice, Sen's capability, Nussbaum's dignity, Honneth's recognition) may serve as ceiling or boundary conditions for PRF.[^34][^35][^36][^37] The selection criterion for the four has three items.
 
-### 5.1 三層規範性結構
+First, the four share the theme of "public realm entry conditions." Rawlsian justice centres on "distributive justice"; Sen's capability on "individual capacities"; Nussbaum's dignity on "human dignity"; Honneth's recognition on "mutual recognition"—their themes correspond more directly to civic-proof series' "civic proof can be legitimately borne."
 
-Habermas Öffentlichkeit 概念橫貫三本錨點原著：1962 *Strukturwandel der Öffentlichkeit*<sup>47</sup>、1981 *Theorie des kommunikativen Handelns*<sup>26</sup>、1992 *Faktizität und Geltung*<sup>41</sup>。三本原著建立 Öffentlichkeit 之三層規範性結構。
+Second, the four are most deeply implicitly used in the first 18 articles of the civic-proof series. F1 §4's three-approach conjunction has already established the bearing of Arendt + Habermas + Pettit; A1, A8, A14, A15, F2, and F3 each implicitly use at least one of the three; Mouffe's agonism was introduced in F1 §4.2(iii) as an auxiliary. Other approaches (Rawls, Sen, Nussbaum, Honneth) are implicitly used to a shallower degree in the series' first 18 articles.
 
-第一層 ideal speech situation：1981 TKH Bd. I §III.3 把 kommunikatives Handeln 定義為「以達成相互理解為目標的行動」，預設 ideal speech situation 之四項 counterfactual 條件，即所有相關方皆可參與、無權力扭曲、無時間限制、無內外部脅迫<sup>26</sup>。ideal speech situation 是 counterfactual idealization，非 empirical claim；其作用是給出「合理共識」之規範性參考點。Bohman 1996 *Public Deliberation* 對 ideal speech situation 之當代詮釋進一步把此條件操作化為「procedural deliberation」之四項規範條件<sup>48</sup>。
+Third, the four have the most concrete impact in digital scenarios. Arendt's natality and LLM's "repetition of the existing"; Habermas's *Wahrhaftigkeit* and deepfakes; Pettit's contestation and algorithmic governance; Mouffe's agonism and polarisation—all four have specific mechanisms in digital scenarios.
 
-第二層 Geltungsansprüche 三聲稱：TKH §III.3 把任何 kommunikatives Handeln 之言說行動拆解為三類有效性聲稱，即 Wahrheit（真理性：對外部世界之真假主張）、Richtigkeit（正當性：對規範世界之對錯主張）、Wahrhaftigkeit（真誠性：對內部世界之真實意圖表達）<sup>26, p.410-427</sup>。本文保留德文原文以避免中譯之歧義；三類聲稱於數位場景之承擔者位置失能為 validity 分量違反之核心 mechanism。
+The meta-objection's likelihood is assessed as high (a reasonable scholarly critique); impact is assessed as low-medium (challenge diminishes once the open boundary is included). This article states at the § 11 honesty boundary: the four are floor anchors; there is open space for future addition of a fifth component (e.g. Honneth's recognition, Sen's capability).
 
-第三層 reciprocal recognition：1992 *Faktizität und Geltung* Kap. VII 與 Kap. VIII 建立 Sluice 模型，民主立法之 legitimacy 來自「非正式意見形成」與「formal decision-making」兩層 Sluice 之溝通管道<sup>41, Kap.VII</sup>。Sluice 模型把 zivilgesellschaftliche Öffentlichkeit（公民社會公共領域）之非正式意見形成承擔置於 institutional decision-making 之上游；兩層之間之溝通即 reciprocal recognition 之具體 mechanism。
+### § 9.6 Likelihood × Impact Matrix
 
-### 5.2 對比 empirical public opinion
-
-Habermas Öffentlichkeit 不可等同於 empirical public opinion。Empirical public opinion 是民意調查、輿論監測、社群媒體話題量等實證測量；Öffentlichkeit 是 normative structure，含 rational-critical debate、ohne Ansehen der Person（不問身分地位）、Privatleute zum Publikum（私人聚集為公眾）三要素<sup>47, §II.6</sup>。
-
-兩者之差異有三項。第一，empirical public opinion 之 input 為「意見之 aggregation」，Öffentlichkeit 之 input 為「言說行動之 rational-critical debate」。第二，empirical public opinion 之 output 為「多數偏好之測量」，Öffentlichkeit 之 output 為「言說行動下之合理共識」。第三，empirical public opinion 在演算法媒體下可被 platform manipulation 扭曲（如 § 5.5 案例三），Öffentlichkeit 之 normative structure 即使在演算法媒體下仍為規範性參考點。
-
-### 5.3 Fraser counterpublics 的補正
-
-Fraser 1990 *Rethinking the Public Sphere* 對 Habermas 1962 Öffentlichkeit 之單一性預設提出批判，多個 subaltern counterpublics（次屬公眾）之並存挑戰 Öffentlichkeit 之 normative homogeneity<sup>49</sup>。Warner 2002 *Publics and Counterpublics* 進一步把 counterpublics 之多元構成系統化為當代 publics 理論<sup>50</sup>。
-
-本文採「擴張但保留下界」立場：多個 counterpublics 之並存符合 PRF plurality 分量，且各 counterpublic 仍須各自滿足 PRF validity 分量之 normative structure（rational-critical debate + ohne Ansehen der Person + Privatleute zum Publikum）。Habermas 1992 *Faktizität und Geltung* Kap. VIII 對 zivilgesellschaftliche Öffentlichkeit 之 Sluice 模型已部分回應 Fraser 之批判：非正式意見形成層容納多個 counterpublics，formal decision-making 層維持單一 institutional 承載<sup>41</sup>。Calhoun 1992 *Habermas and the Public Sphere* 編集已包含 Fraser 1990 之批判文章；本文採 Calhoun 1992 為 Fraser 路徑之入口文獻<sup>22</sup>。
-
-Asen 2017 對 neoliberalism 條件下 Öffentlichkeit 之 marketization 退化研究，補強 Fraser 批判之當代承擔；當公共領域進入 neoliberalism 之 marketization，rational-critical debate 退化為「消費者偏好之表達」<sup>51</sup>。本文於 § 11 誠實邊界明示 Habermas 18 世紀資產階級公共領域歷史分析具歐洲中心傾向。
-
-### 5.4 華人「公」傳統的對應
-
-華人「公」傳統與 Habermas Öffentlichkeit 之對應為作者類比，須學術社群驗證。Wang Hui 2003 *China's New Order* 對中國「公」概念之歷史轉化研究，把「公」連結到中國公共領域之 normative structure，從宋代士大夫之「天下為公」到現代公民社會之「公共理性」<sup>32</sup>。朱雲漢 2012 把「公」概念連結到台灣公共領域之 institutional 承載：大法官釋憲、立法院運作、公投制度、地方議會、媒體監督五大 institutional 承擔<sup>29</sup>。
-
-「公」傳統與 Habermas Öffentlichkeit 之結構同構性在於：兩者皆預設 normative structure 之 institutional 承擔；但「公」傳統之歷史承載條件（科舉、士大夫、清議）與 Habermas 18 世紀資產階級公共領域之歷史承載條件（咖啡館、沙龍、印刷品）不同。本文採「結構同構但歷史承載條件不同」之保守立場，於 § 11 誠實邊界明示。
-
-### 5.5 三個案例
-
-案例一：GDPR cookie banner 八年失敗。GDPR 自 2018 年生效以來，cookie banner 之 consent 機制承擔 Habermas Wahrhaftigkeit 聲稱之「真誠表達自己的意圖」之 institutional 履行；但實證上 cookie banner 被 dark pattern 設計普遍化為「點同意」之 ritual<sup>52</sup>。validity 維度於此 case 退化，consent 之 Wahrhaftigkeit 承擔者位置失能。F3 § 3 與 § 4 已建立此 case 之 UX 層分析<sup>14</sup>。
-
-案例二：台灣 2018-2021 公投案例。台灣於 2018 至 2021 多次公投案例（東奧正名、廢死、能源轉型、地方公投、18 歲公民權修憲案等）承擔 Öffentlichkeit 維度之台灣 institutional 履行<sup>29</sup>。各公投案前後之公共論述、公民團體承擔（公投盟、台少盟、勞陣、環保聯盟、地球公民基金會）構成 Öffentlichkeit 之具體承擔結構<sup>30,31</sup>。
-
-案例三：2024 美國總統大選 platform manipulation。Stanford Internet Observatory 2024 年 12 月最終報告記錄演算法協作、假帳號網絡與生成式內容對選民資訊環境的系統性侵蝕<sup>2</sup>。同期 Vaidhyanathan 2018 *Antisocial Media*、Tufekci 2017 *Twitter and Tear Gas*、Gillespie 2018 *Custodians of the Internet* 提供 platform manipulation 之結構分析<sup>53,54,55</sup>。validity 維度於此 case 之衝擊在於：Geltungsansprüche 三聲稱在 platform 中介下之承擔者位置被演算法策動侵蝕。
-
----
-
-## 六、SA3：Pettit contestation
-
-### 6.1 三層 first-personal 要求
-
-Pettit contestation 概念橫貫兩本錨點原著：1997 *Republicanism*<sup>42</sup>、2012 *On the People's Terms*<sup>27</sup>。Pettit 2012 Ch.3 至 Ch.6 建立三層 first-personal 要求。
-
-第一層 Equally Accepted Terms（平等接受之條件）：Pettit 2012 Ch.3 把民主合法性之第一條件設為「公民必須能在平等條件下接受公共政策之 terms」<sup>27, Ch.3</sup>。此 first-personal 要求不可由 representative 替代；任何 representative 之 acceptance 必須以「公民自身能 first-personally 接受」為條件。
-
-第二層 Equally Accessible Influence（平等可及之影響）：Pettit 2012 Ch.5 之 Eyeball Test 把民主合法性之第二條件設為「公民能與權力持有者眼神平視（look in the eye）而不畏縮」<sup>27, Ch.5, p.81-105</sup>。此 first-personal 要求預設公民有「可及之影響管道」，含挑戰、申訴、投票、抗議等。
-
-第三層 Active Stance（主動立場）：Pettit 1997 Ch.6 與 2012 Ch.6 把 contestation 之核心定義為「active stance」，即 contestation 主體必須「主動」（active）採取異議立場，非「被動」（passive）接受意見徵詢<sup>42, Ch.6</sup>。此區分對 AI agent 場景之意義在於：AI 可作為意見徵詢之 input function，但不可作為 active-stance bearer。
-
-### 6.2 bearer position 三層檢驗
-
-F1 §4.3 已建立 bearer position 之三層檢驗：第一層執行（execution）、第二層 endorsement、第三層 bearer<sup>12</sup>。三層之劃分對應 Pitkin 1967 *The Concept of Representation* 之 formal/substantive representation 區分<sup>56</sup>。
-
-第一層執行：可委任。AI agent 可承擔 wallet 操作、表單填寫、文件解析等執行層任務。
-
-第二層 endorsement：條件可委任。AI agent 可承擔「建議」「摘要」「初步判斷」等 endorsement 層任務，但須有人類最終承擔。
-
-第三層 bearer：不可委任。contestation bearer 位置須有人類 first-personal 承擔，含責任承擔（mens rea）、立場承擔（active stance）、結果承擔（mortality stake）三條件。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 邊界即此第三層之不可達<sup>12,33</sup>。
-
-### 6.3 Freedom as non-domination
-
-Pettit 1997 Ch.2「Liberty as Non-Domination」把 republican freedom 定義為 non-domination，即「不被任何人或機構任意地干預」<sup>42, Ch.2</sup>。此定義對比 Berlin 1958 之 negative freedom（不被干預）：non-domination 比 negative freedom 更強，因為即使無實際干預，若存在「被任意干預之可能性」，仍屬 domination 狀態<sup>45</sup>。
-
-Lovett 2010 *A General Theory of Domination and Justice* 進一步把 non-domination 之 formal 化為「無 arbitrary power」之三條件：power 之 actual exercise、power 之 dispositional capacity、power 之 arbitrary character<sup>57</sup>。三條件之任一缺失即 domination 狀態降級。
-
-freedom as non-domination 對數位場景之蘊涵在於：當 wallet schema、verifier 演算法、issuer 撤銷機制等基礎設施可「任意」改變 holder 之行為條件，即使未實際發生干預，仍為 domination 狀態。F1 §3.2 P_degrade-TC 之「calibration 由 agent 自報而無外部 contestation 渠道」即此 domination mechanism 之具體案例。
-
-### 6.4 華人「諫議」傳統的對應
-
-華人「諫議」傳統與 Pettit republican contestation 之對應為作者類比。中國史「諫諍」傳統之三層結構（直諫、諷諫、死諫，即直接陳言、迂迴勸戒、以死明志）承擔 first-personal active stance 之歷史 mechanism<sup>32</sup>。台灣大法官釋憲聲請制度之三層結構（人民聲請、法官聲請、機關聲請）承擔當代台灣 contestation 之 institutional 對應<sup>29</sup>。
-
-「諫議」傳統與 Pettit contestation 之結構同構性在於：兩者皆預設 first-personal active stance 之承擔；但「諫議」之歷史承載條件（君臣關係、士大夫倫理、家國一體）與 Pettit republican democracy 之歷史承載條件（公民身份、平等政治權、institutional 制衡）差距較大。本文採「結構同構但歷史承載條件不同」之保守立場，於 § 11 誠實邊界明示。
-
-### 6.5 三個案例
-
-案例一：台灣大法官釋憲聲請制度。台灣憲法第 78 條至第 80 條建立大法官釋憲制度；2022 年憲法訴訟法生效後，人民聲請、法官聲請、機關聲請三層結構承擔當代台灣 contestation 之 institutional 對應<sup>29</sup>。釋字第 803 號（原住民狩獵）、釋字第 791 號（通姦除罪）、釋字第 748 號（同性婚姻）等案例承擔 bearer position 之具體實踐。
-
-案例二：CJEU SCHUFA Holding C-634/21（2023）。歐盟法院 2023 年 12 月對 SCHUFA Holding GmbH 之判決，把 GDPR Article 22「不受自動化決策約束之權利」擴大解釋；任何 automated decision-making 之 contestation 權必須有 institutional 承擔<sup>58</sup>。此案例承擔 Pettit editorial democracy 四項制度條件（透明度、可預測性、可挑戰性、可糾正性）之 EU 法律對應。
-
-案例三：SEC v. Jarkesy, 144 S. Ct. 2117（2024）。美國最高法院 2024 年 6 月之判決，對 SEC 行政程序中之 fraud 案件指出「行政程序對 fraud 案件須給予 jury trial 之權利」<sup>59</sup>。此案例承擔 bearer position 在行政程序之法律承擔：當行政程序之裁罰已涉及「私人權利」（private rights），bearer 之 first-personal contestation 不可由行政決策替代。
-
----
-
-## 七、SA4：Mouffe agonistic
-
-### 7.1 Agonism 與 antagonism 的區分
-
-Mouffe agonistic 概念橫貫兩本錨點原著：2000 *The Democratic Paradox*<sup>28</sup>、2013 *Agonistics*<sup>60</sup>。Mouffe 嚴格區分 agonism 與 antagonism：agonism 預設 legitimate adversary（正當對手），antagonism 預設 enemy（敵人）。
-
-agonism 之 legitimate adversary 三條件為相互承認（mutual recognition）、共享規則（shared rules）、爭議框架（agonistic frame）<sup>28, Ch.4</sup>。三條件之共同預設：對手之政治表達權被承認為正當，即使其立場與自身對立。antagonism 之 enemy 結構則否：對手之政治表達權不被承認，互動退化為殲滅邏輯。
-
-Mouffe 吸收 Schmitt 1932 *The Concept of the Political* 之對抗政治概念，但拒絕 Schmitt 之 friend/enemy 殲滅邏輯<sup>61</sup>。Schmitt 為納粹法學家，引用須於 § 11 誠實邊界明示：Mouffe 吸收 Schmitt 對「政治本質含對抗性」之洞察，但把 enemy 結構轉化為 legitimate adversary 結構。
-
-### 7.2 Habermas 與 Mouffe 的合取
-
-Mouffe 2000 Ch.4 對 Habermas deliberative consensus 之批判明示：「政治不能化約為理性共識」<sup>28, p.102-105</sup>。Mouffe 主張，若把民主合法性化約為共識，會消解民主之 agonistic 維度，退化為 post-political consensual；對手地位被吸收為共識，contestation 退化為儀式。
-
-本文採 Habermas 與 Mouffe 合取（非互斥）立場，依賴 F1 §4.2 既有方法論<sup>12</sup>。兩家之合取結構在於：Habermas 之 Öffentlichkeit 與 Geltungsansprüche 三聲稱承擔「言說行動之規範結構」；Mouffe 之 legitimate adversary 三條件承擔「對抗政治之規範結構」。兩者在「政治發言要求人類人格性主體」這一點上合取，在「共識 vs 對抗」之張力上保留。Norval 2007 *Aversive Democracy* 對 Mouffe 與 Cavell 之對話進一步把此合取系統化<sup>24</sup>。
-
-### 7.3 華人「諍友」傳統的對應
-
-華人「諍友」傳統與 Mouffe agonism 之對應為作者類比，須學術社群驗證。「諍友」概念源於儒家《論語‧季氏》之「益者三友：友直、友諒、友多聞」，朋友須能直言相諫，承擔「相互承認之正當對手」結構。中國史「諍友」傳承（韓愈、范仲淹、王安石、顧炎武等士大夫間之直言相諫，含范仲淹《岳陽樓記》「先天下之憂而憂」之公領域承擔）構成 agonism 之歷史對應<sup>32</sup>。Wang Hui 2003 對中國「公」概念之歷史轉化研究亦指出，宋明理學「君子和而不同」之規範立場與 Mouffe legitimate adversary 之三條件（相互承認、共享規則、爭議框架）有結構同構之語意承擔<sup>32</sup>。
-
-「諍友」傳統與 Mouffe agonism 之結構同構性在於：兩者皆預設 legitimate adversary 之相互承認；對手之政治表達權即使與自身立場對立仍被承認為正當；不退化為敵對殲滅。但「諍友」之歷史承載條件（儒家倫理、士大夫關係、私人友誼、君臣對話之 hierarchical 預設）與 Mouffe 之 institutional agonism（多黨政治、公共辯論、媒體監督、公民團體 confrontation）有顯著差距：前者承擔在私人 / 半公領域之倫理結構，後者承擔在多黨制度之公領域結構。本文採「結構同構但歷史承載條件不同」之保守立場，於 § 11 誠實邊界明示；華人公共領域於 PRF agonism 分量之承擔不能直接以「諍友」傳統取代多黨制度之 institutional 結構。
-
-### 7.4 三個案例
-
-案例一：2024 台灣大選後立法院政黨關係。2024 年 1 月台灣大選後，立法院出現三黨不過半之結構：民主進步黨、中國國民黨、台灣民眾黨之多黨運作，承擔 agonism 之具體實踐<sup>30</sup>。各黨之政策辯論、議事程序、聯合運作（如「藍白合」vs「綠營小聯合」）構成 legitimate adversary 之 institutional 履行。同時面對 polarization 機制扭曲為 antagonism 之結構壓力：同溫層演算法、社群媒體 dunking 文化、跨同溫層對話空間萎縮等實證挑戰。
-
-案例二：2019-2020 香港反送中運動之邊界滑移。運動初期承擔 plurality 與 agonism，多元承載者之共在與正當對手結構並存；中期 agonism 與 antagonism 邊界滑移，警察與抗議者之互動退化為敵對；後期 antagonism 結構固化，國安法生效後 legitimate adversary 結構被殲滅<sup>30</sup>。本文採「規範性區分」立場（經驗性區分不在本文承擔範圍）：agonism 與 antagonism 之邊界在實際政治中容易滑移，但規範意義上兩者嚴格不同。
-
-案例三：2024 美國總統大選極化政治。2024 年美國大選承擔 polarization 機制下 agonism 退化為 antagonism 之衝擊；legitimate adversary 結構被「他者妖魔化」侵蝕。Benkler 2018 *Network Propaganda* 已記錄 2016 美國大選之 polarization mechanism<sup>62</sup>。Stanford Internet Observatory 2024 報告進一步記錄 2024 大選之 platform manipulation 與 polarization<sup>2</sup>。此案例承擔 agonism 之當代脆弱性。
-
----
-
-## 八、PRF 合取下界論證（核心整合章）
-
-### 8.1 四家「各自必要」論證
-
-本文核心命題為：PRF 四家之合取構成 civic-proof 系列規範下界；在 PRF 合取下界框架內，四家各自具有必要性，且難以由其他三家完全補位（非絕對不可化約）。此命題由四條形式定理 T_PRF1 至 T_PRF4 承擔（見 § 3.4）。本節展開「各自必要」之具體論證。
-
-plurality 之各自必要：若 d 滿足 validity、contestation、agonism 三家但違反 plurality（如以 single bearer 取代多元主體），則 d 退化為「無共在主體之程序」。具體 mechanism 三層：validity 之 Geltungsansprüche 三聲稱仍可被 single bearer 承擔，但「不同 *who* 之言說行動」消失；contestation 之 active stance 仍可由 single bearer 承擔，但「不同 *who* 之挑戰」消失；agonism 之 legitimate adversary 仍可由 single bearer 承擔，但「不同 *who* 之對手政治」消失。三家承擔在 single bearer 結構下退化為「自言自語」，public realm 不成立。F1 §4.1 對 AI agent 之「無 natality」論證即此 mechanism 之具體應用。
-
-validity 之各自必要：若 d 滿足 plurality、contestation、agonism 三家但違反 validity，則 d 退化為「策略性互動」（strategisches Handeln）；言說行動（kommunikatives Handeln）之承擔喪失。具體 mechanism 三層：多元 *who* 之共在仍存，但無 rational-critical debate；contestation 之 active stance 仍存，但無 Geltungsansprüche 三聲稱之承擔；legitimate adversary 結構仍存，但無 reciprocal recognition 之 normative structure。三家承擔在策略性互動結構下退化為「權力博弈」，民主合法性不成立。
-
-contestation 之各自必要：若 d 滿足 plurality、validity、agonism 三家但違反 contestation，則 d 退化為「無挑戰管道之共識」。具體 mechanism 在於：多元 *who* 之共在與言說行動可達成「合理共識」，但若無 contestation 之 institutional 承擔，共識退化為 hegemonic consensus；legitimate adversary 結構仍存，但無 active stance bearer 之 first-personal 承擔。F1 §3.2 P_degrade-TC 即此 mechanism 之具體應用。
-
-agonism 之各自必要：若 d 滿足 plurality、validity、contestation 三家但違反 agonism，則 d 退化為兩種失能之一。其一退化為 antagonism：對手地位無共享規則，contestation 退化為內戰。其二退化為 post-political consensual：對手地位被吸收為共識，contestation 退化為儀式。F3 §7 supporter UI 三層分離即此 mechanism 之具體應用；supporter 作為 legitimate adversary，三層分離防止退化為兩端。
-
-四條定理共同蘊涵推論 C_PRF：PRF_satisfied(d) 為四家之合取，任一缺失即 PRF_violated(d)。
-
-### 8.2 合取與綜合的方法論
-
-本文採合取（conjunction）方法論；綜合（synthesis）方法論不在本文承擔範圍。兩者之差異有二：
-
-合取方法論：四家於 PRF 中保留各自之原著立場與張力，不主張融合為新理論。例如 Habermas 之 consensus 立場與 Mouffe 之 agonism 立場之張力保留，兩家在「公共領域承擔人類人格性主體」一點上合取。合取方法論之優點在於：保留四家原著之獨立詮釋空間，避免 syncretism 偽綜合之概念混淆。
-
-綜合方法論：把四家融合為新版「複合民主理論」，消解四家原著之張力。綜合方法論之風險在於：syncretism 偽綜合容易把「不同層級之概念」（如 Arendt 存在論 plurality 與 Mouffe 政治理論 agonism）強行合併，失去原著之概念精度。
-
-本文嚴格採合取方法論，於每次出現「四家」處標明合取結構，避免滑入綜合。F1 §4.4 三進路合取表已建立此方法論前例<sup>12</sup>；本文擴展至四進路合取，並提升為系列規範下界之承擔。
-
-### 8.3 32 cell 承擔矩陣的完整解讀
-
-§ 3.3 矩陣之 32 cell 解讀如下。
-
-橫向（每篇之四分量承擔）：A1、A3、A14 各承擔 2 個 ● cell（核心承擔）；A8、A15 各承擔 3 個 ● cell；F1 為 4 個 ● cell（四分量全核心承擔）；F2 為 2 個 ● cell 加 2 個 ○ cell（含 agonism 升格後之 ○）；F3 為 2 個 ● cell 加 2 個 ○ cell。F1 之四分量全核心承擔為系列首見，反映 F1 之 5×3 矩陣（Tomasev 五件 × civic proof 三件式）已隱用四家合取：AT-ℬ 與 RT-ℬ 對應 plurality，ℱ 對應 validity，AA-ℬ 對應 contestation，TC-ℬ 對應 agonism（含 supporter UI 之 legitimate adversary 結構）。
-
-縱向（每分量之承擔強度）：plurality 為 4 ● + 3 ○ + 1 — = A1/A3/A15/F1 為核心，A8/F2/F3 為部分，A14 不對應；validity 為 5 ● + 3 ○ + 0 — = A3/A8/A15/F1/F2/F3 為核心，A1/A14 為部分；contestation 為 4 ● + 3 ○ + 1 — = A8/A14/A15/F1/F2 為核心，A1/A3/F3 為部分，無不對應 cell；agonism 為 5 ● + 1 ○ + 2 — = A1/A8/A14/F1/F3 為核心，F2 升格為部分，A3/A15 不對應（A15 ○ 之既有承擔保留，agonism 列之不對應集中於 A3 與 A14 後者已被修正）。經 F2-agonism 升格後，agonism 與 validity 同列分量承擔最高（5 ● cell）。
-
-F2-agonism 升格之獨立論證：critic § 5.2 觀察 F2 §9 五個 counterfactual 壓力測試（CF1 issuer 串謀、CF2 verifier 串謀、CF3 holder 失憶、CF4 平台失能、CF5 跨境法域衝突）以 likelihood-by-mechanism 推演 V_receipt 設計之 robustness，方法論本身即為 agonistic 框架之工程化承擔。CF1-CF5 預設「正當對手」之反論（issuer 可能不誠實、verifier 可能不公平、平台可能停止運作）在矩陣形式下被聽見，把 Mouffe legitimate adversary 三條件（相互承認、共享規則、爭議框架）內化為密碼學設計之 robustness 判準。此承擔強度尚未達 ● 核心承擔（F2 主軸仍在密碼學證據鏈與 ex post 挑戰之 contestation 維度），但已超出「無顯著關聯」之 — 範疇；故由原 — 升為 ○。此升格不改變 § 3.3 矩陣之 ● 核心承擔判定，僅補強系列工程文對 agonism 維度之分布承擔。
-
-不對應（— cell）之分析：升格後僅餘 A3-agonism、A14-plurality 兩處集中於 agonism 與 plurality 兩維度。此分布反映工程文（F2、F3）於擴張詮釋下對 agonism 維度承擔已部分補強；本文 PRF 框架把 Mouffe 從輔助提升為獨立分量即為此補強之系列化。A14 之 plurality 不對應在於：A14 規範主張集中於救濟程序，未進入 plurality 之存在論承擔。A3 之 agonism 不對應在於：A3 規範主張集中於隱私哲學基礎與概念地景區辨，未進入對手政治結構之討論。
-
-矩陣之動態更新：若系列其他篇章詮釋更新或新增系列文章，矩陣須重做。本文之 32 cell 承擔判定依賴對前 18 篇規範主張之當前詮釋；若詮釋變動，cell 屬性（●/○/—）須重新判定。此風險於 § 11 高風險主張清單明示。
-
-### 8.4 F1 為四分量全核心承擔的系列意義
-
-F1（article 16）為系列中首見四分量全核心承擔之文章。此判定之系列意義有三項。
-
-第一，F1 之 5×3 矩陣（Tomasev 五件 × civic proof 三件式）為系列首見之「委任場景必要條件矩陣」；本文 PRF 之 8×4 矩陣為其方法論擴展，從「委任場景必要條件」擴展為「系列規範下界承擔關係」。兩矩陣之方法論同構（見 § 2.5）。
-
-第二，F1 §4 三進路合取覆蓋（Arendt + Habermas + Pettit）為系列首見之「正面承擔合取下界」之文章。F1 §4.2 (iii) 已把 Mouffe 列為輔助；本文 § 8.1 之 agonism 各自必要論證把 Mouffe 從輔助提升為獨立分量。F1 為 PRF 四分量全核心承擔者之判定，依賴對 F1 §4 三進路合取之擴張詮釋，把 F1 §4.2 (iii) 之「Mouffe 補充不削弱結論」提升為 agonism 分量之承擔。
-
-第三，F1 RT-ℬ ✗ 與 AA-ℬ ✗ 之 Z₃-intrinsic 邊界為系列首見之「結構不可滿足」cell。兩 cell 對應 PRF 之兩分量同時違反：RT-ℬ ✗ 對應 plurality 與 validity 雙分量違反（first-personal mens rea 失能），AA-ℬ ✗ 對應 contestation 與 agonism 雙分量違反（active-stance bearer 與 legitimate adversary 失能）。此判定於本文定理 T_PRF5 形式化。
-
-F1 為四分量全核心承擔之系列意義可如此收束：F1 是 civic-proof 系列規範下界之承擔密度最高者；本文 PRF 框架以 F1 之既有承擔為錨，並擴展至系列全 18 篇之承擔關係。
-
----
-
-## 九、反論壓力測試
-
-### 9.1 Coeckelbergh relational personhood（medium-high impact）
-
-反論：Coeckelbergh 2020 *AI Ethics* Ch.4-6 與 2024 *Why AI Undermines Democracy* 主張 relational personhood 之擴展使「人格性主體」邊界可包含 AI agent<sup>63,64</sup>。若 AI 透過關係性實踐獲得 personhood，則 PRF plurality 之 multiple *who* 共在容納 AI，PRF validity 之 Wahrhaftigkeit 聲稱承擔者可包含 AI，PRF 之人本預設被全面替代。
-
-回應：本文採 F1 §4.1 之「降一檔不降兩檔」立場<sup>12</sup>；即使法律承認某種 relational personhood，第 4 章 §4.1 plurality 之存在論論證（natality + mortality + uniqueness）不依賴於法律承認。法律可承認某種地位，但不能改變該主體之存在論結構。
-
-plurality 分量之 Arendt 存在論定義以「multiple *who* 在 natality + mortality 條件下之共在」為錨；AI agent 之 relational personhood 即使法律承認，仍欠缺 natality（每個個體作為新開始）與 mortality stake，故 plurality 分量仍不可承擔 AI。validity 分量之 Habermas Wahrhaftigkeit 要求說話者「真誠表達自己的意圖」；AI agent 之意圖歸屬問題在哲學上仍未解決，故 validity 分量仍不可承擔 AI。Coeckelbergh 2024 內部張力在於：書中明示 AI 對民主構成威脅（如 deepfake、micro-targeting、opinion manipulation），呼籲人類民主主體之反擊能力；此立場與 PRF 之「公共領域進入條件以人類民主主體為核心」一致。
-
-contestation 與 agonism 兩分量於 Coeckelbergh 壓力測試下「降一檔不降兩檔」：可能擴大 AI agent 之操作空間（如 AI agent 作為 contestation 之輔助 bearer），但仍不能取代人類 active-stance bearer 位置。likelihood 評估為 medium（Coeckelbergh 2020 + 2024 已在華語學界與部分歐陸 AI ethics 形成結構性承擔）；impact 評估為 medium-high（最強衝擊在 plurality 分量，但 F1 §4.1 已有回應）。
-
-### 9.2 Floridi infosphere monism（medium impact）
-
-反論：Floridi 2014 *The Fourth Revolution* 主張 infosphere monism——人與 AI 在 informational ontology 中皆為 inforg<sup>65</sup>。若 PRF plurality 分量採 informational ontology，multiple *who* 之共在容納所有 inforg（含 AI agent），則 PRF 之四家合取被 infosphere monism 之單一 ontology 替代。
-
-回應：PRF plurality 分量之存在論承擔為 Arendt phenomenological ontology（natality + mortality + worldliness），非 informational ontology。Floridi infosphere monism 之 ontology shift 在哲學立場上可獨立爭論，但 PRF 框架明示採 Arendt 存在論立場，於 § 11 誠實邊界明示此 ontology 選擇非邏輯必然。
-
-範疇區分（描述 vs 規範）：Floridi infosphere monism 主要處理「描述性 ontology」（人類與 AI 之 informational nature），與 PRF 之「規範性下界」屬不同範疇。infosphere monism 對 validity、contestation、agonism 三分量並未提供等效之替代承載；informational ontology 並未產生「正當性聲稱承擔者」「主動異議者」「正當對手」三類規範性主體之具體承載。PRF 框架於 Floridi 壓力測試下「削弱但不推翻」：plurality 分量之 ontology 選擇承擔哲學壓力，其餘三分量不受影響。likelihood 評估為 medium；impact 評估為 medium。
-
-### 9.3 後人類主義 Braidotti / Hayles（medium-low impact）
-
-反論：Braidotti 2013 *The Posthuman* 與 Hayles 1999 *How We Became Posthuman* 主張 personhood 邊界擴張至非人類動物、AI、自然、cyborg<sup>66,67</sup>。若 personhood 邊界擴張，PRF plurality 之 multiple *who* 共在須重新定義；PRF 之四家錨點原著皆預設「人類主體」，後人類主義之擴張使 PRF 框架在 ontology 層需要重做。Braidotti 2019 *Posthuman Knowledge* 進一步把後人類主義延伸至對 Eurocentrism 之批判<sup>68</sup>。
-
-回應：PRF 採「主體性條件」立場，四家錨點原著之 personhood 預設為「具備 natality + mortality + first-personal disclosure + active stance + legitimate adversary 五條件之主體」；「人類例外」立場不在 PRF 之承擔範圍。若後人類主義擴張之主體（如某類有意識動物、某類強 AI、某類 cyborg）能通過五條件之檢驗，PRF 之主體承擔範圍可擴張；但通過檢驗之具體條件仍依賴四分量之承擔。
-
-Haraway 1985 *A Cyborg Manifesto* 與 Wolfe 2010 *What Is Posthumanism?* 提供後人類主義之系譜<sup>69,70</sup>。本文於 § 11 誠實邊界明示：personhood 邊界擴張之 PRF 重做為開放議題；本文採四家錨點原著之 personhood 預設為下界錨，並開放未來擴張之空間。likelihood 評估為 medium；impact 評估為 medium-low。
-
-### 9.4 數位民主樂觀派 Benkler（low impact）
-
-反論：Benkler 2006 *The Wealth of Networks* 主張 networked public sphere 透過分散式生產取代傳統公共領域<sup>71</sup>。Sunstein 早期 *Republic.com*（2001）亦主張數位媒體提供新民主可能性<sup>72</sup>。若數位公共領域可獨立承擔合法性，則 PRF 之四家合取下界被「新 affordance 承擔新合法性」替代。
-
-回應：本文採「新 affordance 重塑進入條件、舊存在論基礎不變」立場。Benkler networked public sphere 之 affordance 分析（peer production、cooperative news ecosystems）與 PRF 框架相容；networked public sphere 仍須滿足 PRF 四分量之承擔，否則退化為四種失能之一：演算法策動之共識（違反 agonism）、無 active-stance bearer 之輿論（違反 contestation）、策略性互動取代言說行動（違反 validity）、single bearer dominance（違反 plurality）。
-
-Benkler 2018 *Network Propaganda* 已部分修正 2006 樂觀預測，承認 platform manipulation 與 polarization 對 networked public sphere 之衝擊<sup>62</sup>。Sunstein 2017 *#Republic* 修訂版承認 filter bubbles 與 echo chambers 之經驗確證，早期樂觀論被削弱<sup>72</sup>。Tufekci 2017 *Twitter and Tear Gas* 提供 networked protest 之優缺分析<sup>54</sup>。本文於數位民主樂觀派壓力測試下不退化；新 affordance 為「進入條件」之範疇，超出「合法性基礎」之承擔。likelihood 評估為 low；impact 評估為 low。
-
-### 9.5 元反論：為何選這四家（high likelihood / low-medium impact）
-
-反論：為何選 Arendt / Habermas / Pettit / Mouffe 四家，不選 Rawls / Sen / Nussbaum / Honneth / 後期 Habermas Diskursethik 等？若 Rawls justice、Sen capability、Nussbaum dignity、Honneth recognition 加入合取或替換四家中之一，PRF 是否削弱或補強？
-
-回應：本文採開放下界立場，PRF 為複合下界非絕對唯一，其他進路（Rawls justice、Sen capability、Nussbaum dignity、Honneth recognition）可作為 PRF 之 ceiling 或 boundary 條件<sup>34,35,36,37</sup>。四家之選擇判準有三項。
-
-第一，四家共同承擔「公共領域進入條件」之主題。Rawls justice 主題為「分配正義」，Sen capability 主題為「個體能力」，Nussbaum dignity 主題為「人類尊嚴」，Honneth recognition 主題為「相互承認」；四家之主題與 civic-proof 系列之「公民證明可被合法承擔」更直接對應。
-
-第二，四家在 civic-proof 系列前 18 篇之隱用程度最深。F1 §4 三進路合取已建立 Arendt + Habermas + Pettit 之承擔；A1、A8、A14、A15、F2、F3 各篇皆隱用三家中至少一家；Mouffe 之 agonism 於 F1 §4.2 (iii) 已被引入為輔助。其他進路（Rawls、Sen、Nussbaum、Honneth）於系列前 18 篇之隱用程度較淺。
-
-第三，四家在數位場景之衝擊最具體。Arendt natality 與 LLM「重複既有」之衝擊、Habermas Wahrhaftigkeit 與 deepfake 之衝擊、Pettit contestation 與演算法治理之衝擊、Mouffe agonism 與 polarization 之衝擊，四家皆於數位場景有具體 mechanism。
-
-元反論之 likelihood 評估為 high（為合理之學界質疑）；impact 評估為 low-medium（含開放邊界後挑戰下降）。本文於 § 11 誠實邊界明示：四家為下界錨，未來可加入第五分量（如 Honneth recognition、Sen capability）之開放空間。
-
-### 9.6 likelihood × impact 矩陣
-
-| CF | likelihood | impact（無緩解） | impact（含緩解） | 受削弱主分量 | 緩解設計 |
+| CF | Likelihood | Impact (without mitigation) | Impact (with mitigation) | Weakened primary component | Mitigation design |
 |---|---|---|---|---|---|
-| CF1 Coeckelbergh relational personhood | medium-high | medium-high | low-medium | plurality | F1 §4.1「降一檔不降兩檔」；存在論 vs 功能論區分 |
-| CF2 Floridi infosphere monism | medium | medium | low | plurality（本體論） | 範疇區分（描述 vs 規範）；PRF 不必否定 infosphere |
-| CF3 後人類主義 Braidotti + Hayles | medium | medium-low | low | plurality + contestation | PRF 採「主體性條件」非「人類例外」 |
-| CF4 數位民主樂觀派 Benkler | low | low | low | validity + agonism | new affordance vs old existential basis 區分 |
-| CF5 元反論（為何選四家） | high | low-medium | low | 整體方法論 | 開放下界立場；其他進路為 ceiling 或 boundary |
+| CF1 Coeckelbergh relational personhood | medium-high | medium-high | low-medium | plurality | F1 §4.1 "one step down, not two"; ontological vs. functional distinction |
+| CF2 Floridi infosphere monism | medium | medium | low | plurality (ontological) | Category distinction (descriptive vs. normative); PRF need not deny the infosphere |
+| CF3 Posthumanism Braidotti + Hayles | medium | medium-low | low | plurality + contestation | PRF adopts "subjectivity conditions," not "human exceptionalism" |
+| CF4 Digital-democracy optimism Benkler | low | low | low | validity + agonism | New affordance vs. old existential basis distinction |
+| CF5 Meta-objection (why four thinkers) | high | low-medium | low | overall methodology | Open-floor position; other approaches as ceiling or boundary |
 
-矩陣關鍵觀察：含緩解版下，五類反論之合計削弱程度顯著下降；PRF 整體下界職能透過四分量合取之冗餘性保持成立。最強衝擊在 CF1 Coeckelbergh 對 plurality 分量之削弱，F1 §4.1 已有回應方案。「削弱但不推翻」之核心命題在於：五類反論皆無法瓦解 PRF 之四分量合取結構；plurality 與 contestation 兩分量在 CF1 與 CF3 下被結構性削弱（每類削弱程度 ≤ 30%），validity 與 agonism 兩分量在五類反論下保持結構完整。
+Key matrix observation: with mitigations, the total degree of weakening across the five counter-argument types decreases significantly; PRF's overall floor function is maintained through the redundancy of its four-component conjunction. The strongest impact is CF1 Coeckelbergh's weakening of the plurality component, and F1 §4.1 already provides a response. The core proposition of "weakened but not overturned" is: none of the five counter-argument types can dismantle PRF's four-component conjunctive structure; the plurality and contestation components are structurally weakened under CF1 and CF3 (each weakened by ≤ 30%), while the validity and agonism components remain structurally intact across all five counter-argument types.
 
-### 9.7 對台灣讀者特殊段
+### § 9.7 Special Section for Taiwanese Readers
 
-台灣公共領域之 plurality 由街頭、議會、線上（PTT、Facebook、Threads、Discord、Matters）、公投、社運（公投盟、台少盟、勞陣、環保聯盟、地球公民基金會）五大承載者構成；2014 年 318 太陽花運動以 g0v、PTT、議場直播承擔 plurality 與 validity 之台灣具體實踐<sup>29,30,31</sup>。2018 至 2021 多次公投案例（東奧正名、廢死、能源轉型、18 歲公民權）承擔 validity 之 institutional 履行；2024 大選之 deepfake 影音與資訊操弄則對 validity 構成結構性挑戰<sup>3</sup>。contestation 由憲法訴訟、立法院質詢、媒體監督、公民團體申訴多軌構成。
+Taiwan's public realm plurality is constituted by five major bearers: streets, the legislature, online platforms (PTT, Facebook, Threads, Discord, Matters), referenda, and social movements (Referendum Alliance, Taiwan Youth Association for Democracy, Taiwan Labour Front, Environmental Protection Alliance, Citizen of the Earth Foundation); the 2014 Sunflower Movement of 18 March used g0v, PTT, and live-streaming from the legislature hall to bear the concrete Taiwanese practice of plurality and validity.[^29][^30][^31] Multiple referendum cases from 2018 to 2021 (East Olympics naming, death penalty abolition, energy transition, civic voting age 18) bear the institutional fulfilment of validity; the 2024 presidential election's deepfake videos and information manipulation constitute a structural challenge to validity.[^3] Contestation is constituted by multiple tracks: constitutional litigation, legislative questioning, media supervision, and civil-society complaints.
 
-agonism 維度於台灣之具體案例展示於 2024 大選後立法院三黨不過半之多黨運作（民主進步黨、中國國民黨、台灣民眾黨）<sup>29,30</sup>。2024 年 5 月至 2025 年間，立法院出現「藍白合」（國民黨與民眾黨聯合運作）與「綠營小聯合」（民進黨爭取部分民眾黨立委或第三勢力支持）之動態結構，承擔 Mouffe legitimate adversary 三條件（相互承認、共享規則、爭議框架）之台灣 institutional 履行（見 § 7.4 案例一）。同期面對 polarization 機制扭曲為 antagonism 之結構壓力（同溫層演算法、社群媒體 dunking 文化、跨同溫層對話空間萎縮），agonism 與 antagonism 之邊界滑移為台灣當代民主之具體脆弱性。
+The agonism dimension in Taiwan is concretely demonstrated in the multi-party operation under the three-party minority configuration after the 2024 general election (Democratic Progressive Party, Kuomintang, Taiwan People's Party).[^29][^30] From May 2024 to 2025, the legislature saw a dynamic structure of "Blue-White alignment" (KMT and TPP joint operations) and "Green coalition-building" (DPP seeking support from some TPP legislators or third-force members), bearing the Taiwanese institutional fulfilment of Mouffe's three legitimate adversary conditions (mutual recognition, shared rules, agonistic frame) (see § 7.4 Case One). During the same period, the structural pressure of polarisation mechanisms distorting into antagonism (filter-bubble algorithms, social-media dunking culture, the shrinkage of cross-bubble dialogue space) means the boundary slippage between agonism and antagonism is a concrete vulnerability of contemporary Taiwanese democracy.
 
-TW DIW 進入 LLM-agent 階段之具體衝擊以 F3 supporter UI 為例：若 2026 至 2027 階段引入 LLM-agent 自動處理 wallet 操作而補位失敗（prompt injection、capacity-aware 失效），則 contestation 分量在數位場景之工程承擔被削弱，失智長者、認知障礙者、數位弱勢族群之 contestation 啟動能力被結構性削弱<sup>5,73</sup>。TW DIW 規格須在誠實邊界明示「LLM-agent 補位不取代 supporter UI 三層分離之工程承擔」，此立場與 F1 RT-ℬ ✗ 與 AA-ℬ ✗ 邊界結論一致。
-
----
-
-## 十、接合系列 8 篇 forward-links
-
-本章對 A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3 八篇之規範主張回應，並承擔系列收束意義。
-
-### 10.1 A1（可問責不以實名為前提）的 PRF 回應
-
-A1 之雙錨點主張（procedural due process 與 republican contestability 共同承擔可問責性，匿名性不削弱可問責性）於 PRF 框架下對應 plurality 與 agonism 兩分量之核心承擔。A1 §2 援引 NAACP v. Alabama 等三案，把「匿名政治言論之保護」連結到 multiple *who* 之公共領域行動權；此承擔即 plurality 分量之具體應用<sup>15</sup>。A1 之 republican contestability 預設 legitimate adversary 結構，匿名性允許正當對手以非身分綁定方式行使政治表達權；此承擔即 agonism 分量之具體應用。本文 § 3.3 矩陣標 A1 × plurality（●）與 A1 × agonism（●），與 A1 之雙錨點主張一致。
-
-### 10.2 A3（公民證明概念定位）的 PRF 回應
-
-A3 之 Nissenbaum CI 多元性前提與 civic proof 五層抽象表，於 PRF 框架下對應 plurality 與 validity 兩分量之核心承擔。A3 §3.1 之「no privacy 'in general'」承擔 plurality 在資訊規範層之多元性<sup>16</sup>；A3 §6 之最小必要條件三條件承擔 Habermas Richtigkeit 聲稱之 institutional 履行。本文 § 3.3 矩陣標 A3 × plurality（●）與 A3 × validity（●）。A3 對 contestation 與 agonism 兩分量承擔較弱，反映 A3 規範主張集中於隱私哲學基礎與概念地景區辨。
-
-### 10.3 A8（DNS vs identity trust roots）的 PRF 回應
-
-A8 之 FTLA 四層治理框架與 HM 合取主張，於 PRF 框架下對應 validity、contestation、agonism 三分量之核心承擔。A8 之 G_state 層承擔 Habermas Sluice 模型之 institutional 對應；G_recognition 與 G_oversight 層承擔 Pettit editorial democracy 四項制度條件；G_industry 與 G_state 之張力承擔 Mouffe legitimate adversary 結構<sup>9</sup>。本文 § 3.3 矩陣標 A8 × validity（●）、A8 × contestation（●）、A8 × agonism（●）。A8 之 plurality 承擔（○）反映其 plurality 維度主要在治理層之多 stakeholder 結構，非 Arendt 存在論意義。
-
-### 10.4 A14（跨法域救濟空白）的 PRF 回應
-
-A14 之跨法域救濟空白與衝突法 over-determined 結構，於 PRF 框架下對應 contestation 與 agonism 兩分量之核心承擔。A14 §3 之四類缺口（verifier 拒絕、issuer 撤銷錯誤、廠商失效、跨境隱私洩漏）承擔 contestation 之 institutional 條件失能；A14 §4 之衝突法結構承擔 agonism 之「正當對手間爭議框架」<sup>10</sup>。本文 § 3.3 矩陣標 A14 × contestation（●）與 A14 × agonism（●）。
-
-### 10.5 A15（civic-proof inclusion rights）的 PRF 回應
-
-A15 之 precursor right 三層保障結構與 wallet 三重預設之退化分析，於 PRF 框架下對應 plurality、validity、contestation 三分量之核心承擔。A15 §3 之經驗排除盤點承擔 plurality 之 enrollment 條件檢驗；A15 §4 之 Marshall 三層橫貫與 ICCPR Art 16 承擔 validity 之 institutional 條件；A15 §6.2 之 wallet 三重預設退化分析承擔 contestation 之 bearer 位置失能<sup>11,17</sup>。本文 § 3.3 矩陣標 A15 × plurality（●）、A15 × validity（●）、A15 × contestation（●）。
-
-### 10.6 F1（civic AI agent delegation limits）的 PRF 回應
-
-F1 之 5×3 矩陣與三進路合取覆蓋，於 PRF 框架下對應四分量全核心承擔（見 § 8.4）。F1 為系列首見之 PRF 四分量全核心承擔者；本文 PRF 框架以 F1 之既有承擔為錨，並擴展至系列全 18 篇之承擔關係。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 之 Z₃-intrinsic 邊界於本文定理 T_PRF5 形式化為「既有工程設計層之 PRF 下界不可達引理」（限縮在工程設計層；不對哲學層做形式定理層級的主張）<sup>12,33</sup>。
-
-### 10.7 F2（civic receipts provenance）的 PRF 回應
-
-F2 之 V_receipt C1-C6 與定理 T2 Z₃-intrinsic 不可達，於 PRF 框架下對應 validity 與 contestation 兩分量之核心承擔，並透過 §9 CF1-CF5 五個 counterfactual 壓力測試對 agonism 分量提供部分承擔。F2 之 audit trail 承擔 Habermas Wahrheit 與 Wahrhaftigkeit 兩聲稱；F2 之 ex post 挑戰結構承擔 Pettit editorial democracy 之「可挑戰性」<sup>13</sup>。F2 §9 之 CF1-CF5 壓力測試以 likelihood-by-mechanism 推演把 Mouffe legitimate adversary 三條件內化為密碼學設計之 robustness 判準（見 § 8.3 升格論證）。本文 § 3.3 矩陣標 F2 × validity（●）、F2 × contestation（●）與 F2 × agonism（○，升格）。F2 之 plurality 部分承擔（○）反映其 holder-side 承載對 plurality 之間接支撐。
-
-### 10.8 F3（selective disclosure UX failure）的 PRF 回應
-
-F3 之 V_ux C7-C10 與 supporter UI 三層分離，於 PRF 框架下對應 validity 與 agonism 兩分量之核心承擔。F3 之 informed consent 承擔 Habermas Wahrhaftigkeit 聲稱之 UX 履行；F3 §7 supporter UI 三層分離承擔 Mouffe legitimate adversary 結構（supporter 作為不可替代但必要之正當對手地位）<sup>14,19</sup>。本文 § 3.3 矩陣標 F3 × validity（●）與 F3 × agonism（●）。F3 之 plurality 與 contestation 部分承擔（○）反映 F3 主軸在 UX 認知工程。
-
-### 10.9 系列收束意義
-
-civic-proof 系列自 A1 起經 18 篇逐步建立規範條件與工程承載之分層架構；本文（A2，article 19）為系列最後一篇，承擔前 18 篇隱用之政治哲學基礎之正面論述。系列收束有三項意義。
-
-第一，把前 18 篇之隱用提到正面論述，使系列規範主張可被外部檢驗。PRF 四分量合取下界為系列規範主張提供統一形式骨架；32 cell 承擔矩陣使每篇之規範主張之對應分量明示化。
-
-第二，承擔系列方法論之政治哲學基礎。系列工程文（F1、F2、F3）之 5×3 矩陣、V_receipt、V_ux 等形式骨架，於本文 PRF 框架下統一為「四分量合取下界」之承擔；系列規範文（A1、A3、A8、A14、A15）之雙錨點、FTLA、precursor right 等承擔結構，於本文 PRF 框架下對應四分量之具體應用。
-
-第三，留出系列後續延伸之空間。本文 § 11 之 27 條 open questions 列出系列後續可延伸之議題，含 PRF 對非民主政體之描述力、其他政治哲學進路之補強、後人類主義之 PRF 重做、台灣場域之具體實證等。系列雖收於 19 篇，但 PRF 框架之延伸應用為開放議題。
+The concrete impact of TW DIW entering the LLM-agent phase, exemplified by F3's supporter UI, is as follows: if the 2026–2027 phase introduces LLM-agent automated handling of wallet operations and the substitution fails (prompt injection, capacity-aware failure), the engineering bearing of the contestation component in digital scenarios is weakened, and the ability of older persons with dementia, persons with cognitive impairments, and digitally disadvantaged groups to initiate contestation is structurally weakened.[^5][^73] TW DIW specifications must explicitly state at the honesty boundary that "LLM-agent substitution does not replace the engineering bearing of supporter UI three-layer separation," a position consistent with F1's RT-ℬ ✗ and AA-ℬ ✗ boundary conclusions.
 
 ---
 
-## 十一、誠實邊界與 27 條 open questions
+## § 10. Integration with Eight Series Articles' Forward-Links
 
-### 11.1 誠實邊界
+This section responds to the normative claims of A1 / A3 / A8 / A14 / A15 / F1 / F2 / F3 and bears the series-closing significance.
 
-本文於下列七項採誠實邊界明示。
+### § 10.1 PRF Response to A1 (Accountability Does Not Presuppose Real-Name Identification)
 
-第一，跨時代推論。四家錨點原著為 1958 至 2013 時段之西方政治哲學；本文應用於 2026 數位場景之效力依賴四家之跨時代適用性。Arendt 1958 *The Human Condition* 之 plurality 概念對 LLM-agent 場景之適用性、Habermas 1962 至 1992 Öffentlichkeit 概念對 platform 場景之適用性、Pettit 1997 至 2012 contestation 概念對演算法治理場景之適用性、Mouffe 2000 至 2013 agonism 概念對 polarization 場景之適用性，皆為作者擴張詮釋。
+A1's dual-anchor claim (procedural due process and republican contestability jointly bear accountability; anonymity does not weaken accountability) corresponds under the PRF framework to the core bearing of the plurality and agonism components. A1 §2 cites three cases including *NAACP v. Alabama*, linking the "protection of anonymous political speech" to the public-realm action rights of multiple *who*; this bearing is the specific application of the plurality component.[^15] A1's republican contestability presupposes the legitimate adversary structure; anonymity allows legitimate adversaries to exercise political expression rights without identity binding; this bearing is the specific application of the agonism component. This article's § 3.3 matrix marks A1 × plurality (●) and A1 × agonism (●), consistent with A1's dual-anchor claim.
 
-第二，跨文化推論。四家錨點原著為西方政治哲學傳統；本文應用於華人 / 台灣公共領域場景之效力依賴華人「群」「公」「諫」「諍」四傳統與四家之結構同構性。本文採「結構同構但歷史承載條件不同」之保守立場；歷史承載條件差距於 § 4.3、§ 5.4、§ 6.4、§ 7.3 明示。
+### § 10.2 PRF Response to A3 (Conceptual Positioning of Civic Proof)
 
-第三，PRF 為下界非絕對唯一。PRF 為民主合法性之複合下界（composite floor）；不主張為唯一下界。Rawls justice、Sen capability、Nussbaum dignity、Honneth recognition 等其他進路可作為 PRF 之 ceiling 或 boundary 條件<sup>34,35,36,37</sup>。
+A3's Nissenbaum CI plurality presupposition and civic proof five-layer abstraction table correspond under the PRF framework to the core bearing of the plurality and validity components. A3 §3.1's "no privacy 'in general'" bears the multiplicity of plurality at the information-norm layer;[^16] A3 §6's three minimum necessary conditions bear the institutional fulfilment of Habermas's *Richtigkeit* claim. This article's § 3.3 matrix marks A3 × plurality (●) and A3 × validity (●). A3's bearing of the contestation and agonism components is weaker, reflecting that A3's normative claims are concentrated on the foundations of privacy philosophy and conceptual landscape differentiation.
 
-第四，Arendt 存在論立場選擇。PRF plurality 分量採 Arendt phenomenological ontology；對 Floridi informational ontology、後人類主義 ontology 之拒絕為哲學立場選擇（邏輯必然之主張不在本文承擔範圍）。
+### § 10.3 PRF Response to A8 (DNS vs. Identity Trust Roots)
 
-第五，θ_dem 校準依據。θ_dem ≈ 0.5 為分析性建議數，無實證來源。本文標為「待 V-Dem 2024 liberal democracy index 退化案例分布、Bertelsmann Transformation Index、Freedom House 年度報告反向校準」。
+A8's FTLA four-layer governance framework and HM conjunctive claim correspond under the PRF framework to the core bearing of the validity, contestation, and agonism components. A8's G_state layer corresponds to the institutional counterpart of Habermas's Sluice model; the G_recognition and G_oversight layers bear the four institutional conditions of Pettit's editorial democracy; the tension between G_industry and G_state bears Mouffe's legitimate adversary structure.[^9] This article's § 3.3 matrix marks A8 × validity (●), A8 × contestation (●), and A8 × agonism (●). A8's partial bearing of plurality (○) reflects that its plurality dimension is mainly in the multi-stakeholder governance structure, not in the Arendtian ontological sense.
 
-第六，32 cell 承擔矩陣之依賴性。32 cell 之承擔判定依賴對前 18 篇規範主張之當前詮釋；若詮釋變動，矩陣須重做。
+### § 10.4 PRF Response to A14 (Cross-Jurisdictional Redress Gaps)
 
-第七，Schmitt 引用之邊界。Mouffe agonism 吸收 Schmitt 1932 對抗政治概念但拒絕 Schmitt 之 friend/enemy 殲滅邏輯<sup>61</sup>。Schmitt 為納粹法學家，本文引用 Schmitt 僅限於 Mouffe agonism 之系譜性 acknowledgment，不延伸至 Schmitt 之納粹政治立場。
+A14's cross-jurisdictional redress gaps and conflict-of-law over-determined structure correspond under the PRF framework to the core bearing of the contestation and agonism components. A14 §3's four categories of gaps (verifier refusal, issuer revocation errors, vendor failure, cross-border privacy breach) bear the institutional condition failure of contestation; A14 §4's conflict-of-law structure bears agonism's "adversarial framework between legitimate adversaries."[^10] This article's § 3.3 matrix marks A14 × contestation (●) and A14 × agonism (●).
 
-### 11.2 27 條 open questions
+### § 10.5 PRF Response to A15 (Civic-Proof Inclusion Rights)
 
-形式骨架層：
+A15's precursor-right three-layer protection structure and wallet triple default degradation analysis correspond under the PRF framework to the core bearing of the plurality, validity, and contestation components. A15 §3's empirical exclusion inventory bears the enrollment condition test of plurality; A15 §4's Marshall three-tier transversality and ICCPR Art 16 bear the institutional conditions of validity; A15 §6.2's wallet triple default degradation analysis bears the bearer position failure of contestation.[^11][^17] This article's § 3.3 matrix marks A15 × plurality (●), A15 × validity (●), and A15 × contestation (●).
 
-- O1（θ_dem 校準路徑）：θ_dem ≈ 0.5 之分析性建議數待跨國民主合法性實證研究反向校準。
-- O2（32 cell 承擔矩陣之動態更新機制）：系列文章詮釋更新時矩陣須重做。
-- O3（PRF 對其他政治哲學進路的開放邊界判準）：Rawls、Sen、Nussbaum、Honneth 加入合取之判準未明。
-- O4（PRF 對非民主政體的描述力與規範力區分）：PRF 是否預設民主前提？對中、俄、伊朗之適用為何？
+### § 10.6 PRF Response to F1 (Civic AI Agent Delegation Limits)
 
-Arendt plurality 層：
+F1's 5×3 matrix and three-approach conjunctive coverage correspond under the PRF framework to full core bearing of all four components (see § 8.4). F1 is the first article in the series to fully bear all four PRF components at the core level; this article's PRF framework takes F1's existing bearing as anchor and extends it to the bearer relations of all 18 preceding articles. F1's RT-ℬ ✗ and AA-ℬ ✗ Z₃-intrinsic boundaries are formalised in this article's theorem T_PRF5 as the "PRF floor engineering unreachability lemma at the existing engineering design layer" (confined to the engineering design layer; making no claim as a formal theorem at the philosophical layer).[^12][^33]
 
-- O5（後人類主義與 plurality 的關係）：personhood 邊界擴張到非人類動物、AI、自然時 PRF 是否需要重做。
-- O6（plurality 在「行動 vs 工作」區分對數位場景的應用）。
-- O7（natality 與 LLM-agent 之「新開始」對立的更精細形式化）。
-- O8（華人「群」傳統與 plurality 對應的學術社群擴大檢驗）。
+### § 10.7 PRF Response to F2 (Civic Receipts Provenance)
 
-Habermas Öffentlichkeit 層：
+F2's V_receipt C1–C6 and theorem T2 Z₃-intrinsic unreachability correspond under the PRF framework to the core bearing of the validity and contestation components, and provide partial bearing of the agonism component through the five counterfactual stress tests in §9 CF1–CF5. F2's audit trail bears Habermas's *Wahrheit* and *Wahrhaftigkeit* claims; F2's ex post challenge structure bears Pettit's editorial democracy's "contestability."[^13] F2 §9's CF1–CF5 stress tests internalise Mouffe's three legitimate adversary conditions into the robustness criterion of cryptographic design through likelihood-by-mechanism inference (see the elevation argument in § 8.3). This article's § 3.3 matrix marks F2 × validity (●), F2 × contestation (●), and F2 × agonism (○, elevated). F2's partial bearing of plurality (○) reflects its holder-side bearing's indirect support for plurality.
 
-- O9（counterpublics 與 PRF 主流 Öffentlichkeit 的合取關係）。
-- O10（Öffentlichkeit 在演算法媒體 / platform 場景的工程承擔）。
-- O11（跨文化 Öffentlichkeit 之對應與張力，含華人「公」、伊斯蘭 shura、非洲 ubuntu）。
-- O12（ideal speech situation 在 wallet / agent 場景的工程化，與 F3 cognitive load 對接）。
+### § 10.8 PRF Response to F3 (Selective Disclosure UX Failure)
 
-Pettit contestation 層：
+F3's V_ux C7–C10 and supporter UI three-layer separation correspond under the PRF framework to the core bearing of the validity and agonism components. F3's informed consent bears the UX fulfilment of Habermas's *Wahrhaftigkeit* claim; F3 §7's supporter UI three-layer separation bears Mouffe's legitimate adversary structure (the supporter as the position of a non-substitutable but necessary legitimate adversary).[^14][^19] This article's § 3.3 matrix marks F3 × validity (●) and F3 × agonism (●). F3's partial bearing of plurality and contestation (○) reflects that F3's main axis is in UX cognitive engineering.
 
-- O13（bearer position 在跨境制度爭訟的承擔，A14 與 A8 的延伸）。
-- O14（Pettit republican democracy 對非民主政體的延伸應用）。
-- O15（「Active stance, not passive input」區分對數位 voice 與 hashtag activism 場景的應用）。
-- O16（華人「諫議」傳統與 Pettit republican contestation 對應的歷史承載條件對比）。
+### § 10.9 Series-Closing Significance
 
-Mouffe agonistic 層：
+The civic-proof series, starting from A1, gradually built a layered architecture of normative conditions and engineering bearing across 18 articles; this article (A2, Article 19) is the final article of the series, bearing the affirmative account of the political-philosophical foundations implicitly relied upon by the preceding 18 articles. The series-closing significance has three items.
 
-- O17（agonism 與 antagonism 邊界滑移的偵測與防護機制）。
-- O18（AI agent 在 agonistic 場景的「legitimate adversary」可能性與 F1 RT-ℬ ✗ 邊界對話）。
-- O19（跨議題 agonism 應用：氣候、性別、兩岸、AI 監管等）。
-- O20（Norval 2007 Mouffe + Cavell 對話之延伸，含美德倫理學如何補強 agonism）。
+First, bringing the implicit uses of the preceding 18 articles to affirmative articulation makes the series' normative claims externally examinable. The PRF four-component conjunctive floor provides a unified formal skeleton for the series' normative claims; the 32-cell bearer matrix makes the component correspondence of each article's normative claims explicit.
 
-反論壓力測試層：
+Second, bearing the political-philosophical foundations of the series methodology. The formal skeletons of the series' engineering articles (F1, F2, F3)—the 5×3 matrix, V_receipt, V_ux—are unified under this article's PRF framework as the bearing of the "four-component conjunctive floor"; the bearing structures of the series' normative articles (A1, A3, A8, A14, A15)—the dual-anchor, FTLA, precursor right—correspond to the specific applications of the four components under this article's PRF framework.
 
-- O21（其他政治哲學進路對 PRF 的補強或挑戰）。
-- O22（非西方民主合法性框架對 PRF 的補強或挑戰，含儒家「公」、伊斯蘭 shura、非洲 ubuntu）。
-- O23（AI agent 在 PRF 四分量的「降一檔不降兩檔」立場的後續延伸）。
-- O24（limited AI personhood 框架下 PRF 邊界的具體擴張條件）。
-
-系統與跨層級：
-
-- O25（PRF 與 civic-proof 系列前 18 篇承擔矩陣的動態維護機制）。
-- O26（PRF 在後續文章 F4+ 的延伸應用）。
-- O27（PRF 在「規範下界」與「工程上界」之間的精確區分，即哪些 PRF 主張可工程化、哪些不可）。
-
-### 11.3 高風險主張清單
-
-本文列出十項高風險主張，供 fact-check 與後續學術社群檢驗。
-
-R1：PRF 四分量名稱與內容對應為「對四家原著之合取覆蓋萃取」，非四家原著作者明示之合取主張。
-
-R2：LegitimacyDegrade 之 sigmoid 形式採 F1 §3.2 同形，四家等權重 β = 1.0 為先驗設定，無實證來源。
-
-R3：θ_dem ≈ 0.5 為分析性建議數，與 F1 θ₁ = 0.2 與 θ₂ = 0.7 之兩閾值中點對應，無獨立實證來源。
-
-R4：Mouffe agonism 之獨立第四分量對 F1 §4.2 (iii)「補充不削弱結論」之擴展為作者主張延伸；Mouffe 自身原著未明示「agonism 為民主合法性之獨立必要條件」。
-
-R5：F2-agonism 升格為 ○（critic § 5.2 觀察）為作者擴張詮釋；F2 §9 CF1-CF5 壓力測試之 agonistic 工程化承擔強度與 ● 核心承擔之邊界須學術社群檢驗。A14 × plurality（—）之不對應判定亦可能被批評為「過嚴」。
-
-R6：T_PRF1 至 T_PRF4 四條定理之證明草案採「否則退化為 X」之 reductio 結構，非形式邏輯之完整證明。
-
-R7：F1 之三進路合取為 PRF 四進路合取之系列前置；F1 §3.1 矩陣之 ℬ 分量未把 Mouffe 列入，本文擴展是否與 F1 既有承擔產生不一致須學術社群驗證。
-
-R8：32 cell 中部分 ○ cell（如 A1 × validity ○、F2 × plurality ○、F3 × plurality ○、F2 × agonism ○ 升格）之論證較弱，可能應降為 —。
-
-R9：「PRF 為規範下界非絕對標準」立場已在多處明示；fact-check 階段須核對 final 稿無滑入「PRF 為絕對標準」之語式。
-
-R10：Stanford Internet Observatory Final Report 2024-12 之發布狀態須核對；SIO 於 2024 年遭遇結構性壓力，最終報告之具體 URL 與發布日期須查證。
+Third, leaving space for subsequent series extension. The 27 open questions in § 11 list topics that the series may extend to subsequently, including PRF's descriptive power for non-democratic regimes, reinforcement from other political-philosophical approaches, posthumanist remaking of PRF, and Taiwan-specific empirical work. Although the series closes at 19 articles, the extended applications of the PRF framework are an open question.
 
 ---
 
-## 十二、條件性學術結論
+## § 11. Honesty Boundaries and 27 Open Questions
 
-本文於三項條件下作成下列結論。
+### § 11.1 Honesty Boundaries
 
-第一結論：PRF 四家合取構成 civic-proof 系列規範下界。Arendt plurality（multiple *who* 之存在論共在）、Habermas Öffentlichkeit（kommunikatives Handeln 之規範結構與 Geltungsansprüche 三聲稱）、Pettit contestation（active-stance bearer 與 editorial democracy 四條件）、Mouffe agonism（legitimate adversary 三條件）四家於 civic-proof 系列場景下構成合取下界。四家各自必要、不可化約、不可由其他三家補位（由定理 T_PRF1 至 T_PRF4 承擔）；任一分量被違反即 LegitimacyDegrade(d) ≥ θ_dem ≈ 0.5（由定理 T_PRF0 承擔）。此結論為條件性結論，條件包含 § 11 誠實邊界明示之七項（跨時代推論、跨文化推論、PRF 為下界非絕對唯一、Arendt 存在論立場選擇、θ_dem 校準依據、32 cell 矩陣依賴性、Schmitt 引用之邊界）。
+This article explicitly states the following seven honesty boundaries.
 
-第二結論：工程不能取代規範下界。密碼學原語（wallet、receipts、selective disclosure）、UX 設計（supporter UI 三層分離）、平台治理（FTLA 四層、跨境互認）等工程承載可承擔 PRF 四分量之具體實作，但不能取代四分量之規範地位。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 之 Z₃-intrinsic 邊界（責任承擔需 first-personal mens rea、contestation bearer 需 active stance）於本文定理 T_PRF5 形式化為「PRF 下界之工程不可達引理」，即任何工程設計不可繞道 PRF 下界。此結論之蘊涵在於：對 EUDI Wallet、TW DIW、Aadhaar 等基礎設施之規範性要求，應以 PRF 四分量為下界判準，工程承載為下界之具體實作；不主張工程承載可獨立承擔合法性。
+**First, cross-temporal inference.** The four anchor authors' original works belong to the Western political philosophy tradition from 1958 to 2013; this article's application to digital scenarios in 2026 depends on the cross-temporal applicability of the four. The applicability of Arendt's 1958 *The Human Condition* plurality concept to LLM-agent scenarios, Habermas's 1962–1992 *Öffentlichkeit* concept to platform scenarios, Pettit's 1997–2012 contestation concept to algorithmic governance scenarios, and Mouffe's 2000–2013 agonism concept to polarisation scenarios are all authorial expansive interpretations.
 
-第三結論：系列 8 篇承擔矩陣為「條件性對應」非「絕對描述」。32 cell 承擔矩陣（§ 3.3）反映前 18 篇規範主張之當前詮釋；若詮釋變動，矩陣須重做。F1 為四分量全核心承擔者之判定（§ 8.4），依賴對 F1 §4 三進路合取之擴張詮釋，把 F1 §4.2 (iii) 之「Mouffe 補充不削弱結論」提升為 agonism 分量之承擔。本文採此擴張詮釋為作者立場；其他詮釋（如把 Mouffe 仍視為輔助）下，F1 仍為三分量核心承擔加一分量部分承擔。此結論之蘊涵在於：32 cell 矩陣為系列規範主張之承擔關係之「條件性對應」，不主張為「絕對描述」；矩陣之動態更新機制為 § 11 O2 之 open question。
+**Second, cross-cultural inference.** The four anchor authors' original works belong to the Western political philosophy tradition; this article's applicability to Chinese/Taiwanese public realm scenarios depends on structural homology between the Chinese *qun* (群), *gong* (公), *jian* (諫), and *zheng* (諍) traditions and the four anchors. This article adopts the conservative position of "structurally homologous but with different historical bearer conditions"; the gap in historical bearer conditions is explicitly stated in §§ 4.3, 5.4, 6.4, and 7.3.
 
-### 12.1 27 條 open questions 之優先級分類
+**Third, PRF is a floor, not an absolutely unique standard.** PRF is a composite floor of democratic legitimacy; it does not claim to be the unique floor. Rawlsian justice, Sen's capability, Nussbaum's dignity, Honneth's recognition, and other approaches may serve as ceiling or boundary conditions for PRF.[^34][^35][^36][^37]
 
-§ 11.2 列出之 27 條 open questions 依後續承擔路徑可分四類，作為系列收束後之研究方向建議。
+**Fourth, the Arendtian ontological position is a choice.** The PRF plurality component adopts Arendt's phenomenological ontology; the rejection of Floridi's informational ontology and posthumanist ontology is a philosophical position choice (the claim of logical necessity is not within this article's scope of bearing).
 
-第一類：F4+ 後續系列文章承擔（屬「規範下界 vs 工程上界」之精確區分課題，本系列若延伸可承擔）。包含 O10（Öffentlichkeit 在演算法媒體 / platform 場景的工程承擔）、O12（ideal speech situation 在 wallet / agent 場景的工程化，與 F3 cognitive load 對接）、O15（Active stance 區分對數位 voice 與 hashtag activism 場景的應用）、O18（AI agent 在 agonistic 場景的「legitimate adversary」可能性）、O25（PRF 與系列承擔矩陣的動態維護機制）、O26（PRF 在後續文章 F4+ 的延伸應用）、O27（規範下界與工程上界之精確區分）。
+**Fifth, the basis for θ_dem calibration.** θ_dem ≈ 0.5 is an analytical recommendation with no empirical source. This article marks it as "awaiting inverse calibration against the V-Dem 2024 Liberal Democracy Index degradation case distribution, Bertelsmann Transformation Index, and Freedom House Annual Report."
 
-第二類：學術社群擴大檢驗（屬政治哲學與民主理論社群之延伸研究）。包含 O3（PRF 對其他政治哲學進路的開放邊界判準）、O5（後人類主義與 plurality 的關係）、O8（華人「群」傳統與 plurality 的擴大檢驗）、O11（跨文化 Öffentlichkeit 之對應與張力）、O16（華人「諫議」傳統與 Pettit 對應的歷史承載條件對比）、O20（Norval Mouffe + Cavell 對話之延伸）、O21（其他政治哲學進路對 PRF 的補強或挑戰）、O22（非西方民主合法性框架對 PRF 的補強或挑戰）、O23（「降一檔不降兩檔」立場的後續延伸）、O24（limited AI personhood 框架下 PRF 邊界）。
+**Sixth, the dependency of the 32-cell bearer matrix.** The bearer determinations of the 32 cells depend on the current interpretation of the normative claims of the preceding 18 articles; if interpretations change, the matrix must be remade.
 
-第三類：政策實作與經驗研究（屬數位身分政策、民主合法性實證研究、跨國比較研究）。包含 O1（θ_dem 校準路徑）、O2（32 cell 矩陣之動態更新機制）、O4（PRF 對非民主政體的描述力與規範力區分）、O14（Pettit republican democracy 對非民主政體的延伸應用）、O19（跨議題 agonism 應用：氣候、性別、兩岸、AI 監管等）。
+**Seventh, the boundary of Schmitt citation.** Mouffe's agonism absorbs Schmitt's 1932 concept of antagonist politics but rejects Schmitt's friend/enemy annihilation logic.[^61] Schmitt was a Nazi legal theorist; this article's citation of Schmitt is confined to a genealogical acknowledgment within Mouffe's agonism and does not extend to Schmitt's Nazi political positions.
 
-第四類：技術—哲學交界（屬 LLM-agent、formal verification、capacity-aware UX 等工程承擔與政治哲學概念之交界研究）。包含 O6（plurality 在「行動 vs 工作」區分對數位場景的應用）、O7（natality 與 LLM-agent 之「新開始」對立的精細形式化）、O9（counterpublics 與 PRF 主流 Öffentlichkeit 的合取關係）、O13（bearer position 在跨境制度爭訟的承擔）、O17（agonism 與 antagonism 邊界滑移的偵測與防護機制）。
+### § 11.2 Twenty-Seven Open Questions
 
-四類分類為作者建議，非排他性；多條 open questions 可同時跨類承擔。例如 O18（AI agent 之 legitimate adversary 可能性）同時屬第一類（F4+ 後續文章）與第二類（學術社群擴大檢驗）。後續研究路徑之選擇依承擔者之研究位置（系列作者、學界、政策圈、技術社群）而異。
+**Formal-skeleton layer:**
 
-### 12.2 對三組讀者之分立建議
+- O1 (θ_dem calibration pathway): the analytical recommendation of θ_dem ≈ 0.5 awaits inverse calibration by cross-national democratic legitimacy empirical research.
+- O2 (dynamic updating mechanism for the 32-cell bearer matrix): the matrix must be remade when interpretations of series articles are updated.
+- O3 (criteria for PRF's open boundary toward other political-philosophical approaches): the criteria for adding Rawls, Sen, Nussbaum, or Honneth to the conjunction are not yet specified.
+- O4 (distinction between PRF's descriptive and normative power for non-democratic regimes): does PRF presuppose democratic premises? What is its applicability to China, Russia, or Iran?
 
-對政治哲學學界：本文採合取（非綜合）方法論，於 § 8.2 明示。學界對 Arendt、Habermas、Pettit、Mouffe 四家之原著詮釋有差異；本文之合取結構保留四家原著張力，未試圖消解。學界後續可延伸之議題包括 PRF 與其他政治哲學進路之合取關係（O3、O21）、跨文化 PRF 之對應與張力（O11、O22）、PRF 對非民主政體之描述力與規範力區分（O4、O14）等。
+**Arendt plurality layer:**
 
-對公民科技社群：本文 32 cell 承擔矩陣為系列規範主張之承擔關係之形式化；公民科技社群可援引矩陣作為工程承載之規範判準。F1 RT-ℬ ✗ 與 AA-ℬ ✗ 邊界（即 PRF 下界之工程不可達引理）為工程設計之上界限制；任何工程設計不可承擔此邊界之外之合法性主張。supporter UI 三層分離、wallet 三重預設退化分析、跨法域救濟空白等具體案例為 PRF 在工程承載之應用。
+- O5 (the relationship between posthumanism and plurality): does PRF need to be remade when personhood boundaries expand to non-human animals, AI, and nature?
+- O6 (the application of the "action vs. work" distinction in plurality to digital scenarios).
+- O7 (more precise formalisation of the opposition between natality and LLM-agent's "new beginning").
+- O8 (broader academic community examination of the correspondence between the Chinese *qun* tradition and plurality).
 
-對數位身分政策學者：本文於 § 9.7 給出對台灣讀者特殊段，含 TW DIW 進入 LLM-agent 階段之具體衝擊預測。對策建議在於：TW DIW 規格須在誠實邊界明示「LLM-agent 補位有助於部分使用者，但不取代 supporter UI 三層分離之工程承擔；contestation 維度之人類民主主體承擔不可由 LLM-agent 取代」。歐盟 EUDI Wallet、印度 Aadhaar、台灣 TW DIW 等基礎設施之政策評估，可援引 PRF 四分量為規範下界判準。
+**Habermas *Öffentlichkeit* layer:**
 
-本文為 civic-proof 系列第 19 篇，亦為系列最後一篇。PRF 框架之延伸應用、其他政治哲學進路之補強、後人類主義之 PRF 重做、台灣與華人公共領域之具體實證、跨國民主合法性之 θ_dem 校準等議題（§ 11 列出之 27 條 open questions），留作系列後續研究之開放空間。
+- O9 (the conjunctive relation between counterpublics and PRF's mainstream *Öffentlichkeit*).
+- O10 (engineering bearing of *Öffentlichkeit* in algorithmic media / platform scenarios).
+- O11 (correspondence and tension of cross-cultural *Öffentlichkeit*, including Chinese *gong*, Islamic *shura*, African *ubuntu*).
+- O12 (engineering of ideal speech situation in wallet/agent scenarios, interfacing with F3 cognitive load).
+
+**Pettit contestation layer:**
+
+- O13 (bearing of bearer position in cross-border institutional litigation, extension of A14 and A8).
+- O14 (extension of Pettit's republican democracy to non-democratic regimes).
+- O15 (application of the "active stance, not passive input" distinction to digital voice and hashtag-activism scenarios).
+- O16 (historical bearer-condition comparison between the Chinese *jianyi* tradition and Pettit's republican contestation).
+
+**Mouffe agonistic layer:**
+
+- O17 (detection and protection mechanisms for boundary slippage between agonism and antagonism).
+- O18 (the possibility of AI agents as "legitimate adversaries" in agonistic scenarios, and dialogue with F1's RT-ℬ ✗ boundary).
+- O19 (cross-issue agonism applications: climate, gender, cross-strait, AI regulation, etc.).
+- O20 (extension of Norval's 2007 Mouffe + Cavell dialogue, including how virtue ethics may reinforce agonism).
+
+**Counter-argument stress test layer:**
+
+- O21 (reinforcement or challenges to PRF from other political-philosophical approaches).
+- O22 (reinforcement or challenges to PRF from non-Western democratic legitimacy frameworks, including Confucian *gong*, Islamic *shura*, African *ubuntu*).
+- O23 (subsequent extension of the "one step down, not two" position on AI agents in PRF's four components).
+- O24 (specific conditions for extending PRF boundaries under a limited AI personhood framework).
+
+**Systemic and cross-level:**
+
+- O25 (dynamic maintenance mechanism for the PRF and civic-proof series bearer matrix).
+- O26 (extended applications of PRF in subsequent articles F4+).
+- O27 (precise distinction between "normative floor" and "engineering ceiling" in PRF—i.e. which PRF claims can be engineered and which cannot).
+
+### § 11.3 High-Risk Claims List
+
+This article lists ten high-risk claims for fact-checking and subsequent academic community examination.
+
+**R1**: The names and contents of PRF's four components as "conjunctive coverage extracted from the four anchor authors' original works" are not claims explicitly asserted conjunctively by the four authors themselves.
+
+**R2**: The sigmoid form of LegitimacyDegrade adopts the same form as F1 §3.2; the four authors' equal weighting β = 1.0 is an a priori setting with no empirical source.
+
+**R3**: θ_dem ≈ 0.5 is an analytical recommendation, corresponding to the midpoint of F1's two thresholds θ₁ = 0.2 and θ₂ = 0.7, with no independent empirical source.
+
+**R4**: The expansion of Mouffe's agonism to an independent fourth component relative to F1 §4.2(iii)'s "supplement does not weaken the conclusion" is an authorial claim extension; Mouffe's own original works do not explicitly state that "agonism is an independently necessary condition for democratic legitimacy."
+
+**R5**: The elevation of F2–agonism to ○ (critical observation in § 5.2) is an authorial expansive interpretation; the boundary between the agonistic engineering-bearing intensity of F2 §9's CF1–CF5 stress tests and ● core-bearing must be examined by the academic community. The A14 × plurality (—) non-correspondence determination may also be criticised as "too strict."
+
+**R6**: The proofs of theorems T_PRF1–T_PRF4 adopt a reductio structure of "otherwise degrades to X" and are not complete proofs in formal logic.
+
+**R7**: F1's three-approach conjunction as the series precursor to PRF's four-approach conjunction; whether this article's expansion is inconsistent with F1's existing bearing, given that F1 §3.1 matrix does not list Mouffe in the ℬ components, requires academic community verification.
+
+**R8**: The argument for some ○ cells in the 32 cells (e.g. A1 × validity ○, F2 × plurality ○, F3 × plurality ○, F2 × agonism ○ elevated) is relatively weak and may warrant downgrading to —.
+
+**R9**: The position that "PRF is a normative floor, not an absolute standard" is explicitly stated at multiple points; fact-checking must verify that the final draft does not slide into language treating "PRF as an absolute standard."
+
+**R10**: The publication status of the Stanford Internet Observatory Final Report 2024-12 must be verified; SIO experienced structural pressures in 2024, and the specific URL and publication date of the final report must be confirmed.
 
 ---
 
-## Revision Note（2026-05-16）
+## § 12. Conditional Academic Conclusions
 
-本文於修訂中將 PRF 之合取下界框架明確界定為**規範下界**（normative floor）而非**絕對唯一標準**（unique standard）；將「不可化約 / 不可由其他三家補位」之強規範句式精細化為「在 PRF 合取下界框架內各自必要、難以由其他分量完全補位（非絕對不可化約）」；將「不允許 trade-off」精細化為「在本文的 PRF 合取設定下不採以另一分量補強被違反分量的 trade-off 讀法；其他規範進路能否提供部分補強，列為 ceiling 或 boundary 條件」；將「PRF 下界之工程不可達引理」（T_PRF5）限縮為「既有工程設計層之 PRF 下界不可達引理」（明示為工程設計層而非哲學層之形式定理）；θ_dem ≈ 0.5 於 T_PRF0 與 description 處加 inline caveat「分析性建議數，未經實證校準」。修訂依據為 civic-proof series Phase 1+2 audit + GPT-5.5-pro 二輪 audit（2026-05-16）審視標的 R_CL「複合下界 vs 絕對標準」與 R_NM「規範性 vs 描述性分離」風險。修訂位置含 frontmatter description、§2.3 合取方法論段、§3.2 合取下界蘊涵段、§3.4 T_PRF0 標題、§3.5 T_PRF5 標題、§7 章節引言、§8.4 F1 承擔段。核心論證骨架（PRF 四分量定義 / 32 cell 承擔矩陣 / 四條形式定理 / 五類反論壓力測試 / 華人本土化承載 / 對台灣讀者特殊段）未動。
+This article reaches the following conclusions under three conditions.
+
+**Conclusion One**: The conjunction of PRF's four components constitutes the normative floor of the civic-proof series. Arendt's plurality (ontological co-presence of multiple *who*), Habermas's *Öffentlichkeit* (normative structure of *kommunikatives Handeln* and three *Geltungsansprüche*), Pettit's contestation (active-stance bearer and four editorial democracy conditions), and Mouffe's agonism (three legitimate adversary conditions) together constitute a conjunctive floor in civic-proof series scenarios. Each of the four is individually necessary, irreducible, and cannot be substituted by the other three (borne by theorems T_PRF1–T_PRF4); any component being violated means LegitimacyDegrade(d) ≥ θ_dem ≈ 0.5 (borne by theorem T_PRF0). This conclusion is conditional; the conditions include the seven items explicitly stated at the § 11 honesty boundary (cross-temporal inference, cross-cultural inference, PRF as floor not absolutely unique, Arendt ontological position choice, θ_dem calibration basis, 32-cell matrix dependency, boundary of Schmitt citation).
+
+**Conclusion Two**: Engineering cannot replace the normative floor. Cryptographic primitives (wallet, receipts, selective disclosure), UX design (supporter UI three-layer separation), and platform governance (FTLA four-layer, cross-border mutual recognition) and other engineering bearings can bear the concrete implementation of PRF's four components but cannot replace the normative status of the four components. F1's RT-ℬ ✗ and AA-ℬ ✗ Z₃-intrinsic boundaries (responsibility-bearing requires first-personal *mens rea*; contestation bearer requires active stance) are formalised in this article's theorem T_PRF5 as "the PRF floor engineering unreachability lemma at the existing engineering design layer"—no engineering design can bypass the PRF floor. The implication of this conclusion is: normative requirements for infrastructure such as EUDI Wallet, TW DIW, and Aadhaar should take PRF's four components as the floor criterion; engineering bearing is the concrete implementation of the floor; engineering bearing is not claimed to independently bear legitimacy.
+
+**Conclusion Three**: The series' 8-article bearer matrix is a "conditional correspondence," not an "absolute description." The 32-cell bearer matrix (§ 3.3) reflects the current interpretation of the normative claims of the preceding 18 articles; if interpretations change, the matrix must be remade. The determination that F1 is the bearer of all four components at the core level (§ 8.4) depends on the expansive interpretation of F1 §4's three-approach conjunction, elevating F1 §4.2(iii)'s "Mouffe supplement does not weaken the conclusion" to the bearing of the agonism component. This article adopts this expansive interpretation as the author's position; under other interpretations (e.g. still treating Mouffe as auxiliary), F1 remains three-component core-bearing plus one-component partial-bearing. The implication of this conclusion: the 32-cell matrix is a "conditional correspondence" of the bearer relations of the series' normative claims, not an "absolute description"; the dynamic updating mechanism of the matrix is the open question O2 of § 11.
+
+### § 12.1 Priority Classification of the 27 Open Questions
+
+The 27 open questions listed in § 11.2 can be divided into four categories by subsequent bearing pathway, as a research direction recommendation after the series closes.
+
+**Category One: F4+ subsequent series articles bear** (belonging to the precise distinction between "normative floor vs. engineering ceiling," which this series may bear if extended). Includes O10 (engineering bearing of *Öffentlichkeit* in algorithmic media/platform scenarios), O12 (engineering of ideal speech situation in wallet/agent scenarios, interfacing with F3 cognitive load), O15 (application of the "active stance" distinction to digital voice and hashtag-activism scenarios), O18 (the possibility of AI agents as "legitimate adversaries" in agonistic scenarios), O25 (dynamic maintenance mechanism for PRF and the series bearer matrix), O26 (extended applications of PRF in subsequent articles F4+), O27 (precise distinction between normative floor and engineering ceiling).
+
+**Category Two: Broader academic community examination** (belonging to extended research in the political philosophy and democratic theory community). Includes O3 (open-boundary criteria for PRF toward other political-philosophical approaches), O5 (relationship between posthumanism and plurality), O8 (broader examination of the Chinese *qun* tradition and plurality), O11 (cross-cultural *Öffentlichkeit* correspondence and tension), O16 (historical bearer-condition comparison between the Chinese *jianyi* tradition and Pettit), O20 (extension of Norval's Mouffe + Cavell dialogue), O21 (reinforcement or challenges to PRF from other political-philosophical approaches), O22 (reinforcement or challenges from non-Western democratic legitimacy frameworks), O23 (subsequent extension of the "one step down, not two" position), O24 (PRF boundaries under a limited AI personhood framework).
+
+**Category Three: Policy implementation and empirical research** (belonging to digital identity policy, democratic legitimacy empirical research, and cross-national comparative research). Includes O1 (θ_dem calibration pathway), O2 (dynamic updating mechanism for the 32-cell matrix), O4 (distinction between PRF's descriptive and normative power for non-democratic regimes), O14 (extension of Pettit's republican democracy to non-democratic regimes), O19 (cross-issue agonism applications: climate, gender, cross-strait, AI regulation, etc.).
+
+**Category Four: Technology–philosophy intersection** (belonging to LLM-agent, formal verification, capacity-aware UX, and other engineering bearing and political philosophy concept intersection research). Includes O6 (application of the "action vs. work" distinction in plurality to digital scenarios), O7 (more precise formalisation of the opposition between natality and LLM-agent's "new beginning"), O9 (conjunctive relation between counterpublics and PRF's mainstream *Öffentlichkeit*), O13 (bearing of bearer position in cross-border institutional litigation), O17 (detection and protection mechanisms for boundary slippage between agonism and antagonism).
+
+The four categories are authorial suggestions, not exclusive; multiple open questions may be borne across categories simultaneously. For example, O18 (the possibility of AI agents as legitimate adversaries) simultaneously belongs to Category One (F4+ subsequent articles) and Category Two (broader academic community examination). The choice of subsequent research pathway differs according to the bearer's research position (series author, academia, policy community, technical community).
+
+### § 12.2 Differentiated Recommendations for Three Groups of Readers
+
+**For the political philosophy academic community**: this article adopts a conjunctive (not synthetic) methodology, explicitly stated in § 8.2. The academic community's interpretations of the original works of Arendt, Habermas, Pettit, and Mouffe differ; the conjunctive structure of this article preserves the tensions among the four authors' original works without attempting to resolve them. Topics for subsequent academic extension include the conjunctive relation between PRF and other political-philosophical approaches (O3, O21), the correspondence and tensions of cross-cultural PRF (O11, O22), and the distinction between PRF's descriptive and normative power for non-democratic regimes (O4, O14).
+
+**For the civic technology community**: this article's 32-cell bearer matrix formalises the bearer relations of the series' normative claims; the civic technology community may invoke the matrix as a normative criterion for engineering bearing. F1's RT-ℬ ✗ and AA-ℬ ✗ boundaries (i.e. the PRF floor engineering unreachability lemma) are the upper-bound constraints on engineering design; no engineering design can bear legitimacy claims outside these boundaries. Specific cases such as supporter UI three-layer separation, wallet triple default degradation analysis, and cross-jurisdictional redress gaps are applications of PRF in engineering bearing.
+
+**For digital identity policy scholars**: this article provides a special section for Taiwanese readers in § 9.7, including predictions for the specific impact of TW DIW entering the LLM-agent phase. Policy recommendations: TW DIW specifications must explicitly state at the honesty boundary that "LLM-agent substitution helps some users but does not replace the engineering bearing of supporter UI three-layer separation; the human democratic subject bearing of the contestation dimension cannot be replaced by LLM-agent." Policy assessment of infrastructure such as EUDI Wallet, Aadhaar, and TW DIW may invoke PRF's four components as normative floor criteria.
+
+This article is the nineteenth article of the civic-proof series, and the final article of the series. The extended applications of the PRF framework, reinforcement from other political-philosophical approaches, posthumanist remaking of PRF, specific empirical work on Taiwan and Chinese public realms, cross-national calibration of θ_dem for democratic legitimacy, and other topics (the 27 open questions listed in § 11) are left as open space for subsequent research after the series closes.
 
 ---
 
-## 十三、參考資料
+## Revision Note (2026-05-16)
 
-### A. 四家錨點原著
+In revision, this article clearly defines the PRF conjunctive floor framework as a **normative floor** rather than an **absolutely unique standard**; refines the strong normative formulation of "irreducible / cannot be substituted by the other three" to "individually necessary within the PRF conjunctive floor framework, difficult to be fully substituted by other components (not absolutely irreducible)"; refines "trade-offs not permitted" to "within this article's PRF conjunctive setting, the trade-off reading of compensating a violated component with a reinforced one is not adopted; whether other normative approaches can provide partial reinforcement is listed as a ceiling or boundary condition"; confines the "PRF floor engineering unreachability lemma" (T_PRF5) to the "existing engineering design layer's PRF floor engineering unreachability lemma" (explicitly stated as a formal theorem at the engineering design layer, not the philosophical layer); adds inline caveat to θ_dem ≈ 0.5 in T_PRF0 and the description: "analytical recommendation, not empirically calibrated." The revision basis is the civic-proof series Phase 1+2 audit + two rounds of GPT-5.5-pro audit (2026-05-16), examining risk targets R_CL "composite floor vs. absolute standard" and R_NM "normative vs. descriptive separation." Revised locations include: frontmatter description, § 2.3 conjunctive methodology section, § 3.2 conjunctive floor implication section, § 3.4 T_PRF0 title, § 3.5 T_PRF5 title, § 7 chapter introduction, § 8.4 F1 bearing section. The core argumentative skeleton (PRF four-component definitions / 32-cell bearer matrix / four formal theorems / five counter-argument stress test categories / Chinese indigenisation bearing / special section for Taiwanese readers) is unchanged.
 
-25. Arendt, H. (1958). *The Human Condition*. Chicago: University of Chicago Press. ISBN 978-0-226-02598-8（2018 二版）。§1 Prologue p.7、§24 p.175-181、§26 p.188-192、§28 p.50-58、§44 p.313-320。來源等級 A。
-26. Habermas, J. (1981). *Theorie des kommunikativen Handelns. Bd. I: Handlungsrationalität und gesellschaftliche Rationalisierung*. Frankfurt: Suhrkamp. ISBN 978-3-518-28775-5（Suhrkamp 1995 重印版）。§III.1-§III.4 p.369-452；§III.3 Geltungsansprüche p.410-427。英譯 1984, Beacon Press。來源等級 A。
-27. Pettit, P. (2012). *On the People's Terms: A Republican Theory and Model of Democracy*. Cambridge University Press. ISBN 978-1-107-69191-7. Ch.3-Ch.6（Ch.5「The Eyeball Test」p.81-105、Ch.6 p.187-238）。來源等級 A。
-28. Mouffe, C. (2000). *The Democratic Paradox*. London: Verso. ISBN 978-1-85984-279-6. Ch.1 p.1-16、Ch.4 p.80-107。來源等級 A。
-41. Habermas, J. (1992). *Faktizität und Geltung: Beiträge zur Diskurstheorie des Rechts und des demokratischen Rechtsstaats*. Frankfurt: Suhrkamp. ISBN 978-3-518-58343-7. Kap. VII p.349-398、Kap. VIII p.399-467（特別 p.435-447 Sluice 模型）。英譯 1996, MIT Press, *Between Facts and Norms*。來源等級 A。
-42. Pettit, P. (1997). *Republicanism: A Theory of Freedom and Government*. Oxford University Press. ISBN 978-0-19-829083-3. Ch.2 p.21-50、Ch.6 p.171-205（§6.2「Contestatory Democracy」p.183-192）。來源等級 A。
-47. Habermas, J. (1962). *Strukturwandel der Öffentlichkeit: Untersuchungen zu einer Kategorie der bürgerlichen Gesellschaft*. Neuwied: Luchterhand. ISBN 978-3-518-28491-4（Suhrkamp 1990 重印版）。§II.6 p.42-55、§III.13 p.86-100、§VI.18 p.225-240。英譯 1989, MIT Press。來源等級 A。
-60. Mouffe, C. (2013). *Agonistics: Thinking the World Politically*. London: Verso. ISBN 978-1-78168-103-7. Ch.1 p.1-18、Ch.4 p.49-66。來源等級 A。
-81. Habermas, J. (1996). *Between Facts and Norms: Contributions to a Discourse Theory of Law and Democracy* (W. Rehg, Trans.). MIT Press. *Faktizität und Geltung* 之英譯本對位。來源等級 A。
+---
 
-### B. 二手詮釋與經典基礎
+## References
 
-21. Honig, B. (1993). *Political Theory and the Displacement of Politics*. Cornell University Press. 來源等級 A。
-22. Calhoun, C. (Ed.) (1992). *Habermas and the Public Sphere*. MIT Press. 來源等級 A。
-23. Lovett, F. (2010). *A General Theory of Domination and Justice*. Oxford University Press. 來源等級 A。
-24. Norval, A. J. (2007). *Aversive Democracy: Inheritance and Originality in the Democratic Tradition*. Cambridge University Press. 來源等級 A。
-33. Pitkin, H. F. (1967). *The Concept of Representation*. Berkeley: University of California Press. ISBN 978-0-520-02156-7. Ch.5 p.112-143、Ch.10 p.232-243。來源等級 A。
-40. Habermas, J. (1984). *The Theory of Communicative Action, Volume 1: Reason and the Rationalization of Society* (T. McCarthy, Trans.). Beacon Press. 英譯本對位。來源等級 A。
-43. d'Entrèves, M. P. (1994). *The Political Philosophy of Hannah Arendt*. Routledge. 來源等級 A。
-44. Benhabib, S. (1996). *The Reluctant Modernism of Hannah Arendt*. Sage Publications. 來源等級 A。
-45. Berlin, I. (1958). "Two Concepts of Liberty." Inaugural Lecture, Oxford. Reprinted in *Four Essays on Liberty* (1969). Oxford University Press. 來源等級 A。
-46. Rawls, J. (1993). *Political Liberalism*. Columbia University Press. 來源等級 A。
-56. Pitkin, H. F. (1967). *The Concept of Representation*. Berkeley: University of California Press. Ch.5 「Substantive Acting for Others」。來源等級 A。
-57. Lovett, F. (2010). *A General Theory of Domination and Justice*. Oxford University Press. Ch.4-5 non-domination 之三條件。來源等級 A。
+### A. Four Anchor Authors' Original Works
 
-### C. 反論與替代進路
+[^25]: Arendt, H. (1958). *The Human Condition*. Chicago: University of Chicago Press. ISBN 978-0-226-02598-8 (2018 second edition). §1 Prologue p. 7, §24 p. 175–181, §26 p. 188–192, §28 p. 50–58, §44 p. 313–320. Source grade A.
+[^26]: Habermas, J. (1981). *Theorie des kommunikativen Handelns. Bd. I: Handlungsrationalität und gesellschaftliche Rationalisierung*. Frankfurt: Suhrkamp. ISBN 978-3-518-28775-5 (Suhrkamp 1995 reprint). §III.1–§III.4 p. 369–452; §III.3 Geltungsansprüche p. 410–427. English translation 1984, Beacon Press. Source grade A.
+[^27]: Pettit, P. (2012). *On the People's Terms: A Republican Theory and Model of Democracy*. Cambridge University Press. ISBN 978-1-107-69191-7. Ch. 3–Ch. 6 (Ch. 5 "The Eyeball Test" p. 81–105, Ch. 6 p. 187–238). Source grade A.
+[^28]: Mouffe, C. (2000). *The Democratic Paradox*. London: Verso. ISBN 978-1-85984-279-6. Ch. 1 p. 1–16, Ch. 4 p. 80–107. Source grade A.
+[^41]: Habermas, J. (1992). *Faktizität und Geltung: Beiträge zur Diskurstheorie des Rechts und des demokratischen Rechtsstaats*. Frankfurt: Suhrkamp. ISBN 978-3-518-58343-7. Kap. VII p. 349–398, Kap. VIII p. 399–467 (esp. p. 435–447 Sluice model). English translation 1996, MIT Press, *Between Facts and Norms*. Source grade A.
+[^42]: Pettit, P. (1997). *Republicanism: A Theory of Freedom and Government*. Oxford University Press. ISBN 978-0-19-829083-3. Ch. 2 p. 21–50, Ch. 6 p. 171–205 (§6.2 "Contestatory Democracy" p. 183–192). Source grade A.
+[^47]: Habermas, J. (1962). *Strukturwandel der Öffentlichkeit: Untersuchungen zu einer Kategorie der bürgerlichen Gesellschaft*. Neuwied: Luchterhand. ISBN 978-3-518-28491-4 (Suhrkamp 1990 reprint). §II.6 p. 42–55, §III.13 p. 86–100, §VI.18 p. 225–240. English translation 1989, MIT Press. Source grade A.
+[^60]: Mouffe, C. (2013). *Agonistics: Thinking the World Politically*. London: Verso. ISBN 978-1-78168-103-7. Ch. 1 p. 1–18, Ch. 4 p. 49–66. Source grade A.
+[^81]: Habermas, J. (1996). *Between Facts and Norms: Contributions to a Discourse Theory of Law and Democracy* (W. Rehg, Trans.). MIT Press. English translation counterpart of *Faktizität und Geltung*. Source grade A.
 
-61. Schmitt, C. (1932/1976). *The Concept of the Political* (G. Schwab, Trans.). Rutgers University Press. 來源等級 A（須於 § 11 誠實邊界明示 Mouffe 吸收但拒絕 Schmitt 之納粹政治立場）。
-63. Coeckelbergh, M. (2020). *AI Ethics*. MIT Press. Ch.4-6 on relational personhood. 來源等級 A。
-64. Coeckelbergh, M. (2024). "Why AI Undermines Democracy and What to Do About It." *Polity* 56(4) (含 ethics vs politics 二域立場區分). 來源等級 A。
-65. Floridi, L. (2014). *The Fourth Revolution: How the Infosphere is Reshaping Human Reality*. Oxford University Press. 來源等級 A。
-66. Braidotti, R. (2013). *The Posthuman*. Polity Press. 來源等級 A。
-67. Hayles, N. K. (1999). *How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics*. University of Chicago Press. 來源等級 A。
-68. Braidotti, R. (2019). *Posthuman Knowledge*. Polity Press. 來源等級 A。
-69. Haraway, D. (1985/1991). "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century." In *Simians, Cyborgs and Women*. Routledge. 來源等級 A。
-70. Wolfe, C. (2010). *What Is Posthumanism?* University of Minnesota Press. 來源等級 A。
-75. Coeckelbergh, M. (2022). "Three Responses to Anthropomorphism in Social Robotics: Towards a Critical, Relational, and Hermeneutic Approach." *International Journal of Social Robotics* 14(10): 2049-2061. 來源等級 A。
-76. Floridi, L. (2013). *The Ethics of Information*. Oxford University Press（informational ethics 系統版）. 來源等級 A。
-77. Hayles, N. K. (2017). *Unthought: The Power of the Cognitive Nonconscious*. University of Chicago Press. 來源等級 A。
-78. Latour, B. (2005). *Reassembling the Social: An Introduction to Actor-Network-Theory*. Oxford University Press. 來源等級 A。
-79. Gunkel, D. J. (2018). *Robot Rights*. MIT Press（relational personhood 內部辯論之對話對象）. 來源等級 A。
-82. Bryson, J. J. (2010). "Robots Should Be Slaves." In Y. Wilks (Ed.), *Close Engagements with Artificial Companions: Key Social, Psychological, Ethical and Design Issues*. John Benjamins. 來源等級 A（relational personhood 之反向質疑）。
+### B. Secondary Interpretations and Classic Foundations
 
-### D. 公共領域當代研究
+[^21]: Honig, B. (1993). *Political Theory and the Displacement of Politics*. Cornell University Press. Source grade A.
+[^22]: Calhoun, C. (Ed.) (1992). *Habermas and the Public Sphere*. MIT Press. Source grade A.
+[^23]: Lovett, F. (2010). *A General Theory of Domination and Justice*. Oxford University Press. Source grade A.
+[^24]: Norval, A. J. (2007). *Aversive Democracy: Inheritance and Originality in the Democratic Tradition*. Cambridge University Press. Source grade A.
+[^33]: Pitkin, H. F. (1967). *The Concept of Representation*. Berkeley: University of California Press. ISBN 978-0-520-02156-7. Ch. 5 p. 112–143, Ch. 10 p. 232–243. Source grade A.
+[^40]: Habermas, J. (1984). *The Theory of Communicative Action, Volume 1: Reason and the Rationalization of Society* (T. McCarthy, Trans.). Beacon Press. Source grade A.
+[^43]: d'Entrèves, M. P. (1994). *The Political Philosophy of Hannah Arendt*. Routledge. Source grade A.
+[^44]: Benhabib, S. (1996). *The Reluctant Modernism of Hannah Arendt*. Sage Publications. Source grade A.
+[^45]: Berlin, I. (1958). "Two Concepts of Liberty." Inaugural Lecture, Oxford. Reprinted in *Four Essays on Liberty* (1969). Oxford University Press. Source grade A.
+[^46]: Rawls, J. (1993). *Political Liberalism*. Columbia University Press. Source grade A.
 
-48. Bohman, J. (1996). *Public Deliberation: Pluralism, Complexity, and Democracy*. MIT Press. 來源等級 A。
-49. Fraser, N. (1990). "Rethinking the Public Sphere: A Contribution to the Critique of Actually Existing Democracy." *Social Text* 25/26: 56-80. 來源等級 A。
-50. Warner, M. (2002). *Publics and Counterpublics*. New York: Zone Books. 來源等級 A。
-51. Asen, R. (2017). "Neoliberalism, the Public Sphere, and a Public Good." *Quarterly Journal of Speech* 103(4): 329-349. 來源等級 A。
-53. Vaidhyanathan, S. (2018). *Antisocial Media: How Facebook Disconnects Us and Undermines Democracy*. Oxford University Press. 來源等級 A。
-54. Tufekci, Z. (2017). *Twitter and Tear Gas: The Power and Fragility of Networked Protest*. Yale University Press. 來源等級 A。
-55. Gillespie, T. (2018). *Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media*. Yale University Press. 來源等級 A。
-62. Benkler, Y., Faris, R. & Roberts, H. (2018). *Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics*. Oxford University Press. 來源等級 A。
-71. Benkler, Y. (2006). *The Wealth of Networks: How Social Production Transforms Markets and Freedom*. Yale University Press. 來源等級 A。
-72. Sunstein, C. R. (2017). *#Republic: Divided Democracy in the Age of Social Media*. Princeton University Press. 來源等級 A。
-83. Crary, J. (2022). *Scorched Earth: Beyond the Digital Age to a Post-Capitalist World*. London: Verso. 來源等級 A。
+### C. Counter-Arguments and Alternative Approaches
 
-### E. 華人 / 台灣本土化文獻
+[^61]: Schmitt, C. (1932/1976). *The Concept of the Political* (G. Schwab, Trans.). Rutgers University Press. Source grade A (must be stated at § 11 honesty boundary: Mouffe absorbs Schmitt but rejects his Nazi political positions).
+[^63]: Coeckelbergh, M. (2020). *AI Ethics*. MIT Press. Ch. 4–6 on relational personhood. Source grade A.
+[^64]: Coeckelbergh, M. (2024). "Why AI Undermines Democracy and What to Do About It." *Polity* 56(4) (including ethics vs. politics two-domain position distinction). Source grade A.
+[^65]: Floridi, L. (2014). *The Fourth Revolution: How the Infosphere is Reshaping Human Reality*. Oxford University Press. Source grade A.
+[^66]: Braidotti, R. (2013). *The Posthuman*. Polity Press. Source grade A.
+[^67]: Hayles, N. K. (1999). *How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics*. University of Chicago Press. Source grade A.
+[^68]: Braidotti, R. (2019). *Posthuman Knowledge*. Polity Press. Source grade A.
+[^69]: Haraway, D. (1985/1991). "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century." In *Simians, Cyborgs and Women*. Routledge. Source grade A.
+[^70]: Wolfe, C. (2010). *What Is Posthumanism?* University of Minnesota Press. Source grade A.
+[^75]: Coeckelbergh, M. (2022). "Three Responses to Anthropomorphism in Social Robotics: Towards a Critical, Relational, and Hermeneutic Approach." *International Journal of Social Robotics* 14(10): 2049–2061. Source grade A.
+[^76]: Floridi, L. (2013). *The Ethics of Information*. Oxford University Press. Source grade A.
+[^77]: Hayles, N. K. (2017). *Unthought: The Power of the Cognitive Nonconscious*. University of Chicago Press. Source grade A.
+[^78]: Latour, B. (2005). *Reassembling the Social: An Introduction to Actor-Network-Theory*. Oxford University Press. Source grade A.
+[^79]: Gunkel, D. J. (2018). *Robot Rights*. MIT Press. Source grade A.
+[^82]: Bryson, J. J. (2010). "Robots Should Be Slaves." In Y. Wilks (Ed.), *Close Engagements with Artificial Companions*. John Benjamins. Source grade A.
 
-29. 朱雲漢（2012）《高思在雲：一個知識分子對二十一世紀的思考》。台北：天下文化。來源等級 B。
-30. 林宗弘（2020）《島嶼浮塵：台灣社會變遷》。台灣社會學會。來源等級 B。
-31. 范雲（2024）婦運與台灣公民社會二十年觀察（具體論文出處待 fact-check 確認）。來源等級 B。
-32. Wang Hui（2003）*China's New Order: Society, Politics, and Economy in Transition*. Cambridge MA: Harvard University Press. 來源等級 A。
-74. 黃詩淳（2020）〈意定監護新制與身心障礙者權利公約〉《月旦法學雜誌》第 305 期 p.87-105。來源等級 B（台灣 CRPD §29 supporter 法律承載之本土文獻）。
+### D. Contemporary Public Sphere Research
 
-### F. 工程承載既有事實與基礎設施
+[^48]: Bohman, J. (1996). *Public Deliberation: Pluralism, Complexity, and Democracy*. MIT Press. Source grade A.
+[^49]: Fraser, N. (1990). "Rethinking the Public Sphere: A Contribution to the Critique of Actually Existing Democracy." *Social Text* 25/26: 56–80. Source grade A.
+[^50]: Warner, M. (2002). *Publics and Counterpublics*. New York: Zone Books. Source grade A.
+[^51]: Asen, R. (2017). "Neoliberalism, the Public Sphere, and a Public Good." *Quarterly Journal of Speech* 103(4): 329–349. Source grade A.
+[^53]: Vaidhyanathan, S. (2018). *Antisocial Media: How Facebook Disconnects Us and Undermines Democracy*. Oxford University Press. Source grade A.
+[^54]: Tufekci, Z. (2017). *Twitter and Tear Gas: The Power and Fragility of Networked Protest*. Yale University Press. Source grade A.
+[^55]: Gillespie, T. (2018). *Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media*. Yale University Press. Source grade A.
+[^62]: Benkler, Y., Faris, R., & Roberts, H. (2018). *Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics*. Oxford University Press. Source grade A.
+[^71]: Benkler, Y. (2006). *The Wealth of Networks: How Social Production Transforms Markets and Freedom*. Yale University Press. Source grade A.
+[^72]: Sunstein, C. R. (2017). *#Republic: Divided Democracy in the Age of Social Media*. Princeton University Press. Source grade A.
+[^83]: Crary, J. (2022). *Scorched Earth: Beyond the Digital Age to a Post-Capitalist World*. London: Verso. Source grade A.
 
-1. Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). OJ L 2024/1689, 2024-07-12. Article 5(1)(b) + Recital 29. 來源等級 A。
-2. Stanford Internet Observatory. (2024-12). *Final Report on Platform Manipulation in the 2024 US Presidential Election*. Stanford University. 來源等級 A（須於 fact-check 階段確認發布狀態）。
-3. 國家通訊傳播委員會（NCC）2024 年總統與立法委員選舉期間深偽影音監察報告；台灣事實查核中心、IORG（Information Operations Research Group）、Doublethink Lab 2024 大選 deepfake 案例彙整。來源等級 B。
-4. Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework (eIDAS 2.0). OJ L 2024/1183. 來源等級 A。
-5. 數位發展部（MODA, Taiwan）TW DIW（台灣數位皮夾）2025 至 2026 規格文件與信任清單上鏈進度（公開資料）。來源等級 B。
-6. Hannah Arendt Center for Politics and Humanities, Bard College. 2024-2025 publications on digital public realm. URL: https://hac.bard.edu/publications/. 來源等級 B。
-15. Bovens, M. (2007). "Analysing and Assessing Accountability: A Conceptual Framework." *European Law Journal* 13(4): 447-468. 來源等級 A。
-16. Nissenbaum, H. (2010). *Privacy in Context: Technology, Policy, and the Integrity of Social Life*. Stanford University Press. 來源等級 A。
-17. Marshall, T. H. (1950). *Citizenship and Social Class and Other Essays*. Cambridge University Press. 來源等級 A。
-18. Tomasev, N. et al. (2026). "AI Agents and Civic Action: Delegation Limits and Accountability Architecture." Preprint, working paper. 來源等級 B。
-19. United Nations. Convention on the Rights of Persons with Disabilities (CRPD), Article 29 與 General Comment No. 1 (2014) on equal recognition before the law. 來源等級 A。
-52. European Data Protection Board. Guidelines 03/2022 on Deceptive Design Patterns in Social Media Platform Interfaces. 來源等級 A。
-80. Council of Europe. *Framework Convention on Artificial Intelligence, Human Rights, Democracy and the Rule of Law* (CETS No. 225), 2024-09-05. Article 5「Democratic Processes」. 來源等級 A。
+### E. Chinese / Taiwanese Indigenisation Sources
 
-### G. 其他規範性進路（PRF 開放邊界）
+[^29]: Zhu, Yun-han (2012). *High in the Clouds: A Scholar's Reflections on the Twenty-First Century*. Taipei: Commonwealth Publishing. Source grade B.
+[^30]: Lin, Tsung-hong (2020). *Floating Dust on the Island: Social Change in Taiwan*. Taiwanese Sociological Association. Source grade B.
+[^31]: Fan, Yun (2024). Two decades of feminist movement and Taiwanese civil society observations (specific article citation to be confirmed in fact-checking). Source grade B.
+[^32]: Wang Hui (2003). *China's New Order: Society, Politics, and Economy in Transition*. Cambridge, MA: Harvard University Press. Source grade A.
+[^74]: Huang, Shih-chun (2020). "The Intended Guardianship System and the Convention on the Rights of Persons with Disabilities." *Yuedan Law Review*, No. 305, pp. 87–105. Source grade B (indigenous Taiwanese CRPD §29 supporter legal bearing source).
 
-34. Rawls, J. (1971). *A Theory of Justice*. Harvard University Press. 來源等級 A。
-35. Sen, A. (2009). *The Idea of Justice*. Belknap Press of Harvard University Press. 來源等級 A。
-36. Nussbaum, M. C. (2011). *Creating Capabilities: The Human Development Approach*. Harvard University Press. 來源等級 A。
-37. Honneth, A. (2014). *Freedom's Right: The Social Foundations of Democratic Life*. Columbia University Press. 來源等級 A。
+### F. Engineering Bearing: Established Facts and Infrastructure
 
-### H. 民主合法性實證與監測
+[^1]: Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). OJ L 2024/1689, 2024-07-12. Article 5(1)(b) + Recital 29. Source grade A.
+[^2]: Stanford Internet Observatory. (2024-12). *Final Report on Platform Manipulation in the 2024 US Presidential Election*. Stanford University. Source grade A (publication status to be confirmed in fact-checking).
+[^3]: National Communications Commission (NCC). 2024 presidential and legislative election deepfake audio-visual monitoring report; Taiwan FactCheck Centre, IORG (Information Operations Research Group), Doublethink Lab 2024 election deepfake case compilation. Source grade B.
+[^4]: Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework (eIDAS 2.0). OJ L 2024/1183. Source grade A.
+[^5]: Ministry of Digital Affairs (MODA, Taiwan). TW DIW (Taiwan Digital Identity Wallet) 2025–2026 specification documents and trust list on-chain progress (public data). Source grade B.
+[^6]: Hannah Arendt Center for Politics and Humanities, Bard College. 2024–2025 publications on digital public realm. URL: https://hac.bard.edu/publications/. Source grade B.
+[^15]: Bovens, M. (2007). "Analysing and Assessing Accountability: A Conceptual Framework." *European Law Journal* 13(4): 447–468. Source grade A.
+[^16]: Nissenbaum, H. (2010). *Privacy in Context: Technology, Policy, and the Integrity of Social Life*. Stanford University Press. Source grade A.
+[^17]: Marshall, T. H. (1950). *Citizenship and Social Class and Other Essays*. Cambridge University Press. Source grade A.
+[^18]: Tomasev, N. et al. (2026). "AI Agents and Civic Action: Delegation Limits and Accountability Architecture." Preprint, working paper. Source grade B.
+[^19]: United Nations. Convention on the Rights of Persons with Disabilities (CRPD), Article 29 and General Comment No. 1 (2014) on equal recognition before the law. Source grade A.
+[^52]: European Data Protection Board. Guidelines 03/2022 on Deceptive Design Patterns in Social Media Platform Interfaces. Source grade A.
+[^80]: Council of Europe. *Framework Convention on Artificial Intelligence, Human Rights, Democracy and the Rule of Law* (CETS No. 225), 2024-09-05. Article 5 "Democratic Processes." Source grade A.
 
-20. V-Dem Institute. (2024). *Democracy Report 2024*. University of Gothenburg. URL: https://v-dem.net/publications/democracy-reports/. 來源等級 A。
-38. Bertelsmann Stiftung. *Transformation Index BTI 2024*. URL: https://bti-project.org/. 來源等級 A。
-39. Freedom House. *Freedom in the World 2024*. URL: https://freedomhouse.org/. 來源等級 A。
+### G. Other Normative Approaches (PRF Open Boundary)
 
-### I. 判例與 Enforcement
+[^34]: Rawls, J. (1971). *A Theory of Justice*. Harvard University Press. Source grade A.
+[^35]: Sen, A. (2009). *The Idea of Justice*. Belknap Press of Harvard University Press. Source grade A.
+[^36]: Nussbaum, M. C. (2011). *Creating Capabilities: The Human Development Approach*. Harvard University Press. Source grade A.
+[^37]: Honneth, A. (2014). *Freedom's Right: The Social Foundations of Democratic Life*. Columbia University Press. Source grade A.
 
-58. Court of Justice of the European Union. Judgment of 7 December 2023, *SCHUFA Holding (Scoring)*, C-634/21. 來源等級 A。
-59. Supreme Court of the United States. *SEC v. Jarkesy*, 144 S. Ct. 2117 (2024). Decided 27 June 2024. 來源等級 A。
+### H. Democratic Legitimacy Empirical Monitoring
 
-### J. civic-proof 系列內部 forward-link
+[^20]: V-Dem Institute. (2024). *Democracy Report 2024*. University of Gothenburg. URL: https://v-dem.net/publications/democracy-reports/. Source grade A.
+[^38]: Bertelsmann Stiftung. *Transformation Index BTI 2024*. URL: https://bti-project.org/. Source grade A.
+[^39]: Freedom House. *Freedom in the World 2024*. URL: https://freedomhouse.org/. Source grade A.
 
-7. civic-proof series article 1 (A1)「可問責不以實名為前提」。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-8. civic-proof series article 2 (A3)「公民證明的概念定位」。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-9. civic-proof series article 8 (A8)「DNS vs identity trust roots」（FTLA 四層治理框架）。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-10. civic-proof series article 14 (A14)「跨法域救濟空白」。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-11. civic-proof series article 15 (A15)「civic-proof inclusion rights」。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-12. civic-proof series article 16 (F1)「civic AI agent delegation limits」§4 三進路合取覆蓋。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-13. civic-proof series article 17 (F2)「civic receipts provenance」§3 V_receipt C1-C6 與定理 T1-T4。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-14. civic-proof series article 18 (F3)「selective disclosure UX failure」§3 V_ux 與 §7 supporter UI 三層分離。blog-pro 已上線版本。來源等級 A（系列內部 forward-link）。
-73. F1 (article 16) §3.1 5×3 矩陣與 §4 三進路合取——對 TW DIW LLM-agent 階段衝擊預測之 mechanism 引用。系列內部對位。來源等級 A。
+### I. Case Law and Enforcement
+
+[^58]: Court of Justice of the European Union. Judgment of 7 December 2023, *SCHUFA Holding (Scoring)*, C-634/21. Source grade A.
+[^59]: Supreme Court of the United States. *SEC v. Jarkesy*, 144 S. Ct. 2117 (2024). Decided 27 June 2024. Source grade A.
+
+### J. Civic-Proof Series Internal Forward-Links
+
+[^7]: Civic-proof series Article 1 (A1) "Accountability Does Not Presuppose Real-Name Identification." Published on blog-pro. Source grade A (series internal forward-link).
+[^8]: Civic-proof series Article 2 (A3) "Conceptual Positioning of Civic Proof." Published on blog-pro. Source grade A (series internal forward-link).
+[^9]: Civic-proof series Article 8 (A8) "DNS vs. Identity Trust Roots" (FTLA four-layer governance framework). Published on blog-pro. Source grade A (series internal forward-link).
+[^10]: Civic-proof series Article 14 (A14) "Cross-Jurisdictional Redress Gaps." Published on blog-pro. Source grade A (series internal forward-link).
+[^11]: Civic-proof series Article 15 (A15) "Civic-Proof Inclusion Rights." Published on blog-pro. Source grade A (series internal forward-link).
+[^12]: Civic-proof series Article 16 (F1) "Civic AI Agent Delegation Limits" §4 three-approach conjunctive coverage. Published on blog-pro. Source grade A (series internal forward-link).
+[^13]: Civic-proof series Article 17 (F2) "Civic Receipts Provenance" §3 V_receipt C1–C6 and theorems T1–T4. Published on blog-pro. Source grade A (series internal forward-link).
+[^14]: Civic-proof series Article 18 (F3) "Selective Disclosure UX Failure" §3 V_ux and §7 supporter UI three-layer separation. Published on blog-pro. Source grade A (series internal forward-link).
+[^73]: F1 (Article 16) §3.1 5×3 matrix and §4 three-approach conjunction—mechanism citation for predicting the impact of TW DIW's LLM-agent phase. Series internal alignment. Source grade A.
