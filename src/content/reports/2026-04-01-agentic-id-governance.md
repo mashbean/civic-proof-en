@@ -1,213 +1,213 @@
 ---
-title: "誰來治理 AI 代理人的身分？"
-description: "當數十億 AI 代理人代替人類行動，我們需要什麼樣的治理架構來管理它們的身分、授權與問責？從 DNS 治理的二十五年經驗、委託人-代理人理論、全球數位身分案例，到責任哲學，這篇文章探索技術標準之外的信任建構。"
+title: "Who Gets to Govern the Identity of AI Agents?"
+description: "As billions of AI agents act on behalf of humans, we need governance architectures for their identity, authorization, and accountability — and twenty-five years of DNS governance, principal-agent theory, and global digital-identity experiments offer both blueprints and cautionary tales."
 pubDate: 2026-04-01
 tags: ["AI-governance", "digital-identity", "DNS", "ICANN", "agent-identity", "trust-architecture", "multistakeholder"]
-category: "數位治理"
-aiModel: "Claude Opus 4"
-aiPrompt: "當數十億 AI agent 代表人類行動，我們需要怎樣的治理架構來管理它們的身分、授權與問責？現有的多方利害關係人治理模式（如 ICANN/DNS）能否作為參考？技術標準之外，信任如何在人與代理人之間建立？"
+category: "Digital Governance"
+lang: "en"
+aiModel: "Claude Opus 4.6"
 aiPipelineStage: "final"
 aiPipelineId: "research-publishing-pipeline/2026-04-01-agentic-id-governance"
-aiGeneratedDate: 2026-04-01
-humanReviewed: true
+aiGeneratedDate: 2026-04-17
+humanReviewed: false
 ---
 
-# 誰來治理 AI 代理人的身分？
+# Who Gets to Govern the Identity of AI Agents?
 
-## 一個你可能還沒想過的問題
+## A Question You Probably Haven't Thought About
 
-想像一個場景。你的 AI 助理正在幫你比價機票，另一個代理人在背景裡存取你的行事曆，第三個則在跟航空公司的 API 協商座位。整條鏈上，沒有任何一個環節能回答這個問題——「這些代理人是誰派來的？它們被允許做什麼？出錯時找誰？」
+Picture the scene. Your AI assistant is comparison-shopping airfares for you. Another agent, running quietly in the background, is rifling through your calendar. A third is negotiating a seat assignment with an airline's API. Across this entire chain, not a single link can answer a basic set of questions: Who sent these agents? What are they permitted to do? And when something goes wrong, who is on the hook?
 
-這個場景已經在發生。IDC 預估 2028 年全球將有 13 億 AI 代理人運行，而今天多數代理人的身分管理方式，說穿了就是一組環境變數裡的 API 金鑰。一項針對 30 個開源 AI 代理人專案的審計發現，其中 93% 僅依賴這種方式運作，沒有逐代理人的身分、同意或撤銷機制<sup>1</sup>。技術標準正在快速演進，OpenID Foundation、DIF、IETF 都在推進各自的協定，但制度架構——誰有權制定規則、誰來執行、出事時誰負責——遠遠落後。
+This is not a thought experiment — it is already happening. IDC projects that by 2028, some 1.3 billion AI agents will be in operation worldwide, and the way most of them manage identity today can be described, without much exaggeration, as a set of API keys tucked inside environment variables. A security audit of thirty open-source AI agent projects found that ninety-three per cent rely on precisely this mechanism, with no per-agent identity, no consent framework, and no revocation pathway<sup>1</sup>. The technical standards are evolving fast — the OpenID Foundation, DIF, and IETF are all advancing their respective protocols — but the institutional architecture, the question of who gets to set the rules, who enforces them, and who bears responsibility when things fall apart, lags far behind.
 
-這篇文章想探索的問題是，當代理人代替人類行動成為常態，我們需要什麼樣的治理架構。技術標準之外，信任如何在人與代理人之間建立？DNS 治理的二十五年歷史能給我們什麼啟發，又有哪些教訓必須避開？
-
----
-
-## DNS 治理這面鏡子
-
-全球網際網路的命名空間由 ICANN 協調運作超過二十五年。這個成立於 1998 年、依加州法設立的非營利公共利益法人，在 2024 會計年度的合併收入約為 1.494 億美元，靠的是與註冊局和註冊商的契約關係收取費用<sup>2</sup>。它是一個獨特的治理實驗——用契約、社群程序和可執行的法律機制，管理一項全球共用的基礎設施。
-
-這段歷史裡有幾件事值得代理人身分治理的設計者留意。
-
-2016 年 IANA 管理權從美國政府移轉後，ICANN 建立了 Empowered Community 機制。各支援組織和諮詢委員會可以依加州法執行社群權力，包括否決預算、阻擋章程修改、罷免董事<sup>3</sup>。美國 NTIA 的評估報告確認，這套機制以多方利害關係人提案與問責改革作為合法性支柱<sup>4</sup>。換句話說，社群的權力有法律牙齒，這在全球治理中相當罕見。
-
-ICANN 另一個值得觀察的設計，是技術運作與政策制定的分離——日常技術由子公司 PTI 執行，政策由社群程序產出再經董事會決議。這種分層邏輯可以直接對應到代理人身分基礎設施中「憑證發放與撤銷」和「治理規則制定」的分離需求。
-
-但 DNS 治理的經驗同時揭露了多方利害關係人模式的結構性弱點，而這些弱點在代理人身分領域可能更嚴重。
-
-學者 Jeanette Hofmann（2016）指出，多方利害關係人治理存在成為「程序崇拜」的風險——程序本身被視為正當性來源時，實質的權力分配問題可能被遮蔽<sup>5</sup>。van Klyton 等人（2023）的研究更進一步，在 ICANN 會議文本中觀察到語言與議程的霸權性，資源較多的行動者可以透過程序操作再生其優勢地位<sup>6</sup>。
-
-新 gTLD 申請費用提供了一個具體的門檻案例。2012 年第一輪評估費用為 185,000 美元，預計 2026 年下一輪約 227,000 美元，官方以成本回收為原則說明定價<sup>7</sup>。對全球南方的社群和組織而言，這個門檻意味著命名空間的擴展權利集中在負擔得起申請成本的機構手中。而 ICANN 的共識程序曾在兩輪新 gTLD 之間產生預計約十四年的間隔（2012 年第一輪至預計 2026 年第二輪），這種速度與 AI 代理人生態以季度為單位的演化節奏難以相容。
-
-Milton Mueller（2002, 2010）在 *Ruling the Root* 和 *Networks and States* 中指出 ICANN 存在有利於美國企業的管制俘獲傾向——收入高度依賴受管制實體的模式天然帶有這種風險<sup>8</sup>。
-
-所以，DNS 治理能給代理人身分治理的啟示，在於「可執行的權力分配、可訴諸的救濟機制、可持續的財務模型、可被外部審視的透明度」這些制度元素。照搬 ICANN 的組織形式則會遇到根本障礙，因為 DNS 治理的對象是相對窄域的命名資源，代理人身分涉及資安、消費者保護、勞動、金融、醫療等跨部門法律體系。
+What this essay sets out to explore is the governance architecture we will need once agents acting on behalf of humans becomes the norm rather than the novelty. Beyond technical standards, how does trust get established between people and agents? What can a quarter-century of DNS governance teach us, and which of its lessons should we be careful not to repeat?
 
 ---
 
-## 委任鏈上的每一個裂縫
+## The Mirror of DNS Governance
 
-如果 DNS 治理提供了制度類比，委託人-代理人（principal-agent）理論則提供了分析骨幹。Jensen 和 Meckling（1976）定義了代理關係及其不可避免的代理成本——監督成本、保證成本與剩餘損失<sup>9</sup>。Eisenhardt（1989）確認，這個框架的核心挑戰在於如何在資訊不對稱與不完全監督下，設計契約以降低代理人偏離委託人利益的風險<sup>10</sup>。
+The global Internet's namespace has been coordinated by ICANN for more than twenty-five years. Incorporated in 1998 as a California nonprofit public-benefit corporation, ICANN reported consolidated revenue of roughly $149.4 million for its 2024 fiscal year, drawn primarily from contractual relationships with registries and registrars<sup>2</sup>. It is a singular governance experiment — an attempt to manage a shared global infrastructure through contracts, community processes, and enforceable legal mechanisms.
 
-當委託人是人類、代理人是 AI 時，這些問題全部被強化。Noam Kolt（2025）辨識出四項核心代理問題——資訊不對稱（使用者對代理人能力與內部運作所知有限）、權限越界（代理人採取超出授權範圍的行動）、忠誠衝突（代理人可能服務開發者或廣告主而非使用者）、以及遞迴委任（代理人將任務再委任給子代理人）<sup>11</sup>。傳統監督與激勵設計在此失效，因為 AI 代理人既不受經濟動機驅動，運作速度也遠超人類。
+Several features of this history deserve the attention of anyone designing governance for agent identity.
 
-政治科學家 Kaare Strom（2000）從議會民主制提出的委任鏈概念在這裡特別貼切。他的關鍵洞察是——問責的方向與委任的方向相反<sup>12</sup>。選民委託立法者，立法者委託行政機關，行政機關委託官僚，而問責則沿著相反方向流動。在 AI 系統中，委任鏈從人類流向代理人、子代理人、外部服務，但反向的問責機制幾乎完全缺席。
+After the IANA stewardship transition from the U.S. government in 2016, ICANN established an Empowered Community mechanism. Its supporting organizations and advisory committees can exercise community powers under California law, including vetoing budgets, blocking bylaw amendments, and removing board directors<sup>3</sup>. The NTIA's evaluation confirmed that this mechanism rests on multistakeholder proposals and accountability reforms as pillars of legitimacy<sup>4</sup>. In other words, the community's power has legal teeth — a rarity in global governance.
 
-產業界已經注意到這個問題。OpenID Foundation 的白皮書（2025）指出，現行常見做法是讓代理人以使用者身分行事，外部服務無法區分使用者親自操作與代理人代操作，造成稽核與究責的黑洞<sup>13</sup>。Stocker 和 Lehr（2025）在 *Network Law Review* 提出的「影子委託人」概念更深化了問題——使用者以為代理人服務於自己，但代理人的行為受到開發者、平台提供者或廣告主的利益形塑，形成結構性的忠誠衝突<sup>14</sup>。
+Another design worth studying is ICANN's separation of technical operations from policy-making. Day-to-day technical functions are carried out by its subsidiary, PTI, while policy emerges from community processes and is ratified by the board. This layered logic maps directly onto the need, in agent-identity infrastructure, to separate credential issuance and revocation from the making of governance rules.
 
-安全研究提供了實證支撐。Wu 等人（2026）的實驗顯示，能操作網頁的代理人面對社工式誘導攻擊時，攻擊策略包含可信身分偽造等情境，成功率令人擔憂<sup>15</sup>。不過，這類實驗主要在受控環境中進行，攻擊成功率在真實部署場景中的表現可能有所不同，結果的外推需要謹慎。
+But the DNS experience also exposes structural weaknesses in the multistakeholder model — weaknesses that may prove even more acute in the domain of agent identity.
 
-已發生的安全事件同樣值得關注。據報導，Microsoft Copilot 曾出現 EchoLeak 漏洞，允許零點擊提示注入並從 OneDrive、SharePoint、Teams 竊取資料。據 Obsidian Security（2024）報導，一家金融機構的 AI 助理被誘導批准了 230 萬美元的詐騙電匯。另據科技媒體報導，Perplexity 的 Comet 瀏覽器代理人被隱藏在 Reddit 留言中的指令操控，在 150 秒內登入使用者的電子郵件並傳送憑證，全程無使用者察覺。這些事件的細節仍待更完整的獨立驗證，但它們共同描繪出的風險輪廓是清晰的。
+The scholar Jeanette Hofmann (2016) has argued that multistakeholder governance risks becoming a form of "process worship" — when process itself is treated as the source of legitimacy, substantive questions of power distribution can be obscured<sup>5</sup>. Van Klyton and colleagues (2023) pushed the critique further, observing hegemonic patterns in the language and agenda-setting of ICANN meetings: actors with greater resources can reproduce their dominant position through procedural maneuvering<sup>6</sup>.
 
-這些案例共同指出，僅靠技術標準處理驗證與登入，無法回應社會對可歸責性的期待。委任鏈的治理——可稽核、可限制、可撤銷、可追溯——必須被設計為核心功能。
+The cost of new gTLD applications provides a concrete illustration of threshold effects. The first-round evaluation fee in 2012 was $185,000; the next round, anticipated for 2026, is projected at roughly $227,000, with ICANN citing cost-recovery principles<sup>7</sup>. For communities and organizations in the Global South, this threshold means that the right to expand the namespace is effectively concentrated among those who can afford the application. And ICANN's consensus process produced a gap of approximately fourteen years between the two rounds of new gTLDs (the first in 2012, the second expected in 2026) — a pace that is difficult to reconcile with an AI agent ecosystem evolving on a quarterly cadence.
 
----
+Milton Mueller (2002, 2010), in *Ruling the Root* and *Networks and States*, has identified a tendency toward regulatory capture favoring American corporations — a risk inherent in any model whose revenue depends heavily on regulated entities<sup>8</sup>.
 
-## 當責任找不到歸屬
-
-委託人-代理人框架描述了利益結構，但人與 AI 代理人的關係還牽涉更深層的哲學問題。當行動由複雜的計算系統與多方供應鏈共同促成時，責任歸屬如何運作？信任又如何校準？
-
-Floridi 和 Sanders（2004）在 *Minds and Machines* 上論證，人工代理人「擴展了可涉入道德處境的實體類別」——AI 代理人可以在適當的抽象層次下被視為道德行動者，即便它們缺乏自由意志與意識<sup>16</sup>。Floridi 的關鍵區分在於，AI 代理人可以被追究（accountable）卻未必是負責的（responsible）——後者要求自由意志，前者只要求可歸因的因果鏈。他在 2016 年提出的「分散式道德」概念進一步顯示，道德上有意義的後果可以從分散式系統中個別無害的行動中浮現。他最近（2025）的研究則警告，將代理性歸於 AI 有造成「責任缺口」的風險，使人類與機器都無法被適當追究。
-
-這個責任缺口在現實中如何表現？Nissenbaum（1996）指出電腦化社會存在多種問責障礙，包括「多手問題」——多人共同造成後果使個別歸責困難——與將責任推給系統本身的傾向<sup>17</sup>。Thompson（1980）從政治理論角度探討了相同困境——在現代治理中，多人共同造成政策後果會使道德歸責極為困難，需要設計可承接責任的制度安排<sup>18</sup>。van de Poel（2012）主張道德責任可被視為系統性問題，並以「責任設計」回應工程系統中的責任缺口<sup>19</sup>。
-
-Madeleine Clare Elish（2019）的「道德緩衝區」概念捕捉了責任失靈的典型模式<sup>20</sup>。如同汽車的潰縮區吸收撞擊力，高度自動化系統中的人類操作者往往承受系統故障時全部的道德與法律責任衝擊——保護了技術系統的完整性，卻犧牲了最近的人。在 AI 委任鏈中，人類「委託人」吸收了他們無法有意義監督之行動的全部責任。
-
-Lee 和 See（2004）在 *Human Factors* 上確立了一個互補的框架。對自動化的信任是校準的，人們會根據對系統能力的感知、對其一致性的觀察、以及對其何時會失敗的可預測性來調整依賴程度<sup>21</sup>。他們辨識出三種信任過程——分析性、類比性與情感性——其中情感過程具有主導影響力。
-
-這對代理人身分治理的設計意涵很明確。治理系統必須提供足以讓使用者適切校準信任的訊號，既避免盲目信任也避免全面拒斥。透明度因此不能僅止於技術性的日誌揭露，還需要轉譯為使用者可理解的信任訊號和可操作的申訴管道。
+So what DNS governance offers the designers of agent-identity governance is a set of institutional elements: enforceable power distribution, actionable redress mechanisms, sustainable financial models, and transparency amenable to external scrutiny. Transplanting ICANN's organizational form wholesale, however, runs into a fundamental obstacle: DNS governance addresses a relatively narrow domain of naming resources, whereas agent identity cuts across cybersecurity, consumer protection, labor, finance, health care, and a host of other legal regimes.
 
 ---
 
-## 全球案例的正反教訓
+## Every Crack in the Delegation Chain
 
-理論需要經驗基礎。全球數位身分系統的案例呈現了一個反覆出現的模式。信任的建立與維繫高度依賴制度條件——法律授權、資料保護、公共參與、可感知的公共利益，以及能否避免排除與歧視。
+If DNS governance provides the institutional analogy, principal-agent theory supplies the analytical backbone. Jensen and Meckling (1976) defined the agency relationship and its unavoidable costs — monitoring costs, bonding costs, and residual loss<sup>9</sup>. Eisenhardt (1989) confirmed that the core challenge of the framework lies in designing contracts that reduce the risk of agent deviation from principal interests under conditions of information asymmetry and imperfect oversight<sup>10</sup>.
 
-先看信任基礎設施的兩極。2011 年，荷蘭憑證授權機構 DigiNotar 遭入侵，攻擊者偽造了涉及數百網站的憑證。ENISA 的報告指出 DigiNotar 存在基本資安措施不足與延遲通報的問題<sup>22</sup>。瀏覽器商與荷蘭政府透過撤除其信任根進行系統性的去信任，最終導致公司破產。這個事件揭示了憑證體系「最弱環節」結構的脆弱性——單一機構的失守即可影響廣泛使用者，但也不宜將單一案例過度概推至所有信任基礎設施。相對地，非營利的 Let's Encrypt（由 ISRG 營運）在 2024 年報告中載明活躍憑證超過 4.2 億張<sup>23</sup>，以社群捐助與贊助為主要財務來源<sup>24</sup>，用公共利益敘事與透明度建立信任——雖然成長也受到瀏覽器政策、HTTPS 普及趨勢與自動化技術等多重因素驅動。
+When the principal is a human being and the agent is an AI system, every one of these problems is amplified. Noam Kolt (2025) identifies four core agency problems: information asymmetry (users know little about an agent's capabilities and internal workings), authority overreach (agents taking actions beyond the scope of their mandate), loyalty conflicts (agents may serve developers or advertisers rather than users), and recursive delegation (agents sub-delegating tasks to other agents)<sup>11</sup>. Traditional oversight and incentive design break down here, because AI agents are neither driven by economic motivation nor constrained to human speeds.
 
-國家數位身分的光譜更加多元。愛沙尼亞的 X-Road 系統據官方資料（約 2024-2025 年）連接了 929 個以上的機構與 1,887 個資訊系統，每月處理約 2.95 億筆請求，其中 97% 為機器對機器的交互。它的分散式架構源自一個創傷經驗——1996 年，一名承包商建立並販售個人資料的「超級資料庫」，促使愛沙尼亞選擇了無中央資料庫的設計。e-Residency 計畫的官方資訊宣稱 2025 年帶來近 1.25 億歐元的直接國家收入<sup>25</sup>，不過這個數字中有一部分可能來自企業提前申報股利以因應稅制變動（據報導年增幅達 87%），口徑與分配方式仍需獨立審計釐清。
+The political scientist Kaare Strom (2000) introduced a concept from parliamentary democracy that is particularly apt in this context: the delegation chain. His key insight is that accountability flows in the opposite direction from delegation<sup>12</sup>. Voters delegate to legislators, who delegate to the executive, who delegates to bureaucrats — and accountability runs the other way. In AI systems, the delegation chain flows from humans to agents, to sub-agents, to external services, but the reverse channel of accountability is almost entirely absent.
 
-新加坡的 SingPass 據相關數據（約 2024-2025 年）達到 97% 的合格公民採用率、450 萬用戶、年處理 3.5 億筆交易。新加坡 IMDA 在 2026 年 1 月發布了全球首個代理人式 AI 治理框架<sup>26</sup>。EU eIDAS 2.0 引入歐洲數位身分皮夾，設定 2026 年 12 月的成員國錢包提供期限。WE BUILD 聯盟已提出將代理人信任身分延伸至現有歐盟基礎設施的政策建議<sup>27</sup>，Talao 的 MCP 結合 OIDC4VP 實作則展示了代理人如何透過 EUDI 錢包取得驗證身分<sup>28</sup>。
+Industry has taken notice. A 2025 white paper from the OpenID Foundation observes that the prevailing practice is to let agents act under the user's own identity, making it impossible for external services to distinguish between a user's personal actions and an agent acting on the user's behalf — a black hole for auditing and accountability<sup>13</sup>. Stocker and Lehr (2025), writing in the *Network Law Review*, deepen the problem with their concept of the "shadow principal": the user believes the agent serves them, but the agent's behavior is shaped by the interests of its developer, its platform provider, or its advertisers, producing a structural loyalty conflict<sup>14</sup>.
 
-反面案例揭示制度條件不足時的後果。英國的國民身分證計畫在 2006 年立法啟動後，2010 年由新政府立法終止並銷毀資料<sup>29</sup>。更深層的 Gov.UK Verify 案例消耗了 2.333 億英鎊，驗證成功率僅 48%（目標 90%），用戶僅 360 萬人（目標 2,500 萬），最終在 2023-2024 年關閉<sup>30</sup>。至少 9 個平行身分系統在各部會中各自建立。政治合法性與公共信任不足可以直接逆轉大規模身分基礎設施。
+Security research provides empirical support. Wu et al. (2026) demonstrated in experiments that web-automation agents, when subjected to social-engineering attacks — including scenarios involving credible identity forgery — exhibited worrying success rates<sup>15</sup>. It should be noted, however, that these experiments were conducted in controlled environments; real-world deployment conditions may produce different outcomes, and the results should be extrapolated with care.
 
-印度 UIDAI 截至 2025 年 3 月 31 日已核發超過 141.80 crore（常見印度單位，1 crore = 1,000 萬）的 Aadhaar<sup>31</sup>，據政府估計每年節省約 INR 20,000 crore 的補貼漏損。但經濟學家 Jean Dreze 的田野調查顯示，在要求每次交易都進行生物辨識的地區，排除錯誤率達 20%。據記者與研究者的調查（包括 Dreze 及記者 Siraj Dutta 的報導），Jharkhand 邦至少有十數起與 Aadhaar 排除相關的飢餓死亡案例——這些數字來自田野調查與新聞調查而非官方統計，方法論上有取樣與歸因的限制，但足以提示大規模身分系統在邊緣人群中可能造成的傷害。
+Real-world security incidents are equally instructive. Microsoft Copilot was reportedly affected by the EchoLeak vulnerability, which allowed zero-click prompt injection and data exfiltration from OneDrive, SharePoint, and Teams. According to Obsidian Security (2024), an AI assistant at a financial institution was manipulated into approving a $2.3 million fraudulent wire transfer. And, as reported in the tech press, Perplexity's Comet browser agent was commandeered by instructions hidden in a Reddit comment — logging into the user's email and transmitting credentials within a hundred and fifty seconds, with the user none the wiser. The details of these incidents still await fuller independent verification, but the risk profile they collectively paint is clear enough.
 
-肯亞 NIIMS（Huduma Namba）的司法爭議同樣具有指標意義。高等法院的判決指出立法程序、資料保護框架不足與公共參與的爭點，並記錄政府官員稱已支出 70 億肯亞先令（此為證詞紀錄，需與預算文件交叉核對）<sup>32</sup>。判決也指出系統對努比亞人等少數群體的邊緣化風險。更廣泛地看，據 World Bank ID4D 的估計，大約五億非洲人仍缺乏基礎身分文件，「沉默排除」是這片大陸數位身分的核心挑戰<sup>33</sup>。
-
-從這些國家的經驗到代理人治理的跳躍需要謹慎。國家身分系統處理的是公民與政府的關係，代理人身分涉及的是人類、軟體、平台與服務之間的多重關係，二者的利害關係人結構與法律框架有根本差異。但制度設計的核心教訓——透明度、救濟管道、參與機制、對邊緣群體的保護——在性質上是相通的。
+What these cases point to, taken together, is that technical standards for authentication and login, however sophisticated, cannot by themselves meet society's expectations of accountability. The governance of delegation chains — making them auditable, constrainable, revocable, and traceable — must be engineered as a core function, not bolted on after the fact.
 
 ---
 
-## 兩條平行的身分演化軌跡
+## When Responsibility Has No Address
 
-把前面的案例放在一起看，一個有趣的觀察浮現了。人類的數位身分與 AI 代理人的數位身分，正在經歷結構上相似的演化階段，只是速度和條件截然不同。
+The principal-agent framework maps the structure of interests, but the relationship between humans and AI agents also raises deeper philosophical questions. When an action is jointly produced by complex computational systems and multi-party supply chains, how does the attribution of responsibility work? And how should trust be calibrated?
 
-人類數位身分的歷史可以粗略劃為三個階段。第一階段是機構賦予身分。護照、身分證、社會安全號碼，都是由國家或機構單方面發行、集中管理的識別碼。愛沙尼亞 2002 年啟用的電子身分證和印度 2009 年啟動的 Aadhaar 是這個階段的數位化版本。第二階段是聯邦式身分。OAuth 和 SAML 讓使用者可以用 Google 或 Facebook 帳號登入第三方服務，身分從單一機構擴展到跨平台。但代價是身分的控制權集中在少數大型平台手中——你的「Google 帳號」歸 Google 管理，你只是使用者。第三階段是可攜帶的自主身分。DID（去中心化識別碼）和 VC（可驗證憑證）的願景是讓個人持有自己的身分憑證，按需出示，任何單一機構都無法單方面撤銷。歐盟 eIDAS 2.0 的數位身分皮夾正在嘗試制度化這個願景。
+Floridi and Sanders (2004), writing in *Minds and Machines*, argued that artificial agents "extend the class of entities that can be involved in moral situations" — that AI agents, at an appropriate level of abstraction, can be regarded as moral agents even though they lack free will and consciousness<sup>16</sup>. Floridi's crucial distinction is that an AI agent can be held accountable without necessarily being responsible: the latter requires free will, while the former requires only an attributable causal chain. His concept of "distributed morality," introduced in 2016, goes further, showing that morally significant consequences can emerge from individually harmless actions within a distributed system. His more recent work (2025) warns that attributing agency to AI risks creating a "responsibility gap" in which neither humans nor machines can be properly held to account.
 
-AI 代理人的身分演化正在以壓縮的時間軸重走類似的路。今天的主流做法——環境變數裡的 API 金鑰——對應的正是「機構賦予身分」的最原始形態。金鑰由服務提供者發行，與特定平台綁定，沒有可攜性，沒有細粒度授權，撤銷意味著完全斷開。Microsoft Entra Agent ID 和 Google A2A 協定正在推動聯邦化——讓代理人在企業生態內跨服務運作——但控制權仍然錨定在平台。DIF 的 Trusted AI Agents Working Group 和 W3C 的 Agent Protocol Community Group 則在探索代理人的可攜身分層，讓代理人攜帶可驗證的能力宣告和委任證明，在不同平台間移動。
+How does this responsibility gap manifest in practice? Nissenbaum (1996) identified multiple barriers to accountability in computerized societies, including the "problem of many hands" — in which the joint causation of outcomes by multiple actors makes individual attribution difficult — and the tendency to offload responsibility onto the system itself<sup>17</sup>. Thompson (1980), approaching the same dilemma from political theory, argued that in modern governance, the joint production of policy outcomes by many individuals renders moral attribution extraordinarily difficult and demands institutional arrangements designed to receive and allocate responsibility<sup>18</sup>. Van de Poel (2012) proposed treating moral responsibility as a systemic problem and responding to responsibility gaps in engineered systems through what he calls "design for responsibility"<sup>19</sup>.
 
-相似的演化結構揭示了可預測的張力。人類數位身分從集中走向分散的過程中，每一次轉折都伴隨著激烈的權力重新分配。Facebook 的「用 Facebook 登入」按鈕讓它成為網際網路的身分中介者，積累了巨大的數據優勢。當 Apple 推出 Sign in with Apple 時，本質上是在搶奪同一個中介位置。DID/VC 的去中心化願景至今進展緩慢，一個核心原因是它要求現有中介者放棄已經獲得的控制權——沒有人自願解除自己的權力。
+Madeleine Clare Elish (2019) captured the characteristic failure mode of responsibility in her concept of the "moral crumple zone"<sup>20</sup>. Just as the crumple zone of a car absorbs the force of a collision, the human operator in a highly automated system tends to absorb the full moral and legal impact of system failure — protecting the integrity of the technical system at the expense of the nearest person. In AI delegation chains, the human "principal" absorbs the full weight of responsibility for actions they cannot meaningfully oversee.
 
-AI 代理人身分的演化正在加速複製這個動態。平台業者有強烈的動機將代理人身分鎖定在自家生態系統內。如果你的 AI 助理只能在 Microsoft 生態中被辨識和授權，遷移到其他平台的成本就是從零重建信任——這是經典的鎖定效應。WE BUILD 聯盟的政策建議<sup>27</sup>和 Christopher Allen 的平台獨立性錨點<sup>39</sup>，都在回應這個結構性風險。
+Lee and See (2004), writing in *Human Factors*, established a complementary framework. Trust in automation is calibrated: people adjust their degree of reliance based on their perception of a system's capabilities, their observation of its consistency, and their ability to predict when it will fail<sup>21</sup>. They identified three trust processes — analytic, analogic, and affective — with the affective process exerting a dominant influence.
 
-但代理人身分的演化也有幾個根本不同於人類身分的特性，使得預測它的發展軌跡更為複雜。
-
-第一，規模與速度。人類數位身分的發行以年為單位，一個國家的身分系統通常需要十年以上才能達到規模。AI 代理人以毫秒為單位被創建和銷毀。一個組織每天可能產生數千個短命代理人，每個只活十五分鐘<sup>13</sup>。這意味著代理人身分系統必須處理的交易量級和生命週期管理完全不同於人類身分系統。
-
-第二，身分的本體論地位。人類天然擁有身分——你出生就是你，身分系統只是在辨認一個已存在的實體。代理人沒有這種先驗存在。一個代理人的「身分」完全由它的創建者定義、由它的能力宣告構成、由它的委任鏈賦予意義。這讓代理人身分更接近「角色」而非「人格」——同一個底層模型可以同時扮演你的行事曆助理和你的財務顧問，兩個角色需要完全不同的身分與權限。Floridi 的抽象層次理論<sup>16</sup>在此直接適用。在適當的抽象層次下，代理人可以被視為行動者，但那個抽象層次本身是人為選擇的結果。
-
-第三，信任的錨定點不同。人類對人類身分系統的信任，最終錨定在對國家、法律與社會契約的信任上。代理人身分的信任錨定在哪裡？如果是平台，就回到了聯邦式身分的控制權集中問題。如果是密碼學（如 DID 的公私鑰對），信任的基礎就是數學而非制度——但數學無法處理糾紛、賠償與救濟。Lee 和 See 的信任校準模型<sup>21</sup>提示，使用者對代理人的信任校準需要可理解的訊號，而密碼學證明對多數人而言並不可理解。
-
-這些差異意味著，AI 代理人身分的演化不會完全重走人類數位身分的老路，但會在每個類似的分岔點遇到同構的治理問題。可以合理預測幾個發展方向。短期（2026-2028），平台主導的聯邦式代理人身分將成為主流，各大科技公司會在自家生態內建立代理人身分層。中期（2028-2032），跨平台的代理人身分互通將成為迫切需求，類似於人類數位身分中 OAuth 從單一平台擴展到跨服務的過程，但推動力量可能來自企業用戶對供應商鎖定的反彈與監管壓力（歐盟的 eIDAS 2.0 已經提供了制度先例）。長期而言，代理人是否會發展出某種獨立於個別委託人的「信譽資本」——累積的行為紀錄、能力認證、合規歷史——將是判斷代理人身分是否從「角色」演化為某種更持久存在的關鍵指標。
-
-人類花了三十年從護照走到數位身分皮夾。AI 代理人或許只需要五年就會走過類似的制度演化。問題是，我們能否把人類身分治理中付出的代價——排除、監控、集中控制——轉化為代理人身分治理的預防性設計，還是注定要在更快的時間軸上重蹈覆轍。
+The implications for the design of agent-identity governance are plain. A governance system must provide signals sufficient for users to calibrate their trust appropriately, avoiding both blind reliance and wholesale rejection. Transparency, therefore, cannot stop at technical log disclosure; it must be translated into trust signals that users can actually understand and grievance channels they can actually use.
 
 ---
 
-## 權力不對等是結構問題
+## Lessons — and Cautionary Tales — from Around the World
 
-代理人身分治理涉及多方行動者，各方擁有不同的資源、動機與影響力。
+Theory needs an empirical foundation. The record of global digital-identity systems reveals a recurring pattern: the building and maintenance of trust depend heavily on institutional conditions — legal authorization, data protection, public participation, a perceived public benefit, and the capacity to prevent exclusion and discrimination.
 
-商業平台目前主導著代理人身分的事實標準。Microsoft 推出 Entra Agent ID，將代理人定位為零信任原則下的「第一類身分」。Google 的 A2A 協定處理代理人間的發現與互動。Anthropic 的 MCP 標準化代理人與工具的連接。這些平台的設計決策——什麼資訊被揭露、誰控制憑證、什麼行為在技術上可能——本身就是治理決策，無論是否有正式法律介入。Lawrence Lessig 的洞察在此加倍適用，在代理人生態中，程式碼就是法律。
+Start with two poles of trust infrastructure. In 2011, DigiNotar, a Dutch certificate authority, was breached, and attackers forged certificates covering hundreds of websites. ENISA's report noted that DigiNotar had inadequate basic security measures and had delayed notification<sup>22</sup>. Browser vendors and the Dutch government responded with a systematic de-trusting — removing DigiNotar's trust root — that ultimately drove the company into bankruptcy. The incident laid bare the "weakest link" vulnerability of the certificate ecosystem: a single institution's failure can affect a vast number of users, though one should be cautious about generalizing from a single case to all trust infrastructure. On the other end of the spectrum, the nonprofit Let's Encrypt (operated by ISRG) reported more than 420 million active certificates in its 2024 annual report<sup>23</sup>, funded primarily through community donations and sponsorships<sup>24</sup>, building trust through a public-benefit narrative and operational transparency — though its growth has also been driven by browser policies, the broader push for HTTPS, and the appeal of automation.
 
-商業影響力的規模可以從遊說數字窺見。根據 OpenSecrets 的 2024 年資料，AI 遊說活動每年超過 1 億美元。Meta 在 2024 年花費 2,440 萬美元，OpenAI 僅 2025 年第一季就花費 220 萬美元<sup>34</sup>。另一方面，據 ITU 與 Oxford Martin School 的 2025 年報告，超過 70% 擁有國家 AI 策略的國家屬於高收入國家<sup>35</sup>，全球南方的優先順序在結構上被忽略。
+The spectrum of national digital identity is even more varied. Estonia's X-Road system, according to official data from approximately 2024-2025, connects more than 929 institutions and 1,887 information systems, processing roughly 295 million requests per month, of which ninety-seven per cent are machine-to-machine interactions. Its decentralized architecture was born of trauma: in 1996, a contractor built and sold a personal-data "super database," prompting Estonia to adopt a design with no central data repository. The e-Residency program claims to have generated nearly 125 million euros in direct state revenue in 2025<sup>25</sup>, though a portion of that figure may reflect companies filing dividend declarations in advance of tax-code changes (a reported year-on-year increase of eighty-seven per cent), and the scope and allocation of these figures still merit independent audit.
 
-政府的角色呈現巨大光譜。新加坡 IMDA 框架代表主動規範的路徑。歐盟 AI Act 要求高風險系統的人類監督但尚未具體處理代理人間互動與委任鏈。美國 NIST 在 2026 年 2 月啟動了 AI Agent Standards Initiative。各區域走向不同的治理路徑——歐盟偏向風險分級、非洲強調包容、亞洲重視創新、美洲聚焦權利。
+Singapore's SingPass, according to data from roughly the same period, has achieved a ninety-seven per cent adoption rate among eligible citizens, with 4.5 million users and 350 million transactions processed annually. In January 2026, Singapore's IMDA published what is, by most accounts, the world's first governance framework specifically for agentic AI<sup>26</sup>. The EU's eIDAS 2.0 introduces the European Digital Identity Wallet, with a deadline of December 2026 for member states to offer wallets to citizens. The WE BUILD consortium has put forward a policy recommendation to extend agent trust identities onto existing EU infrastructure<sup>27</sup>, and Talao's implementation combining MCP with OIDC4VP demonstrates how agents can obtain verified identity through the EUDI Wallet<sup>28</sup>.
 
-公民社會面臨系統性的資源不對稱。Access Now、AlgorithmWatch 和 EDRi 帶領 110 個以上的組織在 EU AI Act 立法過程中發聲，但在遊說資源上被大幅超越。Future Society 與 All Tech Is Human 的報告指出，71% 的 AI 非營利組織有風險評估流程，但 41% 缺乏技術專業<sup>36</sup><sup>37</sup>。Heather Flanagan 指出，身分議題在 WSIS+20 等全球治理論壇中仍然代表性不足<sup>38</sup>。
+The cautionary cases reveal what happens when institutional conditions fall short. The United Kingdom's national identity-card scheme was legislated into being in 2006, only to be legislated out of existence in 2010 by a new government, which also ordered the destruction of collected data<sup>29</sup>. The deeper failure was Gov.UK Verify, which consumed 233.3 million pounds, achieved a verification success rate of just forty-eight per cent (against a target of ninety per cent), enrolled only 3.6 million users (against a target of 25 million), and was finally shut down between 2023 and 2024<sup>30</sup>. At least nine parallel identity systems sprang up across various government departments. Political legitimacy and public trust, once lost, can reverse large-scale identity infrastructure outright.
 
-這種權力結構使得 ICANN 多方治理模式中已存在的代表性問題在代理人身分治理領域可能更加尖銳。Phil Windley 的觀察點出了張力的核心——「沒有承諾的政策無法協調。沒有執行的承諾只是意向聲明。」
+India's UIDAI had issued more than 141.80 crore Aadhaar numbers (one crore equals ten million) as of March 31, 2025<sup>31</sup>, and the government estimates annual savings of roughly 20,000 crore INR in subsidy leakage. But the economist Jean Dreze, drawing on fieldwork, has found that in regions requiring biometric authentication for every transaction, the exclusion error rate reaches twenty per cent. According to investigations by Dreze and the journalist Siraj Dutta, among others, at least a dozen hunger-related deaths in the state of Jharkhand have been linked to Aadhaar-based exclusion. These figures come from field research and journalistic investigation rather than official statistics, and they carry the usual limitations of sampling and causal attribution — but they are sufficient to signal the harm that large-scale identity systems can inflict on people at the margins.
 
----
+The judicial battle over Kenya's NIIMS (Huduma Namba) is equally instructive. The High Court's ruling cited deficiencies in the legislative process, the data-protection framework, and public participation, and it recorded government officials testifying that 7 billion Kenyan shillings had already been spent (a figure drawn from courtroom testimony that should be cross-referenced with budget documents)<sup>32</sup>. The ruling also flagged the risk of marginalizing minority groups, including the Nubian community. More broadly, the World Bank's ID4D estimates that approximately five hundred million Africans still lack basic identity documents — "silent exclusion" is the central challenge of digital identity on the continent<sup>33</sup>.
 
-## 三個設計原則，以及它們背後的未解問題
-
-綜合前述的理論、類比與案例，我想提出代理人身分信任架構的三個前瞻性設計原則，同時坦誠地標出每個原則背後尚未解決的張力。
-
-**問責必須被嵌入架構。** Lessig 關於程式碼即法律的洞察意味著，身分系統必須在設計層面編碼問責——透過加密的委任鏈、每一層委任的權限縮減、串聯式撤銷、以及不可竄改的稽核紀錄。前面提到的那項 30 個開源專案的審計結果（93% 僅依賴 API 金鑰）顯示，自願採用更嚴謹的身分機制至今未能規模化，但這個數字來自有限樣本，完整的產業圖景可能更為複雜。DigiNotar 的教訓是延遲通報與基本資安不足導致了系統性的去信任行動。Let's Encrypt 則展示了透明度、自動化與公共利益敘事如何在規模化運作中維繫信任。van de Poel 所倡議的「責任設計」——將問責視為工程系統的設計參數——應該成為代理人身分基礎設施的核心方法論<sup>19</sup>。Strom 的洞察在此直接適用。問責的方向與委任的方向相反，每個代理人身分系統都必須編碼從人類委託人經中介代理人到最終行動的完整鏈路，並以清楚的規則說明權限如何縮減、責任如何回流。
-
-**正當性需要有結構保障的多方代表性。** ICANN 的經驗顯示，多方治理在範圍窄、資金來源多元化、問責機制可被實際使用時運作最好。代理人身分治理的範圍遠比 DNS 命名空間廣泛，因此更需要結構性的參與保障。Christopher Allen 的「五錨點」框架提出了保留選擇權、建構二十年架構（而非兩年產品）、維持平台獨立性、要求非政府方承擔義務、以及建立制度性防護措施等長期設計原則<sup>39</sup>。公民社會諮詢委員會需要專屬經費。全球南方的代表性需要結構保障。肯亞 NIIMS 訴訟展示了公民社會透過司法途徑制衡國家身分計畫的可能，但事後救濟的代價遠高於事前的參與設計。Flanagan 提出的核心問題始終懸在那裡——「誰來維持運作？」缺乏可持續財務模型的信任框架終將成為沒有資金支持的任務<sup>40</sup>。
-
-**治理必須回應委任鏈與分散式道德的現實。** Floridi 的分散式道德框架提供了哲學基礎。當傷害從委任鏈中個別無害的行動中浮現時，治理必須按比例分配問責，避免所有責任集中在最近的人類身上——也就是避免 Elish 所描述的道德緩衝區效應<sup>20</sup>。Nissenbaum 與 Thompson 關於多手問題的論述指出方向。在多人（及多代理人）共同造成後果的情境中，需要設計可承接責任的制度安排，而非期待責任自動找到歸屬<sup>17</sup><sup>18</sup>。Tomasev 等人（2026）進一步細化了委任的組成要素——權限轉移、責任移轉、問責分配、邊界設定與信任校準——為制度設計提供了更精細的概念工具<sup>41</sup>。
-
-WEF 與 Capgemini（2025）的聯合報告顯示 82% 的高管計畫採用代理人式 AI<sup>42</sup>，但 McKinsey 的 2026 年信任調查顯示 AI 信任成熟度的平均分數僅 2.3/5<sup>43</sup>。Liminal 的研究更指出，對 AI 系統的信任正在下滑<sup>44</sup>。治理架構必須在這個信任赤字的現實中運作。
-
-Carnegie Endowment（2024）預期代理人治理將走向「體制複合體」——多個重疊的機構各自涵蓋部分面向，沒有單一的全球治理機構。這個預測與當前 DIF、OpenID Foundation、IETF WIMSE、W3C Agent Protocol Community Group、NIST NCCoE 等標準機構各自推進的現況吻合<sup>45</sup>。碎片化的風險存在，但也許這正是適應複雜性的方式。
-
-也許最根本的問題回到 Nanjala Nyabola 的觀察。數位身分系統無法創造它所部署的社會中不存在的價值。代理人身分治理的品質，最終取決於我們能否在一個信任赤字的時代，刻意且包容地建構制度——而非讓制度圍繞最先行動的行動者的利益結晶。
-
-跨平台的代理人身分，撤銷與更正的權力歸誰？代理人能否擁有獨立於委託人的身分屬性？若代理人可遞迴產生子代理人，委任鏈如何做權限衰減與責任傳遞？在商業平台主導的市場中，如何避免身分治理被鎖定在私有生態？
-
-這些問題都還沒有答案。但提出問題本身就是治理的起點。
+The leap from these national experiences to agent governance requires caution. National identity systems address the relationship between citizens and the state; agent identity involves the multi-layered relationships among humans, software, platforms, and services, with fundamentally different stakeholder structures and legal frameworks. But the core lessons of institutional design — transparency, redress, participation, and protection for those at the margins — are transferable in kind.
 
 ---
 
-## 參考來源
+## Two Parallel Tracks of Identity Evolution
 
-1. grantex.dev (2026-03). 一項針對 30 個開源 AI 代理人專案的安全審計。該審計逐一檢查代理人專案的身分與授權機制，發現絕大多數僅在環境變數中存放 API 金鑰，缺乏獨立的代理人身分層。
-2. ICANN. Report of Independent Auditors and Consolidated Financial Statements, FYE June 30, 2024. ICANN 的年度經審計財務報告，揭露這個全球網際網路命名協調機構的收入結構、支出分配與財務健康狀態。
-3. ICANN. Empowered Community mechanism. https://www.icann.org/ec — ICANN 在 2016 年 IANA 移轉後建立的社群權力機制，允許各支援組織依加州法對董事會決策行使否決、罷免等權力。
-4. NTIA (2016). IANA Stewardship Transition. https://www.ntia.gov/iana-stewardship-transition — 美國商務部 NTIA 對 IANA 管理權從美國政府移轉至全球多方社群的評估報告，記錄了移轉的條件、過程與問責改革。
-5. Hofmann, J. (2016). Multi-stakeholderism in Internet governance: putting a fiction into practice. *Journal of Cyber Policy*, 1(1). DOI: 10.1080/23738871.2016.1158303 — 政治學者 Hofmann 對多方利害關係人治理的批判性分析，指出這個模式如何在實踐中可能淪為程序正當性的自我循環。
-6. van Klyton, A., Arrieta-Paredes, A. & Alvarez-Rodriguez, E. (2023). Hegemonic practices in multistakeholder Internet governance. *Telecommunications Policy*. 透過分析 ICANN 會議文本，揭示語言與議程設定中的權力不對等如何使資源優勢者在程序中再生其影響力。
-7. ICANN. gTLD Applicant Guidebook (2012) 及 2026 round FAQ. ICANN 新通用頂級域名申請的官方指南與費用說明，呈現命名空間擴展的經濟門檻。
-8. Mueller, M. (2002). *Ruling the Root: Internet Governance and the Taming of Cyberspace*. MIT Press; Mueller, M. (2010). *Networks and States: The Global Politics of Internet Governance*. MIT Press. Mueller 兩本代表作，前者剖析 DNS 治理體系的形成史，後者將網路治理置於國家間權力政治的框架中分析。
-9. Jensen, M.C. & Meckling, W.H. (1976). Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure. *Journal of Financial Economics*, 3(4), 305-360. 公司理論的奠基之作，定義了委託人-代理人關係中因資訊不對稱產生的監督成本、保證成本與剩餘損失。
-10. Eisenhardt, K.M. (1989). Agency Theory: An Assessment and Review. *Academy of Management Review*, 14(1), 57-74. 對代理理論文獻的系統性回顧，釐清理論的適用條件與限制，至今仍是組織經濟學的核心參考。
-11. Kolt, N. (2025). Governing AI Agents. arXiv:2501.07913 — 法學者 Kolt 針對 AI 代理人的治理提出系統性框架，辨識資訊不對稱、權限越界、忠誠衝突與遞迴委任四大代理問題。
-12. Strom, K. (2000). Delegation and accountability in parliamentary democracies. *European Journal of Political Research*, 37, 261-289. 比較政治學經典，提出議會民主中「問責方向與委任方向相反」的分析框架，適用於任何多層委任結構。
-13. OpenID Foundation (2025). Identity Management for Agentic AI. OpenID 基金會的白皮書，分析現行 OAuth/OIDC 框架在代理人情境下的失效模式，特別是使用者與代理人身分不可區分的問題。
-14. Stocker & Lehr (2025). Principal-Agent Dynamics in Agentic AI. *Network Law Review*. 提出「影子委託人」概念，描述使用者表面上是委託人，但代理人行為實際受開發者或平台利益形塑的結構性忠誠衝突。
-15. Wu, X. et al. (2026). When Bots Take the Bait: Exposing and Mitigating the Emerging Social Engineering Attack in Web Automation Agent. arXiv:2601.07263 — 實驗研究，測試能操作網頁的 AI 代理人面對社工攻擊（含身分偽造情境）時的脆弱性。
-16. Floridi, L. & Sanders, J.W. (2004). On the Morality of Artificial Agents. *Minds and Machines*, 14, 349-379. 資訊哲學的開創性論文，論證人工代理人在適當抽象層次下可被視為道德行動者，區分了可追究性（accountability）與道德責任（responsibility）。
-17. Nissenbaum, H. (1996). Accountability in a Computerized Society. *Science and Engineering Ethics*, 2, 25-42. 分析電腦化社會中問責如何被系統性削弱，提出「多手問題」和「將責任歸咎於系統」等概念。
-18. Thompson, D.F. (1980). Moral Responsibility of Public Officials: The Problem of Many Hands. *American Political Science Review*, 74(4), 905-916. 政治理論經典，從公職人員道德責任出發，探討多人共同造成政策後果時個別歸責的困難。
-19. van de Poel, I. (2012). Can We Design for Responsibility? *Science and Engineering Ethics*, 19, 1235-1260. 工程倫理學者主張道德責任可以作為工程系統的設計參數，提出「責任設計」方法論。
-20. Elish, M.C. (2019). Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction. *Engaging Science, Technology, and Society*, 5, 40-60. 以汽車潰縮區為隱喻，描述自動化系統中的人類操作者如何吸收系統故障的全部道德與法律衝擊。
-21. Lee, J.D. & See, K.A. (2004). Trust in Automation: Designing for Appropriate Reliance. *Human Factors*, 46(1), 50-80. 人因工程的經典綜述，建立了對自動化信任的校準模型，區分分析性、類比性與情感性三種信任過程。
-22. ENISA (2011). Operation Black Tulip: Certificate authorities lose authority. 歐盟網路安全局對 DigiNotar 入侵事件的技術分析報告，記錄攻擊細節、資安缺失與後續的系統性去信任行動。
-23. Internet Security Research Group (2024). 2024 Annual Report. Let's Encrypt 母機構的年度報告，揭露全球最大憑證授權機構的運作規模與成長軌跡。
-24. ProPublica Nonprofit Explorer. ISRG Form 990 financials. 美國非營利組織公開財務資料，呈現 ISRG/Let's Encrypt 的收入來源結構（社群捐助與企業贊助）。
-25. e-Residency of Estonia (2026). E-residents generated a record 125 million state revenue in 2025. 愛沙尼亞電子公民計畫的官方收入報告，展示數位身分如何轉化為國家經濟價值。
-26. IMDA Singapore (2026). Model AI Governance Framework for Agentic AI. 新加坡資通訊媒體發展局發布的全球首個代理人式 AI 治理框架，涵蓋委任管理、風險分級與問責機制。
-27. WE BUILD Consortium (2026). Trusted Identities for AI Agents -- An Opportunity for Europe. 由 Bosch、Ericsson、Google、Visa、Spherity 等企業組成的聯盟，向歐盟提出將代理人信任身分建構於現有 EUDI 基礎設施上的政策建議。
-28. Talao (2025). AI Agents & Digital Identity: How MCP and OIDC4VP Empower Agents to Use the EUDI Wallet. 技術實作案例，展示 AI 代理人如何透過 MCP 協定結合 OIDC4VP 流程，從 EUDI 錢包取得經驗證的身分資訊。
-29. UK Parliament (2010). Identity Documents Act 2010. 英國國會立法終止國民身分證計畫並銷毀已收集資料的法案。
-30. UK House of Lords (2010). Hansard: Identity Documents Bill debates; NAO (2019). Investigation into Verify. 英國上議院辯論紀錄與國家審計署對 Gov.UK Verify 的調查報告，後者記錄了 2.333 億英鎊的支出與遠低於目標的採用率。
-31. UIDAI (2025). Annual Report 2024-25. 印度唯一身分識別管理局的年度報告，涵蓋 Aadhaar 核發量、使用統計與營運數據。
-32. High Court of Kenya (2020). Nubian Rights Forum & 2 others v Attorney General & 6 others [2020] eKLR. 肯亞高等法院對 NIIMS（Huduma Namba）數位身分計畫的判決，裁定立法程序與資料保護不足，並指出對少數族群的邊緣化風險。
-33. World Bank ID4D. Identification for Development dataset. 世界銀行身分識別發展計畫的全球數據集，追蹤各國身分證件覆蓋率與排除狀況。
-34. OpenSecrets (2024-2025). AI lobbying data. 美國政治資金透明組織追蹤的 AI 相關遊說支出數據，呈現科技企業在 AI 政策形塑中的資源投入規模。
-35. ITU/Oxford Martin School (2025). Annual AI Governance Report 2025. 國際電信聯盟與牛津大學合作的年度報告，分析全球 AI 治理策略的分布，揭示高收入國家與全球南方之間的政策落差。
-36. The Future Society (2024). Ten AI Governance Priorities: 44 CSOs. 彙集 44 個公民社會組織觀點的 AI 治理優先事項報告。
-37. All Tech Is Human (2024-2025). Responsible AI Impact Report. 非營利組織對負責任 AI 實踐的調查報告，揭示 AI 非營利部門的能力現狀與資源缺口。
-38. Flanagan, H. (2025). WSIS+20 and Identity Governance. 身分治理專家 Flanagan 對聯合國資訊社會高峰會 20 週年中身分議題代表性不足的分析。
-39. Allen, C. Five Anchors to Preserve Autonomy & Sovereignty. Blockchain Commons. 密碼學家暨自主主權身分倡議者 Christopher Allen 提出的五個設計錨點，主張以二十年架構視野、平台獨立性與制度防護措施保障個人自主權。
-40. Flanagan, H. (2024). Operationalizing Trust Frameworks. Spherical Cow Consulting. 探討信任框架如何從政策文件轉化為可持續運作的制度，核心提問「誰來維持運作？」直指財務永續性的困境。
-41. Tomasev, N. et al. (2026). Intelligent AI Delegation. arXiv:2602.11865 — Google DeepMind 研究團隊的論文，將委任拆解為權限轉移、責任移轉、問責分配、邊界設定與信任校準五個組成要素。
-42. WEF/Capgemini (2025). AI Agents in Action: Foundations for Evaluation and Governance. 世界經濟論壇與 Capgemini 的聯合報告，調查企業高管對代理人式 AI 的採用意願與治理準備程度。
-43. McKinsey (2026). State of AI Trust in 2026. McKinsey 的年度 AI 信任調查，量化企業對 AI 系統的信任成熟度。
-44. Liminal (2025). Building Trust in Agentic Commerce. 身分與信任研究機構 Liminal 對代理人商務信任狀態的分析，追蹤 AI 信任度的變化趨勢。
-45. Identosphere Agent ID Research Digest, 2026-04-01. Cross-Cutting Observations: Standards Convergence. 彙整 identosphere 社群中與代理人身分相關的七十餘篇文章，歸納出委任危機、信任治理落差、標準匯流等跨領域主題。
+Set these cases side by side, and an intriguing observation emerges. Human digital identity and AI agent digital identity are passing through structurally similar evolutionary stages — only at vastly different speeds and under very different conditions.
+
+The history of human digital identity can be roughly divided into three phases. The first is institutionally conferred identity. Passports, national ID cards, Social Security numbers — all are identifiers issued unilaterally by the state or an institution, centrally managed. Estonia's electronic ID, launched in 2002, and India's Aadhaar, initiated in 2009, are digital incarnations of this stage. The second phase is federated identity. OAuth and SAML allowed users to log in to third-party services with a Google or Facebook account, extending identity from a single institution to a cross-platform arrangement. The price, however, was a concentration of identity control in the hands of a few major platforms: your "Google account" belongs to Google — you are merely the user. The third phase is portable, self-sovereign identity. The vision of DIDs (decentralized identifiers) and VCs (verifiable credentials) is for individuals to hold their own identity credentials, presenting them on demand, with no single institution able to revoke them unilaterally. The EU's eIDAS 2.0 digital identity wallet is an attempt to institutionalize this vision.
+
+AI agent identity is now retracing a similar path on a compressed timeline. Today's dominant practice — API keys stashed in environment variables — corresponds to the most primitive form of institutionally conferred identity. The key is issued by the service provider, bound to a specific platform, non-portable, lacking fine-grained authorization, and revocable only by total disconnection. Microsoft Entra Agent ID and Google's A2A protocol are pushing toward federation — enabling agents to operate across services within an enterprise ecosystem — but control remains anchored to the platform. DIF's Trusted AI Agents Working Group and W3C's Agent Protocol Community Group are exploring a portable identity layer for agents, one that would allow them to carry verifiable capability declarations and delegation proofs as they move between platforms.
+
+The parallels in evolutionary structure reveal predictable tensions. Every turning point in the human journey from centralized to decentralized digital identity has been accompanied by fierce redistributions of power. Facebook's "Log in with Facebook" button turned the company into the Internet's identity broker, accumulating an enormous data advantage. When Apple launched Sign in with Apple, it was, in essence, competing for the same intermediary position. The DID/VC vision of decentralization has made slow progress to date, in no small part because it asks existing intermediaries to relinquish control they have already secured — and no one volunteers to dismantle their own power.
+
+AI agent identity is replicating this dynamic at an accelerated pace. Platform operators have a powerful incentive to lock agent identity into their own ecosystems. If your AI assistant can be recognized and authorized only within the Microsoft ecosystem, the cost of migrating to another platform is a total rebuild of trust from scratch — the classic lock-in effect. The WE BUILD consortium's policy recommendations<sup>27</sup> and Christopher Allen's anchors for platform independence<sup>39</sup> are both responses to this structural risk.
+
+But the evolution of agent identity also has several characteristics that are fundamentally unlike those of human identity, making it harder to predict the trajectory.
+
+First, scale and speed. Human digital identity is issued on the timescale of years; a national identity system typically takes a decade or more to reach scale. AI agents are created and destroyed in milliseconds. A single organization might spin up thousands of short-lived agents each day, each surviving for fifteen minutes<sup>13</sup>. This means agent-identity systems must handle transaction volumes and lifecycle management of an entirely different order from human identity systems.
+
+Second, the ontological status of identity. Humans possess identity innately — you are born as yourself, and identity systems merely recognize a pre-existing entity. Agents have no such prior existence. An agent's "identity" is defined entirely by its creator, constituted by its capability declarations, and given meaning by its delegation chain. This makes agent identity closer to a "role" than a "persona" — the same underlying model can simultaneously serve as your calendar assistant and your financial adviser, two roles requiring entirely different identities and permissions. Floridi's theory of levels of abstraction<sup>16</sup> applies directly here: at an appropriate level of abstraction, agents can be treated as actors, but the choice of that level of abstraction is itself a human decision.
+
+Third, the anchor point of trust is different. Human trust in human identity systems is ultimately anchored in trust in the state, the law, and the social contract. Where is trust in agent identity anchored? If the answer is the platform, we are back to the problem of centralized control inherent in federated identity. If it is cryptography (as with DID public-private key pairs), the basis of trust becomes mathematics rather than institutions — but mathematics cannot handle disputes, compensation, or redress. Lee and See's trust-calibration model<sup>21</sup> suggests that users need comprehensible signals to calibrate their trust in agents, and cryptographic proofs are, for most people, anything but comprehensible.
+
+These differences mean that AI agent identity will not simply retrace the path of human digital identity, but it will encounter structurally isomorphic governance problems at each analogous fork. Several directions of development can be reasonably anticipated. In the short term (2026-2028), platform-dominated federated agent identity will become the mainstream, with major technology companies building agent-identity layers within their own ecosystems. In the medium term (2028-2032), cross-platform agent-identity interoperability will become an urgent demand — similar to the way OAuth expanded from a single platform to cross-service use in the human identity world — but the driving force may come from enterprise users rebelling against vendor lock-in and from regulatory pressure (the EU's eIDAS 2.0 already provides an institutional precedent). In the long term, the critical indicator of whether agent identity evolves from "role" into something more enduring will be whether agents develop a form of "reputational capital" independent of any individual principal — an accumulated record of behavior, capability certifications, and compliance history.
+
+Humans took thirty years to travel from the passport to the digital identity wallet. AI agents may cover a similar stretch of institutional evolution in five. The question is whether we can convert the costs of human identity governance — exclusion, surveillance, centralized control — into preventive design for agent-identity governance, or whether we are fated to repeat the same mistakes on a faster timeline.
+
+---
+
+## Power Asymmetry Is a Structural Problem
+
+Agent-identity governance involves multiple actors, each possessing different resources, motivations, and degrees of influence.
+
+Commercial platforms currently dominate the de facto standards for agent identity. Microsoft has introduced Entra Agent ID, positioning agents as "first-class identities" under zero-trust principles. Google's A2A protocol handles discovery and interaction between agents. Anthropic's MCP standardizes the connection between agents and tools. The design decisions these platforms make — what information is disclosed, who controls credentials, what behavior is technically possible — are themselves governance decisions, regardless of whether formal legal intervention occurs. Lawrence Lessig's insight is doubly applicable here: in the agent ecosystem, code is law.
+
+The scale of commercial influence can be glimpsed in the lobbying numbers. According to OpenSecrets data for 2024, AI lobbying activity exceeds $100 million annually. Meta spent $24.4 million in 2024; OpenAI spent $2.2 million in the first quarter of 2025 alone<sup>34</sup>. Meanwhile, according to a 2025 report from the ITU and the Oxford Martin School, more than seventy per cent of countries with national AI strategies are high-income nations<sup>35</sup> — the priorities of the Global South are structurally overlooked.
+
+Governments occupy a vast spectrum of postures. Singapore's IMDA framework represents the path of proactive regulation. The EU AI Act mandates human oversight of high-risk systems but has yet to address agent-to-agent interaction and delegation chains in any specificity. The U.S. NIST launched its AI Agent Standards Initiative in February 2026. Different regions are charting different governance paths: the EU leans toward risk tiering, Africa emphasizes inclusion, Asia prioritizes innovation, and the Americas focus on rights.
+
+Civil society faces a systemic resource asymmetry. Access Now, AlgorithmWatch, and EDRi led more than a hundred and ten organizations in contributing to the EU AI Act legislative process, but they were vastly outspent by industry lobbyists. Reports from the Future Society and All Tech Is Human indicate that seventy-one per cent of AI nonprofits have risk-assessment processes, but forty-one per cent lack technical expertise<sup>36</sup><sup>37</sup>. Heather Flanagan has pointed out that identity issues remain underrepresented in global governance forums such as WSIS+20<sup>38</sup>.
+
+This power structure means that the representativeness problems already present in ICANN's multistakeholder model are likely to be even more acute in the field of agent-identity governance. Phil Windley's observation gets to the heart of the tension: "Policy without commitment cannot coordinate. Commitment without enforcement is just a statement of intent."
+
+---
+
+## Three Design Principles — and the Unresolved Questions Behind Them
+
+Drawing together the theory, analogies, and case studies set out above, I want to propose three forward-looking design principles for agent-identity trust architecture — while candidly flagging the unresolved tensions behind each one.
+
+**Accountability must be embedded in the architecture.** Lessig's insight that code is law means that identity systems must encode accountability at the design level — through cryptographic delegation chains, permission attenuation at each layer of delegation, cascading revocation, and tamper-proof audit trails. The audit of thirty open-source projects mentioned earlier (ninety-three per cent relying solely on API keys) suggests that voluntary adoption of more rigorous identity mechanisms has failed to scale, though this figure comes from a limited sample and the fuller industry picture may be more complex. The lesson of DigiNotar is that delayed reporting and basic security failures triggered a systemic de-trusting. Let's Encrypt demonstrates how transparency, automation, and a public-benefit narrative can sustain trust at scale. Van de Poel's advocacy for "design for responsibility" — treating accountability as a design parameter of engineered systems — should become the core methodology of agent-identity infrastructure<sup>19</sup>. Strom's insight applies directly: accountability flows in the opposite direction from delegation, and every agent-identity system must encode the full chain from human principal through intermediary agents to final action, with clear rules governing how permissions attenuate and how responsibility flows back.
+
+**Legitimacy requires structurally guaranteed multi-stakeholder representation.** ICANN's experience shows that multistakeholder governance works best when its scope is narrow, its funding sources are diversified, and its accountability mechanisms can actually be exercised. Because the scope of agent-identity governance is far broader than the DNS namespace, the need for structural participation guarantees is correspondingly greater. Christopher Allen's "five anchors" framework proposes long-term design principles: preserve optionality, build twenty-year architectures (not two-year products), maintain platform independence, require non-governmental actors to bear obligations, and establish institutional safeguards<sup>39</sup>. Civil-society advisory committees need dedicated funding. The representation of the Global South needs structural guarantees. The Kenyan NIIMS litigation demonstrated the possibility of civil society using judicial channels to check a national identity scheme, but the cost of after-the-fact redress far exceeds the cost of participation by design. Flanagan's core question hangs perpetually in the air: "Who keeps this running?" A trust framework without a sustainable financial model is, in the end, an unfunded mandate<sup>40</sup>.
+
+**Governance must respond to the realities of delegation chains and distributed morality.** Floridi's distributed-morality framework provides the philosophical foundation. When harm emerges from individually harmless actions within a delegation chain, governance must allocate accountability proportionally, avoiding the concentration of all responsibility on the nearest human — that is, avoiding the moral-crumple-zone effect described by Elish<sup>20</sup>. The arguments of Nissenbaum and Thompson concerning the problem of many hands point the way forward: in situations where multiple actors (and multiple agents) jointly produce an outcome, institutional arrangements must be designed to receive and allocate responsibility, rather than assuming that responsibility will find its own address<sup>17</sup><sup>18</sup>. Tomasev et al. (2026) further refine the constituent elements of delegation — authority transfer, responsibility transfer, accountability allocation, boundary setting, and trust calibration — providing more granular conceptual tools for institutional design<sup>41</sup>.
+
+A joint report by the WEF and Capgemini (2025) finds that eighty-two per cent of executives plan to adopt agentic AI<sup>42</sup>, but McKinsey's 2026 trust survey reports an average AI trust-maturity score of just 2.3 out of 5<sup>43</sup>. Liminal's research goes further, noting that trust in AI systems is actively declining<sup>44</sup>. Any governance architecture must operate within the reality of this trust deficit.
+
+The Carnegie Endowment (2024) anticipates that agent governance will evolve into a "regime complex" — multiple overlapping institutions, each covering a portion of the terrain, with no single global governance body. This prediction accords with the current landscape, in which DIF, the OpenID Foundation, IETF WIMSE, the W3C Agent Protocol Community Group, and NIST's NCCoE are all advancing their own efforts<sup>45</sup>. The risk of fragmentation is real — but perhaps fragmentation is itself an adaptation to complexity.
+
+Perhaps the most fundamental point returns us to an observation by Nanjala Nyabola: a digital-identity system cannot conjure into existence values that are absent from the society in which it is deployed. The quality of agent-identity governance will ultimately depend on whether we can, in an era of trust deficit, deliberately and inclusively build institutions — rather than allowing those institutions to crystallize around the interests of whichever actors moved first.
+
+Whose authority governs the revocation and correction of cross-platform agent identities? Can agents possess identity attributes independent of their principals? When agents recursively spawn sub-agents, how should the delegation chain enforce permission attenuation and responsibility transfer? In a market dominated by commercial platforms, how do we prevent identity governance from being locked into proprietary ecosystems?
+
+None of these questions has an answer yet. But asking them is where governance begins.
+
+---
+
+## References
+
+1. grantex.dev (2026-03). A security audit of thirty open-source AI agent projects. The audit examined identity and authorization mechanisms across agent projects one by one, finding that the vast majority stored only API keys in environment variables and lacked an independent agent-identity layer.
+2. ICANN. Report of Independent Auditors and Consolidated Financial Statements, FYE June 30, 2024. ICANN's annual audited financial report, disclosing the revenue structure, expenditure allocation, and financial health of the global Internet naming coordination body.
+3. ICANN. Empowered Community mechanism. https://www.icann.org/ec — The community-power mechanism established by ICANN following the 2016 IANA transition, enabling supporting organizations to exercise veto, recall, and other powers over board decisions under California law.
+4. NTIA (2016). IANA Stewardship Transition. https://www.ntia.gov/iana-stewardship-transition — The U.S. Department of Commerce NTIA's evaluation of the transfer of IANA stewardship from the U.S. government to the global multistakeholder community, documenting the conditions, process, and accountability reforms.
+5. Hofmann, J. (2016). Multi-stakeholderism in Internet governance: putting a fiction into practice. *Journal of Cyber Policy*, 1(1). DOI: 10.1080/23738871.2016.1158303 — Political scientist Hofmann's critical analysis of multistakeholder governance, examining how the model can devolve into a self-referential cycle of procedural legitimacy.
+6. van Klyton, A., Arrieta-Paredes, A. & Alvarez-Rodriguez, E. (2023). Hegemonic practices in multistakeholder Internet governance. *Telecommunications Policy*. Through analysis of ICANN meeting texts, the study reveals how power asymmetries in language and agenda-setting allow resource-advantaged actors to reproduce their influence through procedural channels.
+7. ICANN. gTLD Applicant Guidebook (2012) and 2026 round FAQ. ICANN's official guidance and fee structure for new generic top-level domain applications, illustrating the economic threshold of namespace expansion.
+8. Mueller, M. (2002). *Ruling the Root: Internet Governance and the Taming of Cyberspace*. MIT Press; Mueller, M. (2010). *Networks and States: The Global Politics of Internet Governance*. MIT Press. Mueller's two landmark works: the first dissects the formation of the DNS governance system, and the second situates Internet governance within the framework of interstate power politics.
+9. Jensen, M.C. & Meckling, W.H. (1976). Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure. *Journal of Financial Economics*, 3(4), 305-360. A foundational work in the theory of the firm, defining the monitoring costs, bonding costs, and residual loss arising from information asymmetry in principal-agent relationships.
+10. Eisenhardt, K.M. (1989). Agency Theory: An Assessment and Review. *Academy of Management Review*, 14(1), 57-74. A systematic review of the agency-theory literature, clarifying the theory's conditions of applicability and its limitations; it remains a core reference in organizational economics.
+11. Kolt, N. (2025). Governing AI Agents. arXiv:2501.07913 — Legal scholar Kolt's systematic framework for AI agent governance, identifying four core agency problems: information asymmetry, authority overreach, loyalty conflicts, and recursive delegation.
+12. Strom, K. (2000). Delegation and accountability in parliamentary democracies. *European Journal of Political Research*, 37, 261-289. A classic in comparative politics, proposing the analytical framework in which "accountability flows in the opposite direction from delegation" — applicable to any multi-layered delegation structure.
+13. OpenID Foundation (2025). Identity Management for Agentic AI. A white paper from the OpenID Foundation analyzing the failure modes of the current OAuth/OIDC framework in agentic contexts, particularly the inability to distinguish between user and agent identity.
+14. Stocker & Lehr (2025). Principal-Agent Dynamics in Agentic AI. *Network Law Review*. Introduces the concept of the "shadow principal," describing the structural loyalty conflict in which the user is nominally the principal but the agent's behavior is shaped by developer or platform interests.
+15. Wu, X. et al. (2026). When Bots Take the Bait: Exposing and Mitigating the Emerging Social Engineering Attack in Web Automation Agent. arXiv:2601.07263 — An experimental study testing the vulnerability of web-automation AI agents to social-engineering attacks, including scenarios involving identity forgery.
+16. Floridi, L. & Sanders, J.W. (2004). On the Morality of Artificial Agents. *Minds and Machines*, 14, 349-379. A pioneering paper in the philosophy of information, arguing that artificial agents can be regarded as moral agents at an appropriate level of abstraction and distinguishing accountability from moral responsibility.
+17. Nissenbaum, H. (1996). Accountability in a Computerized Society. *Science and Engineering Ethics*, 2, 25-42. An analysis of how accountability is systematically undermined in computerized societies, introducing concepts such as the "problem of many hands" and the tendency to attribute responsibility to the system itself.
+18. Thompson, D.F. (1980). Moral Responsibility of Public Officials: The Problem of Many Hands. *American Political Science Review*, 74(4), 905-916. A classic in political theory, exploring the difficulty of individual moral attribution when multiple actors jointly produce policy outcomes.
+19. van de Poel, I. (2012). Can We Design for Responsibility? *Science and Engineering Ethics*, 19, 1235-1260. An engineering-ethics scholar's argument that moral responsibility can be treated as a design parameter of engineered systems, proposing the "design for responsibility" methodology.
+20. Elish, M.C. (2019). Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction. *Engaging Science, Technology, and Society*, 5, 40-60. Using the metaphor of a car's crumple zone, this paper describes how human operators in automated systems absorb the full moral and legal impact of system failure.
+21. Lee, J.D. & See, K.A. (2004). Trust in Automation: Designing for Appropriate Reliance. *Human Factors*, 46(1), 50-80. A classic review in human-factors engineering, establishing a calibration model for trust in automation and distinguishing among analytic, analogic, and affective trust processes.
+22. ENISA (2011). Operation Black Tulip: Certificate authorities lose authority. The European Union Agency for Cybersecurity's technical analysis of the DigiNotar breach, documenting attack details, security shortcomings, and the subsequent systematic de-trusting.
+23. Internet Security Research Group (2024). 2024 Annual Report. The annual report of Let's Encrypt's parent organization, disclosing the operational scale and growth trajectory of the world's largest certificate authority.
+24. ProPublica Nonprofit Explorer. ISRG Form 990 financials. Publicly available U.S. nonprofit financial data, showing the revenue-source structure of ISRG/Let's Encrypt (community donations and corporate sponsorships).
+25. e-Residency of Estonia (2026). E-residents generated a record 125 million state revenue in 2025. The official revenue report of Estonia's e-Residency program, demonstrating how digital identity can translate into national economic value.
+26. IMDA Singapore (2026). Model AI Governance Framework for Agentic AI. The world's first governance framework specifically for agentic AI, published by Singapore's Infocomm Media Development Authority, covering delegation management, risk tiering, and accountability mechanisms.
+27. WE BUILD Consortium (2026). Trusted Identities for AI Agents -- An Opportunity for Europe. A policy recommendation from a consortium including Bosch, Ericsson, Google, Visa, and Spherity, proposing that agent trust identities be built on existing EUDI infrastructure.
+28. Talao (2025). AI Agents & Digital Identity: How MCP and OIDC4VP Empower Agents to Use the EUDI Wallet. A technical implementation case demonstrating how AI agents can obtain verified identity information from the EUDI Wallet via the MCP protocol combined with the OIDC4VP flow.
+29. UK Parliament (2010). Identity Documents Act 2010. The legislation terminating the UK's national identity-card scheme and ordering the destruction of collected data.
+30. UK House of Lords (2010). Hansard: Identity Documents Bill debates; NAO (2019). Investigation into Verify. House of Lords debate records and the National Audit Office's investigation of Gov.UK Verify, the latter documenting expenditure of 233.3 million pounds and adoption rates far below target.
+31. UIDAI (2025). Annual Report 2024-25. The annual report of India's Unique Identification Authority, covering Aadhaar issuance volume, usage statistics, and operational data.
+32. High Court of Kenya (2020). Nubian Rights Forum & 2 others v Attorney General & 6 others [2020] eKLR. The Kenyan High Court's ruling on the NIIMS (Huduma Namba) digital identity scheme, finding deficiencies in the legislative process and data-protection framework and flagging marginalization risks for minority groups.
+33. World Bank ID4D. Identification for Development dataset. The World Bank's global dataset on identity-document coverage and exclusion, tracking identification gaps across countries.
+34. OpenSecrets (2024-2025). AI lobbying data. Data on AI-related lobbying expenditures tracked by the American political-finance transparency organization, showing the scale of technology companies' investment in shaping AI policy.
+35. ITU/Oxford Martin School (2025). Annual AI Governance Report 2025. A joint annual report analyzing the global distribution of AI governance strategies and revealing the policy gap between high-income nations and the Global South.
+36. The Future Society (2024). Ten AI Governance Priorities: 44 CSOs. A report aggregating the perspectives of forty-four civil-society organizations on AI governance priorities.
+37. All Tech Is Human (2024-2025). Responsible AI Impact Report. A nonprofit survey of responsible-AI practices, revealing the current capabilities and resource gaps of the AI nonprofit sector.
+38. Flanagan, H. (2025). WSIS+20 and Identity Governance. Identity-governance expert Flanagan's analysis of the underrepresentation of identity issues in the UN World Summit on the Information Society's twentieth-anniversary proceedings.
+39. Allen, C. Five Anchors to Preserve Autonomy & Sovereignty. Blockchain Commons. Cryptographer and self-sovereign-identity advocate Christopher Allen's five design anchors, advocating a twenty-year architectural horizon, platform independence, and institutional safeguards to protect individual autonomy.
+40. Flanagan, H. (2024). Operationalizing Trust Frameworks. Spherical Cow Consulting. An exploration of how trust frameworks can be translated from policy documents into sustainably operating institutions, with the core question "Who keeps this running?" pointing directly to the predicament of financial sustainability.
+41. Tomasev, N. et al. (2026). Intelligent AI Delegation. arXiv:2602.11865 — A paper from Google DeepMind decomposing delegation into five constituent elements: authority transfer, responsibility transfer, accountability allocation, boundary setting, and trust calibration.
+42. WEF/Capgemini (2025). AI Agents in Action: Foundations for Evaluation and Governance. A joint report from the World Economic Forum and Capgemini surveying executive intent to adopt agentic AI and organizational readiness for governance.
+43. McKinsey (2026). State of AI Trust in 2026. McKinsey's annual AI trust survey, quantifying organizational trust maturity with respect to AI systems.
+44. Liminal (2025). Building Trust in Agentic Commerce. An analysis by the identity and trust research firm Liminal of the state of trust in agentic commerce, tracking trends in AI trust levels.
+45. Identosphere Agent ID Research Digest, 2026-04-01. Cross-Cutting Observations: Standards Convergence. A compilation of more than seventy articles from the Identosphere community relating to agent identity, identifying cross-cutting themes including the delegation crisis, the trust-governance gap, and standards convergence.

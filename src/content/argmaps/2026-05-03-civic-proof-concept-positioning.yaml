@@ -1,166 +1,166 @@
 slug: 2026-05-03-civic-proof-concept-positioning
-title: 公民證明的概念定位
+title: The Conceptual Positioning of Civic Proof
 subtitle: Civic Proof — Concept Positioning Argument Map (v2)
 
 coreThesis:
-  text: 「公民證明」是介於存在性 ID（誰是公民）與資格性 ID（這個人能做什麼）之間的第三類——一個由規範差異矩陣 + 形式定義 + 邊界條件三件式定義的概念工程提案，KYC 等同物與現成系統重命名都未能完整覆蓋這個位置。它的辯護不依賴新事物的發明，而依賴對既有概念地景的層級錯置作出修正。
+  text: "Civic Proof" is a third category between existential ID (who is a citizen) and entitlement ID (what this person is permitted to do) — a concept engineering proposal defined by a three-part structure of normative difference matrix + formal definition + boundary conditions. Neither a KYC equivalent nor a renaming of existing systems fully covers this position. Its defense does not depend on the invention of something new but on correcting a category error in the existing conceptual landscape.
   summary: Civic Proof is a third category between existential ID and entitlement ID — defined by a matrix of normative differences plus formal scope plus boundary conditions.
   formal:
     expression: |
       CivicProof  ≜  ⟨ 𝒩, ℱ, ℬ ⟩
         where
-          𝒩  =  normative_difference_matrix(M₁, M₂, M₃, M₄)        — 四需求型態
-          ℱ  =  formal_scope(min_necessary ∧ max_allowed)          — §6 形式定義
-          ℬ  =  CI ∧ Cohen ∧ Hildebrandt ∧ Marshall(heuristic)     — 哲學基礎
+          𝒩  =  normative_difference_matrix(M₁, M₂, M₃, M₄)        — four need-types
+          ℱ  =  formal_scope(min_necessary ∧ max_allowed)          — §6 formal definition
+          ℬ  =  CI ∧ Cohen ∧ Hildebrandt ∧ Marshall(heuristic)     — philosophical basis
 
       ¬derivable_from(CivicProof, {ExistentialID, EntitlementID, KYC, SBT})
       ⇔  CivicProof ∈ ConceptEngineering ∧ ¬CivicProof ∈ Renaming
-    caption: 公民證明是三件式定義（規範矩陣 𝒩 + 形式範圍 ℱ + 哲學基礎 ℬ）。它與既有系統的不可衍生性，把它從「重命名」推到「概念工程」。
+    caption: Civic Proof is defined by three parts (normative matrix 𝒩 + formal scope ℱ + philosophical basis ℬ). Its non-derivability from existing systems pushes it from "renaming" to "concept engineering."
     legend:
       - symbol: 𝒩
-        meaning: Normative differences matrix — 四需求型態（M₁ 存在性 / M₂ 資格性 / M₃ 累積性 / M₄ 隱私衡量）
+        meaning: Normative differences matrix — four need-types (M₁ existential / M₂ entitlement / M₃ cumulative / M₄ privacy calibration)
       - symbol: ℱ
-        meaning: Formal scope — 最小必要條件 ∧ 最大允許範圍
+        meaning: Formal scope — minimum necessary condition ∧ maximum permitted range
       - symbol: ℬ
-        meaning: Philosophical basis — CI 多元性 + Cohen 自我構成 + Hildebrandt agonistic legality + Marshall 三層公民權（啟發式）
+        meaning: Philosophical basis — CI plurality + Cohen self-constitution + Hildebrandt agonistic legality + Marshall three-tier citizenship (heuristic)
       - symbol: CI
-        meaning: Contextual Integrity（Nissenbaum 的脈絡完整性）
+        meaning: Contextual Integrity (Nissenbaum's contextual integrity)
       - symbol: ¬derivable_from
-        meaning: 不可從...衍生（衍生關係的否定）
+        meaning: Not derivable from... (negation of the derivability relation)
       - symbol: ≜
-        meaning: 「定義為」（is defined as）
+        meaning: "Is defined as"
       - symbol: ConceptEngineering
-        meaning: 概念工程（Cappelen / Plunkett 的方法論：對既有概念作有意改造）
+        meaning: Concept engineering (Cappelen / Plunkett's methodology — deliberate revision of existing concepts)
 
 transitions:
-  beforeDistinction: 公式給出立場，但要先區分兩種被混用的解讀。多數討論把「公民證明」當作 KYC 等同物或 SBT 的同義詞，本地圖反對該分類；它應該被視為「概念工程提案」——對既有概念地景作層級錯置修正後的第三類。
+  beforeDistinction: The formula states the position, but two conflated readings must first be distinguished. Most discussions treat "civic proof" as a KYC equivalent or a synonym for SBT; this map opposes that classification — it should be understood as a "concept engineering proposal" — a third category arrived at after correcting a category error in the existing conceptual landscape.
 
-  beforePillars: 區分本身只是宣告。要證明「公民證明 ∉ 重命名」，需要四條獨立來源：哲學基礎（CI / Cohen / Hildebrandt）的規範性根據、Marshall 三層公民權的啟發式類比（誠實降級為類比而非結構）、四需求型態的溯因論證（M₁..M₄ 規範矩陣）、以及形式定義 + 邊界條件的工程規範。四者缺一，提案就會退回到一般性的「身分政治哲學」。
+  beforePillars: The distinction is merely a declaration. To prove that "civic proof ∉ renaming," four independent sources are needed — the normative basis from philosophical foundations (CI / Cohen / Hildebrandt), Marshall's three-tier citizenship as a heuristic analogy (honestly downgraded to an analogy rather than a structure), the abductive argument for four need-types (the M₁..M₄ normative matrix), and the engineering specifications of the formal definition + boundary conditions. Without any one of these, the proposal reverts to general "identity political philosophy."
 
-  beforeChain: 前面四條 pillar 是正向論證。但「公民證明不可從既有系統衍生」這個強主張，必須有一條具體的反向推導鏈頂住。從 ExistentialID（誰是公民）到 EntitlementID（這個人能做什麼）到 KYC（金融合規）到 SBT（不可轉讓代幣），逐步檢驗每個系統能否覆蓋四需求型態 M₁..M₄；結論是沒有任何一個現成系統覆蓋全部，因此「重命名」不成立。
+  beforeChain: The four pillars above are affirmative arguments. But the strong claim that "civic proof is not derivable from existing systems" must be held up by a specific reverse derivation chain — otherwise it is merely assertion. Starting from ExistentialID (who is a citizen) through EntitlementID (what this person is permitted to do) through KYC (financial compliance) through SBT (non-transferable tokens), each system is examined to determine whether it can cover the four need-types M₁..M₄; the conclusion is that no existing system covers all — therefore "renaming" does not hold.
 
-  beforeBorders: 立場 + 反向推導成立後，反論才真的具威脅。「公民證明就是 SBT 的另一個名字」「公民證明就是 W3C VC 的政治版本」「公民證明等於『軟性 KYC』」三條反論常被引為理由；但仔細檢驗每條反論在四需求型態的覆蓋率，會發現它們各自只覆蓋部分需求——這個部分覆蓋本身就是反論的失敗，反向支持「概念工程」分類。
+  beforeBorders: Once the position and reverse derivation are established, counterarguments pose a genuine threat. The three counterarguments that "civic proof is just another name for SBT," "civic proof is just the political version of W3C VC," and "civic proof equals 'soft KYC'" are commonly cited; but carefully examining the coverage rate of each counterargument across the four need-types reveals that each covers only partial needs — this partial coverage is itself the failure of the counterargument, inversely supporting the "concept engineering" classification.
 
-  beforeConditions: 反論被吸收後，留下的是設計含意：在什麼條件下，「公民證明」這個概念可以被合法部署而不被誤用？四個邊界條件（規範矩陣完整性 / 啟發式類比的誠實降級 / 形式定義精確性 / 與 article 01 整合）把抽象的「概念工程」翻譯成可被檢驗的學術義務。
+  beforeConditions: Once counterarguments are absorbed, what remains are design implications — under what conditions can "civic proof" be legitimately deployed without being misused? Four boundary conditions (normative matrix completeness / honest downgrading of heuristic analogy / formal definition precision / integration with article 01) translate the abstract "concept engineering" into verifiable academic obligations.
 
-  beforeConclusion: 把哲學、類比、規範矩陣、形式、邊界五層收束起來，地圖最終要說的是「概念工程」這個方法論本身（沒有任何單一系統的勝利可以替代它），以及這個系列其他 17 篇文章將在三件式定義之下展開的學術路徑。
+  beforeConclusion: Bringing together the philosophical, analogical, normative matrix, formal, and boundary layers, what the map ultimately argues is the methodology of "concept engineering" itself (no single system's victory can substitute for it), and the academic path along which the other 17 articles in this series will unfold under the three-part definition.
 
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: 公民證明 = 既有系統的重命名
-    body: 把「公民證明」當作 KYC、ExistentialID、EntitlementID、或 SBT 的另一個名字。這個分類預設四需求型態 M₁..M₄ 至少有一個被現成系統完整覆蓋；但實證檢驗顯示沒有任何現成系統覆蓋全部——因此「重命名」分類在事實層面就不成立。
-    formal: "CivicProof ∈ {KYC, ExistentialID, EntitlementID, SBT}  ⇒  ∃ existing : covers(existing, M₁ ∧ M₂ ∧ M₃ ∧ M₄) — 但實證 ¬∃"
+    label: ❌ Rejected
+    title: Civic proof = renaming of an existing system
+    body: Treating "civic proof" as another name for KYC, ExistentialID, EntitlementID, or SBT. This classification assumes that at least one of the four need-types M₁..M₄ is completely covered by an existing system; but empirical examination shows that no existing system covers all — therefore the "renaming" classification is factually untenable.
+    formal: "CivicProof ∈ {KYC, ExistentialID, EntitlementID, SBT}  ⇒  ∃ existing : covers(existing, M₁ ∧ M₂ ∧ M₃ ∧ M₄) — but empirically ¬∃"
   accepted:
-    label: ✓ 被辯護
-    title: 公民證明 = 概念工程提案
-    body: 公民證明是對既有概念地景的層級錯置作有意修正的提案——三件式定義 ⟨𝒩, ℱ, ℬ⟩。它的辯護不依賴新事物的發明，而依賴 (1) 規範差異矩陣顯示既有系統的覆蓋缺口，(2) 形式定義給出最小必要與最大允許範圍，(3) 哲學基礎提供規範性根據。
+    label: ✓ Defended
+    title: Civic proof = concept engineering proposal
+    body: Civic proof is a proposal that deliberately corrects a category error in the existing conceptual landscape — a three-part definition ⟨𝒩, ℱ, ℬ⟩. Its defense does not depend on inventing something new but on (1) the normative difference matrix showing coverage gaps in existing systems, (2) the formal definition providing minimum necessary and maximum permitted ranges, and (3) the philosophical basis providing normative grounds.
     formal: "CivicProof ≜ ⟨𝒩, ℱ, ℬ⟩  ∧  ¬derivable_from(CivicProof, {ExistentialID, EntitlementID, KYC, SBT})"
 
 pillars:
-  - section: §3 — 隱私哲學基礎
-    title: CI / Cohen / Hildebrandt 三段式論證
-    role: 提供規範性根據——若沒有哲學基礎，「公民證明」會被指控為任意定義。CI 多元性 + Cohen 自我構成 + Hildebrandt agonistic legality 三段式提供從「為什麼需要規範差異」到「為什麼需要 agonistic 設計」的論證鏈。
-    body: CI 多元性主張作為前提（Nissenbaum）：不同社會領域有各自的資訊規範，跨領域擴散侵犯脈絡完整性。Non-derivability 的形式論證：M₁..M₄ 四需求型態無法相互推導；身分驗證的場景差異不可被「統一身分」吸收。Cohen 與 Nissenbaum 的概念差異：Cohen 強調自我構成的政治經濟條件（範圍超出「資訊流動規範」），這個差異對應到公民證明的「能動性」需求。Hildebrandt 的 agonistic legality 延伸：法律的功能應落在「保留爭議空間」，超越「執行已有規則」的純技術角色——對應到公民證明的 §7 救濟設計。
-    finding: 哲學基礎 ℬ 不是「裝飾性引用」，是論證 𝒩 矩陣為什麼需要四個獨立維度（而非一個或兩個）的根據；缺哲學基礎則 𝒩 的維度劃分是任意的。
+  - section: §3 — Privacy Philosophy Foundation
+    title: Three-stage argument — CI / Cohen / Hildebrandt
+    role: Provides the normative basis — without a philosophical foundation, "civic proof" will be accused of being arbitrarily defined. The three-stage argument of CI plurality + Cohen self-constitution + Hildebrandt agonistic legality provides the chain of reasoning from "why normative differentiation is needed" to "why agonistic design is needed."
+    body: CI plurality as premise (Nissenbaum) — different social domains have their own information norms; cross-domain diffusion violates contextual integrity. Formal non-derivability argument — the four need-types M₁..M₄ cannot be derived from one another; the scenario differences in identity verification cannot be absorbed by a "unified identity." Conceptual difference between Cohen and Nissenbaum — Cohen emphasizes the political-economic conditions of self-constitution (scope exceeding "information flow norms"), a difference that corresponds to the "agency" requirement of civic proof. Extension via Hildebrandt's agonistic legality — the function of law should fall on "preserving space for contestation," beyond the purely technical role of "enforcing existing rules" — corresponding to the remedy design in §7 of civic proof.
+    finding: The philosophical basis ℬ is not "decorative citation" but the basis for arguing why the 𝒩 matrix requires four independent dimensions (rather than one or two); without the philosophical basis, the dimensional division of 𝒩 is arbitrary.
     formal: "ℬ ≜ CI(plurality) ∧ Cohen(self-constitution) ∧ Hildebrandt(agonistic) ⇒ justifies(𝒩.dimensions = 4)"
 
-  - section: §4 — Marshall 三層公民權（啟發式類比）
-    title: Civil / Political / Social Citizenship 啟發式對應
-    role: 提供類比強度的精確邊界——若把 Marshall 結構當作「公民證明的形式骨架」會犯類比強度誇大；本 pillar 把類比降級為「啟發式 framing」，承擔有限工作（提供敘事結構），不承擔結構性工作（提供形式定義）。
-    body: Marshall 結構作為啟發式 framing：18-19 世紀公民權（civil 法律地位）→ 19-20 世紀政治權（voting）→ 20 世紀社會權（welfare）三層發展史，提供「分階段擴展」的敘事模板。啟發式類比承擔的工作：(1) 顯示「公民身分」本身就是歷史擴展的概念；(2) 提供 §3 哲學基礎的歷史脈絡；(3) 為 §5 四需求型態提供分層直覺。Sen 與 Anderson 的補強及其張力：Sen 的能力進路強調「實質自由」，Anderson 的關係平等強調「身分位置」——兩者補強 Marshall 但也產生張力。類比強度的等級：α 強類比（結構同構）→ β 中類比（敘事同構）→ γ 弱類比（直覺啟發）；本 pillar 主張 Marshall 屬於 γ。
-    finding: Marshall 是 γ 弱啟發式類比，不是強結構同構。把它降級的目的是讓論證強度不依賴歷史類比；強類比留給 §5 的溯因論證。誠實降級本身就是論證的一部分。
+  - section: §4 — Marshall's Three-Tier Citizenship (heuristic analogy)
+    title: Civil / Political / Social citizenship — heuristic correspondence
+    role: Provides a precise boundary for analogy strength — treating the Marshall structure as "the formal skeleton of civic proof" would commit the error of overstating analogy strength; this pillar downgrades the analogy to "heuristic framing," undertaking limited work (providing a narrative structure) without undertaking structural work (providing a formal definition).
+    body: Marshall's structure as heuristic framing — the 18th–19th century development of civic rights (civil legal status) → 19th–20th century political rights (voting) → 20th century social rights (welfare) provides a narrative template for "staged expansion." Work undertaken by the heuristic analogy — (1) showing that "civic identity" is itself a historically expanding concept; (2) providing historical context for the §3 philosophical basis; (3) providing layered intuition for the §5 four need-types. Reinforcement by Sen and Anderson and their tensions — Sen's capability approach emphasizes "substantive freedom," Anderson's relational equality emphasizes "status position" — both reinforce Marshall but also generate tensions. Analogy strength grades — α strong analogy (structural isomorphism) → β medium analogy (narrative isomorphism) → γ weak analogy (intuitive heuristic); this pillar argues that Marshall belongs to γ.
+    finding: Marshall is a γ weak heuristic analogy, not a strong structural isomorphism. The purpose of downgrading it is to ensure that the argumentative strength does not depend on historical analogy; strong analogies are reserved for the abductive argument in §5. Honest downgrading is itself part of the argument.
     formal: "Marshall ∈ heuristic(γ) ∧ ¬structural-isomorphism ⇒ ¬load-bearing(formal_definition)"
 
-  - section: §5 — 四需求型態溯因論證
-    title: M₁..M₄ 規範差異矩陣
-    role: 提供論證骨架——若沒有規範矩陣，「公民證明」與既有系統的差異仍是含混的。M₁..M₄ 把差異精確標出：M₁ 存在性、M₂ 資格性、M₃ 累積性、M₄ 隱私衡量。形式化結構顯示沒有現成系統覆蓋全部四個維度。
-    body: 規範差異矩陣的四個維度：M₁ 存在性需求（誰是公民，對應 ExistentialID）、M₂ 資格性需求（這個人能做什麼，對應 EntitlementID）、M₃ 累積性需求（公民身分隨時間變動，包含義務與權利的累積，既有系統覆蓋率低）、M₄ 隱私衡量需求（每場景的揭露邊界，對應 article 01 的 V₁..V₆）。M₁-M₄ 形式化結構：每個 Mᵢ 有獨立的成功指標 + 失敗模式，且不可相互衍生（non-derivability）。Concept-engineering proposal 的誠實降級——論證不主張「公民證明是新發現」，主張「公民證明是對 M₃/M₄ 缺口的有意提案」。
-    finding: 矩陣 𝒩 = (M₁, M₂, M₃, M₄) 是論證的核心；既有系統的覆蓋缺口（特別是 M₃ 累積性與 M₄ 隱私衡量）是「不可從現成系統衍生」的實證根據。
+  - section: §5 — Four Need-Types Abductive Argument
+    title: M₁..M₄ normative difference matrix
+    role: Provides the argumentative skeleton — without the normative matrix, the differences between "civic proof" and existing systems remain vague. M₁..M₄ precisely marks the differences — M₁ existential, M₂ entitlement, M₃ cumulative, M₄ privacy calibration. The formalized structure shows that no existing system covers all four dimensions.
+    body: Four dimensions of the normative difference matrix — M₁ existential need (who is a citizen, corresponding to ExistentialID), M₂ entitlement need (what this person is permitted to do, corresponding to EntitlementID), M₃ cumulative need (civic identity changes over time, including accumulation of obligations and rights, low coverage in existing systems), M₄ privacy calibration need (disclosure boundary for each scenario, corresponding to V₁..V₆ in article 01). Formalized M₁–M₄ structure — each Mᵢ has independent success indicators + failure modes, and cannot be mutually derived (non-derivability). Honest downgrading of the concept engineering proposal — the argument does not claim "civic proof is a new discovery," but claims "civic proof is a deliberate proposal addressing the M₃/M₄ gaps."
+    finding: Matrix 𝒩 = (M₁, M₂, M₃, M₄) is the core of the argument; coverage gaps in existing systems (especially M₃ cumulative and M₄ privacy calibration) are the empirical basis for "non-derivability from existing systems."
     formal: "𝒩 ≜ (M₁, M₂, M₃, M₄)  ∧  ∀ system ∈ {KYC, ExistentialID, EntitlementID, SBT} : ∃ Mᵢ : ¬covers(system, Mᵢ)"
 
-  - section: §6 — 形式定義與邊界條件
-    title: ℱ — 最小必要條件 ∧ 最大允許範圍
-    role: 提供精確性——若沒有形式定義，「公民證明」會被指控為「裝飾性概念」。最小必要條件給出「至少要有什麼」，最大允許範圍給出「最多能涵蓋什麼」，兩端共同定義 ℱ 的邊界。
-    body: 形式定義的兩端：最小必要條件（必須同時滿足 M₁ 存在性根 + M₂/M₃ 至少一項 + M₄ 隱私衡量設計；缺任一不算公民證明）；最大允許範圍（不延伸到「整體公民身分系統」——僅限於「身分驗證的規範矩陣」）。核心收束句：公民證明 = 在 ℬ 哲學基礎上，以 𝒩 規範矩陣為內容，以 ℱ 形式範圍為邊界的概念工程提案。與「accountability without identification」的整合（§7）：article 01 的 V₁..V₆ 是 M₄ 隱私衡量維度的具體填入；article 02 提供概念地景，article 01 提供具體子規格。
-    finding: ℱ 給出的邊界讓「公民證明」可被檢驗——主張過大會違反最大允許範圍，主張過小會缺漏最小必要條件。這個雙向約束是論證的精確性保證。
+  - section: §6 — Formal Definition and Boundary Conditions
+    title: ℱ — minimum necessary condition ∧ maximum permitted range
+    role: Provides precision — without a formal definition, "civic proof" will be accused of being a "decorative concept." The minimum necessary condition gives "what is at minimum required," the maximum permitted range gives "what can at most be covered"; the two ends jointly define the boundaries of ℱ.
+    body: Two ends of the formal definition — minimum necessary condition (must simultaneously satisfy M₁ existential root + at least one of M₂/M₃ + M₄ privacy calibration design; missing any one does not count as civic proof); maximum permitted range (does not extend to "the overall civic identity system" — limited to "the normative matrix of identity verification"). Core convergence sentence — civic proof = a concept engineering proposal with ℬ philosophical basis as foundation, 𝒩 normative matrix as content, and ℱ formal scope as boundary. Integration with "accountability without identification" (§7) — V₁..V₆ in article 01 is the concrete instantiation of the M₄ privacy calibration dimension; article 02 provides the conceptual landscape, article 01 provides the concrete sub-specification.
+    finding: The boundaries given by ℱ make "civic proof" verifiable — claims that are too broad violate the maximum permitted range; claims that are too narrow miss the minimum necessary condition. This bidirectional constraint is the precision guarantee of the argument.
     formal: "ℱ ≜ min_necessary(M₁ ∧ (M₂ ∨ M₃) ∧ M₄)  ∧  max_allowed ⊆ identity_verification_normative_matrix"
 
-  - section: §8 — 學術定位 + 後續對接
-    title: 條件性結論 + 18 篇系列的位置
-    role: 提供誠實性——若不標出條件性，「公民證明」會被誤推為「定論」。本 pillar 主張本論文的結論是「條件性的」（Conditional Conclusion），依賴 ℬ + 𝒩 + ℱ 三件成立；同時標出後續 17 篇文章在這個三件式定義下的位置。
-    body: 條件性結論：CivicProof ≜ ⟨𝒩, ℱ, ℬ⟩ 成立的前提是 (1) ℬ 哲學基礎被接受、(2) 𝒩 矩陣的四維度被承認、(3) ℱ 形式邊界不被指控過嚴或過寬。三個前提任一不成立，論證需要降級。待後續驗證的開放問題：M₃ 累積性的具體形式化、M₄ 隱私衡量在不同場域的等級劃分、ℱ 最大允許範圍的邊界檢驗。與後續章節的對接：article 01（V₁..V₆ 填入 M₄）、article 03（H1' 三道牆對應 ℬ 的歷史前提）、article 04（T 三件式對應 ℱ 的形式擴展）、article 05（IT' 不可能三角對應 𝒩 的維度約束）、article 06（CB-Justice 對應 ℬ 的政治哲學基礎）、article 07（SRP 對應 ℬ 的主權前提）、article 08（HM 對應 ℬ 的歷史前提）。18 篇形成一個共同骨架。
-    finding: 18 篇不是 18 個獨立論題，是 ⟨𝒩, ℱ, ℬ⟩ 三件式定義在不同子問題上的展開。文章間的論證強度共享，但每篇對應不同維度。
+  - section: §8 — Academic Positioning + Subsequent Connections
+    title: Conditional conclusion + position of the 18-article series
+    role: Provides intellectual honesty — without marking conditions, "civic proof" will be incorrectly extrapolated as a "settled conclusion." This pillar argues that the conclusion of this paper is "conditional" (Conditional Conclusion), dependent on ℬ + 𝒩 + ℱ all holding; simultaneously it marks the position of the subsequent 17 articles under this three-part definition.
+    body: Conditional conclusion — CivicProof ≜ ⟨𝒩, ℱ, ℬ⟩ holds on the preconditions that (1) the ℬ philosophical basis is accepted, (2) the four dimensions of the 𝒩 matrix are acknowledged, and (3) the ℱ formal boundaries are not accused of being too strict or too broad. If any one of the three preconditions fails, the argument needs to be downgraded. Open questions awaiting subsequent validation — concrete formalization of M₃ cumulativity, gradation of M₄ privacy calibration across different domains, and boundary testing of ℱ's maximum permitted range. Connections with subsequent chapters — article 01 (V₁..V₆ instantiate M₄), article 03 (H1' three walls correspond to ℬ's historical premise), article 04 (T tripartite corresponds to ℱ's formal extension), article 05 (IT' impossibility triangle corresponds to 𝒩's dimensional constraints), article 06 (CB-Justice corresponds to ℬ's political philosophy foundation), article 07 (SRP corresponds to ℬ's sovereignty premise), article 08 (HM corresponds to ℬ's historical premise). The 18 articles form a shared skeleton.
+    finding: The 18 articles are not 18 independent topics but the unfolding of the ⟨𝒩, ℱ, ℬ⟩ three-part definition across different sub-problems. Argumentative strength is shared across articles, but each corresponds to a different dimension.
     formal: "∀ article_i ∈ {01..18} : ∃ component ∈ {𝒩, ℱ, ℬ} : refines(article_i, component)"
 
 chain:
-  title: 概念工程六步推導：從現成概念地景到三件式定義
+  title: Six-step concept engineering derivation — from existing conceptual landscape to three-part definition
   steps:
     - tag: T0
       kind: deterministic
-      text: 概念地景現狀：ExistentialID + EntitlementID + KYC + SBT 為主流候選
+      text: Current state of the conceptual landscape — ExistentialID + EntitlementID + KYC + SBT are the mainstream candidates
     - tag: T1
       kind: deterministic
-      text: 五層抽象表分析：四個現成系統的覆蓋層級不同，但都未達 M₁..M₄ 全覆蓋
+      text: Five-layer abstraction table analysis — the four existing systems differ in coverage levels, but none achieves full coverage of M₁..M₄
     - tag: T2
       kind: deterministic
-      text: 兩個常見誤讀：(a) 把公民證明當 KYC 等同物（M₃/M₄ 缺）、(b) 把公民證明當 SBT 重命名（M₂ 部分覆蓋但 M₁/M₃ 缺）
+      text: Two common misreadings — (a) treating civic proof as a KYC equivalent (M₃/M₄ missing), (b) treating civic proof as a renaming of SBT (M₂ partially covered but M₁/M₃ missing)
     - tag: T3
       kind: deterministic
-      text: §3 哲學基礎建立 ℬ：CI（M₄ 根據）+ Cohen（M₂ 根據）+ Hildebrandt（救濟設計根據）
+      text: §3 philosophical basis establishes ℬ — CI (basis for M₄) + Cohen (basis for M₂) + Hildebrandt (basis for remedy design)
     - tag: T4
       kind: probabilistic
-      text: §4 Marshall 三層作為 γ 啟發式類比；提供敘事不提供形式
+      text: §4 Marshall's three tiers as γ heuristic analogy — provides narrative, not formal structure
     - tag: T5
       kind: deterministic
-      text: §5 溯因論證得出 𝒩 = (M₁, M₂, M₃, M₄) 規範矩陣
+      text: §5 abductive argument yields 𝒩 = (M₁, M₂, M₃, M₄) normative matrix
     - tag: T6
       kind: deterministic
-      text: §6 形式定義收束 ℱ；CivicProof ≜ ⟨𝒩, ℱ, ℬ⟩ 三件式成立
+      text: §6 formal definition converges ℱ; CivicProof ≜ ⟨𝒩, ℱ, ℬ⟩ three-part definition established
   legend:
     - kind: deterministic
-      label: 機制必然（概念地景的結構性事實 + 形式推導）
+      label: Mechanistically necessary (structural facts of the conceptual landscape + formal derivation)
     - kind: probabilistic
-      label: 概率性（類比強度的選擇 + 哲學立場的接受度）
+      label: Probabilistic (choice of analogy strength + acceptance of philosophical position)
 
 borders:
-  - label: 反論 1
-    title: 公民證明 = SBT 重命名
-    pivot: 反論訴求是「Soulbound Token 已涵蓋公民證明的所有功能」。但檢驗 M₁..M₄ 覆蓋率：SBT 部分覆蓋 M₂（資格性、不可轉讓）、部分覆蓋 M₃（累積性、鏈上記錄），但未覆蓋 M₁（存在性根需要主權連結，SBT 缺）+ M₄（隱私衡量在 SBT 是公開鏈上記錄，違反 CI 多元性）。SBT 在 article 02 規範矩陣下覆蓋 0.5 維度。
-    flip: SBT 不僅不支持「重命名」分類，反而給「公民證明是概念工程提案」提供了最強論證——SBT 的部分覆蓋 + 隱私缺口本身就是規範矩陣的具體驗證。
+  - label: Counterargument 1
+    title: Civic proof = SBT renaming
+    pivot: The counterargument claims that "Soulbound Tokens already encompass all the functions of civic proof." But examining the M₁..M₄ coverage rate — SBT partially covers M₂ (entitlement, non-transferable) and partially covers M₃ (cumulative, on-chain records), but does not cover M₁ (existential root requires a sovereignty link, which SBT lacks) + M₄ (privacy calibration — SBT is a public on-chain record, violating CI plurality). SBT covers 0.5 dimensions in article 02's normative matrix.
+    flip: SBT not only fails to support the "renaming" classification, but actually provides the strongest argument for "civic proof is a concept engineering proposal" — SBT's partial coverage + privacy gaps are themselves a concrete validation of the normative matrix.
 
-  - label: 反論 2
-    title: 公民證明 = W3C VC 的政治版本
-    pivot: 反論訴求是「Verifiable Credentials 已是業界標準，公民證明只是政治化包裝」。但 W3C VC 是 ℱ（形式範圍）的工程實作，不是 ℬ（哲學基礎）+ 𝒩（規範矩陣）的整體定義。VC 提供「如何發證 / 驗證 / 撤銷」的工程協議，但不提供「為什麼這四個維度而非其他」的規範性根據。VC 在 article 02 三件式中對應 ℱ 子集。
-    flip: W3C VC 不是「公民證明的另一個名字」，是 CivicProof 三件式中 ℱ 元件的工程實作。這個結果反向支持「概念工程 = 哲學基礎 + 規範矩陣 + 形式範圍」的整體分類，而 VC 只填補其中一塊。
+  - label: Counterargument 2
+    title: Civic proof = political version of W3C VC
+    pivot: The counterargument claims that "Verifiable Credentials are already an industry standard; civic proof is merely politicized packaging." But W3C VC is an engineering implementation of ℱ (formal scope), not the overall definition of ℬ (philosophical basis) + 𝒩 (normative matrix). VC provides engineering protocols for "how to issue / verify / revoke credentials," but does not provide normative grounds for "why these four dimensions and not others." VC corresponds to a subset of ℱ in article 02's three-part structure.
+    flip: W3C VC is not "another name for civic proof" but an engineering implementation of the ℱ component in CivicProof's three-part structure. This result inversely supports the overall classification of "concept engineering = philosophical basis + normative matrix + formal scope," while VC fills only one piece.
 
-  - label: 反論 3
-    title: 公民證明 ≈ 軟性 KYC
-    pivot: 真正的部分例外——「軟性 KYC」（如 W3C VC + 屬性證明）在 M₂ 資格性 + M₄ 部分隱私衡量上確實接近公民證明的子集。但「軟性 KYC」的設計目的是金融合規，缺 M₁（存在性、不涉公民身分根）+ M₃（累積性、KYC 是時間切片不是累積）。「軟性 KYC」覆蓋 1.5 維度。
-    flip: 即使「軟性 KYC」在窄場域接近公民證明，普世化「公民證明 = 軟性 KYC」也無法被辯護。CivicProof 邊界條件 B₃（形式定義精確性）正好示範這種精確的範圍約束——軟性 KYC 是公民證明在 M₂/M₄ 維度的工程實例之一，不是公民證明本身。
+  - label: Counterargument 3
+    title: Civic proof ≈ soft KYC
+    pivot: A genuine partial exception — "soft KYC" (e.g., W3C VC + attribute proofs) does indeed approximate a subset of civic proof on M₂ entitlement + M₄ partial privacy calibration. But "soft KYC"'s design purpose is financial compliance, lacking M₁ (existential — not concerned with civic identity root) + M₃ (cumulative — KYC is a time-slice, not cumulative). "Soft KYC" covers 1.5 dimensions.
+    flip: Even if "soft KYC" approximates civic proof in a narrow domain, universalizing "civic proof = soft KYC" cannot be defended. Civic Proof's boundary condition B₃ (formal definition precision) precisely demonstrates this kind of precise scope constraint — soft KYC is one of the engineering instances of civic proof in the M₂/M₄ dimensions, not civic proof itself.
 
 conditions:
-  title: 公民證明的合法部署，必須先通過四條邊界條件
+  title: Legitimate deployment of civic proof must first pass four boundary conditions
   formalPrelude: "deploy(CivicProof) valid ⇔ B₁ ∧ B₂ ∧ B₃ ∧ B₄"
   items:
-    - title: B₁ 規範矩陣完整性
-      body: 𝒩 = (M₁, M₂, M₃, M₄) 必須四維度同時被檢驗，缺一維度的部署退化為現成系統。任何聲稱「實作公民證明」的系統必須給出四維度的覆蓋率。
+    - title: B₁ Normative matrix completeness
+      body: 𝒩 = (M₁, M₂, M₃, M₄) must have all four dimensions simultaneously examined; a deployment missing one dimension degrades to an existing system. Any system claiming to "implement civic proof" must provide coverage rates across all four dimensions.
       formal: "B₁: implement(CivicProof) ⇒ ∀ Mᵢ ∈ {M₁..M₄} : coverage(impl, Mᵢ) ∈ [0, 1] ∧ documented(coverage)"
-    - title: B₂ 啟發式類比的誠實降級
-      body: Marshall 三層 + Sen + Anderson 的引用必須維持在 γ 啟發式等級，不可被推為 α 結構同構。任何把「Marshall 三層」當作公民證明形式骨架的部署都違反 B₂。
+    - title: B₂ Honest downgrading of heuristic analogy
+      body: Citations of Marshall's three tiers + Sen + Anderson must be maintained at the γ heuristic level and must not be promoted to α structural isomorphism. Any deployment that treats "Marshall's three tiers" as the formal skeleton of civic proof violates B₂.
       formal: "B₂: cite(Marshall ∨ Sen ∨ Anderson) ⇒ level(citation) = γ ∧ ¬load_bearing(formal_definition)"
-    - title: B₃ 形式定義精確性
-      body: ℱ 的最小必要條件 + 最大允許範圍必須在部署文件中明確列出；模糊化會導致「公民證明」被擴張到任意身分系統，違反概念工程的精確性義務。
+    - title: B₃ Formal definition precision
+      body: The minimum necessary condition + maximum permitted range of ℱ must be explicitly listed in deployment documentation; vagueness will cause "civic proof" to be expanded to any identity system, violating the precision obligation of concept engineering.
       formal: "B₃: deploy(CivicProof) ⇒ ∃ doc : specifies(doc, min_necessary) ∧ specifies(doc, max_allowed)"
-    - title: B₄ 與 article 01 的整合
-      body: M₄ 隱私衡量維度必須與 article 01 的 V₁..V₆ 程序防火牆整合；不整合的部署會使 M₄ 維度退化為「隱私聲明」而非「程序義務」。article 02 提供概念地景，article 01 提供 M₄ 子規格。
+    - title: B₄ Integration with article 01
+      body: The M₄ privacy calibration dimension must be integrated with the V₁..V₆ procedural firewalls of article 01; deployments that do not integrate will cause the M₄ dimension to degrade from "procedural obligation" to a "privacy statement." Article 02 provides the conceptual landscape; article 01 provides the M₄ sub-specification.
       formal: "B₄: deploy(M₄) ⇒ M₄ ⊨ article_01.V₁ ∧ article_01.V₂ ∧ ... ∧ article_01.V₆"
 
 conclusion:
   paragraphs:
-    - <strong>公民證明不是新事物的發明，是對既有概念地景的層級錯置作有意修正的概念工程提案。</strong>它的學術定位是「條件性結論」——在 ℬ + 𝒩 + ℱ 三件式成立的前提下，公民證明是介於存在性與資格性之間的第三類。
-    - 辯論應從「公民證明 vs KYC / SBT / VC」轉向<em>「在規範矩陣 𝒩 下，現成系統覆蓋哪些維度、缺哪些維度」</em>。公民證明的工作是把現成系統的位置精確標出，特別是顯示 M₃ 累積性與 M₄ 隱私衡量這兩個常被忽略的維度的覆蓋缺口。
-    - 一條學術誠實原則貫穿全文：<strong>啟發式類比承擔啟發式工作，形式定義承擔形式工作，哲學基礎承擔規範性工作；不可越界。</strong>Marshall 落在 γ 啟發式那一格，VC 屬於 ℱ 元件，KYC 屬於 M₂/M₄ 子集——這些位置的精確標示就是 CivicProof 三件式公式的邊界所在。
+    - <strong>Civic proof is not the invention of something new but a concept engineering proposal that deliberately corrects a category error in the existing conceptual landscape.</strong> Its academic positioning is a "conditional conclusion" — on the precondition that ℬ + 𝒩 + ℱ all hold, civic proof is the third category between existential and entitlement identity.
+    - The debate should shift from "civic proof vs KYC / SBT / VC" to <em>"under the normative matrix 𝒩, which dimensions do existing systems cover, and which do they lack."</em> The work of civic proof is to precisely mark the positions of existing systems, especially to show the coverage gaps in M₃ cumulativity and M₄ privacy calibration — the two dimensions most commonly overlooked.
+    - A principle of academic integrity runs through the entire text — <strong>heuristic analogies undertake heuristic work, formal definitions undertake formal work, philosophical bases undertake normative work; none may cross these boundaries.</strong> Marshall falls in the γ heuristic slot, VC belongs to the ℱ component, KYC belongs to the M₂/M₄ subset — the precise marking of these positions is where the boundaries of the CivicProof three-part formula lie.
   formalCoda: |
     Final form:
       CivicProof  ≜  ⟨ 𝒩, ℱ, ℬ ⟩

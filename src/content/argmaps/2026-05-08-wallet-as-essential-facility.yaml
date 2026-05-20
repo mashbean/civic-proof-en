@@ -1,10 +1,10 @@
 slug: 2026-05-08-wallet-as-essential-facility
-title: "為什麼皮夾應該被當成電信業：Apple Wallet 不是中性產品"
+title: "Why Wallets Should Be Regulated Like Telecoms: Apple Wallet Is Not a Neutral Product"
 subtitle: "Wallet as Essential Facility — Argument Map (v2)"
 
 coreThesis:
   text: |
-    當 wallet 變成進入政府服務、年齡驗證、選舉投票的必要通道，它應受 essential facility doctrine、Digital Markets Act 與電信業互通義務 framework 約束。具體執行採 multi-pronged 路徑（US Aspen-MCI + EU DMA Article 6 路徑甲 + 國家立法 §251 機制層參考 + W3C-OID4VC 標準正式化），不需立新法。SSI 反論的對偶從「監管 vs 自由」改寫為「廠商鎖定 vs 互通性義務」。
+    When a wallet becomes the necessary channel for accessing government services, age verification, and electoral voting, it should be subject to essential facility doctrine, the Digital Markets Act, and the telecom interoperability obligation framework. Specific enforcement follows a multi-pronged path (US Aspen-MCI + EU DMA Article 6 path α + national legislation §251 mechanism layer reference + W3C-OID4VC standards normalization), without requiring new legislation. The SSI counterargument's dual framing shifts from "regulation vs. freedom" to "vendor lock-in vs. interoperability obligations."
   summary: "Wallet meets essential facility doctrine via Aspen-MCI strict four conditions plus sacrifice test, owing common-carrier obligations under multi-pronged enforcement."
   formal:
     expression: |
@@ -24,166 +24,166 @@ coreThesis:
       Portability_spec:
         spec(W) ⊨ (credential_export ∧ issuer_choice ∧ verifier_choice ∧ revocation_independence)
         ⇔ ¬vendor_lockin(W) ∧ ssi_vision_realizable(W)
-    caption: "Essential facility 五條件（C1-C4 + sacrifice test）成立時 wallet 應承擔公共承載人義務；執行採四路徑 OR 組合；portability spec 與 SSI 願景兼容。"
+    caption: "When the essential facility five conditions (C1-C4 + sacrifice test) are met, wallet should bear public common carrier obligations; enforcement follows a four-path OR combination; portability spec is compatible with the SSI vision."
     legend:
       - symbol: W
-        meaning: Wallet（Apple Wallet / Google Wallet 等主導市占的數位皮夾）
+        meaning: Wallet (Apple Wallet / Google Wallet and other dominant-market-share digital wallets)
       - symbol: control(W)
-        meaning: C1 條件——主導者控制設施
+        meaning: C1 condition — dominant actor controls the facility
       - symbol: reconstructable(W)
-        meaning: C2 條件——競爭者實際無法重建
+        meaning: C2 condition — competitors practically cannot reconstruct
       - symbol: refusal_suppresses_competition
-        meaning: C3 條件——拒絕接入會壓制競爭
+        meaning: C3 condition — refusal of access suppresses competition
       - symbol: technical_economic_feasibility
-        meaning: C4 條件——接入在技術與經濟上可行
+        meaning: C4 condition — access is technically and economically feasible
       - symbol: sacrifice_test_passed
-        meaning: Aspen Skiing 第五要件——主導者拒絕接入有短期經濟犧牲
+        meaning: Aspen Skiing fifth element — dominant actor's refusal of access entails short-term economic sacrifice
       - symbol: common_carrier_obligations
-        meaning: 公共承載人義務（不得任意拒絕 / 不得自我優先 / 不得單方撤銷）
+        meaning: Public common carrier obligations (must not arbitrarily refuse / must not self-preference / must not unilaterally revoke)
       - symbol: functional_component_continuity
-        meaning: 路徑甲——iOS/Android 已 designated → wallet 為功能組件視角的連續推理
+        meaning: Path α — iOS/Android already designated → wallet as functional component, a continuity of reasoning
       - symbol: §251_mechanism_β
-        meaning: Telecom Act §251 四項機制（interconnection / unbundling / nondiscriminatory rates / collocation）的機制層 β 同構
+        meaning: Mechanism layer β isomorphism of Telecom Act §251's four mechanisms (interconnection / unbundling / nondiscriminatory rates / collocation)
       - symbol: vendor_lockin
-        meaning: 廠商鎖定（issuer/credential/verifier/revocation 由 wallet 廠商獨佔）
+        meaning: Vendor lock-in (issuer/credential/verifier/revocation monopolized by the wallet vendor)
       - symbol: ⇒
-        meaning: 「推得」（推論關係）
+        meaning: "implies" (inference relation)
       - symbol: ⇔
-        meaning: 「當且僅當」（雙向蘊含）
+        meaning: "if and only if" (biconditional)
       - symbol: ∧ ∨ ¬
-        meaning: 合取 / 析取 / 否定（命題邏輯算子）
+        meaning: conjunction / disjunction / negation (propositional logic operators)
 
 transitions:
-  beforeDistinction: "公式給出立場，但要先區分兩種看待 wallet 的方式。多數工程社群與商業文獻把 wallet 視為「中性消費產品」，本地圖反對該分類；wallet 應被視為「公民進入民主基礎設施的最後一哩通道」，因此屬於公共承載人責任化的範疇。"
-  beforePillars: "區分本身只是宣告。要證明「wallet 應受公共承載人義務約束」這條路徑，需要五條獨立來源的支撐：US Aspen-MCI essential facility 演繹（規範性根據）、Telecom §251 機制類比（制度先例）、DMA Article 6 連續推理（既有法律落地）、SSI 反論吸收（內部反對的處理）、portability spec 實作（從口號到工程義務）。五者缺一，整體論證會被「單線推理被反證即崩塌」拖垮。"
-  beforeChain: "前面五條 pillar 是正向支撐。但「wallet 屬公共承載人」這個主張，必須有一條具體的因果鏈頂住——從「中性商業產品」這個初始預設，逐步推到「owe common carrier obligations」這個結論。六步因果鏈（控制 → 拒絕 → 競爭壓制 → sacrifice → 公共承載）可被機制性追溯。"
-  beforeBorders: "立場 + 因果鏈成立後，反論才真的具威脅。「Trinko 已廢除 essential facility」「self-sovereign = 無監管」「DMA 是區域法不可全球化」三條反論常被引為理由；但仔細檢驗每條反論的法律與概念結構，會發現它們不僅未支持「wallet 是中性產品」，反而 flips to support 公共承載人義務化——亦即反論自己的論證邊界，正好是地圖的第二層支撐。"
-  beforeConditions: "反論被吸收後，留下的是設計含意：在什麼條件下，wallet 公共承載人義務可以被合法部署？四項可遷移性（credential 可導出 / issuer 可選擇 / verifier 可接入 / 撤銷權獨立）+ 四項禁令（廠商鎖定 / 互通拒絕 / 自我優先 / 單方撤銷）+ 三層執行機制（W3C-OID4VC + DMA Article 6 + 國家立法），把抽象的「公共承載」翻譯成可被檢驗的工程與法律義務。"
-  beforeConclusion: "把規範根據（essential facility）、制度先例（Telecom §251）、既有法律（DMA Article 6）、反論吸收（SSI 對偶重構）、實作 spec 五層收束起來，地圖最終要說的是政策設計上的成就（反壟斷只是工具，不是目的），以及一條跨越所有層級的對偶原則：廠商鎖定 vs 互通性義務。"
+  beforeDistinction: "The formula establishes the position, but a distinction between two ways of viewing wallet must first be drawn. Most engineering communities and commercial literature treat wallet as a 'neutral consumer product'; this map rejects that classification — wallet should be viewed as 'the last-mile channel through which citizens access democratic infrastructure,' and therefore falls within the scope of public common carrier accountability."
+  beforePillars: "The distinction itself is merely a declaration. To prove the path that 'wallet should be subject to public common carrier obligations,' five independent sources of support are required: US Aspen-MCI essential facility deduction (normative basis), Telecom §251 mechanism analogy (institutional precedent), DMA Article 6 continuity reasoning (existing law implementation), SSI counterargument absorption (handling internal opposition), and portability spec implementation (from slogan to engineering obligation). Without any one of these five, the overall argument risks collapse if a single line of reasoning is refuted."
+  beforeChain: "The five pillars above provide positive support. But the claim that 'wallet constitutes a public common carrier' must be underpinned by a concrete causal chain — progressing from the initial assumption of 'neutral commercial product' step by step to the conclusion 'owe common carrier obligations.' The six-step causal chain (control → refusal → competition suppression → sacrifice → public carriage) can be mechanically traced."
+  beforeBorders: "Once the position + causal chain are established, the objections become genuinely threatening. 'Trinko has effectively abolished essential facility,' 'self-sovereign = unregulated,' and 'DMA is regional law and cannot be globalized' are frequently cited as reasons; but careful examination of the legal and conceptual structure of each objection reveals that not only do they not support 'wallet is a neutral product,' they actually flip to support public common carrier obligations — that is, the argumentative limits of each objection precisely constitute the second layer of support for the map's position."
+  beforeConditions: "After the objections are absorbed, what remains is design implications: under what conditions can wallet public common carrier obligations be legitimately deployed? Four portability specs (credential exportable / issuer selectable / verifier accessible / revocation independent) + four prohibitions (vendor lock-in / interoperability refusal / self-preference / unilateral revocation) + three enforcement mechanism layers (W3C-OID4VC + DMA Article 6 + national legislation) translate the abstract concept of 'public carriage' into verifiable engineering and legal obligations."
+  beforeConclusion: "Drawing together the normative basis (essential facility), institutional precedent (Telecom §251), existing law (DMA Article 6), counterargument absorption (SSI dual framing reconstruction), and implementation spec across five layers, the map's final message is the policy design achievement (antitrust is merely an instrument, not an end), and a dual principle spanning all levels: vendor lock-in vs. interoperability obligations."
 
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: Wallet 是中性商業產品
-    body: "把 Apple Wallet 與 Google Wallet 視為一般消費產品，由市場與消費者選擇調節，不需要公共承載人義務。這個分類預設使用者有實際替代品，而 wallet 拒絕接入只是商業選擇而非結構性壓制。但 iOS 50%+ 美國市占、35-45% 歐盟市占、以及 issuer/verifier 接入的選擇性權力，已使「自由市場調節」這個前提失去實證基礎。"
+    label: ❌ Rejected
+    title: Wallet Is a Neutral Commercial Product
+    body: "Treating Apple Wallet and Google Wallet as ordinary consumer products, regulated by market and consumer choice, without requiring public common carrier obligations. This classification assumes users have real alternatives and that wallet refusal of access is merely a commercial choice rather than structural suppression. But iOS 50%+ US market share, 35–45% EU market share, and the selective power over issuer/verifier access have already undermined the empirical basis for the 'free market regulation' premise."
     formal: "wallet ∈ Commodity_Market  ⇒  ¬owe_common_carrier_obligations  (rejected basis)"
   accepted:
-    label: ✓ 被辯護
-    title: Wallet 是公共承載人 + multi-pronged 執行 + 廠商鎖定 vs 互通性義務對偶
-    body: "Wallet 在 issuer 接入與 verifier 接入兩個層級，已滿足 essential facility doctrine 的嚴格四條件加上 Aspen Skiing sacrifice test。具體執行採 multi-pronged 路徑（US Aspen-MCI + EU DMA Article 6 路徑甲 + 國家立法 §251 機制層參考 + W3C-OID4VC 標準正式化），不需立新法。SSI 反論的「監管 vs 自由」對偶建立在概念混淆上，正確對偶是「廠商鎖定 vs 互通性義務」——互通性義務保留多元並存的 wallet 生態，與 SSI 願景兼容。"
+    label: ✓ Defended
+    title: Wallet Is a Public Common Carrier + Multi-Pronged Enforcement + Vendor Lock-In vs. Interoperability Obligations Dual
+    body: "At the issuer access and verifier access levels, wallet already satisfies the strict four conditions of essential facility doctrine plus the Aspen Skiing sacrifice test. Specific enforcement follows a multi-pronged path (US Aspen-MCI + EU DMA Article 6 path α + national legislation §251 mechanism layer reference + W3C-OID4VC standards normalization), without requiring new legislation. The SSI counterargument's 'regulation vs. freedom' dual rests on conceptual conflation; the correct dual is 'vendor lock-in vs. interoperability obligations' — interoperability obligations preserve a diverse wallet ecosystem and are compatible with the SSI vision."
     formal: "(C1 ∧ C2 ∧ C3 ∧ C4 ∧ sacrifice_test) ⇒ owe_common_carrier_obligations(W)  ∧  enforcement = ⋁_i path_i"
 
 pillars:
-  - section: §2 — US Essential Facility 演繹
-    title: 嚴格四條件 + Aspen Skiing Sacrifice Test
-    role: "提供規範性根據——若沒有一個成熟法律框架，「wallet 應受公共承載」會被指控為任意主張。Areeda-Hovenkamp 嚴格四條件 + Aspen Skiing sacrifice test 提供 US 反托拉斯法的權威基礎；Trinko 雖收緊但未廢除 doctrine，wallet 場景（未受傳統監管）正好在 Trinko 限制不適用的 sweet spot。"
-    body: "MCI v. AT&T 1983 第七巡迴整理的「三條件」非最高法院 holding；採嚴格版本必須加上 Aspen Skiing 1985 sacrifice test 與 C4 技術經濟可行性，合計五要件。Trinko 2004 把 doctrine 推回 sacrifice 路徑，且僅限於受傳統監管產業（如 1996 Telecom Act），wallet 不在其中。套用 wallet 四層級結論：Issuer 接入 + Verifier 接入命中五要件全部，是最強支柱；OS-NFC 強但 sacrifice 證據需靠 EEA iOS 17.4 反證重建；Wallet UI 最弱建議省略。"
-    finding: "Issuer/Verifier 接入層的 essential facility 訴訟在美國法院實質可行；Wallet UI 層省略以避免削弱整體論證。"
+  - section: §2 — US Essential Facility Deduction
+    title: Strict Four Conditions + Aspen Skiing Sacrifice Test
+    role: "Provides the normative basis — without a mature legal framework, 'wallet should be subject to public common carrier obligations' would be dismissed as an arbitrary claim. The Areeda-Hovenkamp strict four conditions + Aspen Skiing sacrifice test provide authoritative grounding in US antitrust law; Trinko tightened but did not abolish the doctrine, and the wallet scenario (not subject to traditional regulation) falls precisely in the sweet spot where Trinko limitations do not apply."
+    body: "MCI v. AT&T 1983's Seventh Circuit synthesis of 'three conditions' was not a Supreme Court holding; the strict version must add the Aspen Skiing 1985 sacrifice test and C4 technical-economic feasibility, totaling five elements. Trinko 2004 pushed the doctrine back toward the sacrifice path, and applies only to traditionally regulated industries (such as the 1996 Telecom Act) — wallet is not among them. Applying the four-level analysis to wallet: Issuer access + Verifier access hit all five elements and constitute the strongest pillar; OS-NFC is strong but sacrifice evidence needs reconstruction via EEA iOS 17.4 counterevidence; Wallet UI is weakest and is recommended to be omitted."
+    finding: "Essential facility litigation at the Issuer/Verifier access level is practically viable in US courts; Wallet UI layer omitted to avoid weakening the overall argument."
     formal: "(MCI_strict_four_conditions ∧ Aspen_Skiing_sacrifice_test ∧ ¬Trinko_regulated_industry)(W) ⇒ essential_facility(W)"
 
-  - section: §3.1-3.2 — Telecom §251 機制層類比
-    title: β 同構：四項互通機制可移植
-    role: "提供制度先例——若 wallet 公共承載義務聽起來「過於嶄新」，§251 提供 1996 年起的成熟先例。類比強度鎖在機制層 β 而非歷史條件層 γ，避免「自然壟斷論已崩塌」這個反論一擊摧毀整體論證。"
-    body: "1996 Telecommunications Act §251 四項機制：(a) interconnection (b) unbundling (c) nondiscriminatory rates (d) collocation。每項對應 wallet：(a) 任何 OID4VC credential 應可被接受；(b) credential 與 wallet UI 解綁；(c) issuer/verifier 接入費率非歧視；(d) 多 wallet 在同一裝置共存。類比強度：(a)+(b)+(c) 為 β（高度可移植機制層），(d) 為 α（純技術問題），歷史條件層為 γ（自然壟斷論不適用）。TELRIC 訂價機制不適用 wallet（邊際成本接近零），改採 DMA 6(12) FRAND 標準替代。USTA II + TRRO 2003-2005 收縮 unbundling 義務的歷史，必須主動處理而非迴避。"
-    finding: "§251 機制層提供國家立法可移植的具體模板；歷史條件層的崩塌不影響機制層類比強度。"
+  - section: §3.1-3.2 — Telecom §251 Mechanism Layer Analogy
+    title: "β Isomorphism: Four Interoperability Mechanisms Transferable"
+    role: "Provides institutional precedent — if wallet public common carrier obligations sound 'overly novel,' §251 provides mature precedent dating from 1996. The analogy's strength is locked at mechanism layer β rather than historical condition layer γ, avoiding the objection that 'natural monopoly theory has collapsed' from destroying the overall argument in one blow."
+    body: "1996 Telecommunications Act §251 four mechanisms: (a) interconnection (b) unbundling (c) nondiscriminatory rates (d) collocation. Each corresponds to wallet: (a) any OID4VC credential should be accepted; (b) credential decoupled from wallet UI; (c) issuer/verifier access rates non-discriminatory; (d) multiple wallets co-existing on the same device. Analogy strength: (a)+(b)+(c) are β (highly transferable mechanism layer), (d) is α (purely technical question), historical condition layer is γ (natural monopoly theory does not apply). TELRIC pricing mechanism does not apply to wallet (marginal cost near zero); replaced by DMA 6(12) FRAND standard. The history of USTA II + TRRO 2003–2005 contracting unbundling obligations must be actively addressed rather than avoided."
+    finding: "§251 mechanism layer provides a concrete template transferable to national legislation; the collapse of the historical condition layer does not affect the strength of the mechanism layer analogy."
     formal: "isomorphic_β({§251.a, §251.b, §251.c}, {wallet.OID4VC_accept, wallet.UI_unbundle, wallet.fair_rate})  ∧  γ_only({natural_monopoly_premise, TELRIC})"
 
-  - section: §3.3-3.6 — DMA Article 6 路徑甲
-    title: iOS/Android 已 designated → wallet 為功能組件連續推理
-    role: "提供既有法律落地——若需要等待新立法，wallet 公共承載化會無限延期。DMA Article 6 + Article 8 specification 程序已可在歐盟執行，2025-04 罰款先例證明 EU Commission 執法決心。路徑甲（功能組件視角）使 wallet 義務不需新 designation，可立即啟動。"
-    body: "Apple iOS 與 Google Android 已被 DMA Article 3 列為 gatekeeper CPS。Apple Wallet 與 Google Wallet 是 CPS 子產品；採路徑甲（連續推理）延伸 Article 6 義務，不需走 Article 3 重新 designation。Article 6 三條精確對應：6(7) 互通性（specifiable）→ wallet 應接受任何 OID4VC credential；6(9) 可攜性（absolute）→ credential 可導出到競爭 wallet；6(5) 自我優先禁令（限 ranking）→ iPhone 雙擊 power button 不得預設 Apple Wallet。執法可行性：2025-04-23 Apple 5 億歐元（Case DMA.100203）+ Meta 2 億歐元（Case DMA.100204）non-compliance 罰款。支付 wallet（TFEU 102 路徑，2024-07 結案）vs 身分 wallet（DMA Article 8，未啟動）必須拆開。"
-    finding: "DMA 路徑甲在歐盟可立即啟動；2025 罰款先例證明 specification 程序的實質執法能力；支付/身分 wallet 拆開避免混淆。"
+  - section: §3.3-3.6 — DMA Article 6 Path α
+    title: iOS/Android Already Designated → Wallet as Functional Component Continuity Reasoning
+    role: "Provides existing law implementation — if waiting for new legislation is required, wallet common carriage will be indefinitely deferred. DMA Article 6 + Article 8 specification procedure can already be enforced in the EU; the 2025-04 fine precedent demonstrates EU Commission enforcement resolve. Path α (functional component perspective) allows wallet obligations to begin immediately without new designation."
+    body: "Apple iOS and Google Android have been listed as gatekeeper CPS under DMA Article 3. Apple Wallet and Google Wallet are CPS sub-products; path α (continuity reasoning) extends Article 6 obligations without needing to go through Article 3 re-designation. Three specific Article 6 correspondences: 6(7) interoperability (specifiable) → wallet should accept any OID4VC credential; 6(9) portability (absolute) → credentials exportable to competing wallets; 6(5) self-preference prohibition (limited to ranking) → iPhone double-pressing power button must not default to Apple Wallet. Enforcement feasibility: 2025-04-23 Apple €500 million (Case DMA.100203) + Meta €200 million (Case DMA.100204) non-compliance fines. Payment wallet (TFEU 102 path, case closed 2024-07) vs. identity wallet (DMA Article 8, not yet initiated) must be kept separate."
+    finding: "DMA path α can be initiated immediately in the EU; 2025 fine precedents demonstrate substantive enforcement capacity of the specification procedure; separating payment/identity wallet avoids conflation."
     formal: "designated(iOS, Android) ∧ functional_component(W ⊆ {iOS, Android})  ⇒  Article_6_obligations(W) ⊨ {6(7), 6(9), 6(5)}"
 
-  - section: §4 — SSI 反論對偶重構
-    title: 「廠商鎖定 vs 互通性義務」取代「監管 vs 自由」
-    role: "提供反論吸收——若不處理 SSI 倡議者的反論，本論證會被指控為「壓制 self-sovereign 創新」。SSI 反論建立在「規範強制（強制使用某 wallet）」與「互通性義務（要求所有 wallet 遵循開放標準）」的概念混淆上。本 pillar 拆解三變體並提出對偶重構，使互通性義務與 SSI 願景在邏輯上兼容。"
-    body: "SSI 反論三變體：A 政府規範會把 wallet 變成新監控工具；B OID4VC 是 EU 標準不應全球化；C 自由選擇是民主基礎。三者都把工具 A（標準強制）與工具 B（互通性義務）混為一談。回應：互通性義務不要求廠商揭露內部結構（A 無效）；OID4VC 是 W3C/OpenID Foundation 開放標準（B 無效）；多 wallet 並存保留用戶選擇（C 無效）。SSI 願景核心三層（用戶持有 credential / 可選擇 wallet / 可撤銷授權）只能在互通性義務下實現，不能在無監管自由市場下實現。Tim Bray 2023-2024 與 Christopher Allen 2023 立場部分認可此論（弱歸納，不主張 SSI 社群集體背書）。"
-    finding: "SSI 反論的「監管 vs 自由」對偶被概念混淆遮蔽；正確對偶「廠商鎖定 vs 互通性義務」使 SSI 願景與公共承載義務邏輯兼容。"
+  - section: §4 — SSI Counterargument Dual Framing Reconstruction
+    title: "\"Vendor Lock-In vs. Interoperability Obligations\" Replaces \"Regulation vs. Freedom\""
+    role: "Provides counterargument absorption — without addressing the SSI advocates' objection, this argument would be accused of 'suppressing self-sovereign innovation.' The SSI counterargument rests on conceptual conflation between 'normative mandate (compulsory use of a specific wallet)' and 'interoperability obligations (requiring all wallets to follow open standards).' This pillar deconstructs three variants and proposes the dual framing reconstruction, making interoperability obligations logically compatible with the SSI vision."
+    body: "SSI counterargument three variants: A government regulation will turn wallets into new surveillance tools; B OID4VC is an EU standard and should not be globalized; C free choice is the foundation of democracy. All three conflate instrument A (standards mandate: compulsory use of a specific wallet) with instrument B (interoperability obligations: requiring all wallets to follow open standards). Responses: interoperability obligations do not require vendors to disclose internal structures (A invalid); OID4VC is a W3C/OpenID Foundation open standard (B invalid); multiple wallets coexisting preserves user choice (C invalid). The SSI vision's three core layers (user holds credential / can choose wallet / can revoke authorization) can only be realized under interoperability obligations, not in an unregulated free market. Tim Bray (2023–2024) and Christopher Allen (2023) positions partially recognize this argument (weak inductive, no claim of collective SSI community endorsement)."
+    finding: "The SSI counterargument's 'regulation vs. freedom' dual is obscured by conceptual conflation; the correct dual 'vendor lock-in vs. interoperability obligations' makes the SSI vision logically compatible with public common carrier obligations."
     formal: "interoperability_obligation(W) ⇔ (user_holds_credential(W) ∧ wallet_choice(W) ∧ revocation_authority(W))  ∧  ¬standards_mandate"
 
-  - section: §5 — Wallet Portability Spec 實作
-    title: 4 項可遷移性 + 4 項禁令 + 三層執行機制
-    role: "提供實作可行性——若沒有具體 spec，公共承載義務只是口號。本 pillar 把 4 項可遷移性與 4 項禁令對應到 W3C VC / OID4VC / DC API / Bitstring Status List 既有技術標準，並提出三層執行機制（標準正式化 + DMA 強制 + 國家立法）。spec items 不對稱可拆卸分階段立法，降低政治阻力。"
-    body: "Spec 1 credential 可導出（OID4VCI Implementer's Draft 4 §6.5 informative，預期 2025-Q4 升 normative）；Spec 2 issuer 可選擇多 wallet（技術可行，Apple/Google API 鎖定為阻礙）；Spec 3 verifier 可接入多 wallet（W3C DC API 2024 draft，需多瀏覽器配合）；Spec 4 撤銷權不被獨佔（OID4VCI status list / Bitstring Status List 1.0）。對應禁令：廠商鎖定 / 互通拒絕 / 自我優先 / 單方撤銷，分別對應 DMA 6(9) / 6(7) / 6(5) / 法定。三層執行：W3C-OID4VC normative（2025-Q4）→ DMA Article 6 強制（2026-Q2）→ 國家立法跟進（美國 ADPPA、台灣個資法、日本 APPI、新加坡 IMDA）。"
-    finding: "4 項 spec 對應現有技術標準，技術可行性已經就緒；落地瓶頸在政策層（自願 vs 強制義務）；可拆卸分階段立法降低執行成本。"
+  - section: §5 — Wallet Portability Spec Implementation
+    title: 4 Portability Specs + 4 Prohibitions + Three-Layer Enforcement Mechanism
+    role: "Provides implementation feasibility — without a concrete spec, public common carrier obligations are merely a slogan. This pillar maps the 4 portability specs and 4 prohibitions to W3C VC / OID4VC / DC API / Bitstring Status List existing technical standards, and proposes three enforcement mechanism layers (standards normalization + DMA mandate + national legislation). Spec items can be asymmetrically staged for legislation, reducing political resistance."
+    body: "Spec 1 credential exportable (OID4VCI Implementer's Draft 4 §6.5 informative, expected to be upgraded to normative in 2025-Q4); Spec 2 issuer can select multiple wallets (technically feasible, Apple/Google API lock-in is the obstacle); Spec 3 verifier can access multiple wallets (W3C DC API 2024 draft, requires multi-browser cooperation for implementation); Spec 4 revocation rights not monopolized by wallet vendor (OID4VCI status list / Bitstring Status List 1.0). Corresponding prohibitions: vendor lock-in / interoperability refusal / self-preference / unilateral revocation, corresponding to DMA 6(9) / 6(7) / 6(5) / statutory respectively. Three enforcement layers: W3C-OID4VC normative (2025-Q4) → DMA Article 6 mandate (2026-Q2) → national legislation follow-on (US ADPPA, Taiwan PDPA, Japan APPI, Singapore IMDA)."
+    finding: "4 specs correspond to existing technical standards; technical feasibility is already in place; bottleneck is at the policy layer (voluntary vs. mandatory obligations); staged legislation reduces implementation costs."
     formal: "spec_implementable(W) ⇔ ⋀_{i=1..4} spec_i(W)  ∧  ⋀_{j=1..3} enforcement_layer_j(W)"
 
 chain:
-  title: Wallet 公共承載六步因果鏈：中性產品 → owe common carrier obligations
+  title: "Wallet Public Common Carrier Six-Step Causal Chain: Neutral Product → Owe Common Carrier Obligations"
   legend:
     - kind: deterministic
-      label: 機制必然（法律 / 工程結構性，不依賴外部 trigger）
+      label: Mechanically necessary (legally / engineering structural, not dependent on external trigger)
     - kind: probabilistic
-      label: 概率性（依賴政策選擇 + 訴訟與罰款執行）
+      label: Probabilistic (dependent on policy choices + litigation and fine enforcement)
   steps:
     - tag: T0
       kind: deterministic
-      text: "Wallet 在政府服務、年齡驗證、平台登入、選舉投票成為必要通道（基礎設施性質確立）"
+      text: "Wallet becomes a necessary channel for government services, age verification, platform login, and electoral voting (infrastructure character established)"
     - tag: T1
       kind: deterministic
-      text: "C1 主導者控制：Apple iOS 50%+ 美國市占；Google Android + Wallet 全球主導；issuer/verifier 接入由廠商選擇性決定"
+      text: "C1 dominant actor control: Apple iOS 50%+ US market share; Google Android + Wallet global dominance; issuer/verifier access selectively determined by vendors"
     - tag: T2
       kind: deterministic
-      text: "C2 不可重建 + C3 拒絕壓制競爭：第三方 wallet 無法繞過 Apple/Google 控制的 issuer 接入路徑與 OS-level NFC API"
+      text: "C2 non-reconstructable + C3 refusal suppresses competition: third-party wallets cannot bypass Apple/Google-controlled issuer access pathways and OS-level NFC APIs"
     - tag: T3
       kind: probabilistic
-      text: "C4 技術經濟可行 + sacrifice test：iOS 17.4 EEA 開放 NFC 證明技術可行；Apple 拒絕 issuer 接入造成短期 commission 損失（sacrifice 證據）"
+      text: "C4 technically economically feasible + sacrifice test: iOS 17.4 EEA NFC opening proves technical feasibility; Apple's refusal of issuer access causes short-term commission loss (sacrifice evidence)"
     - tag: T4
       kind: deterministic
-      text: "Aspen-MCI essential facility doctrine 五要件全部成立 → wallet owe common carrier obligations"
+      text: "Aspen-MCI essential facility doctrine all five elements satisfied → wallet owes common carrier obligations"
     - tag: T5
       kind: probabilistic
-      text: "Multi-pronged 執行：US Aspen-MCI（issuer/verifier 訴訟）∨ EU DMA Article 6 路徑甲 ∨ 國家立法 §251 機制 ∨ W3C-OID4VC 標準正式化"
+      text: "Multi-pronged enforcement: US Aspen-MCI (issuer/verifier litigation) ∨ EU DMA Article 6 path α ∨ national legislation §251 mechanism ∨ W3C-OID4VC standards normalization"
 
 borders:
-  - label: 反論 1
-    title: Trinko 已實質廢除 essential facility doctrine
-    pivot: "反論訴求是「Justice Scalia 在 540 U.S. 411 寫『we have never recognized such a doctrine, and we find no need either to recognize it or to repudiate it here』，因此 essential facility 在美國法院已實質失效」。但細讀 Trinko 全文，Scalia 處理的是 1996 Telecom Act 已建立詳盡 ex ante 監管的場域；Trinko 並未否定 doctrine 在未受傳統監管場域的適用性，且仍肯認 Aspen Skiing sacrifice test 為反托拉斯成立要件之一。Hovenkamp 6th edition 雖部分支持「Trinko 已實質廢除」立場，仍承認對未受監管的數位平台 Aspen-MCI 路徑有適用空間。"
-    flip: "Trinko 為 essential facility doctrine 設定的 outer boundary 不僅未支持「wallet 不適用」，反而給「wallet 屬未受傳統監管場域，正好是 Trinko 限制不適用的 sweet spot」提供了最強論證——Trinko 自身的限制範圍說明了 wallet 訴訟的可行性。"
-  - label: 反論 2
-    title: Self-sovereign identity = 無監管自由市場
-    pivot: "反論訴求是「政府規範會把 wallet 變成新監控工具；OID4VC 是 EU 標準不應全球化；自由選擇是民主基礎」三個變體。但仔細檢驗每個變體，都把工具 A（規範強制：強制使用某特定 wallet）與工具 B（互通性義務：要求所有 wallet 遵循開放標準）混為一談。互通性義務不要求廠商揭露內部結構；OID4VC 是 W3C/OpenID Foundation 開放標準而非 EU 區域標準；多 wallet 並存保留用戶選擇。"
-    flip: "SSI 願景的核心三層（用戶持有 credential / 可選擇 wallet / 可撤銷授權）只能在互通性義務下實現，不能在無監管自由市場下實現——若 Apple Wallet 鎖定 credential，用戶實際上不持有 credential，是「用戶租用 Apple 提供的 credential」。SSI 反論反向支持「廠商鎖定 vs 互通性義務」對偶。"
-  - label: 反論 3
-    title: DMA 是歐盟區域法不可全球化
-    pivot: "反論訴求是「DMA 執法管轄限於歐盟，跨國 wallet 服務的實際影響有界。Apple 已在 iOS 17.4 EEA 限制版本中採取地區化策略——歐盟使用者享受互通性，美國使用者仍是封閉系統。把 DMA 當作全球範本是法律帝國主義」。"
-    flip: "區域差異不僅未支持「wallet 公共承載化不可推進」，反而給 multi-pronged 執行路徑提供了最強論證。DMA 提供歐盟先例；US Aspen-MCI 提供美國路徑；§251 機制層提供其他國家立法可移植模板；W3C-OID4VC 提供標準層協調。多路徑並進避免單一法域成為唯一執法工具——這恰好示範跨法域協調如何約束區域局限。"
+  - label: Objection 1
+    title: Trinko Has Effectively Abolished Essential Facility Doctrine
+    pivot: "The objection claims that 'Justice Scalia wrote in 540 U.S. 411 \"we have never recognized such a doctrine, and we find no need either to recognize it or to repudiate it here,\" so essential facility has effectively lapsed in US courts.' But reading Trinko fully, Scalia was addressing a domain where the 1996 Telecom Act had established detailed ex ante regulation; Trinko did not deny the doctrine's applicability in domains not subject to traditional regulation, and still affirmed the Aspen Skiing sacrifice test as one element of antitrust violation. Hovenkamp 6th edition, while partially supporting 'Trinko has effectively abolished' the position, still acknowledges that the Aspen-MCI path has applicability to unregulated digital platforms."
+    flip: "The outer boundary Trinko sets for essential facility doctrine not only fails to support 'wallet does not apply,' it actually provides the strongest argument for 'wallet belongs to the unregulated domain where Trinko limitations do not apply, precisely the sweet spot' — Trinko's own limiting scope explains the viability of wallet litigation."
+  - label: Objection 2
+    title: Self-Sovereign Identity = Unregulated Free Market
+    pivot: "The objection's three variants claim that 'government regulation will turn wallets into new surveillance tools; OID4VC is an EU standard and should not be globalized; free choice is the foundation of democracy.' But careful examination of each variant shows that all conflate instrument A (normative mandate: compulsory use of a specific wallet) with instrument B (interoperability obligations: requiring all wallets to follow open standards). Interoperability obligations do not require vendors to disclose internal structures; OID4VC is a W3C/OpenID Foundation open standard, not an EU regional standard; multiple wallets coexisting preserves user choice."
+    flip: "The SSI vision's three core layers (user holds credential / can choose wallet / can revoke authorization) can only be realized under interoperability obligations, not in an unregulated free market — if Apple Wallet locks in credentials, users do not actually hold credentials; they are 'renting credentials provided by Apple.' The SSI counterargument inversely supports the 'vendor lock-in vs. interoperability obligations' dual."
+  - label: Objection 3
+    title: DMA Is EU Regional Law and Cannot Be Globalized
+    pivot: "The objection claims that 'DMA enforcement jurisdiction is limited to the EU, and the actual impact of cross-border wallet services is bounded. Apple has adopted a regionalization strategy in its iOS 17.4 EEA limited version — EU users enjoy interoperability, US users remain in a closed system. Treating DMA as a global template is legal imperialism.'"
+    flip: "Regional differentiation not only fails to support 'wallet common carriage cannot advance,' it actually provides the strongest argument for the multi-pronged enforcement path. DMA provides EU precedent; US Aspen-MCI provides the US path; §251 mechanism layer provides a nationally legislatively transferable template for other countries; W3C-OID4VC provides standards-layer coordination. Multiple parallel paths avoid any single jurisdiction becoming the sole enforcement instrument — this precisely demonstrates how cross-jurisdictional coordination can constrain regional limitations."
 
 conditions:
-  title: Wallet 公共承載義務的合法部署，必須先通過四項 portability spec + 四項禁令 + 三層執行機制
+  title: Legitimate deployment of wallet public common carrier obligations must first pass four portability specs + four prohibitions + three enforcement mechanism layers
   formalPrelude: "deploy(common_carrier_obligations, W) valid ⇔ Spec₁ ∧ Spec₂ ∧ Spec₃ ∧ Spec₄ ∧ Ban₁ ∧ Ban₂ ∧ Ban₃ ∧ Ban₄ ∧ Layer₁ ∧ Layer₂ ∧ Layer₃"
   items:
-    - title: Spec 1 — credential 可導出
-      body: "Wallet 必須提供 credential export endpoint，使用者可導出已存 credential 到競爭 wallet。標準狀態 OID4VCI Implementer's Draft 4 §6.5 informative，預期 2025-Q4 升 normative。對應 DMA Article 6(9) 可攜性義務。"
+    - title: Spec 1 — Credential Exportable
+      body: "Wallet must provide a credential export endpoint, allowing users to export stored credentials to competing wallets. Standard status: OID4VCI Implementer's Draft 4 §6.5 informative, expected to be upgraded to normative in 2025-Q4. Corresponds to DMA Article 6(9) portability obligations."
       formal: "Spec₁: ∀ W : ∃ export_endpoint(W) ∧ format ∈ {OID4VCI, W3C_VCDM_2.0}"
-    - title: Spec 2 — issuer 可選擇多 wallet
-      body: "Issuer 必須能直接呼叫多個 wallet API（OID4VCI），而非被綁定到 Apple/Google 之一。技術可行，落地缺口在 Apple/Google API 鎖定 + 廠商審核制度。對應 DMA Article 6(7) 互通性義務。"
+    - title: Spec 2 — Issuer Can Select Multiple Wallets
+      body: "Issuer must be able to directly call multiple wallet APIs (OID4VCI) rather than being bound to one of Apple/Google. Technically feasible; the implementation gap lies in Apple/Google API lock-in + vendor review system. Corresponds to DMA Article 6(7) interoperability obligations."
       formal: "Spec₂: ∀ issuer : ∃ wallet_API ∈ {Apple, Google, third_party} : direct_call_supported"
-    - title: Spec 3 — verifier 可接入多 wallet
-      body: "Verifier 必須能透過 W3C Digital Credentials API（browser-native）接入任何 wallet，不需走 Apple/Google 專屬 API。標準狀態 W3C draft 2024，需 Chrome / Firefox / Safari / Edge 多瀏覽器配合落地。對應 DMA Article 6(5) 自我優先禁令。"
+    - title: Spec 3 — Verifier Can Access Multiple Wallets
+      body: "Verifier must be able to access any wallet through the W3C Digital Credentials API (browser-native) without going through Apple/Google proprietary APIs. Standard status: W3C draft 2024; requires multi-browser cooperation (Chrome / Firefox / Safari / Edge) for implementation. Corresponds to DMA Article 6(5) self-preference prohibition."
       formal: "Spec₃: ∀ verifier : ∃ DC_API_browser_native : verify(W, credential) without lock-in"
-    - title: Spec 4 — 撤銷權不被 wallet 廠商獨佔
-      body: "Issuer 必須保留 revocation rights，不被 wallet 廠商獨佔。技術機制 OID4VCI status list / Bitstring Status List 1.0 已就緒；落地缺口是 wallet 廠商可能單方掩蓋撤銷狀態。需新立法明確禁止單方撤銷。"
+    - title: Spec 4 — Revocation Rights Not Monopolized by Wallet Vendor
+      body: "Issuer must retain revocation rights, not monopolized by wallet vendor. Technical mechanism OID4VCI status list / Bitstring Status List 1.0 already in place; implementation gap is that wallet vendors may unilaterally conceal revocation status. New legislation explicitly prohibiting unilateral revocation is required."
       formal: "Spec₄: ∀ credential ∈ W : revocation_authority(credential) = issuer ∧ ¬wallet_vendor_monopoly"
-    - title: Ban 1-4 — 四項禁令
-      body: "對應四項可遷移性的禁令配對：(1) 廠商鎖定禁令對 Spec 1；(2) 互通拒絕禁令對 Spec 2；(3) 自我優先禁令對 Spec 3；(4) 單方撤銷禁令對 Spec 4。每項禁令都有對應 DMA Article 或法定根據。"
+    - title: Ban 1-4 — Four Prohibitions
+      body: "Prohibition pairs corresponding to four portability specs: (1) vendor lock-in prohibition corresponding to Spec 1; (2) interoperability refusal prohibition corresponding to Spec 2; (3) self-preference prohibition corresponding to Spec 3; (4) unilateral revocation prohibition corresponding to Spec 4. Each prohibition has a corresponding DMA Article or statutory basis."
       formal: "⋀_{i=1..4} Ban_i = ¬violation(Spec_i)"
-    - title: Layer 1 — W3C / OID4VC 標準正式化
-      body: "把現有 W3C VCDM 2.0 / DC API / OID4VCI / OID4VP / Bitstring Status List 1.0 等 draft 推進到 normative recommendation，使所有 wallet 廠商在技術層可遵循。預期時程 2025-Q4。"
+    - title: Layer 1 — W3C / OID4VC Standards Normalization
+      body: "Advance existing W3C VCDM 2.0 / DC API / OID4VCI / OID4VP / Bitstring Status List 1.0 drafts to normative recommendation status, enabling all wallet vendors to comply at the technical layer. Expected timeline 2025-Q4."
       formal: "Layer₁: W3C_recommendation_status({VCDM_2.0, DC_API, OID4VCI, OID4VP, status_list}) by 2025-Q4"
-    - title: Layer 2 — DMA Article 6 強制（歐盟）
-      body: "透過 Article 8 specification 程序把 6(7)+(9)+(5) 義務具體化到 wallet 層級。2025-04-23 Apple 5 億 + Meta 2 億歐元 non-compliance 罰款 + 2025-03-19 messaging specification decision 證明執法能力。預期時程 2026-Q2。"
+    - title: Layer 2 — DMA Article 6 Mandate (EU)
+      body: "Concretize 6(7)+(9)+(5) obligations at the wallet level through the Article 8 specification procedure. 2025-04-23 Apple €500 million + Meta €200 million non-compliance fines + 2025-03-19 messaging specification decision demonstrate enforcement capacity. Expected timeline 2026-Q2."
       formal: "Layer₂: DMA_Article_8_specification(W, 6.7 ∧ 6.9 ∧ 6.5) by 2026-Q2"
-    - title: Layer 3 — 國家立法跟進
-      body: "美國 ADPPA、台灣個資法第六次修正、日本 APPI 2025、新加坡 IMDA 採 §251 機制層類比建立平行機制，避免地區性標準碎片化。長期外交路徑：G20 Digital Economy Working Group 提案、ITU-T 把 OID4VC 列入國際標準、雙邊/多邊貿易協定。"
+    - title: Layer 3 — National Legislation Follow-On
+      body: "US ADPPA, Taiwan PDPA sixth amendment, Japan APPI 2025, Singapore IMDA using §251 mechanism layer analogy to establish parallel mechanisms, avoiding regional standards fragmentation. Long-term diplomatic path: G20 Digital Economy Working Group proposals, ITU-T listing OID4VC as international standard, bilateral/multilateral trade agreements."
       formal: "Layer₃: ⋃_{country ∈ {US, TW, JP, SG, ...}} national_legislation(country, §251_mechanism_β)"
 
 conclusion:
   paragraphs:
-    - <strong>Wallet 不是中性商業產品，是公民進入民主基礎設施的最後一哩通道。</strong>把它視為一般消費品的分類預設了「自由市場調節」這個前提，但 iOS 50%+ 美國市占、35-45% 歐盟市占、以及 issuer/verifier 接入的選擇性權力，已使該前提失去實證基礎。Essential facility doctrine 的嚴格四條件加上 Aspen Skiing sacrifice test 在 wallet 場景成立，公共承載人義務化是延伸既有 doctrinal framework 而非立新法。
-    - 辯論應從「監管 vs 創新」轉向<em>「廠商鎖定 vs 互通性義務」</em>。SSI 倡議者的核心願景（用戶持有 credential / 可選擇 wallet / 可撤銷授權）只能在互通性義務下實現，不能在無監管自由市場下實現——這個對偶重構使 SSI 與公共承載化在邏輯上兼容，避免「自由 vs 監管」這個錯誤對偶持續錯誤動員 SSI 社群反對 wallet 政策。
-    - 一條 multi-pronged 原則貫穿全文：<strong>單一執法路徑不足以解決全球 wallet 問題；US Aspen-MCI + EU DMA 路徑甲 + 國家立法 §251 機制 + W3C-OID4VC 標準四路徑並進，方能在跨法域協調這個最薄弱環節下保持執行可行性。</strong>本文延續 article 09 NCT「商業壟斷 + 民主政體 → infrastructural tyranny」的結構批判，把該結構從北歐 BankID 場景延伸到 wallet 層的具體執行 spec；與 article 02 𝒩.M₂/M₄、article 06 D₂*、article 07 SRP、article 15 inclusion baseline 形成跨文章的耦合論證。
+    - <strong>Wallet is not a neutral commercial product; it is the last-mile channel through which citizens access democratic infrastructure.</strong> Treating it as an ordinary consumer product assumes the premise of "free market regulation," but iOS 50%+ US market share, 35–45% EU market share, and the selective power over issuer/verifier access have already undermined the empirical basis for that premise. Essential facility doctrine's strict four conditions plus the Aspen Skiing sacrifice test are satisfied in the wallet scenario; public common carrier obligations represent an extension of the existing doctrinal framework rather than the creation of new law.
+    - "The debate should shift from 'regulation vs. innovation' to <em>'vendor lock-in vs. interoperability obligations.'</em> The SSI advocates' core vision (user holds credential / can choose wallet / can revoke authorization) can only be realized under interoperability obligations, not in an unregulated free market — this dual framing reconstruction makes SSI and common carriage logically compatible, preventing the false 'freedom vs. regulation' dual from continuing to incorrectly mobilize the SSI community against wallet policy."
+    - "A multi-pronged principle runs throughout: <strong>no single enforcement path is sufficient to address the global wallet problem; US Aspen-MCI + EU DMA path α + national legislation §251 mechanism + W3C-OID4VC standards — four parallel paths — are necessary to maintain enforcement feasibility given the weakest link of cross-jurisdictional coordination.</strong> This article extends article 09 NCT's structural critique of 'commercial monopoly + democratic regime → infrastructural tyranny' from the Nordic BankID scenario to the concrete enforcement spec of the wallet layer; it forms cross-article coupled arguments with article 02 𝒩.M₂/M₄, article 06 D₂*, article 07 SRP, and article 15 inclusion baseline."
   formalCoda: |
     Final form:
 
@@ -207,8 +207,8 @@ conclusion:
       deploy valid  ⇔  ⋀_{i=1..4} Spec_i ∧ ⋀_{j=1..4} Ban_j ∧ ⋀_{k=1..3} Layer_k
 
     Cross-article coupling:
-      article_02.{M₂, M₄}      ← wallet 對應資格性 + 隱私衡量
-      article_06.D₂*           ← wallet 必須提供非智慧手機 fallback（弱勢者 inclusion 義務）
-      article_07.SRP           ← wallet 廠商鎖定的主權容器悖論當代形式
-      article_09.NCT           ← 商業壟斷 + 民主政體 → infrastructural tyranny 的 last-mile 形態
-      article_15.inclusion     ← 政府 wallet 應為 inclusion baseline，不得被商業 wallet 取代
+      article_02.{M₂, M₄}      ← wallet corresponds to qualification + privacy assessment
+      article_06.D₂*           ← wallet must provide non-smartphone fallback (inclusion obligation for the vulnerable)
+      article_07.SRP           ← contemporary form of the sovereign container paradox of wallet vendor lock-in
+      article_09.NCT           ← last-mile form of commercial monopoly + democratic regime → infrastructural tyranny
+      article_15.inclusion     ← government wallet should be the inclusion baseline, not replaceable by commercial wallets

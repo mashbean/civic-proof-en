@@ -1,8 +1,8 @@
 slug: 2026-05-06-dns-vs-identity-trust-roots
-title: DNS 的不可複製：身分治理為什麼不能照搬域名模式
+title: Why DNS Cannot Be Replicated&#58; Why Identity Governance Cannot Simply Copy the Domain Name Model
 subtitle: Historical Mismatch — Argument Map (v2)
 coreThesis:
-  text: 把 DNS 當作數位身分治理的範本，犯了「歷史前提錯置」的錯誤。DNS 治理史的四個前提（早期社群文化 / 國家策略性放手 / 技術中立論述 / IANA 過渡多重否決點）在身分領域全部失效——P_DNS 與 P_ID 不交集。FTLA 四層治理框架是替代設計，但不能照搬，必須對應每層的主權密度。
+  text: Using DNS as a template for digital identity governance commits the error of "historical precondition misplacement." The four preconditions of DNS governance history (early community culture / strategic state withdrawal / technical neutrality discourse / IANA transition multi-veto points) all fail in the identity domain — P_DNS and P_ID are disjoint. The FTLA four-tier governance framework is an alternative design, but cannot be directly copied — it must correspond to the sovereignty density of each layer.
   summary: The four enabling preconditions of DNS governance do not hold for digital identity. P_DNS ∩ P_ID = ∅.
   formal:
     expression: |
@@ -10,152 +10,152 @@ coreThesis:
       ⇒  ¬transferable(governance_model(DNS), identity)
 
       FTLA:  ⊨ identity_governance  ⇔  ⋀_{ℓ=1..4} L_ℓ  ∧  sovereignty_density_match(L_ℓ)
-    caption: HM 是「合取最大化不可達」結構：DNS 治理的四個前提 P1-P4 在身分領域都不成立，因此整個合取不滿足。FTLA 四層（L1-L4）按主權密度分層，每層治理機制必須與該層主權密度匹配。
+    caption: HM is a "conjunctive maximisation unreachable" structure&#58; the four preconditions P1–P4 of DNS governance all fail in the identity domain, so the entire conjunction is unsatisfied. The FTLA four tiers (L1–L4) are stratified by sovereignty density, and each tier's governance mechanism must match the sovereignty density of that tier.
     legend:
       - symbol: P_DNS
-        meaning: DNS 治理史的四個成立前提（{P1, P2', P3', P4'} 修訂版）
+        meaning: The four enabling preconditions of DNS governance history ({P1, P2', P3', P4'} revised version)
       - symbol: P_ID
-        meaning: 身分治理可能成立的前提集合（{P1'', P2'', P3'', P4''} 對應位置全部失敗）
+        meaning: The set of preconditions that could enable identity governance ({P1'', P2'', P3'', P4''} — all corresponding positions fail)
       - symbol: HM
-        meaning: Historical Mismatch — 歷史前提錯置（DNS 經驗不可遷移到身分）
+        meaning: Historical Mismatch — precondition misplacement (DNS experience is not transferable to identity)
       - symbol: FTLA
-        meaning: Four-Tier Layered Architecture — 四層治理框架（協議 / 標準 / 實作 / 應用）
+        meaning: Four-Tier Layered Architecture — four-tier governance framework (protocol / standard / implementation / application)
       - symbol: L₁..L₄
-        meaning: FTLA 的四個治理層（L1 protocol root / L2 standard / L3 implementation / L4 application）
+        meaning: The four governance tiers of FTLA (L1 protocol root / L2 standard / L3 implementation / L4 application)
       - symbol: ⋀
-        meaning: 大合取（所有層級同時必要）
+        meaning: Big conjunction (all tiers simultaneously necessary)
       - symbol: ∉
-        meaning: 「不屬於」（in 的否定）
+        meaning: "Does not belong to" (negation of ∈)
 
 transitions:
-  beforeDistinction: 公式給出立場，但要先區分兩種看待 DNS-身分類比的方式。多數工程社群把 DNS 視為「成功的去中心治理範本，可直接遷移到身分」，本地圖反對這個分類；它應該被視為「特殊歷史條件下的偶然產物，前提一移除就不成立」。
+  beforeDistinction: The formula states the position, but the first step is to distinguish two ways of viewing the DNS-identity analogy. Most engineering communities treat DNS as "a successful decentralised governance template that can be directly transferred to identity"; this map opposes that classification — it should be treated as "an accidental product of specific historical conditions, which ceases to hold once those conditions are removed."
 
-  beforePillars: 區分本身只是宣告。要證明「DNS 經驗不可遷移到身分」這條路徑，需要四條獨立來源：DNS 治理史四階段的前提分析、身分領域 P1''-P4'' 的對應失敗、四個跨國治理模式類比的判準矩陣、以及 FTLA 替代設計的可行性。四者缺一，論證就回到反 DNS-類比的修辭。
+  beforePillars: The distinction itself is merely a declaration. To demonstrate that "DNS experience is not transferable to identity," four independent sources are needed&#58; analysis of the preconditions across the four phases of DNS governance history, evidence of corresponding failure at P1''–P4'' in the identity domain, a criteria matrix for analogising four cross-national governance models, and the feasibility of the FTLA alternative design. Without all four, the argument reverts to anti-DNS-analogy rhetoric.
 
-  beforeChain: 前面四條 pillar 是正向論證。但「P_DNS ∩ P_ID = ∅」這個主張，必須有一條具體的反事實鏈頂住。從 1969 ARPANET 早期社群、1980-90s 美國國家策略性放手、技術中立論述被工程社群有意建構、到 2014-2016 IANA Stewardship Transition——每階段都有對應的身分情境失敗，五個反事實情境提供機制性追溯。
+  beforeChain: The four pillars provide the positive argument. But the claim "P_DNS ∩ P_ID = ∅" requires a concrete counterfactual chain to underpin it. From the 1969 ARPANET early community, to the 1980–90s US strategic withdrawal, to the technical neutrality discourse deliberately constructed by the engineering community, to the 2014–2016 IANA Stewardship Transition — each phase has a corresponding identity-context failure, and five counterfactual scenarios provide mechanistic tracing.
 
-  beforeBorders: 立場 + 反事實成立後，反論才真的具威脅。「ITU 模式可借」「IETF 模式可借」「W3C 模式可借」「ICANN 模式可借」四條反論常被引為理由；但仔細檢驗每模式的五項適用性判準（主權密度 / 利害關係人結構 / 技術可逆性 / 標準速度 / 救濟機制），會發現它們各自只在窄場域成立——不能跨情境通用化。
+  beforeBorders: Once the position and counterfactual chain are established, counter-arguments become genuinely threatening. "The ITU model can be borrowed," "the IETF model can be borrowed," "the W3C model can be borrowed," and "the ICANN model can be borrowed" are four arguments commonly cited as reasons; but careful examination of each model against five applicability criteria (sovereignty density / stakeholder structure / technical reversibility / standards speed / remedy mechanism) reveals that each holds only in a narrow domain — cross-contextual generalisation is not warranted.
 
-  beforeConditions: 反論被吸收後，留下的是設計含意：在什麼條件下，FTLA 四層治理可以被部署而不退化？四個邊界條件（主權密度匹配 / 子領域複製可能性 / 三大治理風險規避 / 救濟機制嵌入）把抽象的「FTLA」翻譯成可被檢驗的工程義務。
+  beforeConditions: Once the counter-arguments are absorbed, what remains are the design implications&#58; under what conditions can FTLA four-tier governance be deployed without degenerating? The four boundary conditions (sovereignty density match / sub-domain replication feasibility / three major governance risk avoidance / remedy mechanism embedding) translate the abstract "FTLA" into testable engineering obligations.
 
-  beforeConclusion: 把治理史、反事實、類比、設計、邊界五層收束起來，地圖最終要說的是「歷史前提匹配」這個方法論（DNS 的不可複製只是其應用結果），以及一條跨越所有層級的主權密度原則。
+  beforeConclusion: Bringing together the five layers of governance history, counterfactuals, analogy, design, and boundaries, the map ultimately argues for the methodology of "historical precondition matching" (the irreplicability of DNS being only one application of this result), and for a sovereignty-density principle that cuts across all levels.
 
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: DNS 治理模式可遷移到身分
-    body: 把 1969-2016 的 DNS 治理史當作「去中心化身分治理」的可複製範本。這個結構假設兩個領域的歷史前提相似；但 DNS 的「早期社群文化 + 國家策略性放手 + 技術中立論述 + IANA 過渡」四個前提在身分領域全部失敗——身分領域從未有早期社群（各國政府主導）、國家從未放手（高度警覺）、身分天然涉及主權（無法技術中立）、缺乏 IANA-equivalent 的過渡機制。
+    label: ❌ Rejected
+    title: DNS governance model is transferable to identity
+    body: Treating the 1969–2016 DNS governance history as a replicable template for "decentralised identity governance." This structure assumes that the historical preconditions of the two domains are similar; but the four preconditions of DNS — "early community culture + strategic state withdrawal + technical neutrality discourse + IANA transition" — all fail in the identity domain&#58; identity has never had an early community phase (national governments dominated from the start), states have never withdrawn (high vigilance), identity inherently involves sovereignty (technical neutrality is impossible), and there is no IANA-equivalent transition mechanism.
     formal: "P_DNS = {P1, P2', P3', P4'}  ∧  P_ID = {P1'', P2'', P3'', P4''}  ∧  P_DNS ∩ P_ID = ∅"
   accepted:
-    label: ✓ 被辯護
-    title: FTLA 四層治理 + 主權密度匹配
-    body: 把身分治理拆成四個層級：L1 協議根（高主權密度，必須與國家治理匹配）、L2 標準（中主權密度，可跨國協調）、L3 實作（低主權密度，市場 + 開源）、L4 應用（依場景變動）。每層治理機制必須與該層的主權密度匹配——把 L1 治理放到 L4 機制下會崩壞，反之亦然。
+    label: ✓ Defended
+    title: FTLA Four-Tier Governance + Sovereignty Density Match
+    body: Decompose identity governance into four tiers&#58; L1 protocol root (high sovereignty density — who is a citizen, who may revoke, cross-border validity; must be governed by states or multilateral organisations, borrowing ITU model + national administrative layer); L2 standards (medium sovereignty density — interoperability formats, ZK specifications, revocation mechanism; can be governed by W3C/IETF model, but requires "sovereignty reservation interfaces"); L3 implementation (low sovereignty density — open-source SDK, vendor implementation, performance optimisation; market + open-source suffices); L4 application (varies by scenario — financial identity high sovereignty, social identity low sovereignty; configured by scenario). Each tier's governance mechanism must match its sovereignty density — applying L1 governance to L4 mechanisms causes collapse, and vice versa.
     formal: "FTLA:  ⊨ identity_governance  ⇔  ⋀_{ℓ=1..4} L_ℓ  ∧  sovereignty_density_match(L_ℓ)"
 
 pillars:
-  - section: §2 — DNS 治理史四階段
-    title: P1 / P2' / P3' / P4' 的成立條件
-    role: 提供歷史根據——若 DNS 治理史本來就無前提可言（純技術自然演化），HM 就無從談起。但四階段時間線（1969-2016）顯示每階段都有特定政治經濟前提；前提改變則治理模式不可複製。
-    body: P1 — Postel jar 早期學術社群文化（1969-1980s，數百人規模、信任強、商業利益弱）。P2' — 1980-90s 美國國家權力的策略性放手（不是放棄主權，是判斷「商業互聯網成長 > 控制成本」後的選擇）。P3' — 技術中立論述被工程社群有意建構（IETF 文化把「rough consensus and running code」抬升為治理規範）。P4' — IANA Stewardship Transition 是多重否決點下勉強通過的政治產物（2014-2016，需 NTIA/IANA/ICANN/政府諮詢委員會多方同意）。四階段的核心特徵是「國家策略性放手 + 工程社群文化建構」雙重支撐。
-    finding: P_DNS = {P1, P2', P3', P4'} 是 DNS 治理成立的合取必要條件；任何一條不成立，DNS 治理就會走向不同的歷史路徑。
+  - section: §2 — Four Phases of DNS Governance History
+    title: Enabling Conditions for P1 / P2' / P3' / P4'
+    role: Provides historical grounding — if DNS governance history had no preconditions to speak of (purely natural technical evolution), HM has nothing to argue from. But the four-phase timeline (1969–2016) shows that each phase had specific political-economic preconditions; change the preconditions and the governance model ceases to be replicable.
+    body: "P1 — Postel-era early academic community culture (1969–1980s, hundreds-of-people scale, strong trust, weak commercial interests). P2' — 1980–90s US strategic withdrawal of state power (not a surrender of sovereignty, but a choice after judging that 'commercial internet growth > cost of control'). P3' — technical neutrality discourse deliberately constructed by the engineering community (IETF culture elevated 'rough consensus and running code' to a governance norm). P4' — IANA Stewardship Transition was a political product that barely passed through multiple veto points (2014–2016, requiring agreement from NTIA / IANA / ICANN / Government Advisory Committee). The core feature of all four phases is the dual support of 'strategic state withdrawal + engineering community culture construction.'"
+    finding: P_DNS = {P1, P2', P3', P4'} is the conjunctive necessary condition for DNS governance to hold; if any one condition fails, DNS governance would have followed a different historical path.
     formal: "DNS_governance(model) ⇔ P1 ∧ P2' ∧ P3' ∧ P4'"
 
-  - section: §3 — HM 合取主張
-    title: 身分領域 P1''-P4'' 全部失敗
-    role: 提供反向證據——若 DNS 的四個前提在身分領域都成立，HM 就崩塌；但四個對應位置全部失敗，使 HM 成為「合取最大化不可達」的明確案例。
-    body: HM 形式化：∀ Pᵢ ∈ P_DNS, Pᵢ ∉ P_ID。P1'' — 身分早期社群被各國政府主導（不存在 P1 的學術社群文化先期積累；身分系統從一開始就是政府基建）。P2'' — 國家權力高度警覺（不是策略性放手；身分直接連結稅務、社福、邊境，國家不可能放手）。P3'' — 身分天然涉及主權（無法技術中立；任何身分系統的根都會涉及「誰是公民」這個主權問題）。P4'' — 缺乏 IANA-equivalent 過渡機制（身分系統沒有「中立中介」可以承擔過渡角色，UN/UNHCR 都帶有政治色彩）。五個反事實情境支撐：(a) 若身分領域有早期社群會如何 (b) 若國家放手會如何 (c) 若技術中立論述存在會如何 (d) 若有 IANA 過渡會如何 (e) 若四者都缺如何（即現實）。
-    finding: P_DNS ∩ P_ID = ∅ 是強合取主張；若 P_DNS 中任一前提在身分領域成立，論證就需要降級。但目前四個對應位置都顯示失敗，HM 強形式成立。
+  - section: §3 — HM Conjunctive Claim
+    title: P1''–P4'' All Fail in the Identity Domain
+    role: Provides counter-evidence — if DNS's four preconditions all held in the identity domain, HM would collapse; but since all four corresponding positions fail, HM becomes a clear case of "conjunctive maximisation unreachable."
+    body: "HM formalisation&#58; ∀ Pᵢ ∈ P_DNS, Pᵢ ∉ P_ID. P1'' — identity's early community was dominated by national governments (no prior accumulation of P1's academic community culture; identity systems were government infrastructure from the outset). P2'' — state power remains highly vigilant (no strategic withdrawal; identity directly connects to taxation, social welfare, and borders — states cannot withdraw). P3'' — identity inherently involves sovereignty (technical neutrality is impossible; any identity system's root involves the sovereign question of 'who is a citizen'). P4'' — no IANA-equivalent transition mechanism exists (identity systems have no 'neutral intermediary' to bear the transition role; UN/UNHCR both carry political colouring). Five counterfactual scenarios in support&#58; (a) what if identity had an early community phase; (b) what if states withdrew; (c) what if technical neutrality discourse existed; (d) what if an IANA transition existed; (e) what if all four are absent (i.e., reality)."
+    finding: P_DNS ∩ P_ID = ∅ is a strong conjunctive claim; if any one precondition in P_DNS held in the identity domain, the argument would need to be downgraded. But all four corresponding positions currently show failure, and the strong form of HM holds.
     formal: "∀ i ∈ {1, 2', 3', 4'} : Pᵢ ∉ P_ID  ⇒  ¬transferable(DNS_model, identity)"
 
-  - section: §4 — 四個跨國治理模式類比
-    title: ITU / IETF / W3C / ICANN 適用性矩陣
-    role: 提供類比強度的精確邊界——若不檢驗其他治理模式，HM 仍可被指控為「只反 DNS 不反所有跨國治理」。檢驗 ITU/IETF/W3C/ICANN 四模式 + 五項判準，把類比強度精確標出。
-    body: 四模式深描：ITU（國家中心、條約驅動、慢、可救濟）；IETF（工程師中心、共識驅動、快、無正式救濟）；W3C（廠商中心、會員驅動、中速、有對話機制）；ICANN（多利害關係人、合約驅動、中速、有問責機制）。五項適用性判準：J1 主權密度、J2 利害關係人結構、J3 技術可逆性、J4 標準速度、J5 救濟機制。四模式適用性矩陣顯示沒有單一模式覆蓋身分領域全部需求；ITU 在 L1 部分可借，IETF 在 L3 可借，W3C 在 L2/L3 可借，ICANN 結構部分可借但「主權密度」這項判準上身分領域更高。
-    finding: 沒有單一現成治理模式可被照搬；FTLA 是「混合借用」設計，每層挑最適合的模式但不照搬整套機制。
+  - section: §4 — Four Cross-National Governance Model Analogies
+    title: ITU / IETF / W3C / ICANN Applicability Matrix
+    role: Provides precise boundaries on analogy strength — without examining other governance models, HM can still be accused of "only rejecting DNS, not all cross-national governance." Examining the four models of ITU/IETF/W3C/ICANN against five criteria precisely delineates analogy strength.
+    body: "Deep description of four models&#58; ITU (state-centric, treaty-driven, slow, remediable); IETF (engineer-centric, consensus-driven, fast, no formal remedy); W3C (vendor-centric, membership-driven, medium speed, dialogue mechanism); ICANN (multi-stakeholder, contract-driven, medium speed, accountability mechanism). Five applicability criteria&#58; J1 sovereignty density, J2 stakeholder structure, J3 technical reversibility, J4 standards speed, J5 remedy mechanism. The four-model applicability matrix shows no single model covers all needs in the identity domain; ITU is partially borrowable for L1, IETF is borrowable for L3, W3C is borrowable for L2/L3, ICANN structure is partially borrowable but the identity domain has higher 'sovereignty density' on criterion J1."
+    finding: No single existing governance model can be directly copied; FTLA is a "mixed borrowing" design, selecting the most appropriate model for each tier without copying any whole mechanism.
     formal: "∀ M ∈ {ITU, IETF, W3C, ICANN} : ∃ ℓ : applicable(M, L_ℓ) ∧ ∃ ℓ' : ¬applicable(M, L_ℓ')"
 
-  - section: §5 — FTLA 四層治理框架
-    title: L₁..L₄ 主權密度分層
-    role: 提供替代設計可行性——若沒有具體可實作的替代，HM 只是批判。FTLA 四層 + 主權密度匹配把「混合治理」從口號降到工程規範。
-    body: L1 協議根（高主權密度：誰是公民、誰能撤銷、跨境效力；必須由國家或多邊組織治理，借用 ITU 模式 + 國家行政層）。L2 標準（中主權密度：互通格式、ZK 規範、撤銷機制；可由 W3C/IETF 模式治理，但需要「主權預留接口」）。L3 實作（低主權密度：開源 SDK、廠商實作、性能優化；市場 + 開源即可）。L4 應用（依場景變動：金融身分高主權、社交身分低主權；按場景配置）。三大治理風險：R1 層間越界（把 L1 議題交給 L3 機制處理或反向）、R2 主權密度錯配（L1 套用 L4 機制）、R3 過渡機制缺失（沒有 IANA-equivalent 時硬推全球統一）。
-    finding: FTLA 不是「DNS 的身分版本」，是「把身分治理問題按主權密度切碎，每塊用對應機制處理」的設計。每層必須有獨立的成功指標 + 救濟機制。
+  - section: §5 — FTLA Four-Tier Governance Framework
+    title: L₁..L₄ Sovereignty Density Stratification
+    role: Provides feasibility of the alternative design — without a concrete implementable alternative, HM is only critique. FTLA four tiers + sovereignty density matching lower "mixed governance" from rhetoric to engineering specification.
+    body: "L1 protocol root (high sovereignty density&#58; who is a citizen, who may revoke, cross-border validity; must be governed by states or multilateral organisations, borrowing ITU model + national administrative layer). L2 standards (medium sovereignty density&#58; interoperability formats, ZK specifications, revocation mechanism; can be governed by W3C/IETF model, but requires 'sovereignty reservation interfaces'). L3 implementation (low sovereignty density&#58; open-source SDK, vendor implementation, performance optimisation; market + open-source suffices). L4 application (varies by scenario&#58; financial identity high sovereignty, social identity low sovereignty; configured by scenario). Three major governance risks&#58; R1 cross-tier boundary crossing (routing L1 issues to L3 mechanisms or vice versa); R2 sovereignty density mismatch (applying L4 mechanisms to L1); R3 missing transition mechanism (hard-pushing global unification without an IANA-equivalent)."
+    finding: FTLA is not "the identity version of DNS" — it is a design that "decomposes identity governance problems by sovereignty density, applying the corresponding mechanism to each piece." Each tier must have independent success metrics and remedy mechanisms.
     formal: "FTLA(identity) ⇔ ⋀_{ℓ=1..4} (L_ℓ ∧ sovereignty_density_match(L_ℓ) ∧ ¬R₁ ∧ ¬R₂ ∧ ¬R₃)"
 
-  - section: §6 — 子領域複製可能性
-    title: 4 個案例 + 4 個邊界條件
-    role: 提供誠實性——若不檢驗 FTLA 在子領域的複製可能性，HM 會被指控為「只反 DNS 不給可行替代」。四個案例（學術憑證 / 醫療紀錄 / 旅行文件 / 駕照）+ 四個邊界條件把 FTLA 的適用範圍精確標出。
-    body: 四個子領域案例：(a) 學術憑證（W3C VC 已部分成功，主權密度中）；(b) 醫療紀錄（HL7 FHIR 標準已成熟，主權密度中、L3 開源充足）；(c) 旅行文件（ICAO eMRTD 已存在，主權密度高、與 article 07 SRP 直接接合）；(d) 駕照（mDL 標準推進中，主權密度高但跨州 mutual recognition 已有先例）。四個邊界條件：B1 主權密度可分層（不能扁平化）；B2 工程社群文化存在（沒有等效 IETF 文化的領域 FTLA 不可部署）；B3 過渡機制可建構（從現有體系遷移的路徑必須清楚）；B4 救濟機制嵌入（每層必須有 article 04 T_Remedy 對應的救濟設計）。
-    finding: FTLA 在「主權密度可分層 + 工程社群存在」的子領域可部署；對「主權密度全高」（如國家公民身分根）或「無工程社群」的領域，FTLA 不適用，需要其他設計（如 article 07 MR-CivicProof）。
+  - section: §6 — Sub-Domain Replication Feasibility
+    title: 4 Cases + 4 Boundary Conditions
+    role: Provides intellectual honesty — without examining FTLA's replication feasibility in sub-domains, HM risks being accused of "only rejecting DNS without offering a viable alternative." Four cases (academic credentials / medical records / travel documents / driving licences) + four boundary conditions precisely delineate FTLA's scope of applicability.
+    body: "Four sub-domain cases&#58; (a) academic credentials (W3C VC has partially succeeded, medium sovereignty density); (b) medical records (HL7 FHIR standard is mature, medium sovereignty density, L3 open-source sufficient); (c) travel documents (ICAO eMRTD already exists, high sovereignty density, directly interfaces with article 07 SRP); (d) driving licences (mDL standard advancing, high sovereignty density but cross-state mutual recognition already has precedents). Four boundary conditions&#58; B1 sovereignty density is stratifiable (cannot be flattened); B2 engineering community culture exists (FTLA's L3 implementation tier cannot operate in domains without an equivalent IETF culture, causing the whole framework to collapse to L1+L2 government governance); B3 transition mechanism is constructible (migration pathway from existing systems must be clear); B4 remedy mechanism embedded (each tier must have a remedy design corresponding to article 04's T_Remedy)."
+    finding: FTLA is deployable in sub-domains where "sovereignty density is stratifiable + engineering community exists"; for domains where "sovereignty density is uniformly high" (e.g., national civic identity root) or "no engineering community exists," FTLA is not applicable and other designs are needed (such as article 07's MR-CivicProof).
     formal: "applicable(FTLA, subdomain) ⇔ B₁ ∧ B₂ ∧ B₃ ∧ B₄"
 
 chain:
-  title: HM 五階段反事實鏈：DNS 前提移除 → 身分情境推導
+  title: HM Five-Phase Counterfactual Chain&#58; DNS Precondition Removal → Identity Context Derivation
   steps:
     - tag: T0
       kind: deterministic
-      text: 1969-1980s — DNS P1 早期社群成立（信任強、商業弱、國家不關心）
+      text: 1969–1980s — DNS P1 early community established (strong trust, weak commercial interests, state indifference)
     - tag: T1
       kind: deterministic
-      text: 1980-90s — DNS P2' 美國策略性放手（判斷商業成長 > 控制成本）
+      text: 1980–90s — DNS P2' US strategic withdrawal (judged commercial growth > cost of control)
     - tag: T2
       kind: deterministic
-      text: 1990s-2000s — DNS P3' 技術中立論述被 IETF 文化建構（rough consensus）
+      text: 1990s–2000s — DNS P3' technical neutrality discourse constructed by IETF culture (rough consensus)
     - tag: T3
       kind: probabilistic
-      text: 2014-2016 — DNS P4' IANA Stewardship Transition 多重否決點通過（NTIA/ICANN/政府諮詢委員會）
+      text: 2014–2016 — DNS P4' IANA Stewardship Transition passed through multiple veto points (NTIA/ICANN/Government Advisory Committee)
     - tag: T4
       kind: deterministic
-      text: 身分領域對應位置：P1'' 政府主導（非社群）、P2'' 高度警覺（非放手）、P3'' 涉及主權（非中立）、P4'' 無過渡機制
+      text: Identity domain corresponding positions&#58; P1'' government-dominated (not community), P2'' high vigilance (not withdrawal), P3'' involves sovereignty (not neutral), P4'' no transition mechanism
     - tag: T5
       kind: probabilistic
-      text: 反事實 (a)-(e)：若 P_DNS 在身分領域成立，會走向不同治理路徑；現實是四個前提全部失敗
+      text: Counterfactuals (a)–(e)&#58; if P_DNS held in the identity domain, different governance paths would result; in reality all four preconditions fail
     - tag: T6
       kind: probabilistic
-      text: 結論：P_DNS ∩ P_ID = ∅ ⇒ DNS 經驗不可遷移；FTLA 是混合借用而非照搬
+      text: Conclusion&#58; P_DNS ∩ P_ID = ∅ ⇒ DNS experience is not transferable; FTLA is mixed borrowing, not direct copying
   legend:
     - kind: deterministic
-      label: 機制必然（歷史結構性事實，反事實也無法翻轉）
+      label: Mechanistic necessity (historical structural facts — counterfactuals cannot overturn them)
     - kind: probabilistic
-      label: 概率性（依賴政治選擇 + 工程社群文化 + 多方否決點通過）
+      label: Probabilistic (contingent on political choice + engineering community culture + multi-veto points passing)
 
 borders:
-  - label: 反論 1
-    title: ITU 模式可借（國家中心多邊治理）
-    pivot: 反論訴求是「ITU 是國家中心的多邊治理範本，可直接借到身分領域」。但檢驗五項判準：J1 主權密度（ITU 中、身分高）、J4 標準速度（ITU 慢、身分需快）、J5 救濟機制（ITU 條約救濟、身分需個體救濟）——三項不匹配。ITU 在 L1 協議根的「跨境效力」議題部分可借，但不能整套照搬。
-    flip: ITU 不是「身分治理的範本」，是 FTLA 中 L1 主權密度高層級可部分借用的工具。這個結果反向支持「FTLA 混合借用」設計，而非「ITU 全套移植」。
+  - label: Counter-argument 1
+    title: The ITU model can be borrowed (state-centric multilateral governance)
+    pivot: "The counter-argument claims that 'ITU is a state-centric multilateral governance template that can be directly borrowed into the identity domain.' But examining five criteria&#58; J1 sovereignty density (ITU medium, identity high), J4 standards speed (ITU slow, identity needs fast), J5 remedy mechanism (ITU treaty remedy, identity needs individual remedy) — three criteria do not match. ITU is partially borrowable for the 'cross-border validity' issue of L1 protocol root, but cannot be imported wholesale."
+    flip: ITU is not "the template for identity governance" — it is a tool that FTLA's L1 high-sovereignty-density tier can partially borrow. This result inversely supports the "FTLA mixed borrowing" design, not "wholesale ITU transplantation."
 
-  - label: 反論 2
-    title: IETF 模式可借（工程師共識驅動）
-    pivot: 反論訴求是「IETF 的 rough consensus and running code 文化適合所有去中心治理」。但 IETF 文化建立在「商業利益弱 + 國家不關心」的特定歷史條件下；身分領域兩個條件都不成立。J1 主權密度（IETF 低、身分高）、J5 救濟機制（IETF 無、身分必要）——兩項不匹配。IETF 在 L3 實作層可借（開源 SDK 標準制定），但不能用於 L1。
-    flip: IETF 不是「身分治理的萬能解」，是 FTLA 中 L3 實作層可借用的文化。這個結果反向支持「FTLA 按層匹配機制」設計。
+  - label: Counter-argument 2
+    title: The IETF model can be borrowed (engineer consensus-driven)
+    pivot: "The counter-argument claims that 'IETF's rough consensus and running code culture is suitable for all decentralised governance.' But IETF culture was built under the specific historical conditions of 'weak commercial interests + state indifference' — neither condition holds in the identity domain. J1 sovereignty density (IETF low, identity high), J5 remedy mechanism (IETF none, identity essential) — two criteria do not match. IETF is borrowable for L3 implementation layer (open-source SDK standard-setting), but cannot be used for L1."
+    flip: IETF is not "the universal solution for identity governance" — it is a culture that FTLA's L3 implementation tier can borrow. This result inversely supports the "FTLA layer-matched mechanism" design.
 
-  - label: 反論 3
-    title: W3C / ICANN 模式可借
-    pivot: 真正的部分例外——W3C VC（Verifiable Credentials）已在學術憑證等子領域部分成功，ICANN 多利害關係人結構也提供借鏡。但檢驗 J1 主權密度（W3C 中、ICANN 中、身分根高），兩模式都在 L2 標準層可部分借用，不能擴展到 L1 協議根。
-    flip: 即使 W3C / ICANN 模式可在 L2 借用，普世化「W3C / ICANN 是身分治理範本」也無法被辯護。FTLA 邊界條件 B1（主權密度可分層）正好示範這種精確的層級匹配。
+  - label: Counter-argument 3
+    title: The W3C / ICANN model can be borrowed
+    pivot: "A genuine partial exception — W3C VC (Verifiable Credentials) has partially succeeded in sub-domains such as academic credentials, and the ICANN multi-stakeholder structure also provides a reference point. But examining J1 sovereignty density (W3C medium, ICANN medium, identity root high), both models are partially borrowable at the L2 standards tier and cannot be extended to L1 protocol root."
+    flip: Even if the W3C / ICANN model can be borrowed at L2, universalising "W3C / ICANN is the template for identity governance" cannot be defended. FTLA boundary condition B1 (sovereignty density is stratifiable) precisely demonstrates this kind of exact tier matching.
 
 conditions:
-  title: FTLA 四層治理的合法部署，必須先通過四條邊界條件
+  title: Legitimate Deployment of FTLA Four-Tier Governance Requires Passing Four Boundary Conditions
   formalPrelude: "deploy(FTLA, subdomain) valid ⇔ B₁ ∧ B₂ ∧ B₃ ∧ B₄"
   items:
-    - title: B₁ 主權密度可分層
-      body: 子領域必須允許「主權密度按層分配」的可能性。若整個子領域都是高主權密度（如國家公民身分根），FTLA 退化為單層治理，等於沒有 FTLA。學術憑證、醫療紀錄、駕照可分層；公民身分根不可分層。
+    - title: B₁ Sovereignty Density Is Stratifiable
+      body: The sub-domain must allow the possibility of "allocating sovereignty density by tier." If the entire sub-domain has uniformly high sovereignty density (e.g., the national civic identity root), FTLA degenerates into single-tier governance, which is equivalent to no FTLA. Academic credentials, medical records, and driving licences are stratifiable; civic identity roots are not.
       formal: "B₁: ∃ partition {L₁..L₄} : sovereignty_density(L_ℓ) ≠ sovereignty_density(L_ℓ₊₁)"
-    - title: B₂ 工程社群文化存在
-      body: 該子領域必須有等效 IETF 的工程社群文化（rough consensus + running code + 公開治理）。沒有此文化的領域，FTLA 的 L3 實作層無法運作，整個框架坍塌到 L1+L2 的政府治理。
+    - title: B₂ Engineering Community Culture Exists
+      body: The sub-domain must have an IETF-equivalent engineering community culture (rough consensus + running code + open governance). In domains without this culture, FTLA's L3 implementation tier cannot operate, causing the entire framework to collapse to L1+L2 government governance.
       formal: "B₂: ∃ engineering_community(subdomain) ∧ has_culture(rough_consensus, running_code)"
-    - title: B₃ 過渡機制可建構
-      body: 從現有體系遷移到 FTLA 的路徑必須可被工程社群 + 政府聯合建構。沒有 IANA-equivalent 的子領域必須有替代過渡機制（如 W3C 工作組的階段性產出）；無過渡機制硬推全球統一會引發治理風險 R3。
+    - title: B₃ Transition Mechanism Is Constructible
+      body: The migration pathway from existing systems to FTLA must be constructible jointly by the engineering community and government. Sub-domains without an IANA-equivalent must have an alternative transition mechanism (e.g., staged W3C working group outputs); hard-pushing global unification without a transition mechanism triggers governance risk R3.
       formal: "B₃: ∃ transition_mechanism(current → FTLA) ∧ co-constructed(engineering, government)"
-    - title: B₄ 救濟機制嵌入
-      body: 每層 L_ℓ 必須有對應 article 04 T_Remedy 的救濟設計——違規檢出 + 救濟啟動 + 多方制衡。沒有救濟的層級會退化為「廠商鎖定」（L3）或「主權壟斷」（L1）。
+    - title: B₄ Remedy Mechanism Embedded
+      body: Each tier L_ℓ must have a remedy design corresponding to article 04's T_Remedy — violation detection + remedy activation + multi-party checks and balances. Tiers without remedy degrade into "vendor lock-in" (L3) or "sovereignty monopoly" (L1).
       formal: "B₄: ∀ ℓ ∈ 1..4 : ∃ remedy(L_ℓ) ⊨ T_Remedy"
 
 conclusion:
   paragraphs:
-    - <strong>HM 是「歷史前提匹配」這個方法論的應用，超越「DNS 治理的批判」這個窄讀法。</strong>把 DNS 模式照搬到身分領域是分類錯誤；該做的是檢視前提集合 P_DNS 與 P_ID 的差異，然後用 FTLA 混合借用設計。
-    - 辯論應從「DNS 模式 vs 國家模式」轉向<em>「按主權密度分層的混合治理」</em>。FTLA 的價值落在按主權密度為每層挑選最適合的工具，對應到 article 07 的 MR-CivicProof（在 L1 主權密度全高時的特殊處理）；現有各模式在 FTLA 中各據其層而未被取代。
-    - 一條主權密度原則貫穿全文：<strong>治理機制必須與主權密度匹配，不能跨層套用。</strong>L1 高主權密度需要國家/多邊機制；L4 低主權密度需要市場/開源——這個分層本身就是 FTLA 公式的必然延伸。
+    - <strong>HM is an application of the methodology of "historical precondition matching," transcending the narrow reading of "a critique of DNS governance."</strong> Directly copying the DNS model onto the identity domain is a category error; the proper course is to examine the differences between the precondition sets P_DNS and P_ID, and then apply the FTLA mixed borrowing design.
+    - The debate should shift from "DNS model vs. state model" to <em>"mixed governance stratified by sovereignty density."</em> The value of FTLA lies in selecting the most appropriate tool for each tier by sovereignty density, corresponding to article 07's MR-CivicProof (for the special treatment when L1 sovereignty density is uniformly high); existing models each occupy their tier within FTLA without being displaced.
+    - One sovereignty-density principle runs through the entire text&#58; <strong>governance mechanisms must match sovereignty density and cannot be applied across tiers.</strong> L1 high sovereignty density requires state/multilateral mechanisms; L4 low sovereignty density requires market/open-source — this stratification is itself the necessary extension of the FTLA formula.
   formalCoda: |
     Final form:
       HM:  ∀ Pᵢ ∈ P_DNS,  Pᵢ ∉ P_ID  ⇒  ¬transferable(governance_model(DNS), identity)

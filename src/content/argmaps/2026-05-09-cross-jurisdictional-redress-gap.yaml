@@ -1,5 +1,5 @@
 slug: 2026-05-09-cross-jurisdictional-redress-gap
-title: 當你的數位皮夾在另一個國家被拒絕：跨法域救濟的法律空白
+title: "When Your Digital Wallet Is Rejected in Another Country: The Legal Vacuum in Cross-Jurisdictional Redress"
 subtitle: Cross-Jurisdictional Wallet Redress Gap — Argument Map (v2)
 
 # ─────────────────────────────────────────────────────────────
@@ -7,7 +7,7 @@ subtitle: Cross-Jurisdictional Wallet Redress Gap — Argument Map (v2)
 # ─────────────────────────────────────────────────────────────
 coreThesis:
   text: |
-    當前數位身分架構假設 issuer 法域等於救濟法域；wallet 跨境使用會徹底破壞這個假設。救濟空白可被歸為四類缺口，在歐盟內因 Brussels I Recast、eIDAS 2.0、GDPR 一致性程序部分被修補，歐盟外則尚無對應的協調框架。這個非對稱屬於三層結構性問題的並列：衝突法在 wallet 跨境是 over-determined（規則邊界 + 規則模糊 + 元規則缺失）、既有跨境救濟模板僅可條款層級拼裝、規範遞延需以雙邊同意取代單邊外推。
+    Current digital identity architecture assumes the issuer jurisdiction equals the redress jurisdiction; cross-border wallet use thoroughly undermines this assumption. Redress gaps can be categorized into four types, partially remedied within the EU through Brussels I Recast, eIDAS 2.0, and GDPR consistency procedures, but with no corresponding coordination framework outside the EU. This asymmetry constitutes a parallel of three layers of structural problems: conflict of laws in wallet cross-border use is over-determined (rule boundary + rule ambiguity + meta-rule absence), existing cross-border redress templates can only be stitched at the clause level, and normative extension requires bilateral consent rather than unilateral projection.
   summary: Cross-border wallet redress is structurally over-determined; recovery requires clause-level template stitching plus bilateral normative extension, not unilateral law projection.
   formal:
     expression: |
@@ -16,196 +16,196 @@ coreThesis:
       ¬∃ meta_rule(c) : priority(applicable_rules(c))   ⇒   over_determined(c)
       paths(R) = {πₐ, π_b, π_c}   indexed by   ⟨coverage, feasibility, coupling⟩   ; non_linear(paths)
       stateless_redress  ⊥  paths(R)   (orthogonal axis, unmappable to a/b/c)
-    caption: 跨境 wallet 救濟 R(c) 的成立由「管轄 J + 強制力 E + 機制 M」共同推得；J(c) 由四道連繫因子 G₁..G₄ 同時可定錨，但缺乏元規則決定優先順序，因此屬 over-determined 而非 under-determined。三條補強路徑 πₐ π_b π_c 沿三軸並列；無國籍者軌道與三條路徑正交。
+    caption: The establishment of cross-border wallet redress R(c) is derived from "jurisdiction J + enforcement E + mechanism M" jointly; J(c) can be anchored simultaneously by four connecting factors G₁..G₄, but lacks a meta-rule to determine priority, and is therefore over-determined rather than under-determined. The three supplementary paths πₐ π_b π_c are arranged in parallel along three axes; the stateless track is orthogonal to the three paths.
     legend:
       - symbol: R(c)
-        meaning: Redress for citizen c on cross-border wallet event — 跨境 wallet 爭議受害公民的救濟
+        meaning: Redress for citizen c on cross-border wallet event — redress for a citizen harmed by a cross-border wallet dispute
       - symbol: J(c)
-        meaning: Jurisdiction available to c — 對 c 開放的訴訟管轄／投訴管道
+        meaning: Jurisdiction available to c — litigation jurisdiction / complaint channel available to c
       - symbol: E(c)
-        meaning: Enforcement strength reachable by c — c 可調動的強制力（執法、賠償執行）
+        meaning: Enforcement strength reachable by c — enforcement power c can mobilize (law enforcement, compensation execution)
       - symbol: M(c)
-        meaning: Coordination mechanism (one-stop shop / mutual recognition / cooperation network) — 救濟協調機制
+        meaning: Coordination mechanism (one-stop shop / mutual recognition / cooperation network) — redress coordination mechanism
       - symbol: G₁..G₄
-        meaning: 四道連繫因子（issuer 法域 / verifier 法域 / 廠商法域 / 持有者居所法域）
+        meaning: Four connecting factors (issuer jurisdiction / verifier jurisdiction / vendor jurisdiction / holder domicile jurisdiction)
       - symbol: ⊥
-        meaning: 「正交」（orthogonal，獨立並行不可吸納）
+        meaning: "orthogonal" (independent and parallel, cannot be subsumed)
       - symbol: ⇐
-        meaning: 「足以推得」（sufficient ground for）
+        meaning: "sufficient ground for"
       - symbol: ⇔
-        meaning: 「當且僅當」
+        meaning: "if and only if"
       - symbol: ∧
-        meaning: 合取（同時成立）
+        meaning: conjunction (simultaneously holds)
       - symbol: ¬
-        meaning: 否定
+        meaning: negation
       - symbol: ∃
-        meaning: 存在量詞
+        meaning: existential quantifier
 
 # ─────────────────────────────────────────────────────────────
-# Transitions (區塊之間的接連描述)
+# Transitions (inter-block connective descriptions)
 # ─────────────────────────────────────────────────────────────
 transitions:
   beforeDistinction: |
-    公式給出立場，下一步要把常見誤讀拉開。整個跨境 wallet 救濟的政策論辯，被「issuer 法域等於救濟法域」這個假設綁住；只要這個假設未被質疑，後續所有救濟設計都會以「找到正確的 issuer 國」為核心，導致歐盟外公民被結構性忽略。地圖第一動作就是區分「issuer 法域中心」與「四方關係 + 規範遞延」這兩個分類。
+    The formula establishes the position; the next step is to separate common misreadings. The entire policy debate on cross-border wallet redress is bound by the assumption that "issuer jurisdiction equals redress jurisdiction"; as long as this assumption goes unchallenged, all subsequent redress design will center on "finding the right issuer country," structurally ignoring non-EU citizens. The map's first move is to distinguish "issuer jurisdiction centrism" from "four-party relationship + normative extension."
 
   beforePillars: |
-    區分本身只是宣告。要證明四方關係 + 規範遞延這條路徑成立，需要四條獨立來源的支撐——歸納面提供四類典型缺口的實證、演繹面提供衝突法 over-determined 結構的精確描述、類比面提供六個跨境救濟模板的條款庫盤點、溯因面提供 eIDAS 2.0 + GDPR + MLETR 三機制的功能等價基礎。四條 pillar 對應四個論證類型；缺一立場就退化為呼籲。
+    The distinction itself is merely a declaration. To prove that the four-party relationship + normative extension path is valid, four independent sources of support are required — the inductive dimension provides empirical evidence for four categories of typical gaps, the deductive dimension provides a precise description of the conflict-of-laws over-determined structure, the analogical dimension provides an inventory of clause-level templates from six cross-border redress models, and the abductive dimension provides the functional equivalence basis of eIDAS 2.0 + GDPR + MLETR three mechanisms. The four pillars correspond to four argument types; without any one, the position degrades to a mere appeal.
 
   beforeChain: |
-    pillars 是正向論證。Camerfirma 案例提供從「2022 年初首次警告」到「2024 年陸續失效事件」的具體因果鏈；前段是規範必然（QTSP 違規 → 撤照），後段是概率事件（跨境招標衝突的具體損失需要環境條件配合）。把鏈條展開的目的是把抽象的四類缺口翻譯成可被機制性追溯的事件序列。
+    The pillars constitute positive arguments. The Camerfirma case provides a concrete causal chain from "first warning in early 2022" to "failures occurring successively in 2024"; the first segment is normatively necessary (QTSP violation → license revocation), the second segment is a probabilistic event (concrete losses from cross-border tender conflicts require environmental conditions). The purpose of unfolding the chain is to translate the abstract four categories of gaps into an event sequence that can be mechanically traced.
 
   beforeBorders: |
-    立場 + 因果鏈成立後，反論才真的具威脅。Svantesson 主張現有衝突法已涵蓋 internet 跨境，wallet 只是延伸；Goldsmith 與 Wu 主張 cyber-jurisdiction 想像被誇大，國家中心結構仍有效；cyber-sovereignty 學派主張跨境互認等同於主權讓渡。仔細檢驗每條反論的實證強度，會發現它們不僅未推翻地圖立場，反而 flip to support 三層結構性論證——亦即反論自己的證據結構，正好是地圖的第二層支撐。
+    Once the position + causal chain are established, the objections become genuinely threatening. Svantesson argues that existing conflict of laws already covers internet cross-border disputes; Goldsmith and Wu argue that cyber-jurisdiction imagination is exaggerated and the state-centric structure remains effective; the cyber-sovereignty school argues that cross-border mutual recognition is equivalent to sovereignty surrender. Careful examination of the empirical strength of each objection reveals that not only do they fail to refute the map's position, they actually flip to support the three-layer structural argument — that is, the evidentiary structure of each objection becomes the second layer of support for the map.
 
   beforeConditions: |
-    反論被吸收後，留下的是設計含意。在什麼條件下，「規範遞延 + 四方分層責任 + 無國籍者獨立軌道」這套架構可以被視為合法的政策路徑？六道條件把抽象的三軸並行翻譯成可被檢驗的工程或法律義務，同時填入核心公式的 G₁..G₄ 與 V_bilateral。
+    After the objections are absorbed, what remains is design implications. Under what conditions can the framework of "normative extension + four-party layered responsibility + stateless persons independent track" be regarded as a legitimate policy path? Six conditions translate the abstract three-axis parallel structure into verifiable engineering or legal obligations, while also filling in G₁..G₄ and V_bilateral of the core formula.
 
   beforeConclusion: |
-    把規範、衝突法、模板、規範遞延、政策合成、無國籍者層次這六層收束起來，地圖最終要說的是政治經濟層的成就（雙邊同意而非單邊外推）以及一條跨越所有層級的不對稱原則——對歐盟外公民、特別是台灣公民與無國籍者，現行架構的覆蓋是結構性缺失，補強需政府主動推動雙邊條約，無法等待規範自然外溢。
+    Drawing together six layers — norms, conflict of laws, templates, normative extension, policy synthesis, and stateless persons dimension — the map's final message is the political-economy achievement (bilateral consent rather than unilateral projection) and an asymmetric principle spanning all levels — for non-EU citizens, especially Taiwanese citizens and stateless persons, the coverage of the current framework is a structural deficiency, and strengthening it requires governments to proactively pursue bilateral treaties; it cannot await the natural spillover of norms.
 
 # ─────────────────────────────────────────────────────────────
 # Foundational Distinction
 # ─────────────────────────────────────────────────────────────
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: issuer 法域 = 救濟法域
+    label: ❌ Rejected
+    title: Issuer Jurisdiction = Redress Jurisdiction
     body: |
-      把「找到正確的 issuer 國」當作救濟的入口。這個結構假設爭議當事人可以回到 issuer 法域起訴或投訴，並依當地實體法獲得救濟。在 wallet 跨境場景，issuer 法域只是四道連繫之一；其他三道（verifier 法域、廠商法域、持有者居所法域）與 issuer 法域同時平行可用，且常指向不同國家。把救濟綁在 issuer 法域上，會讓非歐盟公民、台灣公民、無國籍者全數失去入口。
-    formal: "R(c) ⇐ J_issuer(c)   （把 issuer 法域當作 J 的唯一連繫因子）"
+      Treating "finding the right issuer country" as the entry point for redress. This structural assumption presumes that the disputing parties can return to the issuer jurisdiction to sue or file complaints and obtain redress under local substantive law. In a wallet cross-border scenario, the issuer jurisdiction is only one of four connecting factors; the other three (verifier jurisdiction, vendor jurisdiction, holder domicile jurisdiction) are simultaneously available in parallel with the issuer jurisdiction and often point to different countries. Tying redress to the issuer jurisdiction will deny access to all non-EU citizens, Taiwanese citizens, and stateless persons.
+    formal: "R(c) ⇐ J_issuer(c)   (treating issuer jurisdiction as the sole connecting factor for J)"
   accepted:
-    label: ✓ 被辯護
-    title: 四方關係 + 規範遞延 + 三軸並行
+    label: ✓ Defended
+    title: Four-Party Relationship + Normative Extension + Three-Axis Parallel
     body: |
-      把救濟拆成「管轄 + 強制力 + 機制」三軸。管轄面承認 G₁..G₄ 四道連繫同時可用且 over-determined；機制面採規範遞延（既有 EU 機制可外推，但需被遞延法域以雙邊／多邊協定同意接入）；強制力面引入廠商分層責任（Tier 1 提供者 / Tier 2 共同控制者 / Tier 3 中介）。三條補強路徑 πₐ π_b π_c 沿規範覆蓋面、實證可行性、技術—法律耦合三軸並列；無國籍者軌道作為獨立並行層次處理。
+      Disaggregating redress into three axes of "jurisdiction + enforcement + mechanism." The jurisdictional dimension acknowledges that G₁..G₄ four connecting factors are simultaneously available and over-determined; the mechanism dimension employs normative extension (existing EU mechanisms can be extended, but require the receiving jurisdiction to consent through bilateral/multilateral agreement); the enforcement dimension introduces layered vendor liability (Tier 1 provider / Tier 2 joint controller / Tier 3 intermediary). The three supplementary paths πₐ π_b π_c are arranged in parallel along the three axes of normative coverage, empirical feasibility, and technical-legal coupling; the stateless persons track is handled as an independent parallel dimension.
     formal: "R(c) ⇐ J(c) ∧ E(c) ∧ M(c)   ;   paths(R) along ⟨coverage, feasibility, coupling⟩   ;   stateless_redress ⊥ paths(R)"
 
 # ─────────────────────────────────────────────────────────────
 # Five Supporting Pillars
 # ─────────────────────────────────────────────────────────────
 pillars:
-  - section: §3 — 歸納（4 類典型缺口）
-    title: 缺口可被類型化，但類型在歐盟內外不對稱
-    role: 提供實證面支撐——若四類缺口不能被穩定類型化，後續演繹與政策合成失去著力點。同時必須承認類型化在歐盟內外的覆蓋不對稱，避免把「歐盟內已部分修補」與「歐盟外尚無協調框架」誤讀為同一程度的問題。
+  - section: §3 — Inductive (4 Categories of Typical Gaps)
+    title: Gaps Can Be Typologized, But the Typology Is Asymmetric Within and Outside the EU
+    role: Provides empirical support — if the four categories of gaps cannot be stably typologized, subsequent deduction and policy synthesis lose their footing. At the same time, the asymmetric coverage of the typology within and outside the EU must be acknowledged, to avoid misreading "partially remedied within EU" and "no coordination framework outside EU" as problems of the same degree.
     body: |
-      四類典型缺口分別為 (a) verifier 拒絕造成的損失無明確訴訟管轄、(b) issuer 撤銷錯誤無單一 DPA 投訴管道、(c) 廠商失效造成的服務中斷無明確救濟路徑、(d) 跨境隱私洩漏無單一執法機關可調查。Camerfirma 2022—2024、印度 UIDAI 2023、瑞典 BankID 2023、Singpass 2024、Cambridge Analytica 2018 五個案例分別對應前四類。在歐盟內，缺口 (a) (c) 因 Brussels I Recast Art 17–19 的消費者特殊管轄與 eIDAS 2.0 Art 5a(20) 的 Single Point of Contact 已部分被修補；歐盟外幾乎完全空白。窮盡性檢查中，廠商破產（C1）與強制揭露（C5）作為次類型併入既有缺口，無國籍者議題（C4）轉交獨立軌道處理。
-    finding: 四類缺口的類型化在歐盟內為「規則模糊 + 強制力缺失」性質，歐盟外為「協調框架未建」性質——兩者結構不同，補強路徑也不同。
+      The four categories of typical gaps are: (a) losses from verifier rejection with no clear litigation jurisdiction; (b) issuer revocation errors with no single DPA complaint channel; (c) vendor failure causing service interruption with no clear redress pathway; (d) cross-border privacy breaches with no single enforcement authority able to investigate. Five cases — Camerfirma 2022–2024, India UIDAI 2023, Swedish BankID 2023, Singpass 2024, Cambridge Analytica 2018 — correspond to the first four categories respectively. Within the EU, gaps (a) and (c) have been partially remedied by Brussels I Recast Art 17–19 special consumer jurisdiction and eIDAS 2.0 Art 5a(20) Single Point of Contact; outside the EU there is an almost complete vacuum. In the exhaustiveness check, vendor insolvency (C1) and compelled disclosure (C5) are merged as sub-types into existing gaps, and the stateless persons issue (C4) is transferred to the independent track.
+    finding: The four-category gap typology has the character of "rule ambiguity + enforcement absence" within the EU and "coordination framework not established" outside the EU — the two structures are different, and the supplementary paths are also different.
     formal: "G_taxonomy: { gap_a, gap_b, gap_c, gap_d } ⊆ Gaps   ;   coverage_EU(gap) > coverage_non_EU(gap)"
 
-  - section: §4 — 演繹（衝突法 over-determined 結構）
-    title: 規則不缺，缺的是元規則
-    role: 提供規範面精確描述——若把跨境 wallet 救濟描述為「法律真空」，會被 Svantesson 等學者用 *eDate* 的 centre of interests 原則一一駁回。退守到「over-determined + 元規則缺失」這個學理上更難反駁的命題，是論證強度的關鍵。
+  - section: §4 — Deductive (Conflict-of-Laws Over-Determined Structure)
+    title: Rules Are Not Absent; Meta-Rules Are
+    role: Provides precise normative description — if cross-border wallet redress is described as a "legal vacuum," it would be refuted by scholars like Svantesson using the centre of interests principle from eDate one by one. Retreating to the academically harder-to-refute proposition of "over-determined + meta-rule absent" is key to argumentative strength.
     body: |
-      Brussels I Recast、Rome I、Rome II 與 Hague Convention 框架對 wallet 跨境爭議並無真正的「規則真空」。任何案件都能從現有條文找到一個或多個可適用的連繫因子，但 wallet 涉及四重連繫，多條規則同時平行可用且指向不同法域，沒有任何單一連繫因子能取得結構性優先。三類失效模式為規則邊界（Brussels I Art 17–19 僅覆蓋 platform–用戶一段）、規則模糊（Erfolgsort 多軌並列在 wallet 場景無元規則）、元規則缺失（Rome II Art 4(3) closest connection 屬逃生條款，並非常態元規則）。對受害公民而言，over-determined 的救濟可預測性損失在實務效果上接近規則缺失。
-    finding: 衝突法在 wallet 跨境是 over-determined 而非 under-determined。退守到此命題後，論證從「歐盟法應該外推」（容易被駁倒）轉向「規則競合需元規則填補」（學理上更難反駁）。
+      Brussels I Recast, Rome I, Rome II, and the Hague Convention framework present no genuine "rule vacuum" for cross-border wallet disputes. Any case can find one or more applicable connecting factors from existing provisions, but wallet involvement creates four connecting factors, with multiple rules simultaneously available in parallel pointing to different jurisdictions, and no single connecting factor able to achieve structural priority. Three categories of failure modes are: rule boundary (Brussels I Art 17–19 covers only the platform–user segment), rule ambiguity (Erfolgsort multi-track without a meta-rule in the wallet scenario), and meta-rule absence (Rome II Art 4(3) closest connection is an escape clause, not a normal meta-rule). For aggrieved citizens, the loss of predictability from over-determined redress is practically equivalent to rule absence in its effects.
+    finding: Conflict of laws in wallet cross-border use is over-determined rather than under-determined. By retreating to this proposition, the argument shifts from "EU law should be extrapolated" (easily refuted) to "rule competition requires a meta-rule to fill the gap" (academically harder to refute).
     formal: "|applicable_rules(c)| ≥ 2  ∧  ¬∃ meta_rule(c) : priority(applicable_rules)  ⇒  predictability(R(c)) ≈ predictability(¬R)"
 
-  - section: §5 — 類比（六個跨境救濟模板）
-    title: 條款層級拼裝，並非整套移植
-    role: 提供制度先例——若四方關係 + 規範遞延是「全新設計」，需要從零辯護；若它能從六個跨境救濟模板抽象條款，辯護負擔大幅降低。同時必須誠實標明類比強度為「中—弱」，避免把模板可移植度誇大。
+  - section: §5 — Analogical (Six Cross-Border Redress Templates)
+    title: Clause-Level Stitching, Not Wholesale Transplant
+    role: Provides institutional precedent — if four-party relationship + normative extension is a "wholly novel design," it requires defense from scratch; if it can abstract clauses from six cross-border redress templates, the burden of defense is substantially reduced. At the same time, the analogy strength must be honestly marked as "moderate-weak," avoiding overstatement of template transferability.
     body: |
-      跨境治理累積了至少六個成熟模板：Montreal 1999 + IATA Resolution 824（航空旅客）、SWIFT/SEPA + FIN-NET（跨境支付）、EU CPC Network（跨境消費者保護）、ICCAT（漁業合規）、CETA Chapter 8 + ICS（投資爭議）、APEC CBPR + OECD Privacy Framework（跨境隱私軟法）。它們組成一個跨境救濟的條款庫。要外推到 wallet 必須穿越四個過濾條件（標的物結構同構性、硬法／軟法基礎、政治可行性、實證有效性）。可拼裝的條款組為互認協定書寫格式 + 責任分配條款 + One-stop 投訴入口 + 調解—仲裁分層 + 資源配套條款 + e-APP 電子化驗證。每一條款必須個別檢驗對 wallet 場景的相似性。
-    finding: 條款層級拼裝（cherry-picking）是合理的政策出發點，整套移植（wholesale adoption）會在 wallet 的四方關係與密碼學狀態驗證屬性處失敗。CETA ICS 上訴庭脫鉤 ISDS 整體爭議後可借鏡，APEC CBPR 軟法效力極弱（9 個會員）。
+      Cross-border governance has accumulated at least six mature templates: Montreal 1999 + IATA Resolution 824 (air passengers), SWIFT/SEPA + FIN-NET (cross-border payments), EU CPC Network (cross-border consumer protection), ICCAT (fisheries compliance), CETA Chapter 8 + ICS (investment disputes), APEC CBPR + OECD Privacy Framework (cross-border privacy soft law). These constitute a clause library for cross-border redress. Extension to wallet must pass through four filter conditions (structural isomorphism of subject matter, hard law / soft law basis, political feasibility, empirical effectiveness). The clause combination that can be stitched is: mutual recognition agreement writing format + liability allocation clauses + one-stop complaint portal + mediation-arbitration layering + resource support clauses + e-APP electronic verification. Each clause must individually verify its similarity to the wallet scenario.
+    finding: Clause-level stitching (cherry-picking) is a reasonable policy starting point; wholesale adoption will fail at wallet's four-party relationship and cryptographic state verification attributes. CETA ICS appellate tribunal decoupling from the overall ISDS dispute is a useful precedent; APEC CBPR soft law effectiveness is extremely weak (9 members).
     formal: "∃ clauses {ξ₁..ξₖ} ⊆ ⋃ᵢ template_i  :  applicable(ξⱼ, wallet)  ∧  ¬wholesale(template_i, wallet)"
 
-  - section: §6 — 溯因（規範遞延的雙邊同意條件）
-    title: 既有 EU 機制可遞延，需雙邊同意而非單邊外推
-    role: 提供規範遞延的合理性論據——若只有 unilateral extraterritoriality 一條路徑，會被 Goldsmith 與 cyber-sovereignty 學派一同擊倒。把規範遞延的合理性條件明文化為「雙邊／多邊協定同意」，是回應 Schrems II 教訓的方法論修補。
+  - section: §6 — Abductive (Bilateral Consent Conditions for Normative Extension)
+    title: Existing EU Mechanisms Can Be Extended, Requiring Bilateral Consent Rather Than Unilateral Projection
+    role: Provides the rationality argument for normative extension — if unilateral extraterritoriality were the only path, it would be simultaneously knocked down by Goldsmith and the cyber-sovereignty school. Explicitly formalizing the rationality conditions for normative extension as "bilateral/multilateral agreement consent" is a methodological correction responding to the lessons of Schrems II.
     body: |
-      eIDAS 2.0 在歐盟內建立的「責任分配 + supervisory body 跨成員國協調 + responsible Member State 機制」、GDPR 的 one-stop-shop 一致性程序、以及 UNCITRAL MLETR 的功能等價原則，三者已構成一組跨境身分／電子紀錄／資料保護的規範模組。把這個模組外推到非歐盟，屬於「規範遞延」性質而非創設新法。前提是被遞延的法域以雙邊／多邊協定明示同意接入。eIDAS 2.0 自身內建主權保留條款（Art 5a(5)、Recital 24、Art 11a），這些條款本身證明「跨境互認」與「主權讓渡」屬於不同範疇。
-    finding: 規範遞延與單邊外推的關鍵差異，正是被遞延法域的雙邊同意條件。MLETR 的角色為「等價原則的供體」，並非「救濟機制的供體」。
+      The eIDAS 2.0 framework established within the EU — "liability allocation + supervisory body cross-member-state coordination + responsible Member State mechanism" — together with GDPR's one-stop-shop consistency procedure and UNCITRAL MLETR's functional equivalence principle, together constitute a set of normative modules for cross-border identity / electronic records / data protection. Extending this module to non-EU jurisdictions is "normative extension" in character rather than the creation of new law, premised on the receiving jurisdiction explicitly consenting through bilateral/multilateral agreement. eIDAS 2.0 itself contains built-in sovereignty reservation clauses (Art 5a(5), Recital 24, Art 11a); these clauses themselves prove that "cross-border mutual recognition" and "sovereignty surrender" belong to different categories.
+    finding: The key difference between normative extension and unilateral projection is the bilateral consent condition of the receiving jurisdiction. MLETR's role is "supplier of the equivalence principle," not "supplier of the redress mechanism."
     formal: "Extension(eIDAS) ⊨ R(c)  ⇔  ∃ Agreement A : sign(A, src) ∧ sign(A, dst)   ;   ¬unilateral_projection"
 
-  - section: §7–§8 — 政策合成（三軸並行 + 無國籍者獨立軌道）
-    title: 三軸並列，無國籍者軌道與三條路徑正交
-    role: 提供政策合成的最終結構——若把三條路徑寫成單一優先順序，會被誤讀為規範必然；拆分為三軸（規範覆蓋面、實證可行性、技術—法律耦合）讓政治判斷與規範判斷分開。同時把無國籍者議題設為獨立並行層次，避免議題綁架。
+  - section: §7–§8 — Policy Synthesis (Three-Axis Parallel + Stateless Persons Independent Track)
+    title: Three-Axis Parallel; Stateless Persons Track Orthogonal to Three Paths
+    role: Provides the final structure for policy synthesis — if the three paths were written as a single priority order, they would be misread as normatively necessary; splitting them into three axes (normative coverage, empirical feasibility, technical-legal coupling) separates political judgment from normative judgment. At the same time, placing the stateless persons issue as an independent parallel dimension avoids issue capture.
     body: |
-      三條補強路徑沿三軸並列。πₐ（仿 IATA + ICCAT 多邊條約 + 責任分配）對歐盟外覆蓋最廣，時程 72+ 月。π_b（eIDAS one-stop redress 透過 GDPR adequacy + 雙邊條約擴展）政治阻力最低，時程 24–48 月，為短期實施起點。π_c（跨國 wallet 認證互認 + 連帶責任）對廠商失效最直接，時程 36–60 月，依賴廠商分層 Tier 1 提供者／Tier 2 共同控制者／Tier 3 中介。無國籍者軌道與三條路徑正交：SDG 16.9 + 1954/1961 公約 + UNHCR Handbook 建立的是基底權利軌道，wallet 跨境救濟為次優補強，順序不可倒置。
-    finding: 短期實施應從 π_b 開始，中期推進 π_c，長期推進 πₐ。「不創新法」是政治判斷下的權宜選擇，並非規範必然；廠商市場結構失衡或跨域風險集中時，EU AI Act 模式（橫向新立法）可能更可行。
+      Three supplementary paths arranged in parallel along three axes. πₐ (modeling IATA + ICCAT multilateral treaty + liability allocation) has the widest non-EU coverage; timeline 72+ months. π_b (eIDAS one-stop redress extending through GDPR adequacy + bilateral treaty) has the lowest political resistance; timeline 24–48 months; this is the starting point for near-term implementation. π_c (cross-border wallet credential mutual recognition + joint liability) is most direct for vendor failure; timeline 36–60 months; depends on vendor tiering — Tier 1 provider / Tier 2 joint controller / Tier 3 intermediary. The stateless persons track is orthogonal to the three paths: SDG 16.9 + 1954/1961 Conventions + UNHCR Handbook establish the baseline rights track; cross-border wallet redress is a secondary supplement, and the order must not be reversed.
+    finding: Near-term implementation should start from π_b, advancing π_c in the medium term and πₐ in the long term. "No new legislation" is a political expediency, not a normative necessity; if vendor market structure imbalance or cross-jurisdictional risk concentration occurs, an EU AI Act-style approach (new horizontal legislation) may be more viable.
     formal: "paths = {πₐ, π_b, π_c} ⊆ Policy   ;   priority(πᵢ) varies by axis   ;   stateless_redress ⊥ paths"
 
 # ─────────────────────────────────────────────────────────────
 # Causal Chain (Camerfirma cross-border failure trace)
 # ─────────────────────────────────────────────────────────────
 chain:
-  title: Camerfirma 跨境失效六步因果鏈（2022 警告 → 2024 陸續失效 → 規則模糊持續）
+  title: "Camerfirma Cross-Border Failure Six-Step Causal Chain (2022 Warning → 2024 Successive Failures → Ongoing Rule Ambiguity)"
   steps:
     - tag: T0
       kind: deterministic
-      text: 2022 — Camerfirma 因 ETSI ESI 不合格被歐盟首次警告（QTSP 認證失能屬規範必然）
+      text: 2022 — Camerfirma received its first EU warning for ETSI ESI non-conformance (QTSP certification failure is normatively necessary)
     - tag: T1
       kind: deterministic
-      text: 2024 — Camerfirma 跨境憑證陸續失效；數千張 e-簽章在 DE / PT / IT 突然無效（廠商失效屬規範必然）
+      text: 2024 — Camerfirma cross-border certificates successively failed; thousands of e-signatures suddenly invalid in DE / PT / IT (vendor failure is normatively necessary)
     - tag: T2
       kind: deterministic
-      text: 受害者欲在 verifier 法域起訴；Brussels I Art 17–19 消費者資格因招標屬商務行為而被排除（規則邊界屬規範必然）
+      text: Affected parties sought to sue in verifier jurisdiction; Brussels I Art 17–19 consumer qualification excluded because tender activities are commercial transactions (rule boundary is normatively necessary)
     - tag: T3
       kind: probabilistic
-      text: 退回 Brussels I Art 7(2) 侵權地，但「拒絕地」與「撤照地」的定位是 *eDate* 之後的灰區（規則模糊需司法演繹補位）
+      text: Falling back to Brussels I Art 7(2) tort jurisdiction, but the characterization of "place of rejection" vs. "place of license revocation" is a gray zone after eDate (rule ambiguity requires judicial elaboration to fill)
     - tag: T4
       kind: probabilistic
-      text: 中小企業的損失與招標流程的時序耦合，造成可量化金額（具體損失依環境條件而異）
+      text: Losses by SMEs coupled to the timeline of the tender process, creating quantifiable amounts (concrete losses depend on environmental conditions)
     - tag: T5
       kind: probabilistic
-      text: 救濟可預測性持續流失；類似事件在 BankID 2023 與 Singpass 2024 重演，缺乏 SPOC 互認導致跨境協調延宕（系統性退化屬概率事件，但持續被觀察）
+      text: Redress predictability continues to erode; similar events recur in BankID 2023 and Singpass 2024; lack of SPOC mutual recognition causes delays in cross-border coordination (systemic degradation is a probabilistic event, but continuously observed)
   legend:
     - kind: deterministic
-      label: 機制必然（結構性，不依賴外部 trigger）
+      label: Mechanically necessary (structural, not dependent on external trigger)
     - kind: probabilistic
-      label: 概率性（需要外部 trigger 才實現，但概率不可忽略）
+      label: Probabilistic (requires external trigger to materialize, but probability is non-negligible)
 
 # ─────────────────────────────────────────────────────────────
 # Border Cases — flip to support
 # ─────────────────────────────────────────────────────────────
 borders:
-  - label: 反論 1
-    title: Svantesson — 既有衝突法已涵蓋 internet 跨境
-    pivot: 反論訴求是 Brussels I Recast 已透過 *eDate* (C-509/09) 與 *Bolagsupplysningen* (C-194/16) 確立的 centre of interests 原則覆蓋大部分 internet 跨境爭議；wallet 跨境只是延伸應用，無新規則需要。實證強度上，這個立場有 CJEU 判例累積支撐，學理嚴密。
+  - label: Objection 1
+    title: "Svantesson — Existing Conflict of Laws Already Covers Internet Cross-Border Disputes"
+    pivot: The objection claims that Brussels I Recast has already covered most internet cross-border disputes through the centre of interests principle established by eDate (C-509/09) and Bolagsupplysningen (C-194/16); wallet cross-border use is merely an extension application, requiring no new rules. In terms of empirical strength, this position has CJEU case law accumulation behind it and is academically rigorous.
     flip: |
-      仔細看，centre of interests 限縮於人格權與名譽侵害，CJEU 在 *Wintersteiger* (C-523/10) 與 *Pinckney* (C-170/12) 對 IP 侵權的處理已顯示該原則在不同侵權類型下的非統一適用。Wallet 跨境涉及的經濟損失、信用受損、社會經濟參與權限制，無法直接套用人格權或 IP 的判例。Svantesson 的論點實際上凸顯了規則模糊（規則存在但邊界不清）與規則邊界（特定條文僅覆蓋特定情境）兩層失效模式，反向支撐 over-determined 結構命題。
+      Looking closely, the centre of interests principle is restricted to personality rights and defamation; the CJEU's handling of IP infringement in Wintersteiger (C-523/10) and Pinckney (C-170/12) already shows the non-uniform application of this principle across different tort types. Wallet cross-border disputes involve economic losses, credit damage, and restrictions on socioeconomic participation that cannot be directly mapped to personality rights or IP case law. Svantesson's argument actually highlights two layers of failure modes — rule ambiguity (rules exist but boundaries unclear) and rule boundary (specific provisions cover only specific scenarios) — inversely supporting the over-determined structure proposition.
 
-  - label: 反論 2
-    title: Goldsmith & Wu — cyber-jurisdiction 想像被誇大
-    pivot: 反論訴求是 *Who Controls the Internet?* (2006) 主張各國透過技術過濾、伺服器在地化、ISP 配合等手段已重新建立有效的法律邊界，跨境 wallet 救濟空白屬於現有國家中心結構的常態工作模式，並非新議題。實證強度上，2024 年中國《數據出境安全評估辦法》、印度 *Mallory v Norfolk Southern* (2023) 對 internet jurisdiction 的限縮立場，都支撐這個分析。
+  - label: Objection 2
+    title: "Goldsmith & Wu — Cyber-Jurisdiction Imagination Is Exaggerated"
+    pivot: The objection claims that Who Controls the Internet? (2006) argues that countries have re-established effective legal boundaries through technical filtering, server localization, ISP cooperation, and similar means; the cross-border wallet redress gap is a normal mode of operation in the existing state-centric structure, not a new issue. In terms of empirical strength, China's 2024 Data Export Security Assessment Measures and India's Mallory v Norfolk Southern (2023) restrictive approach to internet jurisdiction both support this analysis.
     flip: |
-      地圖部分接受這個分析，但更精確的描述為「跨境 wallet 救濟空白屬於既有國家中心結構與 wallet 多重連繫之間的耦合問題」。這個耦合問題不會因國家中心結構的恢復而解決，反而因為國家中心結構強化（如 Mallory 對 general jurisdiction 的限縮）而加劇——個別國家越強，跨國協調越難，wallet 跨境救濟的規則競合越嚴重。Goldsmith 與 Wu 的分析反向支撐三軸並行政策合成的必要性。
+      The map partially accepts this analysis, but the more precise description is "the cross-border wallet redress gap is a coupling problem between the existing state-centric structure and wallet's multiple connecting factors." This coupling problem is not resolved by the restoration of a state-centric structure; in fact, as the state-centric structure strengthens (as with Mallory's restriction of general jurisdiction), the problem worsens — the stronger individual states are, the harder cross-national coordination becomes, and the more serious the rule competition in cross-border wallet redress. Goldsmith and Wu's analysis inversely supports the necessity of the three-axis parallel policy synthesis.
 
-  - label: 反論 3
-    title: cyber-sovereignty 立場 — 跨境互認等同主權讓渡
-    pivot: 反論訴求來自 cyber-sovereignty 學派（中國立場與部分 nationalist 法政哲學）：跨境互認協定與規範遞延實質上是把規範決定權外包給他國，相當於主權讓渡；任何不對稱的規範遞延都應該被拒絕，無論是否冠以「合作」或「協定」的名義。實證強度上，2023 年中國《全球數據安全倡議》與 *Schrems II* 對 EU adequacy 機制的批判，都引用了類似結構。
+  - label: Objection 3
+    title: "Cyber-Sovereignty Position — Cross-Border Mutual Recognition Equals Sovereignty Surrender"
+    pivot: The objection from the cyber-sovereignty school (Chinese position and some nationalist legal philosophy) argues that cross-border mutual recognition agreements and normative extension in effect outsource normative decision-making authority to other countries, equivalent to sovereignty surrender; any asymmetric normative extension should be rejected, regardless of whether it is labeled "cooperation" or "agreement." In terms of empirical strength, China's 2023 Global Data Security Initiative and Schrems II's critique of the EU adequacy mechanism both invoke similar structures.
     flip: |
-      eIDAS 2.0 自身內建主權保留條款。Art 5a(5) 保留各成員國對 wallet 治理的核心權限，Recital 24 強調成員國的政策空間，Art 11a 的 responsible Member State 機制本身就是「主權合作」的具體表現。把跨境互認等同於主權讓渡是論述上的滑坡，混淆了「規範遞延（雙邊同意，主權保留）」與「unilateral extraterritoriality（單邊外推，無同意）」。cyber-sovereignty 反論反向支撐「規範遞延需要雙邊同意」這個方法論條件，正好是地圖溯因 pillar 的核心結論。
+      eIDAS 2.0 itself contains built-in sovereignty reservation clauses. Art 5a(5) reserves core authority over wallet governance for each member state, Recital 24 emphasizes member state policy space, and the Art 11a responsible Member State mechanism is itself a concrete expression of "sovereignty cooperation." Equating cross-border mutual recognition with sovereignty surrender is a slippery slope in argumentation, conflating "normative extension (bilateral consent, sovereignty reserved)" with "unilateral extraterritoriality (unilateral projection, no consent)." The cyber-sovereignty objection inversely supports the methodological condition that "normative extension requires bilateral consent" — precisely the core conclusion of the map's abductive pillar.
 
 # ─────────────────────────────────────────────────────────────
 # Procedural Conditions (six firewalls of bilateral redress)
 # ─────────────────────────────────────────────────────────────
 conditions:
-  title: 任何跨境 wallet 救濟方案的合法性，必須先通過六道條件
+  title: Any cross-border wallet redress solution must first pass through six conditions to establish legitimacy
   formalPrelude: "valid_redress(c) ⇔ V_directing ∧ V_SPOC ∧ V_tier ∧ V_bilateral ∧ V_resource ∧ V_stateless"
   items:
-    - title: directing-activity 測試擴展
+    - title: Extension of the Directing-Activity Test
       body: |
-        Brussels I Recast Art 17–19 的 directing-activity 測試（*Pammer/Alpenhof* C-585/08）必須擴展到 wallet verifier 的「以多語介面接受跨境憑證」場景。否則消費者管轄無法穩定覆蓋缺口 (a)。
+        Brussels I Recast Art 17–19 directing-activity test (Pammer/Alpenhof C-585/08) must be extended to the scenario where a wallet verifier "accepts cross-border credentials via multilingual interface." Otherwise, consumer jurisdiction cannot stably cover gap (a).
       formal: "V_directing: ∀ verifier v with multilingual_interface(v) → directing_activity(v)"
-    - title: SPOC + supervisory cooperation 互認
+    - title: SPOC + Supervisory Cooperation Mutual Recognition
       body: |
-        eIDAS 2.0 Art 5a(20) 的 Single Point of Contact 機制必須透過雙邊條約延伸至非歐盟法域，配合 GDPR Art 50 的國際合作條款；缺此條件，缺口 (b) (c) 在歐盟外無覆蓋。
+        The Single Point of Contact mechanism under eIDAS 2.0 Art 5a(20) must be extended to non-EU jurisdictions through bilateral treaties, together with GDPR Art 50 international cooperation clauses; without this condition, gaps (b) and (c) have no coverage outside the EU.
       formal: "V_SPOC: ∀ third_country t : ∃ Agreement A : SPOC(EU) ↔ SPOC(t) via A"
-    - title: wallet 廠商三層分類
+    - title: Wallet Vendor Three-Tier Classification
       body: |
-        廠商分類 Tier 1 提供者／Tier 2 共同控制者／Tier 3 中介必須在條約層級確認，依市場份額與第三方審查機構認定升降。Tier 1 承擔嚴格責任 + 強制責任保險，Tier 2 承擔過失責任 + 舉證倒置，Tier 3 承擔一般過失責任。
+        Vendor classification — Tier 1 provider / Tier 2 joint controller / Tier 3 intermediary — must be confirmed at the treaty level, with tiering adjusted based on market share and third-party auditor determination. Tier 1 bears strict liability + mandatory liability insurance; Tier 2 bears negligence liability + reversed burden of proof; Tier 3 bears ordinary negligence liability.
       formal: "V_tier: ∀ provider p : tier(p) ∈ {T₁, T₂, T₃} ⇒ liability(p) = liability_function(tier(p))"
-    - title: 雙邊同意條件
+    - title: Bilateral Consent Condition
       body: |
-        規範遞延必須伴隨雙邊／多邊協定的明示同意。GDPR adequacy 是一種雙邊同意，e-APP 是另一種；都拒絕單邊外推。沒有雙邊同意的規範外推，會落入 unilateral extraterritoriality 陷阱。
+        Normative extension must be accompanied by explicit consent through bilateral/multilateral agreement. GDPR adequacy is one form of bilateral consent; e-APP is another; both reject unilateral projection. Normative projection without bilateral consent falls into the unilateral extraterritoriality trap.
       formal: "V_bilateral: ∀ extension E : valid(E) ⇔ ∃ Agreement A : sign(A, src) ∧ sign(A, dst)"
-    - title: 資源配套同步擴展
+    - title: Resource Support Simultaneous Expansion
       body: |
-        擴展既有機制（CPC 16 個月時效、noyb 22 個月中位數）必須同步擴展資源——FTE、SLA、跨境協調預算。沒有資源配套，遞延只會把延宕複製到新法域。
+        Expanding existing mechanisms (CPC 16-month timeline, noyb 22-month median) must simultaneously expand resources — FTEs, SLAs, cross-border coordination budget. Without resource support, extension only replicates delays into new jurisdictions.
       formal: "V_resource: ∀ extended_mechanism M : ∃ resources R : capacity(M, R) ≥ baseline(M)"
-    - title: 無國籍者獨立軌道
+    - title: Stateless Persons Independent Track
       body: |
-        無國籍者跨境困境作為獨立並行層次處理，配套機制為 UNHCR + ID4D + ICN 三方工作組（2027 年前）。1954/1961 公約建立的基底權利軌道優先於 wallet 跨境救濟，順序不可倒置。
+        Cross-border difficulties for stateless persons are handled as an independent parallel dimension, with the support mechanism being a UNHCR + ID4D + ICN tripartite working group (by 2027). The baseline rights track established by the 1954/1961 Conventions takes priority over cross-border wallet redress; the order must not be reversed.
       formal: "V_stateless: stateless_redress ⊥ paths(R)  ∧  priority(stateless_track) > priority(wallet_redress)"
 
 # ─────────────────────────────────────────────────────────────
@@ -213,9 +213,9 @@ conditions:
 # ─────────────────────────────────────────────────────────────
 conclusion:
   paragraphs:
-    - <strong>跨境 wallet 救濟空白屬於現行架構的設計前提（國家中心 + 雙邊條約）與 wallet 多重連繫之間的耦合問題</strong>，並非「歐盟法尚未推進到全球」的時間性議題。三層結構性問題並列：衝突法 over-determined、模板僅可條款層級拼裝、規範遞延需雙邊同意。
-    - 短期實施軌跡為 π_b（24–48 月）→ π_c（36–60 月）→ πₐ（72+ 月），沿規範覆蓋面、實證可行性、技術—法律耦合三軸非線性推進。<em>無國籍者議題作為獨立並行層次處理</em>，與三條路徑正交，順序不可倒置；wallet 救濟為次優補強，國籍取得仍為首要救濟。
-    - <strong>對歐盟外公民、特別是台灣公民的關鍵警示為現行架構下幾乎沒有有效救濟管道。</strong>台灣個資法域外效力薄弱、新加坡或日本沒有對台 adequacy 決定、PIPC 對外國 verifier 沒有強制力、駐外代表處只能政治介入。要改變這個現況，必須政府主動推動雙邊條約。這條跨層級不對稱原則是 article 14 對博論 Ch 14 政策議程（federated trust-list alliance + civic proof inclusion rights）的最直接引信。
+    - <strong>Cross-border wallet redress gaps constitute a coupling problem between the design premise of the current architecture (state-centric + bilateral treaties) and wallet's multiple connecting factors</strong> — not a temporal issue of "EU law has not yet advanced globally." Three layers of structural problems stand in parallel: conflict of laws is over-determined, templates can only be stitched at the clause level, and normative extension requires bilateral consent.
+    - "Near-term implementation trajectory: π_b (24–48 months) → π_c (36–60 months) → πₐ (72+ months), advancing non-linearly along three axes of normative coverage, empirical feasibility, and technical-legal coupling. <em>The stateless persons issue is handled as an independent parallel dimension</em>, orthogonal to the three paths, with the order not to be reversed; wallet redress is a secondary supplement, and acquisition of nationality remains the primary remedy."
+    - <strong>The critical warning for non-EU citizens, especially Taiwanese citizens, is that there is almost no effective redress channel under the current architecture.</strong> Taiwan's PDPA extraterritorial effect is weak; Singapore or Japan has no adequacy decision toward Taiwan; PIPC has no coercive authority over foreign verifiers; representative offices can only engage in political intervention. To change this situation, governments must proactively pursue bilateral treaties. This cross-level asymmetric principle is the most direct trigger for article 14's policy agenda (federated trust-list alliance + civic proof inclusion rights) in the doctoral dissertation Ch 14.
   formalCoda: |
     Final form:
       R(c) ⇐ J(c) ∧ E(c) ∧ M(c)

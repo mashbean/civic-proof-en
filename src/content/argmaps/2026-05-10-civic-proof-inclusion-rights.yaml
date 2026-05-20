@@ -1,5 +1,5 @@
 slug: 2026-05-10-civic-proof-inclusion-rights
-title: 不會用皮夾的人怎麼辦：公民證明取得權作為基本權利
+title: "What About Those Who Cannot Use a Wallet: Civic Proof Access as a Fundamental Right"
 subtitle: Civic Proof Inclusion Rights as a Precursor Right — Argument Map (v2)
 
 # ─────────────────────────────────────────────────────────────
@@ -7,7 +7,7 @@ subtitle: Civic Proof Inclusion Rights as a Precursor Right — Argument Map (v2
 # ─────────────────────────────────────────────────────────────
 coreThesis:
   text: |
-    Civic proof 取得權是「人權層級的前置權利」（precursor right），位階橫貫 Marshall 三層公民權，與法律人格權（UDHR Art 6, ICCPR Art 16）並列。國家義務的三層保障結構（程序 / 實質 / 制度）必須同時滿足；缺一即構成「行政可見性喪失 / 累積性排除 / 結構性褫奪公民資格」三層嚴重度光譜中的對應狀態。Wallet 工程的個人擁有 / 個人識別 / 個人私鑰三重預設本身須被檢驗為規範偏誤，共用裝置與委任代理在規範上不能被當作邊緣情境。
+    The right to access civic proof is a "human-rights-level precursor right" that traverses all three of Marshall's citizenship layers and stands alongside the right to legal personality (UDHR Art 6, ICCPR Art 16). The three-tier state obligation structure (procedural / substantive / institutional) must be satisfied simultaneously; the failure of any one tier constitutes a corresponding state on the severity spectrum of "administrative invisibility / accumulated exclusion / structural deprivation of citizenship." The three default presuppositions of wallet engineering — personal ownership / personal identification / personal private key — must themselves be examined as normative biases; shared devices and delegated agency cannot normatively be treated as edge cases.
   summary: Civic proof access is a precursor right that traverses Marshall's three citizenship layers; states must satisfy three concurrent obligation tiers, and wallet engineering's three default presuppositions are themselves normative biases.
   formal:
     expression: |
@@ -17,196 +17,196 @@ coreThesis:
       ¬Inclusion(s) ⇒ severity(s) ∈ {invisibility, accumulated, structural_deprivation}
       Wallet_default = ⟨ownership ∧ identification ∧ key_custody⟩  ;  ¬default ⇒ inclusion_failure
       civic_proof_min(stateless_de_jure) ⊥ civic_proof_min(de_facto_no_ID)
-    caption: 公民證明取得權 P 屬橫貫 Marshall 三層的前置權利（Mᵢ 指公民層 / 政治層 / 社會層）。Inclusion 由三層義務 T 合取構成；缺一即落入嚴重度光譜的某一層級。Wallet 三重預設不滿足即構成 inclusion 失敗；最小可用 civic proof 對法律無國籍與 de facto 無 ID 兩種人群分屬正交軌道。
+    caption: The civic proof access right P is a precursor right traversing all three of Marshall's citizenship layers (Mᵢ denotes the civil / political / social layer). Inclusion is constituted by the conjunction of three obligation tiers T; failure of any one tier places the case on a specific level of the severity spectrum. Failure to satisfy the wallet's three default presuppositions constitutes an inclusion failure. The minimum viable civic proof for de jure stateless persons and de facto persons without ID runs on orthogonal tracks.
     legend:
       - symbol: P[civic_proof]
-        meaning: Civic proof access right — 公民證明取得權
+        meaning: Civic proof access right
       - symbol: Mᵢ
-        meaning: Marshall citizenship layer i (civil / political / social) — Marshall 三層公民權之一
+        meaning: Marshall citizenship layer i (civil / political / social)
       - symbol: T_proc / T_subst / T_inst
-        meaning: 三層國家義務（程序 / 實質 / 制度）
-      - symbol: severity ∈ {invisibility, accumulated, structural_deprivation}
-        meaning: 三層嚴重度光譜（行政可見性喪失 / 累積性排除 / 結構性褫奪公民資格）
+        meaning: Three-tier state obligation (procedural / substantive / institutional)
+      - symbol: "severity ∈ {invisibility, accumulated, structural_deprivation}"
+        meaning: Three-level severity spectrum (administrative invisibility / accumulated exclusion / structural deprivation of citizenship)
       - symbol: Wallet_default
-        meaning: Wallet 工程三重預設（ownership / identification / key_custody）
+        meaning: Wallet engineering's three default presuppositions (ownership / identification / key_custody)
       - symbol: ⊥
-        meaning: 「正交」（orthogonal，獨立並行不可吸納）
+        meaning: Orthogonal (independent, parallel, non-absorbable)
       - symbol: ⊆
-        meaning: 子集
+        meaning: Subset
       - symbol: ⋂
-        meaning: 交集（橫貫所有元素）
+        meaning: Intersection (traversing all elements)
       - symbol: ≜
-        meaning: 「定義為」
+        meaning: "Defined as"
       - symbol: ⇔
-        meaning: 當且僅當
+        meaning: If and only if
       - symbol: ∧
-        meaning: 合取（同時成立）
+        meaning: Conjunction (simultaneously satisfied)
 
 # ─────────────────────────────────────────────────────────────
-# Transitions (區塊之間的接連描述)
+# Transitions
 # ─────────────────────────────────────────────────────────────
 transitions:
   beforeDistinction: |
-    公式給出立場，下一步要把常見誤讀拉開。Civic proof 在當前政策論述中常被當作「立法政策選擇」（statutory right）處理；只要這個分類成立，國家可在預算或政治壓力下削減替代路徑與 inclusion 義務，弱勢群體將被結構性留在 wallet 體系之外。地圖的第一動作是把「立法政策選擇」與「人權層 + 憲法基本權層」這兩個分類拉開。
+    The formal expression states the position; the next step is to separate common misreadings. Civic proof is frequently treated in current policy discourse as a "statutory right" (a legislative policy choice). If this classification stands, the state can reduce alternative pathways and inclusion obligations under budgetary or political pressure, and marginalised groups will be structurally left outside the wallet system. The map's first move is to draw a line between "legislative policy choice" and "human rights tier + constitutional fundamental rights tier."
 
   beforePillars: |
-    區分本身只是宣告。要證明 civic proof 屬人權層 + 憲法基本權層的雙重定位，需要四條獨立來源的支撐。歸納面提供被排除人群的四類結構機制；演繹面提供 Marshall + Sen + Nussbaum + Anderson 政治哲學的位階論證；溯因面提供國家三層義務的法理基礎與失敗案例；反例面提供 wallet 三重預設的規範偏誤證據。四條 pillar 對應四個論證類型，缺一立場就退化為呼籲。
+    The distinction is merely a declaration. Proving that civic proof belongs to both the human rights tier and the constitutional fundamental rights tier calls for four independent lines of support. The inductive strand provides four structural mechanisms of exclusion among affected populations; the deductive strand provides the hierarchy argument from the political philosophy of Marshall + Sen + Nussbaum + Anderson; the abductive strand provides the legal basis for the three-tier state obligation and examples of failure; the counter-example strand provides evidence for normative bias in wallet engineering's three default presuppositions. The four pillars correspond to four argument types — any one missing and the position degrades to advocacy.
 
   beforeChain: |
-    pillars 是正向論證。印度 Aadhaar PDS 致死案提供從「2009 設計強制連結」到「2024 累積 30 件 Jharkhand / Bihar / Karnataka 致死」的具體因果鏈。前段是規範必然（強制連結 + 行政正當性失敗），後段是概率事件（特定家庭的食物配給時序耦合）。把鏈條展開的目的是把抽象的三層義務違反翻譯成可被機制性追溯的事件序列。
+    The pillars constitute the affirmative argument. The Aadhaar PDS fatality cases in India provide a concrete causal chain running from "mandatory linkage design in 2009" to "cumulative 30 Jharkhand / Bihar / Karnataka fatalities as of 2024." The upstream segment is normative necessity (mandatory linkage + administrative legitimacy failure); the downstream segment is a probabilistic event (food ration timing coupling for specific households). Unfolding the chain translates the abstract three-tier obligation violation into a mechanistically traceable event sequence.
 
   beforeBorders: |
-    立場 + 因果鏈成立後，反論才真的具威脅。Banerjee/Duflo 的 RCT 顯示 Aadhaar 在 leakage 改善上有「淨包容效益」；Posner/Vermeule 主張行政國家彈性需求；Lessig cyber-libertarian 立場主張市場主導應優先。仔細檢驗每條反論的實證強度，會發現它們不僅未推翻地圖立場，反而 flip to support 三層保障結構——亦即反論自己的證據結構，正好是地圖的第二層支撐。
+    Once the position and the causal chain hold, objections become genuinely threatening. Banerjee/Duflo's RCTs show a "net inclusion benefit" from Aadhaar in leakage improvement; Posner/Vermeule argues for flexibility in the administrative state; the Lessig cyber-libertarian position argues for market primacy. Careful examination of the empirical strength of each objection reveals that they not only fail to overturn the map's position but actually flip to support the three-tier protection structure — the evidentiary structure of each objection turns out to be the map's second-order support.
 
   beforeConditions: |
-    反論被吸收後，留下的是設計含意。在什麼條件下，「civic proof inclusion rights」可以被視為合法的政策路徑？六道條件把抽象的三層保障翻譯成可被檢驗的工程或法律義務，同時填入核心公式的 T_proc / T_subst / T_inst。
+    Once the objections are absorbed, what remains are design implications. Under what conditions can "civic proof inclusion rights" be treated as a legitimate policy pathway? Six conditions translate the abstract three-tier protection into verifiable engineering or legal obligations, while filling in the T_proc / T_subst / T_inst positions of the core formula.
 
   beforeConclusion: |
-    把規範、政治哲學、國家義務、wallet 三重預設、政策合成、嚴重度光譜這六層收束起來，地圖最終要說的是政治經濟層的成就（precursor right 不能只透過工程實現，須政治承認）以及一條跨越所有層級的不對稱原則——對台灣失能 / 失智長者、移工、無國籍者，現行架構的覆蓋是結構性缺失，補強需政府主動推動 IIA 強制 + 替代路徑強制 + 委任代理工程化。
+    Drawing together six layers — norms, political philosophy, state obligations, wallet engineering's three default presuppositions, policy synthesis, and the severity spectrum — the map ultimately argues for achievement at the political-economic level (precursor rights cannot be realised through engineering alone; political recognition is required) and a cross-tier asymmetry principle: for Taiwan's persons with disabilities / dementia in old age, migrant workers, and stateless persons, coverage under the current framework is structurally deficient, and remediation requires the government to actively promote mandatory IIA + mandatory alternative pathways + engineering of delegated agency.
 
 # ─────────────────────────────────────────────────────────────
 # Foundational Distinction
 # ─────────────────────────────────────────────────────────────
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: Civic proof 屬立法政策選擇（statutory right only）
+    label: "❌ Rejected"
+    title: Civic proof is a legislative policy choice (statutory right only)
     body: |
-      把 civic proof 取得權僅當作立法層級的法定權利。這個結構假設國會多數可以決定誰能取得 civic proof、誰能用替代路徑、誰被排除；國家義務僅限於程序合規（提供某條替代路徑即可），無實質義務（對無國籍者）也無制度義務（強制 IIA）。在預算或政治壓力下，弱勢群體的 inclusion 條款最容易被削減；Banerjee/Duflo 與 Posner/Vermeule 的論述路徑最終都會被收束到此分類。
-    formal: "P ∈ Statutory   （把 P 當作可被國會多數修改的權利）"
+      Treats the civic proof access right as merely a statutory right at the legislative level. This structure assumes that parliamentary majorities can determine who may access civic proof, who may use alternative pathways, and who is excluded; state obligations are limited to procedural compliance (providing some alternative pathway suffices), with no substantive obligation (for stateless persons) and no institutional obligation (for mandatory IIA). Under budgetary or political pressure, the inclusion provisions for marginalised groups are the easiest to cut; the argumentative paths of Banerjee/Duflo and Posner/Vermeule ultimately converge on this classification.
+    formal: "P ∈ Statutory   (treats P as a right modifiable by parliamentary majority)"
   accepted:
-    label: ✓ 被辯護
-    title: Civic proof 屬人權層 + 憲法基本權層的前置權利（precursor right）
+    label: "✓ Defended"
+    title: Civic proof is a precursor right at the human rights tier + constitutional fundamental rights tier
     body: |
-      Civic proof 取得權是橫貫 Marshall 三層公民權的前置條件，與法律人格權（UDHR Art 6, ICCPR Art 16）並列為人權層級權利；在憲法層級應被各國解釋為基本權利（fundamental right / Grundrecht）。這個結構承認三層意義（人權層 / 憲法基本權層 / 立法權利層）並主張前兩層皆成立，並批判把 civic proof 僅當作立法權利的論述。國家義務有三層保障結構（程序 / 實質 / 制度），任一層失敗即構成嚴重度光譜中的對應狀態。
+      The civic proof access right is a precondition traversing all three of Marshall's citizenship layers, standing alongside the right to legal personality (UDHR Art 6, ICCPR Art 16) as a human-rights-tier right; at the constitutional level it should be interpreted by each country as a fundamental right (fundamental right / Grundrecht). This structure acknowledges three levels of meaning (human rights tier / constitutional fundamental rights tier / statutory rights tier) and asserts that the first two both hold, while critiquing accounts that treat civic proof only as a statutory right. The three-tier state obligation structure (procedural / substantive / institutional) is such that failure of any one tier constitutes a corresponding state on the severity spectrum.
     formal: "P[civic_proof] ⊆ Human_Right ∩ Fundamental_Right   ;   P ⊆ ⋂ᵢ Mᵢ"
 
 # ─────────────────────────────────────────────────────────────
 # Five Supporting Pillars
 # ─────────────────────────────────────────────────────────────
 pillars:
-  - section: §3 — 歸納（四類結構機制）
-    title: 排除可被類型化，且四類有獨立介入點
-    role: 提供實證面支撐——若被排除人群不能被穩定類型化，後續演繹與政策合成失去著力點。同時必須拒斥「數位落差」框架，強調四類有獨立政策介入點。
+  - section: "§3 — Inductive (four structural mechanism types)"
+    title: Exclusion can be typologised, and the four types have independent intervention points
+    role: Provides empirical support — without stable typologisation of excluded populations, the downstream deductive argument and policy synthesis lose their footing. At the same time, the "digital divide" framework must be rejected, emphasising that the four types have independent policy intervention points.
     body: |
-      被排除人群可被分為四類結構機制。(a) 工具排除對應基礎建設政策——GSMA 2024 報告 Sub-Saharan Africa 女性 23% 屬於 non-owner shared user、South Asia 19%；ITU 2024 估全球 26 億未連網人口。(b) 識讀排除對應教育與長照——WHO 2024 估全球失智人口 5500 萬，其中超 60% 在低中收入國家；NIST FRVT 2022 演算法錯認對深色膚色與東亞臉部偏低。(c) 證件排除對應國籍與移民法——UNHCR 2024 統計 ~440 萬法律無國籍者；UK Windrush 案（2018）為失國籍案的最具規模記錄。(d) 制度排除對應社會福利與勞動法——印度 Aadhaar PDS 致死案（Khera 系列累積 30 件）、澳洲 Robodebt（2016-2020）、台灣移工 ARC 扣留（TIWA 5000 件）。第五類「自願不使用者」被剔除，理由為德國 Volkszählungsurteil（1983）已建立資訊自決權保護消極不使用，與結構排除混合會稀釋規範力道。
-    finding: 四類分類為「結構機制」而非人口學列舉，每一類對應獨立政策介入點；下游 writer 不可回退到「數位落差」框架。
+      Excluded populations can be divided into four structural mechanism types. (a) Device exclusion corresponds to infrastructure policy — GSMA 2024 reports 23% of women in Sub-Saharan Africa and 19% in South Asia are non-owner shared users; ITU 2024 estimates 2.6 billion people globally without internet connectivity. (b) Literacy exclusion corresponds to education and long-term care — WHO 2024 estimates a global dementia population of 55 million, of which over 60% are in low-to-middle-income countries; NIST FRVT 2022 shows algorithm misidentification is lower for darker skin tones and East Asian faces. (c) Documentation exclusion corresponds to nationality and immigration law — UNHCR 2024 statistics count approximately 4.4 million de jure stateless persons; the UK Windrush case (2018) is the largest documented case of citizenship loss. (d) Institutional exclusion corresponds to social welfare and labour law — India's Aadhaar PDS fatality cases (Khera series, cumulative 30 cases), Australia's Robodebt (2016–2020), and Taiwan's migrant worker ARC detention (TIWA 5,000 cases). A fifth category — "voluntary non-users" — is excluded, on the grounds that Germany's Volkszählungsurteil (1983) already established informational self-determination protection for passive non-use; mixing it with structural exclusion dilutes normative force.
+    finding: The four-type classification is one of "structural mechanisms," not demographic listing; each type corresponds to an independent policy intervention point. Downstream writers may not revert to the "digital divide" framework.
     formal: "Excluded = ⋃ᵢ Tᵢ where Tᵢ ∈ {device, literacy, documentation, institutional}; intervention(Tᵢ) ≠ intervention(Tⱼ) for i ≠ j"
 
-  - section: §4 — 演繹（Marshall + Sen + Nussbaum + Anderson）
-    title: Civic proof 是橫貫三層公民權的前置條件
-    role: 提供政治哲學基礎——若 civic proof 僅是 Marshall 三層其中一層的權利（如類比投票權），可被替代或削減；若它是橫貫三層的前置條件，三層公民權的「實質可行能力」直接依賴於 civic proof 取得。借自 ICCPR Art 16 法律人格權的論述傳統，命名為 precursor right。
+  - section: "§4 — Deductive (Marshall + Sen + Nussbaum + Anderson)"
+    title: Civic proof is a precondition traversing all three citizenship layers
+    role: Provides the political-philosophical foundation — if civic proof is merely a right within one of Marshall's three layers (analogous to the right to vote), it can be substituted or reduced; if it is a precondition traversing all three layers, the "substantive capability" of all three citizenship layers directly depends on civic proof access. Drawing on the argumentative tradition of the right to legal personality in ICCPR Art 16, this is named a precursor right.
     body: |
-      Marshall 1950 *Citizenship and Social Class* 把公民權分為三層（公民層、政治層、社會層）；三層按歷史順序依次建立，但在規範上互為前提。把 Marshall 三層套到當代數位化的公共生活，civic proof 在每一層都扮演進入該層權利的「實質可行能力」前提。Sen 1999 *Development as Freedom* + Nussbaum 2011 *Creating Capabilities* 把 capability approach 制度化為「核心可行能力」清單，其中「affiliation」與「control over one's environment」直接涵蓋 civic proof 場景。Anderson 1999 *Ethics* relational equality 把平等定義為「公民之間的平等地位關係」，反對僅以分配結果衡量。Pettit 1997 *Republicanism* 從共和主義 *libertas* 傳統論證「免於支配」；Young 2000 *Inclusion and Democracy* 把民主重新定義為「結構性 inclusion」；Habermas 1962/1992 *Strukturwandel der Öffentlichkeit* / *Faktizität und Geltung* 論證公共領域成立需 communicative competence；Alston 2019 UN A/74/493 *Digital welfare state* 從人權法直接論證 civic proof inclusion 是基本人權。
-    finding: Civic proof 屬 precursor right 位階，與法律人格權並列，橫貫 Marshall 三層；該位階主張在人權層（已有公約根據）+ 憲法基本權層（須各國憲法解釋）皆成立。
+      Marshall 1950 *Citizenship and Social Class* divides citizenship into three layers (civil, political, social); the three layers are built in historical order but are mutually presupposed normatively. Mapping Marshall's three layers onto contemporary digitalised public life, civic proof plays the role of a "substantive capability" precondition for entering the rights of each layer. Sen 1999 *Development as Freedom* + Nussbaum 2011 *Creating Capabilities* institutionalise the capability approach as a list of "central capabilities," of which "affiliation" and "control over one's environment" directly cover civic proof scenarios. Anderson 1999 *Ethics* relational equality defines equality as "an equal standing relationship among citizens," opposing measurement by distribution outcomes alone. Pettit 1997 *Republicanism* argues from the republican *libertas* tradition for "freedom as non-domination"; Young 2000 *Inclusion and Democracy* redefines democracy as "structural inclusion"; Habermas 1962/1992 *Strukturwandel der Öffentlichkeit* / *Faktizität und Geltung* argues that public sphere formation requires communicative competence; Alston 2019 UN A/74/493 *Digital welfare state* directly argues from human rights law that civic proof inclusion is a basic human right.
+    finding: Civic proof belongs to the precursor right tier, standing alongside the right to legal personality, traversing all three of Marshall's citizenship layers. This tier claim holds at both the human rights level (with treaty grounding) and the constitutional fundamental rights level (requiring constitutional interpretation in each country).
     formal: "∀ rights r ∈ ⋃ᵢ Mᵢ : exercise(r, c) requires civic_proof(c)"
 
-  - section: §5 — 溯因（國家義務三層 + 跨法域承載）
-    title: 國家三層義務 + 嚴重度光譜
-    role: 提供溯因論證——從 5 件失敗案例反推三層義務（程序 / 實質 / 制度）必須同時滿足。同時建立嚴重度光譜（行政可見性喪失 / 累積性排除 / 結構性褫奪公民資格）為措辭強度分層。
+  - section: "§5 — Abductive (three-tier state obligation + cross-jurisdictional bearing)"
+    title: Three-tier state obligation + severity spectrum
+    role: Provides the abductive argument — inferring in reverse from five failure cases that the three-tier obligation (procedural / substantive / institutional) must be satisfied simultaneously. Simultaneously establishes the severity spectrum (administrative invisibility / accumulated exclusion / structural deprivation of citizenship) as a layered measure of statement severity.
     body: |
-      若 civic proof 是基本權利，國家義務必須包含三層保障結構。程序保障要求提供 wallet 之外的替代路徑且不得有歧視性附加條件；實質保障要求對無證件者、無國籍者、流亡者提供「最小可用 civic proof」；制度保障要求基礎設施設計階段強制 inclusion impact assessment。三層分類為「分析性類型學」，跨法域對應為普通法系 procedural / substantive / institutional due process、大陸法系 formelle / materielle Rechtsstaatlichkeit / Schutzpflicht、東亞憲政「制度的保障」。「最小可用 civic proof」對接 1954 公約 Art 27/28 + UNHCR 2014 Handbook（屬論述延伸而非條約直接覆蓋），建立雙防線（不可替代國籍授予 + 居住升級條款）。「結構性褫奪公民資格」對應 arbitrary deprivation of nationality（HRC Resolution 20/5、32/5 等非拘束性決議的權威解釋指引），僅用於 Aadhaar 致死案、Windrush 失國籍案等極端情境。
-    finding: 三層義務必須同時滿足，缺一即落入嚴重度光譜的某一層級；嚴重度光譜的三層措辭（行政可見性喪失 / 累積性排除 / 結構性褫奪公民資格）對應不同程度的失敗。
+      If civic proof is a fundamental right, state obligations must include a three-tier protection structure. Procedural protection requires providing alternative pathways beyond the wallet without discriminatory add-on conditions. Substantive protection requires providing "minimum viable civic proof" for undocumented persons, stateless persons, and persons in exile. Institutional protection requires mandating inclusion impact assessments at the infrastructure design stage. The three-tier classification is an "analytical typology"; cross-jurisdictional equivalents are: common law procedural / substantive / institutional due process; civil law formelle / materielle Rechtsstaatlichkeit / Schutzpflicht; East Asian constitutional "institutionally guaranteed rights." "Minimum viable civic proof" connects to 1954 Convention Art 27/28 + UNHCR 2014 Handbook (as an argumentative extension, not direct treaty coverage), establishing a dual safeguard (cannot substitute nationality conferral + residence upgrade pathway). "Structural deprivation of citizenship" corresponds to arbitrary deprivation of nationality (HRC Resolutions 20/5, 32/5, etc. — authoritative interpretive guidance of non-binding resolutions), used only for extreme cases such as the Aadhaar fatality cases and the Windrush citizenship loss cases.
+    finding: The three-tier obligation must be satisfied simultaneously; failure of any one tier places the case on a corresponding level of the severity spectrum. The three-level severity spectrum (administrative invisibility / accumulated exclusion / structural deprivation of citizenship) corresponds to different degrees of failure.
     formal: "Inclusion(state) ⇔ T_proc ∧ T_subst ∧ T_inst   ;   ¬Inclusion ⇒ severity ∈ {invisibility, accumulated, structural_deprivation}"
 
-  - section: §6 — 反例（Wallet 三重預設）
-    title: Wallet 預設本身為規範偏誤
-    role: 提供反向證據——若無法證明 wallet 工程主流預設本身是規範偏誤，制度保障義務（強制 IIA、multi-tenant、代理鏈可審計）就只是程序合規要求，而非實質改造。
+  - section: "§6 — Counter-example (wallet engineering's three default presuppositions)"
+    title: Wallet engineering defaults are themselves normative biases
+    role: Provides counter-evidence — without proving that mainstream wallet engineering defaults are themselves normative biases, the institutional protection obligation (mandatory IIA, multi-tenant, auditable delegation chain) is merely a procedural compliance requirement rather than substantive transformation.
     body: |
-      Wallet 工程的主流預設由三重結構組成，個人擁有（personal ownership of device）+ 個人識別（individual biometric / behavioural binding）+ 個人私鑰（individually held key material）。共用裝置主要打破 (1) 與 (2) 的綁定；委任代理主要打破 (3) 與「行使主體」的綁定。這兩個情境屬於全球至少十億人的日常實況，並非邊緣現象。GSMA 2024（SSA 女性 23% non-owner shared user）+ ITU 2024（全球 26 億未連網）+ WHO 2024（全球失智 5500 萬）+ Wyche et al. ICTD 2018「Sharing this with the family」+ Sambasivan et al. SOUPS 2018「Privacy is not for me」。CRPD Art 12 + General Comment No. 1（2014）明確要求逐步廢除替代決策（substituted decision-making），代之以 supported decision-making；台灣 2019 民法意定監護新制是這個國際趨勢的部分回應，但 wallet 工程未提供對齊 supported decision-making 的設計原語。
-    finding: Wallet 三重預設並非中立的工程選擇，而是規範立場；inclusion-by-design 的三項可工程要求（強制 IIA + multi-tenant + 代理鏈可審計）缺一即未達成。
+      Wallet engineering's mainstream defaults comprise a three-part structure: personal ownership of device + individual biometric / behavioural binding + individually held key material. Shared devices primarily break the binding of (1) and (2); delegated agency primarily breaks the binding of (3) and "the subject exercising the right." These two scenarios represent the everyday reality of at least one billion people globally, not edge phenomena. GSMA 2024 (SSA women 23% non-owner shared user) + ITU 2024 (2.6 billion globally unconnected) + WHO 2024 (55 million globally with dementia) + Wyche et al. ICTD 2018 "Sharing this with the family" + Sambasivan et al. SOUPS 2018 "Privacy is not for me." CRPD Art 12 + General Comment No. 1 (2014) explicitly require the progressive abolition of substituted decision-making and its replacement with supported decision-making. Taiwan's 2019 Civil Code voluntary guardianship system is a partial response to this international trend, but wallet engineering has not provided design primitives aligned with supported decision-making.
+    finding: Wallet engineering's three default presuppositions are not neutral engineering choices but normative positions. The three engineering requirements for inclusion-by-design (mandatory IIA + multi-tenant + auditable delegation chain) are each necessary.
     formal: "Wallet_default ∧ shared_device ⇒ exclude(non_primary_user)   ;   Wallet_default ∧ delegation ⇒ exclude(supported_decision)"
 
-  - section: §7 — 政策合成（三層具體條款 + 五項限定）
-    title: 三層條款並行 + 雙防線 + 三道防腐
-    role: 提供政策合成——若三層義務只停留在抽象層級，無法被立法或行政命令落實，整個論證會退化為呼籲。本 pillar 把抽象義務翻譯為具體條款，含時程、政治阻力、量化指標。
+  - section: "§7 — Policy synthesis (three-tier concrete provisions + five limitations)"
+    title: Three-tier provisions in parallel + dual safeguard + three anti-decay measures
+    role: Provides policy synthesis — without translating the three-tier obligation from the abstract level into legislative or administrative implementation, the entire argument degrades to advocacy. This pillar translates abstract obligations into concrete provisions with timelines, political resistance, and quantitative indicators.
     body: |
-      程序保障三條款。P1 法定義務（不得只提供 wallet）+ P2 等效性（區分形式等效 vs 實質等效，含量化指標時程不超過 1.5 倍、駁回率不高於 1.5 倍）+ P3 反歧視（替代路徑不得有附加費用、處理時程歧視）。實質保障三軸並行，W3C DID 軌道 + UNHCR/IOM/NGO trust framework + 城市級 sanctuary card 回填（NYC IDNYC 2017-2020 ICE 資料調取壓力顯示其法律可持續性風險，定位為「在聯邦保護不足時的城市級回填」）。「最小可用 civic proof」拆成法律無國籍者（受 1954/1961 公約保護，~440 萬，UNHCR Digital Identity for Refugees 計畫覆蓋 11.4M 但「使用者主導」極小）與 de facto 無 ID 者（World Bank ID4D ~850M，無國際公約直接覆蓋）兩種人群。制度保障 IIA 三層設計（L1 設計階段強制 + L2 第三方 audit + L3 受影響人群參與權），配三道防腐（強制公開 + 第三方 audit + 受影響人群參與權）為部分緩解 box-ticking 退化風險。
-    finding: 三層條款必須並行，短期實施應從 P1 法定義務（12-24 月）開始，中期推進實質保障 W3C DID 軌道與制度保障 IIA L1（24-48 月），長期推進實質保障 UNHCR trust framework 與制度保障 L2/L3（36-72 月）。
+      Three procedural protection provisions. P1 statutory obligation (may not provide only the wallet interface) + P2 equivalence (distinguishing formal equivalence vs. substantive equivalence, with quantitative indicators: timeline no more than 1.5× wallet pathway, rejection rate no higher than 1.5× wallet pathway) + P3 anti-discrimination (alternative pathways may not carry additional charges or processing timeline discrimination). Three substantive protection axes in parallel: W3C DID track + UNHCR/IOM/NGO trust framework + city-level sanctuary card backfill (NYC IDNYC 2017–2020 ICE data request pressure demonstrates its legal sustainability risk, positioned as "city-level backfill when federal protection is insufficient"). "Minimum viable civic proof" splits into two populations: de jure stateless persons (protected by the 1954/1961 Conventions, approximately 4.4 million; UNHCR Digital Identity for Refugees covers 11.4M but "user-led" in only a very small proportion) and de facto persons without ID (World Bank ID4D approximately 850M; no international treaty provides direct coverage). Institutional protection IIA three-tier design (L1 mandatory at design stage + L2 third-party audit + L3 participation rights for affected groups), with three anti-decay measures (mandatory disclosure + third-party audit + participation rights for affected groups) as partial mitigation of box-ticking degradation risk.
+    finding: The three-tier provisions must proceed in parallel. Short-term implementation should begin with P1 statutory obligation (12–24 months); medium-term should advance W3C DID track for substantive protection and IIA L1 for institutional protection (24–48 months); long-term should advance the UNHCR trust framework for substantive protection and L2/L3 for institutional protection (36–72 months).
     formal: "Policy = ⟨P_proc, P_subst, P_inst⟩   ;   civic_proof_min(stateless_de_jure) ⊥ civic_proof_min(de_facto_no_ID)   ;   IIA_robust = ⟨public, audit, participation⟩"
 
 # ─────────────────────────────────────────────────────────────
 # Causal Chain (Aadhaar PDS exclusion process trace)
 # ─────────────────────────────────────────────────────────────
 chain:
-  title: Aadhaar PDS 致死案六步因果鏈（強制連結 → 結構性褫奪公民資格）
+  title: "Aadhaar PDS Fatality Cases: Six-Step Causal Chain (Mandatory Linkage → Structural Deprivation of Citizenship)"
   steps:
     - tag: T0
       kind: deterministic
-      text: 2009-2016 — Aadhaar 強制連結 PDS 設計確立，無 IIA 評估排除風險（制度保障違反屬規範必然）
+      text: "2009–2016 — Mandatory Aadhaar-PDS linkage design established without IIA assessment of exclusion risks (institutional protection violation is normative necessity)"
     - tag: T1
       kind: deterministic
-      text: 2017+ — 部分受益人因 Aadhaar 連結錯誤、生物識別失敗、行政人員疏忽被拒於配給站（程序保障無有效替代路徑）
+      text: "2017+ — Some beneficiaries denied access at ration stations due to Aadhaar linkage errors, biometric failures, and administrative negligence (procedural protection without effective alternative pathway)"
     - tag: T2
       kind: deterministic
-      text: PDS 強制連結設計與 Aadhaar 既有運作邏輯衝突；Khera 2019 *EPW* 系列累積 30 件 Jharkhand / Bihar / Karnataka 致死案
+      text: PDS mandatory linkage design conflicts with Aadhaar's existing operational logic; Khera 2019 *EPW* series documents cumulative 30 fatalities in Jharkhand / Bihar / Karnataka
     - tag: T3
       kind: probabilistic
-      text: 2017 *K.S. Puttaswamy v. Union of India* 確立隱私為基本權；2018 *Puttaswamy II* 部分限縮 Aadhaar 強制連結（外部 trigger）
+      text: "2017 *K.S. Puttaswamy v. Union of India* established privacy as a fundamental right; 2018 *Puttaswamy II* partially limited mandatory Aadhaar linkage (external trigger)"
     - tag: T4
       kind: probabilistic
-      text: 2018-2024 後續救濟程序部分改革；UN Special Rapporteur Alston 2019 報告把 Aadhaar 致死案標為 digital welfare state 失敗的代表
+      text: "2018–2024 subsequent relief procedures partially reformed; UN Special Rapporteur Alston 2019 report cited the Aadhaar fatality cases as a representative example of digital welfare state failure"
     - tag: T5
       kind: probabilistic
-      text: 部分行政疏失改善但結構性排除模式持續，Banerjee 2020 + Muralidharan 2016 RCT 顯示 leakage 改善但 outcome variable 不同；尾端排除致死問題未解
+      text: Some administrative negligence improved but structural exclusion pattern continues; Banerjee 2020 + Muralidharan 2016 RCT shows leakage improvement but different outcome variables; the tail-end exclusion fatality problem remains unresolved
   legend:
     - kind: deterministic
-      label: 機制必然（結構性，不依賴外部 trigger）
+      label: Mechanistic necessity (structural; does not depend on external trigger)
     - kind: probabilistic
-      label: 概率性（需要外部 trigger 才實現，但概率不可忽略）
+      label: Probabilistic (requires external trigger to materialise, but probability non-negligible)
 
 # ─────────────────────────────────────────────────────────────
 # Border Cases — flip to support
 # ─────────────────────────────────────────────────────────────
 borders:
-  - label: 反論 1
-    title: Banerjee/Duflo — universal ID 的經濟效益不應與基本權利等同
-    pivot: 反論訴求是 *Poor Economics* (2011) + *Good Economics for Hard Times* (2019) + Banerjee, Duflo, Imbert, Mathew, Pande 2020 + Muralidharan, Niehaus, Sukhtankar 2016 RCT 主張 Aadhaar 在 leakage 改善上有「淨包容效益」，把 civic proof 提升為基本權利可能弱化權利語言本身。實證強度上，這些 RCT 是嚴格的因果推論，外部效度高。
+  - label: Objection 1
+    title: Banerjee/Duflo — the economic benefits of universal ID should not be equated with fundamental rights
+    pivot: The objection draws on *Poor Economics* (2011) + *Good Economics for Hard Times* (2019) + Banerjee, Duflo, Imbert, Mathew, Pande 2020 + Muralidharan, Niehaus, Sukhtankar 2016 RCTs, arguing that Aadhaar has a "net inclusion benefit" in leakage improvement, and that elevating civic proof to a fundamental right may weaken rights language itself. Empirically, these RCTs are rigorous causal inferences with high external validity.
     flip: |
-      仔細看，兩個 RCT 的 outcome variable 是「淨 leakage 改善」與「整體配給效率」；本文 § 3 與 § 8 Khera 系列記錄的是「尾端排除致死」outcome variable。可以同時 (i) leakage 改善 + (ii) 尾端排除致死，兩個結論不互斥。Banerjee/Duflo 的論證是對的，但他們論證的議題與本文不同。把 civic proof 提升為 precursor right 並非否認其工具性效益，而屬於在工具性效益之上加一層底線保障，尾端不可被致死。Banerjee/Duflo 反論反向支撐「精確區分 outcome variable」的論證紀律。
+      On closer inspection, the outcome variable of the two RCTs is "net leakage improvement" and "overall ration distribution efficiency," while §3 and §8 Khera series of this paper document a "tail-end exclusion fatality" outcome variable. (i) leakage improvement and (ii) tail-end exclusion fatality can simultaneously be true — the two conclusions are not mutually exclusive. Banerjee/Duflo's argument is correct, but the issue they argue about is different from this paper's. Elevating civic proof to a precursor right does not deny its instrumental benefits; rather, it adds a floor protection above instrumental benefits — the tail end must not be subjected to fatalities. The Banerjee/Duflo objection, read carefully, supports the argument's discipline of "precisely distinguishing outcome variables."
 
-  - label: 反論 2
-    title: Posner/Vermeule — 行政國家彈性需求
-    pivot: 反論訴求是 *The Executive Unbound* (2010) 主張當代行政國家的決策需要彈性，把 civic proof 鎖定為基本權利會限制政府靈活回應新技術。實證強度上，Posner & Vermeule 對美國行政擴權的描述有實證基礎，且部分被 Schmitt 傳統的緊急狀態論承接。
+  - label: Objection 2
+    title: Posner/Vermeule — the flexibility needs of the administrative state
+    pivot: The objection draws on *The Executive Unbound* (2010), arguing that decision-making in the contemporary administrative state requires flexibility; locking civic proof as a fundamental right will limit the government's agility in responding to new technologies. Empirically, Posner & Vermeule's account of US administrative expansion has an empirical basis, and is partly taken up by the Schmittian tradition of emergency state theory.
     flip: |
-      把 civic proof 認定為 precursor right 並未要求政府用特定技術實現它，僅要求政府滿足結果條件（所有人都能取得）。技術選擇的彈性保留在憲法基本權利保護之內。Posner/Vermeule 反論反向支撐「結果條件 vs 技術手段」的區分——基本權利規定的是結果條件，行政彈性留在手段選擇上。這個區分正好是地圖溯因 pillar 的核心結論。
+      Recognising civic proof as a precursor right does not require the government to implement it with a specific technology; it only requires the government to satisfy outcome conditions (everyone can access it). Flexibility in technology choice is preserved within constitutional fundamental rights protection. The Posner/Vermeule objection, read carefully, supports the distinction between "outcome conditions vs. technological means" — fundamental rights specify outcome conditions, and administrative flexibility resides in the choice of means. This distinction is precisely the core conclusion of the map's abductive pillar.
 
-  - label: 反論 3
-    title: Lessig cyber-libertarian — 市場主導 vs 國家退出
-    pivot: 反論訴求是 *Code* (1999) 主張 wallet 普及應透過市場 vs. 國家退出，而非把入場權升級為基本權利。實證強度上，cyber-libertarian 立場在開源 wallet 社群（Polygon ID、ENS、Worldcoin）有結構性支持。
+  - label: Objection 3
+    title: "Lessig cyber-libertarian — market primacy vs. state withdrawal"
+    pivot: The objection draws on *Code* (1999), arguing that wallet adoption should proceed through market vs. state withdrawal, rather than upgrading access rights to fundamental rights. Empirically, the cyber-libertarian position has structural support in the open-source wallet community (Polygon ID, ENS, Worldcoin).
     flip: |
-      當 wallet 已成為進入公共生活的事實必要通道，市場退出無法滿足結果條件。市場主導的 wallet 設計會把弱勢群體留給「自由選擇不使用」的 fiction，這個 fiction 在實質上等於排除——這正是 Sub-Arg 1 第五類「自願不使用者」窮盡性檢查所揭示的問題。Lessig 反論反向支撐「市場 vs 國家二分」過於簡化的批判，並補強「分層責任設計」（Tier 1 提供者承擔嚴格責任 + Tier 3 中介低監管）的政策路徑。
+      When the wallet has become a factually necessary channel for entering public life, market withdrawal cannot satisfy the outcome condition. Market-led wallet design will leave marginalised groups to the fiction of "free choice not to use," which in substance amounts to exclusion — precisely what the exhaustive examination of the fifth category "voluntary non-users" in Sub-Arg 1 reveals. The Lessig objection, read carefully, supports the critique that "market vs. state dichotomy" is overly simplistic, and reinforces the "tiered responsibility design" policy pathway (Tier 1 providers bear strict liability + Tier 3 intermediaries have low regulation).
 
 # ─────────────────────────────────────────────────────────────
 # Procedural Conditions (six firewalls of inclusion rights)
 # ─────────────────────────────────────────────────────────────
 conditions:
-  title: 任何 civic proof inclusion 政策的合法性，必須先通過六道條件
+  title: The legitimacy of any civic proof inclusion policy must first pass six conditions
   formalPrelude: "valid_inclusion(s) ⇔ V_proc_alt ∧ V_equiv ∧ V_anti_disc ∧ V_min_proof ∧ V_IIA ∧ V_audit"
   items:
-    - title: 程序保障替代路徑強制
+    - title: Mandatory procedural protection alternative pathway
       body: |
-        所有 civic proof 服務不得僅提供 wallet 介面；必須同時提供至少一條非 wallet 替代路徑（紙本 / NFC 卡 / 客服 / 委任代理 / 印章授權）。EU EAA Directive (EU) 2019/882 + EU EECC Directive (EU) 2018/1972 提供了部分歐盟法基礎。
+        All civic proof services may not provide only the wallet interface; at least one non-wallet alternative pathway must also be provided simultaneously (paper / NFC card / customer service / delegated agency / stamp authorisation). The EU EAA Directive (EU) 2019/882 + EU EECC Directive (EU) 2018/1972 provide a partial EU legal basis.
       formal: "V_proc_alt: ∀ service s : ∃ path p ≠ wallet : provided(s, p)"
-    - title: 等效性量化指標
+    - title: Quantitative equivalence indicators
       body: |
-        替代路徑與 wallet 在法律效力上等同（形式等效），且實質效率不歧視（實質等效）。實質等效須含量化指標——時程不超過 wallet 路徑的 1.5 倍；駁回率不高於 wallet 路徑的 1.5 倍。1.5 倍是政策建議數，須立法協商。
+        Alternative pathways are legally equivalent to the wallet (formal equivalence) and are not substantively discriminatory in efficiency (substantive equivalence). Substantive equivalence must include quantitative indicators — timeline no more than 1.5× the wallet pathway; rejection rate no higher than 1.5× the wallet pathway. The 1.5× figure is a policy recommendation value requiring legislative negotiation.
       formal: "V_equiv: ∀ alt p : time(p) ≤ 1.5·time(wallet) ∧ rejection_rate(p) ≤ 1.5·rejection_rate(wallet)"
-    - title: 反歧視條款
+    - title: Anti-discrimination provisions
       body: |
-        替代路徑不得有附加費用、處理時程歧視等。違反者公民可循行政訴訟救濟。配套申訴管道為各國資料保護機關（DPA）+ 行政法院。
+        Alternative pathways must not carry additional charges, processing timeline discrimination, or similar conditions. Violators can be challenged by citizens through administrative litigation. Supporting complaint channels include each country's data protection authority (DPA) + administrative courts.
       formal: "V_anti_disc: ∀ alt p : ¬extra_fee(p) ∧ ¬discriminatory_processing(p)"
-    - title: 最小可用 civic proof 雙軌設計
+    - title: Minimum viable civic proof dual-track design
       body: |
-        對法律無國籍者（受 1954/1961 公約保護），提供對接 1954 公約 Art 27/28 + UNHCR 2014 Handbook 的最小可用 civic proof，伴隨「不可替代國籍授予 + 居住升級條款」雙防線。對 de facto 無 ID 者，須仰賴各國憲法基本權與行政法 + 城市級 sanctuary card 回填。
+        For de jure stateless persons (protected by the 1954/1961 Conventions), provide minimum viable civic proof connected to 1954 Convention Art 27/28 + UNHCR 2014 Handbook, accompanied by a dual safeguard of "cannot substitute nationality conferral + residence upgrade pathway." For de facto persons without ID, reliance on each country's constitutional fundamental rights and administrative law + city-level sanctuary card backfill is necessary.
       formal: "V_min_proof: provide(min_civic_proof, c_stateless_de_jure) ∧ provide(min_civic_proof, c_de_facto)   ;   ¬substitute_nationality ∧ ∃ upgrade_path"
-    - title: 強制 inclusion impact assessment
+    - title: Mandatory inclusion impact assessment
       body: |
-        任何國家發行或認證的 wallet 系統部署前須提交 IIA 報告，仿 EAA Directive 2019/882 conformity assessment 程序。IIA 報告須由獨立第三方 audit。
+        Any state-issued or state-certified wallet system must submit an IIA report prior to deployment, modelled on the EAA Directive 2019/882 conformity assessment procedure. The IIA report must be independently audited by a third party.
       formal: "V_IIA: ∀ deployment d : pre_deployment(IIA_report(d)) ∧ third_party_audit(IIA_report(d))"
-    - title: 受影響人群參與權與可審計代理鏈
+    - title: Participation rights for affected groups and auditable delegation chains
       body: |
-        IIA 設計與 audit 過程須有民間 NGO + 受影響人群（含失能 / 失智者代表、無國籍者代表、年長者代表、移工代表）的參與權，仿 CRPD「Nothing About Us Without Us」原則。委任代理場景的代理鏈必須可被法律與工程同時審計。
+        The IIA design and audit process must include participation rights for civil society NGOs + affected groups (including representatives of persons with disabilities / dementia, stateless persons, elderly persons, and migrant workers), modelled on the CRPD "Nothing About Us Without Us" principle. Delegation chains in delegated agency scenarios must be simultaneously auditable by law and engineering.
       formal: "V_audit: ∀ IIA report r : ∃ participation(NGO, affected_groups, r) ∧ ∀ delegation chain : auditable(chain)"
 
 # ─────────────────────────────────────────────────────────────
@@ -214,9 +214,9 @@ conditions:
 # ─────────────────────────────────────────────────────────────
 conclusion:
   paragraphs:
-    - <strong>Civic proof inclusion rights 是「人權層 + 憲法基本權層」的雙重定位前置權利</strong>，位階橫貫 Marshall 三層公民權，與法律人格權並列。國家義務的三層保障結構（程序 / 實質 / 制度）必須同時滿足；缺一即構成「行政可見性喪失 / 累積性排除 / 結構性褫奪公民資格」三層嚴重度光譜中的對應狀態。
-    - 短期實施應從程序保障 P1（12-24 月）開始，中期推進實質保障 W3C DID 軌道 + 制度保障 IIA L1（24-48 月），長期推進實質保障 UNHCR trust framework + 制度保障 L2/L3（36-72 月）。<em>「最小可用 civic proof」必須拆成法律無國籍者與 de facto 無 ID 者兩種人群分別處理</em>，配「不可替代國籍授予 + 居住升級條款」雙防線。Wallet 三重預設（ownership / identification / key custody）本身須被檢驗為規範偏誤。
-    - <strong>對台灣讀者的關鍵警示為現行架構下超過 30 萬失智長者、~5000 位被扣留 ARC 的移工、相當數量的長期未領取行動自然人憑證的年長者，已構成「行政可見性喪失」狀態。</strong>當 TW DIW 強制上線於更多政府服務（健保、長照、退休金、教育），這個狀態會升級至「累積性排除」。要改變這個現況，必須政府主動推動 IIA 強制 + 替代路徑強制 + 委任代理工程化三項措施。這條跨層級不對稱原則是 article 15 對博論 Ch 14 政策議程（federated trust-list alliance + civic proof inclusion rights + Indo-Pacific demo grants）的最直接引信。
+    - "<strong>Civic proof inclusion rights are a dually-positioned precursor right at the human rights tier + constitutional fundamental rights tier</strong>, traversing all three of Marshall's citizenship layers and standing alongside the right to legal personality. The three-tier state obligation structure (procedural / substantive / institutional) must be satisfied simultaneously; failure of any one tier constitutes a corresponding state on the severity spectrum of \"administrative invisibility / accumulated exclusion / structural deprivation of citizenship.\""
+    - "Short-term implementation should begin with procedural protection P1 (12–24 months); medium-term should advance the W3C DID track for substantive protection + IIA L1 for institutional protection (24–48 months); long-term should advance the UNHCR trust framework for substantive protection + L2/L3 for institutional protection (36–72 months). <em>\"Minimum viable civic proof\" must be split and treated separately for de jure stateless persons and de facto persons without ID</em>, accompanied by the dual safeguard of \"cannot substitute nationality conferral + residence upgrade pathway.\" Wallet engineering's three default presuppositions (ownership / identification / key custody) must themselves be examined as normative biases."
+    - "<strong>A key warning for readers in Taiwan: under the current framework, over 300,000 elderly persons with dementia, approximately 5,000 migrant workers whose ARC has been detained, and a considerable number of elderly persons who have long not collected their mobile natural person certificates, are already in a state of \"administrative invisibility.\"</strong> When TW DIW becomes mandatory for more government services (national health insurance, long-term care, retirement pension, education), this state will escalate to \"accumulated exclusion.\" To change this situation, the government must actively promote three measures: mandatory IIA + mandatory alternative pathways + engineering of delegated agency. This cross-tier asymmetry principle is the most direct trigger for the policy agenda of thesis Ch. 14 (federated trust-list alliance + civic proof inclusion rights + Indo-Pacific demo grants) referenced in article 15."
   formalCoda: |
     Final form:
       P[civic_proof] ≜ precursor right

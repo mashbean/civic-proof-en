@@ -2,6 +2,7 @@
 title: "Who Gets to Govern the Identity of AI Agents?"
 description: "As billions of AI agents act on behalf of humans, we need governance architectures for their identity, authorization, and accountability — and twenty-five years of DNS governance, principal-agent theory, and global digital-identity experiments offer both blueprints and cautionary tales."
 pubDate: 2026-04-17
+draft: true
 tags: ["AI-governance", "digital-identity", "DNS", "ICANN", "agent-identity", "trust-architecture", "multistakeholder"]
 category: "Digital Governance"
 lang: "en"

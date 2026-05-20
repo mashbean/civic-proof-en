@@ -1,10 +1,10 @@
 slug: 2026-05-09-no-phone-home-engineering-economics
-title: "為什麼憑證的撤銷一定要回家報到：no-phone-home 的工程經濟學"
+title: "Why Credential Revocation Must Phone Home: The Engineering Economics of No-Phone-Home"
 subtitle: "No-Phone-Home Engineering Economics — Argument Map (v2)"
 
 coreThesis:
   text: |
-    Phone-home 的默認位置是工程偏好（非工程必然）。技術已生產級，但 issuer 在無監管推力 R=0、無消費者選擇 C=0 條件下自發採用率僅 1.6-5%——三層動機（驗證情報變現、法律免責、切換成本）都是負向 incentive。四件式推力組合（標準層預設關閉 + 採購規格寫入禁止 + 隱私法強制最小聯繫 + wallet 單方切換）可推到 60-90%。撤銷新鮮度反論被 time-limited refresh 折衷化解，CRLite 提供規模化 zero phone-home 證明。
+    The default position of phone-home is an engineering preference (not an engineering necessity). Technology is production-grade, but issuers' spontaneous adoption rate under conditions of no regulatory push R=0 and no consumer choice C=0 is only 1.6–5% — all three motivational layers (verification intelligence monetization, legal immunity, switching cost) are negative incentives. A four-component push combination (standards-layer default-off + procurement specification prohibitions + privacy law minimal contact mandate + wallet unilateral switch) can push adoption to 60–90%. The revocation freshness counterargument is resolved by time-limited refresh as a compromise; CRLite provides proof of scaled zero phone-home.
   summary: "No-phone-home is technically mature but politically blocked. Issuer Disincentive Theorem (IDT) explains why; four-pronged regulatory push remedies it; time-limited refresh dissolves the freshness counterargument."
   formal:
     expression: |
@@ -32,172 +32,172 @@ coreThesis:
         ∀ scenario s ∈ {finance, license, medical, employee, national_security_narrow}:
           ∃ refresh_interval(s) :
             privacy_preserved ∧ freshness_satisfied(s)
-            where national_security_narrow ⇒ phone_home_legitimate (但拒絕 scope-creep)
+            where national_security_narrow ⇒ phone_home_legitimate (but scope-creep rejected)
 
       Engineering_Maturity:
         ∀ path ∈ {W3C_BSL_1.0, ISO_18013-5_mDL, Anoncreds_v1.0}:
           ⋀_{i=1..4} D_i(path) ⊨ production_grade
           subject to: freshness ≤ 24h ∧ scale ≤ 10⁸ credentials
-    caption: "IDT 模型解釋為何自發採用率 < 5%；Four-Pronged Push 推到 ≥ 60%；Time-Limited Refresh 化解新鮮度反論；Engineering Maturity 縮限論證範圍於合理使用情境。"
+    caption: "The IDT model explains why spontaneous adoption rate is < 5%; Four-Pronged Push achieves ≥ 60%; Time-Limited Refresh dissolves the freshness counterargument; Engineering Maturity constrains the argument's scope to reasonable-use scenarios."
     legend:
       - symbol: I
-        meaning: Issuer（憑證發行者，包括政府機關、銀行、學校、商業公司）
+        meaning: Issuer (credential issuers, including government agencies, banks, schools, and commercial companies)
       - symbol: P(I adopts | R, C)
-        meaning: Issuer 採用 no-phone-home 的概率（依監管推力 R 與消費者選擇 C 條件）
+        meaning: Probability that issuer I adopts no-phone-home (conditional on regulatory push R and consumer choice C)
       - symbol: E(I)
-        meaning: 經濟動機——驗證行為作為市場情報的變現價值（中型 50-300 萬歐元/年，大型 1500 萬-8000 萬歐元/年）
+        meaning: Economic motive — monetization value of verification behavior as market intelligence (mid-size €500K–3M/year; large €15M–80M/year)
       - symbol: L(I)
-        meaning: 法律免責動機——即時撤銷查驗的法律緩衝（金融 issuer ≈ E，通用 issuer ≈ 0）
+        meaning: Legal immunity motive — legal buffer from real-time revocation verification (financial issuer ≈ E; general issuer ≈ 0)
       - symbol: T(I)
-        meaning: 切換成本——從 phone-home 切到 no-phone-home 的一次性工程成本（50-200 萬歐元）
+        meaning: Switching cost — one-time engineering cost of switching from phone-home to no-phone-home (€500K–2M)
       - symbol: R
-        meaning: 監管推力（0 = 無）
+        meaning: Regulatory push (0 = absent)
       - symbol: C
-        meaning: 消費者選擇機制（0 = 無）
+        meaning: Consumer choice mechanism (0 = absent)
       - symbol: Layer₁..₄
-        meaning: 四件式推力（標準預設關閉 / 採購寫入禁止 / 隱私法強制 / wallet 切換）
+        meaning: Four-component push (standards default-off / procurement prohibition / privacy law mandate / wallet switch)
       - symbol: D₁..₄
-        meaning: 技術成熟度四維度（規範穩定 / 互操作 / 部署規模 / 可維護）
+        meaning: Four dimensions of engineering maturity (normative stability / interoperability / deployment scale / maintainability)
       - symbol: refresh_interval(s)
-        meaning: Time-limited status list refresh 在場景 s 的更新間隔
+        meaning: Time-limited status list refresh update interval for scenario s
       - symbol: ⋀
-        meaning: 大合取（所有條件同時滿足）
+        meaning: Large conjunction (all conditions simultaneously satisfied)
       - symbol: ⊨
-        meaning: 「滿足」（模型滿足公式）
+        meaning: "satisfies" (model satisfies formula)
       - symbol: ⇔
-        meaning: 「當且僅當」
+        meaning: "if and only if"
 
 transitions:
-  beforeDistinction: "公式給出立場，但要先區分兩種看待 phone-home 的方式。多數工程社群把 phone-home 視為「撤銷新鮮度的工程必然」，本地圖反對該分類；它應被視為「issuer 經濟動機 + 法律免責動機 + 簡單實作偏好的合流結果」，是路徑依賴而非技術必然。"
-  beforePillars: "區分本身只是宣告。要證明「phone-home 不是工程必然」這條路徑，需要五條獨立來源：六族撤銷機制工程成本對照（I 歸納）、三路徑生產級成熟度（D 演繹）、IDT 形式化模型解釋採用阻力（C 因果）、EU EUDI 與 AAMVA 監管推力先例（Ab 溯因）、time-limited refresh 化解新鮮度反論（反例）。五者缺一，論證會被「但金融場景需要即時」「但技術不夠成熟」等典型反論一擊摧毀。"
-  beforeChain: "前面五條 pillar 是正向支撐。但「phone-home 不會自然消退」這個主張，必須有一條具體的因果鏈頂住：從 issuer 動機到 phone-home 默認的演變鏈條。六步因果鏈展示這個機制如何形成，並在哪些節點可被四件式推力打斷。"
-  beforeBorders: "立場 + 因果鏈成立後，反論才真的具威脅。「金融場景需要即時 phone-home」「技術不夠成熟」「issuer 沒有真的蒐集驗證資料」三條反論常被引為理由；但仔細檢驗每條反論的證據強度，會發現它們不僅未支持「phone-home 是必然」，反而 flips to support no-phone-home——亦即反論自己的範圍限制，正好是地圖的第二層支撐。"
-  beforeConditions: "反論被吸收後，留下的是設計含意：在什麼條件下，no-phone-home 可以被合法部署？四件式推力 + 五場景 refresh interval + 三維工程約束（合理使用情境）把抽象的「no-phone-home」翻譯成可被檢驗的工程與政策義務。"
-  beforeConclusion: "把成本對照、技術成熟、IDT 模型、監管推力、refresh 折衷五層收束起來，地圖最終要說的是工程議題的政治經濟性質——以及一條跨越所有層級的設計原則：技術成熟是必要條件而非充分條件，治理推力決定承諾是否兌現。"
+  beforeDistinction: "The formula establishes the position, but a distinction between two ways of viewing phone-home must first be drawn. Most engineering communities treat phone-home as 'an engineering necessity for revocation freshness'; this map rejects that classification — it should be viewed as 'the confluent result of issuer economic motives + legal immunity motives + simple implementation preference,' a product of path dependency rather than technical necessity."
+  beforePillars: "The distinction itself is merely a declaration. To prove the path that 'phone-home is not an engineering necessity,' five independent sources are required: comparative engineering costs of six revocation mechanism families (I inductive), three-path production-grade maturity (D deductive), IDT formalized model explaining adoption resistance (C causal), EU EUDI and AAMVA regulatory push precedents (Ab abductive), and time-limited refresh dissolving the freshness counterargument (counterexample). Without any one of these five, the argument risks being destroyed in one blow by typical objections such as 'but financial scenarios require real-time' and 'but technology is not mature enough.'"
+  beforeChain: "The five pillars above provide positive support. But the claim that 'phone-home will not naturally recede' must be underpinned by a concrete causal chain: the evolution chain from issuer motivation to phone-home as default. The six-step causal chain shows how this mechanism formed and at which nodes it can be interrupted by the four-component push."
+  beforeBorders: "Once the position + causal chain are established, the objections become genuinely threatening. 'Financial scenarios require real-time phone-home,' 'technology is not mature enough,' and 'issuers have not actually collected verification data' are frequently cited as reasons; but careful examination of the evidentiary strength of each objection reveals that not only do they not support 'phone-home is necessary,' they actually flip to support no-phone-home — that is, the limiting scope of each objection precisely constitutes the second layer of support for the map."
+  beforeConditions: "After the objections are absorbed, what remains is design implications: under what conditions can no-phone-home be legitimately deployed? Four-component push + five-scenario refresh interval + three-dimensional engineering constraints (reasonable use scenarios) translate the abstract 'no-phone-home' into verifiable engineering and policy obligations."
+  beforeConclusion: "Drawing together cost comparison, technology maturity, IDT model, regulatory push, and refresh compromise across five layers, the map's final message is the political-economic character of the engineering issue — and a design principle spanning all levels: technology maturity is a necessary condition but not a sufficient condition; governance push determines whether the commitment is honored."
 
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: Phone-home 是撤銷新鮮度的工程必然
-    body: "把 phone-home 視為撤銷新鮮度的唯一技術解。這個分類預設「即時新鮮度需求 = verifier 必須直接接觸 issuer」這個 conflation。但 W3C Bitstring Status List 1.0、ISO 18013-5 mDL、Anoncreds v1.0 等替代機制都已生產級，Mozilla CRLite 在 Firefox 137 預設啟用 12 小時 push 模式更證明規模化 zero phone-home 工程上完全可行。Phone-home 的默認地位是路徑依賴，並非技術必然。"
+    label: ❌ Rejected
+    title: Phone-Home Is an Engineering Necessity for Revocation Freshness
+    body: "Treating phone-home as the sole technical solution for revocation freshness. This classification assumes the conflation that 'real-time freshness requirement = verifier must directly contact issuer.' But alternative mechanisms such as W3C Bitstring Status List 1.0, ISO 18013-5 mDL, and Anoncreds v1.0 are all production-grade; Mozilla CRLite enabled as default in Firefox 137 with a 12-hour push mode further proves that scaled zero phone-home is entirely feasible engineering. The default position of phone-home is path dependency, not technical necessity."
     formal: "phone_home(W) ∈ Engineering_Necessity  ⇒  ¬∃ alternative(W)  (rejected; alternatives exist and are production-grade)"
   accepted:
-    label: ✓ 被辯護
-    title: Phone-home 是工程偏好（IDT 解釋）+ 四件式推力可改變均衡
-    body: "Phone-home 的默認位置是 issuer 經濟動機 + 法律免責動機 + 簡單實作偏好的合流結果。IDT 形式化模型 P(I | R=0, C=0) = f(-E, -L, -T) 量化估計自發採用率 1.6-5%；四件式推力組合（標準預設 + 採購禁止 + 隱私法 + wallet 切換）可推到 60-90%。撤銷新鮮度反論被 time-limited refresh 折衷化解（金融 5min / 駕照 1h / 醫療 30min / 員工 15min），國家安全窄場景的 phone-home 正當性需明確拒絕 scope-creep。論證範圍縮限於「合理使用情境（新鮮度 ≤ 24h、規模 ≤ 1 億 credential）」。"
+    label: ✓ Defended
+    title: Phone-Home Is an Engineering Preference (IDT Explanation) + Four-Component Push Can Change the Equilibrium
+    body: "The default position of phone-home is the confluent result of issuer economic motives + legal immunity motives + simple implementation preference. The IDT formalized model P(I | R=0, C=0) = f(-E, -L, -T) quantitatively estimates spontaneous adoption rate at 1.6–5%; the four-component push combination (standards default + procurement prohibition + privacy law + wallet switch) can push to 60–90%. The revocation freshness counterargument is resolved by time-limited refresh (finance 5min / driver's license 1h / medical 30min / employee 15min); the phone-home legitimacy in the narrow national security scenario must explicitly reject scope-creep to civilian wallet ecosystems. The argument's scope is constrained to 'reasonable use scenarios (freshness ≤ 24h, scale ≤ 100 million credentials).'"
     formal: "(IDT_explains_low_adoption) ∧ (Four_Pronged_Push_remedies) ∧ (Time_Limited_Refresh_dissolves_freshness_objection) ⇒ no_phone_home(W) viable"
 
 pillars:
-  - section: §2 — 撤銷機制工程成本對照
-    title: 六族 + 變種、五維度 trade-off
-    role: "提供工程實證根據——若沒有可信的成本對照，「phone-home 不是必然」是空洞主張。本 pillar 把六族撤銷機制（W3C BSL / RSA acc / Merkle acc / batch / Idemix / Bloom）+ 變種（BBS+, Cuckoo, sparse Merkle）的五維度 trade-off 展開，證明工程選擇空間遠比 phone-home 默認暗示的更大。命名修訂：W3C 軌道版本是 Bitstring Status List 1.0（2024-12 Recommendation），非舊稱「Status List 2021」。"
-    body: "六族撤銷機制各有 trade-off：W3C Bitstring Status List 1.0 隱私強、新鮮度 cache TTL（5min-1h）；RSA accumulator 隱私最強（ZK proof）但 witness update 複雜；Merkle accumulator 折衷；batch revocation epoch latency 1-24h、隱私高；Idemix CL 隱私最強（complete unlinkability）但 pairing-based 複雜；Bloom filter 有 false positive 問題。Anoncreds v1.0 採 RSA accumulator，v2 working draft 已轉向 BBS+ + status list / Merkle。隱私強度光譜：RSA acc / Idemix（最強）> Bitstring SL / Bloom（中強）> phone-home（弱）。"
-    finding: "工程選擇空間多元；phone-home 在隱私維度上是六族中最弱者，命名與版本必須精準（Bitstring SL 1.0 取代 Status List 2021）。"
+  - section: §2 — Comparative Engineering Costs of Revocation Mechanisms
+    title: Six Families + Variants, Five-Dimension Trade-Off
+    role: "Provides engineering empirical basis — without credible cost comparison, 'phone-home is not necessary' is an empty claim. This pillar unfolds the five-dimension trade-off of six revocation mechanism families (W3C BSL / RSA acc / Merkle acc / batch / Idemix / Bloom) + variants (BBS+, Cuckoo, sparse Merkle), demonstrating that the engineering choice space is far larger than phone-home default implies. Naming revision: the W3C track version is Bitstring Status List 1.0 (2024-12 Recommendation), not the old name 'Status List 2021.'"
+    body: "Six revocation mechanism families each have trade-offs: W3C Bitstring Status List 1.0 — strong privacy, freshness at cache TTL (5min–1h); RSA accumulator — strongest privacy (ZK proof) but complex witness update; Merkle accumulator — middle ground; batch revocation epoch latency 1–24h, high privacy; Idemix CL — strongest privacy (complete unlinkability) but pairing-based complexity; Bloom filter — has false positive problem. Anoncreds v1.0 uses RSA accumulator; v2 working draft has shifted to BBS+ + status list / Merkle. Privacy strength spectrum: RSA acc / Idemix (strongest) > Bitstring SL / Bloom (medium-strong) > phone-home (weak)."
+    finding: "Engineering choice space is diverse; phone-home is the weakest of the six families on the privacy dimension; naming and versioning must be precise (Bitstring SL 1.0 replaces Status List 2021)."
     formal: "∀ mech ∈ {W3C_BSL_1.0, RSA_acc, Merkle_acc, batch, Idemix, Bloom}: privacy(mech) > privacy(phone_home)  ∧  cost(mech) ∈ feasible_range"
 
-  - section: §3 — 三路徑生產級成熟度
-    title: D1-D4 四維度評估
-    role: "提供技術成熟度根據——若 alternatives 不夠成熟，「phone-home 是路徑依賴」會被指控為理論主張。把「生產級成熟度」拆成 D1 規範穩定 / D2 互操作 / D3 部署規模 / D4 可維護四維度，逐路徑評估，避免一概而論。並縮限論證範圍於「合理使用情境（新鮮度 ≤ 24h、規模 ≤ 1 億 credential）」。"
-    body: "三路徑 D1-D4 評估：(A) W3C Bitstring Status List 1.0 — D1-D4 全 ⭐⭐⭐⭐⭐（2024-12 Recommendation；歐盟 EUDI、加 BC、紐 RealMe、新加坡、日本已部署）；(B) ISO 18013-5 mDL — D1-D4 全 ⭐⭐⭐⭐⭐（2021 已發布；美國 13 州 + EU 27 國 + 加 + 紐 + 新加坡 + 日 + 澳已部署；撤銷雙軌「離線可選 + 線上可選」）；(C) Hyperledger Anoncreds v1.0 — D1 ⭐⭐⭐⭐（Hyperledger Project Spec 等級非 W3C）、D4 ⭐⭐⭐（pairing-based 複雜）。論證範圍：合理使用情境（新鮮度 ≤ 24h、規模 ≤ 1 億 credential），不主張全域 dominate phone-home。"
-    finding: "三路徑在合理使用情境內全部生產級；mDL 撤銷雙軌設計需注意；超大規模 + 即時更新場景（國安 / 戰時動員）保留 phone-home 正當性。"
+  - section: §3 — Three-Path Production-Grade Maturity
+    title: D1-D4 Four-Dimension Assessment
+    role: "Provides technology maturity basis — if alternatives are not mature enough, 'phone-home is path dependency' would be accused of being a theoretical claim. Breaking down 'production-grade maturity' into four dimensions — D1 normative stability / D2 interoperability / D3 deployment scale / D4 maintainability — and assessing per path, avoids overgeneralization. The argument's scope is also constrained to 'reasonable use scenarios (freshness ≤ 24h, scale ≤ 100 million credentials).'"
+    body: "Three-path D1-D4 assessment: (A) W3C Bitstring Status List 1.0 — D1-D4 all ⭐⭐⭐⭐⭐ (2024-12 Recommendation; EU EUDI, Canada BC, New Zealand RealMe, Singapore, Japan already deployed); (B) ISO 18013-5 mDL — D1-D4 all ⭐⭐⭐⭐⭐ (published 2021; deployed in 13 US states + EU 27 + Canada + New Zealand + Singapore + Japan + Australia; dual-track revocation 'offline optional + online optional'); (C) Hyperledger Anoncreds v1.0 — D1 ⭐⭐⭐⭐ (Hyperledger Project Spec level, not W3C), D4 ⭐⭐⭐ (pairing-based complexity). Argument scope: reasonable use scenarios (freshness ≤ 24h, scale ≤ 100 million credentials); does not claim global dominance over phone-home."
+    finding: "All three paths are production-grade within reasonable use scenarios; mDL dual-track revocation design requires attention; ultra-large-scale + real-time update scenarios (national security / wartime mobilization) retain phone-home legitimacy."
     formal: "∀ path ∈ {BSL, mDL, Anoncreds}: ⋀_{i=1..4} D_i(path) ⊨ production_grade  s.t.  freshness ≤ 24h ∧ scale ≤ 10⁸"
 
-  - section: §4 — IDT 形式化模型
-    title: P(I | R=0, C=0) = f(-E, -L, -T) ≈ 1.6% to 5%
-    role: "提供因果根據——若不解釋為何 issuer 不採用，論證會被指控為「忽略現實採用阻力」。Issuer Disincentive Theorem (IDT) 形式化三層動機（驗證情報變現 E + 法律免責 L + 切換成本 T），量化估計自發採用率，並指出 KYC/AML 模板搬運謬誤。"
-    body: "IDT 模型：P(I adopts no_phone_home | R=0, C=0) = f(-E(I), -L(I), -T(I))。三層動機量化：E(I) 驗證情報變現（中型 50-300 萬歐元/年，大型 1500 萬-8000 萬歐元/年）；L(I) 法律免責（金融 issuer ≈ E，通用 ≈ 0）；T(I) 切換成本（50-200 萬歐元一次性，0.1-0.3× E）。自發採用率 1.6-5%（W3C VC Status List 2024 + OID4VC Implementer Survey 2024 交叉驗證）。三反事實：GDPR 5(1)(c) 強解釋 → 60-90%；強制揭露驗證日誌 → 30-50%；OIDC IdP 預設關閉 introspection → 20-30%。KYC/AML 模板搬運謬誤：把金融場景的法律框架延伸到日常驗證是錯誤的範疇延伸。"
-    finding: "Issuer 不採用是動機問題不是技術問題；經濟動機 > 法律免責 > 切換成本；KYC/AML 場景必須與日常 issuer 拆開。"
+  - section: §4 — IDT Formalized Model
+    title: "P(I | R=0, C=0) = f(-E, -L, -T) ≈ 1.6% to 5%"
+    role: "Provides causal basis — without explaining why issuers do not adopt, the argument would be accused of 'ignoring real-world adoption resistance.' The Issuer Disincentive Theorem (IDT) formalizes three motivational layers (verification intelligence monetization E + legal immunity L + switching cost T), quantitatively estimates spontaneous adoption rate, and identifies the KYC/AML template transplantation fallacy."
+    body: "IDT model: P(I adopts no_phone_home | R=0, C=0) = f(-E(I), -L(I), -T(I)). Three motivational layers quantified: E(I) verification intelligence monetization (mid-size €500K–3M/year; large €15M–80M/year); L(I) legal immunity (financial issuer ≈ E; general ≈ 0); T(I) switching cost (€500K–2M one-time, 0.1–0.3× E). Spontaneous adoption rate 1.6–5% (W3C VC Status List 2024 + OID4VC Implementer Survey 2024 cross-validated). Three counterfactuals: GDPR 5(1)(c) strong interpretation → 60–90%; mandatory disclosure of verification logs → 30–50%; OIDC IdP default-off introspection → 20–30%. KYC/AML template transplantation fallacy: extending the legal framework of financial scenarios to everyday verification is a category error."
+    finding: "Issuer non-adoption is a motivation problem, not a technology problem; economic motive > legal immunity > switching cost; KYC/AML scenarios must be separated from everyday issuers."
     formal: "P(I adopts | R=0, C=0) = f(-E, -L, -T) ≈ 0.016 to 0.05  ∧  ¬KYC_template_extension(daily_verification)"
 
-  - section: §5 — 四件式監管推力
-    title: EU 規範分層 + AAMVA mDL v1.4→v1.5 半年案例
-    role: "提供溯因根據——若不證明監管推力可改變 issuer 行為，IDT 模型只是描述性。EU EUDI ARF 規範分層四級結構與 AAMVA 半年內從警告升級到禁止 server retrieval 的採購層案例，證明四件式推力組合在現實中可運作。"
-    body: "EU EUDI 規範分層四級：Reg 2024/1183 第 5a 條（一級）→ Implementing Reg 2024/2979（二級）→ ARF Annex 2 Topic 7（規範性）→ Discussion Topic A/G（指導性）。AAMVA mDL Implementation Guidelines v1.4（2024-12 警告 server retrieval）→ v1.5（2025-05 禁止 server retrieval）半年案例。No Phone Home 連署 100+ 專家（CDT / ACLU / EFF / EPIC / Bruce Schneier / Brendan Eich / Jan Camenisch）2025-06 公民社會推力。四件式推力：Layer₁ 標準預設關閉（W3C / ISO / EUDI）+ Layer₂ 採購規格寫入禁止（EU / AAMVA / GSA）+ Layer₃ 隱私法強制最小聯繫（GDPR 5(1)(c) + CNIL Bitouzet 2022）+ Layer₄ wallet 單方切換預設。互補邏輯：EU 用 1+2+3、AAMVA 用 1+2、亞洲僅倚 3 推力薄弱。"
-    finding: "四件式推力組合可達採用率 60-90%；EU 與 AAMVA 是兩個成功先例；亞洲缺機制需建立平行推力。"
+  - section: §5 — Four-Component Regulatory Push
+    title: "EU Normative Stratification + AAMVA mDL v1.4→v1.5 Six-Month Case"
+    role: "Provides abductive basis — without proving that regulatory push can change issuer behavior, the IDT model is merely descriptive. The EU EUDI ARF four-level normative stratification and the AAMVA six-month procurement-level case of upgrading from warning to prohibiting server retrieval demonstrate that the four-component push combination is operationally viable in practice."
+    body: "EU EUDI normative stratification four levels: Reg 2024/1183 Art 5a (Level 1) → Implementing Reg 2024/2979 (Level 2) → ARF Annex 2 Topic 7 (normative) → Discussion Topic A/G (guidance). AAMVA mDL Implementation Guidelines v1.4 (2024-12 warned server retrieval) → v1.5 (2025-05 prohibited server retrieval) six-month case. No Phone Home petition by 100+ experts (CDT / ACLU / EFF / EPIC / Bruce Schneier / Brendan Eich / Jan Camenisch) 2025-06 civil society push. Four-component push: Layer₁ standards default-off (W3C / ISO / EUDI) + Layer₂ procurement specification prohibition (EU / AAMVA / GSA) + Layer₃ privacy law minimal contact mandate (GDPR 5(1)(c) + CNIL Bitouzet 2022) + Layer₄ wallet unilateral default switch. Complementary logic: EU uses 1+2+3; AAMVA uses 1+2; Asia relies only on 3, push is weak."
+    finding: "Four-component push combination can achieve 60–90% adoption rate; EU and AAMVA are two successful precedents; Asia lacks mechanisms and needs to build parallel push."
     formal: "P(I adopts | R≠0) ≥ 60%  ⇔  R ⊨ (Layer₁ ∧ Layer₂ ∧ Layer₃ ∧ Layer₄)"
 
-  - section: §6 — Time-Limited Refresh + CRLite 證明
-    title: 化解新鮮度反論
-    role: "提供反例支柱——若不化解「金融場景需要即時」反論，論證會被擱置在窄場景。Time-limited refresh 機制 + Mozilla CRLite 在 Firefox 137 規模化部署的存在性證明，把「即時新鮮度需求 = phone-home 必要」這個 conflation 徹底駁倒。國家安全窄例外明確拒絕 scope-creep。"
-    body: "五場景 latency 對照：金融制裁（即時 / SWIFT 5-15min / refresh 5min）；駕照吊銷（分鐘級 / mDL 24h+push / refresh 1h+push）；醫療執業資格（當日 / 1 日級 / refresh 30min）；員工 ID 開除（分鐘級 / MFA 5-15min / refresh 15min）；國家安全（即時 / phone-home 窄例外）。Time-limited refresh 機制：driver 端自動 refresh / verifier 端 cache 過期 / issuer 端常規維護 / 隱私維持。Mozilla CRLite Firefox 137（2025-04 預設啟用）是規模化 zero phone-home 證明：全網 WebPKI + 12h push + Bloom filter cascade ~1MB，取代傳統 OCSP phone-home 模式。國家安全 / 反恐名單窄例外保留 phone-home 正當性，但需明確拒絕 scope-creep 到民用 wallet ecosystem。"
-    finding: "Time-limited refresh 化解新鮮度反論；CRLite 提供規模化證明；國安窄例外不可 scope-creep。"
+  - section: §6 — Time-Limited Refresh + CRLite Proof
+    title: Dissolving the Freshness Counterargument
+    role: "Provides the counterexample pillar — without dissolving the 'financial scenarios require real-time' counterargument, the argument would be stalled on narrow scenarios. The time-limited refresh mechanism + Mozilla CRLite's existence proof as scaled deployment in Firefox 137 completely refutes the conflation 'real-time freshness requirement = phone-home necessary.' National security narrow exceptions explicitly reject scope-creep."
+    body: "Five-scenario latency comparison: financial sanctions (real-time / SWIFT 5–15min / refresh 5min); license revocation (minute-level / mDL 24h+push / refresh 1h+push); medical practice license (same-day / day-level / refresh 30min); employee ID dismissal (minute-level / MFA 5–15min / refresh 15min); national security (real-time / phone-home narrow exception). Time-limited refresh mechanism: driver-side automatic refresh / verifier-side cache expiry / issuer-side routine maintenance / privacy maintained. Mozilla CRLite Firefox 137 (2025-04 enabled by default) is proof of scaled zero phone-home: full WebPKI + 12h push + Bloom filter cascade ~1MB, replacing traditional OCSP phone-home. National security / counter-terrorism narrow exception retains phone-home legitimacy, but must explicitly reject scope-creep to civilian wallet ecosystems."
+    finding: "Time-limited refresh dissolves the freshness counterargument; CRLite provides scaled proof; national security narrow exception must not scope-creep."
     formal: "∀ s ∈ {finance, license, medical, employee}: ∃ refresh_interval(s) ⊨ (privacy_preserved ∧ freshness_satisfied)  ∧  national_security_narrow ⇒ no_scope_creep"
 
 chain:
-  title: Phone-home 默認形成六步因果鏈：從 issuer 動機到工程默認
+  title: "Six-Step Causal Chain of Phone-Home Default Formation: From Issuer Motivation to Engineering Default"
   legend:
     - kind: deterministic
-      label: 機制必然（結構性，不依賴外部 trigger）
+      label: Mechanically necessary (structural, not dependent on external trigger)
     - kind: probabilistic
-      label: 概率性（依賴政策選擇 + 監管執法）
+      label: Probabilistic (dependent on policy choices + regulatory enforcement)
   steps:
     - tag: T0
       kind: deterministic
-      text: "OAuth / OIDC / SAML 等 phone-home 工具鏈成熟（1990s-2010s 累積），成為默認設計"
+      text: "OAuth / OIDC / SAML and other phone-home toolchains mature (accumulated 1990s–2010s), becoming the default design"
     - tag: T1
       kind: deterministic
-      text: "Issuer 端建立驗證日誌基礎設施（用於 debug、風控、行銷分析），E(I) 動機顯化"
+      text: "Issuer-side establishes verification log infrastructure (for debug, risk control, marketing analytics); E(I) motivation becomes visible"
     - tag: T2
       kind: deterministic
-      text: "金融場景因 FATF / OFAC / AMLD 6 要求即時撤銷查詢，建立 KYC/AML phone-home 法律先例"
+      text: "Financial scenarios establish KYC/AML phone-home legal precedents due to FATF / OFAC / AMLD 6 requirements for real-time revocation queries"
     - tag: T3
       kind: probabilistic
-      text: "KYC/AML 模板被錯誤延伸到日常驗證（登入、年齡、學歷），phone-home 成為「真實必要」的修辭包裝"
+      text: "KYC/AML template incorrectly extended to everyday verification (login, age, academic credentials); phone-home becomes rhetorical packaging for 'genuinely necessary'"
     - tag: T4
       kind: deterministic
-      text: "T(I) 切換成本累積：替代機制需要新 client-side cryptography，OAuth 工具鏈鎖定 issuer 在 phone-home"
+      text: "T(I) switching cost accumulates: alternative mechanisms require new client-side cryptography; OAuth toolchain locks issuers into phone-home"
     - tag: T5
       kind: probabilistic
-      text: "R=0 + C=0 條件下 IDT 預測自發採用率 1.6-5%；四件式推力組合可推到 60-90%"
+      text: "Under R=0 + C=0 conditions, IDT predicts spontaneous adoption rate 1.6–5%; four-component push combination can push to 60–90%"
 
 borders:
-  - label: 反論 1
-    title: 金融場景需要即時 phone-home
-    pivot: "反論訴求是「金融制裁名單即時更新需要 verifier 直接接觸 issuer」。但檢驗實際 latency：SWIFT 內 5-15 分鐘已是當前標準，FATF Recommendation 6 並未要求毫秒級即時。Time-limited status list refresh 5 分鐘間隔可滿足相同新鮮度需求，且隱私強度顯著提升。Mozilla CRLite（Firefox 137 預設 12 小時 push 全網 WebPKI 撤銷）證明規模化 zero phone-home 工程上完全可行。"
-    flip: "金融場景的 latency 反論不僅未支持「phone-home 必要」，反而給「time-limited refresh 在金融場景已可行」提供了最強論證——SWIFT 5-15 分鐘標準與 5 分鐘 refresh 完全對應。CRLite 在 WebPKI 場景的成功證明把同樣機制延伸到金融 credential 是漸進工程問題，不是 paradigm shift。"
-  - label: 反論 2
-    title: 替代技術不夠成熟
-    pivot: "反論訴求是「W3C Bitstring Status List 太新、Anoncreds 太複雜、mDL 撤銷雙軌混亂」。但 D1-D4 四維度評估顯示三路徑全部生產級：BSL 2024-12 W3C Recommendation；mDL 2021 已 ISO 標準 + 美國 13 州 + EU 27 國 + 加紐新日澳部署；Anoncreds 在 Hyperledger / Sovrin 主網運行多年。論證範圍縮限於合理使用情境（新鮮度 ≤ 24h、規模 ≤ 1 億 credential），三路徑都已 production-grade。"
-    flip: "「替代技術不夠成熟」反論不僅未支持「phone-home 必要」，反而暴露反論者對近年標準進展的訊息延遲——2021 之前可能成立，2024-2025 之後事實已變。三路徑全生產級的證據與 IDT 模型疊加，反向支持「採用阻力在動機不在技術」這個核心主張。"
-  - label: 反論 3
-    title: Issuer 沒有真的蒐集驗證資料 / E(I) 估計過高
-    pivot: "反論訴求是「issuer 在 GDPR 規範下不會蒐集驗證資料；E(I) 50-8000 萬歐元/年估計缺乏直接證據」。但 GDPR DSR（Data Subject Request）公開揭示部分 issuer 確實儲存驗證日誌；Apple Wallet 與 Apple Pay 透過驗證行為了解用戶模式是已被學界記錄的案例（Acquisti et al. 2015 *Science*、Zuboff 2019）。E(I) 區間是估計，但區間下界（50 萬歐元/年）即使打對折仍顯著高於 T(I) 切換成本，IDT 模型核心結論不變。"
-    flip: "「E(I) 估計過高」反論不僅未支持「phone-home 沒有經濟動機」，反而給「即使 E(I) 打折，IDT 模型仍預測自發採用率 < 5%」提供更穩健的論證。反論者隱含承認驗證行為含金量 > 0；只是估計值有爭議。這個爭議在 RA-level 量化驗證後可進一步精細化，但不改變定性結論。"
+  - label: Objection 1
+    title: Financial Scenarios Require Real-Time Phone-Home
+    pivot: "The objection claims that 'financial sanctions list real-time updates require verifiers to directly contact issuers.' But examining actual latency: SWIFT internal 5–15 minutes is the current standard; FATF Recommendation 6 does not require millisecond-level real-time. Time-limited status list refresh at 5-minute intervals can satisfy the same freshness requirement with significantly higher privacy. Mozilla CRLite (Firefox 137 default 12-hour push full WebPKI revocation) proves that scaled zero phone-home is entirely feasible engineering."
+    flip: "The financial scenario latency counterargument not only fails to support 'phone-home necessary,' it actually provides the strongest argument for 'time-limited refresh is already feasible in financial scenarios' — SWIFT 5–15 minute standard perfectly corresponds to 5-minute refresh. CRLite's success in the WebPKI scenario proves that extending the same mechanism to financial credentials is an incremental engineering problem, not a paradigm shift."
+  - label: Objection 2
+    title: Alternative Technologies Are Not Mature Enough
+    pivot: "The objection claims that 'W3C Bitstring Status List is too new, Anoncreds is too complex, mDL revocation dual-track is confusing.' But D1-D4 four-dimension assessment shows all three paths are production-grade: BSL 2024-12 W3C Recommendation; mDL published 2021 as ISO standard + 13 US states + EU 27 + Canada, New Zealand, Singapore, Japan, Australia deployed; Anoncreds running on Hyperledger/Sovrin mainnet for years. The argument's scope is constrained to reasonable use scenarios (freshness ≤ 24h, scale ≤ 100 million credentials); all three paths are already production-grade."
+    flip: "'Alternative technologies not mature enough' not only fails to support 'phone-home necessary,' it exposes information delays in objectors regarding recent standards developments — possibly valid before 2021, but facts changed after 2024–2025. The evidence of all three paths being production-grade, layered with the IDT model, inversely supports the core claim that 'adoption resistance is a motivation problem, not a technology problem.'"
+  - label: Objection 3
+    title: Issuers Have Not Actually Collected Verification Data / E(I) Estimate Is Too High
+    pivot: "The objection claims that 'issuers will not collect verification data under GDPR regulation; E(I) €500K–80M/year estimates lack direct evidence.' But GDPR DSR (Data Subject Request) public disclosures show some issuers do store verification logs; Apple Wallet and Apple Pay understanding user patterns through verification behavior is a case documented in academic literature (Acquisti et al. 2015 Science; Zuboff 2019). The E(I) range is an estimate, but even if the lower bound (€500K/year) is halved, it remains significantly higher than T(I) switching cost, leaving the IDT model's core conclusion unchanged."
+    flip: "'E(I) estimate too high' not only fails to support 'phone-home has no economic motive,' it actually provides a more robust argument for 'even if E(I) is discounted, IDT model still predicts spontaneous adoption rate < 5%.' The objector implicitly acknowledges that verification behavior has value > 0; only the estimate is disputed. This dispute can be further refined after RA-level quantitative verification, but does not change the qualitative conclusion."
 
 conditions:
-  title: No-phone-home 的合法部署，必須通過四件式推力 + 五場景 refresh + 三維工程約束
+  title: Legitimate deployment of no-phone-home must pass four-component push + five-scenario refresh + three-dimensional engineering constraints
   formalPrelude: "deploy(no_phone_home, W) valid ⇔ (Layer₁ ∧ Layer₂ ∧ Layer₃ ∧ Layer₄) ∧ (∀ s ∈ S: ∃ refresh_interval(s)) ∧ (D₁ ∧ D₂ ∧ D₃ ∧ D₄)"
   items:
-    - title: Layer 1 — 標準層預設關閉
-      body: "W3C / ISO / EUDI / OpenID Foundation 等標準組織把 phone-home 從 default 移到 exception。已部分實現（W3C Bitstring Status List 1.0 2024-12 Recommendation + ISO 18013-5 撤銷雙軌 + EUDI ARF Annex 2 Topic 7）。"
+    - title: Layer 1 — Standards-Layer Default-Off
+      body: "Standards organizations such as W3C / ISO / EUDI / OpenID Foundation move phone-home from default to exception. Already partially realized (W3C Bitstring Status List 1.0 2024-12 Recommendation + ISO 18013-5 dual-track revocation + EUDI ARF Annex 2 Topic 7)."
       formal: "Layer₁: standard_default(W) = no_phone_home  ∧  phone_home ∈ exception_list(justified)"
-    - title: Layer 2 — 採購規格寫入禁止
-      body: "政府數位身分專案採購規格寫入「不得使用 phone-home 機制」。EU 政府專案 + AAMVA mDL v1.5（2025-05 禁止 server retrieval）+ 美國 GSA 數位身分採購標準（草稿）+ 加 BC Government Verifiable Organizations Network 已部分實現。"
+    - title: Layer 2 — Procurement Specification Prohibition
+      body: "Government digital identity project procurement specifications written to prohibit 'use of phone-home mechanisms.' EU government projects + AAMVA mDL v1.5 (2025-05 prohibition of server retrieval) + US GSA digital identity procurement standards (draft) + Canada BC Government Verifiable Organizations Network already partially realized."
       formal: "Layer₂: procurement_spec(W) ⊨ ¬phone_home  in {EU_gov, AAMVA, GSA}"
-    - title: Layer 3 — 隱私法強制最小聯繫
-      body: "GDPR Article 5(1)(c) 資料最小化原則延伸 + CNIL Bitouzet 2022 對 phone-home 的具體 guidance + UK ICO Code of Practice for Online Identity。"
+    - title: Layer 3 — Privacy Law Minimal Contact Mandate
+      body: "GDPR Article 5(1)(c) data minimization principle extension + CNIL Bitouzet 2022 specific guidance on phone-home + UK ICO Code of Practice for Online Identity."
       formal: "Layer₃: privacy_law ⊨ minimal_contact_principle  ∧  phone_home(W) ∉ minimal_contact"
-    - title: Layer 4 — Wallet 單方切換預設
-      body: "Apple iOS / Google Android 的隱私介面強化 + 第三方 wallet（Spruce / Trinsic）的差異化策略 + 消費者保護機構（FTC / CMA）的執法。"
+    - title: Layer 4 — Wallet Unilateral Default Switch
+      body: "Apple iOS / Google Android privacy interface strengthening + third-party wallet (Spruce / Trinsic) differentiation strategy + consumer protection agencies (FTC / CMA) enforcement."
       formal: "Layer₄: wallet_default(W) = no_phone_home  ∧  user_notified"
-    - title: Refresh Interval × 5 場景
-      body: "金融制裁 5 分鐘 / 駕照吊銷 1 小時 + push / 醫療執業 30 分鐘 / 員工 ID 15 分鐘 / 國安窄例外保留 phone-home。Time-limited refresh 機制：driver 端自動 refresh / verifier 端 cache 過期 / issuer 端常規維護 / 隱私維持。"
+    - title: Refresh Interval × 5 Scenarios
+      body: "Financial sanctions 5 minutes / license revocation 1 hour + push / medical practice 30 minutes / employee ID 15 minutes / national security narrow exception retains phone-home. Time-limited refresh mechanism: driver-side automatic refresh / verifier-side cache expiry / issuer-side routine maintenance / privacy maintained."
       formal: "∀ s ∈ {finance, license, medical, employee}: refresh_interval(s) ⊨ (privacy_preserved ∧ freshness_satisfied(s))"
-    - title: D1 規範穩定
-      body: "標準必須升 normative recommendation 並有版本相容性保證。W3C Bitstring Status List 1.0 達標；ISO 18013-5 達標；Anoncreds v1.0 是 Hyperledger Project Spec 等級。"
+    - title: D1 Normative Stability
+      body: "Standard must be upgraded to normative recommendation with version compatibility guarantees. W3C Bitstring Status List 1.0 meets standard; ISO 18013-5 meets standard; Anoncreds v1.0 is Hyperledger Project Spec level."
       formal: "D₁: standard ∈ normative_recommendation_with_versioning"
-    - title: D2 互操作
-      body: "跨 issuer / verifier / wallet 廠商的互通實作 + interop test reports。三路徑全部達標。"
+    - title: D2 Interoperability
+      body: "Cross-issuer / verifier / wallet vendor interoperability implementations + interop test reports. All three paths meet standard."
       formal: "D₂: ∃ interop_test_report(path, ≥ 3 vendors)"
-    - title: D3 部署規模 + D4 可維護
-      body: "D3：實際部署國家數 / credential 數量。D4：工程實作複雜度 / 工具鏈成熟度。三路徑在合理使用情境（新鮮度 ≤ 24h、規模 ≤ 1 億 credential）內全部達標。"
+    - title: D3 Deployment Scale + D4 Maintainability
+      body: "D3: actual deployment countries / credential volumes. D4: engineering implementation complexity / toolchain maturity. All three paths meet standard within reasonable use scenarios (freshness ≤ 24h, scale ≤ 100 million credentials)."
       formal: "D₃ ∧ D₄: deployment_scale ⊨ production_threshold  ∧  maintainability ⊨ tooling_maturity"
 
 conclusion:
   paragraphs:
-    - <strong>Phone-home 的默認位置是工程偏好（非工程必然）。</strong>技術已生產級（W3C Bitstring Status List 1.0 + ISO 18013-5 mDL + Anoncreds v1.0 三路徑 D1-D4 四維度全部達標），但 issuer 在 R=0 + C=0 條件下自發採用率僅 1.6-5%。Issuer Disincentive Theorem (IDT) 形式化解釋：三層動機（驗證情報變現 E + 法律免責 L + 切換成本 T）都是負向 incentive。這個結構是路徑依賴而非技術必然。
-    - 辯論應從「即時新鮮度 vs 延遲容忍」轉向<em>「廠商蒐集動機 vs 互通義務」</em>。四件式監管推力組合（標準預設關閉 + 採購規格寫入 + 隱私法強制最小聯繫 + wallet 單方切換）可推到採用率 60-90%。EU EUDI ARF 規範分層四級結構與 AAMVA mDL v1.4→v1.5 半年內升級為禁止 server retrieval 的採購層案例，證明推力組合在現實中可運作。No Phone Home 連署 100+ 專家是公民社會推力。亞洲（台、日、韓、新加坡）目前缺機制，需建立平行推力。
-    - 一條跨層級原則貫穿全文：<strong>技術成熟是必要條件而非充分條件，治理推力決定承諾是否兌現。</strong>本文延續 article 01「可問責的假名性」的判斷模式，把同樣結構從密碼學工程延伸到撤銷機制工程；與 article 02 𝒩.M₄、article 04 T_Trigger、article 07 SRP、article 09 NCT、article 11 wallet essential facility 形成跨文章的耦合論證。No-phone-home 是政治經濟成就，CRLite Firefox 137 預設啟用是規模化 zero phone-home 證明，國安窄例外不可 scope-creep。
+    - <strong>The default position of phone-home is an engineering preference (not an engineering necessity).</strong> Technology is production-grade (W3C Bitstring Status List 1.0 + ISO 18013-5 mDL + Anoncreds v1.0 three paths, D1-D4 four dimensions all meeting standard), but issuers' spontaneous adoption rate under R=0 + C=0 conditions is only 1.6–5%. The Issuer Disincentive Theorem (IDT) provides a formal explanation: three motivational layers (verification intelligence monetization E + legal immunity L + switching cost T) are all negative incentives. This structure is path dependency, not technical necessity.
+    - "The debate should shift from 'real-time freshness vs. latency tolerance' to <em>'vendor collection motives vs. interoperability obligations.'</em> The four-component regulatory push combination (standards default-off + procurement specification + privacy law minimal contact mandate + wallet unilateral switch) can push adoption rate to 60–90%. EU EUDI ARF four-level normative stratification and AAMVA mDL v1.4→v1.5 six-month upgrade to prohibiting server retrieval demonstrate that the push combination is operationally viable. No Phone Home petition by 100+ experts represents civil society push. Asia (Taiwan, Japan, Korea, Singapore) currently lacks mechanisms and needs to build parallel push."
+    - "A cross-level principle runs throughout: <strong>technology maturity is a necessary condition but not a sufficient condition; governance push determines whether the commitment is honored.</strong> This article extends article 01's 'accountable pseudonymity' judgment mode, applying the same structure from cryptographic engineering to revocation mechanism engineering; it forms cross-article coupled arguments with article 02 𝒩.M₄, article 04 T_Trigger, article 07 SRP, article 09 NCT, and article 11 wallet essential facility. No-phone-home is a political-economic achievement; CRLite Firefox 137 enabled by default is proof of scaled zero phone-home; national security narrow exception must not scope-creep."
   formalCoda: |
     Final form:
 
@@ -211,7 +211,7 @@ conclusion:
       Time_Limited_Refresh:
         ∀ s ∈ {finance, license, medical, employee}:
           ∃ refresh_interval(s) : (privacy_preserved ∧ freshness_satisfied(s))
-        national_security_narrow ⇒ phone_home_legitimate (但拒絕 scope-creep)
+        national_security_narrow ⇒ phone_home_legitimate (but scope-creep rejected)
 
       Engineering_Maturity:
         ∀ path ∈ {W3C_BSL_1.0, ISO_18013-5_mDL, Anoncreds_v1.0}:
@@ -223,9 +223,9 @@ conclusion:
                        ∧ (D₁ ∧ D₂ ∧ D₃ ∧ D₄)
 
     Cross-article coupling:
-      article_01.{V₁..V₆}      ← phone-home 違反 V₃ 密碼學替代測試 + V₆ 事後審計
-      article_02.M₄            ← phone-home 違反隱私衡量規範矩陣
-      article_04.T_Trigger     ← phone-home 撤銷武器化的救濟條款設計
-      article_07.SRP           ← phone-home 是主權容器內 ID 武器化的工程化通道
-      article_09.NCT           ← 商業壟斷 + phone-home → 雙重 last-mile capture
-      article_11.essential_facility ← no-phone-home 標準正式化 = wallet portability spec Layer₃
+      article_01.{V₁..V₆}      ← phone-home violates V₃ cryptographic alternative test + V₆ post-hoc audit
+      article_02.M₄            ← phone-home violates the privacy assessment normative matrix
+      article_04.T_Trigger     ← phone-home revocation weaponization remedy clause design
+      article_07.SRP           ← phone-home is the engineering channel for ID weaponization within sovereign containers
+      article_09.NCT           ← commercial monopoly + phone-home → dual last-mile capture
+      article_11.essential_facility ← no-phone-home standards normalization = wallet portability spec Layer₃

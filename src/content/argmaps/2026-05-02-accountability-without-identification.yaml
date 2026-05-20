@@ -1,12 +1,12 @@
 slug: 2026-05-02-accountability-without-identification
-title: 可問責不以實名為前提
+title: Accountability Without Identification
 subtitle: Accountability Without Identification — Argument Map (v2)
 
 # ─────────────────────────────────────────────────────────────
 # Central Thesis + Formal block
 # ─────────────────────────────────────────────────────────────
 coreThesis:
-  text: 民主問責性是「結果性條件」而非「前置性條件」。當啟封權力分散於多方、條件預先明定、過程可被審計，密碼學假名足以同時滿足匿名性與問責性。
+  text: Democratic accountability is a consequential condition, not a precondition. When unmasking power is distributed among multiple parties, conditions are pre-specified, and the process is auditable, cryptographic pseudonymity is sufficient to simultaneously satisfy both anonymity and accountability.
   summary: Democratic accountability is a consequential condition, not a precondition.
   formal:
     expression: |
@@ -14,159 +14,159 @@ coreThesis:
 
       ∀x : citizen(x) → permitted(P, x)
       ∀y : power_holder(y) → ¬permitted(P, y)
-    caption: 問責性 A 的成立由「假名 P 加上條件性啟封 U」推得；U 的有效性需同時滿足六道程序防火牆 V₁..V₆。權力與假名空間呈反比。
+    caption: Accountability A is derivable from "pseudonym P composed with conditional unmasking U"; the validity of U requires simultaneously satisfying six procedural firewalls V₁..V₆. Power and pseudonym space are inversely proportional.
     legend:
       - symbol: A
-        meaning: Accountability — 民主問責性
+        meaning: Accountability — democratic accountability
       - symbol: I
-        meaning: Identification — 實名識別（在參與前綁定法定姓名）
+        meaning: Identification — real-name identification (binding legal name prior to participation)
       - symbol: P[U]
-        meaning: Pseudonym composed with conditional Unmasking — 假名加上條件性啟封
+        meaning: Pseudonym composed with conditional Unmasking — pseudonym plus conditional unmasking
       - symbol: V₁..V₆
-        meaning: 六道程序防火牆（具體攻擊向量 / 對稱成本-效益 / 密碼學替代 / 日落條款 / 多方持鑰 / 事後審計）
+        meaning: Six procedural firewalls (specific attack vector / symmetric cost-benefit / cryptographic alternative / sunset clause / multi-party custody / post-hoc audit)
       - symbol: ⇐
-        meaning: 「足以推得」（sufficient ground for）
+        meaning: "Sufficient ground for"
       - symbol: ⇔
-        meaning: 「當且僅當」
+        meaning: "If and only if"
       - symbol: ∧
-        meaning: 合取（同時滿足）
+        meaning: Conjunction (simultaneously satisfied)
 
 # ─────────────────────────────────────────────────────────────
-# Transitions (區塊之間的接連描述)
+# Transitions (connecting descriptions between blocks)
 # ─────────────────────────────────────────────────────────────
 transitions:
-  beforeDistinction: 公式給出立場，但要讓立場站得住，第一步得區分兩條被混用的路徑。實名與假名常被當成「同一道光譜上的兩端」處理，這個地圖反對該分類；它們是不同類別的問責配置。
+  beforeDistinction: The formula states the position, but for the position to hold, the first step is to distinguish two conflated paths. Real-name identification and pseudonymity are often treated as "two ends of the same spectrum"; this map opposes that classification — they are different categories of accountability configuration.
 
-  beforePillars: 區分本身只是宣告。要證明「假名 + 條件性啟封」這條路徑成立，需要四條獨立來源的支撐——政治哲學提供規範性根據、密碼學工程提供技術可行性、制度範式提供歷史先例、反向證據提供失敗對照。四者缺一，立場就回到口號。
+  beforePillars: The distinction is merely a declaration. To prove that the "pseudonym + conditional unmasking" path holds, four independent sources of support are needed — political philosophy provides the normative basis, cryptographic engineering provides technical feasibility, institutional paradigms provide historical precedent, and counter-evidence provides a failure comparison. Without any one of these, the position reverts to a slogan.
 
-  beforeChain: 前面四條 pillar 是正向論證。但「集中啟封權會退化」這個主張，必須有一條具體的因果鏈頂住——否則就只是一句修辭。Aadhaar 從 2009 設計到 2023 後續濫用，提供一條可被機制性追溯的七步序列；前三步是結構必然，後三步是概率事件，這個區分本身就是論證的一部分。
+  beforeChain: The four pillars above are affirmative arguments. But the claim that "centralized unmasking power will inevitably degrade" must be supported by a specific causal chain — otherwise it is merely rhetoric. Aadhaar from the 2009 design to subsequent post-2023 abuse provides a seven-step sequence that can be mechanically traced; the first three steps are structural necessities and the latter three are probabilistic events — this distinction itself is part of the argument.
 
-  beforeBorders: 立場 + 因果鏈成立後，反論才真的具威脅。AML、選舉舞弊、武器管控這三條反論常被引為「實名仍有必要」的理由；但仔細檢驗每條反論的實證強度，會發現它們不僅未支持實名，反而 flips to support 假名加條件性啟封——亦即反論自己的證據結構，正好是地圖的第二層支撐。
+  beforeBorders: Once the position and causal chain are established, counterarguments pose a genuine threat. AML, electoral fraud, and weapons control are the three counterarguments most commonly cited as reasons "real-name identification is still necessary"; but carefully examining the empirical strength of each counterargument reveals that they not only fail to support real-name identification, but actually flip to support pseudonymity plus conditional unmasking — that is, the evidential structure of the counterarguments themselves is precisely the second layer of support for the map.
 
-  beforeConditions: 反論被吸收後，留下的是設計含意：在什麼條件下，「啟封」可以被視為合法例外？這六道程序防火牆把抽象的「結果性條件」翻譯成可被檢驗的工程義務。它們同時是核心公式 V₁..V₆ 的具體填入。
+  beforeConditions: Once counterarguments are absorbed, what remains are design implications — under what conditions can "unmasking" be considered a legitimate exception? These six procedural firewalls translate the abstract "consequential condition" into verifiable engineering obligations. They are simultaneously the concrete instantiation of V₁..V₆ in the core formula.
 
-  beforeConclusion: 把規範、工程、制度、反例、條件五層收束起來，地圖最終要說的是政治經濟層的成就（密碼學僅構成必要條件之一），以及一條跨越所有層級的不對稱原則。
+  beforeConclusion: Bringing together the normative, engineering, institutional, counter-evidence, and conditions layers, what the map ultimately argues is a political-economy achievement (cryptography is merely one necessary condition among several), and an asymmetric principle running through all levels.
 
 # ─────────────────────────────────────────────────────────────
 # Foundational Distinction
 # ─────────────────────────────────────────────────────────────
 distinction:
   rejected:
-    label: ❌ 被拒絕
-    title: 實名識別
-    body: 在參與前綁定法定姓名。把「能識別」當作參與資格的前置門檻；無實名 → 無資格。這個結構把問責放在參與「之前」，等於要求公民先放棄匿名才能進入公共討論。
-    formal: "A ⇐ I   （把 I 當作 A 的必要前置條件）"
+    label: ❌ Rejected
+    title: Real-name identification
+    body: Binding legal name prior to participation. Treating "identifiability" as a prerequisite threshold for participation; no real name → no qualification. This structure places accountability "before" participation, effectively requiring citizens to relinquish anonymity before entering public discourse.
+    formal: "A ⇐ I   (treating I as the necessary precondition of A)"
   accepted:
-    label: ✓ 被辯護
-    title: 假名識別 + 條件性啟封
-    body: 一個可追蹤的代號，預設不揭示真實身分；只在違規發生時透過正當程序事後啟封。問責落在「事後」，而非「事前」——這對應到法律早已成熟的搜索票、密封起訴書、John Doe 訴訟等模板。
+    label: ✓ Defended
+    title: Pseudonymous identification + conditional unmasking
+    body: A trackable identifier that does not disclose real identity by default; unmasked ex post through due process only when a violation occurs. Accountability falls "after the fact," not "before the fact" — this corresponds to the well-established legal templates of search warrants, sealed indictments, witness protection, and John Doe lawsuits.
     formal: "A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V₆"
 
 # ─────────────────────────────────────────────────────────────
 # Five Supporting Pillars
 # ─────────────────────────────────────────────────────────────
 pillars:
-  - section: §2 — 政治哲學
-    title: 問責結構上是事後的
-    role: 提供規範性根據——若主流問責理論本來就把問責視為事後條件，「事前實名」這條路徑就失去了哲學上的優先性。
-    body: Schedler 與 Bovens 的當代問責理論皆要求「事件之後」的可回答性與可執行性。美國判例（NAACP v. Alabama, McIntyre v. Ohio）反覆推翻參與前實名要求，顯示法律早已區分「假名可追蹤性」與「實名綁定」。
-    finding: 法律與哲學早已建立 A 的事後性質——P[U] 是這個事後結構的密碼學對應。
+  - section: §2 — Political Philosophy
+    title: Accountability is structurally ex post
+    role: Provides the normative basis — if mainstream accountability theory already treats accountability as an ex post condition, the "pre-participation real-name identification" path loses its philosophical priority.
+    body: Schedler and Bovens' contemporary accountability theory both require answerability and enforceability "after the fact." US case law (NAACP v. Alabama, McIntyre v. Ohio) has repeatedly struck down pre-participation real-name requirements, demonstrating that law has long distinguished "pseudonymous traceability" from "real-name binding."
+    finding: Law and philosophy have long established the ex post nature of A — P[U] is the cryptographic counterpart of this ex post structure.
     formal: "∀ accountability event e: occurs(e) ⇒ ex_post(e)"
 
-  - section: §3 — 密碼學工程
-    title: 數學早就齊備了
-    role: 提供技術可行性——若 P[U] 在密碼學上不可實作，整條路徑就只是口號。L1-L4 分級用來精確指出瓶頸。
-    body: 群簽名、anonymous credentials、threshold cryptography（BBS+、TAPS）已能提供「預設隱私、條件啟封」的假名。L1 理論完備、L2 標準部分到位、L3 部署不均、L4 治理才是瓶頸。密碼學是 necessary but not sufficient。
-    finding: 工程實作能達成 P[U]，但 V₅（多方持鑰）+ V₆（事後審計）需要治理層配合，不是純密碼學議題。
+  - section: §3 — Cryptographic Engineering
+    title: The mathematics has long been ready
+    role: Provides technical feasibility — if P[U] is not cryptographically implementable, the entire path is merely a slogan. The L1–L4 classification is used to precisely identify the bottleneck.
+    body: Group signatures, anonymous credentials, and threshold cryptography (BBS+, TAPS) can already provide pseudonymity with "privacy by default, conditional unmasking." L1 theory is complete; L2 standards are partially in place; L3 deployment is uneven; L4 governance is the bottleneck. Cryptography is necessary but not sufficient.
+    finding: Engineering implementation can achieve P[U], but V₅ (multi-party custody) + V₆ (post-hoc audit) require governance layer cooperation and are not purely cryptographic issues.
     formal: "∃ crypto primitives π : provides(π, P[U] ∧ V₅ ∧ V₆)"
 
-  - section: §4 — 制度範式
-    title: 民主早就在做這件事
-    role: 提供歷史先例——若假名加條件啟封是「全新設計」，需要從零辯護；若它是民主憲政既有制度的一般化，辯護負擔大幅降低。
-    body: 搜索票、密封起訴書、證人保護、John Doe 訴訟——四條成熟制度都遵循「預設假名 + 條件啟封 + 多方持鑰 + 可審計記錄 + 明定 trigger」結構。三個不對稱限制直接移植：主權範圍、利害關係人結構、執行基礎，但結構模板可借。
-    finding: P[U] 不是發明，是從四條既有制度抽象出來的模板。立法新規範時，可以在這個模板上做修補。
+  - section: §4 — Institutional Paradigm
+    title: Democracy has already been doing this
+    role: Provides historical precedent — if pseudonymity plus conditional unmasking is a "wholly new design," it must be defended from scratch; if it is a generalization of existing constitutional democratic institutions, the burden of proof is greatly reduced.
+    body: Search warrants, sealed indictments, witness protection, John Doe lawsuits — four mature institutions all follow the "pseudonym by default + conditional unmasking + multi-party custody + auditable record + pre-specified trigger" structure. Three asymmetric constraints are directly transplanted — sovereign scope, stakeholder structure, enforcement basis — but the structural template can be borrowed.
+    finding: P[U] is not an invention but a template abstracted from four existing institutions. When legislating new rules, one can build on modifications to this template.
     formal: "∃ institutions {𝓘₁..𝓘ₙ} : ∀ 𝓘ᵢ, structure(𝓘ᵢ) ≅ P[U]"
 
-  - section: §5 — 反向證據
-    title: 集中啟封權必然退化
-    role: 提供反向支撐——若無法證明「不採 P[U] 會出錯」，正向支撐還只是一個選項；負面證據才能把它推上必然性。
-    body: Aadhaar（印度）案例提供從「單方持鑰設計」到「1.35 億筆資料外洩 + 寒蟬效應」的七步因果鏈。南韓實名法被憲法法庭推翻——壓制言論卻未減少濫用。5 個獨立案例方向一致：集中啟封 → 範圍蠕變 → 系統性外洩。
-    finding: T0–T2 是機制必然（結構性），T2–T5 是概率性但持續被觀察到——這個區分本身就決定了論證強度。
+  - section: §5 — Counter-Evidence
+    title: Centralized unmasking power will inevitably degrade
+    role: Provides reverse support — without being able to prove "not adopting P[U] will lead to failure," the affirmative support remains merely an option; negative evidence is what elevates it to necessity.
+    body: The Aadhaar (India) case provides a seven-step causal chain from "single-party custody design" to "135 million records leaked + chilling effect." South Korea's real-name law was struck down by the Constitutional Court — suppressing speech without reducing abuse. Five independent cases consistently point in the same direction — centralized unmasking → scope creep → systemic leakage.
+    finding: T0–T2 are mechanistic necessities (structural); T2–T5 are probabilistic but have been continuously observed — this distinction itself determines the strength of the argument.
     formal: "¬V₅(U) ⇒ Pr(degradation | t→∞) → 1"
 
 # ─────────────────────────────────────────────────────────────
 # Causal Chain (Aadhaar process trace)
 # ─────────────────────────────────────────────────────────────
 chain:
-  title: Aadhaar 七步因果鏈：集中啟封權 → 系統性退化
+  title: Aadhaar seven-step causal chain — centralized unmasking power → systemic degradation
   steps:
     - tag: T0
       kind: deterministic
-      text: 2009 — UIDAI 設計：啟封權從一開始就集中於單一行政機關（違反 V₅ 多方持鑰）
+      text: 2009 — UIDAI design — unmasking power concentrated from the outset in a single administrative agency (violation of V₅ multi-party custody)
     - tag: T1
       kind: deterministic
-      text: 2012–16 — Aadhaar Act §33 緊急啟封範圍持續擴張（違反 V₄ 日落條款）
+      text: 2012–16 — Aadhaar Act §33 emergency unmasking scope continuously expands (violation of V₄ sunset clause)
     - tag: T2
       kind: deterministic
-      text: 2017 — 1.35 億筆紀錄外洩。The Tribune：500 盧比 + 10 分鐘可取得任何 Aadhaar 紀錄
+      text: 2017 — 135 million records leaked. The Tribune — INR 500 + 10 minutes sufficient to access any Aadhaar record
     - tag: T3
       kind: probabilistic
-      text: 2017 — Puttaswamy v. Union of India：最高法院確認隱私為基本權（外部 trigger）
+      text: 2017 — Puttaswamy v. Union of India — Supreme Court affirms privacy as a fundamental right (external trigger)
     - tag: T4
       kind: probabilistic
-      text: 2018–19 — §33(2) 修正，但實務執行未隨之改變
+      text: 2018–19 — §33(2) amended, but practical enforcement did not change accordingly
     - tag: T5
       kind: probabilistic
-      text: 2023+ — Pegasus 用於監控記者；§33 執行紀錄持續累積
+      text: 2023+ — Pegasus used for journalist surveillance; §33 enforcement records continue to accumulate
   legend:
     - kind: deterministic
-      label: 機制必然（結構性，不依賴外部 trigger）
+      label: Mechanistically necessary (structural, does not depend on external trigger)
     - kind: probabilistic
-      label: 概率性（需要外部 trigger 才實現，但概率不可忽略）
+      label: Probabilistic (requires an external trigger to materialize, but probability is non-negligible)
 
 # ─────────────────────────────────────────────────────────────
 # Border Cases — flip to support
 # ─────────────────────────────────────────────────────────────
 borders:
-  - label: 反論 1
-    title: AML / KYC 反洗錢
-    pivot: 反論訴求是「實名能攔截犯罪資金」。但實證顯示攔截率 < 0.1%、合規成本超過追回金額 100 倍，且負擔落在無銀行帳戶人口——換言之，「實名」這個工具自己就違反 V₂ 對稱成本-效益測試。屬性證明（age proof / residency proof）+ 條件啟封可達同等監管效果。
-    flip: AML 不僅不支持實名，反而給「P[U] + 屬性證明」提供了最強的成本-效益論證——同樣監管目標下，假名路徑代價更低、覆蓋更廣。
+  - label: Counterargument 1
+    title: AML / KYC anti-money laundering
+    pivot: The counterargument claims that "real-name identification can intercept criminal funds." But empirical evidence shows interception rates below 0.1%, compliance costs exceeding recovered amounts by 100 times, and the burden falling on the unbanked population — in other words, "real-name identification" as a tool itself fails the V₂ symmetric cost-benefit test. Attribute proofs (age proof / residency proof) + conditional unmasking can achieve equivalent regulatory effect.
+    flip: AML not only fails to support real-name identification, but actually provides the strongest cost-benefit argument for "P[U] + attribute proofs" — under the same regulatory objective, the pseudonymous path costs less and covers more broadly.
 
-  - label: 反論 2
-    title: 選舉舞弊
-    pivot: 反論訴求是「選民 ID 能防止冒名投票」。但美國冒名投票率約 0.0003%，Voter ID 法可量測地壓制少數族裔投票率（5-15%）——亦即「實名」這個工具壓制的合法行使遠超它攔截的非法行使，違反 V₁ 具體攻擊向量測試（攻擊向量本身近乎不存在）。
-    flip: 事前實名解決一個近乎不存在的問題，卻造成真實傷害。這個結果反向支持「壓力應放在 V₆ 事後審計」，而非事前識別。
+  - label: Counterargument 2
+    title: Electoral fraud
+    pivot: The counterargument claims that "voter ID can prevent impersonation voting." But the US impersonation voting rate is approximately 0.0003%, and voter ID laws measurably suppress minority voting rates (5–15%) — meaning that "real-name identification" as a tool suppresses far more legitimate exercise than the illegitimate exercise it intercepts, violating the V₁ specific attack vector test (the attack vector itself is nearly nonexistent).
+    flip: Pre-participation real-name identification solves a nearly nonexistent problem while causing real harm. This outcome inversely supports placing pressure on "V₆ post-hoc audit" rather than pre-participation identification.
 
-  - label: 反論 3
-    title: 武器 / WMD
-    pivot: 真正的例外——但反論訴求過度延伸。「武器需要實名」只對特定角色持有者（操作員、處理員）成立，對一般購買者並不必然成立。這個區分對應到 V₁：specific(threat) ∧ ¬general(threat)。
-    flip: 即使在這個窄場域，普世實名登記也無法被辯護。例外是窄的，不能擴大成通則——這恰好示範 V₁ 如何約束特殊情境的擴張慾望。
+  - label: Counterargument 3
+    title: Weapons / WMD
+    pivot: A genuine exception — but the counterargument is overextended. "Weapons require real-name identification" only holds for specific category holders (operators, handlers), not necessarily for ordinary purchasers. This distinction corresponds to V₁ — specific(threat) ∧ ¬general(threat).
+    flip: Even in this narrow domain, universal real-name registration cannot be defended. The exception is narrow and cannot be expanded into a general rule — this precisely demonstrates how V₁ constrains the expansionary impulse of special circumstances.
 
 # ─────────────────────────────────────────────────────────────
 # Procedural Conditions (six firewalls)
 # ─────────────────────────────────────────────────────────────
 conditions:
-  title: 任何例外於假名性的合法性，必須先通過六道程序防火牆
+  title: The legitimacy of any exception to pseudonymity must first pass six procedural firewalls
   formalPrelude: U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V₆
   items:
-    - title: 具體的攻擊向量
-      body: 威脅必須是具體可識別的，不能是一般性或推測性的。「治安惡化」「假訊息流竄」這類修辭級威脅不及格。
+    - title: Specific attack vector
+      body: The threat must be specifically identifiable, not general or speculative. Rhetorical-level threats such as "deteriorating public order" or "proliferating misinformation" do not qualify.
       formal: "V₁: ∃ specific(threat) ∧ ¬general(threat)"
-    - title: 對稱的成本-效益測試
-      body: 隱私損失必須與識別效益並列量化評估。「為了安全」這類單向價值宣稱不及格——必須對稱列出兩邊的數字。
+    - title: Symmetric cost-benefit test
+      body: Privacy loss must be quantitatively assessed alongside identification benefits. One-directional value claims such as "for the sake of security" do not qualify — both sides of the equation must be symmetrically enumerated.
       formal: "V₂: cost(privacy_loss) ≤ benefit(identification)"
-    - title: 密碼學替代測試
-      body: 在採取啟封之前，必須先驗證 ZK proof / 屬性證明 / threshold disclosure 等替代方案能否達成同樣的監管目標。
+    - title: Cryptographic alternative test
+      body: Before proceeding to unmasking, it must first be verified whether alternatives such as ZK proof / attribute proofs / threshold disclosure can achieve the same regulatory objective.
       formal: "V₃: ¬∃ zk_alt(goal) ∨ rejected(zk_alt, justified)"
-    - title: 強制日落條款
-      body: 明示複審 trigger 與時間上限；緊急權力必須有期限。沒有日落的條款會逐步常態化（Aadhaar §33 的歷史已證明）。
+    - title: Mandatory sunset clause
+      body: Explicit review triggers and time limits must be stated; emergency powers must have expiration dates. Clauses without sunsets will gradually become normalized (Aadhaar §33's history has already proven this).
       formal: "V₄: ∃ sunset_date ∧ ∃ review_trigger"
-    - title: 多方持鑰
-      body: 沒有任何單一機構獨自持有啟封權。最少需要 m-of-n threshold（m ≥ 2）的密碼學機制 + 跨機關政治制衡。
+    - title: Multi-party custody
+      body: No single institution independently holds unmasking power. At minimum, an m-of-n threshold (m ≥ 2) cryptographic mechanism + cross-branch political checks and balances are required.
       formal: "V₅: ∀ unmask u : holders(u) ≥ 2 ∧ cross_branch(holders)"
-    - title: 事後公開審計
-      body: 啟封紀錄、發起方、理由必須可被公開審查。閉門啟封、不留紀錄、不可挑戰的程序，會把 V₅ 的結構性保障掏空。
+    - title: Post-hoc public audit
+      body: Unmasking records, initiating parties, and reasons must be publicly reviewable. Closed-door unmasking, unrecorded processes, and unchallengeable procedures hollow out the structural protection of V₅.
       formal: "V₆: ∀ unmask u : public_record(u) ∧ challengeable(u)"
 
 # ─────────────────────────────────────────────────────────────
@@ -174,9 +174,9 @@ conditions:
 # ─────────────────────────────────────────────────────────────
 conclusion:
   paragraphs:
-    - <strong>「可問責的假名性」是政治經濟成就，密碼學僅為其中的必要條件層。</strong>L1-L3 工程基底已就緒，L4 治理才決定承諾能否兌現。
-    - 辯論應從「實名 vs 匿名」轉向<em>「啟封權的治理品質」</em>。瓶頸落在 V₅ 多方持鑰加 V₆ 事後審計這對組合——誰持鑰、在什麼條件下、有什麼監督。
-    - 一條不對稱貫穿全文：<strong>公民可以假名，制度權力持有者不可以。</strong>權力越大，被允許的匿名空間越小——這個梯度本身就是 P[U] 公式的必然延伸。
+    - <strong>"Accountable pseudonymity" is a political-economy achievement; cryptography is merely one necessary condition layer within it.</strong> The L1–L3 engineering substrate is ready; L4 governance is what determines whether the commitment can be fulfilled.
+    - The debate should shift from "real-name vs anonymity" to <em>"the governance quality of unmasking power."</em> The bottleneck lies in the combination of V₅ multi-party custody and V₆ post-hoc audit — who holds the keys, under what conditions, and with what oversight.
+    - An asymmetric principle runs through the entire text — <strong>citizens may be pseudonymous; holders of institutional power may not.</strong> The greater the power, the smaller the permitted anonymity space — this gradient is itself the necessary extension of the P[U] formula.
   formalCoda: |
     Final form:
       ∀x : citizen(x) → permitted(P[U], x)
