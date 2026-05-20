@@ -25,6 +25,11 @@ const reportSchema = z.object({
   series: z.string().optional(),
   seriesOrder: z.number().int().positive().optional(),
   slug: z.string().optional(),
+
+  // Cross-language link override.
+  // Defaults to https://pro.mashbean.net/reports/{id}/; set explicitly when the
+  // Chinese counterpart lives on mashbean.net/blog or elsewhere.
+  zhUrl: z.string().url().optional(),
 });
 
 const reports = defineCollection({

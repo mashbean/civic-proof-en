@@ -31,6 +31,7 @@ interface Props {
   aiPrompt?: string;
   aiGeneratedDate?: Date;
   humanReviewed?: boolean;
+  zhUrl?: string;
 }
 
 const {
@@ -46,7 +47,10 @@ const {
   aiPrompt,
   aiGeneratedDate,
   humanReviewed,
+  zhUrl,
 } = Astro.props;
+
+const zhLink = zhUrl ?? `https://pro.mashbean.net/reports/${id}/`;
 
 const kicker = tags[0] ?? "Essay";
 const readTime = readingTime(body);
@@ -84,7 +88,17 @@ const relatedPosts = [...otherPosts]
     <Masthead />
 
     <article class="article">
-      <a href="/" class="article__back">← All essays</a>
+      <div class="article__topnav">
+        <a href="/" class="article__back">← All essays</a>
+        <a
+          href={zhLink}
+          class="article__lang"
+          hreflang="zh-Hant"
+          rel="alternate"
+        >
+          中文版 ↗
+        </a>
+      </div>
 
       <p class="article__kicker">{kicker}</p>
       <h1 class="article__title">{title}</h1>
