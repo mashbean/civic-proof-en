@@ -29,7 +29,7 @@ coreThesis:
       - symbol: G₁..G₄
         meaning: Four connecting factors (issuer jurisdiction / verifier jurisdiction / vendor jurisdiction / holder domicile jurisdiction)
       - symbol: ⊥
-        meaning: "orthogonal" (independent and parallel, cannot be subsumed)
+        meaning: '"orthogonal" (independent and parallel, cannot be subsumed)'
       - symbol: ⇐
         meaning: "sufficient ground for"
       - symbol: ⇔

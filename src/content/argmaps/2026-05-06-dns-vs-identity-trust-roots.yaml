@@ -25,7 +25,7 @@ coreThesis:
       - symbol: ⋀
         meaning: Big conjunction (all tiers simultaneously necessary)
       - symbol: ∉
-        meaning: "Does not belong to" (negation of ∈)
+        meaning: '"Does not belong to" (negation of ∈)'
 
 transitions:
   beforeDistinction: The formula states the position, but the first step is to distinguish two ways of viewing the DNS-identity analogy. Most engineering communities treat DNS as "a successful decentralised governance template that can be directly transferred to identity"; this map opposes that classification — it should be treated as "an accidental product of specific historical conditions, which ceases to hold once those conditions are removed."

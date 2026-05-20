@@ -47,9 +47,9 @@ coreThesis:
       - symbol: vendor_lockin
         meaning: Vendor lock-in (issuer/credential/verifier/revocation monopolized by the wallet vendor)
       - symbol: ⇒
-        meaning: "implies" (inference relation)
+        meaning: '"implies" (inference relation)'
       - symbol: ⇔
-        meaning: "if and only if" (biconditional)
+        meaning: '"if and only if" (biconditional)'
       - symbol: ∧ ∨ ¬
         meaning: conjunction / disjunction / negation (propositional logic operators)
 

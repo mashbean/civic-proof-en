@@ -82,7 +82,7 @@ pillars:
     role: Provides historical context; without awareness of the public chain DNA in SSI's origins, "de-blockchain" would be misread as "public chains were never suitable." Christopher Allen 2016 + early method design + Sovrin's early compromise provide the starting point for the historical path.
     body: |
       In the SSI and DID documents of 2015–2018, public blockchains were treated as the default stage. Christopher Allen 2016's "The Path to Self-Sovereign Identity" — its "Existence," "Control," and "Persistence" principles directly treated permissionless ledgers as the default carrier for SSI. The early methods collected in the W3C DID Specification Registries — did:btcr (Allen et al. 2017), did:ethr (uPort/ConsenSys 2018), did:ion (Microsoft 2019), did:sov (Sovrin / Hyperledger Indy) — had public chain advocates speaking loudest. But compromise had already occurred along this same timeline — the Sovrin Foundation 2017 Trust Framework set the goal of being a "global public utility," but the implementation backend chose Hyperledger Indy, a permissioned consortium chain, representing an early concession in the SSI community between "publicly readable, permissioned-write." During the same period, did:web and did:key began taking shape from 2019 onward.
-    finding: "Public chain DNA" is more like a shared design orientation default, not a single execution model; the early compromise already foreshadowed the subsequent, more extensive de-blockchain.
+    finding: '"Public chain DNA" is more like a shared design orientation default, not a single execution model; the early compromise already foreshadowed the subsequent, more extensive de-blockchain.'
     formal: "Genesis(SSI, 2015-2018) ⊨ ⟨public_chain_default, early_compromise(Sovrin_Indy_2017)⟩"
 
   - section: §3 — Neutralization (W3C DID Core 1.0 method compromise consensus)
@@ -109,7 +109,7 @@ pillars:
     finding: Revocation latency is an independent engineering constraint at the mainstream public chain base layer, but L2/ZK technological change partially loosens the constraint; W3C Bitstring Status List + VC Data Model v2.0's neutral design has already left space for cross-infrastructure deployment.
     formal: "Revocation(VC) ⊥ Immutability(public_chain_L1)   ;   L2/ZK_advancement ⇒ partial_reconciliation(Revocation, Public_chain_L2)"
 
-  - section: §6 — Empirical (three categories of cases laid out: mainstream + counterexamples + failures)
+  - section: '§6 — Empirical (three categories of cases laid out: mainstream + counterexamples + failures)'
     title: Three routes each propose modifications to the thesis at three different degrees of strength
     role: Provides empirical foundation; with only normative and engineering arguments, the proposition of "public chain positions" lacks cross-national comparative evidence. Laying out three categories of cases — mainstream (PKI + consortium chain) + counterexamples (public chain) + failures — reveals the diversity of paths.
     body: |

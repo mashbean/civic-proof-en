@@ -26,7 +26,7 @@ coreThesis:
       - symbol: DPS
         meaning: Dynamic Purchasing System
       - symbol: ⊥
-        meaning: "Orthogonal" (independent, parallel axes)
+        meaning: '"Orthogonal" (independent, parallel axes)'
       - symbol: ⇒
         meaning: Implies
       - symbol: ∧

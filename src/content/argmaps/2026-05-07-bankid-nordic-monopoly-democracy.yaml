@@ -54,7 +54,7 @@ coreThesis:
       - symbol: R₁..R₄
         meaning: Remedy design four components — central bank warning authority, government e-ID as baseline right, non-bank fallback, statutory remedy procedure
       - symbol: ⊨
-        meaning: "satisfies" (the model satisfies the formula)
+        meaning: '"satisfies" (the model satisfies the formula)'
       - symbol: ∧
         meaning: conjunction (simultaneously holds; failure of any one component is sufficient for failure)
 
@@ -138,7 +138,7 @@ pillars:
       Provides counterexamples and boundaries — without failed export cases, the map's "conditional transferability" would be treated as cautious rhetoric rather than a testable proposition. South Africa NABID (2014–2019), Brazil Itaú-Serasa (2018–2022), and Central and Eastern European eIDAS 1.0 follow-on failures (2014–2020) provide counterexamples that precisely mark the boundaries of transferability, and prevent Estonia e-ID and Aadhaar from being mistakenly promoted as "Southern BankID equivalents."
     body: |
       Three-tier export difficulty gradient: technical < governance << social structure. The technical layer (PKI, SAML/OIDC, QR signing) is commodity, packaged for export by Gemalto/Thales/Signicat; the governance layer (central bank oversight protocols, dispute resolution mechanisms, SLAs) is partially transferable; the social structure layer (high bank penetration, high trust, strong labor protection, welfare state floor, scale homogeneity, central bank independence tradition) is almost entirely non-transferable. The three cases share four structural features: bank penetration below 90%, social trust below 25% (WVS Wave 7), strong state-led alternatives within the political-economy structure, and financial regulators with sufficient agency to steer model selection toward government-led paths. Estonia e-ID's key design is government-led + mandatory + statutory identity — structurally different from BankID's bank-led + voluntary + commercial contract; Aadhaar and BankID are structurally opposed across six dimensions (principal agent, authentication basis, coerciveness, privacy architecture, excluded populations, failure consequences). Conflating the critiques of these two systems would misread the political-economic structure and misplace the design goals of remedy.
-    finding: Conditional transferability is a conjunctive structure: N₁ ∧ N₂ ∧ N₃ ∧ ⋀ⱼ Eⱼ; the failure points of the three cases precisely correspond to the absence of one of the three necessary conditions; learnable objects are limited to the R₁..R₄ governance framework — BankID as a commercial entity is not within the learnable scope.
+    finding: 'Conditional transferability is a conjunctive structure: N₁ ∧ N₂ ∧ N₃ ∧ ⋀ⱼ Eⱼ; the failure points of the three cases precisely correspond to the absence of one of the three necessary conditions; learnable objects are limited to the R₁..R₄ governance framework — BankID as a commercial entity is not within the learnable scope.'
     formal: "applicable(NCT-remedy, region) ⇔ N₁ ∧ N₂ ∧ N₃ ∧ ⋀ⱼ Eⱼ  ;  Estonia, Aadhaar ⊭ BankID-output_evidence"
 
 # ─────────────────────────────────────────────────────────────

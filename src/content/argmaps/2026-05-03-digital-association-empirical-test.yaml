@@ -47,7 +47,7 @@ distinction:
   rejected:
     label: ❌ H0 Strongest Reading Falsified
     title: Insufficient identity privacy is the sole sufficient cause of failure
-    body: "Only by raising identity privacy to sufficient strength will digital association emerge." This reading reduces all associational failure to the downstream expression of an upstream privacy bottleneck, and aligns with the cypherpunk tool-optimism lineage since the 1990s. However, process tracing across N=5 cases shows that even after years of Tor / Signal / Briar deployment, the three downstream walls remained unmoved and association continued to fail.
+    body: '"Only by raising identity privacy to sufficient strength will digital association emerge." This reading reduces all associational failure to the downstream expression of an upstream privacy bottleneck, and aligns with the cypherpunk tool-optimism lineage since the 1990s. However, process tracing across N=5 cases shows that even after years of Tor / Signal / Briar deployment, the three downstream walls remained unmoved and association continued to fail.'
     formal: "H0:  ¬privacy(t) ⇒ ¬F(t)   ❌ converse does not hold"
   accepted:
     label: ✓ H1' Revised as Conjunctive Three Walls

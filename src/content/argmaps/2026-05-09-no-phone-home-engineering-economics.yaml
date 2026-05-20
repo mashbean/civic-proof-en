@@ -63,7 +63,7 @@ coreThesis:
       - symbol: ⋀
         meaning: Large conjunction (all conditions simultaneously satisfied)
       - symbol: ⊨
-        meaning: "satisfies" (model satisfies formula)
+        meaning: '"satisfies" (model satisfies formula)'
       - symbol: ⇔
         meaning: "if and only if"
 
