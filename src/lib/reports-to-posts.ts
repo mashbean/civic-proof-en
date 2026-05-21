@@ -34,7 +34,7 @@ export function reportToPost(report: CollectionEntry<"reports">): Post {
 
   return {
     id: report.id,
-    author: data.aiModel ?? DEFAULT_AUTHOR,
+    author: DEFAULT_AUTHOR,
     date,
     readMinutes: estimateMinutes(body),
     title: data.title,

@@ -265,6 +265,19 @@
   color: var(--color-ink);
   border-color: var(--color-ink);
 }
+.article__wip{
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-canvas);
+  background: var(--color-ink-muted);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  vertical-align: middle;
+  cursor: help;
+}
 .article__kicker{
   font-family: var(--font-mono);
   font-size: var(--text-xs);

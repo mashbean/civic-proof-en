@@ -7,9 +7,9 @@ import Iris from "../components/Iris.astro";
 import Footer from "../components/Footer.astro";
 import ReadingProgress from "../components/ReadingProgress.astro";
 import TableOfContents from "../components/TableOfContents.astro";
-import AiMetaBadge from "../components/AiMetaBadge.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
 import CitationTooltip from "../components/CitationTooltip.astro";
+import { DEFAULT_AUTHOR } from "../site.config";
 import { formatDate } from "../utils/date";
 import { readingTime } from "../utils/reading-time";
 import { getPublishedReports } from "../utils/reports";
@@ -106,8 +106,9 @@ const relatedPosts = [...otherPosts]
 
       <div class="article__meta">
         <span>
-          <strong>{aiModel ?? "AI Research Pipeline"}</strong>
+          <strong>{DEFAULT_AUTHOR}</strong>
         </span>
+        <span class="article__wip" title="Work in progress — actively edited">WIP</span>
         <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
         {updatedDate && <span>· Updated {formatDate(updatedDate)}</span>}
         <span>{readTime}</span>
@@ -121,13 +122,6 @@ const relatedPosts = [...otherPosts]
           ))}
         </div>
       )}
-
-      <AiMetaBadge
-        aiModel={aiModel}
-        aiPrompt={aiPrompt}
-        aiGeneratedDate={aiGeneratedDate}
-        humanReviewed={humanReviewed}
-      />
 
       {argmapHref && (
         <a class="article__argmap-link" href={argmapHref}>
