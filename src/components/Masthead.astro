@@ -27,7 +27,42 @@ const defaultNav =
 const navItems = nav ?? defaultNav;
 
 const homeHref = locale === "en" ? "/" : "/zh/";
-const langSwitchHref = locale === "en" ? "/zh/" : "/";
+
+/**
+ * Compute the cross-language URL for the *current* page rather than blindly
+ * sending readers to the locale root. Chrome pages we host in both locales:
+ *   - homepage           : /            ↔ /zh/
+ *   - civic-proof-map    : /civic-proof-map/  ↔ /zh/civic-proof-map/
+ *   - about              : /about/             ↔ /zh/about/
+ *   - reports/:slug      : /reports/:slug/     ↔ /zh/reports/:slug/
+ * Argmaps and tags live in English only; we fall back to the locale root.
+ */
+const currentPath = Astro.url?.pathname ?? "/";
+const counterpartChromePages = new Set([
+  "/",
+  "/civic-proof-map/",
+  "/about/",
+]);
+
+function computeLangSwitch(path: string, currentLocale: "en" | "zh"): string {
+  if (currentLocale === "en") {
+    if (path === "/") return "/zh/";
+    if (counterpartChromePages.has(path)) return `/zh${path}`;
+    if (path.startsWith("/reports/")) return `/zh${path}`;
+    return "/zh/";
+  }
+  // currentLocale === "zh"
+  if (path === "/zh/" || path === "/zh") return "/";
+  if (path.startsWith("/zh/")) {
+    const stripped = path.slice("/zh".length); // keeps the leading slash
+    if (counterpartChromePages.has(stripped) || stripped.startsWith("/reports/")) {
+      return stripped;
+    }
+  }
+  return "/";
+}
+
+const langSwitchHref = computeLangSwitch(currentPath, locale);
 const langSwitchLabel = locale === "en" ? "中文" : "English";
 const langSwitchHrefLang = locale === "en" ? "zh-Hant" : "en";
 const langSwitchTitle =
