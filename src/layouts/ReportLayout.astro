@@ -12,7 +12,7 @@ import CitationTooltip from "../components/CitationTooltip.astro";
 import { DEFAULT_AUTHOR } from "../site.config";
 import { formatDate } from "../utils/date";
 import { readingTime } from "../utils/reading-time";
-import { getPublishedReports } from "../utils/reports";
+import { getPublishedReports, getPublishedReportsZh } from "../utils/reports";
 import { reportToPost } from "../lib/reports-to-posts";
 import { hashSeed, mulberry, themeFor } from "../lib/theme-generator";
 import { getCollection } from "astro:content";
@@ -32,6 +32,7 @@ interface Props {
   aiGeneratedDate?: Date;
   humanReviewed?: boolean;
   zhUrl?: string;
+  locale?: "en" | "zh";
 }
 
 const {
@@ -48,21 +49,35 @@ const {
   aiGeneratedDate,
   humanReviewed,
   zhUrl,
+  locale = "en",
 } = Astro.props;
 
-const zhLink = zhUrl ?? `https://pro.mashbean.net/reports/${id}/`;
+// Determine the cross-language counterpart URL.
+// Internal mirror by default (same slug in /zh/reports/ or /reports/);
+// `zhUrl` frontmatter override is honoured for English pages whose Chinese
+// counterpart lives outside this site (legacy).
+const counterpartUrl = locale === "en"
+  ? (zhUrl ?? `/zh/reports/${id}/`)
+  : `/reports/${id}/`;
 
-const kicker = tags[0] ?? "Essay";
+const counterpartLabel = locale === "en" ? "中文版" : "English";
+const backLabel = locale === "en" ? "← All essays" : "← 所有文章";
+const backHref = locale === "en" ? "/" : "/zh/";
+const updatedLabel = locale === "en" ? "Updated" : "更新於";
+
+const kicker = tags[0] ?? (locale === "en" ? "Essay" : "文章");
 const readTime = readingTime(body);
 const ogImage = `og/${id}.png`;
 
-// 此篇文章是否有對應的論證地圖（argmap）？
+// 此篇文章是否有對應的論證地圖（argmap）？(English only for now)
 const argmaps = await getCollection("argmaps");
-const matchedArgmap = argmaps.find((a) => a.data.slug === id);
+const matchedArgmap = locale === "en" ? argmaps.find((a) => a.data.slug === id) : undefined;
 const argmapHref = matchedArgmap ? `/argmaps/${matchedArgmap.id}/` : undefined;
 
-// Related pool — everything except this report
-const allReports = await getPublishedReports();
+// Related pool — everything except this report, drawn from the same locale.
+const allReports = locale === "en"
+  ? await getPublishedReports()
+  : await getPublishedReportsZh();
 const otherPosts = allReports
   .filter((r) => r.id !== id)
   .map(reportToPost);
@@ -77,7 +92,7 @@ const relatedPosts = [...otherPosts]
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale === "zh" ? "zh-Hant" : "en"}>
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
@@ -85,18 +100,18 @@ const relatedPosts = [...otherPosts]
     <Mesh />
     <Guides />
     <ReadingProgress />
-    <Masthead />
+    <Masthead locale={locale} />
 
     <article class="article">
       <div class="article__topnav">
-        <a href="/" class="article__back">← All essays</a>
+        <a href={backHref} class="article__back">{backLabel}</a>
         <a
-          href={zhLink}
+          href={counterpartUrl}
           class="article__lang"
-          hreflang="zh-Hant"
+          hreflang={locale === "en" ? "zh-Hant" : "en"}
           rel="alternate"
         >
-          中文版 ↗
+          {counterpartLabel}
         </a>
       </div>
 
@@ -109,8 +124,8 @@ const relatedPosts = [...otherPosts]
           <strong>{DEFAULT_AUTHOR}</strong>
         </span>
         <span class="article__wip" title="Work in progress — actively edited">WIP</span>
-        <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
-        {updatedDate && <span>· Updated {formatDate(updatedDate)}</span>}
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate, locale)}</time>
+        {updatedDate && <span>· {updatedLabel} {formatDate(updatedDate, locale)}</span>}
         <span>{readTime}</span>
         <span style="margin-left:auto">#{id.split("/").pop()}</span>
       </div>
@@ -127,8 +142,10 @@ const relatedPosts = [...otherPosts]
         <a class="article__argmap-link" href={argmapHref}>
           <span class="article__argmap-icon">◇</span>
           <span class="article__argmap-text">
-            <strong>Argument Map</strong>
-            <em>core thesis · supporting arguments · causal chain · border conditions</em>
+            <strong>{locale === "en" ? "Argument Map" : "論證地圖"}</strong>
+            <em>{locale === "en"
+              ? "core thesis · supporting arguments · causal chain · border conditions"
+              : "核心論題 · 支持論點 · 因果鏈 · 邊界條件"}</em>
           </span>
           <span class="article__argmap-arrow">→</span>
         </a>
@@ -141,12 +158,32 @@ const relatedPosts = [...otherPosts]
       <aside class="article__sidebar">
         <TableOfContents headings={headings} />
       </aside>
+
+      {/* ── Cite this working paper ───────────────────────────── */}
+      <details class="article__cite">
+        <summary>{locale === "en" ? "Cite this working paper" : "引用此工作論文"}</summary>
+        <div class="article__cite-body">
+          <p class="article__cite-note">
+            {locale === "en"
+              ? "Working paper; under active revision. Cite by canonical URL."
+              : "工作論文，持續修訂中。請以標準網址引用。"}
+          </p>
+          <pre class="article__cite-block"><code>mashbean ({pubDate.getFullYear()}). {title}. civic-proof series, working paper. {Astro.site ?? "https://civic-proof.mashbean.net"}{locale === "en" ? `/reports/${id}/` : `/zh/reports/${id}/`}</code></pre>
+          <pre class="article__cite-block"><code>@misc&#123;mashbean{pubDate.getFullYear()}-{id.replace(/-/g, "").slice(0, 12)},
+  author = &#123;mashbean&#125;,
+  title  = &#123;{title.replace(/&#123;|&#125;/g, "")}&#125;,
+  year   = &#123;{pubDate.getFullYear()}&#125;,
+  note   = &#123;civic-proof series, working paper&#125;,
+  url    = &#123;{Astro.site ?? "https://civic-proof.mashbean.net"}{locale === "en" ? `/reports/${id}/` : `/zh/reports/${id}/`}&#125;
+&#125;</code></pre>
+        </div>
+      </details>
     </article>
 
     {relatedPosts.length > 0 && (
       <section class="related">
         <div class="related__head">
-          <span class="related__label">Continue reading</span>
+          <span class="related__label">{locale === "en" ? "Continue reading" : "繼續閱讀"}</span>
         </div>
         <div class="related__grid">
           {relatedPosts.map(({ post, theme }) => (
@@ -163,12 +200,53 @@ const relatedPosts = [...otherPosts]
       </section>
     )}
 
-    <Footer />
+    <Footer locale={locale} />
     <Iris />
     <ScrollReveal />
     <CitationTooltip />
 
     <style>
+      .article__cite {
+        max-width: 760px;
+        margin: var(--space-7) auto var(--space-6);
+        padding: var(--space-3) var(--space-5);
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        background: var(--color-bg-muted);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+      }
+      .article__cite > summary {
+        cursor: pointer;
+        color: var(--color-ink-muted);
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-wide);
+        font-size: var(--text-xs);
+        list-style: none;
+        padding: var(--space-2) 0;
+      }
+      .article__cite > summary::before { content: "▸ "; }
+      .article__cite[open] > summary::before { content: "▾ "; }
+      .article__cite[open] > summary { color: var(--color-ink); margin-bottom: var(--space-3); }
+      .article__cite-note {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--color-ink-muted);
+        margin: 0 0 var(--space-3);
+      }
+      .article__cite-block {
+        background: var(--color-canvas);
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        padding: var(--space-3);
+        margin: 0 0 var(--space-3);
+        overflow-x: auto;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
       .article__tags {
         display: flex;
         gap: var(--space-2);

@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { MAIN_SITE_URL } from "../../site.config";
+---
+
+<BaseLayout title="關於" locale="zh">
+  <article class="about">
+    <p class="about__kicker">版本說明</p>
+    <h1 class="about__title">關於這個網站</h1>
+
+    <div class="about__body report-prose">
+      <p>
+        <strong>civic-proof</strong> 是一個研究網站，收錄公民證明系列——關於數位身分、
+        規範政治理論、工程設計、跨法域治理的長篇寫作。
+      </p>
+
+      <h2>作者</h2>
+
+      <p>
+        作者是 <a href={MAIN_SITE_URL}>mashbean（豆泥）</a>。2026 年春季
+        於哈佛甘迺迪政府學院 Ash Center 民主治理與創新中心的
+        <a href="https://ash.harvard.edu/" target="_blank" rel="noopener">Allen Lab for Democracy Renovation</a>
+        擔任 Fellow 期間撰寫此系列。先前經歷：台灣數位發展部數位皮夾政策推動
+        （2022–2024）；ICANN 研究員，研究 DNS 信任根治理（2024–2025）。
+      </p>
+
+      <h2>研究問題</h2>
+
+      <p>
+        系列只處理一個核心問題：民主社會是否能設計出
+        保留可問責性、又不需要公民事前以實名身分進入的數位身分系統？
+        系列給出的答案是條件性肯定——前提是規範下界（Public Realm Floor）、
+        工程承擔（皮夾、代理委任、公民收據、選擇性揭露 UX）、
+        以及治理結構（發證正當性、交換架構、跨法域救濟）必須合取設計，
+        不能彼此交換。
+      </p>
+
+      <h2>方法論——什麼是、什麼不是 AI 協助</h2>
+
+      <p>
+        研究問題、框架選擇、規範立場、案例選擇都由作者本人決定。
+        撰寫與翻譯則由 <code>research-publishing-pipeline</code> 協助
+        （目前路由到 Claude Opus 4.7），引註與一手來源由作者親自核對。
+        基礎篇（0' 學術重述、台灣深度案例、AllenBridge 橋接文）已經人工審閱；
+        多數實證錨點文章還沒有，因此標記為 <strong>WIP</strong>（撰寫中）。
+      </p>
+
+      <p>
+        翻譯說明：文章原以繁體中文寫成，再翻譯為學術英文供本站使用。
+        中文原稿同步收錄在
+        <a href="/zh/">本站中文版</a>
+        以及
+        <a href="https://pro.mashbean.net/" target="_blank" rel="noopener">pro.mashbean.net</a>。
+      </p>
+
+      <h2>引用方式</h2>
+
+      <p>
+        所有文章皆為工作論文（working paper），引用時應以此身分標明。
+        網址結構穩定，每篇文章的標準網址即為適當的引用對象。
+        系列持續編輯中——請以每篇文章的「更新於」日期為準。
+      </p>
+
+      <h2>聯絡</h2>
+
+      <p>
+        通信、提問、不同意見，請透過
+        <a href={MAIN_SITE_URL}>mashbean.net</a> 聯絡。
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .about {
+    width: 80%;
+    max-width: 680px;
+    margin: 0 auto var(--space-10);
+    position: relative;
+    z-index: 2;
+  }
+  .about__kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-4);
+  }
+  .about__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-6);
+    text-wrap: balance;
+  }
+  .about__body {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-ink);
+  }
+  .about__body h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-3);
+  }
+  .about__body p { margin: 0 0 var(--space-5); text-wrap: pretty; }
+  .about__body code { font-family: var(--font-mono); font-size: 0.9em; padding: 1px 6px; background: var(--color-bg-muted); border-radius: 3px; }
+  .about__body a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .about__body a:hover { text-decoration-thickness: 2px; }
+  @media (max-width: 768px) {
+    .about { width: 90%; }
+    .about__body { font-size: 1rem; }
+  }
+</style>

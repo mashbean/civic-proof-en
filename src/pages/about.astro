@@ -3,48 +3,78 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { MAIN_SITE_URL } from "../site.config";
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" locale="en">
   <article class="about">
     <p class="about__kicker">Colophon</p>
     <h1 class="about__title">About</h1>
 
     <div class="about__body report-prose">
       <p>
-        <strong>civic-proof</strong> is a research site collecting the civic-proof series —
-        twenty-five articles on digital identity, normative political theory, engineering
-        design principles, and cross-jurisdictional governance. The series was written by
-        <a href={MAIN_SITE_URL}>mashbean</a> between March and May 2026.
+        <strong>civic-proof</strong> is a research site collecting the
+        civic-proof series — long-form writing on digital identity, normative
+        political theory, engineering design, and cross-jurisdictional
+        governance.
       </p>
 
-      <h2>The Research Question</h2>
+      <h2>Author</h2>
 
       <p>
-        The series takes up a single animating question: can democratic societies design
-        digital identity systems that preserve accountability without requiring citizens to
-        identify themselves by name in advance? The answer developed across twenty-five
-        articles is affirmative — provided that the normative floor, the engineering
-        architecture, and the governance structures are designed conjunctively rather than
-        traded off against one another.
+        Written by <a href={MAIN_SITE_URL}>mashbean</a> (豆泥) during a
+        Fellowship at the <a href="https://ash.harvard.edu/" target="_blank" rel="noopener">Allen Lab for Democracy Renovation</a>,
+        Harvard Kennedy School Ash Center for Democratic Governance and
+        Innovation (Spring 2026). Previously: Director of digital-wallet policy
+        at Taiwan's Ministry of Digital Affairs (2022–2024); ICANN research
+        fellow on DNS trust-root governance (2024–2025).
       </p>
 
-      <h2>Series Structure</h2>
+      <h2>Research Question</h2>
 
       <p>
-        The articles are organised across five thematic clusters: conceptual foundations
-        (what civic proof is and is not), comparative empirics (how existing national systems
-        perform against the normative matrix), normative stress tests (age verification,
-        pseudonymity, AI delegation), institutional and infrastructural design (wallet
-        regulation, trust roots, procurement), and a concluding policy agenda. Four earlier
-        retrofit articles (R1–R4) are also included as empirical anchors.
+        The series takes up one animating question: can democratic societies
+        design digital identity systems that preserve accountability without
+        requiring citizens to identify themselves by name in advance? The
+        answer developed across the series is conditionally affirmative —
+        provided that the normative floor (the Public Realm Floor), the
+        engineering bearings (wallet, agent delegation, civic receipts,
+        selective-disclosure UX), and the governance structures (issuance
+        legitimacy, exchange architecture, cross-jurisdictional redress) are
+        designed conjunctively, not traded off.
       </p>
 
-      <h2>Translation and Register</h2>
+      <h2>Methodology — What Is and Isn't AI-Assisted</h2>
 
       <p>
-        The articles were originally written in Traditional Chinese and translated into
-        formal academic English for this site. Translations follow a consistent terminology
-        glossary and Chicago-style footnote conventions. The primary Chinese edition is
-        available at <a href={MAIN_SITE_URL}>mashbean.net</a>.
+        The research questions, framework choices, normative commitments, and
+        case selections are the author's. Drafting and translation are
+        AI-assisted using the <code>research-publishing-pipeline</code>
+        (currently routed through Claude Opus 4.7), with citations and primary
+        sources verified by the author. The foundational pieces (the 0'
+        academic restatement, the Taiwan deep-dive, the AllenBridge essay) are
+        human-reviewed; many of the empirical anchors are not yet, and are
+        marked <strong>WIP</strong>.
+      </p>
+
+      <p>
+        Translation note: the articles were originally written in Traditional
+        Chinese and translated into formal academic English for this site.
+        Chinese originals live at the <a href="/zh/">Chinese-language version
+        of this site</a> (and at <a href="https://pro.mashbean.net/" target="_blank" rel="noopener">pro.mashbean.net</a>).
+      </p>
+
+      <h2>Citing this work</h2>
+
+      <p>
+        All articles are working papers and should be cited as such. URLs are
+        stable; the canonical URL of each article is the appropriate citation
+        target. The series is actively edited — refer to the <em>Updated</em>
+        date on each article.
+      </p>
+
+      <h2>Contact</h2>
+
+      <p>
+        For correspondence, questions, or disagreements, the primary contact
+        path is via <a href={MAIN_SITE_URL}>mashbean.net</a>.
       </p>
     </div>
   </article>
@@ -89,6 +119,7 @@ import { MAIN_SITE_URL } from "../site.config";
     margin-bottom: var(--space-3);
   }
   .about__body p { margin: 0 0 var(--space-5); text-wrap: pretty; }
+  .about__body code { font-family: var(--font-mono); font-size: 0.9em; padding: 1px 6px; background: var(--color-bg-muted); border-radius: 3px; }
   .about__body a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; }
   .about__body a:hover { text-decoration-thickness: 2px; }
   @media (max-width: 768px) {

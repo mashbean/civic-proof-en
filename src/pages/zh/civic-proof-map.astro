@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // ── 19 篇文章規格 ───────────────────────────────────────────────
 // 對應 dissertation-outline.md 的五部結構 + prompt 對映
@@ -61,39 +61,39 @@ type PartSpec = { id: 1 | 2 | 3 | 4 | 5; label: string; title: string; thesis: s
 const parts: PartSpec[] = [
   {
     id: 1,
-    label: "P₁ Conceptual Foundations",
-    title: "Foundations — Civic Proof as Concept Engineering",
-    thesis: "Civic proof ≜ ⟨𝒩, ℱ, ℬ⟩. A third category between existential ID and credential ID, defined conjunctively by the normative difference matrix 𝒩, the formal scope ℱ, and the philosophical basis ℬ. Existing systems such as KYC and SBT fail to satisfy all three components jointly; reclassification under existing categories is therefore factually untenable.",
+    label: "P₁ 概念基礎",
+    title: "基礎篇——公民證明作為概念工程",
+    thesis: "公民證明 ≜ ⟨𝒩, ℱ, ℬ⟩。介於存在式身分與憑證式身分之間的第三類，由規範差異矩陣 𝒩、形式範圍 ℱ、哲學基礎 ℬ 三者合取定義。既有系統（如 KYC、SBT）無法同時滿足三項分量；以既有類別重新分類在事實上不成立。",
   },
   {
     id: 2,
-    label: "P₂ Comparative Empirics",
-    title: "Comparative Empirics — Coverage Gaps across Five Country Clusters",
-    thesis: "Across five country clusters (UK/Australia / EU-Switzerland / US state-level / Nordic BankID / Global South) and the passport-rooted domain, existing systems fail on at least one dimension of the normative matrix 𝒩. The empirical record does not support reclassification.",
+    label: "P₂ 比較實證",
+    title: "比較實證——五國叢集的覆蓋缺口",
+    thesis: "在五個國家叢集（英澳／歐盟-瑞士／美國州級／北歐 BankID／全球南方）與護照根基領域中，既有系統在規範矩陣 𝒩 的至少一個維度上失效。實證紀錄不支持重新分類。",
   },
   {
     id: 3,
-    label: "P₃ Normative Stress Tests",
-    title: "Normative Stress Tests — Three Test Lines",
-    thesis: "Against three normative test lines — age verification (structural slippage), pseudonymity and uniqueness (freedom of association and Sybil resistance), and AI delegation (institutional limits of civic action) — the three-component form ⟨𝒩, ℱ, ℬ⟩ must satisfy conjunctive necessary conditions and remain within probabilistic degradation boundaries.",
+    label: "P₃ 規範壓力測試",
+    title: "規範壓力測試——三條測試線",
+    thesis: "面對三條規範測試線——年齡驗證（結構性滑坡）、假名與唯一性（結社自由與抗 Sybil）、AI 委任（公民行動的制度極限）——三分量形式 ⟨𝒩, ℱ, ℬ⟩ 必須滿足合取必要條件，並保持在機率降階邊界之內。",
   },
   {
     id: 4,
-    label: "P₄ Institutional & Infrastructural Design",
-    title: "Institutional & Infrastructural Design — Three Infrastructure Layers",
-    thesis: "From issuance monopoly to presentation monopoly (wallet/OS/browser as gatekeeper) → trust roots and public blockchains (DNS vs identity root + no-phone-home economics) → procurement political economy (cross-jurisdictional redress gap). Infrastructure-layer design determines whether the formal scope ℱ can be operationalised.",
+    label: "P₄ 制度與基礎設施設計",
+    title: "制度與基礎設施設計——三層基礎設施",
+    thesis: "從發證壟斷到呈現壟斷（皮夾／作業系統／瀏覽器作為守門者）→ 信任根與公共區塊鏈（DNS 與身分根的對偶 + 不回撥的工程經濟學）→ 採購政治經濟學（跨法域救濟缺口）。基礎設施層的設計決定形式範圍 ℱ 是否可被操作化。",
   },
   {
     id: 5,
-    label: "P₅ Conclusion & Policy Agenda",
-    title: "Conclusion & Policy — Federated Trust-List Alliance",
-    thesis: "Conclusion: accountability without real-name identification (A ⇐ P[U]). Policy agenda: privacy-first baseline + Federated Trust-List Alliance + procurement sandbox + supplier diversity + civic proof inclusion rights (wallet-free alternative pathways) + Indo-Pacific demonstration grants.",
+    label: "P₅ 結論與政策議程",
+    title: "結論與政策——聯邦式信任清單聯盟",
+    thesis: "結論：可問責性不需要以實名為前提（A ⇐ P[U]）。政策議程：隱私優先底線＋聯邦式信任清單聯盟＋採購沙盒＋供應商多元化＋公民證明納入性權利（無皮夾的替代路徑）＋印太示範計畫。",
   },
 ];
 
-// ── 從 collection 中查找實際發佈狀態與核心公式 ─────────────────
+// ── 從中文 collection 中查找實際發佈狀態與標題 ─────────────────
 const argmaps = await getCollection("argmaps");
-const reports = await getCollection("reports");
+const reports = await getCollection("reportsZh");
 
 const argmapBySlug = new Map(argmaps.map((a) => [a.id, a]));
 const reportBySlug = new Map(reports.map((r) => [r.id, r]));
@@ -111,9 +111,10 @@ const enriched: EnrichedArticle[] = articles.map((a) => {
   const argmap = argmapBySlug.get(a.slug);
   return {
     ...a,
+    title: report?.data.title ?? a.title,
     hasReport: !!report,
     hasArgmap: !!argmap,
-    reportHref: report ? `/reports/${report.id}/` : undefined,
+    reportHref: report ? `/zh/reports/${report.id}/` : undefined,
     argmapHref: argmap ? `/argmaps/${argmap.id}/` : undefined,
     formalExpression: argmap?.data.coreThesis.formal?.expression?.trim().split("\n")[0],
   };
@@ -219,9 +220,10 @@ const enrichedMeta: EnrichedMeta[] = metaArticles.map((m) => {
   const argmap = argmapBySlug.get(m.slug);
   return {
     ...m,
+    title: report?.data.title ?? m.title,
     hasReport: !!report,
     hasArgmap: !!argmap,
-    reportHref: report ? `/reports/${report.id}/` : undefined,
+    reportHref: report ? `/zh/reports/${report.id}/` : undefined,
     argmapHref: argmap ? `/argmaps/${argmap.id}/` : undefined,
   };
 });
@@ -237,25 +239,23 @@ const stats = {
 };
 ---
 
-<BaseLayout title="civic-proof: Argument Map" description="From State Credentials to Civic Proofs — the master propositions, sub-arguments, and cross-article concept connections across 23 civic-proof articles.">
+<BaseLayout title="civic-proof：論證地圖" description="從國家發行憑證到公民證明自己——civic-proof 系列所有文章的母命題、子論證、跨文章概念連結。" locale="zh">
   <article class="map-page">
     <header class="map-page__header">
-      <p class="map-page__kicker">Master Argument Map</p>
-      <h1 class="map-page__title">civic-proof: Argument Map</h1>
+      <p class="map-page__kicker">主論證地圖</p>
+      <h1 class="map-page__title">civic-proof：論證地圖</h1>
       <p class="map-page__subtitle">
-        From State Credentials to Civic Proofs — Rebuilding Democratic Trust through Digital Identity
+        從國家發行憑證到公民證明自己——以數位身分重建民主信任
       </p>
 
       <div class="map-page__thesis">
-        <p class="map-page__thesis-label">Central Thesis</p>
+        <p class="map-page__thesis-label">中心論題</p>
         <p class="map-page__thesis-body">
-          The "civic proof" required by democratic societies does not presuppose prior
-          comprehensive identification; accountability is a <em>consequential condition</em>,
-          not an <em>antecedent condition</em>. Shifting identity systems from
-          "issuer-centred" to "holder-centred with multi-layer trust" is necessary —
-          yet without a corresponding normative floor, platform-level antitrust constraints,
-          and redress mechanisms, this transition offloads democratic costs onto the
-          most vulnerable users.
+          民主社會所需要的「公民證明」不預設事前的完整身分識別；
+          可問責性是<em>結果性條件</em>，不是<em>前提性條件</em>。
+          將身分系統從「發證者中心」轉向「持有者中心＋多層信任」是必要的——
+          但若缺乏對應的規範下界、平台層反壟斷限制、以及救濟機制，
+          這個轉換會把民主成本轉嫁到最脆弱的使用者身上。
         </p>
         <pre class="map-page__formal"><code>CivicProof ≜ ⟨ 𝒩, ℱ, ℬ ⟩
 A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V₆
@@ -263,22 +263,21 @@ A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V�
       </div>
 
       <div class="map-page__stats">
-        <span><strong>{stats.total}</strong> articles</span>
-        <span><strong>{stats.reports}</strong> published</span>
-        <span><strong>{stats.argmaps}</strong> with argmap</span>
-        <span><strong>{stats.total - stats.reports}</strong> scheduled</span>
+        <span><strong>{stats.total}</strong> 篇文章</span>
+        <span><strong>{stats.reports}</strong> 已發佈</span>
+        <span><strong>{stats.argmaps}</strong> 有論證地圖</span>
+        <span><strong>{stats.total - stats.reports}</strong> 待補</span>
       </div>
     </header>
 
     {/* ── Meta tier: origin · capstones · deep-dive · bridge ───────── */}
     <section class="map-meta">
       <header class="map-meta__header">
-        <p class="map-meta__label">M · Framing Articles</p>
-        <h2 class="map-meta__title">Origin, Closure, Bridge</h2>
+        <p class="map-meta__label">M · 框架性文章</p>
+        <h2 class="map-meta__title">起點、收束、橋接</h2>
         <p class="map-meta__intro">
-          Five articles outside the 19-article scaffolding that frame the series:
-          the April origin presentation, the Taiwan deep-dive, the series
-          capstone, the 0' academic restatement, and the Danielle Allen bridge.
+          五篇位於 19 篇主體文章之外、用以框架整個系列的文章：
+          四月的起點簡報、台灣深度案例、系列收束、0' 學術重述、Danielle Allen 橋接文。
         </p>
       </header>
       <ol class="map-meta__grid">
@@ -286,20 +285,20 @@ A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V�
           <li class="map-card" data-status={m.hasReport ? (m.hasArgmap ? "argmap" : "report") : "scheduled"}>
             <header class="map-card__top">
               <span class="map-card__no">#{m.no}</span>
-              <span class="map-card__prompt">Meta</span>
+              <span class="map-card__prompt">框架</span>
             </header>
             <h3 class="map-card__title">{m.title}</h3>
             <p class="map-meta__role">{m.role}</p>
             <footer class="map-card__links">
               {m.reportHref ? (
-                <a class="map-card__link map-card__link--report" href={m.reportHref}>◈ Essay</a>
+                <a class="map-card__link map-card__link--report" href={m.reportHref}>◈ 文章</a>
               ) : (
-                <span class="map-card__link map-card__link--scheduled">◈ Scheduled</span>
+                <span class="map-card__link map-card__link--scheduled">◈ 待發佈</span>
               )}
               {m.argmapHref ? (
-                <a class="map-card__link map-card__link--argmap" href={m.argmapHref}>◇ argmap</a>
+                <a class="map-card__link map-card__link--argmap" href={m.argmapHref}>◇ 論證地圖</a>
               ) : (
-                <span class="map-card__link map-card__link--scheduled">◇ pending</span>
+                <span class="map-card__link map-card__link--scheduled">◇ 待補</span>
               )}
             </footer>
           </li>
@@ -332,17 +331,17 @@ A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V�
                 <footer class="map-card__links">
                   {a.reportHref ? (
                     <a class="map-card__link map-card__link--report" href={a.reportHref}>
-                      ◈ Essay
+                      ◈ 文章
                     </a>
                   ) : (
-                    <span class="map-card__link map-card__link--scheduled">◈ Scheduled</span>
+                    <span class="map-card__link map-card__link--scheduled">◈ 待發佈</span>
                   )}
                   {a.argmapHref ? (
                     <a class="map-card__link map-card__link--argmap" href={a.argmapHref}>
-                      ◇ argmap
+                      ◇ 論證地圖
                     </a>
                   ) : (
-                    <span class="map-card__link map-card__link--scheduled">◇ pending</span>
+                    <span class="map-card__link map-card__link--scheduled">◇ 待補</span>
                   )}
                 </footer>
               </li>
@@ -355,10 +354,10 @@ A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V�
     {/* ── 跨文章概念連結 ─────────────────────────── */}
     <section class="map-cross">
       <header class="map-cross__header">
-        <p class="map-cross__label">Concept Connections</p>
-        <h2 class="map-cross__title">Cross-Article Concept Connections</h2>
+        <p class="map-cross__label">概念連結</p>
+        <h2 class="map-cross__title">跨文章概念連結</h2>
         <p class="map-cross__intro">
-          Civic proof may be understood as the expansion of ⟨𝒩, ℱ, ℬ⟩ across distinct sub-problems; the 23 articles share a common formal backbone. The table below marks the isomorphic, recursive, dual, and compositional relationships between articles in formal logic.
+          公民證明可被理解為 ⟨𝒩, ℱ, ℬ⟩ 在不同子問題上的展開；23 篇文章共享同一形式骨幹。下表以形式邏輯標出文章之間的同構、遞迴、對偶、組合關係。
         </p>
       </header>
 
@@ -404,12 +403,10 @@ A ⇐ P[U]   where   U valid ⇔ V₁ ∧ V₂ ∧ V₃ ∧ V₄ ∧ V₅ ∧ V�
 
     <footer class="map-foot">
       <p>
-        This map is updated in step with the series. Each time an article is published,
-        the corresponding argmap is added; the core formal expression for each chapter
-        appears within the article card once the argmap is complete.
+        本地圖隨系列同步更新。每當一篇文章發佈，對應的論證地圖隨之加入；當論證地圖完成後，該章的核心形式表達式會出現在文章卡片內。
       </p>
       <p class="map-foot__lineage">
-        Lineage: dissertation-outline.md v1 (2026-05-02) → argmap v2 (formal logic + transitions + role/pivot) → master map (23 articles + 5 master propositions)
+        版本沿革：dissertation-outline.md v1（2026-05-02）→ argmap v2（形式邏輯＋過渡＋角色／樞紐）→ 主地圖（23 篇文章＋5 條母命題）
       </p>
     </footer>
   </article>

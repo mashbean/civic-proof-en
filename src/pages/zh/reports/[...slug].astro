@@ -1,9 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
-import ReportLayout from "../../layouts/ReportLayout.astro";
+import ReportLayout from "../../../layouts/ReportLayout.astro";
 
 export async function getStaticPaths() {
-  const reports = await getCollection("reports");
+  const reports = await getCollection("reportsZh");
   return reports
     .filter((r) => !r.data.draft)
     .map((report) => ({
@@ -29,8 +29,7 @@ const { Content, headings } = await render(report);
   aiPrompt={report.data.aiPrompt}
   aiGeneratedDate={report.data.aiGeneratedDate}
   humanReviewed={report.data.humanReviewed}
-  zhUrl={report.data.zhUrl}
-  locale="en"
+  locale="zh"
 >
   <Content />
 </ReportLayout>

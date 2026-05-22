@@ -18,22 +18,33 @@ interface Props {
   bareChrome?: boolean;
   /** Hide the global mesh background on pages that want a clean canvas. */
   noMesh?: boolean;
+  /** Locale for this page; controls Masthead labels and <html lang>. */
+  locale?: "en" | "zh";
 }
 
-const { title, fullTitle, description, ogImage, noindex, bareChrome = false, noMesh = false } = Astro.props;
+const {
+  title,
+  fullTitle,
+  description,
+  ogImage,
+  noindex,
+  bareChrome = false,
+  noMesh = false,
+  locale = "en",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="zh-TW">
+<html lang={locale === "zh" ? "zh-Hant" : "en"}>
   <head>
     <BaseHead title={title} fullTitle={fullTitle} description={description} ogImage={ogImage} noindex={noindex} />
   </head>
   <body>
     {!noMesh && <Mesh />}
     <Guides />
-    {!bareChrome && <Masthead />}
+    {!bareChrome && <Masthead locale={locale} />}
     <slot />
-    <Footer />
+    <Footer locale={locale} />
     <Iris />
     <ScrollReveal />
   </body>

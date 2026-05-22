@@ -1,9 +1,25 @@
 ---
 import { MAIN_SITE_URL } from "../site.config";
+
+export interface Props {
+  locale?: "en" | "zh";
+}
+const { locale = "en" } = Astro.props as Props;
+const aboutHref = locale === "en" ? "/about/" : "/zh/about/";
+const methodologyLabel = locale === "en"
+  ? "Work in progress · human author, AI-assisted drafting"
+  : "撰寫中 · 人類作者，AI 協助草擬";
+const methodologyAriaLabel = locale === "en"
+  ? "Read the full methodology"
+  : "閱讀完整方法論";
 ---
 
 <footer class="site-footer">
-  <span>AI-powered research — <a href={MAIN_SITE_URL} target="_blank" rel="noopener">mashbean.net</a></span>
+  <span>
+    <a href={aboutHref} aria-label={methodologyAriaLabel}>{methodologyLabel}</a>
+    <span class="site-footer__sep"> · </span>
+    by <a href={MAIN_SITE_URL} target="_blank" rel="noopener">mashbean.net</a>
+  </span>
   <span>&copy; {new Date().getFullYear()}</span>
 </footer>
 

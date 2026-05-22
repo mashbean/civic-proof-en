@@ -25,7 +25,6 @@ humanReviewed: false
 lang: "en"
 series: "civic-proof"
 slug: "2026-04-17-from-state-credentials-to-civic-proof"
-zhUrl: "https://mashbean.net/blog/2026/0417-1trens/"
 ---
 
 > Presentation slides: [Chinese](https://mashbean.net/blog/allen-lab-share-0417-zh/) | [English](https://mashbean.net/blog/allen-lab-share-0417-en/)

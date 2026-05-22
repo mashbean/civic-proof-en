@@ -1,44 +1,386 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomeApp from "../components/islands/HomeApp.tsx";
 import { getPublishedReports } from "../utils/reports";
-import { reportToPost } from "../lib/reports-to-posts";
-import { SITE_TAGLINE } from "../site.config";
 
 const reports = await getPublishedReports();
-const posts = reports.map(reportToPost);
+const byId = new Map(reports.map((r) => [r.id, r]));
 
-const essayCount = posts.length;
-const authors = new Set(posts.map((p) => p.author));
-const kicker = `Essays · Notes · Field reports — ${new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" })}`;
+function pick(id: string) {
+  const r = byId.get(id);
+  if (!r) return null;
+  return {
+    id,
+    href: `/reports/${id}/`,
+    title: r.data.title,
+    description: r.data.description,
+  };
+}
+
+// ── Curated "start here" trio ───────────────────────────────
+const startHere = [
+  {
+    pick: pick("2026-05-17-civic-proof-foundations"),
+    why: "The academic restatement that integrates the entire series. Read this first if you want the framework whole.",
+  },
+  {
+    pick: pick("2026-05-19-danielle-allen-power-sharing-civic-proof-bridge"),
+    why: "AllenBridge: why Danielle Allen's power-sharing liberalism is the translation layer between the Public Realm Floor and Digital Civic Infrastructure — not a fifth axis.",
+  },
+  {
+    pick: pick("2026-05-16-taiwan-civic-proof-deep-dive"),
+    why: "The framework applied to a single democratic-frontline case. Most concrete entry point.",
+  },
+].filter((x) => x.pick);
+
+const origin = pick("2026-04-17-from-state-credentials-to-civic-proof");
+
+const normative = [
+  "2026-05-12-public-realm-political-philosophy",
+  "2026-05-02-accountability-without-identification",
+  "2026-05-03-civic-proof-concept-positioning",
+].map(pick).filter(Boolean);
+
+const engineering = [
+  "2026-05-10-civic-ai-agent-delegation-limits",
+  "2026-05-11-civic-receipts-provenance",
+  "2026-05-11-selective-disclosure-ux-failure",
+  "2026-05-08-wallet-as-essential-facility",
+  "2026-05-09-no-phone-home-engineering-economics",
+].map(pick).filter(Boolean);
+
+const cases = [
+  "2026-05-16-taiwan-civic-proof-deep-dive",
+  "2026-05-07-bankid-nordic-monopoly-democracy",
+  "2026-05-08-digital-identity-civic-action-quant",
+  "2026-05-09-cross-jurisdictional-redress-gap",
+  "2026-05-06-dns-vs-identity-trust-roots",
+].map(pick).filter(Boolean);
+
+const stress = [
+  "2026-05-09-structural-slippage-prevention",
+  "2026-04-16-age-verification-digital-rights",
+  "2026-05-05-passport-rooted-paradox",
+  "2026-05-05-sybil-resistance-cost-benefit",
+  "2026-05-04-pseudonymous-participation-legal",
+  "2026-05-05-civic-burden-redistribution",
+  "2026-05-10-civic-proof-inclusion-rights",
+  "2026-05-03-digital-association-empirical-test",
+].map(pick).filter(Boolean);
+
+const retrofit = [
+  "2026-04-01-agentic-id-governance",
+  "2026-04-16-age-verification-digital-rights",
+  "2026-03-28-gov-it-procurement-monopoly-or-innovation",
+  "2026-05-01-did-vc-public-blockchain",
+].map(pick).filter(Boolean);
+
+const capstone = [
+  "2026-05-16-civic-proof-series-capstone",
+  "2026-05-17-civic-proof-foundations",
+  "2026-05-19-danielle-allen-power-sharing-civic-proof-bridge",
+].map(pick).filter(Boolean);
 ---
 
 <BaseLayout>
-  <section class="hero">
-    <div>
-      <p class="hero__kicker">{kicker}</p>
-      <h1 class="hero__title">civic-proof</h1>
-      <p class="hero__sub">{SITE_TAGLINE}</p>
-    </div>
-    <div class="hero__meta">
-      <span><strong>{essayCount}</strong> essays</span>
-      <span>{authors.size} {authors.size === 1 ? "author" : "authors"}</span>
-      <span>Updated weekly</span>
-    </div>
-  </section>
+  <section class="series">
+    <header class="series__head">
+      <p class="series__kicker">civic-proof · work in progress</p>
+      <h1 class="series__title">From state-issued credentials to citizens proving themselves.</h1>
+      <p class="series__lede">
+        A reading order for the civic-proof series. Written by mashbean during a
+        Fellowship at the Allen Lab, Harvard Kennedy School Ash Center.
+      </p>
+    </header>
 
-  <HomeApp client:only="react" posts={posts} />
+    <section class="series__section">
+      <h2 class="series__h2">▸ Start here</h2>
+      <p class="series__note">
+        Three pieces if you have an hour. Skip the rest until you want to dig.
+      </p>
+      <ol class="series__cards">
+        {startHere.map((s) => (
+          <li class="series__card series__card--featured">
+            <a href={s.pick!.href}>
+              <h3 class="series__card-title">{s.pick!.title}</h3>
+              <p class="series__card-why">{s.why}</p>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {origin && (
+      <section class="series__section">
+        <h2 class="series__h2">▸ Origin</h2>
+        <p class="series__note">
+          The presentation at the Allen Lab Fellow Meeting on 17 April 2026 that
+          started the series. Mashbean's voice, casual register; everything below
+          is its unfolding.
+        </p>
+        <ul class="series__list">
+          <li>
+            <a href={origin.href}>
+              <span class="series__name">{origin.title}</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    )}
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Normative anchors</h2>
+      <p class="series__note">
+        The political-philosophical floor. Arendt's plurality, Habermas's
+        validity, Pettit's contestation, Mouffe's agonism — the four-component
+        conjunction the Public Realm Floor rests on.
+      </p>
+      <ul class="series__list">
+        {normative.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Engineering bearings</h2>
+      <p class="series__note">
+        Where the floor meets concrete designs. Wallets, AI-agent delegation,
+        civic-action receipts, selective-disclosure UX, the
+        wallet-as-essential-facility argument, no-phone-home.
+      </p>
+      <ul class="series__list">
+        {engineering.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Cases & comparative</h2>
+      <p class="series__note">
+        Taiwan as a democratic-frontline deep-dive, Nordic BankID,
+        cross-jurisdictional redress, DNS-vs-identity, and a cross-national
+        quantitative test.
+      </p>
+      <ul class="series__list">
+        {cases.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Stress tests & boundary conditions</h2>
+      <p class="series__note">
+        Where the framework gets pressure-tested: age verification's structural
+        slippage, the passport-rooted paradox, pseudonymous participation,
+        Sybil-resistance trade-offs, civic burden redistribution, inclusion
+        rights.
+      </p>
+      <ul class="series__list">
+        {stress.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Retrofit anchors</h2>
+      <p class="series__note">
+        Earlier empirical pieces, written before the series was a series, later
+        folded in as anchors.
+      </p>
+      <ul class="series__list">
+        {retrofit.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ Capstone, 0' restatement, AllenBridge</h2>
+      <p class="series__note">
+        The series tries to close itself three times: the original capstone, the
+        academic 0' restatement, and the Danielle Allen bridge essay.
+      </p>
+      <ul class="series__list">
+        {capstone.map((p) => (
+          <li>
+            <a href={p!.href}>
+              <span class="series__name">{p!.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="series__section">
+      <h2 class="series__h2">▸ See also</h2>
+      <ul class="series__list">
+        <li>
+          <a href="/civic-proof-map/">
+            <span class="series__name">Argument map view of the entire series</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about/">
+            <span class="series__name">About this site</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
 </BaseLayout>
 
 <style>
-  .hero__sub {
+  .series {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-9) var(--space-5) var(--space-10);
+  }
+  .series__head {
+    margin-bottom: var(--space-9);
+  }
+  .series__kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-3) 0;
+  }
+  .series__title {
     font-family: var(--font-display);
-    font-style: normal;
     font-weight: 700;
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-    line-height: var(--leading-snug);
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-5) 0;
     color: var(--color-ink);
-    margin: var(--space-3) 0 0;
     text-wrap: balance;
+  }
+  .series__lede {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+  .series__section {
+    margin-bottom: var(--space-9);
+  }
+  .series__h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 var(--space-3) 0;
+    color: var(--color-ink);
+  }
+  .series__note {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    margin: 0 0 var(--space-5) 0;
+    max-width: 58ch;
+  }
+  .series__cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+    counter-reset: cards;
+  }
+  .series__card {
+    counter-increment: cards;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-canvas);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .series__card:hover {
+    border-color: var(--color-ink);
+    transform: translateY(-2px);
+  }
+  .series__card a {
+    display: block;
+    padding: var(--space-5) var(--space-5);
+    color: inherit;
+    text-decoration: none;
+  }
+  .series__card--featured::before {
+    content: counter(cards);
+    float: right;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    padding: 6px 10px;
+    margin: 0 0 var(--space-3) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+  }
+  .series__card-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 0 0 var(--space-3) 0;
+    color: var(--color-ink);
+  }
+  .series__card-why {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    margin: 0;
+  }
+  .series__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+  .series__list li a {
+    display: block;
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-border);
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .series__list li:last-child a {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .series__list li a:hover .series__name {
+    color: var(--color-accent, var(--color-ink));
+  }
+  .series__name {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--color-ink);
   }
 </style>

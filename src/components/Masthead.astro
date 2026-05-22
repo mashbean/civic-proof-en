@@ -6,35 +6,48 @@ export interface Props {
   brand?: string;
   /** Provide navigation links. */
   nav?: { href: string; label: string }[];
+  /** Current locale for the page rendering this masthead. */
+  locale?: "en" | "zh";
 }
 
-const {
-  brand = SITE_TITLE,
-  nav = [
-    { href: "/", label: "Essays" },
-    { href: "/series/civic-proof/", label: "Series" },
-    { href: "/civic-proof-map/", label: "Map" },
-    { href: "/about/", label: "About" },
-    { href: "/design-system/", label: "DS" },
-  ],
-} = Astro.props as Props;
+const { brand = SITE_TITLE, nav, locale = "en" } = Astro.props as Props;
+
+const defaultNav =
+  locale === "en"
+    ? [
+        { href: "/", label: "Series" },
+        { href: "/civic-proof-map/", label: "Map" },
+        { href: "/about/", label: "About" },
+      ]
+    : [
+        { href: "/zh/", label: "系列" },
+        { href: "/zh/civic-proof-map/", label: "論證地圖" },
+        { href: "/zh/about/", label: "關於" },
+      ];
+const navItems = nav ?? defaultNav;
+
+const homeHref = locale === "en" ? "/" : "/zh/";
+const langSwitchHref = locale === "en" ? "/zh/" : "/";
+const langSwitchLabel = locale === "en" ? "中文" : "English";
+const langSwitchHrefLang = locale === "en" ? "zh-Hant" : "en";
+const langSwitchTitle =
+  locale === "en" ? "Switch to Chinese" : "Switch to English";
 ---
 
 <header class="masthead">
-  <a href="/" class="masthead__brand">{brand}<span>.</span></a>
+  <a href={homeHref} class="masthead__brand">{brand}<span>.</span></a>
   <div class="masthead__right">
     <nav class="masthead__nav">
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
     <a
       class="masthead__lang"
-      href="https://pro.mashbean.net/"
-      target="_blank"
-      rel="noopener alternate"
-      hreflang="zh-Hant"
-      title="View the Chinese-language site"
+      href={langSwitchHref}
+      hreflang={langSwitchHrefLang}
+      rel="alternate"
+      title={langSwitchTitle}
     >
-      中文
+      {langSwitchLabel}
     </a>
     <a
       class="masthead__cta"

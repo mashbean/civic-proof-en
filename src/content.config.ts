@@ -37,6 +37,14 @@ const reports = defineCollection({
   schema: reportSchema,
 });
 
+// Chinese-language reports collection (mirror of `reports`).
+// Files live in src/content/reports-zh/ with the same slug as their English
+// counterpart, so the language toggle can map id → id deterministically.
+const reportsZh = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/reports-zh" }),
+  schema: reportSchema,
+});
+
 // ── Argument maps (one per report) ─────────────────────────────
 // 結構化的論證地圖資料。每個 argmap 對應一篇文章（slug 對應）。
 //
@@ -178,4 +186,4 @@ const argmaps = defineCollection({
   schema: argmapSchema,
 });
 
-export const collections = { reports, argmaps };
+export const collections = { reports, reportsZh, argmaps };
