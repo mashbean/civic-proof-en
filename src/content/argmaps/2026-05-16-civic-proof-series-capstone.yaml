@@ -1,0 +1,184 @@
+slug: 2026-05-16-civic-proof-series-capstone
+title: "The civic-proof Series Capstone: PRF, Five Contribution Claims, and the Honesty Boundary of Series Bearings"
+subtitle: Series Capstone (article 25) — Argument Map (v2)
+
+# ─────────────────────────────────────────────────────────────
+# Central thesis
+# ─────────────────────────────────────────────────────────────
+coreThesis:
+  text: |
+    The civic-proof series — twenty-three main articles, four retrofit anchors (R1–R4), and the Taiwan deep-dive (article 24), totalling twenty-eight bearing nodes — condenses into five contribution claims and five methodological tools, anchored on the Public Realm Floor (PRF, article 19/A2). The capstone introduces no new normative claims; its discipline is to make the existing bearing structure of the series visible as a single unified statement, bounded by an explicit seven-clause honesty boundary. The capstone is therefore not a final conclusion: it does not claim to replace existing normative routes (Rawls / Sen / Nussbaum / Honneth), does not claim universal applicability across all polities, does not claim to be a definitive ground truth for cryptographic engineering.
+  summary: Series-level closure. C1–C5 condense the originality claims (PRF formalisation, civic-proof operational concept, cross-jurisdictional governance, comparative case, methodological toolkit). Five methodological tools condense the analytic discipline (likelihood-by-mechanism, working/strengthened thesis, universal-conditional, anti-mythologization, design-intuition / normative-claim separation). The 92-cell bearing matrix unifies the bearer structure across 28 nodes. Four closing constraints keep the closure honest.
+  formal:
+    expression: |
+      Series ≜ {Articles_1..19} ∪ {Retrofits_R1..R4} ∪ {Taiwan_24} ; |Series| = 28
+
+      Contribution_Claims = { C1, C2, C3, C4, C5 }
+        C1 : PRF_formalization                — PRF ≜ ⟨plurality, validity, contestation, agonism⟩
+                                                + T_PRF1..5 + LegitimacyDegrade(d)
+        C2 : civic_proof_operational_concept  — minimum_disclosure(demand) ∧ NormativeConditions
+        C3 : cross_jurisdictional_governance  — four_tier(industry/state/recognition/oversight)
+                                                + four_redress_gaps + three_tier_rights_language
+        C4 : comparative_case_Taiwan          — existence_pressure(PRF) + anti_mythologization
+        C5 : methodological_toolkit           — five tools (below)
+
+      Methodological_Tools = {
+        likelihood_by_mechanism_four_level,
+        working_strengthened_thesis_discipline,
+        universal_conditional_distinction,
+        anti_mythologization_clause,
+        design_intuition_vs_normative_claim_separation
+      }
+
+      Bearer_Matrix_92_cell :
+        spine        = 8 articles  (A1, A3, A8, A14, A15, F1, F2, F3) × 4 PRF + 4 tools  = 64 cells
+        supporting   = 10 articles × 2 dims                                              = 20 cells
+        retrofits    = 4 articles  × 1 dim                                               = 4 cells
+        case_node    = Taiwan (article 24) × 1 dim                                       = 4 cells
+        density_by_component : validity 83% > plurality 74% > contestation 68% > agonism 57%
+        F1 = sole four_component_full_● bearer = operational spine of the spine
+        A2 = normative closure of the spine
+
+      Honesty_Boundary = { 7 capstone clauses, 6 article-24 retreat clauses, Patch Pack execution record, external citation discipline }
+
+      ClosingConstraints = {
+        ¬final_conclusion,
+        ¬replace(existing_normative_routes),
+        ¬universal(across_all_regimes),
+        ¬definitive_ground_truth(cryptographic_engineering)
+      }
+    caption: |
+      The capstone introduces no new propositional content. It re-presents the existing series as a unified bearing structure: five contribution claims, five tools, one 92-cell matrix, one honesty boundary, four closing constraints. The discipline of "no new claims" is itself a methodological constraint borne by the series.
+    legend:
+      - symbol: PRF
+        meaning: Public Realm Floor — Arendt plurality ∧ Habermas validity ∧ Pettit contestation ∧ Mouffe agonism; the conjunctive floor of democratic legitimacy that civic-proof series article 19 bears.
+      - symbol: C1..C5
+        meaning: Five contribution claims — PRF formalisation, civic-proof operational concept, cross-jurisdictional governance, comparative case, methodological toolkit.
+      - symbol: 92_cell_matrix
+        meaning: Unified bearer matrix across 28 series nodes. Spine 8 × 4 PRF + 4 tools = 64; supporting 10 × 2 = 20; retrofits 4; case node 4.
+      - symbol: F1_spine_of_spine
+        meaning: Article 16 (Civic AI Agent Delegation Limits) — the only article that core-bears all four PRF components; operationally central.
+      - symbol: A2_normative_closure
+        meaning: Article 19 (Political-Philosophical Foundations of the Public Realm) — the normative closure of the spine.
+
+# ─────────────────────────────────────────────────────────────
+# Distinction
+# ─────────────────────────────────────────────────────────────
+distinction:
+  rejected:
+    label: "Rejected"
+    title: "Capstone as final conclusion or manifesto"
+    body: |
+      A series capstone could plausibly serve as a unified normative manifesto: "civic-proof is the answer; PRF is the floor; the policy agenda follows." The article rejects this register. Manifesto language collapses the carefully-distinguished bearing structure; "will" / "necessarily" / "empirical evidence demonstrates" / specific decimal probabilities are all prohibited. The capstone bears closure, not claim escalation.
+    formal: |
+      capstone ≠ manifesto ; ¬escalate(claim_strength) ; ¬produce(specific_decimal_probabilities)
+  accepted:
+    label: "Accepted"
+    title: "Capstone as unified bearing-structure statement under honesty boundary"
+    body: |
+      The accepted register condenses the existing series into a structure visible at one glance — five claims, five tools, one matrix, one boundary, four closing constraints — and explicitly bounds the closure within the honesty boundary. The capstone makes the series legible without making the series larger.
+    formal: |
+      capstone = unification(existing_bearings) ∧ bounded_by(honesty_boundary)
+
+# ─────────────────────────────────────────────────────────────
+# Pillars
+# ─────────────────────────────────────────────────────────────
+pillars:
+  - section: "P1"
+    title: "Five contribution claims (C1–C5)"
+    role: "The originality claims that the series asserts as its substantive contribution."
+    body: |
+      C1 PRF formalisation: PRF ≜ ⟨plurality, validity, contestation, agonism⟩ + T_PRF1–5 + LegitimacyDegrade. C2 civic-proof operational concept: minimum disclosure + four normative conditions + four demand types. C3 cross-jurisdictional governance: four-tier framework + four redress gaps + three-tier rights language. C4 comparative case (Taiwan): existence pressure for PRF under democratic-frontline conditions + anti-mythologization clause. C5 methodological toolkit: the five analytic tools listed in P2.
+    formal: |
+      ⋀ Cᵢ = contribution_set(originality, external_lineage_dialogue)
+    finding: |
+      Each claim has corresponding series bearing, external lineage dialogue, and originality declaration. None is asserted in manifesto register.
+
+  - section: "P2"
+    title: "Five methodological tools"
+    role: "The analytic discipline by which the series produces its claims; transportable across other research projects."
+    body: |
+      (i) Likelihood-by-mechanism four-level — low / medium / medium-high / high ordinal language, resisting spurious-precision probability decimals. (ii) Working / strengthened thesis discipline — external citations use the working-thesis version, the strengthened thesis only after explicit mitigating conditions. (iii) Universal-conditional distinction — structural-necessity claims (universal) separated from instantiation specifics (conditional); avoid cross-case extrapolation fallacy. (iv) Anti-mythologization clause — pilot results are not templates; extrapolation requires independent argument. (v) Design-intuition / normative-claim separation — civilian advocacy texts cited as design intuitions, not as normative endorsements.
+    formal: |
+      Tools = { ordinal_likelihood, thesis_discipline, universal_conditional, anti_mythologization, intuition_vs_claim_separation }
+
+  - section: "P3"
+    title: "92-cell bearing matrix"
+    role: "Unifies the series' 28 nodes into one cross-tabulated structure."
+    body: |
+      Spine = 8 core articles (A1 A3 A8 A14 A15 F1 F2 F3) × 4 PRF components + 4 methodological tools = 64 cells. Supporting = 10 articles × 2 dimensions = 20 cells. Retrofits = 4 cells (R1–R4 × 1 dim). Case node = Taiwan × 4 = 4 cells. Density by component: validity 83% > plurality 74% > contestation 68% > agonism 57% — agonism is the structurally thinnest. F1 = sole four-component full-● bearer (operational spine of the spine); A2 = normative closure of the spine.
+    formal: |
+      bearer_density(component) ⇒ validity > plurality > contestation > agonism
+      F1 = ⋂_{i ∈ PRF} core_bearer(i) ; A2 = ⋃_{i ∈ PRF} normative_closure(i)
+
+  - section: "P4"
+    title: "Honesty boundary (7 + 6 + Patch Pack + external)"
+    role: "The constraint envelope that distinguishes the series from a manifesto."
+    body: |
+      Seven capstone clauses (e.g., PRF as floor not unique standard; θ_dem as analytic suggestion not empirical measurement; T_PRF5 engineering unreachability as logical statement not empirical prediction). Six article-24 (Taiwan) retreat clauses (e.g., functional-demos operational definition; anti-mythologization; design-intuition vs normative-claim separation). Patch Pack execution record (concrete revisions accepted from external reviewer GPT-5.5 Pro). External citation discipline (mythologisation withdrawn in advance).
+    formal: |
+      H = {7 capstone, 6 Taiwan_retreat, Patch_Pack_record, external_citation_discipline}
+      H ⊨ envelope(claim_strength) ; H ⊨ disclosure(self_limitation)
+
+  - section: "P5"
+    title: "Strategic implications for three reader groups"
+    role: "Reader-targeted readings, kept short to avoid manifesto register."
+    body: |
+      Engineering: the four engineering bearings (wallet three presuppositions; AI-agent delegation 5×3 matrix; receipts schema; supporter UI three-layer separation) are checkable; the T_PRF5 unreachability lemma forbids engineering bypass of the floor; F1's two structurally-non-delegable cells are firm. Policy-legal: the four-tier cross-jurisdictional governance + four redress gaps + three-tier rights language give policy a vocabulary for institutional design. Political-philosophy: PRF is a conjunctive floor, not a unique standard; remains open to Rawls / Sen / Nussbaum / Honneth as ceiling or boundary conditions; the universal-conditional distinction is a transportable method.
+    formal: |
+      ∀ reader_group ∈ {engineering, policy_legal, political_philosophy} : specific_strategic_use(group)
+
+# ─────────────────────────────────────────────────────────────
+# Borders
+# ─────────────────────────────────────────────────────────────
+borders:
+  - label: "B1"
+    title: "But the capstone introduces nothing new — what's its value?"
+    flip: |
+      The value is unification and discipline, not addition. A series of 28 nodes risks reading as a sequence of essays without architecture. The capstone makes the architecture legible at one page: five claims, five tools, one matrix, one honesty boundary. This legibility is the precondition for external review, falsification, and refinement.
+    pivot: |
+      no_new_propositional_content ⇒ unification_and_discipline_value ; ¬ trivial
+
+  - label: "B2"
+    title: "But the 92-cell matrix is just bookkeeping"
+    flip: |
+      The matrix produces three substantive findings: (i) density distribution reveals agonism as the thinnest component, signalling where future engineering bearings are most needed; (ii) F1 as the sole four-component bearer identifies the operational centre — F1's two structurally-non-delegable cells are the most consequential structural limit in the series; (iii) the spine / supporting / retrofit / case distinction itself is a transportable bookkeeping device for argument architecture in other research projects.
+    pivot: |
+      matrix ⊨ density_finding + F1_centrality + transportable_architecture
+
+  - label: "B3"
+    title: "But the honesty boundary is excessive self-flagellation"
+    flip: |
+      The honesty boundary is the precondition for political-philosophical seriousness in a register that includes engineering. Without explicit constraint, the series would read either as engineering with vestigial normative gestures, or as political philosophy with vestigial engineering. The honesty boundary makes both registers operate at their respective epistemic strengths without collapsing into each other.
+    pivot: |
+      honesty_boundary ⇒ register_separation ; ⇒ both_registers_operate_at_strength
+
+# ─────────────────────────────────────────────────────────────
+# Conditions
+# ─────────────────────────────────────────────────────────────
+conditions:
+  title: "Conditions under which the capstone unification holds"
+  items:
+    - title: "Series structure stable"
+      body: "The 28-node structure is the structure as of mid-May 2026. Subsequent additions or revisions modify the matrix; the capstone's unification claim is bounded to this snapshot."
+      formal: "Series_snapshot(2026-05-16) ⊨ capstone_unification ; revision ⇒ recompute"
+    - title: "Reader honours the honesty boundary"
+      body: "Citations that read C1–C5 in manifesto register, or that detach claims from their conditional and methodological discipline, fall outside the capstone's bearing structure."
+      formal: "reader_honours(H) ⇒ correct_reading ; else ⇒ outside_bearing"
+    - title: "External lineage dialogue acknowledged"
+      body: "Each claim is articulated in dialogue with external lineages (Bayesian process-tracing, case-study methodology, cosmopolitan-particularist debate, anthropological reflexivity, Skinnerian hermeneutics). Strip those dialogues and the claim weakens."
+      formal: "external_lineage_dialogue(Cᵢ) ⇒ claim_strength(Cᵢ) preserved"
+
+# ─────────────────────────────────────────────────────────────
+# Conclusion
+# ─────────────────────────────────────────────────────────────
+conclusion:
+  paragraphs:
+    - "The series capstone bears no new propositional content. Its discipline is unification under explicit honesty boundary: five contribution claims, five methodological tools, one 92-cell bearing matrix, one seven-clause honesty boundary, four closing constraints. This unification makes the series legible at one page and externally examinable."
+    - "Four closing constraints bind the capstone: (i) it is not a final conclusion; (ii) it does not claim to replace existing normative routes (Rawls / Sen / Nussbaum / Honneth); (iii) it does not claim universal applicability across all polities — democratic-context presupposition is binding; (iv) it does not claim to be a definitive ground truth for cryptographic engineering — T_PRF5 forbids engineering bypass of the floor but does not assert engineering optimality."
+    - "Seven future-work items are ranked by priority: θ_dem empirical calibration; civilian-backup PRF mapping independent argument; fourth-case process-tracing (to complement Taiwan); PRF temporal dynamics under election / crisis / transition cycles; AI-agent proactivity upgrade (when agents move from passive delegation to active reasoning); Chinese-localisation bearing expansion (qun / gong / jianyi / zheng-you traditions); universal-conditional as general methodology for political theory."
+  formalCoda: |
+    Series = ⟨{C1..C5}, {tools}, 92_cell_matrix, H_boundary, ClosingConstraints⟩
+    capstone : unify(existing_bearings) under honesty_boundary
+    ¬final ; ¬replace ; ¬universal ; ¬ground_truth
+    → series legibility, not series escalation.

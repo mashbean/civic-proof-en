@@ -1,0 +1,240 @@
+slug: 2026-05-17-civic-proof-foundations
+title: "civic-proof Foundations (0' Academic Restatement): PRF, civic-proof, and the Conditional Floor of Democratic Legitimacy"
+subtitle: civic-proof Foundations 0' (article 0') — Argument Map (v2)
+
+# ─────────────────────────────────────────────────────────────
+# Central thesis
+# ─────────────────────────────────────────────────────────────
+coreThesis:
+  text: |
+    When digital-identity infrastructure enters the public realm of a democratic polity in the concrete form of wallets, verifiable credentials, selective-disclosure user interfaces, and cross-jurisdictional trust lists, the normative lower bound of democratic legitimacy is borne by the Public Realm Floor (PRF) — the conjunction of Arendt's plurality, Habermas's validity, Pettit's contestation, and Mouffe's agonism. Civic proof is the operational concept that carries this floor into concrete engineering (wallets, AI-agent delegation, civic-action receipts, selective-disclosure UX, trust governance). The animating thesis — accountability does not require real-name identification — converges from three independent lineages (cryptography ∪ normative political theory ∪ US constitutional case law). The article bears a conditional floor: presupposes democratic context, does not claim PRF as unique standard, does not claim extrapolation to non-democratic regimes, does not claim definitive ground truth for cryptographic engineering. The 19 May 2026 revision adds AllenBridge as the institutional translation layer between PRF and Digital Civic Infrastructure (DCI), not as a fifth axis.
+  summary: The academic 0' restatement of civic-proof. Two-layer analysis (issuance legitimacy + exchange architecture) + four demand types + four normative conditions + PRF four-strand conjunction + four engineering bearings + AllenBridge translation layer + cross-jurisdictional four-tier governance + universal-conditional comparative methodology + seven cross-country cases + Taiwan deep-dive + age-verification stress test + minimum-proof engineering + civic / sub-national experiments + public-blockchain trust layer + five policy principles × five methodological tools + conditional closure.
+  formal:
+    expression: |
+      Two_Layer_Analysis : DigitalIdentity ≜ ⟨I_layer, E_layer⟩
+      Civic_Proof_Demand ∈ {LegalID, AttributeProof, UniquenessProof, PseudonymousParticipation}
+      NormativeConditions = anonymity ∧ unlinkability ∧ verifiability ∧ accountability
+
+      Convergence_Thesis :
+        accountability(d) ⇏ realname(d)
+        proof_lineages = crypto ∪ normative_political_theory ∪ US_const_caselaw
+
+      PRF ≜ plurality ∧ validity ∧ contestation ∧ agonism
+        T_PRF1..4 : each component individually necessary, irreducible
+        T_PRF5    : engineering unreachability — no engineering design bypasses the floor
+        LegitimacyDegrade(d) = σ(Σ βᵢ violation_intensityᵢ) ; θ_dem ≈ 0.5 (analytic suggestion)
+
+      Engineering_Bearings :
+        Wallet : three_presupposition (individual ownership ∧ identification ∧ private_key) — degradation paths
+        AI_Agent : 5×3 = 15 cell matrix, two structurally_non_delegable cells (first-personal mens rea + legitimate adversary)
+        Receipts : 14 field groups + 23 leaf fields + C1–C6 + T1–T4 + T2' UI unreachability
+        UX : C7–C10 + supporter UI three-layer separation (CRPD Art. 29 + GC No.1 §26–29)
+
+      AllenBridge(d) = political_equality ∧ rights_of_participation ∧ no_monopoly ∧ co_ownership ∧ input_to_action_loop
+        AllenBridge ⊥ PRF ; not fifth axis ; translation layer between PRF and DCI
+
+      CrossJurisdictional_Governance = ⟨G_industry, G_state, G_recognition, G_oversight⟩
+        + four_redress_gaps + three_tier_rights_language + functional_demos(operational)
+
+      Comparative_Methodology : universal_conditional_distinction
+        universal_part = structural_necessity ; conditional_part = mechanism_bearing + coupling + scope
+
+      Policy_Agenda : 5 principles × 5 tools (likelihood-by-mechanism, working/strengthened thesis, universal-conditional, anti-mythologization, intuition-vs-claim separation)
+
+      Conditional_Closure :
+        ¬claim(PRF = unique_standard)
+        ∧ ¬claim(universal(across_all_regimes))
+        ∧ ¬claim(definitive_ground_truth(crypto_engineering))
+        ∧ presuppose(democratic_context)
+    caption: |
+      The article is the academic 0' restatement of the 0417 origin presentation. It integrates the 25-article civic-proof series, four retrofits, Taiwan deep-dive, capstone, and the AllenBridge revision into one bearing structure with explicit conditional closure. Each section bears one component of the structure; the closure binds the article to a floor reading (necessary conditions), not a unique-standard reading.
+    legend:
+      - symbol: PRF
+        meaning: Public Realm Floor — Arendt plurality ∧ Habermas validity ∧ Pettit contestation ∧ Mouffe agonism; the normative floor of democratic legitimacy under digital-identity intervention.
+      - symbol: civic_proof
+        meaning: The operational concept carrying PRF into engineering — four demand types each with minimum normative conditions.
+      - symbol: AllenBridge
+        meaning: The institutional translation layer between PRF and Digital Civic Infrastructure (DCI); added by the 19 May 2026 revision.
+      - symbol: T_PRF5
+        meaning: Engineering unreachability lemma — no engineering design can bypass PRF; F1's two structurally-non-delegable cells (first-personal mens rea + legitimate adversary appearance) are firm.
+      - symbol: θ_dem
+        meaning: Analytic-suggestion threshold ≈ 0.5 for LegitimacyDegrade(d); not empirically calibrated; calibration is future work.
+      - symbol: functional_demos
+        meaning: Operational retreat from democratic constitutional community (demos) for cases of contested sovereignty recognition; analytic scope internal to the polity.
+
+# ─────────────────────────────────────────────────────────────
+# Distinction
+# ─────────────────────────────────────────────────────────────
+distinction:
+  rejected:
+    label: "Rejected"
+    title: "Civic-proof as engineering-only or normative-only frame"
+    body: |
+      Two failure modes are explicitly rejected. (i) Engineering-only: civic proof as just selective disclosure + ZKP + wallet engineering; the political-philosophical floor is treated as motivation, not as binding constraint. This collapses civic-proof into a privacy-tech vocabulary that cannot speak to legitimacy questions. (ii) Normative-only: civic proof as just a political-philosophical claim with engineering attached as illustration; the four engineering bearings are treated as examples, not as structurally constrained by T_PRF5. This collapses civic-proof into a manifesto.
+    formal: |
+      engineering_only ⇒ collapse(legitimacy_register)
+      normative_only ⇒ collapse(structural_constraint)
+  accepted:
+    label: "Accepted"
+    title: "Two-layer + four-component + four-bearing + bridge + conditional closure"
+    body: |
+      The article holds engineering and normative registers in mutual constraint: PRF imposes T_PRF5 (engineering unreachability), so engineering cannot bypass the floor; conversely, normative claims must be borne by engineering-checkable form (civic proof, AllenBridge five criteria) to remain operationally relevant. The conditional closure explicitly bounds the article from manifesto register and universal-template readings.
+    formal: |
+      PRF ⊨ T_PRF5(engineering_unreachability) ; engineering ⊨ AllenBridge_check(institutional_direction)
+      conditional_closure binds reading
+
+# ─────────────────────────────────────────────────────────────
+# Pillars
+# ─────────────────────────────────────────────────────────────
+pillars:
+  - section: "P1"
+    title: "Two-layer analysis (I + E)"
+    role: "Conceptual scaffolding — separates sovereignty / legal-effect questions from transport / presentation questions."
+    body: |
+      I_layer (issuance legitimacy) concerns sovereignty, revocation rights, legal effect — why a credential is worthy of belief. E_layer (exchange architecture) concerns wallet, browser, presentation, verifier, trust list — how a credential is held, transported, presented, audited. The last decade's real change is at E, not I. Conflating the two produces tangled policy debates; separating them makes the four engineering bearings tractable.
+    formal: |
+      DigitalIdentity = ⟨I, E⟩ ; analytic_separability ; jointly_required
+
+  - section: "P2"
+    title: "Civic proof: four demand types + four normative conditions"
+    role: "The operational concept — replaces 'who you are' with 'what the situation requires you to prove.'"
+    body: |
+      Four demand types: legal identity (verifiable + redressable); attribute proof (selective disclosure + unlinkable + no phone-home); uniqueness proof (pseudonymous + Sybil-resistant); pseudonymous participation (anonymous + accountable + supervised audit chain). Four normative conditions: anonymity, unlinkability, verifiability, accountability — must hold conjunctively for the demand type. The surface contradiction between anonymity and accountability is dissolved by P3.
+    formal: |
+      ∀ demand : ∃ subset(NormativeConditions) : minimum_required(demand)
+      surface_contradiction(anonymity, accountability) dissolved_by P3
+
+  - section: "P3"
+    title: "Accountability ⇏ real-name (three-lineage convergence)"
+    role: "Animating thesis — every subsequent section refines or stress-tests this convergence claim."
+    body: |
+      (i) Cryptography: selective disclosure, ZKP, BBS+ unlinkable signatures, revocation status lists, auditable evidence chains enable presentation without full identity yet support ex-post audit. (ii) Normative political theory: Bovens 2007's answerability + enforceability does not presuppose specifically-natural-person-identifiable addressee; Pettit 2012's contestability operates on positions, not on real names. (iii) US constitutional case law: Talley v California 1960, NAACP v Alabama 1958, McIntyre v Ohio 1995 — anonymous expression preserved while accountability mechanisms preserved.
+    formal: |
+      ⋀ lineageᵢ ⊨ accountability ⇏ realname  ; convergence ≠ single_lineage_argument
+
+  - section: "P4"
+    title: "Public Realm Floor (PRF) — four-strand conjunctive floor"
+    role: "Normative core — bears the regulatory lower bound of democratic legitimacy for digital-identity interventions."
+    body: |
+      Arendt plurality (three ontological layers: natality + mortality + uniqueness); Habermas validity (Geltungsansprüche: Wahrheit / Richtigkeit / Wahrhaftigkeit; Öffentlichkeit + Sluice model); Pettit contestation (active stance + Equally Accepted Terms + Equally Accessible Influence + editorial democracy); Mouffe agonism (legitimate adversary: mutual recognition + shared rules + agonistic frame). Each individually necessary (T_PRF1–4); none substitutable by the others. T_PRF5: engineering unreachability — no engineering design bypasses the floor. PRF is a floor, not the unique standard; open to Rawls / Sen / Nussbaum / Honneth as ceiling or boundary conditions.
+    formal: |
+      PRF = plurality ∧ validity ∧ contestation ∧ agonism ; T_PRF1..5
+      LegitimacyDegrade(d) = σ(linear_combination) ; θ_dem ≈ 0.5 analytic_suggestion
+      PRF ⊂ NormativeFloors ; not unique
+
+  - section: "P5"
+    title: "AllenBridge — translation layer (not fifth axis)"
+    role: "19 May 2026 revision — adds Allen as direction, not floor."
+    body: |
+      Political equality + rights of participation + no monopoly + co-ownership + input-to-action loop. The bridge does not introduce new normative ground; it converts PRF's necessary conditions into engineering-checkable directional criteria. Not admitted as fifth axis (would double-count Pettit / Arendt / Habermas / Mouffe, force matrix reopening, mismatch altitude). The full bridge argument is borne by the separate Danielle Allen bridge article (article 26).
+    formal: |
+      AllenBridge ⊥ PRF ; ↣ DCI ; bridge_check ≠ floor_violation
+
+  - section: "P6"
+    title: "Four engineering bearings + AllenBridge check"
+    role: "Operational core — the four concrete engineering surfaces where PRF is borne, plus a fifth bridge check."
+    body: |
+      (i) Wallet: three presuppositions (individual ownership + identification + private key) and their degradation paths — exclusion of dementia patients, cognitive-impairment users, minors, undocumented refugees ⇒ plurality violation. (ii) AI agent: Tomasev five-element × civic-proof three-element = 15 cell matrix; two cells structurally non-delegable (first-personal mens rea + legitimate adversary appearance). (iii) Civic-action receipts: 14 field groups + 23 leaf fields + C1–C6 necessary conditions + T1–T4 + T2' UI unreachability theorem. (iv) Selective-disclosure UX: C7–C10 + supporter UI three-layer separation (CRPD Art. 29 + GC No.1 §26–29). (v) AllenBridge engineering check: non-monopoly + intelligibility + input-to-action loop + co-ownership + backup capacity.
+    formal: |
+      ⋀ bearingᵢ ⊨ PRF_translation ; T_PRF5 ⊨ none_bypass_floor
+
+  - section: "P7"
+    title: "Cross-jurisdictional governance + comparative methodology"
+    role: "Institutional infrastructure — four-tier governance, four redress gaps, three-tier rights language, universal-conditional methodology."
+    body: |
+      Four-tier governance: G_industry (W3C / OpenID / ISO) + G_state (sovereign legal authorisation) + G_recognition (cross-national MoUs, soft law) + G_oversight (DPAs, human-rights commissions, civic audit). Four redress gaps: verifier refusal + erroneous revocation + vendor failure + cross-border privacy leak (+ candidate fifth: AI-agent cross-border attribution). Three-tier rights language: pre-legal interest / institutional entitlement / treaty-level human right. Functional-demos operational definition for sovereignty-contested cases. Universal-conditional distinction: structural necessity (universal) separated from mechanism / coupling / scope (conditional).
+    formal: |
+      Governance = ⟨G_industry, G_state, G_recognition, G_oversight⟩
+      Redress_Gaps = {verifier_refusal, erroneous_revocation, vendor_failure, cross_border_leak} ∪ {AI_attribution}
+      Rights_Tiers = {pre_legal, institutional, treaty}
+      Methodology = universal_conditional_distinction
+
+  - section: "P8"
+    title: "Cases (7 cross-country + Taiwan deep-dive)"
+    role: "Comparative empirical grounding — under explicit anti-mythologization clause."
+    body: |
+      Seven cases: Taiwan (MOICA + TW DIW hybrid; trust list on chain); EU (eIDAS 2.0 + EUDI Wallet); Sweden (commercial BankID); US (state-level mDL + federal NIST guidance); MOSIP (modular open source); India Aadhaar (national-scale eKYC); Bhutan NDI (Ethereum-mainnet anchored). Cross-case comparison constrained by universal-conditional methodology — universal part (PRF structural necessity) shared; conditional part (mechanism / coupling / scope) varies. Taiwan deep-dive (article 24) bears conditional-typical case + existence-pressure proof under triple pressure (α cognitive warfare + β cable disruption + γ grey-zone).
+    formal: |
+      cases = {TW, EU, SE, US, MOSIP, IN, BT} ; comparison ⊨ universal_conditional_only
+      Taiwan = conditional_typical + existence_pressure ; anti_mythologization binding
+
+  - section: "P9"
+    title: "Policy agenda — 5 principles × 5 tools + AllenBridge reinforcement"
+    role: "Operationalisation of the framework into policy-relevant discipline."
+    body: |
+      Five principles: privacy-first baseline; open wallets + standardised provisioning; procurement sandbox; testbed network; AI-agent delegation into main line. Five methodological tools: working / strengthened thesis discipline; universal-conditional distinction; likelihood-by-mechanism four-level; anti-mythologization clause; design-intuition / normative-claim separation. AllenBridge reinforcement re-frames each principle under power-sharing: privacy as co-ownership; interoperability as platform-monopoly reduction; procurement as exit + audit + alternative-path acceptance; testbed as input-to-action measurement; AI agent as participation-capacity extension.
+    formal: |
+      PolicyAgenda = (5_principles × 5_tools) + AllenBridge_reinforcement
+
+# ─────────────────────────────────────────────────────────────
+# Borders
+# ─────────────────────────────────────────────────────────────
+borders:
+  - label: "B1"
+    title: "But the four PRF strands are not necessary — three would suffice"
+    flip: |
+      The necessity argument is borne by T_PRF1–4 in reductio form: for each strand i, no design d that violates i and satisfies the other three can be legitimate (proof by structural-necessity counter-example construction). The four strands bear independent normative content (plurality = ontological 'who'; validity = communicative-reason rationalisation; contestation = redress structure; agonism = political-opposition structure). Reducing to three loses one independent normative ground.
+    pivot: |
+      T_PRF1..4 reductio_construction ⊨ ¬∃ valid 3-strand reduction
+
+  - label: "B2"
+    title: "But θ_dem ≈ 0.5 is empirically uncalibrated — the LegitimacyDegrade function is vacuous"
+    flip: |
+      θ_dem is explicitly an analytic suggestion, not an empirical measurement; the article does not claim empirical calibration. The function's bearing is structural: it formalises 'violation of PRF triggers legitimacy degradation' as a conditional implication whose falsification path is well-defined (find a case violating PRF without legitimacy degradation). Empirical calibration is enumerated as a priority future-work item (capstone §8).
+    pivot: |
+      analytic_suggestion ⇏ empirical_calibration_claim ; falsification_path well_defined ; calibration ∈ future_work
+
+  - label: "B3"
+    title: "But the engineering bearings are too specific — they will become obsolete"
+    flip: |
+      Specific cryptographic primitives (BBS+, ZKP, status list) will evolve. The four engineering bearings are stated at a structural-condition level (e.g., 'six necessary conditions for civic-action receipts'; 'supporter UI three-layer separation') that is independent of specific primitives. New primitives that satisfy the conditions are absorbed into the framework; primitives that do not (e.g., 'AI agent can substitute for first-personal mens rea') are excluded by T_PRF5.
+    pivot: |
+      structural_condition_level ⇒ primitive_obsolescence_robust ; T_PRF5 ⇒ exclusion_persists
+
+  - label: "B4"
+    title: "But the framework presupposes democratic context — what about authoritarian regimes?"
+    flip: |
+      The conditional closure makes this presupposition explicit. PRF's normative force depends on judicial-audit capability, electoral cycles, civil society — none guaranteed under authoritarian conditions. Pseudonymous-accountability mechanisms (audit chain + court-supervised re-identification) require an enforceable judicial overseer; without one, the same mechanism becomes a tool of harassment. The article does not claim universal applicability; non-democratic contexts require an independent argumentation framework.
+    pivot: |
+      democratic_presupposition explicit ; non_democratic ⇒ independent_framework ; ¬ scope_overreach
+
+# ─────────────────────────────────────────────────────────────
+# Conditions
+# ─────────────────────────────────────────────────────────────
+conditions:
+  title: "Conditions under which the foundations 0' framework holds"
+  formalPrelude: |
+    The article's bearing is conditional. It presupposes a democratic political context with judicial-audit capability, trust-root availability, and deployment-mature cryptographic infrastructure. Outside these conditions, the framework's normative force is weaker or absent. Each condition is enumerated.
+  items:
+    - title: "Democratic political context"
+      body: "PRF's four-strand conjunction and the pseudonymous-accountability mechanism both depend on democratic institutions. The article does not extend to authoritarian regimes."
+      formal: "democratic(polity) ⇒ applicable(PRF) ; ¬democratic ⇒ independent_framework"
+    - title: "Trust-root availability"
+      body: "Some authoritative I-layer must exist — sovereign state credential or recognised institutional issuer. Pure self-sovereign roots remain experimentally interesting but have not (as of 2026) sustained legal-identity-grade civic action at scale."
+      formal: "∃ trust_root ∈ {sovereign, recognised_institution} : anchors(civic_proof)"
+    - title: "Crypto + UX + revocation deployment maturity"
+      body: "Selective disclosure, unlinkable presentation, client-side proving, supporter UI, and revocation infrastructure must be deployment-mature. As of 2026, revocation infrastructure remains the weakest link in most national systems."
+      formal: "mature(crypto) ∧ mature(supporter_UI) ∧ mature(revocation) ⇒ deployable(civic_proof)"
+    - title: "Functional demos operational definition"
+      body: "For cases of contested sovereignty recognition (Taiwan), the analytic scope is the functional democratic community (citizens + long-term residents actually participating in elections, taxation, health insurance, private associations). Cross-border issues require independent argument."
+      formal: "contested_sovereignty(polity) ⇒ functional_demos(operational_scope)"
+    - title: "θ_dem empirical calibration pending"
+      body: "The 0.5 threshold is analytic suggestion. Empirical calibration via regression across at least five independent cases is future work."
+      formal: "θ_dem(empirical) ∈ future_work"
+
+# ─────────────────────────────────────────────────────────────
+# Conclusion
+# ─────────────────────────────────────────────────────────────
+conclusion:
+  paragraphs:
+    - "The 0' restatement bears one structure: PRF as conjunctive floor of democratic legitimacy; civic proof as the operational concept; the convergence thesis (accountability ⇏ real-name) as animating claim; four engineering bearings as PRF translation; AllenBridge as direction-translation between PRF and DCI; four-tier cross-jurisdictional governance + universal-conditional comparative methodology + seven cross-country cases + Taiwan deep-dive + age-verification stress test + minimum-proof engineering + civic/sub-national experiments + public-blockchain trust layer + five policy principles × five methodological tools."
+    - "The conditional closure binds the article to four constraints: (i) PRF is a floor, not the unique standard — open to Rawls / Sen / Nussbaum / Honneth; (ii) framework presupposes democratic context, does not extend to authoritarian regimes; (iii) does not claim definitive ground truth for cryptographic engineering — T_PRF5 forbids engineering bypass but does not assert engineering optimality; (iv) the Taiwan deep-dive bears anti-mythologization clause — universalisation strength downgraded to 'hypothesis extrapolable to a weaker conditional subset.'"
+    - "The 19 May 2026 revision adds AllenBridge as the institutional translation layer between PRF and Digital Civic Infrastructure. Civic proof's task is therefore not merely to make credentials more private, verifiable, and portable — but also to keep the gateway to public action participable, contestable, co-ownable, and responsive. The full bridge argument is borne separately by article 26."
+    - "Higher-priority future work: empirical calibration of θ_dem (regression across ≥ 5 cases); independent argument for the civilian-backup PRF mapping (avoiding smuggling civilian advocacy texts as normative claims); delegation-boundary expansion under AI-agent proactivity upgrade (when agents move from passive delegation to active reasoning); minimal-conditional-variable set for cross-case comparison (e.g., Taiwan / Estonia / Bhutan); PRF temporal dynamics under election / crisis / regime-transition cycles; Chinese-localisation bearing (qun / gong / jianyi / zheng-you); cross-domain application of universal-conditional distinction as general methodology."
+  formalCoda: |
+    PRF ⊨ floor(democratic_legitimacy) ; civic_proof ⊨ operational_concept
+    accountability ⇏ realname (convergent : crypto ∪ normative_theory ∪ const_law)
+    Engineering_Bearings ⊨ PRF_translation (T_PRF5 : no bypass)
+    AllenBridge ⊥ PRF ; ↣ DCI (translation layer, not floor)
+    ConditionalClosure : democratic_context ; not unique ; not universal ; not ground_truth
+    → civic proof as conditional, structural, and engineering-checkable bearing of democratic legitimacy under digital-identity intervention.

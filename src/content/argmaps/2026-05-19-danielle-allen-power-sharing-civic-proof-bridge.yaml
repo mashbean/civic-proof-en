@@ -1,0 +1,165 @@
+slug: 2026-05-19-danielle-allen-power-sharing-civic-proof-bridge
+title: "How Danielle Allen's Power-Sharing Liberalism Rewrites Digital Civic Infrastructure"
+subtitle: AllenBridge — Argument Map (v2)
+
+# ─────────────────────────────────────────────────────────────
+# Central thesis
+# ─────────────────────────────────────────────────────────────
+coreThesis:
+  text: |
+    Danielle Allen's political equality and power-sharing liberalism should not be admitted as a fifth axis of the Public Realm Floor (PRF). The robust move is to position Allen as an institutional translation layer — AllenBridge — between PRF and Digital Civic Infrastructure (DCI). PRF answers "what minimum conditions of democratic legitimacy cannot be bypassed"; AllenBridge answers "how these minimum conditions translate into power-sharing, co-ownership, and public responsiveness in DCI." This preserves PRF's status as a normative floor (necessary conditions) while adding a layer that asks whether a design extends, not merely protects, citizens' capacity to share power.
+  summary: Allen is a bridge, not a fifth axis. Admitting her as a fifth axis would double-count plurality / validity / contestation / agonism and force the entire 32-cell bearer matrix to be reopened. The bridge formulation preserves PRF and adds five engineering-checkable criteria (political equality, rights of participation, no monopoly, co-ownership, input-to-action loop).
+  formal:
+    expression: |
+      PRF(d) = plurality(d) ∧ validity(d) ∧ contestation(d) ∧ agonism(d)
+
+      AllenBridge(d) = political_equality(d)
+                     ∧ rights_of_participation(d)
+                     ∧ no_monopoly(d)
+                     ∧ co_ownership(d)
+                     ∧ input_to_action_loop(d)
+
+      AllenBridge ⊥ PRF (translation layer, not normative floor)
+      AllenBridge ⊨ direction(institutional_design ; engineering_check)
+      PRF        ⊨ floor(democratic_legitimacy)
+      DCI        ⊨ field(realisation : public_institutions ∧ tech_spec ∧ procurement)
+    caption: |
+      The bridge formula is a check, not a floor. A design d that satisfies PRF but fails AllenBridge has not fallen below democratic legitimacy — but it has not yet realised the institutional direction that distinguishes Digital Civic Infrastructure from Digital Public Infrastructure (DPI). AllenBridge keeps DCI from collapsing into DPI's managerial register.
+    legend:
+      - symbol: PRF
+        meaning: Public Realm Floor — Arendt plurality ∧ Habermas validity ∧ Pettit contestation ∧ Mouffe agonism (the floor argument of civic-proof series article 19).
+      - symbol: AllenBridge
+        meaning: A translation layer between PRF and DCI, named after Danielle Allen, articulating power-sharing liberalism in five engineering-checkable criteria.
+      - symbol: political_equality
+        meaning: Not bare voting equality; equal capacity to enter public knowledge production, contest decisions, and co-own institutional direction (Allen, Justice by Means of Democracy 2023).
+      - symbol: input_to_action_loop
+        meaning: Civic input must be traceable to public action, administrative response, or institutional revision; more voice without response deepens cynicism (Hubbard & Goux 2026).
+      - symbol: DCI
+        meaning: Digital Civic Infrastructure — Connect / Learn / Act framing from Allen Lab / Ash Center (Hubbard & Garcia 2025).
+
+# ─────────────────────────────────────────────────────────────
+# Distinction: rejected vs accepted move
+# ─────────────────────────────────────────────────────────────
+distinction:
+  rejected:
+    label: "Rejected"
+    title: "Allen as the fifth axis of PRF"
+    body: |
+      The straightforward reading would admit Allen as PRF₅. This is wrong for three reasons. (i) Double counting: Allen's non-domination overlaps Pettit; her participation overlaps Arendt; her epistemic equality overlaps Habermas; reciprocity / co-ownership simultaneously implicate Habermas and Mouffe. (ii) Proof cost explosion: PRF's existing four-strand floor proof and the 32-cell bearer matrix would all need reopening. (iii) Category mismatch: PRF is a legitimacy floor for digital identity interventions in the public realm; Allen's power-sharing liberalism is a broader democratic-design direction touching political economy, institutional reform, civic education, and public policy. Its altitude is wider than PRF's.
+    formal: |
+      Allen ⊂ PRF₅ ⇒ double_count(Pettit, Arendt, Habermas, Mouffe)
+                   ∧ proof_cost_explosion(T_PRF1..5, 32_cell_matrix)
+                   ∧ category_mismatch(floor, direction)
+  accepted:
+    label: "Accepted"
+    title: "Allen as the institutional translation layer (AllenBridge)"
+    body: |
+      Preserve PRF as the conjunctive floor. Place Allen between PRF and DCI as a translation layer that articulates the direction in which institutions should design when PRF is not violated. AllenBridge does not introduce new normative ground; it converts PRF's necessary conditions into engineering-checkable directional criteria for wallet, receipt, agent, UX, procurement, trust list, and public investment.
+    formal: |
+      PRF ↣ AllenBridge ↣ DCI
+      AllenBridge = institutional_translation(PRF → DCI)
+
+# ─────────────────────────────────────────────────────────────
+# Pillars
+# ─────────────────────────────────────────────────────────────
+pillars:
+  - section: "P1"
+    title: "Allen's three lines of reading into civic-proof"
+    role: "Establishes that Allen's corpus has structural content civic-proof needs, even though that content is not floor-grade."
+    body: |
+      (i) Justice by Means of Democracy (2023) — political equality goes beyond one-person-one-vote to equal capacity for public knowledge production, contestation, and institutional co-ownership. (ii) Power-sharing liberalism (Allen 2022; Allen Lab 2025–26 agenda) — institutions must keep policy-making from closed elite or technocratic control. (iii) AI governance roadmap (Allen et al. 2025) — positive liberties (rights to participate) deserve equal protection with traditional negative liberties.
+    formal: |
+      Allen = ⟨political_equality, power_sharing, positive_liberty_for_tech⟩
+    finding: |
+      Each of the three lines is compatible with PRF's four anchors but occupies a different normative position — design direction, not legitimacy floor.
+
+  - section: "P2"
+    title: "Bridge form: five engineering-checkable criteria"
+    role: "Operationalises Allen into criteria the civic-proof engineering layer can be tested against."
+    body: |
+      Political equality — citizens not divided at the gateway to public action (wallet inclusion, supported decision-making, alternative paths). Rights of participation — positive capacity to participate, not only data protection. No monopoly — issuer, wallet, verifier, browser, OS, trust list, AI-agent workflow without single-point control. Co-ownership — civic communities, local organisations, marginalised users, independent monitors with visible governance slots. Input-to-action loop — civic input traceable to public action.
+    formal: |
+      check(d) = political_equality(d) ∧ rights_of_participation(d) ∧ no_monopoly(d) ∧ co_ownership(d) ∧ input_to_action_loop(d)
+
+  - section: "P3"
+    title: "Engineering rewrites: wallet, receipt, agent, UX"
+    role: "Shows what AllenBridge concretely changes in the four engineering bearings the series already developed."
+    body: |
+      Wallet: from personal container to co-governance gateway — exclusion at the wallet boundary becomes loss of participation rights, not just convenience. Receipt: from audit trail to input-to-action loop — surface process status and redress path, not only evidence chain. Agent: from errand efficiency to responsibility boundaries — AI delegation must preserve human override, scope limitation, revocation, auditability, responsibility allocation. UX: from usability to epistemic equality — citizens cannot be degraded to button operators by invisible defaults or vendor strategies.
+    formal: |
+      AllenBridge ⊨ rewrites({wallet, receipt, agent, UX})
+
+  - section: "P4"
+    title: "DCI three-phase locus: civic-proof at Act"
+    role: "Pins the bridge to a specific layer in Allen Lab's Connect / Learn / Act framing."
+    body: |
+      Connect requires light identity. Learn requires light identity. Act is where the system gates participation — the four PRF components and the five AllenBridge criteria are all simultaneously activated. civic-proof's engineering work lands at Act, with AllenBridge ensuring Act does not merely become efficient gatekeeping.
+    formal: |
+      DCI = Connect ∪ Learn ∪ Act
+      civic_proof_engineering ⊂ Act
+      AllenBridge ⊨ Act preserves power_sharing
+
+  - section: "P5"
+    title: "Taiwan locus: TW DIW under AllenBridge"
+    role: "Concrete national-case stress test of the bridge formulation."
+    body: |
+      Under DPI thinking, TW DIW is a more convenient login. Under DCI + AllenBridge, four questions emerge: is the issuer/verifier ecosystem genuinely plural; does on-chain trust list produce public auditability; is civilian backup granted institutional slots; is human responsibility preserved when AI agents intervene. These are not legitimacy-floor questions (PRF) but power-sharing-direction questions (AllenBridge).
+    formal: |
+      TW_DIW ∈ test_field(AllenBridge)
+
+# ─────────────────────────────────────────────────────────────
+# Borders (objections addressed)
+# ─────────────────────────────────────────────────────────────
+borders:
+  - label: "B1"
+    title: "But Allen's work is canonical enough to be a fifth floor strand"
+    flip: |
+      Canonicity is not the criterion. The PRF conjunction is structural — each strand bears irreducible normative content. Allen's content is genuine but is dispersed across the existing four (non-domination ≈ Pettit; participation ≈ Arendt; epistemic equality ≈ Habermas; reciprocity ≈ Habermas + Mouffe). Adding Allen as a fifth strand without irreducible content fails the necessity test that T_PRF1–T_PRF4 impose on each existing strand.
+    pivot: |
+      canonicity(Allen) ⇏ irreducibility ; ⇒ translation_layer, not floor_strand
+
+  - label: "B2"
+    title: "But AllenBridge dilutes the philosophical seriousness — it's just engineering"
+    flip: |
+      The five criteria are not engineering proxies for ethics. They are conditions under which institutional design preserves rather than erodes the power-sharing relations that political equality requires. They are testable in engineering settings because Allen's project explicitly aims at the institutional layer (Allen et al. AI governance roadmap; Allen Lab Digital Civic Infrastructure framework). The translation layer respects, rather than collapses, the normative content.
+    pivot: |
+      engineering_checkable ⇏ ethically_thin ; ⇒ institutional_translation
+
+  - label: "B3"
+    title: "But this is just adding more checks; civic-proof already has too many"
+    flip: |
+      AllenBridge does not add cryptographic primitives or normative floors. It re-frames the existing engineering bearings (wallet, receipt, agent, UX) under a different question: not "does the design meet the floor" (PRF check) but "does the design extend the people's capacity to share power" (AllenBridge check). The same artifacts; a different evaluation lens. Whether to apply the bridge check is itself a policy choice.
+    pivot: |
+      AllenBridge = lens, not new_primitive ; cost = re-framing, not re-engineering
+
+# ─────────────────────────────────────────────────────────────
+# Conditions
+# ─────────────────────────────────────────────────────────────
+conditions:
+  title: "Where AllenBridge holds and where it does not"
+  formalPrelude: |
+    AllenBridge presupposes a democratic political context (same as PRF) plus an institutional setting where DCI is a meaningful frame — i.e., the state and civil society are recognised as co-bearers of public infrastructure. It does not extend to authoritarian regimes (no power-sharing relation to preserve) nor to pure market settings (no public-realm institutions to translate into).
+  items:
+    - title: "Democratic + DCI-recognising institutional context"
+      body: "Both the floor (PRF) and the bridge (AllenBridge) require a democratic context; the bridge additionally requires that public infrastructure be recognised as a co-governed institution, not merely a government service."
+      formal: "democratic(polity) ∧ recognises_DCI(polity) ⇒ applicable(AllenBridge)"
+    - title: "Engineering implementation under construction"
+      body: "AllenBridge's five criteria are most actionable during design and procurement, less actionable after deployment. Retrofit is possible but costly."
+      formal: "phase(design ∨ procurement) ⇒ low_cost(AllenBridge_application)"
+    - title: "Empirical calibration pending"
+      body: "AllenBridge as articulated here is a checking framework, not an empirically calibrated test. Case studies (e.g., TW DIW, EUDI Wallet) are required to refine the five criteria's operational definitions."
+      formal: "calibrated(AllenBridge) = future_work"
+
+# ─────────────────────────────────────────────────────────────
+# Conclusion
+# ─────────────────────────────────────────────────────────────
+conclusion:
+  paragraphs:
+    - "Allen's real value to civic-proof is not adding a new name to the PRF floor. Her contribution is the reminder that the problem of democratic institutions cannot be asked only as whether rights have been violated — it must also be asked as whether the people can still share in power. This reminder is especially important for digital identity, which is easily absorbed into the administrative language of login / verification / efficiency / anti-fraud."
+    - "PRF supplies the floor; AllenBridge supplies the direction; Digital Civic Infrastructure is the field where both are realised. Civic proof's task is therefore not merely to make credentials more private, verifiable, and portable — but also to keep the gateway to public action participable, contestable, co-ownable, and responsive."
+    - "AllenBridge is not the final formulation. Its five criteria need empirical refinement through case studies; the relationship between the bridge and other normative-design approaches (Rawls's reflective equilibrium, Sen's capability, Nussbaum's dignity) is left as open work. What this article fixes is the position — translation layer, not fifth axis — and the form."
+  formalCoda: |
+    PRF        ⊨ floor          (necessary conditions of democratic legitimacy)
+    AllenBridge ⊨ direction     (translation layer: floor → DCI)
+    DCI        ⊨ field          (institutional realisation)
+    → civic_proof : the operational concept by which engineering bears all three.

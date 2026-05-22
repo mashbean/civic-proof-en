@@ -130,14 +130,6 @@ const relatedPosts = [...otherPosts]
         <span style="margin-left:auto">#{id.split("/").pop()}</span>
       </div>
 
-      {tags.length > 0 && (
-        <div class="article__tags">
-          {tags.map((tag) => (
-            <a class="article__tag" href={`/tags/${tag}/`}>#{tag}</a>
-          ))}
-        </div>
-      )}
-
       {argmapHref && (
         <a class="article__argmap-link" href={argmapHref}>
           <span class="article__argmap-icon">◇</span>
